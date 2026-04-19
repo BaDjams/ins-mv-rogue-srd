@@ -114,7 +114,7 @@ augmenté au-delà du Rang Céleste du personnage.
 
 -   **Pouvoir automatique** pour tous les anges et démons incarnés
 
-[Calculs :]{.underline}
+**Calculs :**
 
 -   Ange Rang 3 : Niveau maximum = 3 - 1 + 1 = **3** → Résilience 3
 
@@ -132,7 +132,7 @@ augmenté au-delà du Rang Céleste du personnage.
 -   **Effet :** Génère une aura de feu qui consume les adversaires
     > proches
 
-[Calculs :]{.underline}
+**Calculs :**
 
 -   Ange Rang 3 : Niveau maximum = 3 - 2 + 1 = **2** → Feu Ardent 2
 
@@ -148,7 +148,7 @@ augmenté au-delà du Rang Céleste du personnage.
 
 -   **Effet :** Bonus d\'initiative et d\'actions
 
-[Calculs :]{.underline}
+**Calculs :**
 
 -   Ange Rang 3 : Niveau maximum = 3 - 3 + 1 = **1** → Rapidité Céleste
     > 1

@@ -67,13 +67,8 @@ l\'attaquant) alors que lors de la division des dégâts par la
 Résilience, l\'arrondi se fait toujours à l\'inférieur (favorable au
 défenseur).
 
-Exemple : Azrael active son aura de sainteté qui [inflige]{.underline}
-Rang hiérarchique x rang céleste /2 dégâts aggravés à toutes les cibles
-démoniaques au contact.. 3\*3/2 = 4,5, donc arrondi à 5 dégâts.\
-Belphess la démone aux belles fesses est très très au contact et
-[subit]{.underline} donc 5/3=1 blessure aggravés (on arrondi à
-l'inférieur lors de la division par la résilience). Belphess pousse un
-gémissement équivoque.
+Exemple : Azrael active son aura de sainteté qui **inflige** Rang hiérarchique x rang céleste /2 dégâts aggravés à toutes les cibles démoniaques au contact. 3×3/2 = 4,5, donc arrondi à 5 dégâts.
+Belphess la démone aux belles fesses est très très au contact et **subit** donc 5/3=1 blessure aggravée (on arrondit à l'inférieur lors de la division par la résilience). Belphess pousse un gémissement équivoque.
 
 Pour les effets bénéfiques (soins, récupération), l\'arrondi se fait à
 l\'avantage du lanceur.
@@ -192,7 +187,7 @@ inconscience
 
 -   Blessures létales : 1 tour par coche
 
-> **Régénération (Rang requis 2, Concentration)**
+**Régénération (Rang requis 2, Concentration)**
 
 Toutes les blessures guérissent simultanément au rythme de la capacité
 de guérison du personnage, plutôt qu\'une après l\'autre.
@@ -206,7 +201,7 @@ de guérison du personnage, plutôt qu\'une après l\'autre.
 
 -   La \"Guérison Rapide\" n\'affecte que les blessures (/) et (X)
 
-> **Conversion Nécessaire**
+**Conversion Nécessaire**
 
 Pour guérir d\'une blessure aggravée (⭙), il faut d\'abord la
 **convertir** en blessure létale (X) via :
@@ -217,7 +212,7 @@ Pour guérir d\'une blessure aggravée (⭙), il faut d\'abord la
 
 -   Intervention divine
 
-> **Objets Exceptionnels**
+**Objets Exceptionnels**
 
 Certains artefacts légendaires comme **le Saint Graal** peuvent guérir
 directement toutes les blessures, y compris aggravées, sans conversion
