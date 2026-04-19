@@ -1,757 +1,763 @@
-# ÉTATS
+# États
 
-## **Règles Générales des États**
+## Règles générales
 
-Cumul et Durée
+### Cumul et durée
 
--   **Un même état ne se cumule pas** : Une créature est soit affectée
-    > par un état, soit elle ne l\'est pas
+- **Un même état ne se cumule pas** : Une créature est soit affectée par un état, soit elle ne l'est pas
+- **États multiples** : Différents états peuvent se cumuler (ex : Aveuglé + Empoisonné)
+- **Durée** : Chaque état a sa propre durée, indépendamment des autres
+- **Résistance** : Les créatures de rang céleste élevé peuvent résister à certains états
+- **Immunité** : Certaines créatures sont complètement immunisées à des états spécifiques
 
--   **États multiples** : Différents états peuvent se cumuler (ex:
-    > Aveuglé + Empoisonné)
+### Dissipation
 
--   **Durée** : Chaque état a sa propre durée, indépendamment des autres
+- **Repos complet** (8h) : Supprime automatiquement les états de fatigue et mentaux mineurs
+- **Pouvoirs de soins** : Peuvent dissiper certains états selon leur description
+- **Conditions spécifiques** : Certains états nécessitent des actions particulières pour être levés
 
--   **Résistance** : Les créatures de rang céleste élevé peuvent
-    > résister à certains états
+---
 
--   **Immunité** : Certaines créatures sont complètement immunisées à
-    > des états spécifiques
+## États physiques
 
-Dissipation
+### À Terre
 
--   **Repos complet** (8h) : Supprime automatiquement les états de
-    > fatigue et mentaux mineurs
+**Description :** Renversé au sol, position vulnérable.
 
--   **Pouvoirs de soins** : Peuvent dissiper certains états selon leur
-    > description
+**Effets :**
 
--   **Conditions spécifiques** : Certains états nécessitent des actions
-    > particulières pour être levés
+- Seule action de déplacement possible : ramper (coût normal de 2 PA)
+- Les attaques au corps à corps contre la créature ont un avantage
+- Les attaques à distance contre la créature ont un désavantage si l'attaquant est à plus de 6m
+- Se relever coûte 1 PA supplémentaire
 
-## **États Physiques**
+**Fin :** Jusqu'à ce que la créature se relève ou soit relevée par un allié.
 
-À Terre
+---
 
-**Description :** Renversé au sol, position vulnérable. **Effets :**
-
--   Seule action de déplacement possible : ramper (coût normal de 2 PA)
-
--   Les attaques au corps à corps contre la créature ont un avantage
-
--   Les attaques à distance contre la créature ont un désavantage si
-    > l\'attaquant est à plus de 6m
-
--   Se relever coûte 1 PA supplémentaire **Fin :** Jusqu\'à ce que la
-    > créature se relève ou soit relevée par un allié
-
-Agrippé
+### Agrippé
 
 **Description :** Maintenu fermement par une autre créature ou un effet.
+
 **Effets :**
 
--   Vitesse de déplacement réduite à 0
+- Vitesse de déplacement réduite à 0
+- Ne peut bénéficier d'aucun bonus de vitesse
+- L'état se termine si l'agrippeur devient Incapable d'agir
 
--   Ne peut bénéficier d\'aucun bonus de vitesse
+**Fin :** Jet de Force ou Agilité opposé contre l'agrippeur (2 PA), ou si l'agrippeur lâche prise.
 
--   L\'état se termine si l\'agrippeur devient Incapable d\'agir **Fin
-    > :** Jet de Force ou Agilité opposé contre l\'agrippeur (2 PA), ou
-    > si l\'agrippeur lâche prise
+---
 
-Entravé
+### Entravé
 
-**Description :** Lié par des cordes, chaînes ou magie. **Effets :**
+**Description :** Lié par des cordes, chaînes ou magie.
 
--   Vitesse de déplacement réduite à 0
+**Effets :**
 
--   Désavantage sur tous les jets d\'Agilité
+- Vitesse de déplacement réduite à 0
+- Désavantage sur tous les jets d'Agilité
+- Les attaques contre la créature ont un avantage
+- Les attaques de la créature ont un désavantage
 
--   Les attaques contre la créature ont un avantage
+**Fin :** Selon la nature des entraves (test de Force, Intrusion, ou destruction des liens).
 
--   Les attaques de la créature ont un désavantage **Fin :** Selon la
-    > nature des entraves (test de Force, Intrusion, ou destruction des
-    > liens)
+---
 
-Aveuglé
+### Aveuglé
 
 **Description :** Privé de vision, temporairement ou définitivement.
+
 **Effets :**
 
--   Échec automatique de tous les jets basés sur la vue
+- Échec automatique de tous les jets basés sur la vue
+- Désavantage sur tous les jets d'attaque
+- Les attaques contre la créature ont un avantage
+- Impossible d'utiliser des pouvoirs nécessitant de voir la cible
 
--   Désavantage sur tous les jets d\'attaque
+**Fin :** Variable selon la cause.
 
--   Les attaques contre la créature ont un avantage
+---
 
--   Impossible d\'utiliser des pouvoirs nécessitant de voir la cible
-    > **Fin :** Variable selon la cause
+### Assourdi
 
-Assourdi
+**Description :** Ouïe altérée ou supprimée.
 
-**Description :** Ouïe altérée ou supprimée. **Effets :**
+**Effets :**
 
--   Échec automatique de tous les jets basés sur l\'ouïe
+- Échec automatique de tous les jets basés sur l'ouïe
+- Impossible d'entendre les conversations
+- Désavantage sur les jets de Vigilance auditifs
+- Impossible de coordonner des actions silencieuses avec des alliés
 
--   Impossible d\'entendre les conversations
+**Fin :** Variable selon la cause.
 
--   Désavantage sur les jets de Vigilance auditifs
+---
 
--   Impossible de coordonner des actions silencieuses avec des alliés
-    > **Fin :** Variable selon la cause
+### Empoisonné
 
-Empoisonné
+**Description :** Affecté par une substance toxique.
 
-**Description :** Affecté par une substance toxique. **Effets :**
+**Effets :**
 
--   Désavantage sur tous les jets d\'attaque et de caractéristiques
-    > physiques
+- Désavantage sur tous les jets d'attaque et de caractéristiques physiques
+- Peut perdre des PV selon le poison (voir description spécifique)
+- Désavantage sur les jets de Vigueur
 
--   Peut perdre des PV selon le poison (voir description spécifique)
+**Fin :** Variable selon le poison, souvent après réussite d'un jet de Vigueur.
 
--   Désavantage sur les jets de Vigueur **Fin :** Variable selon le
-    > poison, souvent après réussite d\'un jet de Vigueur
+---
 
-Malade
+### Malade
 
 **Description :** Affaibli par une maladie naturelle ou surnaturelle.
+
 **Effets :**
 
--   Désavantage sur tous les jets physiques
+- Désavantage sur tous les jets physiques
+- Récupération de PV réduite de moitié
+- Peut avoir des symptômes spécifiques selon la maladie
 
--   Récupération de PV réduite de moitié
+**Fin :** Jusqu'à guérison (repos prolongé, soins médicaux, ou pouvoirs).
 
--   Peut avoir des symptômes spécifiques selon la maladie **Fin :**
-    > Jusqu\'à guérison (repos prolongé, soins médicaux, ou pouvoirs)
+---
 
-## **États Mentaux**
+## États mentaux
 
-Charmé
+### Charmé
 
-**Description :** Sous l\'influence mentale d\'une autre créature.
+**Description :** Sous l'influence mentale d'une autre créature.
+
 **Effets :**
 
--   Considère le charmeur comme un ami proche
+- Considère le charmeur comme un ami proche
+- Ne peut attaquer le charmeur ou le cibler avec des effets hostiles
+- Le charmeur a un avantage sur tous les jets d'Influence contre la créature
+- Obéit aux suggestions raisonnables du charmeur
 
--   Ne peut attaquer le charmeur ou le cibler avec des effets hostiles
+**Fin :** Variable selon la source, ou si le charmeur attaque la créature.
 
--   Le charmeur a un avantage sur tous les jets d\'Influence contre la
-    > créature
+---
 
--   Obéit aux suggestions raisonnables du charmeur **Fin :** Variable
-    > selon la source, ou si le charmeur attaque la créature
+### Effrayé
 
-Effrayé
+**Description :** Submergé par la peur d'une source spécifique.
 
-**Description :** Submergé par la peur d\'une source spécifique.
 **Effets :**
 
--   Désavantage sur tous les jets d\'attaque tant que la source de peur
-    > est visible
+- Désavantage sur tous les jets d'attaque tant que la source de peur est visible
+- Désavantage sur tous les jets de caractéristiques tant que la source est visible
+- Ne peut volontairement se rapprocher de la source de peur
+- Peut être forcé de fuir si l'intensité de la peur est extrême
 
--   Désavantage sur tous les jets de caractéristiques tant que la source
-    > est visible
+**Fin :** Variable selon la source, souvent fin du combat ou éloignement de la source.
 
--   Ne peut volontairement se rapprocher de la source de peur
+---
 
--   Peut être forcé de fuir si l\'intensité de la peur est extrême **Fin
-    > :** Variable selon la source, souvent fin du combat ou éloignement
-    > de la source
-
-Confus
+### Confus
 
 **Description :** Désorienté, incapable de distinguer alliés et ennemis.
+
 **Effets :**
 
--   À chaque tour, lance 1d6 pour déterminer l\'action :
+À chaque tour, lance 1d6 pour déterminer l'action :
 
-    -   1-2 : Attaque un allié au hasard (si possible)
+- **1–2** : Attaque un allié au hasard (si possible)
+- **3–4** : Reste immobile et babille de manière incohérente
+- **5–6** : Agit normalement
 
-    -   3-4 : Reste immobile et babille de manière incohérente
+**Fin :** Variable selon la source.
 
-    -   5-6 : Agit normalement **Fin :** Variable selon la source
+---
 
-Dominé
+### Dominé
 
-**Description :** Contrôle mental total par une autre créature. **Effets
-:**
+**Description :** Contrôle mental total par une autre créature.
 
--   Le dominateur contrôle complètement les actions de la créature
+**Effets :**
 
--   La créature utilise ses propres statistiques mais obéit aux ordres
+- Le dominateur contrôle complètement les actions de la créature
+- La créature utilise ses propres statistiques mais obéit aux ordres
+- Le dominateur peut utiliser les PA de la créature à sa place
+- La créature garde ses souvenirs mais ne peut résister
 
--   Le dominateur peut utiliser les PA de la créature à sa place
+**Fin :** Variable selon la source, très difficile à dissiper.
 
--   La créature garde ses souvenirs mais ne peut résister **Fin :**
-    > Variable selon la source, très difficile à dissiper
+---
 
-## **États de Combat**
+## États de combat
 
-Incapable d\'Agir
+### Incapable d'agir
 
-**Description :** Ne peut effectuer aucune action volontaire. **Effets
-:**
+**Description :** Ne peut effectuer aucune action volontaire.
 
--   Ne peut effectuer aucune action (ni 1 PA, ni 2 PA)
+**Effets :**
 
--   Ne peut effectuer aucune réaction
+- Ne peut effectuer aucune action (ni 1 PA, ni 2 PA)
+- Ne peut effectuer aucune réaction
+- Peut encore parler et effectuer des actions gratuites très simples
 
--   Peut encore parler et effectuer des actions gratuites très simples
-    > **Fin :** Variable selon la cause
+**Fin :** Variable selon la cause.
 
-Étourdi
+---
 
-**Description :** Désorienté par un choc violent. **Effets :**
+### Étourdi
 
--   Incapable d\'agir (voir l\'état)
+**Description :** Désorienté par un choc violent.
 
--   Ne peut se déplacer
+**Effets :**
 
--   Parle de manière hésitante
+- Incapable d'agir (voir l'état)
+- Ne peut se déplacer
+- Parle de manière hésitante
+- Échec automatique des jets de Force et Agilité
+- Les attaques contre la créature ont un avantage
 
--   Échec automatique des jets de Force et Agilité
+**Fin :** Jusqu'à la fin du prochain tour, sauf mention contraire.
 
--   Les attaques contre la créature ont un avantage **Fin :** Jusqu\'à
-    > la fin du prochain tour, sauf mention contraire
+---
 
-Paralysé
+### Paralysé
 
 **Description :** Incapable de bouger par paralysie physique ou mentale.
+
 **Effets :**
 
--   Incapable d\'agir (voir l\'état)
+- Incapable d'agir (voir l'état)
+- Ne peut se déplacer ni parler
+- Échec automatique des jets de Force et Agilité
+- Les attaques contre la créature ont un avantage
+- Toute attaque au corps à corps qui touche est un coup critique
 
--   Ne peut se déplacer ni parler
+**Fin :** Variable selon la source.
 
--   Échec automatique des jets de Force et Agilité
+---
 
--   Les attaques contre la créature ont un avantage
+### Inconscient
 
--   Toute attaque au corps à corps qui touche est un coup critique **Fin
-    > :** Variable selon la source
+**Description :** Évanoui et inconscient de son environnement.
 
-**[Inconscient]{.underline}**
+**Effets :**
 
-**Description :** Évanoui et inconscient de son environnement. **Effets
-:**
+- Incapable d'agir (voir l'état)
+- Ne peut se déplacer ni parler
+- N'est pas conscient de son environnement
+- Lâche tout ce qu'il tenait et tombe À Terre
+- Échec automatique des jets de Force et Agilité
+- Les attaques contre la créature ont un avantage
+- Toute attaque au corps à corps qui touche est un coup critique
 
--   Incapable d\'agir (voir l\'état)
+**Fin :** Récupère conscience selon la cause, ou réveil forcé (dégâts, bruit fort, etc.).
 
--   Ne peut se déplacer ni parler
+---
 
--   N\'est pas conscient de son environnement
+### Pétrifié
 
--   Lâche tout ce qu\'il tenait et tombe À Terre
+**Description :** Transformé en pierre ou substance similaire.
 
--   Échec automatique des jets de Force et Agilité
+**Effets :**
 
--   Les attaques contre la créature ont un avantage
+- Incapable d'agir (voir l'état)
+- Ne peut se déplacer ni parler
+- N'est pas conscient de son environnement
+- Poids multiplié par 10, vieillissement arrêté
+- Résistance à tous les types de dégâts
+- Immunité aux poisons et maladies (effets suspendus, pas annulés)
 
--   Toute attaque au corps à corps qui touche est un coup critique **Fin
-    > :** Récupère conscience selon la cause, ou réveil forcé (dégâts,
-    > bruit fort, etc.)
+**Fin :** Magie puissante ou conditions très spécifiques.
 
-**[Pétrifié]{.underline}**
+---
 
-**Description :** Transformé en pierre ou substance similaire. **Effets
-:**
+## États spéciaux
 
--   Incapable d\'agir (voir l\'état)
-
--   Ne peut se déplacer ni parler
-
--   N\'est pas conscient de son environnement
-
--   Poids multiplié par 10, vieillissement arrêté
-
--   Résistance à tous les types de dégâts
-
--   Immunité aux poisons et maladies (effets suspendus, pas annulés)
-    > **Fin :** Magie puissante ou conditions très spécifiques
-
-## **États Spéciaux**
-
-Épuisé (Niveaux 1-6)
+### Épuisé (niveaux 1–6)
 
 **Description :** Fatigue extrême affectant toutes les capacités.
-**Niveau 1 :** Désavantage sur tous les jets de caractéristiques
-**Niveau 2 :** Vitesse de déplacement réduite de moitié **Niveau 3 :**
-Désavantage sur tous les jets d\'attaque et de sauvegarde **Niveau 4 :**
-Points d\'Action maximum réduits de moitié **Niveau 5 :** Vitesse de
-déplacement réduite à 0 **Niveau 6 :** Mort **Fin :** Un repos prolongé
-(8h) réduit l\'épuisement de 1 niveau
 
-Invisible
+| Niveau | Effet |
+|---|---|
+| **1** | Désavantage sur tous les jets de caractéristiques |
+| **2** | Vitesse de déplacement réduite de moitié |
+| **3** | Désavantage sur tous les jets d'attaque et de sauvegarde |
+| **4** | Points d'Action maximum réduits de moitié |
+| **5** | Vitesse de déplacement réduite à 0 |
+| **6** | Mort |
+
+**Fin :** Un repos prolongé (8h) réduit l'épuisement de 1 niveau.
+
+---
+
+### Invisible
 
 **Description :** Impossible à voir sans aide magique ou sens spécial.
+
 **Effets :**
 
--   Considéré comme masqué pour tous les tests de discrétion
+- Considéré comme masqué pour tous les tests de discrétion
+- Les attaques contre la créature ont un désavantage
+- Les attaques de la créature ont un avantage
+- Position détectable par le bruit ou les traces laissées
+- L'état se brise si la créature attaque ou utilise un pouvoir offensif
 
--   Les attaques contre la créature ont un désavantage
+**Fin :** Variable selon la source, souvent après action agressive.
 
--   Les attaques de la créature ont un avantage
+---
 
--   Position détectable par le bruit ou les traces laissées
-
--   L\'état se brise si la créature attaque ou lance un sort offensif
-    > **Fin :** Variable selon la source, souvent après action agressive
-
-Sanguin (Nouvel état INS-MV)
+### Sanguin
 
 **Description :** Blessé sérieusement, en dessous de 50% de ses PV.
+
 **Effets :**
 
--   État automatique quand une créature passe sous 50% de ses PV max
+- État automatique quand une créature passe sous 50% de ses PV max
+- Peut déclencher des capacités spéciales (rage, pouvoirs de survie, etc.)
+- Visible par tous (blessures, sang, faiblesse)
+- Certaines créatures deviennent plus dangereuses quand Sanguines
 
--   Peut déclencher des capacités spéciales (rage, pouvoirs de survie,
-    > etc.)
+**Fin :** Quand la créature remonte au-dessus de 50% de ses PV max.
 
--   Visible par tous (blessures, sang, faiblesse)
+---
 
--   Certaines créatures deviennent plus dangereuses quand Sanguines
-    > **Fin :** Quand la créature remonte au-dessus de 50% de ses PV max
+## États environnementaux
 
-## **États Environnementaux**
+### En feu
 
-En Feu
+**Description :** Littéralement en flammes.
 
-**Description :** Littéralement en flammes. **Effets :**
+**Effets :**
 
--   Subit 2 points de dégâts de feu au début de chaque tour
+- Subit 2 points de dégâts de feu au début de chaque tour
+- Le feu peut se propager aux objets inflammables à proximité
+- Illumine la zone dans un rayon de 2m
 
--   Le feu peut se propager aux objets inflammables à proximité
+**Fin :** Action de 1 PA pour s'éteindre (se rouler au sol, etc.) ou être éteint par un allié.
 
--   Illumine la zone dans un rayon de 2m **Fin :** Action de 1 PA pour
-    > s\'éteindre (se rouler au sol, etc.) ou être éteint par un allié
+---
 
-Gelé
+### Gelé
 
-**Description :** Partiellement gelé par le froid extrême. **Effets :**
+**Description :** Partiellement gelé par le froid extrême.
 
--   Vitesse de déplacement réduite de moitié
+**Effets :**
 
--   Désavantage sur tous les jets d\'Agilité
+- Vitesse de déplacement réduite de moitié
+- Désavantage sur tous les jets d'Agilité
+- Actions de déplacement coûtent 1 PA supplémentaire
 
--   Actions de déplacement coûtent 1 PA supplémentaire **Fin :**
-    > Réchauffement (chaleur, feu, sorts) ou après 10 tours à
-    > température normale
+**Fin :** Réchauffement (chaleur, feu, sorts) ou après 10 tours à température normale.
 
-Électrocuté
+---
 
-**Description :** Affecté par des décharges électriques. **Effets :**
+### Électrocuté
 
--   Désavantage sur tous les jets pour 1 tour
+**Description :** Affecté par des décharges électriques.
 
--   Les objets électroniques portés peuvent être endommagés
+**Effets :**
 
--   Si dans l\'eau, les dégâts électriques sont doublés **Fin :** Après
-    > 1 tour, sauf nouvelle exposition
+- Désavantage sur tous les jets pour 1 tour
+- Les objets électroniques portés peuvent être endommagés
+- Si dans l'eau, les dégâts électriques sont doublés
 
-Corrodé
+**Fin :** Après 1 tour, sauf nouvelle exposition.
 
-**Description :** Chair ou équipement rongé par l\'acide. **Effets :**
+---
 
--   L\'armure perd 1 point de PA par tour (permanent)
+### Corrodé
 
--   Subit 1 dégât d\'acide par tour
+**Description :** Chair ou équipement rongé par l'acide.
 
--   L\'équipement peut être détruit si PA tombe à 0 **Fin :** Nettoyage
-    > approprié ou neutralisation de l\'acide
+**Effets :**
 
-## **États Divins**
+- L'armure perd 1 point de PA par tour (permanent)
+- Subit 1 dégât d'acide par tour
+- L'équipement peut être détruit si PA tombe à 0
 
-Béni
+**Fin :** Nettoyage approprié ou neutralisation de l'acide.
 
-**Description :** Touché par la grâce divine. **Effets :**
+---
 
--   Avantage sur tous les jets de résistance contre les effets
-    > démoniaques
+## États divins
 
--   Les créatures du Mal ont un désavantage pour attaquer directement
+### Béni
 
--   +1 aux jets de récupération de PV naturelle **Fin :** Variable selon
-    > la source, souvent 24h
+**Description :** Touché par la grâce divine.
 
-Maudit
+**Effets :**
 
-**Description :** Marqué par une force maléfique. **Effets :**
+- Avantage sur tous les jets de résistance contre les effets démoniaques
+- Les créatures du Mal ont un désavantage pour attaquer directement
+- +1 aux jets de récupération de PV naturelle
 
--   Désavantage sur tous les jets de récupération
+**Fin :** Variable selon la source, souvent 24h.
 
--   Ne peut récupérer de PV naturellement (doit utiliser des moyens
-    > spéciaux)
+---
 
--   Les pouvoirs de soins divins sont inefficaces **Fin :** Intervention
-    > divine, rituels de purification, ou conditions très spécifiques
+### Maudit
 
-Sanctifié
+**Description :** Marqué par une force maléfique.
 
-**Description :** Consacré temporairement, canal pur de l\'énergie
-divine. **Effets :**
+**Effets :**
 
--   Tous les pouvoirs divins ont un dé d\'intensité explosif
+- Désavantage sur tous les jets de récupération
+- Ne peut récupérer de PV naturellement (doit utiliser des moyens spéciaux)
+- Les pouvoirs de soins divins sont inefficaces
 
--   +3 dégâts contre les créatures du Mal
+**Fin :** Intervention divine, rituels de purification, ou conditions très spécifiques.
 
--   Résistance aux dégâts des créatures du Mal
+---
 
--   Aura de 2m qui gêne les créatures maléfiques (désavantage) **Fin :**
-    > 10 tours
+### Sanctifié
 
-Profané
+**Description :** Consacré temporairement, canal pur de l'énergie divine.
 
-**Description :** Souillé par l\'énergie démoniaque. **Effets :**
+**Effets :**
 
--   Tous les pouvoirs infernaux ont un dé d\'intensité explosif
+- Tous les pouvoirs divins ont un dé d'intensité explosif
+- +3 dégâts contre les créatures du Mal
+- Résistance aux dégâts des créatures du Mal
+- Aura de 2m qui gêne les créatures maléfiques (désavantage)
 
--   +3 dégâts contre les créatures du Bien
+**Fin :** 10 tours.
 
--   Résistance aux dégâts des créatures du Bien
+---
 
--   Aura de 2m qui gêne les créatures divines (désavantage) **Fin :** 10
-    > tours
+### Profané
 
-Désincarné
+**Description :** Souillé par l'énergie démoniaque.
 
-**Description :** L\'âme surnaturelle est temporairement séparée de son
-hôte. **Effets :**
+**Effets :**
 
--   Ne peut utiliser que les attributs surnaturels (PUI, INF, RES, CLA)
+- Tous les pouvoirs infernaux ont un dé d'intensité explosif
+- +3 dégâts contre les créatures du Bien
+- Résistance aux dégâts des créatures du Bien
+- Aura de 2m qui gêne les créatures divines (désavantage)
 
--   Ne peut interagir physiquement avec le monde
+**Fin :** 10 tours.
 
--   Invisible et intangible pour les humains normaux
+---
 
--   Peut être vu par les autres créatures surnaturelles
+### Désincarné
 
--   Doit se réincarner dans les 10 tours ou retourner dans son plan
-    > d\'origine **Fin :** Réincarnation dans un nouvel hôte
+**Description :** L'âme surnaturelle est temporairement séparée de son hôte.
 
-Surchargé Spirituellement
+**Effets :**
 
-**Description :** Trop d\'énergie surnaturelle, corps humain en
-surcharge. **Effets :**
+- Ne peut utiliser que les attributs surnaturels (PUI, INF, RES, CLA)
+- Ne peut interagir physiquement avec le monde
+- Invisible et intangible pour les humains normaux
+- Peut être vu par les autres créatures surnaturelles
+- Doit se réincarner dans les 10 tours ou retourner dans son plan d'origine
 
--   +1 à tous les attributs surnaturels
+**Fin :** Réincarnation dans un nouvel hôte.
 
--   Double coût en PE pour tous les pouvoirs
+---
 
--   Subit 1 dégât par tour (non réductible par le rang céleste)
+### Surchargé spirituellement
 
--   Le corps de l\'hôte montre des signes de stress (veines qui
-    > brillent, yeux lumineux)
+**Description :** Trop d'énergie surnaturelle, corps humain en surcharge.
 
--   Désavantage sur tous les jets de discrétion sociale **Fin :** Après
-    > 1 heure ou dépense de toute l\'énergie surnaturelle accumulée
+**Effets :**
 
-Révélé
+- +1 à tous les attributs surnaturels
+- Double coût en PE pour tous les pouvoirs
+- Subit 1 dégât par tour (non réductible par le rang céleste)
+- Le corps de l'hôte montre des signes de stress (veines qui brillent, yeux lumineux)
+- Désavantage sur tous les jets de discrétion sociale
+
+**Fin :** Après 1 heure ou dépense de toute l'énergie surnaturelle accumulée.
+
+---
+
+### Révélé
 
 **Description :** La vraie nature surnaturelle est visible par tous.
+
 **Effets :**
 
--   Les humains peuvent voir l\'aura angélique/démoniaque
+- Les humains peuvent voir l'aura angélique/démoniaque
+- Impossible de se faire passer pour un humain normal
+- Avantage sur tous les jets d'intimidation
+- Désavantage sur tous les jets de discrétion sociale
 
--   Impossible de se faire passer pour un humain normal
+**Fin :** Variable selon la cause, souvent 1 heure.
 
--   Avantage sur tous les jets d\'intimidation
+---
 
--   Désavantage sur tous les jets de discrétion sociale **Fin :**
-    > Variable selon la cause, souvent 1 heure
+### Incarnation ratée
 
-Incarnation Ratée
+**Description :** L'âme humaine n'est pas totalement "en sommeil" lors de l'incarnation.
 
-**Description :** L\'âme humaine n'est pas totalement "en sommeil" lors
-de l\'incarnation. **Effets :**
-
--   Deux âmes cohabitent dans le même corps (ange/démon + humain)
-
--   Les résultats de 5 et 6 sur le dé d\'action sont considérés comme
-    > des échecs automatiques (résistance de l\'âme humaine)
-
--   Désavantage sur tous les jets tant que le conflit persiste
-
--   Consommation de 1 PE par tour due au stress spirituel
-
--   L\'âme humaine conserve ses souvenirs et sa personnalité **Fin :**
-    > L\'ange/démon doit forcer le départ de l\'âme humaine (jet de PUI
-    > vs VOL humaine) ou abandonner cet hôte
-
-Forme Véritable
-
-**Description :** L\'ange/démon manifeste sa véritable essence à travers
-l\'hôte humain. **Effets :**
-
--   Utilise exclusivement les attributs surnaturels à leur plein
-    > potentiel
-
--   +2 à tous les attributs surnaturels (PUI, INF, RES, CLA)
-
--   Tous les pouvoirs ont un dé d\'intensité explosif
-
--   **Volant** : Ailes d\'ange/démon visibles et fonctionnelles,
-    > capacité de vol
-
--   L\'hôte humain subit 2 dégâts par tour (non réductibles par rang
-    > céleste)
-
--   Aura surnaturelle visible : impossible de se faire passer pour
-    > humain
-
--   Coût d\'activation : 5 PE, puis 2 PE par tour pour maintenir **Fin
-    > :** Quand l\'ange/démon cesse de maintenir l\'état ou quand
-    > l\'hôte tombe à 0 PV
-
-## **États affectant les Objets**
-
-Règles Générales pour les Objets
-
--   **Points de Vie** : Les objets ont des PV selon leur taille et
-    > résistance
-
--   **PA (Points d\'Armure)** : Selon le matériau (bois 2, métal 5,
-    > pierre 8, etc.)
-
--   **Immunités** : Tous les objets sont immunisés aux dégâts mentaux et
-    > de poison
-
--   **Objets portés** : Utilisent la CA et les jets de sauvegarde du
-    > porteur
-
--   **Objets magiques** : Résistance à tous les dégâts, PV doublés
-
-Endommagé
-
-**Description :** L\'objet a subi des dégâts mais reste fonctionnel.
 **Effets :**
 
--   S\'applique quand l\'objet perd 25% de ses PV max
+- Deux âmes cohabitent dans le même corps (ange/démon + humain)
+- Les résultats de 5 et 6 sur le dé d'action sont considérés comme des échecs automatiques (résistance de l'âme humaine)
+- Désavantage sur tous les jets tant que le conflit persiste
+- Consommation de 1 PE par tour due au stress spirituel
+- L'âme humaine conserve ses souvenirs et sa personnalité
 
--   **Armes** : -1 aux jets d\'attaque
+**Fin :** L'ange/démon doit forcer le départ de l'âme humaine (jet de PUI vs VOL humaine) ou abandonner cet hôte.
 
--   **Armures** : -1 PA permanent
+---
 
--   **Objets complexes** : Dysfonctionnement sur un résultat de 1 au dé
-    > d\'intensité
+### Forme véritable
 
--   Peut être réparé avec des outils appropriés et du temps **Fin :**
-    > Réparation complète ou destruction de l\'objet
+**Description :** L'ange/démon manifeste sa véritable essence à travers l'hôte humain.
 
-Gravement Endommagé
-
-**Description :** L\'objet est sérieusement abîmé et barely functional.
 **Effets :**
 
--   S\'applique quand l\'objet perd 50% de ses PV max
+- Utilise exclusivement les attributs surnaturels à leur plein potentiel
+- +2 à tous les attributs surnaturels (PUI, INF, RES, CLA)
+- Tous les pouvoirs ont un dé d'intensité explosif
+- **Volant** : Ailes d'ange/démon visibles et fonctionnelles, capacité de vol
+- L'hôte humain subit 2 dégâts par tour (non réductibles par rang céleste)
+- Aura surnaturelle visible : impossible de se faire passer pour humain
+- Coût d'activation : 5 PE, puis 2 PE par tour pour maintenir
 
--   **Armes** : -2 aux jets d\'attaque, -1 aux dégâts
+**Fin :** Quand l'ange/démon cesse de maintenir l'état ou quand l'hôte tombe à 0 PV.
 
--   **Armures** : -2 PA permanent
+---
 
--   **Objets complexes** : Dysfonctionnement sur un résultat de 1-2 au
-    > dé d\'intensité, réparation difficile
+## États affectant les objets
 
--   Visible de loin : craquelures, bosses, parties manquantes **Fin :**
-    > Réparation majeure ou destruction de l\'objet
+!!! note "Règles générales pour les objets"
+    - **Points de Vie** : Les objets ont des PV selon leur taille et résistance
+    - **PA (Points d'Armure)** : Selon le matériau (bois 2, métal 5, pierre 8, etc.)
+    - **Immunités** : Tous les objets sont immunisés aux dégâts mentaux et de poison
+    - **Objets portés** : Utilisent la CA et les jets de sauvegarde du porteur
+    - **Objets magiques** : Résistance à tous les dégâts, PV doublés
 
-Cassé
+### Endommagé
 
-**Description :** L\'objet ne fonctionne plus du tout. **Effets :**
+**Description :** L'objet a subi des dégâts mais reste fonctionnel.
 
--   S\'applique quand l\'objet atteint 0 PV
+**Effets :**
 
--   **Armes** : Considérées comme armes improvisées (dégâts réduits)
+- S'applique quand l'objet perd 25% de ses PV max
+- **Armes** : -1 aux jets d'attaque
+- **Armures** : -1 PA permanent
+- **Objets complexes** : Dysfonctionnement sur un résultat de 1 au dé d'intensité
 
--   **Armures** : PA réduite à 0, désavantage aux jets d\'Agilité
+**Fin :** Réparation complète ou destruction de l'objet.
 
--   **Objets magiques** : Pouvoirs magiques inactifs mais objet
-    > réparable
+---
 
--   **Objets mundanes** : Généralement irrécupérables **Fin :** Magie
-    > puissante ou remplacement complet
+### Gravement endommagé
 
-Détruit
+**Description :** L'objet est sérieusement abîmé et à peine fonctionnel.
 
-**Description :** L\'objet est complètement anéanti. **Effets :**
+**Effets :**
 
--   S\'applique avec des dégâts excessifs (double des PV max) ou effets
-    > spéciaux
+- S'applique quand l'objet perd 50% de ses PV max
+- **Armes** : -2 aux jets d'attaque, -1 aux dégâts
+- **Armures** : -2 PA permanent
+- **Objets complexes** : Dysfonctionnement sur un résultat de 1–2 au dé d'intensité
+- Visible de loin : craquelures, bosses, parties manquantes
 
--   Aucune possibilité de réparation normale
+**Fin :** Réparation majeure ou destruction de l'objet.
 
--   Même les objets magiques peuvent être détruits définitivement
+---
 
--   Ne laisse que des débris inutilisables **Fin :** Irréversible, sauf
-    > magie de très haut niveau
+### Cassé
 
-Rouillé (Métaux uniquement)
+**Description :** L'objet ne fonctionne plus du tout.
 
-**Description :** Corrosion progressive du métal. **Effets :**
+**Effets :**
 
--   **Environnement humide** : Perte de 1 PV par semaine
+- S'applique quand l'objet atteint 0 PV
+- **Armes** : Considérées comme armes improvisées (dégâts réduits)
+- **Armures** : PA réduite à 0, désavantage aux jets d'Agilité
+- **Objets magiques** : Pouvoirs magiques inactifs mais objet réparable
+- **Objets mundanes** : Généralement irrécupérables
 
--   **Immersion ou humidité extrême** : Perte de 1 PV par jour
+**Fin :** Magie puissante ou remplacement complet.
 
--   Une arme rouillée est automatiquement considérée comme
-    > **Endommagée**
+---
 
--   Aspect terne et orangé caractéristique
+### Détruit
 
--   Progression vers l\'état Cassé si non traité **Fin :** Nettoyage
-    > approprié, magie, ou progression vers destruction
+**Description :** L'objet est complètement anéanti.
 
-Corrodé (Objets exposés à l\'acide)
+**Effets :**
 
-**Description :** Rongé par des substances acides. **Effets :**
+- S'applique avec des dégâts excessifs (double des PV max) ou effets spéciaux
+- Aucune possibilité de réparation normale
+- Même les objets magiques peuvent être détruits définitivement
+- Ne laisse que des débris inutilisables
 
--   Perte immédiate de 1 PV par tour d\'exposition
+**Fin :** Irréversible, sauf magie de très haut niveau.
 
--   **Métal** : PA réduite de 1 par tour
+---
 
--   **Tissu/Cuir** : Destruction en 3 tours
+### Rouillé (métaux uniquement)
 
--   **Pierre** : Résiste mieux, perte de 1 PV par tour seulement **Fin
-    > :** Éloignement de la source d\'acide ou neutralisation
+**Description :** Corrosion progressive du métal.
 
-Gelé (Objets exposés au froid extrême)
+**Effets :**
 
-**Description :** Rendu cassant par le froid. **Effets :**
+- **Environnement humide** : Perte de 1 PV par semaine
+- **Immersion ou humidité extrême** : Perte de 1 PV par jour
+- Une arme rouillée est automatiquement considérée comme **Endommagée**
+- Aspect terne et orangé caractéristique
+- Progression vers l'état Cassé si non traité
 
--   Vulnérabilité aux dégâts contondants (dégâts doublés)
+**Fin :** Nettoyage approprié, magie, ou progression vers destruction.
 
--   **Liquides** : Solidification complète, expansion possible
+---
 
--   **Métal** : Devient cassant, risque de bris au moindre choc
+### Corrodé (objets exposés à l'acide)
 
--   **Mécanismes** : Blocage complet des parties mobiles **Fin :**
-    > Réchauffement progressif (attention aux chocs thermiques)
+**Description :** Rongé par des substances acides.
 
-En Fusion (Objets exposés à chaleur extrême)
+**Effets :**
 
-**Description :** Ramollissement ou fusion des matériaux. **Effets :**
+- Perte immédiate de 1 PV par tour d'exposition
+- **Métal** : PA réduite de 1 par tour
+- **Tissu/Cuir** : Destruction en 3 tours
+- **Pierre** : Résiste mieux, perte de 1 PV par tour seulement
 
--   **Métal** : Perte de forme, PA réduite à 0, dégâts de feu aux
-    > utilisateurs
+**Fin :** Éloignement de la source d'acide ou neutralisation.
 
--   **Plastique/Résine** : Déformation et toxicité des vapeurs
+---
 
--   **Bois** : Carbonisation progressive puis combustion
+### Gelé (objets exposés au froid extrême)
 
--   Impossible à utiliser tant que l\'état persiste **Fin :**
-    > Refroidissement, mais dégâts souvent permanents
+**Description :** Rendu cassant par le froid.
 
-Électrifié (Objets conducteurs sous tension)
+**Effets :**
 
-**Description :** Objet chargé électriquement. **Effets :**
+- Vulnérabilité aux dégâts contondants (dégâts doublés)
+- **Liquides** : Solidification complète, expansion possible
+- **Métal** : Devient cassant, risque de bris au moindre choc
+- **Mécanismes** : Blocage complet des parties mobiles
 
--   Inflige 1 dégât électrique à quiconque le touche sans protection
+**Fin :** Réchauffement progressif (attention aux chocs thermiques).
 
--   **Mécanismes électroniques** : Dysfonctionnement ou destruction
+---
 
--   **Objets métalliques** : Deviennent dangereux à manipuler
+### En fusion (objets exposés à chaleur extrême)
 
--   Peut se propager aux objets métalliques en contact **Fin :**
-    > Décharge complète ou isolation
+**Description :** Ramollissement ou fusion des matériaux.
 
-Maudit (Objets affectés par magie noire)
+**Effets :**
 
-**Description :** Souillé par des énergies maléfiques. **Effets :**
+- **Métal** : Perte de forme, PA réduite à 0, dégâts de feu aux utilisateurs
+- **Plastique/Résine** : Déformation et toxicité des vapeurs
+- **Bois** : Carbonisation progressive puis combustion
+- Impossible à utiliser tant que l'état persiste
 
--   L\'objet acquiert une \"volonté\" malveillante
+**Fin :** Refroidissement, mais dégâts souvent permanents.
 
--   Fonctionne mal au pire moment (échecs critiques plus fréquents)
+---
 
--   Peut influencer négativement son utilisateur
+### Électrifié (objets conducteurs sous tension)
 
--   **Armes** : Risque d\'attaquer les alliés
+**Description :** Objet chargé électriquement.
 
--   **Armures** : Peut se resserrer ou entraver le porteur **Fin :**
-    > Purification religieuse, magie de haut niveau, ou exorcisme
+**Effets :**
 
-Béni (Objets touchés par la grâce divine)
+- Inflige 1 dégât électrique à quiconque le touche sans protection
+- **Mécanismes électroniques** : Dysfonctionnement ou destruction
+- **Objets métalliques** : Deviennent dangereux à manipuler
+- Peut se propager aux objets métalliques en contact
 
-**Description :** Imprégné d\'énergie divine positive. **Effets :**
+**Fin :** Décharge complète ou isolation.
 
--   +1 aux jets d\'attaque ou de protection (selon le type d\'objet)
+---
 
--   Brillance douce dans l\'obscurité
+### Maudit (objets affectés par magie noire)
 
--   Efficacité doublée contre les créatures du Mal
+**Description :** Souillé par des énergies maléfiques.
 
--   **Armes** : Dégâts sacrés supplémentaires
+**Effets :**
 
--   **Armures** : Résistance aux attaques maléfiques **Fin :** Variable
-    > selon la source, souvent 24h ou une mission
+- L'objet acquiert une "volonté" malveillante
+- Fonctionne mal au pire moment (échecs critiques plus fréquents)
+- Peut influencer négativement son utilisateur
+- **Armes** : Risque d'attaquer les alliés
+- **Armures** : Peut se resserrer ou entraver le porteur
 
-Surchargé (Objets technologiques/magiques)
+**Fin :** Purification religieuse, magie de haut niveau, ou exorcisme.
 
-**Description :** Trop d\'énergie traverse l\'objet. **Effets :**
+---
 
--   **Électronique** : Dysfonctionnement sur un résultat de 1-2 au dé
-    > d\'intensité, écrans qui clignotent
+### Béni (objets touchés par la grâce divine)
 
--   **Objets magiques** : Effets imprévisibles sur un résultat de 1 au
-    > dé d\'intensité, coût en PE doublé
+**Description :** Imprégné d'énergie divine positive.
 
--   Risque d\'explosion (dégâts de zone si échec critique)
+**Effets :**
 
--   Perte progressive de PV (1 par heure) **Fin :** Décharge contrôlée
-    > ou destruction
+- +1 aux jets d'attaque ou de protection (selon le type d'objet)
+- Brillance douce dans l'obscurité
+- Efficacité doublée contre les créatures du Mal
+- **Armes** : Dégâts sacrés supplémentaires
+- **Armures** : Résistance aux attaques maléfiques
 
-Submergé (Objets sous l\'eau)
+**Fin :** Variable selon la source, souvent 24h ou une mission.
 
-**Description :** Immergé dans un liquide. **Effets :**
+---
 
--   **Électronique** : Dysfonctionnement immédiat puis destruction
+### Surchargé (objets technologiques/magiques)
 
--   **Parchemins/Livres** : Encre qui coule, pages qui se délitent
+**Description :** Trop d'énergie traverse l'objet.
 
--   **Mécanismes** : Corrosion et blocage progressifs
+**Effets :**
 
--   **Poudre/Explosifs** : Inefficaces jusqu\'à séchage complet **Fin
-    > :** Séchage complet (peut laisser des dégâts permanents)
+- **Électronique** : Dysfonctionnement sur un résultat de 1–2 au dé d'intensité, écrans qui clignotent
+- **Objets magiques** : Effets imprévisibles sur un résultat de 1 au dé d'intensité, coût en PE doublé
+- Risque d'explosion (dégâts de zone si échec critique)
+- Perte progressive de PV (1 par heure)
 
-Instable (Objets magiques dysfonctionnels)
+**Fin :** Décharge contrôlée ou destruction.
 
-**Description :** L\'enchantement magique est défaillant. **Effets :**
+---
 
--   Dysfonctionnement sur un résultat de 1-2 au dé d\'intensité (effet
-    > inverse ou aléatoire)
+### Submergé (objets sous l'eau)
 
--   Peut affecter des cibles non voulues
+**Description :** Immergé dans un liquide.
 
--   **Potions** : Effets imprévisibles ou toxiques
+**Effets :**
 
--   **Armes magiques** : Peuvent exploser ou affecter le porteur **Fin
-    > :** Réparation magique experte ou dissipation de la magie
+- **Électronique** : Dysfonctionnement immédiat puis destruction
+- **Parchemins/Livres** : Encre qui coule, pages qui se délitent
+- **Mécanismes** : Corrosion et blocage progressifs
+- **Poudre/Explosifs** : Inefficaces jusqu'à séchage complet
 
-Réparation des Objets
+**Fin :** Séchage complet (peut laisser des dégâts permanents).
 
-Réparation Mundane
+---
 
--   **Outils requis** : Selon le matériau (marteau/enclume pour métal,
-    > etc.)
+### Instable (objets magiques dysfonctionnels)
 
--   **Temps** : 1 heure par point de dégât à réparer
+**Description :** L'enchantement magique est défaillant.
 
--   **Compétence** : Artisanat approprié
+**Effets :**
 
--   **Coût** : 10% de la valeur de l\'objet en matériaux
+- Dysfonctionnement sur un résultat de 1–2 au dé d'intensité (effet inverse ou aléatoire)
+- Peut affecter des cibles non voulues
+- **Potions** : Effets imprévisibles ou toxiques
+- **Armes magiques** : Peuvent exploser ou affecter le porteur
 
-Réparation Magique
+**Fin :** Réparation magique experte ou dissipation de la magie.
 
--   **Sort de Réparation Mineure** : Restaure 1d4 PV instantanément
+---
 
--   **Sort de Réparation Majeure** : Restaure tous les PV, supprime un
-    > état négatif
+## Réparation des objets
 
--   **Bénédiction d\'Artisan** : Double l\'efficacité des réparations
-    > mundanes
+### Réparation mundane
 
-Objets Magiques
+- **Outils requis** : Selon le matériau (marteau/enclume pour métal, etc.)
+- **Temps** : 1 heure par point de dégât à réparer
+- **Compétence** : Artisanat approprié
+- **Coût** : 10% de la valeur de l'objet en matériaux
 
--   Nécessitent des composants magiques pour la réparation
+### Réparation magique
 
--   Certains ne peuvent être réparés que par leur créateur original
+- **Sort de Réparation Mineure** : Restaure 1d4 PV instantanément
+- **Sort de Réparation Majeure** : Restaure tous les PV, supprime un état négatif
+- **Bénédiction d'Artisan** : Double l'efficacité des réparations mundanes
 
--   Les artefacts peuvent avoir des conditions de réparation uniques
+### Objets magiques
 
+- Nécessitent des composants magiques pour la réparation
+- Certains ne peuvent être réparés que par leur créateur original
+- Les artefacts peuvent avoir des conditions de réparation uniques
