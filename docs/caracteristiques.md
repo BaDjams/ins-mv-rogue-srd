@@ -2,7 +2,7 @@
 
 Toutes les créatures vivantes disposent d'un corps physique, qui sert d'hôte ou de réceptacle à une âme. L'hôte dispose de 4 **caractéristiques** physiques. L'âme, quant à elle, dispose de plusieurs **attributs**. Pour les créatures surnaturelles supérieures que sont les Anges et les Démons, ils sont au nombre de 4 : Puissance, Influence, Résolution et Clairvoyance.
 
-Pour les âmes de toutes les créatures terrestres, ils sont au nombre de 2 : l'Intelligence et la Volonté. D'autres créatures de rangs divins différents peuvent avoir d'autres attributs, détaillés au cas par cas.
+Pour les âmes de toutes les créatures terrestres, ces attributs sont au nombre de 2 : l'Intelligence et la Volonté. D'autres créatures de rangs divins différents peuvent avoir d'autres attributs, détaillés au cas par cas.
 
 ---
 
