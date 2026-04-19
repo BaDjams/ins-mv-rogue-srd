@@ -4,6 +4,7 @@ site_description: System Reference Document pour INS-MV ROGUE
 
 theme:
   name: material
+  custom_dir: overrides
   language: fr
   palette:
     scheme: slate
@@ -17,6 +18,12 @@ theme:
     - search.highlight
     - content.code.copy
     - toc.follow
+
+extra_css:
+  - stylesheets/rogue-srd.css
+
+extra_javascript:
+  - javascripts/rogue-srd.js
 
 markdown_extensions:
   - admonition
