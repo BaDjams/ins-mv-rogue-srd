@@ -38,70 +38,39 @@ Lance D666. Initiative = **Dé blanc + Dé d'intensité**.
 
 ## Postures Tactiques
 
-Chaque personnage adopte une posture qui définit son approche. Changer de posture coûte une **Action Simple**. Une posture n'affecte que vos propres jets, jamais ceux de vos adversaires.
+Au début de chacun de ses tours, un personnage annonce sa posture. Ce choix est gratuit — pas d'action requise — mais il engage pour tout le tour et peut affecter les jets des autres personnages. Un personnage qui n'annonce rien, surpris, sonné ou simplement indécis, est considéré en posture défensive. Parce que se mettre à couvert est un réflexe sain, et que les anges qui ont survécu plusieurs millénaires l'ont appris à leurs dépens.
 
-### Posture Offensive
-*"Frapper fort, frapper vite."*
+### Posture Offensive — *"Frapper fort, frapper vite."*
 
-**Effets :**
+Certains anges — et la plupart des démons, ce qui en dit long — préfèrent résoudre les problèmes avant qu'ils ne se posent. En posture offensive, le personnage prend l'avantage sur toutes ses attaques. En contrepartie, ses adversaires bénéficient également d'un avantage pour l'atteindre : difficile d'esquiver quand on fonce tête baissée.
 
-- **Avantage** sur toutes vos attaques
-- **Désavantage** sur toutes vos défenses
+Trois manœuvres sont accessibles depuis cette posture. La **Charge** combine déplacement et attaque en une seule action complexe, et inflige +2 dégâts si elle touche — un classique intemporel, apprécié autant par les séraphins que par les rugbymen. L'**Attaque Double** permet de cibler deux adversaires adjacents en un seul jet — c'est la posture des cibles qui détermine l'avantage ou le désavantage, pas la manœuvre elle-même. La **Frappe Puissante** rend le dé d'intensité explosif sur l'attaque concernée, pour ceux qui veulent transformer un succès ordinaire en souvenir douloureux.
 
-**Manœuvres débloquées :**
-
-- **Charge** (Action Complexe) : Déplacement + attaque combinés. +2 dégâts si touche.
-- **Attaque Double** (Action Complexe) : Deux attaques à Désavantage contre une ou deux cibles adjacentes.
-- **Frappe Puissante** (Modificateur) : Dé d'intensité explosif sur cette attaque.
+Concernant l'Attaque Double, la posture des cibles compte : si au moins une cible est en posture défensive, le jet se fait sans avantage. Si les deux sont en posture offensive, les ouvertures se multiplient et le jet bénéficie d'un double avantage — dé d'intensité explosif inclus. Si les deux sont défensives, le désavantage est doublé. Il n'y a qu'un seul jet pour les deux cibles : une réussite les touche toutes les deux, un échec les manque toutes les deux — et peut déclencher une riposte.
 
 ---
 
-### Posture Défensive
-*"Tenir la ligne."*
+### Posture Défensive — *"Tenir la ligne."*
 
-**Effets :**
+La posture par défaut, celle des sages, des gardiens et de ceux qui ont déjà perdu un hôte de trop. En posture défensive, le personnage impose un désavantage à tous ses attaquants. Ses propres attaques ne sont pas affectées — tenir la ligne n'empêche pas de frapper juste.
 
-- **Avantage** sur toutes vos défenses
-- **Désavantage** sur toutes vos attaques
+La **Riposte** se déclenche lorsqu'une attaque contre le personnage échoue : l'échec de l'attaquant est, narrativement, une parade ou une esquive réussie, et le défenseur peut immédiatement contre-attaquer sans désavantage. Une riposte ne peut pas déclencher une autre riposte — il faut bien que la chaîne s'arrête quelque part. Si l'attaquant initial est lui-même en posture défensive, sa riposte subit quand même son propre désavantage.
 
-**Manœuvres débloquées :**
+La **Protection** permet, lorsqu'un allié adjacent est ciblé par une attaque, de se substituer à lui comme cible. L'attaquant subit le désavantage de la posture défensive du protecteur normalement. Cette manœuvre ne pénalise pas les propres attaques du protecteur — se sacrifier pour autrui mérite au moins ça — mais elle consomme la réaction du tour.
 
-- **Riposte** (Réaction après parade/esquive réussie) : Attaque immédiate sans Désavantage.
-- **Protection** (Action Simple) : Couvrir un allié adjacent. Les attaques le visant vous ciblent.
-- **Parade Totale** (Remplace Action Complexe) : 2 réactions ce tour au lieu d'une.
+La **Parade Totale** remplace l'action complexe du tour : le personnage renonce à agir offensivement pour gagner deux réactions au lieu d'une. Ce qui signifie qu'un gardien en Parade Totale peut, dans le même round, interposer son bouclier devant un allié et riposter si l'attaque rate. Les démons qui ont essayé d'en abuser s'en souviennent.
 
 ---
 
-### Posture de Concentration
-*"L'esprit sur la matière."*
+### Posture de Concentration — *"L'esprit sur la matière."*
 
-**Effets :**
+La seule posture qui permette de maintenir un pouvoir actif au-delà du tour où il a été lancé. Un personnage qui lance un pouvoir à maintien en posture offensive ou défensive peut le faire, mais devra passer en concentration au tour suivant s'il veut le conserver — la puissance divine prend le dessus, gratuitement et sans discussion.
 
-- **Avantage** sur tous les jets de pouvoir
-- **-1 PE** sur tous les coûts (minimum 1)
-- Les pouvoirs maintenus ne causent plus de Désavantage
-- **Désavantage** sur attaques et défenses physiques
-- **Fragilité** : Subir une blessure (≥1 après PA et Résilience) = perte automatique de la posture et arrêt de tous pouvoirs maintenus
+En posture de concentration, les pouvoirs maintenus ne causent aucun désavantage sur les autres actions. En revanche, l'âme étant entièrement tournée vers l'intérieur, le corps est laissé sans surveillance : les attaquants bénéficient d'un avantage pour toucher le personnage. C'est le compromis habituel entre puissance et survie.
 
-**Manœuvres débloquées :**
+La **Fragilité** est la règle critique de cette posture : dès que le personnage subit une blessure — une seule, même légère — il retombe automatiquement en posture défensive et tous ses pouvoirs maintenus s'arrêtent. La douleur physique coupe le lien. Les anges de haut rang ont développé des techniques pour minimiser ce risque. Les autres apprennent vite.
 
-- **Canalisation** (Action Simple) : Prochain pouvoir a son intensité doublée.
-- **Multiciblage** (Modificateur) : Appliquer un pouvoir à plusieurs cibles (max = RES). +1 PE par cible supplémentaire.
-- **Concentration Absolue** (Passif) : Maintenir deux pouvoirs simultanément.
-
-!!! warning "Règle critique"
-    Seule la Posture de Concentration permet de maintenir des pouvoirs actifs. Les autres postures ne peuvent lancer que des pouvoirs instantanés.
-
----
-
-### Posture Neutre *(Défaut)*
-*"Prêt à tout."*
-
-Aucun modificateur. Aucune manœuvre spéciale. Polyvalence totale.
-
----
-
-*"Dans le Nouveau Grand Jeu, même les stratèges célestes ont compris qu'un bon placement vaut mieux qu'une bonne armure."*
+La **Concentration Absolue** est une manœuvre passive qui permet de maintenir deux pouvoirs simultanément — réservé aux âmes suffisamment disciplinées pour ne pas se perdre dans leurs propres flux divins. Certains pouvoirs disposent par ailleurs d'une option **Multiciblage**, uniquement activable en posture de concentration, y compris pour un pouvoir instantané : chaque cible supplémentaire compte comme un niveau de Boost supplémentaire sur le pouvoir, avec les dés de drain que cela implique.
 
 ---
 

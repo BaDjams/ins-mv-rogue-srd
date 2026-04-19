@@ -132,6 +132,10 @@ Pouvoirs basiques utiles mais pas forcément en rapport avec votre concept initi
 
 Choisissez **2 traits sur la liste des Traits d'Âme**. Ces traits restent constants à travers toutes les incarnations.
 
+**Conduit Divin X** (X = 1, 2 ou 3)
+
+Certaines âmes ont passé suffisamment de siècles à canaliser la puissance divine pour développer une tolérance que leurs pairs envient discrètement. Chaque niveau de ce trait ajoute 1 PE permanent, indépendamment du Rang Céleste. Un ange de Rang 2 avec Conduit Divin 3 dispose de 5 PE — autant qu'un Archange, sur ce seul plan. Ce qui ne l'empêche pas de rester un ange de Rang 2 sur tout le reste, mais lui donne une endurance magique remarquable pour quelqu'un de son niveau.
+
 ---
 
 ## Étape 6 : Objectifs et motivations

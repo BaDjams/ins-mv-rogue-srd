@@ -60,13 +60,25 @@ Critique : dés bleu et blanc identiques. Intervention divine : 111. Interventio
 Dégâts = Code + max(Marge, Dé rouge)
 La chance rattrape une mauvaise réussite mais n'amplifie plus une bonne.
 
+### Postures de combat
+- Annoncées librement au début de chaque tour, sans coût en action
+- Défensive par défaut (personnage surpris, indécis ou sans déclaration)
+- Offensive : avantage à l'attaque, avantage pour les attaquants ennemis
+- Défensive : désavantage pour les attaquants ennemis, pas de malus à l'attaque du défenseur
+- Concentration : maintien de pouvoir possible, avantage pour les attaquants ennemis, fragilité (toute blessure = retour en défensive + arrêt des pouvoirs maintenus)
+- Riposte : réaction sur attaque ratée en posture défensive, pas de chaîne de ripostes
+- Protection : réaction pour absorber une attaque destinée à un allié, sans pénalité offensive
+- Parade Totale : sacrifie l'action complexe pour 2 réactions (Protection + Riposte possible)
+- Attaque Double : la posture des deux cibles détermine l'avantage/désavantage (deux offensives = double avantage, deux défensives = double désavantage)
+
 ### Système Énergie / Drain / Consommation
 - PE = Rang céleste (recharge journalière)
-- Trait Conduit Divin X : +X PE permanents
-- Pouvoirs de base : gratuits (Boost 1 = 0 dé de drain)
-- Pouvoirs boostés (Boost 1–6) : dégâts × Boost, drain = Boost−1 dés, chaque 6 = 1 affaiblissement d'âme
-- Seuil gratuit = PE du jour ; au-delà = blessure aggravée directe (Consommation)
-- Si l'hôte meurt par Consommation : réincarnation normale, compteur remis à zéro
+- Trait Conduit Divin X (1-3) : +X PE permanents
+- Pouvoirs de base : gratuits
+- Boost 1–6 : dégâts × Boost, dés de drain = Boost−1, chaque 6 = 1 affaiblissement d'âme
+- Seuil gratuit = PE du jour, au-delà = blessure aggravée directe (Consommation)
+- Réincarnation remet le compteur d'affaiblissements à zéro
+- Influencer les dés : 1 PE = avantage, 2 PE = substitution d'attribut (comptent comme affaiblissements)
 
 ### Rôle des armes spéciales
 Les armes spéciales (argent, armes célestes) ne font pas plus de dégâts bruts.
