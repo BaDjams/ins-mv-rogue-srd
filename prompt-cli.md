@@ -89,6 +89,12 @@ Les armes spéciales (argent, armes célestes) ne font pas plus de dégâts brut
 Elles réduisent ou annulent la Résilience de l'adversaire.
 C'est le levier des humains préparés (inquisiteurs, chasseurs) contre les êtres surnaturels.
 
+### Rangs hiérarchiques supprimés
+Les rangs hiérarchiques (Messager/Gardien/Chevalier etc.) sont supprimés.
+Remplacés par deux traits sociaux purement narratifs : Cadre et Cadre Supérieur.
+Aucun effet mécanique — position dans la chaîne de commandement uniquement.
+Le Rang Céleste reste le seul levier mécanique de puissance.
+
 ---
 
 ## État actuel du SRD

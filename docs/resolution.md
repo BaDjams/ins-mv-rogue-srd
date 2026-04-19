@@ -161,19 +161,19 @@ Lorsque le D666 indique **111**, il s'agit d'une **intervention divine**. Lorsqu
 - La créature ciblée est éliminée automatiquement sans même calculer les dommages de l'attaque de manière particulièrement cinématographique, faisant intervenir les archanges ou la main de dieu elle-même, OU l'issue du combat devient particulièrement favorable (dégâts de zone centrés sur le lanceur sur toutes les créatures du mal, aura de paix qui calme tout le monde si humains, etc, à la discrétion du MJ)
 - Hors combat, l'action entreprise réussit de manière spectaculaire et peut s'étendre à l'intégralité de la scène, à la discrétion du MJ. Afin de préserver la narration, le MJ peut décider à la place de donner un jeton **"Touché par la Grâce"** qui permettra à son détenteur de déclencher les effets supplémentaires listés ci-dessous au moment de son choix. Le jeton sera alors détruit. Les éventuels effets durables persistent jusqu'à la tombée de la nuit.
 - **Effets supplémentaires** :
-    - Les PE du lanceur sont intégralement restaurés comme au lever du soleil et ses compagnons voient leurs PE remonter à 50% s'ils étaient en dessous.
+    - Le compteur d'affaiblissements d'âme du lanceur est remis à zéro, et ceux de ses compagnons sont réduits de moitié (arrondi inférieur).
     - Toutes les actions du personnage et de ses alliés bénéficient d'un double avantage jusqu'au début du prochain tour du lanceur.
 
 **Intervention démoniaque (666)** : L'action de l'ange échoue de façon particulièrement humiliante
 
-- L'ange perd la moitié de ses PE restants
+- L'ange gagne immédiatement un nombre d'affaiblissements d'âme égal à la moitié de ses PE (arrondi supérieur), pouvant déclencher des blessures aggravées si le seuil est dépassé.
 - Double désavantage pour l'ange et tous ses alliés jusqu'à la fin de son prochain tour
 
 #### Pour les Démons
 
 **Intervention divine (111)** : L'action échoue de façon particulièrement humiliante
 
-- Le démon perd la moitié de ses PE restants
+- Le démon gagne immédiatement un nombre d'affaiblissements d'âme égal à la moitié de ses PE (arrondi supérieur).
 - Double désavantage pour le démon et tous ses alliés jusqu'à la fin de son prochain tour
 
 **Intervention démoniaque (666)** : L'action réussit de manière particulièrement spectaculaire
@@ -181,7 +181,7 @@ Lorsque le D666 indique **111**, il s'agit d'une **intervention divine**. Lorsqu
 - En combat, la créature ciblée est éliminée de manière particulièrement cinématographique, faisant intervenir les princes démons ou Satan lui-même, OU l'issue du combat devient particulièrement favorable (dégâts de zone centrés sur le lanceur sur toutes les créatures, démons mineurs qui investissent la zone pour foutre le bordel etc, à la discrétion du MJ)
 - Hors combat, l'action entreprise réussit de manière spectaculaire et peut s'étendre à l'intégralité de la scène, à la discrétion du MJ. Afin de préserver la narration, le MJ peut décider à la place de donner un jeton **"Marque du Diable"** qui permettra à son détenteur de déclencher les effets supplémentaires listés ci-dessous au moment de son choix. Le jeton sera alors détruit. Les éventuels effets durables persistent jusqu'au lever du soleil.
 - **Effets supplémentaires** :
-    - Les PE du lanceur sont intégralement restaurés comme à la tombée de la nuit et ses compagnons voient leurs PE remonter à 50% s'ils étaient en dessous.
+    - Le compteur d'affaiblissements d'âme du lanceur est remis à zéro, et ceux de ses compagnons sont réduits de moitié (arrondi inférieur).
     - Toutes les actions du personnage bénéficient d'un double avantage jusqu'au début de son prochain tour.
     - Toutes les actions ciblant le personnage obtiennent un double désavantage, même celles visant à l'aider ou le soigner.
 
