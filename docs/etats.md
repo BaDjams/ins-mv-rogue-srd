@@ -492,7 +492,7 @@
 - Deux âmes cohabitent dans le même corps (ange/démon + humain)
 - Les résultats de 5 et 6 sur le dé d'action sont considérés comme des échecs automatiques (résistance de l'âme humaine)
 - Désavantage sur tous les jets tant que le conflit persiste
-- Consommation de 1 PE par tour due au stress spirituel
+- 1 affaiblissement d'âme par tour dû au stress spirituel (compte dans le quota journalier de PE)
 - L'âme humaine conserve ses souvenirs et sa personnalité
 
 **Fin :** L'ange/démon doit forcer le départ de l'âme humaine (jet de PUI vs VOL humaine) ou abandonner cet hôte.

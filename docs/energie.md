@@ -1,66 +1,71 @@
-# ÉNERGIE
+# Énergie
 
-Les êtres surnaturels disposent de points d\'énergie (PE), qu\'ils
-peuvent utiliser comme ressources pour lancer des sorts ou pour
-influencer ses jets.
+Les êtres surnaturels disposent de **Points d'Énergie (PE)**, qui représentent leur tolérance au drain de la puissance divine ou infernale — pas un réservoir que l'on vide, mais un seuil que l'on peut dépasser à ses risques et périls.
 
-Formule de calcul : 10 + (Rang Hiérarchique × 5)
+---
 
-Les Points d\'Énergie représentent la capacité d\'un ange ou d\'un démon
-à utiliser ses pouvoirs surnaturels. Contrairement aux attributs qui
-sont intrinsèques à l\'âme, le pool de PE dépend du rang dans la
-hiérarchie céleste ou infernale.
+## Points d'Énergie
 
-La récupération des PE se fait automatiquement au lever du soleil pour
-les anges et à la tombée de la nuit pour les démons.
+**Formule : PE = Rang céleste**
 
-Note : l'énergie persiste d'un incarnation à l'autre. Ainsi, un ange
-dont l'hote décède à 50% de ses PE se réincarne dans le nouvel hôte avec
-50% de ses PE. Il n'y a pas de modification des PE lors du décès de
-l'hote ou l'incarnation.\
-\
-Toute dépense de PE supérieure à 1 entraîne une blessure aggravée
-matérialisant la consummation de l'hôte par la puissance céleste.
-S'agissant d'une blessure, elle n'est pas réduite par la résilience
-(seuls les dégâts sont réduits par la résilience)
+Un ange ou un démon de Rang 3 dispose donc de 3 PE. Ces PE servent de **tampon contre le drain** : les X premiers affaiblissements d'âme d'une période de 24h (X = PE courants) sont absorbés sans conséquences. Au-delà, chaque affaiblissement supplémentaire provoque une **blessure aggravée directe** sur l'hôte — c'est la Consommation.
 
-Influencer les dés :
+!!! note "Persistance entre incarnations"
+    Les PE persistent d'une incarnation à l'autre. Un ange dont l'hôte décède avec 2 affaiblissements d'âme en cours se réincarne avec ce compteur intact. Il repart à zéro au prochain lever de soleil.
 
--   1 PE : prendre l\'avantage avant le Jet.
+    En revanche, si l'hôte meurt **par Consommation**, le compteur d'affaiblissements est remis à zéro à la réincarnation — mais l'ange devra faire profil bas jusqu'à la prochaine recharge.
 
--   2 PE : effectuer une substitution d'attribut, c'est-à-dire utiliser
-    > un attribut surnaturel (lié à l'âme) à la place d'une
-    > caractéristique humaine (liée à l'enveloppe charnelle). Cela
-    > permet à l'ange ou au démon d'agir avec toute la majesté --- ou la
-    > terreur --- de sa véritable nature.
+---
 
-  -----------------------------------------------------------------------
-  **Caractéristique Humaine**         **Attribut Surnaturel
-                                      Substituable**
-  ----------------------------------- -----------------------------------
-  FOR (Force)                         PUI (Puissance)
+## Recharge
 
-  AGI (Agilité)                       INF (Influence)
+- **Anges** : au lever du soleil
+- **Démons** : à la tombée de la nuit
 
-  VIG (Vigueur)                       RES (Résolution)
+Le moment exact n'est pas prévisible à la seconde près — il suffit que Dieu pense à autre chose pour que ça prenne du retard. Car Dieu est occupé à Créer ! Ce serait prétentieux de croire que seule notre réalité compte à ses yeux. Après, on parle d'un décalage de maximum 10 minutes lors du dernier concert de Johnny Hallyday à Dubaï hein...
 
-  PER (Perception)                    CLA (Clairvoyance)
-  -----------------------------------------------------------------------
+À la recharge, les PE reviennent à leur valeur maximale et le compteur d'affaiblissements d'âme est remis à zéro.
 
-Remarque : Ces substitutions doivent être déclarées avant le jet de dés.
+---
 
-## Restauration de l'énergie :
+## Utiliser les PE pour influencer les jets
 
-L\'Énergie est restaurée intégralement au lever du soleil pour les
-anges, et à la tombée de la nuit pour les démons. Le moment exact n'est
-pas prévisible à la seconde près, il suffit en effet que dieu pense à
-autre chose pour que ça prenne du retard... Car Dieu est occupé a Créer
-! Ce serait prétentieux de croire que seule notre réalité compte à ses
-yeux ! C\'est même plutôt l\'inverse, nous avons longtemps été ses
-chouchous mais il a été déçu par Dieu sait quoi et maintenant il semble
-se désintéresser de notre univers. Après, on parle d\'un décalage de
-maximum 10 min lors du dernier concert de Johnny Hallyday à Dubaï
-hein...
+Les PE peuvent aussi être dépensés **avant un jet** pour obtenir des effets mécaniques directs. Chaque dépense de ce type coûte **1 affaiblissement d'âme** (qui compte dans le quota journalier).
 
-# 
+| Coût | Effet |
+|---|---|
+| **1 PE** | Prendre l'avantage avant le jet |
+| **2 PE** | Substitution d'attribut : utiliser un attribut surnaturel à la place d'une caractéristique humaine |
 
+### Substitutions d'attribut
+
+| Caractéristique humaine | Attribut surnaturel substituable |
+|---|---|
+| FOR (Force) | PUI (Puissance) |
+| AGI (Agilité) | INF (Influence) |
+| VIG (Vigueur) | RES (Résolution) |
+| PER (Perception) | CLA (Clairvoyance) |
+
+!!! warning
+    Ces substitutions doivent être déclarées **avant** le lancer de dés.
+
+---
+
+## Trait Conduit Divin X
+
+Le trait **Conduit Divin X** (X = 1, 2 ou 3) ajoute X PE permanents au-delà du Rang céleste.
+
+*Exemple : Rang 3 + Conduit Divin 2 = 5 PE*
+
+Il représente une affinité développée avec le flux de la puissance divine, permettant à l'âme d'absorber plus d'énergie avant de déborder sur l'hôte. Il ne modifie pas le Rang céleste ni l'accès aux pouvoirs — uniquement l'endurance spirituelle.
+
+---
+
+## La Consommation
+
+Lorsque les affaiblissements d'âme dépassent les PE disponibles dans la journée, la puissance divine déborde la capacité de l'âme et **brûle l'hôte de l'intérieur**.
+
+Chaque affaiblissement au-delà du quota inflige **1 blessure aggravée directe** sur l'hôte — non réduite par PA ni Résilience. Ce n'est pas un dégât ordinaire : c'est la gloire divine qui consume ce qu'elle ne peut contenir.
+
+!!! danger "La Consommation"
+    Un hôte peut mourir de Consommation si l'ange pousse trop loin. Thématiquement, il est littéralement brûlé par la puissance qui le traverse. L'ange se réincarne — l'hôte non.

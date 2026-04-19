@@ -21,6 +21,7 @@ La plupart des mots-clés donnent des avantages/désavantages selon le contexte.
 - **Résiliente** : Premier échec critique par session devient un échec normal
 - **Focalisée** : Peut relancer 1 dé d'intensité par session, le dé relancé est explosif
 - **Fanatique** : +1 intensité finale (après tous calculs) pour toute action en rapport avec le mot-clé choisi (validé par le MJ)
+- **Conduit Divin X** (X = 1, 2 ou 3) : Affinité développée avec le flux de la puissance divine. +X PE permanents au-dessus du Rang céleste. Ne modifie pas le Rang ni l'accès aux pouvoirs — uniquement l'endurance spirituelle face au drain.
 
 **Exemples d'avantages/désavantages contextuels**
 

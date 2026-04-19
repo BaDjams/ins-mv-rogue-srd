@@ -6,6 +6,39 @@ Le rang céleste d\'une créature détermine sa capacité à maîtriser des
 pouvoirs surnaturels. Plus une créature a un rang élevé, plus elle peut
 accéder à des pouvoirs puissants et les développer à un niveau avancé.
 
+## Pouvoirs boostés et Drain
+
+### Boost
+
+Lors de l'utilisation d'un pouvoir actif, le joueur peut déclarer un **niveau de Boost** (de 1 à 6, plafonné par le MJ comme tout le reste). Boost 1 = usage normal, sans coût supplémentaire.
+
+**Effet du boost sur les dégâts :**
+
+> Dégâts boostés = (Code + max(Marge, Dé rouge)) × Boost
+
+### Dés de drain
+
+Chaque boost génère du drain :
+
+> Dés de drain = Boost − 1
+
+Chaque **6** obtenu sur ces dés inflige **1 affaiblissement d'âme**.
+
+- Les X premiers affaiblissements d'âme de la journée (X = PE disponibles) sont absorbés sans effet.
+- Au-delà : chaque affaiblissement supplémentaire inflige **1 blessure aggravée directe** sur l'hôte — c'est la **Consommation** (voir chapitre Énergie).
+
+**Boost 1 = 0 dé de drain = totalement gratuit.**
+
+??? example "Exemple : Ange Rang 3 (3 PE), Boost 4"
+    - Dés de drain : Boost − 1 = **3 dés**
+    - Résultat supposé : deux 6 → **2 affaiblissements d'âme**
+    - L'ange dispose de 3 PE → quota non dépassé → **0 blessure aggravée**
+    - Il lui reste 1 PE de marge pour le reste de la journée
+
+    Si au prochain boost il obtient encore 2 affaiblissements, il dépasse son quota et l'hôte subit 1 blessure aggravée directe.
+
+---
+
 ## Règles d\'Acquisition des Pouvoirs
 
 **Limitation par Rang Prérequis**

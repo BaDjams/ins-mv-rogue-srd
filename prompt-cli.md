@@ -54,18 +54,48 @@ Critique : dés bleu et blanc identiques. Intervention divine : 111. Interventio
 **Caractéristiques de l'hôte (physiques) :** FOR, AGI, VIG, PER
 **Attributs de l'âme (surnaturels) :** PUI, INF, RES, CLA
 
+## Décisions de game design actées
+
+### Formule de dégâts des armes (Option A)
+Dégâts = Code + max(Marge, Dé rouge)
+La chance rattrape une mauvaise réussite mais n'amplifie plus une bonne.
+
+### Système Énergie / Drain / Consommation
+- PE = Rang céleste (recharge journalière)
+- Trait Conduit Divin X : +X PE permanents
+- Pouvoirs de base : gratuits (Boost 1 = 0 dé de drain)
+- Pouvoirs boostés (Boost 1–6) : dégâts × Boost, drain = Boost−1 dés, chaque 6 = 1 affaiblissement d'âme
+- Seuil gratuit = PE du jour ; au-delà = blessure aggravée directe (Consommation)
+- Si l'hôte meurt par Consommation : réincarnation normale, compteur remis à zéro
+
+### Rôle des armes spéciales
+Les armes spéciales (argent, armes célestes) ne font pas plus de dégâts bruts.
+Elles réduisent ou annulent la Résilience de l'adversaire.
+C'est le levier des humains préparés (inquisiteurs, chasseurs) contre les êtres surnaturels.
+
+---
+
 ## État actuel du SRD
 
-Le contenu vient d'un fichier source `.md` (export Google Docs). Le découpage en fichiers par section a été fait automatiquement. Le formatage est brut — certaines pages ont des artefacts de conversion (`\*\*`, `\#\#` échappés, listes mal formatées) qui restent à nettoyer.
+Le contenu vient d'un fichier source `.md` (export Google Docs). Le découpage en fichiers par section a été fait et le contenu est à jour avec la dernière version des règles (avril 2026).
 
-La section `resolution.md` a été mise à jour avec la version complète du D666.
+### Dernières modifications (avril 2026)
+
+- `energie.md` : refonte complète — PE = Rang céleste, système de drain/Consommation, Conduit Divin X, suppression de l'ancienne règle "blessure aggravée pour PE > 1"
+- `pouvoirs.md` : ajout section "Pouvoirs boostés et Drain" avec formule dégâts × Boost, mécanique des dés de drain et exemple chiffré
+- `mots-cles.md` : ajout trait Conduit Divin X dans les mots-clés d'âme
+- `etats.md` : "Incarnation ratée" — "Consommation de 1 PE par tour" remplacé par "1 affaiblissement d'âme par tour"
+- `creation.md` : récapitulatif corrigé (PE = Rang céleste, mention Conduit Divin)
+- `caracteristiques.md`, `competences.md`, `mots-cles.md`, `etats.md` : réécriture complète (artefacts Pandoc `    >` supprimés, admonitions ajoutées, états promus en `###` headers, compétences secondaires nettoyées + ~400 lignes de règles D666 dupliquées supprimées de competences.md)
 
 ## Ce qu'il reste à faire
 
-- Nettoyer le formatage markdown dans les fichiers (artefacts de conversion)
-- Enrichir certaines pages avec des admonitions MkDocs Material (`!!! note`, `!!! warning`, etc.)
-- Vérifier la cohérence de la navigation dans `mkdocs.yml`
-- Compléter les sections courtes (équipement notamment)
+- Créer la liste des pouvoirs disponibles par rôle/archange (section Pouvoirs incomplète — les exemples Résilience/Feu Ardent/Rapidité Céleste sont là mais pas la liste exhaustive)
+- Créer les fiches Archanges et Princes-Démons (référencées dans la création de personnage mais absentes du SRD)
+- Compléter `equipement.md` avec les tableaux d'armes, armures et équipement standard
+- Créer les tables de génération d'hôtes (cartes Soldats de Dieu / Citoyens) référencées dans la réincarnation
+- Enrichir certaines pages avec des admonitions MkDocs Material (`!!! note`, `!!! warning`, etc.) là où c'est utile
+- Créer une page dédiée aux Traits d'Âme (référencés à l'étape 5 de la création mais non détaillés)
 
 ## Conventions MkDocs Material utilisées
 
