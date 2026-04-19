@@ -18,17 +18,17 @@ Applique ensuite les effets spéciaux (critique, sacré, etc.).
 1\. Code de dégâts :\
 - Armes à distance : déterminée en fonction du projectile et de la
 longueur du canon.\
-- Armes de mêlée : FOR + modificateur de l\'arme\
-- Armes de mêlée basées sur l\'AGI plutôt que la FOR : Rapière, Fleuret,
+- Armes de mêlée : FOR + modificateur de l'arme\
+- Armes de mêlée basées sur l'AGI plutôt que la FOR : Rapière, Fleuret,
 Wakizashi, Nunchaku\
 - Explosifs : code dégât de zone de l'explosif en fonction de la matière
 et de la quantité. Le dé d'intensité associé à l'utilisation
-d\'explosifs est toujours... explosif!
+d'explosifs est toujours... explosif!
 
 2\. Tir en rafale : le joueur lance les dés une fois et compare avec son
-seuil de réussite : la marge de réussite, c\'est le nombre de balles qui
+seuil de réussite : la marge de réussite, c'est le nombre de balles qui
 touchent (maximum 3)\
-les dégâts sont égaux au dé d'intensité + (code de dégâts de l\'arme x
+les dégâts sont égaux au dé d'intensité + (code de dégâts de l'arme x
 le nombre de balles qui touchent).
 
 3\. Tir de saturation : tir en continu d'une dizaine de balles pour

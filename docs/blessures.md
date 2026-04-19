@@ -8,17 +8,17 @@ On INFLIGE des dégâts (actif, offensif)
 
 -   Les dégâts sont le montant brut avant réductions
 
--   Exemple : \"Cette attaque inflige 10 dégâts\"
+-   Exemple : "Cette attaque inflige 10 dégâts"
 
 On SUBIT des blessures (passif, résultat final)
 
 -   Les blessures sont marquées sur la fiche de PV après réductions
 
--   Exemple : \"Le défenseur subit 3 blessures\"
+-   Exemple : "Le défenseur subit 3 blessures"
 
-Flux de résolution : De l\'attaque à la blessure
+Flux de résolution : De l'attaque à la blessure
 
-Lorsqu\'une attaque inflige des dégâts :
+Lorsqu'une attaque inflige des dégâts :
 
 1.  Calcul des dégâts bruts (Code + Intensité + Marge + modificateurs)
 
@@ -29,19 +29,19 @@ Lorsqu\'une attaque inflige des dégâts :
 4.  Réduction : Résilience (division, arrondi inférieur)
 
 5.  Blessures finales : Le défenseur subit X blessures (marquées sur la
-    > fiche)
+    fiche)
 
 Exception : Blessures directes
 
-Certains effets utilisent directement le verbe \"subir\" sans mentionner
+Certains effets utilisent directement le verbe "subir" sans mentionner
 de dégâts :
 
 -   Aucune réduction (ni PA, ni Résilience)
 
 -   Marquées immédiatement sur la fiche
 
-Indicateur clé : Si le texte dit \"subit des blessures\" sans mentionner
-\"inflige des dégâts\" au préalable, c\'est direct.
+Indicateur clé : Si le texte dit "subit des blessures" sans mentionner
+"inflige des dégâts" au préalable, c'est direct.
 
 Natures de dégâts et blessures
 
@@ -59,19 +59,19 @@ Dégâts non-létaux conduisent à des Blessures non-létales (○)
 
 -   Guérissent rapidement (1 par heure de repos)
 
-Règle d\'arrondi
+Règle d'arrondi
 
-L\'arrondi est toujours favorable au personnage actif. Ainsi les dégâts
+L'arrondi est toujours favorable au personnage actif. Ainsi les dégâts
 infligés par un personnage sont arrondis au supérieur (favorable à
-l\'attaquant) alors que lors de la division des dégâts par la
-Résilience, l\'arrondi se fait toujours à l\'inférieur (favorable au
+l'attaquant) alors que lors de la division des dégâts par la
+Résilience, l'arrondi se fait toujours à l'inférieur (favorable au
 défenseur).
 
 Exemple : Azrael active son aura de sainteté qui **inflige** Rang hiérarchique x rang céleste /2 dégâts aggravés à toutes les cibles démoniaques au contact. 3×3/2 = 4,5, donc arrondi à 5 dégâts.
 Belphess la démone aux belles fesses est très très au contact et **subit** donc 5/3=1 blessure aggravée (on arrondit à l'inférieur lors de la division par la résilience). Belphess pousse un gémissement équivoque.
 
-Pour les effets bénéfiques (soins, récupération), l\'arrondi se fait à
-l\'avantage du lanceur.
+Pour les effets bénéfiques (soins, récupération), l'arrondi se fait à
+l'avantage du lanceur.
 
 # POINTS DE VIE
 
@@ -80,11 +80,11 @@ l\'avantage du lanceur.
 ## **Principe Général**
 
 Les points de vie (PV) sont déterminés par la caractéristique Vigueur
-selon la formule **VIG x 2 + Taille**. Un humain dispose donc d\'entre 8
+selon la formule **VIG x 2 + Taille**. Un humain dispose donc d'entre 8
 et 12 PV.
 
 Plutôt que de soustraire des points de vie, le système utilise une
-**jauge de blessures** composée d\'un nombre de cases égal aux PV
+**jauge de blessures** composée d'un nombre de cases égal aux PV
 maximum du personnage. Les blessures sont cochées de gauche à droite, et
 leur gravité détermine le type de marque utilisée.
 
@@ -124,13 +124,13 @@ céleste)
 -   Utilisation de pouvoirs surnaturels coûtant plus de 1 PE
 
 -   Attaques de créatures particulièrement dangereuses (vampires, démons
-    > majeurs)
+    majeurs)
 
 -   Armes maudites ou sacrées
 
 -   Dégâts spirituels directs
 
-**Upgrade :** Peut transformer n\'importe quelle blessure existante
+**Upgrade :** Peut transformer n'importe quelle blessure existante
 
 **Ces blessures ne guérissent jamais naturellement. Seule une
 intervention divine, démoniaque, une capacité surnaturelle ou un pouvoir
@@ -138,9 +138,9 @@ adapté peut les soigner.**
 
 ## **Règles de Progression des Blessures**
 
-Les blessures s\'**upgradent** toujours vers le type le plus grave :
+Les blessures s'**upgradent** toujours vers le type le plus grave :
 
--   Une case vide peut recevoir n\'importe quel type de blessure
+-   Une case vide peut recevoir n'importe quel type de blessure
 
 -   Une case (/) peut devenir (X) ou (⭙)
 
@@ -190,20 +190,20 @@ inconscience
 **Régénération (Rang requis 2, Concentration)**
 
 Toutes les blessures guérissent simultanément au rythme de la capacité
-de guérison du personnage, plutôt qu\'une après l\'autre.
+de guérison du personnage, plutôt qu'une après l'autre.
 
 ## **Blessures Aggravées - Règles Spéciales**
 
 **Limitation des Pouvoirs**
 
 -   **Aucun pouvoir de guérison** ne peut directement soigner les
-    > blessures aggravées
+    blessures aggravées
 
--   La \"Guérison Rapide\" n\'affecte que les blessures (/) et (X)
+-   La "Guérison Rapide" n'affecte que les blessures (/) et (X)
 
 **Conversion Nécessaire**
 
-Pour guérir d\'une blessure aggravée (⭙), il faut d\'abord la
+Pour guérir d'une blessure aggravée (⭙), il faut d'abord la
 **convertir** en blessure létale (X) via :
 
 -   Pouvoirs de conversion spécifiques
@@ -224,23 +224,23 @@ préalable.
 
 1.  Reçoit 3 dégâts non létaux → Coche (/) (/) (/) dans les cases 1-3
 
-2.  Reçoit 2 dégâts létaux → Les cases 1-2 s\'aggravent en (X) (X), la
-    > case 3 reste (/)
+2.  Reçoit 2 dégâts létaux → Les cases 1-2 s'aggravent en (X) (X), la
+    case 3 reste (/)
 
 3.  Utilise un pouvoir coûtant 3 PE → Subit 1 blessure aggravée, la case
-    > 1 devient (⭙)
+    1 devient (⭙)
 
 4.  État intermédiaire : (⭙) (X) (/) + 7 cases vides
 
 5.  Reçoit une balle infligeant 3 blessures létales → Les cases 3, 4 et
-    > 5 deviennent (X)
+    5 deviennent (X)
 
 6.  État final : (⭙) (X) (X) (X) (X) + 5 cases vides
 
 **Guérison :**
 
 -   Cases 3-6 (X) : 1 minute pour la case 3 (ancienne /), 1 semaine
-    > chacune pour les cases 4-6
+    chacune pour les cases 4-6
 
 -   Case 2 (X) : 1 semaine
 
@@ -250,7 +250,7 @@ voici les points de vie d'autres créatures, pour exemple :
 
   -----------------------------------------------------------------------------
   **Tranche de   **Exemple         **Taille**     **Taille       **Taille
-  poids**        d\'animaux**                     (SW)**         (D&D)**
+  poids**        d'animaux**                     (SW)**         (D&D)**
   -------------- ----------------- -------------- -------------- --------------
   \< 100 g       Colibri, Souris,  1              Taille --2     Minuscule
                  Musaraigne,                                     (Tiny)
@@ -298,13 +298,13 @@ voici les points de vie d'autres créatures, pour exemple :
   1 tonne - 5    Rhinocéros,       10             Taille +4 à +5 Très grande
   tonnes         Hippopotame                                     (Huge)
                  (adulte), Girafe,                               
-                 Éléphant d\'Asie,                               
+                 Éléphant d'Asie,                               
                  Stegosaurus                                     
                  (dinosaure),                                    
                  Drake                                           
 
   5 tonnes - 10  Éléphant          11             Taille +6      Très grande
-  tonnes         d\'Afrique,                                     (Huge)
+  tonnes         d'Afrique,                                     (Huge)
                  Baleine de Minke,                               
                  Triceratops,                                    
                  Tyrannosaurus rex                               
@@ -341,7 +341,7 @@ les dégâts, les êtres surnaturels inférieurs peuvent diviser les dégâts
 par 2 s'ils disposent du pouvoir Résilience. Un Archange attaqué
 diviserait les dégâts d'une attaque par 4.
 
-Cette division s\'applique **avant** de déterminer le nombre de cases à
+Cette division s'applique **avant** de déterminer le nombre de cases à
 cocher, mais ne change pas le type de blessure infligée.
 
 Notons que certaines armes "magiques" ou "célestes" réduisent, voire
@@ -362,7 +362,7 @@ une créature vivante récupère les points de vie au rythme de (rang) /
 semaine (voir chapitre sur le rang céleste).\
 En plus de cette récupération naturelle, une créature surnaturelle
 récupère des points de vie au rythme de (rang)/jour (au même moment que
-l\'énergie, voir la section "restauration de l'énergie").\
+l'énergie, voir la section "restauration de l'énergie").\
 Note : Certaines créatures maudites comme les vampires ne restaurent pas
 leur points de vie automatiquement, ils sont obligés de les prendre à
 leur victime (et disposent d'une capacité spéciale pour cela). ces

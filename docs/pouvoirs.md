@@ -2,7 +2,7 @@
 
 ## Principe Général
 
-Le rang céleste d\'une créature détermine sa capacité à maîtriser des
+Le rang céleste d'une créature détermine sa capacité à maîtriser des
 pouvoirs surnaturels. Plus une créature a un rang élevé, plus elle peut
 accéder à des pouvoirs puissants et les développer à un niveau avancé.
 
@@ -26,7 +26,7 @@ Pour le détail complet du mécanisme (seuil de tolérance, Consommation, Prése
 
 ---
 
-## Règles d\'Acquisition des Pouvoirs
+## Règles d'Acquisition des Pouvoirs
 
 **Limitation par Rang Prérequis**
 
@@ -40,21 +40,21 @@ plus.*
 ## Limitation des Niveaux de Pouvoir
 
 Pour les pouvoirs possédant plusieurs niveaux (notés X), le niveau
-maximum qu\'une créature peut atteindre est limité par son Rang Céleste.
-Quel que soit le niveau prérequis d\'un pouvoir, il ne pourra être
+maximum qu'une créature peut atteindre est limité par son Rang Céleste.
+Quel que soit le niveau prérequis d'un pouvoir, il ne pourra être
 augmenté au-delà du Rang Céleste du personnage.
 
 -   **Exemple 1 :** Un pouvoir avec un prérequis de Rang 1 (comme
-    > *Résilience*) peut être amélioré deux fois par un Ange de Rang 3,
-    > atteignant *Résilience 3*.
+    *Résilience*) peut être amélioré deux fois par un Ange de Rang 3,
+    atteignant *Résilience 3*.
 
 -   **Exemple 2 :** Un pouvoir avec un prérequis de Rang 2 (comme *Feu
-    > Ardent*) peut être amélioré une seule fois par un Ange de Rang 3,
-    > atteignant *Feu Ardent 2*.
+    Ardent*) peut être amélioré une seule fois par un Ange de Rang 3,
+    atteignant *Feu Ardent 2*.
 
 -   **Exemple 3 :** Un pouvoir avec un prérequis de Rang 3 (comme
-    > *Châtiment*) ne peut pas être amélioré au-delà du Rang 3 par un
-    > Ange de Rang 3.
+    *Châtiment*) ne peut pas être amélioré au-delà du Rang 3 par un
+    Ange de Rang 3.
 
 ## **Règles de spécifiques aux Pouvoirs**
 
@@ -63,11 +63,11 @@ augmenté au-delà du Rang Céleste du personnage.
 -   **Instantané :** Effet immédiat, pas de durée
 
 -   **Concentration :** Coût initial + coût par tour, se brise si
-    > perturbé
+    perturbé
 
 -   **Durée fixe :** Maximum 3 tours automatiques
 
--   **Permanent :** Effet durable jusqu\'à condition spéciale
+-   **Permanent :** Effet durable jusqu'à condition spéciale
 
 -   **Scène entière :** Dure toute la scène/rencontre
 
@@ -75,52 +75,52 @@ augmenté au-delà du Rang Céleste du personnage.
 
 **Mécaniques**
 
--   **PE :** Points d\'Énergie
+-   **PE :** Points d'Énergie
 
 -   **Intensité :** Résultat du dé rouge + marge de réussite
 
--   **Dé explosif :** Le dé d\'intensité explose sur un 6 (relance et
-    > additionne)
+-   **Dé explosif :** Le dé d'intensité explose sur un 6 (relance et
+    additionne)
 
--   **Non-réductible :** Ne peut être réduit par l\'armure ou la
-    > résistance physique
+-   **Non-réductible :** Ne peut être réduit par l'armure ou la
+    résistance physique
 
 -   **Concentration :** Désavantage permanent sur toutes les actions
-    > tant que maintenue, aucune limite de durée
+    tant que maintenue, aucune limite de durée
 
 -   **Durée fixe :** Exactement 3 tours puis dissipation automatique.
-    > Prolongation = nouveau jet + nouveau coût
+    Prolongation = nouveau jet + nouveau coût
 
 -   **Couper un pouvoir :** Action gratuite, peut être fait à tout
-    > moment
+    moment
 
 -   **Contrôle mental/Possession :** Le contrôleur partage ses PA totaux
-    > entre son hôte et toutes ses cibles contrôlées.
+    entre son hôte et toutes ses cibles contrôlées.
 
 -   Certains pouvoir précisent que le lanceur subit une ou plusieurs
-    > blessures aggravées. Ces blessures aggravées sont infligées
-    > directement (le personnage les subit), elles ne passent pas par
-    > les réductions de PA ou Résilience. C\'est le prix à payer pour
-    > utiliser une puissance qui dépasse les limites naturelles du
-    > corps.
+    blessures aggravées. Ces blessures aggravées sont infligées
+    directement (le personnage les subit), elles ne passent pas par
+    les réductions de PA ou Résilience. C'est le prix à payer pour
+    utiliser une puissance qui dépasse les limites naturelles du
+    corps.
 
 **Interactions entre Pouvoirs**
 
 -   Il est normalement impossible de maintenir sa **concentration** sur
-    > plus d'un pouvoir à la fois,
+    plus d'un pouvoir à la fois,
 
--   Les pouvoirs de **durée fixe** ne nécessitent pas d\'attention une
-    > fois lancés,
+-   Les pouvoirs de **durée fixe** ne nécessitent pas d'attention une
+    fois lancés,
 
--   Les effets **permanents** persistent jusqu\'à dissipation active ou
-    > condition spéciale,
+-   Les effets **permanents** persistent jusqu'à dissipation active ou
+    condition spéciale,
 
 -   **Prolonger un pouvoir :** Nouveau jet de pouvoir + dépense complète
-    > des PE au tour 4, 7, 10, etc.
+    des PE au tour 4, 7, 10, etc.
 
 -   **Arrêter un pouvoir de concentration :** Action gratuite, effet
-    > immédiat, récupération immédiate de l\'efficacité normale (perte
-    > du désavantage).
+    immédiat, récupération immédiate de l'efficacité normale (perte
+    du désavantage).
 
 ## **Exemples Pratiques**
 
@@ -141,7 +141,7 @@ augmenté au-delà du Rang Céleste du personnage.
 -   Archange Rang 4 : Niveau maximum = 4 - 1 + 1 = **4** → Résilience 4
 
 -   Humain Rang 1 : Ne peut pas disposer de ce pouvoir (et ça servirait
-    > de toute façon à rien de diviser les dégâts par 1)
+    de toute façon à rien de diviser les dégâts par 1)
 
 **Feu Ardent X**
 
@@ -150,7 +150,7 @@ augmenté au-delà du Rang Céleste du personnage.
 -   **Type :** Actif, Durée 3 tours
 
 -   **Effet :** Génère une aura de feu qui consume les adversaires
-    > proches
+    proches
 
 **Calculs :**
 
@@ -166,15 +166,15 @@ augmenté au-delà du Rang Céleste du personnage.
 
 -   **Type :** Passif
 
--   **Effet :** Bonus d\'initiative et d\'actions
+-   **Effet :** Bonus d'initiative et d'actions
 
 **Calculs :**
 
 -   Ange Rang 3 : Niveau maximum = 3 - 3 + 1 = **1** → Rapidité Céleste
-    > 1
+    1
 
 -   Archange Rang 4 : Niveau maximum = 4 - 3 + 1 = **2** → Rapidité
-    > Céleste 2
+    Céleste 2
 
 -   Ange Rang 2 : Pouvoir inaccessible (rang insuffisant)
 
