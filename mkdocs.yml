@@ -1,0 +1,51 @@
+site_name: INS-MV ROGUE — SRD
+site_url: https://BaDjams.github.io/ins-mv-rogue-srd/
+site_description: System Reference Document pour INS-MV ROGUE
+
+theme:
+  name: material
+  language: fr
+  palette:
+    scheme: slate
+    primary: deep orange
+    accent: orange
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.top
+    - search.suggest
+    - search.highlight
+    - content.code.copy
+    - toc.follow
+
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+  - tables
+  - attr_list
+  - def_list
+
+nav:
+  - Accueil: index.md
+  - Contexte:
+    - Le monde du jeu: contexte.md
+  - Personnage:
+    - Caractéristiques & attributs: caracteristiques.md
+    - Création d'âme: creation.md
+    - Rang céleste: rang.md
+    - Progression: progression.md
+    - Réincarnation: reincarnation.md
+  - Mécanique:
+    - Résolution D666: resolution.md
+    - Combat & initiative: combat.md
+    - Pouvoirs: pouvoirs.md
+    - Compétences: competences.md
+    - Énergie: energie.md
+    - Blessures: blessures.md
+  - Référence:
+    - Mots-clés: mots-cles.md
+    - États: etats.md
+    - Équipement: equipement.md
