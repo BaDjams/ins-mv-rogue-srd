@@ -2,21 +2,18 @@
 
 ## Système de dégâts des armes :
 
-**Dégâts finaux = Code** (*de l'arme/effet)* **+ Résultat d\'intensité**
-*(Dé d'intensité + Marge)* **-- PA** *(min 0)*.\
+**Dégâts finaux = Code** *(de l'arme/effet)* **+ max(Marge, Dé rouge) — PA** *(min 0).*
+
 Applique ensuite les effets spéciaux (critique, sacré, etc.).
 
--   **Code** : valeur fixe de l'arme/effet.
+- **Code** : valeur fixe de l'arme/effet.
+- **Marge** : différence entre le seuil de réussite et le résultat du Dé d'action.
+- **Dé rouge** : dé d'intensité — explosif si indiqué.
+- **max(Marge, Dé rouge)** : on retient le meilleur des deux, sans les additionner.
+- **PA** : Points d'Armure de la **zone touchée**. Sans visée : utilise la **PA du torse**. Les boucliers portés **ajoutent** leur PA au torse.
 
--   **Résultat d'intensité** : resultat du dé d'intensité (*Explosif* si
-    > indiqué) + marge.
-
--   **Marge** : Différence entre le résultat du dé d'action et le seuil
-    > de réussite.
-
--   **PA** : Points d'Armure de la **zone touchée**. Sans visée :
-    > utilise la **PA du torse**. Les boucliers portés **ajoutent** leur
-    > PA au torse.
+!!! note "Pourquoi max() et non addition ?"
+    À bas niveau de compétence, le dé rouge peut compenser une faible marge. À haut niveau, la compétence domine naturellement. Le dé rouge explosif (déclenché par l'avantage ou un critique) reste le levier des personnages puissants — il peut toujours surprendre, mais ne s'empile plus avec une déjà grande marge.
 
 1\. Code de dégâts :\
 - Armes à distance : déterminée en fonction du projectile et de la
@@ -42,9 +39,10 @@ désavantages à toute action autre que rester ou se mettre à couvert.
 à toutes les cibles situées dans le rayon d'action principal, et à 50% à
 toutes les cibles situées dans le rayon d'action secondaire.
 
-Exemple du tir au pistolet :\
-Glock 17 : Code **2**, tu réussis avec **Marge 2**, dé d'intensité fait
-**3** →\
-**Dégâts bruts = 2 + (3 + 2) = 7**. La cible a **PA 2** → **5** dégâts
-finaux.
+Exemple du tir au pistolet :
+
+Glock 17 : Code **2**, tu réussis avec **Marge 2**, dé rouge **3** →
+max(2, 3) = **3** → **Dégâts bruts = 2 + 3 = 5**. La cible a **PA 2** → **3** dégâts finaux.
+
+*(Avec l'ancienne formule addition : 2 + 2 + 3 = 7. La nouvelle formule est plus sobre et avantage la compétence sur le hasard.)*
 

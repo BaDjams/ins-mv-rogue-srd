@@ -41,7 +41,7 @@ Pour réussir l'action, le résultat du Dé d'action doit être **inférieur ou 
 
 ## 3. Marge de réussite
 
-Il s'agit de la différence entre le seuil de réussite et le résultat du Dé d'action. Dans la plupart des cas, cette marge est ajoutée au résultat du dé d'intensité pour calculer l'intensité de réussite.
+Il s'agit de la différence entre le seuil de réussite et le résultat du Dé d'action. Pour le calcul des dégâts, la marge et le dé rouge ne s'additionnent pas : on retient le meilleur des deux — **max(Marge, Dé rouge)**. Une grande marge garantit un résultat minimum solide ; le dé rouge peut rattraper une faible marge, mais ne s'empile pas avec une bonne.
 
 !!! note "Note sur les seuils élevés"
     Si le seuil est de 6 ou plus (par exemple, un ange avec PUI 5 qui dépense 2 PE pour substituer PUI à FOR et possède +2 en Corps à Corps, donnant un seuil de 7), le 6 reste toujours un échec. L'intérêt d'avoir un seuil supérieur ou égal à 6 réside alors dans le fait qu'un résultat de 5 ou moins réussit et génère une marge importante.

@@ -346,12 +346,15 @@ cocher, mais ne change pas le type de blessure infligée.
 
 Notons que certaines armes "magiques" ou "célestes" réduisent, voire
 annulent l'effet de division des dommages. Les balles en argent en sont
-un exemple parfait puisqu\'ils réduisent le facteur de division de 1
+un exemple parfait puisqu'ils réduisent le facteur de division de 1
 contre les loups garous et les vampires, les rendant particulièrement
 vulnérables.
 
 Enfin, certaines créatures peuvent être tout bonnement insensibles à
 certaines formes de dommages ou états. Voir la section "états".
+
+!!! note "Rôle des armes spéciales"
+    Les armes spéciales (argent, armes célestes, armes maudites) ne font pas plus de dégâts bruts — elles réduisent ou annulent la Résilience de l'adversaire. C'est le seul levier qui permet à un humain bien préparé (inquisiteur, chasseur) de menacer réellement un être surnaturel de haut rang.
 
 ## Restauration des points de vie :
 
