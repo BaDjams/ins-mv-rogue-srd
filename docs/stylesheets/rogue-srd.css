@@ -138,6 +138,18 @@ body,
 .md-nav__link { font-family: var(--rogue-font-label); font-size: 0.85em; letter-spacing: 0.04em; }
 .md-nav__link--active { color: var(--rogue-angel-light) !important; }
 
+/* — Icônes du header (hamburger + loupe) — visibles sur fond sombre — */
+.md-header__button {
+  color: var(--rogue-text);
+}
+.md-header__button:hover {
+  color: var(--rogue-angel-light);
+  opacity: 1;
+}
+.md-search__icon {
+  color: var(--rogue-text);
+}
+
 /* ═══════════════════════════════════════════════════════
    3. TABLEAUX
    ═══════════════════════════════════════════════════════ */
