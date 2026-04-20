@@ -1,0 +1,85 @@
+# Dictionnaire de liens wiki — INS-MV ROGUE SRD
+#
+# Chaque entrée associe un ou plusieurs termes à une page cible.
+# - terms     : liste des expressions à lier (insensible à la casse)
+# - target    : fichier cible (relatif au dossier docs/)
+# - anchor    : ancre optionnelle (#section)
+# - first_only: true (défaut) → un seul lien par page ; false → tous les occurrences
+#
+# L'outil ne lie pas un terme à la page qui le définit (auto-liens ignorés).
+
+links:
+
+  # ── Résolution ──────────────────────────────────────────────────────────────
+  - terms: ["D666"]
+    target: "resolution.md"
+
+  - terms: ["marge de réussite"]
+    target: "resolution.md"
+
+  - terms: ["dé d'intensité", "dé rouge"]
+    target: "resolution.md"
+
+  - terms: ["avantage", "désavantage"]
+    target: "resolution.md"
+
+  - terms: ["coup critique", "réussite critique"]
+    target: "resolution.md"
+
+  - terms: ["intervention divine", "intervention démoniaque"]
+    target: "resolution.md"
+
+  # ── Caractéristiques ────────────────────────────────────────────────────────
+  - terms: ["caractéristiques", "attributs célestes"]
+    target: "caracteristiques.md"
+
+  # ── Rang céleste ─────────────────────────────────────────────────────────────
+  - terms: ["rang céleste"]
+    target: "rang.md"
+
+  # ── Compétences ──────────────────────────────────────────────────────────────
+  - terms: ["compétence", "compétences", "spécialisation"]
+    target: "competences.md"
+
+  # ── Énergie ──────────────────────────────────────────────────────────────────
+  - terms: ["points d'énergie", "points d'Énergie"]
+    target: "energie.md"
+
+  - terms: ["drain"]
+    target: "energie.md"
+
+  - terms: ["restauration de l'énergie"]
+    target: "energie.md"
+
+  # ── Combat ───────────────────────────────────────────────────────────────────
+  - terms: ["posture offensive", "posture défensive", "posture de concentration"]
+    target: "combat.md"
+
+  - terms: ["initiative"]
+    target: "combat.md"
+
+  - terms: ["action complexe", "action simple", "action gratuite"]
+    target: "combat.md"
+
+  - terms: ["riposte"]
+    target: "combat.md"
+
+  # ── Pouvoirs ─────────────────────────────────────────────────────────────────
+  - terms: ["résilience"]
+    target: "blessures.md"
+
+  # ── Blessures ────────────────────────────────────────────────────────────────
+  - terms: ["points de vie"]
+    target: "blessures.md"
+
+  # ── Réincarnation ────────────────────────────────────────────────────────────
+  - terms: ["réincarnation", "se réincarner", "réincarne"]
+    target: "reincarnation.md"
+
+  # ── Mots-clés / traits ───────────────────────────────────────────────────────
+  - terms: ["mots-clés", "mot-clé"]
+    target: "mots-cles.md"
+
+  # ── États ─────────────────────────────────────────────────────────────────────
+  - terms: ["sonné", "à terre", "inconscient", "mourant"]
+    target: "etats.md"

@@ -89,7 +89,7 @@ Définissez votre fonction spécifique au service de votre supérieur.
 
 **Formule : 10 + (Rang Hiérarchique × 5)**
 
-Les Points d'Énergie représentent la capacité à utiliser les pouvoirs surnaturels. Contrairement aux attributs qui sont intrinsèques à l'âme, le pool de PE dépend du rang dans la hiérarchie.
+Les [Points d'Énergie](energie.md) représentent la capacité à utiliser les pouvoirs surnaturels. Contrairement aux attributs qui sont intrinsèques à l'âme, le pool de PE dépend du rang dans la hiérarchie.
 
 La récupération des PE se fait automatiquement au **lever du soleil** pour les anges et à la **tombée de la nuit** pour les démons.
 
@@ -134,7 +134,7 @@ Choisissez **2 traits sur la liste des Traits d'Âme**. Ces traits restent const
 
 **Conduit Divin X** (X = 1, 2 ou 3)
 
-Certaines âmes ont passé suffisamment de siècles à canaliser la puissance divine pour développer une tolérance que leurs pairs envient discrètement. Chaque niveau de ce trait ajoute 1 PE permanent, indépendamment du Rang Céleste. Un ange de Rang 2 avec Conduit Divin 3 dispose de 5 PE — autant qu'un Archange, sur ce seul plan. Ce qui ne l'empêche pas de rester un ange de Rang 2 sur tout le reste, mais lui donne une endurance magique remarquable pour quelqu'un de son niveau.
+Certaines âmes ont passé suffisamment de siècles à canaliser la puissance divine pour développer une tolérance que leurs pairs envient discrètement. Chaque niveau de ce trait ajoute 1 PE permanent, indépendamment du [Rang Céleste](rang.md). Un ange de Rang 2 avec Conduit Divin 3 dispose de 5 PE — autant qu'un Archange, sur ce seul plan. Ce qui ne l'empêche pas de rester un ange de Rang 2 sur tout le reste, mais lui donne une endurance magique remarquable pour quelqu'un de son niveau.
 
 ---
 
@@ -156,7 +156,7 @@ Certaines âmes ont passé suffisamment de siècles à canaliser la puissance di
     7. **Roleplay** : Objectifs et motivations
 
 !!! warning
-    L'hôte sera déterminé séparément par tirage de cartes au début de chaque mission/réincarnation.
+    L'hôte sera déterminé séparément par tirage de cartes au début de chaque mission/[réincarnation](reincarnation.md).
 
 ---
 
@@ -164,4 +164,4 @@ Certaines âmes ont passé suffisamment de siècles à canaliser la puissance di
 
 - **Avantages contextuels** : Se cumulent selon l'appréciation du MJ
 - **Effets spécifiques** : Ne se cumulent généralement pas sauf mention contraire
-- **Cohérence narrative** : Le MJ peut ignorer un mot-clé qui ne s'applique pas à la situation
+- **Cohérence narrative** : Le MJ peut ignorer un [mot-clé](mots-cles.md) qui ne s'applique pas à la situation

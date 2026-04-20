@@ -53,7 +53,7 @@ Mais les **PNJ humains** conservent leur esprit, leur libre arbitre — et donc 
 - **Intelligence (INT)** : pour comprendre le monde qui l'entoure ou contrer une manipulation
 
 !!! note "Charisme et apparence"
-    L'apparence et le charisme ne se résument pas à une caractéristique chiffrée. Un personnage particulièrement beau possède simplement le trait **Beau**, ou **Charismatique** pour un charme exceptionnel. Ces traits s'appliquent à toutes les créatures, pas seulement aux humains (voir chapitre Mots-clés).
+    L'apparence et le charisme ne se résument pas à une caractéristique chiffrée. Un personnage particulièrement beau possède simplement le trait **Beau**, ou **Charismatique** pour un charme exceptionnel. Ces traits s'appliquent à toutes les créatures, pas seulement aux humains (voir chapitre [Mots-clés](mots-cles.md)).
 
 !!! note "L'intellect des anges"
     L'intellect des anges n'est pas défini mécaniquement : il s'agit de l'intelligence du joueur, qui métaphoriquement s'incarne dans le personnage comme l'ange le fait dans son hôte. Pour la résolution de problèmes complexes, les joueurs sont encouragés à jouer en roleplay ou à utiliser l'attribut **Clairvoyance**.

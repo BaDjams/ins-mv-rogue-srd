@@ -163,7 +163,7 @@ définitivement son plan d'origine (Paradis, Enfer, ou Limbes).
 
 -   Chaque mort d'hôte consomme une incarnation
 
--   L'ange/démon peut se réincarner dans un nouvel hôte proche
+-   L'ange/démon peut [se réincarner](reincarnation.md) dans un nouvel hôte proche
 
 -   Après la troisième mort, retour forcé au Paradis/Enfer
 
@@ -179,7 +179,7 @@ définitivement son plan d'origine (Paradis, Enfer, ou Limbes).
 
 Lorsqu'un hôte meurt (atteint 0 PV), l'âme surnaturelle a quelques
 minutes pour trouver un nouvel hôte dans un rayon proche (quelques
-centaines de mètres). La réincarnation est automatique et ne coûte pas
+centaines de mètres). La [réincarnation](reincarnation.md) est automatique et ne coûte pas
 de PE, mais consomme une incarnation du quota.
 
 Le corps de l'ancien hôte reste sur place, mort. Il ne se dissipe que

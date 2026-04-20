@@ -14,10 +14,10 @@ Avant de lancer les dés, il est essentiel de déterminer la nature de l'action 
 
 **Pouvoir surnaturel ou attribut angélique** : Dans ce cas, le dé bleu sera utilisé pour déterminer le succès de l'action. Le seuil de réussite est égal à l'attribut angélique (valeur de 1 à 5) associé au pouvoir.
 
-**Compétence ou caractéristique humaine** : Si l'action repose sur une compétence ou une caractéristique humaine de l'hôte, c'est le dé blanc qui sera utilisé. Le seuil de réussite est alors égal à la somme de la compétence (de +0 à +2) et de la caractéristique humaine (de 1 à 3) associée à cette compétence.
+**[Compétence](competences.md) ou caractéristique humaine** : Si l'action repose sur une compétence ou une caractéristique humaine de l'hôte, c'est le dé blanc qui sera utilisé. Le seuil de réussite est alors égal à la somme de la compétence (de +0 à +2) et de la caractéristique humaine (de 1 à 3) associée à cette compétence.
 
 !!! note "Important"
-    Les compétences appartiennent au cerveau de l'hôte, pas à l'âme surnaturelle. L'ange ou le démon accède temporairement aux compétences de son hôte actuel. Si l'hôte meurt et que l'âme se réincarne, les compétences disponibles seront celles du nouvel hôte.
+    Les [compétences](competences.md) appartiennent au cerveau de l'hôte, pas à l'âme surnaturelle. L'ange ou le démon accède temporairement aux compétences de son hôte actuel. Si l'hôte meurt et que l'âme se [réincarne](reincarnation.md), les compétences disponibles seront celles du nouvel hôte.
 
 À partir de cette étape, le dé utilisé pour déterminer le succès de l'action (bleu ou blanc, selon la nature de l'action) sera appelé **"Dé d'action"**.
 
@@ -48,7 +48,7 @@ Il s'agit de la différence entre le seuil de réussite et le résultat du Dé d
 
     **Exemple** : Seuil 7, dé d'action = 1 → Réussite avec marge de 6 !
 
-    Cela récompense les combinaisons optimisées d'attributs célestes et de compétences élevées en générant des marges spectaculaires.
+    Cela récompense les combinaisons optimisées d'[attributs célestes](caracteristiques.md) et de compétences élevées en générant des marges spectaculaires.
 
 Si une règle précise que la marge n'est pas prise en compte, considérer la marge comme égale à 0.
 
@@ -132,7 +132,7 @@ Si par malheur, un personnage vient à cumuler 2 désavantages, alors, en plus d
 
 - Utiliser une compétence que l'hôte ne possède pas entraîne un désavantage.
 - Utiliser une compétence que l'hôte possède sans le matériel adéquat (s'il existe) entraîne un désavantage. Les compétences nécessitant un matériel spécifique sont indiquées par un astérisque sur la fiche.
-- Utiliser une spécialisation que l'hôte possède, en rapport avec la situation, accorde un avantage (après approbation du MJ).
+- Utiliser une [spécialisation](competences.md) que l'hôte possède, en rapport avec la situation, accorde un avantage (après approbation du MJ).
 
 ---
 

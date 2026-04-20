@@ -69,7 +69,7 @@ Le joueur choisit l'un des hôtes proposés.
 
 **Durée de l'incarnation** Une fois l'hôte choisi, le processus
 d'incarnation prend **1d6 minutes**, laissant le temps aux ennemis de
-prendre l'avantage ou de fuir.
+prendre l'[avantage](resolution.md) ou de fuir.
 
 ## **Cas particuliers**
 

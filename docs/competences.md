@@ -9,7 +9,7 @@ Les anges, créatures de pur esprit brut, ne possèdent pas de compétences. Mai
 | **Confirmé** | +2 | Pratique régulière (min. 2×/semaine) depuis au moins un an auprès d'un expert. Peut initier un novice. Peut acquérir une spécialisation. |
 | **Expert** | +3 | Exercice quotidien, reconnu comme autorité. Peut former des confirmés. Peut acquérir une spécialisation. |
 
-Les compétences possèdent des **spécialisations** accessibles à partir du niveau confirmé (+2). Une spécialisation confère un avantage à tous les jets relevant de ce domaine particulier.
+Les compétences possèdent des **spécialisations** accessibles à partir du niveau confirmé (+2). Une spécialisation confère un [avantage](resolution.md) à tous les jets relevant de ce domaine particulier.
 
 Lorsqu'une âme surnaturelle s'incarne dans un humain, elle accède aux compétences et spécialisations maîtrisées initialement par l'humain, ainsi qu'à tous ses souvenirs.
 

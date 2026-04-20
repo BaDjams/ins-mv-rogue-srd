@@ -4,27 +4,27 @@ Le jeu se déroule de nos jours et la technologie disponible et les
 institutions correspondent à celle du monde réel. Cependant, dans ce
 monde, les anges et les démons mènent une guerre secrète à l'insu de la
 population humaine qui ignore leur existence. Les joueurs pourront
-incarner un groupe d'anges, ou un groupe de démons.\
+incarner un groupe d'anges, ou un groupe de démons.
 Les joueurs joueront des anges incarnés sur terre (ou des démons,
 suivant le choix du MJ en début de partie. Pour le reste des règles nous
 utiliserons le terme Ange pour désigner les personnages joués par les
-joueurs, les mécaniques des démons étant les mêmes.\
+joueurs, les mécaniques des démons étant les mêmes.
 Les anges, pure énergie céleste sans forme physique (âme angélique)
 s'incarnent dans un corps humain (hôte). Lors de l'incarnation, l'âme
 humaine rejoint immédiatement le paradis, sans tenir compte de ses actes
-passés.\
+passés.
 l'intrigue se passant dans le monde réel de nos jours, il y a beaucoup
 plus d'être humains que d'ange. En effet, le nombre d'anges n'a pas
 évolué depuis la création de l'univers par dieu et il y en a environ
-1000 sur terre et autant dans les cieux.\
+1000 sur terre et autant dans les cieux.
 Au début de la partie, un hôte humain est sélectionné aléatoirement
 parmi un contingent de soldats de dieu : des humains, particulièrement
 dévoués à la cause angélique et qui sont volontaires pour servir
-d'autres aux anges.\
-Si l'hôte humain vient à mourir, l'ange peut se réincarner dans un
+d'autres aux anges.
+Si l'hôte humain vient à mourir, l'ange peut [se réincarner](reincarnation.md) dans un
 humain proche quelques minutes plus tard, introduisant une dimension
 "rogue like". Cet hôte humain sera généré aléatoirement à l'aide de
-table de génération de personnage.\
+table de génération de personnage.
 Lorsqu'une âme angélique quitte un hôte, le corps humain se dissipe
 dans le néant, ne laissant aucune trace, mis à part ses possessions et
 ses vêtements au sol. Cela peut entraîner des vagues de disparition
@@ -107,13 +107,15 @@ Rêves encore un autre (celui-ci sera détaillé dans un paragraphe dédié,
 tant il offre de possibilités).
 
 Les êtres divins ont la possibilité de voyager entre ces mondes, sous
-certaines conditions cependant :\
-- connaître et emprunter les passages.\
-- se défaire de leur hôte, celle-ci étant liée à un univers.\
+certaines conditions cependant :
+
+- connaître et emprunter les passages.
+- se défaire de leur hôte, celle-ci étant liée à un univers.
+
 Les mondes les plus denses imposent de s'incarner dans un hôte.
 D'autres, plus éthérés, permettent aux anges d'utiliser leur forme
 véritable. Sous cette forme, les anges utilisent exclusivement leurs
-attributs célestes à leur plein potentiel.
+[attributs célestes](caracteristiques.md) à leur plein potentiel.
 
 Les âmes doivent être incarnées dans un être vivant pour séjourner
 durablement dans l'univers "Terre".
@@ -165,7 +167,7 @@ Sur terre, l'univers est régi par les paramètres suivants :
 -   **Comme toutes les Créations de Dieu, il y a des failles** et ce ne
     serait pas impossible que des humains puissent voyager dans le
     temps sans que leur âme soit touchée. le taux d'échec est proche
-    de 1/10\^334 mais ça peut arriver.
+    de 1/10<sup>334</sup> mais ça peut arriver.
 
 **Les Langoliers : Les Éboueurs du Temps**
 

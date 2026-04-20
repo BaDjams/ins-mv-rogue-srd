@@ -53,7 +53,7 @@ Dégâts aggravés conduisent à des Blessures aggravées (⊗)
 
 -   Ne guérissent jamais naturellement
 
--   Nécessitent intervention divine ou démoniaque
+-   Nécessitent [intervention divine](resolution.md) ou démoniaque
 
 Dégâts non-létaux conduisent à des Blessures non-létales (○)
 
@@ -67,11 +67,11 @@ l'attaquant) alors que lors de la division des dégâts par la
 Résilience, l'arrondi se fait toujours à l'inférieur (favorable au
 défenseur).
 
-Exemple : Azrael active son aura de sainteté qui **inflige** Rang hiérarchique x rang céleste /2 dégâts aggravés à toutes les cibles démoniaques au contact. 3×3/2 = 4,5, donc arrondi à 5 dégâts.
+Exemple : Azrael active son aura de sainteté qui **inflige** Rang hiérarchique x [rang céleste](rang.md) /2 dégâts aggravés à toutes les cibles démoniaques au contact. 3×3/2 = 4,5, donc arrondi à 5 dégâts.
 Belphess la démone aux belles fesses est très très au contact et **subit** donc 5/3=1 blessure aggravée (on arrondit à l'inférieur lors de la division par la résilience). Belphess pousse un gémissement équivoque.
 
 Pour les effets bénéfiques (soins, récupération), l'arrondi se fait à
-l'avantage du lanceur.
+l'[avantage](resolution.md) du lanceur.
 
 # POINTS DE VIE
 
@@ -248,84 +248,22 @@ préalable.
 
 voici les points de vie d'autres créatures, pour exemple :
 
-  -----------------------------------------------------------------------------
-  **Tranche de   **Exemple         **Taille**     **Taille       **Taille
-  poids**        d'animaux**                     (SW)**         (D&D)**
-  -------------- ----------------- -------------- -------------- --------------
-  \< 100 g       Colibri, Souris,  1              Taille --2     Minuscule
-                 Musaraigne,                                     (Tiny)
-                 Moineau                                         
-
-  100 g - 1 kg   Rat, Pigeon,      2              Taille --1 à   Minuscule
-                 Écureuil, Furet                  --2            (Tiny)
-
-  1 kg - 5 kg    Chat domestique,  3              Taille --1     Petite (Small)
-                 Lapin, Renard,                                  
-                 Chien (petites                                  
-                 races),                                         
-                 Compsognathus                                   
-                 (dinosaure)                                     
-
-  5 kg - 20 kg   Chien (races      4              Taille 0       Petite à
-                 moyennes),                                      Moyenne (Small
-                 Kangourou, Chèvre                               à Medium)
-                 (jeune),                                        
-                 Velociraptor                                    
-                 (dinosaure)                                     
-
-  20 kg - 50 kg  Chien (grandes    5              Taille 0       Moyenne
-                 races), Mouton,                                 (Medium)
-                 Porc (jeune),                                   
-                 Guépard, Loup                                   
-
-  50 kg - 100 kg Humain, Puma,     6              Taille 0 à +1  Moyenne
-                 Mouton (adulte),                                (Medium)
-                 Porc (adulte)                                   
-
-  100 kg - 200   Lionne, Gorille,  7              Taille +2      Grande (Large)
-  kg             Dauphin, Cerf                                   
-
-  200 kg - 500   Tigre, Ours brun, 8              Taille +2 à +3 Grande (Large)
-  kg             Vache, Cheval,                                  
-                 Licorne                                         
-
-  500 kg - 1     Vache (grande     9              Taille +3      Grande (Large)
-  tonne          race),                                          
-                 Hippopotame                                     
-                 (jeune), Ours                                   
-                 polaire                                         
-
-  1 tonne - 5    Rhinocéros,       10             Taille +4 à +5 Très grande
-  tonnes         Hippopotame                                     (Huge)
-                 (adulte), Girafe,                               
-                 Éléphant d'Asie,                               
-                 Stegosaurus                                     
-                 (dinosaure),                                    
-                 Drake                                           
-
-  5 tonnes - 10  Éléphant          11             Taille +6      Très grande
-  tonnes         d'Afrique,                                     (Huge)
-                 Baleine de Minke,                               
-                 Triceratops,                                    
-                 Tyrannosaurus rex                               
-                 (dinosaures),                                   
-                 Dragon jeune                                    
-
-  10 tonnes - 50 Baleine à bosse,  12             Taille +7      Gigantesque
-  tonnes         Requin-baleine,                                 (Gargantuan)
-                 Diplodocus,                                     
-                 Apatosaurus                                     
-                 (dinosaures),                                   
-                 Dragon adulte                                   
-
-  50 tonnes -    Rorqual commun,   13             Taille +8      Gigantesque
-  100 tonnes     Brachiosaurus,                                  (Gargantuan)
-                 Argentinosaurus                                 
-                 (dinosaures)                                    
-
-  \> 100 tonnes  Baleine bleue     14             Taille +9      Gigantesque
-                                                                 (Gargantuan)
-  -----------------------------------------------------------------------------
+| **Tranche de poids** | **Exemple d'animaux** | **Taille** | **Taille (SW)** | **Taille (D&D)** |
+|---|---|:---:|---|---|
+| < 100 g | Colibri, Souris, Musaraigne, Moineau | 1 | Taille -2 | Minuscule (Tiny) |
+| 100 g – 1 kg | Rat, Pigeon, Écureuil, Furet | 2 | Taille -1 à -2 | Minuscule (Tiny) |
+| 1 kg – 5 kg | Chat domestique, Lapin, Renard, Chien (petites races), Compsognathus | 3 | Taille -1 | Petite (Small) |
+| 5 kg – 20 kg | Chien (races moyennes), Kangourou, Chèvre (jeune), Velociraptor | 4 | Taille 0 | Petite à Moyenne |
+| 20 kg – 50 kg | Chien (grandes races), Mouton, Porc (jeune), Guépard, Loup | 5 | Taille 0 | Moyenne (Medium) |
+| 50 kg – 100 kg | Humain, Puma, Mouton (adulte), Porc (adulte) | 6 | Taille 0 à +1 | Moyenne (Medium) |
+| 100 kg – 200 kg | Lionne, Gorille, Dauphin, Cerf | 7 | Taille +2 | Grande (Large) |
+| 200 kg – 500 kg | Tigre, Ours brun, Vache, Cheval, Licorne | 8 | Taille +2 à +3 | Grande (Large) |
+| 500 kg – 1 tonne | Vache (grande race), Hippopotame (jeune), Ours polaire | 9 | Taille +3 | Grande (Large) |
+| 1 – 5 tonnes | Rhinocéros, Hippopotame (adulte), Girafe, Éléphant d'Asie, Drake | 10 | Taille +4 à +5 | Très grande (Huge) |
+| 5 – 10 tonnes | Éléphant d'Afrique, Baleine de Minke, Triceratops, T. rex, Dragon jeune | 11 | Taille +6 | Très grande (Huge) |
+| 10 – 50 tonnes | Baleine à bosse, Requin-baleine, Diplodocus, Apatosaurus, Dragon adulte | 12 | Taille +7 | Gigantesque (Gargantuan) |
+| 50 – 100 tonnes | Rorqual commun, Brachiosaurus, Argentinosaurus | 13 | Taille +8 | Gigantesque (Gargantuan) |
+| > 100 tonnes | Baleine bleue | 14 | Taille +9 | Gigantesque (Gargantuan) |
 
 ## Division des dommages encaissés :
 
@@ -359,10 +297,10 @@ certaines formes de dommages ou états. Voir la section "états".
 ## Restauration des points de vie :
 
 une créature vivante récupère les points de vie au rythme de (rang) /
-semaine (voir chapitre sur le rang céleste).\
+semaine (voir chapitre sur le rang céleste).
 En plus de cette récupération naturelle, une créature surnaturelle
 récupère des points de vie au rythme de (rang)/jour (au même moment que
-l'énergie, voir la section "restauration de l'énergie").\
+l'énergie, voir la section "[restauration de l'énergie](energie.md)").
 Note : Certaines créatures maudites comme les vampires ne restaurent pas
 leur points de vie automatiquement, ils sont obligés de les prendre à
 leur victime (et disposent d'une capacité spéciale pour cela). ces

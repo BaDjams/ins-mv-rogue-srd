@@ -2,13 +2,13 @@
 
 ## Principe Général
 
-Le rang céleste d'une créature détermine sa capacité à maîtriser des
+Le [rang céleste](rang.md) d'une créature détermine sa capacité à maîtriser des
 pouvoirs surnaturels. Plus une créature a un rang élevé, plus elle peut
 accéder à des pouvoirs puissants et les développer à un niveau avancé.
 
 ## Rang des pouvoirs et Drain
 
-Chaque pouvoir possède un rang (0 à 6). Le rang détermine à la fois l'accès et le coût en drain.
+Chaque pouvoir possède un rang (0 à 6). Le rang détermine à la fois l'accès et le coût en [drain](energie.md).
 
 - **Rang 0** : gratuit, accessible aux humains initiés, 0 dé de drain.
 - **Rang 1–6** : dés de drain = rang effectif de lancement. Chaque 6 = 1 affaiblissement d'âme.
@@ -45,7 +45,7 @@ Quel que soit le niveau prérequis d'un pouvoir, il ne pourra être
 augmenté au-delà du Rang Céleste du personnage.
 
 -   **Exemple 1 :** Un pouvoir avec un prérequis de Rang 1 (comme
-    *Résilience*) peut être amélioré deux fois par un Ange de Rang 3,
+    *[Résilience](blessures.md)*) peut être amélioré deux fois par un Ange de Rang 3,
     atteignant *Résilience 3*.
 
 -   **Exemple 2 :** Un pouvoir avec un prérequis de Rang 2 (comme *Feu
@@ -75,23 +75,23 @@ augmenté au-delà du Rang Céleste du personnage.
 
 **Mécaniques**
 
--   **PE :** Points d'Énergie
+-   **PE :** [Points d'Énergie](energie.md)
 
--   **Intensité :** Résultat du dé rouge + marge de réussite
+-   **Intensité :** Résultat du [dé rouge](resolution.md) + [marge de réussite](resolution.md)
 
--   **Dé explosif :** Le dé d'intensité explose sur un 6 (relance et
+-   **Dé explosif :** Le [dé d'intensité](resolution.md) explose sur un 6 (relance et
     additionne)
 
 -   **Non-réductible :** Ne peut être réduit par l'armure ou la
     résistance physique
 
--   **Concentration :** Désavantage permanent sur toutes les actions
+-   **Concentration :** [Désavantage](resolution.md) permanent sur toutes les actions
     tant que maintenue, aucune limite de durée
 
 -   **Durée fixe :** Exactement 3 tours puis dissipation automatique.
     Prolongation = nouveau jet + nouveau coût
 
--   **Couper un pouvoir :** Action gratuite, peut être fait à tout
+-   **Couper un pouvoir :** [Action gratuite](combat.md), peut être fait à tout
     moment
 
 -   **Contrôle mental/Possession :** Le contrôleur partage ses PA totaux
@@ -156,7 +156,7 @@ augmenté au-delà du Rang Céleste du personnage.
 
 -   Ange Rang 3 : Niveau maximum = 3 - 2 + 1 = **2** → Feu Ardent 2
 
--   Démon Rang 3 : Feu Ardent 3 impossible (3 + 2 - 1 = 4 \> 3)
+-   Démon Rang 3 : Feu Ardent 3 impossible (3 + 2 - 1 = 4 > 3)
 
 -   Archange Rang 4 : Niveau maximum = 4 - 2 + 1 = **3** → Feu Ardent 3
 
@@ -166,7 +166,7 @@ augmenté au-delà du Rang Céleste du personnage.
 
 -   **Type :** Passif
 
--   **Effet :** Bonus d'initiative et d'actions
+-   **Effet :** Bonus d'[initiative](combat.md) et d'actions
 
 **Calculs :**
 
