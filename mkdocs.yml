@@ -13,11 +13,11 @@ theme:
   features:
     - navigation.tabs
     - navigation.sections
+    - navigation.indexes
     - navigation.top
     - search.suggest
     - search.highlight
     - content.code.copy
-    - toc.follow
 
 extra_css:
   - stylesheets/rogue-srd.css
@@ -37,22 +37,26 @@ markdown_extensions:
 
 nav:
   - Accueil: index.md
-  - Contexte:
-    - Le monde du jeu: contexte.md
-  - Personnage:
-    - Caractéristiques & attributs: caracteristiques.md
-    - Création d'âme: creation.md
-    - Rang céleste: rang.md
-    - Progression: progression.md
-    - Réincarnation: reincarnation.md
-  - Mécanique:
-    - Résolution D666: resolution.md
-    - Combat & initiative: combat.md
-    - Pouvoirs: pouvoirs.md
-    - Compétences: competences.md
-    - Énergie: energie.md
-    - Blessures: blessures.md
-  - Référence:
-    - Mots-clés: mots-cles.md
-    - États: etats.md
-    - Équipement: equipement.md
+  - SRD:
+    - srd.md
+    - Contexte:
+      - Le monde du jeu: contexte.md
+    - Personnage:
+      - Caractéristiques & attributs: caracteristiques.md
+      - Création d'âme: creation.md
+      - Rang céleste: rang.md
+      - Progression: progression.md
+      - Réincarnation: reincarnation.md
+    - Mécanique:
+      - Résolution D666: resolution.md
+      - Combat & initiative: combat.md
+      - Pouvoirs: pouvoirs.md
+      - Compétences: competences.md
+      - Énergie: energie.md
+      - Blessures: blessures.md
+    - Référence:
+      - Mots-clés: mots-cles.md
+      - États: etats.md
+      - Équipement: equipement.md
+  - Simulateur: simulateur.md
+  - Générateur: generateur.md

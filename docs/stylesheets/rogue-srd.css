@@ -819,7 +819,24 @@ body,
 .rogue-fadein { animation: rogue-fadein 0.3s ease forwards; }
 
 /* ═══════════════════════════════════════════════════════
-   7. RESPONSIVE
+   7. MISE EN PAGE — Volet de droite masqué
+   ═══════════════════════════════════════════════════════ */
+
+/* Table des matières droite masquée globalement */
+.md-sidebar--secondary {
+  display: none;
+}
+
+/* Le contenu principal récupère l'espace libéré */
+@media screen and (min-width: 76.1875em) {
+  .md-content__inner {
+    margin-right: 0;
+    max-width: 100%;
+  }
+}
+
+/* ═══════════════════════════════════════════════════════
+   8. RESPONSIVE
    ═══════════════════════════════════════════════════════ */
 
 @media (max-width: 600px) {
