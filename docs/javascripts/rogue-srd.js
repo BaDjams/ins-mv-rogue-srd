@@ -539,14 +539,23 @@
     });
 
     // ── Dé explosif ─────────────────────────────────────
-    // Retourne { total, dice[], steps[] }
-    // dice = tous les résultats individuels (affichés avec "+")
+    // Règle : quel que soit le résultat du 1er dé, on ajoute `sources` dés bonus.
+    // Seuls les dés BONUS (pas le 1er) peuvent déclencher de nouvelles explosions sur 6.
     function rollExplosive(init, sources) {
       var dice = [init];
-      for (var i = 0; i < sources; i++) dice.push(d6());
-      var total = dice.reduce(function (a, b) { return a + b; }, 0);
-      var steps = [];
-      var pending = dice.filter(function (v) { return v === 6; });
+      var total = init;
+
+      // Lancer les dés bonus (toujours, quelle que soit la valeur du 1er)
+      var bonus = [];
+      for (var i = 0; i < sources; i++) {
+        var v = d6();
+        bonus.push(v);
+        dice.push(v);
+        total += v;
+      }
+
+      // Seuls les dés bonus explosent sur 6
+      var pending = bonus.filter(function (v) { return v === 6; });
       while (pending.length) {
         var next = [];
         pending.forEach(function () {
@@ -557,7 +566,8 @@
         });
         pending = next;
       }
-      steps.push(dice.join(' + ') + ' = <strong>' + total + '</strong>');
+
+      var steps = [dice.join(' + ') + ' = <strong>' + total + '</strong>'];
       return { total: total, dice: dice, steps: steps };
     }
 
