@@ -69,31 +69,31 @@ En situation normale, la plupart des actions sont considérées comme faciles. E
 
 ### Dé explosif (règle de base)
 
-Dans certains cas précisés dans les règles, le dé d'intensité (rouge) peut devenir **explosif** : cela signifie que **quel que soit le score du premier jet**, on le relance et on ajoute le nouveau résultat. Par la suite, le dé continue d'exploser s'il indique un 6. On procède ainsi jusqu'à ce que le dé indique un autre résultat que 6. Il n'y a alors pas de limite au résultat du dé d'intensité, si ce n'est la chance du lanceur.
+Dans certains cas précisés dans les règles, le dé d'intensité (rouge) devient **explosif** : **quel que soit son résultat**, on ajoute immédiatement un **dé d'explosion** (d6 bonus). Le dé initial ne peut jamais exploser lui-même — seuls les dés d'explosion peuvent enchaîner : si un dé d'explosion indique 6, il génère un nouveau dé d'explosion, et ainsi de suite jusqu'à ce qu'aucun n'indique 6.
 
-**Garantie** : Un dé explosif génère toujours au minimum un résultat de 2 (pire cas : 1+1).
+**Garantie** : Un dé explosif génère toujours au minimum un résultat de 2 (pire cas : 1 + 1).
 
 **Exemple simple** :
-- Dé explosif, premier jet : 3 → relance automatique → 6 → continue → 2 → stop
+- Dé initial : 3 → ajoute 1 dé d'explosion → **6** → enchaîne → **2** → stop
 - **Total : 3 + 6 + 2 = 11**
 
 ### Dés Explosifs Empilables
 
-Lorsque plusieurs effets rendent le dé d'intensité explosif (Critique, Double Avantage, arme explosive, etc.), ils se cumulent.
+Lorsque plusieurs effets rendent le dé d'intensité explosif (Critique, Double Avantage, arme explosive, etc.), leurs **sources d'explosion** se cumulent.
 
 **Mécanique** :
 
-1. Lance le dé d'intensité initial (quel que soit son résultat, tu continues)
-2. Lance autant de dés d'intensité supplémentaires que de sources d'explosion
-3. Tous les dés qui indiquent 6 explosent : relance-les et additionne le résultat
-4. Continue jusqu'à ce qu'aucun dé n'indique 6
+1. Lance le dé d'intensité initial (quel que soit son résultat)
+2. Lance autant de **dés d'explosion** que de sources actives
+3. Chaque dé d'explosion indiquant 6 génère un nouveau dé d'explosion
+4. Continue jusqu'à ce qu'aucun dé d'explosion n'indique 6
 5. Additionne tous les résultats
 
 **Nombre de sources** :
 
-- 1 source : dé initial + 1 dé supplémentaire (minimum garanti : 2)
-- 2 sources : dé initial + 2 dés supplémentaires (minimum garanti : 3)
-- 3 sources : dé initial + 3 dés supplémentaires (minimum garanti : 4)
+- 1 source : dé initial + 1 dé d'explosion (minimum garanti : 2)
+- 2 sources : dé initial + 2 dés d'explosion (minimum garanti : 3)
+- 3 sources : dé initial + 3 dés d'explosion (minimum garanti : 4)
 
 ---
 
@@ -119,7 +119,7 @@ Si, pour un même jet, on cumule à la fois un avantage et un désavantage, alor
 
 Si pour un même jet, on cumule deux avantages ou plus, alors le dé d'intensité (rouge) devient **explosif**. Le personnage choisit le plus bas entre le dé bleu et le dé blanc (premier avantage), puis bénéficie d'un dé explosif (second avantage).
 
-**Exemple** : Sur un jet avec double avantage, le résultat indique 254, le joueur choisit 2 grâce à son premier avantage. Son dé d'intensité devient explosif (second avantage) : 4 → relance → 6 → relance → 3, pour un résultat d'intensité de 13 (4+6+3), auquel on ajoute la marge de réussite.
+**Exemple** : Sur un jet avec double avantage, le résultat indique 254, le joueur choisit 2 grâce à son premier avantage. Son dé d'intensité devient explosif (second avantage) : dé initial **4** → ajoute 1 dé d'explosion → **6** → enchaîne → **3**, pour un résultat d'intensité de 13 (4 + 6 + 3), auquel on ajoute la marge de réussite.
 
 !!! note
     Il n'y a aucun intérêt à cumuler plus de deux avantages sur un même jet.
