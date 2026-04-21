@@ -819,7 +819,303 @@ body,
 .rogue-fadein { animation: rogue-fadein 0.3s ease forwards; }
 
 /* ═══════════════════════════════════════════════════════
-   7. MISE EN PAGE — Volet de droite masqué
+   7. SIMULATEUR D666
+   ═══════════════════════════════════════════════════════ */
+
+/* — Paramètres — */
+.sim-params {
+  background: var(--rogue-bg-2);
+  border: 1px solid var(--rogue-border);
+  border-radius: 14px;
+  padding: 28px 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+.sim-row {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  transition: opacity 0.25s;
+}
+
+.sim-row--dim { opacity: 0.38; pointer-events: none; }
+
+.sim-lbl {
+  font-family: var(--rogue-font-label);
+  font-size: 0.7em;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--rogue-text-faint);
+  min-width: 150px;
+}
+
+.sim-hint {
+  font-family: var(--rogue-font-body);
+  font-size: 0.8em;
+  color: var(--rogue-text-faint);
+  font-style: italic;
+}
+
+/* — Seuil — */
+.sim-seuil {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  border: 1px solid var(--rogue-angel-border);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.sim-seuil-btn {
+  font-size: 1.2em;
+  font-weight: 700;
+  width: 38px;
+  height: 38px;
+  background: var(--rogue-angel-subtle);
+  color: var(--rogue-angel-light);
+  border: none;
+  cursor: pointer;
+  transition: background 0.15s;
+  line-height: 1;
+}
+
+.sim-seuil-btn:hover { background: var(--rogue-angel-dim); }
+
+.sim-seuil-val {
+  min-width: 48px;
+  text-align: center;
+  font-family: var(--rogue-font-label);
+  font-size: 1.5em;
+  font-weight: 700;
+  color: var(--rogue-angel-light);
+  padding: 0 6px;
+}
+
+/* — Toggles — */
+.sim-tog-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.sim-tog {
+  font-family: var(--rogue-font-label);
+  font-size: 0.68em;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 7px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  border: 1px solid var(--rogue-border-faint);
+  background: transparent;
+  color: var(--rogue-text-faint);
+  transition: all 0.15s;
+}
+
+.sim-tog:hover { border-color: var(--rogue-border); color: var(--rogue-text); }
+
+/* Angel type */
+.sim-tog--angel.sim-tog--on {
+  background: var(--rogue-angel-subtle);
+  border-color: var(--rogue-angel-border);
+  color: var(--rogue-angel-light);
+}
+
+/* Host type */
+.sim-tog--host.sim-tog--on {
+  background: var(--rogue-host-subtle);
+  border-color: var(--rogue-host-border);
+  color: var(--rogue-host-light);
+}
+
+/* Modifier: none */
+.sim-tog--none.sim-tog--on {
+  background: var(--rogue-bg-4);
+  border-color: var(--rogue-border);
+  color: var(--rogue-text);
+}
+
+/* Modifier: avantage */
+.sim-tog--a.sim-tog--on {
+  background: var(--rogue-angel-subtle);
+  border-color: var(--rogue-angel-border);
+  color: var(--rogue-angel-light);
+}
+
+/* Modifier: double avantage */
+.sim-tog--da.sim-tog--on {
+  background: var(--rogue-divine-subtle);
+  border-color: oklch(68% 0.18 80 / 0.4);
+  color: var(--rogue-divine);
+}
+
+/* Modifier: désavantage */
+.sim-tog--d.sim-tog--on {
+  background: var(--rogue-intensity-subtle);
+  border-color: var(--rogue-intensity-border);
+  color: var(--rogue-intensity-light);
+}
+
+/* Modifier: double désavantage */
+.sim-tog--dd.sim-tog--on {
+  background: oklch(35% 0.2 18 / 0.25);
+  border-color: oklch(45% 0.22 18 / 0.5);
+  color: oklch(70% 0.22 18);
+}
+
+/* — Bouton Lancer — */
+.sim-roll-btn {
+  align-self: flex-start;
+  font-family: var(--rogue-font-label);
+  font-size: 0.85em;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 13px 32px;
+  border-radius: 8px;
+  background: var(--rogue-angel);
+  color: var(--rogue-bg);
+  border: none;
+  cursor: pointer;
+  font-weight: 700;
+  transition: background 0.2s, transform 0.1s;
+}
+
+.sim-roll-btn:hover   { background: var(--rogue-angel-light); }
+.sim-roll-btn:active  { transform: scale(0.97); }
+
+/* — Zone résultat — */
+.sim-result {
+  margin-top: 20px;
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity 0.3s, transform 0.3s;
+  pointer-events: none;
+}
+
+.sim-result--visible {
+  opacity: 1;
+  transform: none;
+  pointer-events: auto;
+}
+
+/* — Dés — */
+.sim-dice {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.sim-die {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  transition: opacity 0.25s;
+}
+
+.sim-die--dim { opacity: 0.28; }
+
+.sim-die--kept .rogue-roller__die {
+  box-shadow: 0 0 0 2px var(--rogue-angel-light);
+}
+
+.sim-die-lbl {
+  font-family: var(--rogue-font-label);
+  font-size: 0.65em;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--rogue-text-dim);
+}
+
+.sim-die-sub {
+  font-family: var(--rogue-font-body);
+  font-size: 0.72em;
+  color: var(--rogue-text-faint);
+}
+
+.sim-die-badge {
+  font-size: 0.6em;
+  font-family: var(--rogue-font-label);
+  letter-spacing: 0.06em;
+  padding: 2px 7px;
+  border-radius: 4px;
+}
+
+.sim-die-badge--kept {
+  background: var(--rogue-angel-subtle);
+  color: var(--rogue-angel-light);
+  border: 1px solid var(--rogue-angel-border);
+}
+
+.sim-die-badge--exp {
+  background: var(--rogue-intensity-subtle);
+  color: var(--rogue-intensity-light);
+  border: 1px solid var(--rogue-intensity-border);
+}
+
+/* — Bandeau résultat — */
+.sim-outcome {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 20px;
+  border-radius: 10px;
+  margin-bottom: 16px;
+  border: 1px solid transparent;
+}
+
+.sim-outcome-icon { font-size: 1.4em; }
+
+.sim-outcome-label {
+  font-family: var(--rogue-font-display);
+  font-size: 1.2em;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+
+.sim-outcome--success  { background: var(--rogue-angel-subtle); border-color: var(--rogue-angel-border); color: var(--rogue-angel-light); }
+.sim-outcome--critsuc  { background: var(--rogue-divine-subtle); border-color: oklch(68% 0.18 80 / 0.4); color: var(--rogue-divine); }
+.sim-outcome--failure  { background: var(--rogue-bg-3); border-color: var(--rogue-border-faint); color: var(--rogue-text-dim); }
+.sim-outcome--critfail { background: var(--rogue-intensity-subtle); border-color: var(--rogue-intensity-border); color: var(--rogue-intensity-light); }
+.sim-outcome--divine   { background: var(--rogue-divine-subtle); border-color: oklch(68% 0.18 80 / 0.5); color: var(--rogue-divine); }
+.sim-outcome--demonic  { background: oklch(35% 0.2 18 / 0.2); border-color: oklch(45% 0.22 18 / 0.4); color: oklch(70% 0.22 18); }
+
+/* — Étapes de calcul — */
+.sim-steps {
+  background: var(--rogue-bg-2);
+  border: 1px solid var(--rogue-border-faint);
+  border-radius: 10px;
+  padding: 16px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.sim-step {
+  font-family: var(--rogue-font-body);
+  font-size: 0.9em;
+  color: var(--rogue-text-dim);
+  line-height: 1.5;
+  padding: 2px 0;
+  border-bottom: 1px solid var(--rogue-border-faint);
+}
+
+.sim-step:last-child { border-bottom: none; }
+
+.sim-intensity-final {
+  font-family: var(--rogue-font-label);
+  font-size: 1.05em;
+  font-weight: 700;
+  color: var(--rogue-intensity-light);
+  letter-spacing: 0.05em;
+}
+
+/* ═══════════════════════════════════════════════════════
+   8. MISE EN PAGE — Volet de droite masqué
    ═══════════════════════════════════════════════════════ */
 
 /* Table des matières droite masquée globalement */

@@ -459,6 +459,294 @@
   }
 
   /* ══════════════════════════════════════════════════════
+     COMPOSANT : SIMULATEUR COMPLET D666
+     Usage HTML :
+       <div class="rogue-sim"></div>
+  ══════════════════════════════════════════════════════ */
+
+  function buildSimulator(container) {
+
+    // ── UI ──────────────────────────────────────────────
+    container.innerHTML = `
+      <div class="sim-params">
+
+        <div class="sim-row">
+          <span class="sim-lbl">Seuil de réussite</span>
+          <div class="sim-seuil">
+            <button class="sim-seuil-btn" data-el="dec">−</button>
+            <span class="sim-seuil-val" data-el="seuil">3</span>
+            <button class="sim-seuil-btn" data-el="inc">+</button>
+          </div>
+          <span class="sim-hint">(1–9, défaut 3)</span>
+        </div>
+
+        <div class="sim-row" data-el="type-row">
+          <span class="sim-lbl">Type d'action</span>
+          <div class="sim-tog-group" data-group="type">
+            <button class="sim-tog sim-tog--angel sim-tog--on" data-val="angel">Angélique · dé bleu</button>
+            <button class="sim-tog sim-tog--host" data-val="host">Humain · dé blanc</button>
+          </div>
+          <span class="sim-hint" data-el="type-hint"></span>
+        </div>
+
+        <div class="sim-row">
+          <span class="sim-lbl">Modificateur</span>
+          <div class="sim-tog-group sim-tog-group--mod" data-group="mod">
+            <button class="sim-tog sim-tog--dd" data-val="dd">Dbl désavantage</button>
+            <button class="sim-tog sim-tog--d"  data-val="d">Désavantage</button>
+            <button class="sim-tog sim-tog--none sim-tog--on" data-val="none">Aucun</button>
+            <button class="sim-tog sim-tog--a"  data-val="a">Avantage</button>
+            <button class="sim-tog sim-tog--da" data-val="da">Dbl avantage</button>
+          </div>
+        </div>
+
+        <button class="sim-roll-btn" data-el="roll">🎲 &nbsp;Lancer le D666</button>
+      </div>
+
+      <div class="sim-result" data-el="result"></div>
+    `;
+
+    // ── État ────────────────────────────────────────────
+    let seuil = 3;
+    let actionType = 'angel';
+    let modifier = 'none';
+
+    const seuilEl   = container.querySelector('[data-el="seuil"]');
+    const typeRow   = container.querySelector('[data-el="type-row"]');
+    const typeHint  = container.querySelector('[data-el="type-hint"]');
+    const resultEl  = container.querySelector('[data-el="result"]');
+
+    // Seuil ±
+    container.querySelector('[data-el="dec"]').addEventListener('click', function () {
+      if (seuil > 1) seuilEl.textContent = --seuil;
+    });
+    container.querySelector('[data-el="inc"]').addEventListener('click', function () {
+      if (seuil < 9) seuilEl.textContent = ++seuil;
+    });
+
+    // Groupes de boutons
+    function setupGroup(name, cb) {
+      container.querySelectorAll('[data-group="' + name + '"] .sim-tog').forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          container.querySelectorAll('[data-group="' + name + '"] .sim-tog')
+            .forEach(function (b) { b.classList.remove('sim-tog--on'); });
+          btn.classList.add('sim-tog--on');
+          cb(btn.dataset.val);
+        });
+      });
+    }
+
+    setupGroup('type', function (v) { actionType = v; });
+    setupGroup('mod', function (v) {
+      modifier = v;
+      const hasMod = v !== 'none';
+      typeRow.classList.toggle('sim-row--dim', hasMod);
+      typeHint.textContent = hasMod ? '(ignoré — avantage/désavantage actif)' : '';
+    });
+
+    // ── Dé explosif ─────────────────────────────────────
+    // Retourne { total, steps[] } avec détail des relances
+    function rollExplosive(init, sources) {
+      var pool = [init];
+      for (var i = 0; i < sources; i++) pool.push(d6());
+      var steps = ['Lancer initial : [' + pool.join(', ') + ']'];
+      var total = pool.reduce(function (a, b) { return a + b; }, 0);
+      var pending = pool.filter(function (v) { return v === 6; });
+      while (pending.length) {
+        var next = [];
+        pending.forEach(function () {
+          var v = d6();
+          steps.push('Explosion (6) → relance : ' + v);
+          total += v;
+          if (v === 6) next.push(v);
+        });
+        pending = next;
+      }
+      steps.push('Total explosif : ' + total);
+      return { total: total, steps: steps };
+    }
+
+    // ── Lancer ──────────────────────────────────────────
+    container.querySelector('[data-el="roll"]').addEventListener('click', function () {
+
+      // 1. Dés bruts
+      var blue = d6(), white = d6(), red1 = d6();
+      var red2 = modifier === 'dd' ? d6() : null;
+
+      // 2. Résultats spéciaux (toujours sur les dés bruts)
+      var is111 = blue === 1 && white === 1 && red1 === 1;
+      var is666 = blue === 6 && white === 6 && red1 === 6;
+      var isCritFail = !is666 && blue === 6 && white === 6;
+
+      // 3. Dé d'action selon modificateur
+      var actionDie, actionExplain;
+      if (modifier === 'da' || modifier === 'a') {
+        actionDie = Math.min(blue, white);
+        actionExplain = modifier === 'da'
+          ? 'min(' + blue + ', ' + white + ') = <strong>' + actionDie + '</strong> (double avantage)'
+          : 'min(' + blue + ', ' + white + ') = <strong>' + actionDie + '</strong> (avantage)';
+      } else if (modifier === 'dd' || modifier === 'd') {
+        actionDie = Math.max(blue, white);
+        actionExplain = modifier === 'dd'
+          ? 'max(' + blue + ', ' + white + ') = <strong>' + actionDie + '</strong> (double désavantage)'
+          : 'max(' + blue + ', ' + white + ') = <strong>' + actionDie + '</strong> (désavantage)';
+      } else {
+        actionDie = actionType === 'angel' ? blue : white;
+        actionExplain = actionType === 'angel'
+          ? 'dé bleu = <strong>' + blue + '</strong> (action angélique)'
+          : 'dé blanc = <strong>' + white + '</strong> (action humaine)';
+      }
+
+      // 4. Réussite
+      var isSuccess = !is666 && actionDie <= seuil && actionDie !== 6;
+      var marge = isSuccess ? seuil - actionDie : 0;
+
+      // 5. Critique
+      var critThr = seuil >= 6 ? 5 : seuil;
+      var isCritSuccess = isSuccess && blue === critThr && white === critThr;
+
+      // 6. Sources explosives
+      var expSources = 0;
+      if (modifier === 'da') expSources++;
+      if (isCritSuccess)     expSources++;
+
+      // 7. Intensité
+      var intensitySteps = [], intensityBase;
+      if (modifier === 'dd' && red2 !== null) {
+        intensityBase = Math.min(red1, red2);
+        intensitySteps.push('Dé 1 : ' + red1 + '   Dé 2 : ' + red2);
+        intensitySteps.push('On garde le moins bon : min(' + red1 + ', ' + red2 + ') = <strong>' + intensityBase + '</strong>');
+      } else if (expSources > 0) {
+        var expResult = rollExplosive(red1, expSources);
+        intensitySteps = expResult.steps;
+        intensityBase = expResult.total;
+      } else {
+        intensityBase = red1;
+        intensitySteps.push('Dé rouge = ' + red1);
+      }
+
+      // 8. Intensité finale
+      var intensityFinal, intensityFinalLine;
+      if (isSuccess) {
+        intensityFinal = Math.max(marge, intensityBase);
+        intensityFinalLine = 'max(marge <strong>' + marge + '</strong>, intensité <strong>' + intensityBase + '</strong>) = <strong>' + intensityFinal + '</strong>';
+      } else {
+        intensityFinal = intensityBase;
+        intensityFinalLine = 'Intensité brute = <strong>' + intensityBase + '</strong> (marge non calculée sur un échec)';
+      }
+
+      // ── Rendu ─────────────────────────────────────────
+      renderResult({
+        blue: blue, white: white, red1: red1, red2: red2,
+        actionDie: actionDie, actionExplain: actionExplain,
+        isSuccess: isSuccess, isCritSuccess: isCritSuccess,
+        isCritFail: isCritFail, is111: is111, is666: is666,
+        marge: marge, seuil: seuil, critThr: critThr,
+        intensitySteps: intensitySteps,
+        intensityBase: intensityBase,
+        intensityFinal: intensityFinal, intensityFinalLine: intensityFinalLine,
+        expSources: expSources, modifier: modifier, actionType: actionType
+      });
+    });
+
+    // ── Rendu du résultat ────────────────────────────────
+    function renderResult(r) {
+
+      // Outcome
+      var oc, icon, label;
+      if (r.is111) {
+        oc = 'divine';   icon = '✨'; label = 'Intervention Divine — 111';
+      } else if (r.is666) {
+        oc = 'demonic';  icon = '🔥'; label = 'Intervention Démoniaque — 666';
+      } else if (r.isCritFail) {
+        oc = 'critfail'; icon = '💀'; label = 'Échec Critique — double 6';
+      } else if (r.isCritSuccess) {
+        oc = 'critsuc';  icon = '⚡'; label = 'Réussite Critique !';
+      } else if (r.isSuccess) {
+        oc = 'success';  icon = '✅'; label = 'Réussite';
+      } else {
+        oc = 'failure';  icon = '❌'; label = 'Échec';
+      }
+
+      // Dés
+      var diceHtml = buildDice(r);
+
+      // Étapes de calcul
+      var steps = [];
+      steps.push('<strong>Dé d\'action :</strong> ' + r.actionExplain);
+
+      if (r.is111 || r.is666) {
+        steps.push('Résultat spécial — voir le chapitre Résolution pour les effets.');
+      } else if (r.isCritFail) {
+        steps.push('Les deux dés d\'action = 6 → Échec critique + complication narrative.');
+      } else {
+        if (r.isSuccess) {
+          steps.push(r.actionDie + ' ≤ seuil ' + r.seuil + ' → Réussite');
+          if (r.isCritSuccess) {
+            steps.push('Dé bleu (' + r.blue + ') = dé blanc (' + r.white + ') = ' + r.critThr + ' = seuil → <strong>Réussite Critique !</strong> — intensité explosive.');
+          }
+          steps.push('<strong>Marge :</strong> seuil ' + r.seuil + ' − résultat ' + r.actionDie + ' = <strong>' + r.marge + '</strong>');
+        } else {
+          steps.push(r.actionDie + (r.actionDie === 6 ? ' = 6 (toujours un échec)' : ' > seuil ' + r.seuil) + ' → Échec');
+        }
+
+        steps.push('<strong>Intensité :</strong>');
+        r.intensitySteps.forEach(function (s) { steps.push('· ' + s); });
+        steps.push('→ ' + r.intensityFinalLine);
+        steps.push('<span class="sim-intensity-final">Intensité finale : ' + r.intensityFinal + '</span>');
+      }
+
+      resultEl.className = 'sim-result sim-result--visible';
+      resultEl.innerHTML =
+        diceHtml +
+        '<div class="sim-outcome sim-outcome--' + oc + '">' +
+          '<span class="sim-outcome-icon">' + icon + '</span>' +
+          '<span class="sim-outcome-label">' + label + '</span>' +
+        '</div>' +
+        '<div class="sim-steps">' +
+          steps.map(function (s) { return '<div class="sim-step">' + s + '</div>'; }).join('') +
+        '</div>';
+    }
+
+    function buildDice(r) {
+      // Détermine quelle(s) die(s) est "retenue"
+      var blueKept, whiteKept, red1Kept, red2Kept;
+      if (r.modifier === 'none') {
+        blueKept  = r.actionType === 'angel';
+        whiteKept = r.actionType === 'host';
+      } else if (r.modifier === 'a' || r.modifier === 'da') {
+        blueKept  = r.blue  <= r.white;
+        whiteKept = r.white <= r.blue;
+      } else {
+        blueKept  = r.blue  >= r.white;
+        whiteKept = r.white >= r.blue;
+      }
+      red1Kept = !(r.modifier === 'dd' && r.red2 !== null && r.red2 < r.red1);
+      red2Kept  = r.modifier === 'dd' && r.red2 !== null && r.red2 <= r.red1;
+
+      function die(val, type, lbl, sub, kept, dim, badge) {
+        return '<div class="sim-die' + (kept ? ' sim-die--kept' : '') + (dim ? ' sim-die--dim' : '') + '">' +
+          '<div class="rogue-roller__die rogue-roller__die--' + type + '">' + val + '</div>' +
+          '<div class="sim-die-lbl">' + lbl + '</div>' +
+          '<div class="sim-die-sub">' + sub + '</div>' +
+          (kept  ? '<div class="sim-die-badge sim-die-badge--kept">retenu</div>' : '') +
+          (badge ? '<div class="sim-die-badge sim-die-badge--exp">💥 explosif</div>' : '') +
+        '</div>';
+      }
+
+      var html = '<div class="sim-dice">';
+      html += die(r.blue,  'angel',     'Bleu',   'angélique', blueKept,  !blueKept  && r.modifier === 'none' && r.actionType === 'host',  false);
+      html += die(r.white, 'host',      'Blanc',  'hôte',      whiteKept, !whiteKept && r.modifier === 'none' && r.actionType === 'angel', false);
+      html += die(r.red1,  'intensity', 'Rouge' + (r.red2 !== null ? ' ①' : ''), 'intensité', red1Kept, !red1Kept, r.expSources > 0 && red1Kept);
+      if (r.red2 !== null) {
+        html += die(r.red2, 'intensity', 'Rouge ②', 'intensité', red2Kept, !red2Kept, false);
+      }
+      html += '</div>';
+      return html;
+    }
+  }
+
+  /* ══════════════════════════════════════════════════════
      INIT — active les composants au chargement
   ══════════════════════════════════════════════════════ */
 
@@ -466,6 +754,7 @@
     document.querySelectorAll('.rogue-roller').forEach(buildRoller);
     document.querySelectorAll('.rogue-roller-adv').forEach(buildAdvantageRoller);
     document.querySelectorAll('.rogue-result-table').forEach(buildResultTable);
+    document.querySelectorAll('.rogue-sim').forEach(buildSimulator);
   }
 
   if (document.readyState === 'loading') {
