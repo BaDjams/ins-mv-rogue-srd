@@ -1070,11 +1070,43 @@ body,
 
 .sim-outcome-icon { font-size: 1.4em; }
 
+.sim-outcome-body {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
 .sim-outcome-label {
   font-family: var(--rogue-font-display);
   font-size: 1.2em;
   font-weight: 700;
   letter-spacing: 0.04em;
+}
+
+.sim-outcome-intensity {
+  font-family: var(--rogue-font-label);
+  font-size: 0.82em;
+  letter-spacing: 0.08em;
+  opacity: 0.85;
+}
+
+/* Séparateurs dans la rangée de dés */
+.sim-dice-sep {
+  align-self: center;
+  font-size: 1.3em;
+  color: var(--rogue-border);
+  padding: 0 4px;
+  margin-top: -20px;
+}
+
+.sim-dice-plus {
+  align-self: center;
+  font-family: var(--rogue-font-label);
+  font-size: 1.1em;
+  font-weight: 700;
+  color: var(--rogue-intensity-dim);
+  padding: 0 2px;
+  margin-top: -20px;
 }
 
 .sim-outcome--success  { background: var(--rogue-angel-subtle); border-color: var(--rogue-angel-border); color: var(--rogue-angel-light); }

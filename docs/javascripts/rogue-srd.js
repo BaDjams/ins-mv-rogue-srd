@@ -486,7 +486,6 @@
             <button class="sim-tog sim-tog--angel sim-tog--on" data-val="angel">Angélique · dé bleu</button>
             <button class="sim-tog sim-tog--host" data-val="host">Humain · dé blanc</button>
           </div>
-          <span class="sim-hint" data-el="type-hint"></span>
         </div>
 
         <div class="sim-row">
@@ -511,10 +510,8 @@
     let actionType = 'angel';
     let modifier = 'none';
 
-    const seuilEl   = container.querySelector('[data-el="seuil"]');
-    const typeRow   = container.querySelector('[data-el="type-row"]');
-    const typeHint  = container.querySelector('[data-el="type-hint"]');
-    const resultEl  = container.querySelector('[data-el="result"]');
+    const seuilEl  = container.querySelector('[data-el="seuil"]');
+    const resultEl = container.querySelector('[data-el="result"]');
 
     // Seuil ±
     container.querySelector('[data-el="dec"]').addEventListener('click', function () {
@@ -539,31 +536,29 @@
     setupGroup('type', function (v) { actionType = v; });
     setupGroup('mod', function (v) {
       modifier = v;
-      const hasMod = v !== 'none';
-      typeRow.classList.toggle('sim-row--dim', hasMod);
-      typeHint.textContent = hasMod ? '(ignoré — avantage/désavantage actif)' : '';
     });
 
     // ── Dé explosif ─────────────────────────────────────
-    // Retourne { total, steps[] } avec détail des relances
+    // Retourne { total, dice[], steps[] }
+    // dice = tous les résultats individuels (affichés avec "+")
     function rollExplosive(init, sources) {
-      var pool = [init];
-      for (var i = 0; i < sources; i++) pool.push(d6());
-      var steps = ['Lancer initial : [' + pool.join(', ') + ']'];
-      var total = pool.reduce(function (a, b) { return a + b; }, 0);
-      var pending = pool.filter(function (v) { return v === 6; });
+      var dice = [init];
+      for (var i = 0; i < sources; i++) dice.push(d6());
+      var total = dice.reduce(function (a, b) { return a + b; }, 0);
+      var steps = [];
+      var pending = dice.filter(function (v) { return v === 6; });
       while (pending.length) {
         var next = [];
         pending.forEach(function () {
           var v = d6();
-          steps.push('Explosion (6) → relance : ' + v);
+          dice.push(v);
           total += v;
           if (v === 6) next.push(v);
         });
         pending = next;
       }
-      steps.push('Total explosif : ' + total);
-      return { total: total, steps: steps };
+      steps.push(dice.join(' + ') + ' = <strong>' + total + '</strong>');
+      return { total: total, dice: dice, steps: steps };
     }
 
     // ── Lancer ──────────────────────────────────────────
@@ -611,7 +606,7 @@
       if (isCritSuccess)     expSources++;
 
       // 7. Intensité
-      var intensitySteps = [], intensityBase;
+      var intensitySteps = [], intensityBase, expDice = null;
       if (modifier === 'dd' && red2 !== null) {
         intensityBase = Math.min(red1, red2);
         intensitySteps.push('Dé 1 : ' + red1 + '   Dé 2 : ' + red2);
@@ -620,6 +615,7 @@
         var expResult = rollExplosive(red1, expSources);
         intensitySteps = expResult.steps;
         intensityBase = expResult.total;
+        expDice = expResult.dice;
       } else {
         intensityBase = red1;
         intensitySteps.push('Dé rouge = ' + red1);
@@ -643,7 +639,7 @@
         isCritFail: isCritFail, is111: is111, is666: is666,
         marge: marge, seuil: seuil, critThr: critThr,
         intensitySteps: intensitySteps,
-        intensityBase: intensityBase,
+        intensityBase: intensityBase, expDice: expDice,
         intensityFinal: intensityFinal, intensityFinalLine: intensityFinalLine,
         expSources: expSources, modifier: modifier, actionType: actionType
       });
@@ -693,15 +689,21 @@
         steps.push('<strong>Intensité :</strong>');
         r.intensitySteps.forEach(function (s) { steps.push('· ' + s); });
         steps.push('→ ' + r.intensityFinalLine);
-        steps.push('<span class="sim-intensity-final">Intensité finale : ' + r.intensityFinal + '</span>');
       }
+
+      var intensityTag = (!r.is111 && !r.is666 && !r.isCritFail)
+        ? '<span class="sim-outcome-intensity">Intensité : ' + r.intensityFinal + '</span>'
+        : '';
 
       resultEl.className = 'sim-result sim-result--visible';
       resultEl.innerHTML =
         diceHtml +
         '<div class="sim-outcome sim-outcome--' + oc + '">' +
           '<span class="sim-outcome-icon">' + icon + '</span>' +
-          '<span class="sim-outcome-label">' + label + '</span>' +
+          '<div class="sim-outcome-body">' +
+            '<span class="sim-outcome-label">' + label + '</span>' +
+            intensityTag +
+          '</div>' +
         '</div>' +
         '<div class="sim-steps">' +
           steps.map(function (s) { return '<div class="sim-step">' + s + '</div>'; }).join('') +
@@ -735,12 +737,31 @@
       }
 
       var html = '<div class="sim-dice">';
-      html += die(r.blue,  'angel',     'Bleu',   'angélique', blueKept,  !blueKept  && r.modifier === 'none' && r.actionType === 'host',  false);
-      html += die(r.white, 'host',      'Blanc',  'hôte',      whiteKept, !whiteKept && r.modifier === 'none' && r.actionType === 'angel', false);
-      html += die(r.red1,  'intensity', 'Rouge' + (r.red2 !== null ? ' ①' : ''), 'intensité', red1Kept, !red1Kept, r.expSources > 0 && red1Kept);
-      if (r.red2 !== null) {
+      html += die(r.blue,  'angel', 'Bleu',  'angélique', blueKept,  !blueKept  && r.modifier === 'none' && r.actionType === 'host',  false);
+      html += die(r.white, 'host',  'Blanc', 'hôte',      whiteKept, !whiteKept && r.modifier === 'none' && r.actionType === 'angel', false);
+
+      // Séparateur bleu/blanc → rouge
+      html += '<div class="sim-dice-sep">→</div>';
+
+      if (r.expDice && r.expDice.length > 1) {
+        // Dés explosifs : afficher chaque dé séparé par "+"
+        r.expDice.forEach(function (val, i) {
+          if (i > 0) html += '<div class="sim-dice-plus">+</div>';
+          var isFirst = i === 0;
+          html += die(val, 'intensity',
+            isFirst ? 'Rouge' : '↪ relance',
+            isFirst ? 'intensité 💥' : (val === 6 ? 'explose encore' : ''),
+            true, false, false);
+        });
+      } else if (r.red2 !== null) {
+        // Double désavantage : 2 rouges, garder le pire
+        html += die(r.red1, 'intensity', 'Rouge ①', 'intensité', red1Kept, !red1Kept, false);
+        html += '<div class="sim-dice-plus">·</div>';
         html += die(r.red2, 'intensity', 'Rouge ②', 'intensité', red2Kept, !red2Kept, false);
+      } else {
+        html += die(r.red1, 'intensity', 'Rouge', 'intensité', true, false, false);
       }
+
       html += '</div>';
       return html;
     }
