@@ -87,11 +87,13 @@ Définissez votre fonction spécifique au service de votre supérieur.
 
 ## Étape 3 : Points d'énergie initiaux
 
-**Formule : 10 + (Rang Hiérarchique × 5)**
+**Formule : PE = Rang Céleste (+ 1 par niveau de Conduit Divin)**
 
-Les [Points d'Énergie](energie.md) représentent la capacité à utiliser les pouvoirs surnaturels. Contrairement aux attributs qui sont intrinsèques à l'âme, le pool de PE dépend du rang dans la hiérarchie.
+Les [Points d'Énergie](energie.md) ne représentent pas une réserve de puissance, mais un **seuil de tolérance** : ils absorbent les conséquences du drain avant que l'hôte n'en paie le prix. Un personnage joueur débute au Rang Céleste 3, ce qui lui confère **3 PE** à la création.
 
-La récupération des PE se fait automatiquement au **lever du soleil** pour les anges et à la **tombée de la nuit** pour les démons.
+Le trait **Conduit Divin** (niveaux 1 à 3, choisi à l'Étape 5) ajoute 1 PE permanent par niveau, indépendamment du Rang Céleste.
+
+Les PE se rechargent intégralement au **lever du soleil** pour les anges et à la **tombée de la nuit** pour les démons.
 
 ---
 
