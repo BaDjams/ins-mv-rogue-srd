@@ -778,6 +778,81 @@
   }
 
   /* ══════════════════════════════════════════════════════
+     COMPOSANT : ENTÊTES COLLANTES (.rogue-equip-table)
+     Implémentation JS nécessaire car position:sticky ne
+     fonctionne pas dans un parent overflow-x:auto.
+  ══════════════════════════════════════════════════════ */
+
+  function initStickyHeaders() {
+    // Nettoyer les anciens fantômes lors des navigations SPA
+    document.querySelectorAll('.rogue-ghost-thead').forEach(function(el) { el.remove(); });
+
+    function getNavOffset() {
+      var h = document.querySelector('.md-header');
+      var t = document.querySelector('.md-tabs');
+      return (h ? h.getBoundingClientRect().height : 0) +
+             (t ? t.getBoundingClientRect().height : 0) || 56;
+    }
+
+    document.querySelectorAll('.rogue-equip-table').forEach(function(table) {
+      var realThead = table.querySelector('thead');
+      if (!realThead) return;
+
+      var ghost = document.createElement('table');
+      ghost.className = 'rogue-equip-table rogue-ghost-thead';
+      ghost.style.cssText = 'position:fixed;z-index:200;visibility:hidden;pointer-events:none;border-collapse:collapse;margin:0;padding:0;table-layout:fixed;font-size:13px;';
+      ghost.appendChild(realThead.cloneNode(true));
+      document.body.appendChild(ghost);
+
+      function sync() {
+        var nav = getNavOffset();
+        var tr = table.getBoundingClientRect();
+        var realThs = realThead.querySelectorAll('th');
+        var ghostThs = ghost.querySelectorAll('th');
+        ghost.style.top  = nav + 'px';
+        ghost.style.left = tr.left + 'px';
+        ghost.style.width = tr.width + 'px';
+        realThs.forEach(function(th, i) {
+          if (ghostThs[i]) {
+            var w = th.getBoundingClientRect().width;
+            ghostThs[i].style.width = w + 'px';
+            ghostThs[i].style.minWidth = w + 'px';
+            ghostThs[i].style.maxWidth = w + 'px';
+          }
+        });
+      }
+
+      function update() {
+        var nav = getNavOffset();
+        var theadRect = realThead.getBoundingClientRect();
+        var tableRect = table.getBoundingClientRect();
+        if (theadRect.bottom < nav && tableRect.bottom > nav + 20) {
+          sync();
+          ghost.style.visibility = 'visible';
+        } else {
+          ghost.style.visibility = 'hidden';
+        }
+      }
+
+      // Synchro horizontale si le parent a overflow-x:auto
+      var scrollParent = table.parentElement;
+      while (scrollParent && scrollParent !== document.body) {
+        var ov = window.getComputedStyle(scrollParent).overflowX;
+        if (ov === 'auto' || ov === 'scroll') {
+          scrollParent.addEventListener('scroll', function() {
+            if (ghost.style.visibility === 'visible') sync();
+          }, { passive: true });
+          break;
+        }
+        scrollParent = scrollParent.parentElement;
+      }
+
+      window.addEventListener('scroll', update, { passive: true });
+      window.addEventListener('resize', update, { passive: true });
+    });
+  }
+
+  /* ══════════════════════════════════════════════════════
      INIT — active les composants au chargement
   ══════════════════════════════════════════════════════ */
 
@@ -786,6 +861,7 @@
     document.querySelectorAll('.rogue-roller-adv').forEach(buildAdvantageRoller);
     document.querySelectorAll('.rogue-result-table').forEach(buildResultTable);
     document.querySelectorAll('.rogue-sim').forEach(buildSimulator);
+    initStickyHeaders();
   }
 
   if (document.readyState === 'loading') {

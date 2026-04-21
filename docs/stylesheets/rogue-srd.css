@@ -92,19 +92,8 @@
   --color-text-secondary:       var(--rogue-text-dim);
 }
 
-/* ═══════════════════════════════════════════════════════
-   TABLES ÉQUIPEMENT — entêtes collantes
-   ═══════════════════════════════════════════════════════ */
-
-.rogue-equip-table thead {
-  position: sticky;
-  top: 5.5rem; /* header MkDocs (~48px) + tabs (~40px) */
-  z-index: 10;
-}
-
 .rogue-equip-table thead th {
-  background: var(--rogue-bg-3) !important;
-  box-shadow: 0 1px 0 var(--rogue-border);
+  background: var(--rogue-bg-3);
 }
 
 /* ═══════════════════════════════════════════════════════
