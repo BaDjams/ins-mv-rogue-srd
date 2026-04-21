@@ -57,6 +57,13 @@ nav:
     - Référence:
       - Mots-clés: mots-cles.md
       - États: etats.md
-      - Équipement: equipement.md
+      - Équipement:
+        - equipement.md
+        - Armes de mêlée: equipement-melee.md
+        - Armes à feu: equipement-armes-feu.md
+        - Armes à distance: equipement-distance.md
+        - Explosifs: equipement-explosifs.md
+        - Protections: equipement-protections.md
+        - Boucliers: equipement-boucliers.md
   - Simulateur: simulateur.md
   - Générateur: generateur.md
