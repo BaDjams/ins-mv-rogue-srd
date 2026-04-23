@@ -961,15 +961,14 @@
         "Pauvre":      ["Fortuné"]
       },
       ethnicityLabels: {
-        american:    "Américain",
-        french:      "Français",
-        northAfrican:"Nord-Africain",
-        hispanic:    "Hispanique",
-        westAfrican: "Ouest-Africain",
-        indian:      "Indien",
-        slavic:      "Slave",
-        eastAsian:   "Asiatique",
-        teen:        "Ado"
+        french:       "Français",
+        northAfrican: "Maghrébin",
+        westAfrican:  "Afr. subsah.",
+        hispanic:     "Hispanique",
+        slavic:       "Eur. Est",
+        eastAsian:    "Asiatique",
+        american:     "Anglophone",
+        indian:       "Indien"
       }
     };
 
@@ -984,22 +983,36 @@
     // Mapping ethnie → codes nat randomuser.me (alphabet latin uniquement)
     // Exclus : ir (persan/arabe), rs/ua (cyrillique)
     var NAT_MAP = {
-      american:     ['us', 'ca', 'au', 'gb', 'nz'],
       french:       ['fr', 'ch'],
       northAfrican: ['tr'],
-      hispanic:     ['mx', 'es'],
       westAfrican:  ['br'],
-      indian:       ['in'],
+      hispanic:     ['mx', 'es'],
       slavic:       ['fi', 'de', 'no', 'dk'],
       eastAsian:    ['us', 'au'],
-      teen:         ['us', 'gb', 'fr', 'au']
+      american:     ['us', 'ca', 'au', 'gb', 'nz'],
+      indian:       ['in']
+    };
+
+    // Poids par ethnie — source INSEE 2024, jeu en France
+    // Français/Européens ~55 %, Maghrébin ~12 %, Africain sub. ~8 %,
+    // Hispanique/Portugal ~7 %, Européen Est ~6 %, Asiatique ~5 %,
+    // Anglophone ~5 %, Indien ~2 %
+    var ETH_WEIGHTS = {
+      french:       55,
+      northAfrican: 12,
+      westAfrican:   8,
+      hispanic:      7,
+      slavic:        6,
+      eastAsian:     5,
+      american:      5,
+      indian:        2
     };
 
     // ── État ─────────────────────────────────────────────
     var count = 6;
     var probs = { mundane:40, better:30, superior:20, elite:10 };
     var filtersGender = { male:true, female:true };
-    var filtersEth    = { american:true, french:true, northAfrican:true, hispanic:true, westAfrican:true, indian:true, slavic:true, eastAsian:true, teen:true };
+    var filtersEth    = { french:true, northAfrican:true, westAfrican:true, hispanic:true, slavic:true, eastAsian:true, american:true, indian:true };
 
     // ── UI ───────────────────────────────────────────────
     container.innerHTML =
@@ -1040,15 +1053,14 @@
             '<div class="gen-filter-group">' +
               '<span class="gen-filter-title">Origines</span>' +
               '<div class="gen-ethnicity-grid">' +
-                '<label class="gen-filter-opt"><input type="checkbox" data-filter="eth-american" checked> Américain</label>' +
                 '<label class="gen-filter-opt"><input type="checkbox" data-filter="eth-french" checked> Français</label>' +
                 '<label class="gen-filter-opt"><input type="checkbox" data-filter="eth-northAfrican" checked> Nord-Africain</label>' +
-                '<label class="gen-filter-opt"><input type="checkbox" data-filter="eth-hispanic" checked> Hispanique</label>' +
-                '<label class="gen-filter-opt"><input type="checkbox" data-filter="eth-westAfrican" checked> Ouest-Africain</label>' +
-                '<label class="gen-filter-opt"><input type="checkbox" data-filter="eth-indian" checked> Indien</label>' +
-                '<label class="gen-filter-opt"><input type="checkbox" data-filter="eth-slavic" checked> Slave</label>' +
+                '<label class="gen-filter-opt"><input type="checkbox" data-filter="eth-westAfrican" checked> Afr. sub-saharien</label>' +
+                '<label class="gen-filter-opt"><input type="checkbox" data-filter="eth-hispanic" checked> Hispanique/Port.</label>' +
+                '<label class="gen-filter-opt"><input type="checkbox" data-filter="eth-slavic" checked> Européen Est</label>' +
                 '<label class="gen-filter-opt"><input type="checkbox" data-filter="eth-eastAsian" checked> Asiatique</label>' +
-                '<label class="gen-filter-opt"><input type="checkbox" data-filter="eth-teen" checked> Ado</label>' +
+                '<label class="gen-filter-opt"><input type="checkbox" data-filter="eth-american" checked> Anglophone</label>' +
+                '<label class="gen-filter-opt"><input type="checkbox" data-filter="eth-indian" checked> Indien</label>' +
               '</div>' +
             '</div>' +
           '</div>' +
@@ -1100,31 +1112,39 @@
       });
     });
 
-    // Bouton générer
+    // Bouton générer — requêtes séquentielles (120 ms d'écart) pour éviter le throttle randomuser.me
     container.querySelector('[data-el="generate"]').addEventListener('click', function () {
       var btn = this;
       btn.disabled = true;
       btn.textContent = '⏳ Génération…';
       gridEl.innerHTML = '';
 
-      var promises = [];
-      for (var i = 0; i < count; i++) promises.push(createNPC(i + 1));
+      var done = 0;
+      var total = count;
 
-      Promise.allSettled(promises).then(function(results) {
-        results.forEach(function(r) {
-          if (r.status === 'fulfilled') {
-            try { gridEl.appendChild(buildCard(r.value)); }
+      function next(id) {
+        if (id > total) {
+          btn.disabled = false;
+          btn.textContent = '⚡ Générer';
+          return;
+        }
+        createNPC(id)
+          .then(function(npc) {
+            try { gridEl.appendChild(buildCard(npc)); }
             catch(e) { console.error('Erreur carte PNJ', e); }
-          } else {
+          })
+          .catch(function() {
             var el = document.createElement('div');
-            el.style.cssText = 'background:var(--rogue-bg-3);border:1px dashed var(--rogue-border);border-radius:10px;padding:24px;color:var(--rogue-text-faint);font-family:var(--rogue-font-label);font-size:0.7em;letter-spacing:0.08em;text-align:center;display:flex;align-items:center;justify-content:center;';
+            el.style.cssText = 'background:var(--rogue-bg-3);border:1px dashed var(--rogue-border);border-radius:10px;padding:24px;color:var(--rogue-text-faint);font-family:var(--rogue-font-label);font-size:0.7em;letter-spacing:0.08em;text-align:center;display:flex;align-items:center;justify-content:center;min-height:200px;';
             el.textContent = 'API indisponible';
             gridEl.appendChild(el);
-          }
-        });
-        btn.disabled = false;
-        btn.textContent = '⚡ Générer';
-      });
+          })
+          .finally(function() {
+            setTimeout(function() { next(id + 1); }, 120);
+          });
+      }
+
+      next(1);
     });
 
     // ── Utilitaires ──────────────────────────────────────
@@ -1158,9 +1178,16 @@
     }
 
     function pickEthnicity() {
-      var selected = Object.keys(filtersEth).filter(function(k) { return filtersEth[k]; });
-      if (!selected.length) selected = Object.keys(filtersEth);
-      return randItem(selected);
+      var pool = Object.keys(filtersEth).filter(function(k) { return filtersEth[k]; });
+      if (!pool.length) pool = Object.keys(ETH_WEIGHTS);
+      var total = pool.reduce(function(s, k) { return s + (ETH_WEIGHTS[k] || 1); }, 0);
+      var r = Math.random() * total;
+      var cum = 0;
+      for (var i = 0; i < pool.length; i++) {
+        cum += (ETH_WEIGHTS[pool[i]] || 1);
+        if (r < cum) return pool[i];
+      }
+      return pool[pool.length - 1];
     }
 
     function fetchRandomUser(gender, ethnicity) {
@@ -1324,7 +1351,6 @@
           '<img src="' + npc.picture + '" alt="" loading="lazy">' +
           '<span class="gen-badge gen-badge--' + npc.rarity + '">' + labels[npc.rarity] + '</span>' +
           '<span class="gen-eth-badge">' + ethLabel + '</span>' +
-          '<button class="gen-fs-btn" title="Plein écran">⤢</button>' +
         '</div>' +
         '<div class="gen-card__body">' +
           '<div class="gen-card__head">' +
@@ -1337,19 +1363,6 @@
           '<div class="gen-card__section"><span class="gen-card__section-title">Caractéristiques</span><div class="gen-stats">' + attHtml + '</div></div>' +
           '<div class="gen-card__section"><span class="gen-card__section-title">Compétences</span><div class="gen-stats">' + ablHtml + '</div></div>' +
         '</div>';
-
-      card.querySelector('.gen-fs-btn').addEventListener('click', function(e) {
-        e.stopPropagation();
-        var overlay = document.createElement('div');
-        overlay.className = 'gen-overlay';
-        overlay.innerHTML =
-          '<div class="gen-overlay__inner">' +
-            '<img src="' + npc.picture + '" alt="">' +
-            '<div class="gen-overlay__name">' + npc.name + '</div>' +
-          '</div>';
-        overlay.addEventListener('click', function() { overlay.remove(); });
-        document.body.appendChild(overlay);
-      });
 
       return card;
     }
