@@ -981,15 +981,16 @@
       abilities:  { mundane:{points:0,max:0}, better:{points:1,max:1}, superior:{points:3,max:2}, elite:{points:5,max:3} }
     };
 
-    // Mapping ethnie → codes nat randomuser.me (AU BR CA CH DE DK ES FI FR GB IE IN IR MX NL NO NZ RS TR UA US)
+    // Mapping ethnie → codes nat randomuser.me (alphabet latin uniquement)
+    // Exclus : ir (persan/arabe), rs/ua (cyrillique)
     var NAT_MAP = {
       american:     ['us', 'ca', 'au', 'gb', 'nz'],
       french:       ['fr', 'ch'],
-      northAfrican: ['tr', 'ir'],
+      northAfrican: ['tr'],
       hispanic:     ['mx', 'es'],
       westAfrican:  ['br'],
       indian:       ['in'],
-      slavic:       ['rs', 'ua'],
+      slavic:       ['fi', 'de', 'no', 'dk'],
       eastAsian:    ['us', 'au'],
       teen:         ['us', 'gb', 'fr', 'au']
     };
@@ -1323,6 +1324,7 @@
           '<img src="' + npc.picture + '" alt="" loading="lazy">' +
           '<span class="gen-badge gen-badge--' + npc.rarity + '">' + labels[npc.rarity] + '</span>' +
           '<span class="gen-eth-badge">' + ethLabel + '</span>' +
+          '<button class="gen-fs-btn" title="Plein écran">⤢</button>' +
         '</div>' +
         '<div class="gen-card__body">' +
           '<div class="gen-card__head">' +
@@ -1335,6 +1337,19 @@
           '<div class="gen-card__section"><span class="gen-card__section-title">Caractéristiques</span><div class="gen-stats">' + attHtml + '</div></div>' +
           '<div class="gen-card__section"><span class="gen-card__section-title">Compétences</span><div class="gen-stats">' + ablHtml + '</div></div>' +
         '</div>';
+
+      card.querySelector('.gen-fs-btn').addEventListener('click', function(e) {
+        e.stopPropagation();
+        var overlay = document.createElement('div');
+        overlay.className = 'gen-overlay';
+        overlay.innerHTML =
+          '<div class="gen-overlay__inner">' +
+            '<img src="' + npc.picture + '" alt="">' +
+            '<div class="gen-overlay__name">' + npc.name + '</div>' +
+          '</div>';
+        overlay.addEventListener('click', function() { overlay.remove(); });
+        document.body.appendChild(overlay);
+      });
 
       return card;
     }
