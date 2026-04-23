@@ -981,11 +981,23 @@
       abilities:  { mundane:{points:0,max:0}, better:{points:1,max:1}, superior:{points:3,max:2}, elite:{points:5,max:3} }
     };
 
+    // Mapping ethnie → codes nat randomuser.me (AU BR CA CH DE DK ES FI FR GB IE IN IR MX NL NO NZ RS TR UA US)
+    var NAT_MAP = {
+      american:     ['us', 'ca', 'au', 'gb', 'nz'],
+      french:       ['fr', 'ch'],
+      northAfrican: ['tr', 'ir'],
+      hispanic:     ['mx', 'es'],
+      westAfrican:  ['br'],
+      indian:       ['in'],
+      slavic:       ['rs', 'ua'],
+      eastAsian:    ['us', 'au'],
+      teen:         ['us', 'gb', 'fr', 'au']
+    };
+
     // ── État ─────────────────────────────────────────────
     var count = 6;
     var probs = { mundane:40, better:30, superior:20, elite:10 };
     var filtersGender = { male:true, female:true };
-    var filtersAge    = { teenager:true, adult:true, elderly:true };
     var filtersEth    = { american:true, french:true, northAfrican:true, hispanic:true, westAfrican:true, indian:true, slavic:true, eastAsian:true, teen:true };
 
     // ── UI ───────────────────────────────────────────────
@@ -1022,12 +1034,6 @@
                 '<span class="gen-filter-title">Genre</span>' +
                 '<label class="gen-filter-opt"><input type="checkbox" data-filter="gender-male" checked> Homme</label>' +
                 '<label class="gen-filter-opt"><input type="checkbox" data-filter="gender-female" checked> Femme</label>' +
-              '</div>' +
-              '<div class="gen-filter-group">' +
-                '<span class="gen-filter-title">Âge</span>' +
-                '<label class="gen-filter-opt"><input type="checkbox" data-filter="age-teenager" checked> Adolescent (13-19)</label>' +
-                '<label class="gen-filter-opt"><input type="checkbox" data-filter="age-adult" checked> Adulte (20-64)</label>' +
-                '<label class="gen-filter-opt"><input type="checkbox" data-filter="age-elderly" checked> Âgé (65+)</label>' +
               '</div>' +
             '</div>' +
             '<div class="gen-filter-group">' +
@@ -1087,22 +1093,37 @@
     container.querySelectorAll('[data-filter]').forEach(function (cb) {
       cb.addEventListener('change', function () {
         var key = this.dataset.filter;
-        if (key === 'gender-male')      filtersGender.male     = this.checked;
+        if (key === 'gender-male')        filtersGender.male   = this.checked;
         else if (key === 'gender-female') filtersGender.female = this.checked;
-        else if (key === 'age-teenager')  filtersAge.teenager  = this.checked;
-        else if (key === 'age-adult')     filtersAge.adult     = this.checked;
-        else if (key === 'age-elderly')   filtersAge.elderly   = this.checked;
         else if (key.startsWith('eth-'))  filtersEth[key.replace('eth-','')] = this.checked;
       });
     });
 
     // Bouton générer
     container.querySelector('[data-el="generate"]').addEventListener('click', function () {
+      var btn = this;
+      btn.disabled = true;
+      btn.textContent = '⏳ Génération…';
       gridEl.innerHTML = '';
-      for (var i = 0; i < count; i++) {
-        try { gridEl.appendChild(buildCard(createNPC(i + 1))); }
-        catch (e) { console.error('Erreur PNJ #' + (i+1), e); }
-      }
+
+      var promises = [];
+      for (var i = 0; i < count; i++) promises.push(createNPC(i + 1));
+
+      Promise.allSettled(promises).then(function(results) {
+        results.forEach(function(r) {
+          if (r.status === 'fulfilled') {
+            try { gridEl.appendChild(buildCard(r.value)); }
+            catch(e) { console.error('Erreur carte PNJ', e); }
+          } else {
+            var el = document.createElement('div');
+            el.style.cssText = 'background:var(--rogue-bg-3);border:1px dashed var(--rogue-border);border-radius:10px;padding:24px;color:var(--rogue-text-faint);font-family:var(--rogue-font-label);font-size:0.7em;letter-spacing:0.08em;text-align:center;display:flex;align-items:center;justify-content:center;';
+            el.textContent = 'API indisponible';
+            gridEl.appendChild(el);
+          }
+        });
+        btn.disabled = false;
+        btn.textContent = '⚡ Générer';
+      });
     });
 
     // ── Utilitaires ──────────────────────────────────────
@@ -1130,27 +1151,34 @@
       return 'elite';
     }
 
-    function getName() {
-      var selected = Object.keys(filtersEth).filter(function (k) { return filtersEth[k]; });
-      if (!selected.length) selected = Object.keys(filtersEth);
-      var ethnicity = randItem(selected);
-
-      var gender;
-      if (filtersGender.male && filtersGender.female) gender = Math.random() > 0.5 ? 'male' : 'female';
-      else if (filtersGender.male) gender = 'male';
-      else gender = 'female';
-
-      var fns = DB.firstNames[ethnicity] && DB.firstNames[ethnicity][gender];
-      var lns = DB.lastNames[ethnicity];
-      if (!fns || !lns) return { name: 'Inconnu', gender: gender, ethnicity: ethnicity };
-      return { name: randItem(fns) + ' ' + randItem(lns), gender: gender, ethnicity: ethnicity };
+    function pickGender() {
+      if (filtersGender.male && filtersGender.female) return Math.random() > 0.5 ? 'male' : 'female';
+      return filtersGender.male ? 'male' : 'female';
     }
 
-    function getAge(traits) {
-      var ag = DB.traitGroups.age;
-      if (traits.indexOf(ag[0]) !== -1) return randInt(13, 19);
-      if (traits.indexOf(ag[1]) !== -1) return randInt(65, 89);
-      return randInt(20, 64);
+    function pickEthnicity() {
+      var selected = Object.keys(filtersEth).filter(function(k) { return filtersEth[k]; });
+      if (!selected.length) selected = Object.keys(filtersEth);
+      return randItem(selected);
+    }
+
+    function fetchRandomUser(gender, ethnicity) {
+      var nats = NAT_MAP[ethnicity] || ['us'];
+      var nat  = randItem(nats);
+      var url  = 'https://randomuser.me/api/?gender=' + gender +
+                 '&nat=' + nat + '&results=1&inc=name,dob,picture';
+      return fetch(url)
+        .then(function(r) { return r.json(); })
+        .then(function(data) {
+          var p = data.results[0];
+          return {
+            firstName: p.name.first,
+            lastName:  p.name.last,
+            dob:       p.dob.date,
+            age:       p.dob.age,
+            picture:   p.picture.large
+          };
+        });
     }
 
     function getOccupation(rarity) {
@@ -1173,28 +1201,30 @@
       return true;
     }
 
-    function getTraits(rarity) {
-      var s = cfg.traits[rarity];
-      var n = randInt(s.min, s.max);
-      var ag = DB.traitGroups.age;
-      var pool = shuffle(DB.traits.slice());
-      if (!filtersAge.teenager) pool = pool.filter(function (t) { return t.name !== ag[0]; });
-      if (!filtersAge.elderly)  pool = pool.filter(function (t) { return t.name !== ag[1]; });
+    function getTraits(rarity, ageCategory) {
+      var s          = cfg.traits[rarity];
+      var n          = randInt(s.min, s.max);
+      var ag         = DB.traitGroups.age;
+      var pool       = shuffle(DB.traits.slice());
+      var isTeenager = ageCategory === 'teenager';
+      var isElderly  = ageCategory === 'elderly';
+
+      if (!isTeenager) pool = pool.filter(function(t) { return t.name !== ag[0]; });
+      if (!isElderly)  pool = pool.filter(function(t) { return t.name !== ag[1]; });
 
       var sel = [];
-      // Forcer le trait d'âge si une seule catégorie sélectionnée
-      if (filtersAge.teenager && !filtersAge.adult && !filtersAge.elderly) {
-        var ft = DB.traits.filter(function (t) { return t.name === ag[0]; })[0];
+      if (isTeenager) {
+        var ft = DB.traits.filter(function(t) { return t.name === ag[0]; })[0];
         if (ft) sel.push(ft);
-      } else if (!filtersAge.teenager && !filtersAge.adult && filtersAge.elderly) {
-        var ft = DB.traits.filter(function (t) { return t.name === ag[1]; })[0];
+      } else if (isElderly) {
+        var ft = DB.traits.filter(function(t) { return t.name === ag[1]; })[0];
         if (ft) sel.push(ft);
       }
 
       for (var i = 0; i < pool.length && sel.length < n; i++) {
         var tr = pool[i];
-        if (sel.filter(function (s) { return s.name === tr.name; }).length) continue;
-        if (compatible(sel.map(function (s) { return s.name; }), tr.name)) sel.push(tr);
+        if (sel.filter(function(s) { return s.name === tr.name; }).length) continue;
+        if (compatible(sel.map(function(s) { return s.name; }), tr.name)) sel.push(tr);
       }
       return sel;
     }
@@ -1236,19 +1266,27 @@
     }
 
     function createNPC(id) {
-      var rarity = getRarity();
-      var nd = getName();
-      var traits = getTraits(rarity);
-      var occ = getOccupation(rarity);
-      return {
-        id: id, name: nd.name, gender: nd.gender, ethnicity: nd.ethnicity,
-        age: getAge(traits.map(function (t) { return t.name; })),
-        occupation: occ.name, rarity: rarity,
-        traits: traits.map(function (t) { return t.name; }),
-        equipment: getEquipment(occ, traits),
-        attributes: genAttributes(rarity),
-        abilities: genAbilities(rarity)
-      };
+      var rarity    = getRarity();
+      var gender    = pickGender();
+      var ethnicity = pickEthnicity();
+      var occ       = getOccupation(rarity);
+
+      return fetchRandomUser(gender, ethnicity).then(function(u) {
+        var ageCategory = u.age < 20 ? 'teenager' : u.age >= 65 ? 'elderly' : 'adult';
+        var traits      = getTraits(rarity, ageCategory);
+        return {
+          id: id, rarity: rarity,
+          name:      u.firstName + ' ' + u.lastName,
+          firstName: u.firstName, lastName: u.lastName,
+          gender: gender, ethnicity: ethnicity,
+          age: u.age, dob: u.dob, picture: u.picture,
+          occupation: occ.name,
+          traits:     traits.map(function(t) { return t.name; }),
+          equipment:  getEquipment(occ, traits),
+          attributes: genAttributes(rarity),
+          abilities:  genAbilities(rarity)
+        };
+      });
     }
 
     // ── Rendu carte ──────────────────────────────────────
@@ -1277,19 +1315,19 @@
         return '<div class="gen-stat"><span class="gen-stat__key">' + k + '</span><span class="gen-stat__val">' + (v >= 0 ? '+' : '') + v + '</span></div>';
       }).join('');
 
-      var seed = 'npc-' + npc.id + '-' + npc.ethnicity + '-' + npc.gender + '-' + Date.now();
-      var ethLabel = DB.ethnicityLabels[npc.ethnicity] || npc.ethnicity;
+      var ethLabel     = DB.ethnicityLabels[npc.ethnicity] || npc.ethnicity;
+      var dobFormatted = new Date(npc.dob).toLocaleDateString('fr-FR', { day: '2-digit', month: '2-digit', year: 'numeric' });
 
       card.innerHTML =
         '<div class="gen-card__img">' +
-          '<img src="https://picsum.photos/seed/' + seed + '/240/120" alt="" loading="lazy">' +
+          '<img src="' + npc.picture + '" alt="" loading="lazy">' +
           '<span class="gen-badge gen-badge--' + npc.rarity + '">' + labels[npc.rarity] + '</span>' +
           '<span class="gen-eth-badge">' + ethLabel + '</span>' +
         '</div>' +
         '<div class="gen-card__body">' +
           '<div class="gen-card__head">' +
             '<strong class="gen-card__name">' + npc.name + '</strong>' +
-            '<span class="gen-card__meta">' + (npc.gender === 'male' ? '♂' : '♀') + ' · ' + npc.age + ' ans</span>' +
+            '<span class="gen-card__meta">' + (npc.gender === 'male' ? '♂' : '♀') + ' · ' + npc.age + ' ans · ' + dobFormatted + '</span>' +
           '</div>' +
           '<div class="gen-card__occ">' + npc.occupation + '</div>' +
           '<div class="gen-card__section"><span class="gen-card__section-title">Traits</span><div class="gen-tags">' + tagsHtml + '</div></div>' +
