@@ -853,6 +853,456 @@
   }
 
   /* ══════════════════════════════════════════════════════
+     COMPOSANT : GÉNÉRATEUR DE PNJ
+     Usage HTML :
+       <div class="rogue-gen"></div>
+  ══════════════════════════════════════════════════════ */
+
+  function buildNPCGenerator(container) {
+
+    // ── Base de données (FR) ─────────────────────────────
+    var DB = {
+      firstNames: {
+        american:     { male: ["John","Michael","David","James","Robert","Thomas","William","Richard","Joseph","Charles","Daniel","Matthew","Anthony","Mark","Paul","Steven","George","Kenneth","Andrew","Edward","Brian","Joshua","Kevin","Ronald","Timothy","Jason","Jeffrey","Frank","Scott","Eric","Stephen","Gregory","Benjamin","Samuel","Patrick","Jack"], female: ["Mary","Jennifer","Lisa","Sarah","Jessica","Karen","Nancy","Barbara","Elizabeth","Susan","Linda","Patricia","Margaret","Ashley","Sandra","Emily","Donna","Michelle","Dorothy","Carol","Amanda","Melissa","Deborah","Stephanie","Rebecca","Sharon","Laura","Cynthia","Kathleen","Amy","Angela","Shirley","Anna","Ruth","Brenda","Emma"] },
+        french:       { male: ["Jean","Pierre","Michel","Philippe","Nicolas","François","Laurent","Alain","Jacques","Bernard","Marcel","André","René","Claude","Henri","Louis","Christophe","Gérard","Thierry","Éric","Patrice","Yves","Dominique","Guy","Pascal","Denis","Olivier","Gilbert","Serge","Didier","Frédéric","Julien","Vincent","Roland","Stéphane","Émile"], female: ["Marie","Jeanne","Françoise","Monique","Catherine","Nicole","Nathalie","Isabelle","Jacqueline","Sophie","Sylvie","Anne","Marguerite","Hélène","Christine","Suzanne","Denise","Martine","Simone","Yvonne","Claudine","Geneviève","Madeleine","Louise","Thérèse","Chantal","Josette","Odette","Camille","Claire","Paulette","Renée","Danielle","Céline","Patricia","Valérie"] },
+        northAfrican: { male: ["Mohammed","Ahmed","Ali","Hassan","Karim","Omar","Youssef","Rachid","Mustafa","Ibrahim","Samir","Nasser","Khalid","Mahdi","Tarek","Bilal","Jamal","Hamza","Amir","Rashid","Tariq","Ismail","Salim","Aziz","Hakim","Fouad","Faisal","Anwar","Ziyad","Malik","Walid","Adil","Zakaria","Nabil","Yassin","Amine"], female: ["Fatima","Leila","Aisha","Zahra","Amina","Samira","Nadia","Jamila","Karima","Maha","Yasmin","Fatiha","Layla","Khadija","Majda","Naima","Farida","Hanan","Malika","Saida","Salma","Rania","Soraya","Asma","Noor","Sumaya","Zainab","Nabila","Hasna","Houda","Mariam","Latifa","Iman","Rachida","Sanaa","Zohra"] },
+        hispanic:     { male: ["José","Carlos","Juan","Miguel","Antonio","Luis","Manuel","Javier","Francisco","Alejandro","Roberto","Fernando","Enrique","Raúl","Sergio","Jorge","Ricardo","Eduardo","Rafael","Guillermo","Mario","Santiago","Héctor","Arturo","Julio","Pedro","Andrés","Gabriel","Óscar","Alfredo","Emilio","Diego","Alberto","Marco","Ernesto","Ramón"], female: ["María","Ana","Carmen","Gloria","Rosa","Luisa","Lucía","Teresa","Dolores","Pilar","Sofia","Mercedes","Claudia","Patricia","Isabel","Margarita","Gabriela","Cecilia","Silvia","Julia","Adriana","Raquel","Catalina","Juana","Conchita","Esperanza","Eva","Rosario","Verónica","Francisca","Carolina","Marina","Beatriz","Rocío","Graciela","Inés"] },
+        westAfrican:  { male: ["Kwame","Kofi","Addo","Kwesi","Ade","Olu","Chidi","Emeka","Oluwaseun","Dele","Ola","Tunde","Segun","Femi","Dare","Akeem","Dayo","Idris","Lekan","Nnamdi","Bello","Mamadou","Diallo","Issouf","Amadou","Baba","Modibo","Souleymane","Seydou","Ibrahim","Oumar","Aliou"], female: ["Ama","Abena","Akosua","Efua","Esi","Adwoa","Amara","Nkechi","Chioma","Ngozi","Folami","Ebele","Nneka","Amaka","Adenike","Yewande","Simisola","Temitope","Abiola","Oluchi","Fatou","Aïssatou","Aminata","Kadiatou","Mariam","Fatoumata","Binta","Maimouna","Hawa","Oumou","Aïda","Khady"] },
+        indian:       { male: ["Raj","Vikram","Arjun","Rahul","Amit","Sunil","Arun","Vijay","Rajesh","Rakesh","Deepak","Nitin","Sanjay","Ajay","Manish","Ravi","Vinod","Anil","Dinesh","Ramesh","Suresh","Mohan","Pradeep","Krishna","Gopal","Ashok","Mahesh","Narayan","Pankaj","Vivek","Rajendra","Srinivas","Ganesh","Harish","Alok","Manoj"], female: ["Priya","Neha","Anjali","Pooja","Sunita","Kavita","Meena","Shanti","Radha","Lakshmi","Sarita","Anita","Nisha","Geeta","Savita","Asha","Suman","Poonam","Jyoti","Rita","Kiran","Ananya","Deepika","Manisha","Shobha","Usha","Divya","Shilpa","Shalini","Smita","Rekha","Gayatri","Parvati","Ritu","Sita","Maya"] },
+        slavic:       { male: ["Ivan","Sergei","Nikolai","Dmitri","Vladimir","Alexei","Pavel","Mikhail","Andrei","Yuri","Boris","Oleg","Anatoly","Leonid","Viktor","Stanislav","Konstantin","Aleksandr","Pyotr","Grigori","Maxim","Valentin","Vasily","Fyodor","Roman","Artem","Bogdan","Lev","Igor","Miroslav","Semyon","Zakhar","Yegor","Ilya","Kirill","Nikita"], female: ["Tatiana","Olga","Natalya","Svetlana","Ekaterina","Marina","Irina","Anna","Elena","Maria","Lyudmila","Galina","Valentina","Oksana","Yelena","Larisa","Alla","Vera","Anastasia","Polina","Kseniya","Veronika","Zoya","Nina","Inna","Margarita","Tamara","Darya","Sofiya","Yulia","Alisa","Vasilisa","Vlada","Alina","Raisa","Dina"] },
+        eastAsian:    { male: ["Wei","Jian","Chen","Xiang","Ming","Hao","Feng","Hong","Lin","Yang","Zhang","Cheng","Jun","Liang","Li","Wu","Takashi","Kenji","Hiroshi","Akira","Yuki","Kazuo","Daisuke","Hideo","Jin-Ho","Min-Soo","Seung-Hoon","Jae-Sung","Dong-Hyun","Ji-Hoon","Young-Ho","Sung-Min","Xiu","Jie","Tao","Kang"], female: ["Xiu","Mei","Jing","Ling","Yan","Hui","Fang","Na","Yumiko","Naomi","Yuka","Ayumi","Emi","Sakura","Haruka","Akiko","Jin","Yi","Qing","Zhen","Yun","Min","Xin","Lan","Su-Jin","Ji-Yeon","Min-Ji","Hye-Jin","Yoon-Ah","Eun-Hye","Mi-Sook","Soo-Yeon","Rei","Aiko","Miyu","Asuka"] },
+        teen:         { male: ["Jayden","Brayden","Cayden","Kayden","Ayden","Jaxxon","Braxton","Jaxon","Daxton","Treyson","Kaedin","Zayden","Kashtyn","Coltyn","Kannon","Kyngston","Jaxton","Brantley","Zayne","Kyson","Bryson","Kamden","Kamdyn","Kasen","Huxley","Talon"], female: ["Madisyn","Jordyn","Katelynn","Briella","McKenzi","Jocelyn","Addisyn","Kyndal","Skylar","Maddison","Kynlee","Brynlee","Nevaeh","Addyson","Raelynn","Kamryn","Bryleigh","Jaslene","Ryleigh","Kennedi","Emersyn","Emilee","Kylee","Kaydence"] }
+      },
+      lastNames: {
+        american:     ["Smith","Johnson","Williams","Brown","Jones","Miller","Davis","Wilson","Anderson","Taylor","Thomas","Jackson","White","Harris","Martin","Thompson","Garcia","Martinez","Robinson","Clark","Rodriguez","Lewis","Lee","Walker","Hall","Allen","Young","Hernandez","King","Wright","Lopez","Hill","Scott","Green","Adams","Baker"],
+        french:       ["Martin","Bernard","Dubois","Thomas","Robert","Richard","Petit","Durand","Leroy","Moreau","Simon","Laurent","Lefebvre","Michel","Garcia","David","Bertrand","Roux","Vincent","Fournier","Morel","Girard","André","Lefevre","Mercier","Dupont","Lambert","Bonnet","Francois","Martinez","Legrand","Garnier","Faure","Rousseau","Blanc","Guerin"],
+        northAfrican: ["El Amrani","Benali","Bakri","Mansouri","Idrissi","Benmoussa","Najjar","Hassani","Bouazizi","Ben Youssef","Tahiri","Benjelloun","Ziani","Saidi","El Fassi","Khalil","El Khoury","Abbas","Abboud","Haddad","Rahman","Saleh","Hassan","Mustafa","Abadi","Mansour","El Masri","Kaddour","Berrada","Alaoui","Hakimi","Boulaich","Zahir"],
+        hispanic:     ["García","Rodríguez","Fernández","López","Martínez","González","Pérez","Sánchez","Ramírez","Torres","Flores","Rivera","Gómez","Díaz","Vargas","Castillo","Mendoza","Cruz","Morales","Reyes","Gutiérrez","Ortiz","Herrera","Castro","Silva","Núñez","Vega","Ruiz","Jiménez","Moreno","Romero","Álvarez","Suárez","Vázquez","Molina","Delgado"],
+        westAfrican:  ["Mensah","Osei","Boateng","Owusu","Adjei","Agyeman","Nkrumah","Annan","Amoako","Addo","Okafor","Adebayo","Okonkwo","Chukwu","Abiodun","Diallo","Bah","Touré","Keita","Kamara","Koné","Sylla","Cissé","Traoré","Konaté","Diakité","Diop","Ndiaye","Mendy","Sow","Diouf","Sarr","Thiam","Coulibaly","Sall"],
+        indian:       ["Patel","Sharma","Singh","Rao","Kumar","Reddy","Nair","Jain","Choudhury","Chowdhury","Gupta","Verma","Shah","Mehta","Das","Chatterjee","Bose","Sengupta","Mukherjee","Dutta","Desai","Gandhi","Iyer","Kaur","Agarwal","Bhat","Kulkarni","Yadav","Krishnamurthy","Goswami","Malhotra","Venkatesh","Banerjee","Kapoor"],
+        slavic:       ["Ivanov","Petrov","Sidorov","Smirnov","Kuznetsov","Popov","Sokolov","Lebedev","Kozlov","Novikov","Morozov","Volkov","Solovyov","Vasiliev","Zaytsev","Pavlov","Semyonov","Golubev","Vinogradov","Bogdanov","Vorobiev","Fedorov","Mikhailov","Belyakov","Kowalski","Nowak","Zielinski","Wojcik","Kowalczyk","Kaminski","Lewandowski","Jablonski"],
+        eastAsian:    ["Wang","Li","Zhang","Liu","Chen","Yang","Huang","Zhao","Wu","Zhou","Sun","Ma","Gao","Hu","Luo","Zheng","Tanaka","Suzuki","Sato","Nakamura","Takahashi","Kobayashi","Watanabe","Ito","Kim","Lee","Park","Choi","Jung","Kang","Yoon","Jang","Yamamoto","Hayashi","Saito","Sasaki"],
+        teen:         ["Smith","Johnson","Williams","Brown","Jones","Miller","Davis","Wilson","Anderson","Taylor","Thomas","Jackson","White","Harris","Martin","Thompson","Garcia","Martinez","Robinson","Clark","Rodriguez","Lewis","Lee","Walker","Hall","Allen","Young","Hernandez","King","Wright","Lopez","Hill","Scott","Green","Adams","Baker"]
+      },
+      occupations: [
+        { name: "Policier",                   difficulty: 2, equipment: ["Arme de service","Badge de police"] },
+        { name: "Médecin",                    difficulty: 3, equipment: ["Stéthoscope","Kit médical"] },
+        { name: "Enseignant",                 difficulty: 1, equipment: ["Manuel","Stylo rouge"] },
+        { name: "Mécanicien",                 difficulty: 1, equipment: ["Clé à molette","Boîte à outils"] },
+        { name: "Chauffeur de taxi",          difficulty: 1, equipment: ["Clés de voiture","Plan de la ville"] },
+        { name: "Pompier",                    difficulty: 2, equipment: ["Hache","Casque de pompier"] },
+        { name: "Chef cuisinier",             difficulty: 2, equipment: ["Couteau de chef","Tablier de cuisine"] },
+        { name: "Spécialiste informatique",   difficulty: 2, equipment: ["Ordinateur portable","Clé USB"] },
+        { name: "Avocat",                     difficulty: 3, equipment: ["Porte-documents","Bloc-notes juridique"] },
+        { name: "Journaliste",                difficulty: 2, equipment: ["Carnet","Enregistreur vocal"] },
+        { name: "Barman",                     difficulty: 1, equipment: ["Décapsuleur","Shaker à cocktail"] },
+        { name: "Banquier",                   difficulty: 2, equipment: ["Calculatrice","Stylo coûteux"] },
+        { name: "Musicien",                   difficulty: 2, equipment: ["Instrument","Métronome"] },
+        { name: "Boucher",                    difficulty: 1, equipment: ["Couperet","Tablier de boucher"] },
+        { name: "Boulanger",                  difficulty: 1, equipment: ["Rouleau à pâtisserie","Tamis à farine"] },
+        { name: "Électricien",                difficulty: 1, equipment: ["Multimètre","Pince coupante"] },
+        { name: "Plombier",                   difficulty: 1, equipment: ["Clé à tube","Ventouse"] },
+        { name: "Agent immobilier",           difficulty: 2, equipment: ["Clés de propriété","Cartes de visite"] },
+        { name: "Vétérinaire",                difficulty: 3, equipment: ["Kit vétérinaire","Friandises pour animaux"] },
+        { name: "Photographe",                difficulty: 2, equipment: ["Appareil photo","Trépied"] },
+        { name: "Peintre",                    difficulty: 2, equipment: ["Set de pinceaux","Palette"] },
+        { name: "Chirurgien",                 difficulty: 4, equipment: ["Outils chirurgicaux","Masque médical"] },
+        { name: "Pilote",                     difficulty: 3, equipment: ["Casque d'aviation","Manuel de vol"] },
+        { name: "Infirmier",                  difficulty: 2, equipment: ["Kit de soins","Blouse blanche"] },
+        { name: "Agent de sécurité",          difficulty: 1, equipment: ["Matraque","Badge de sécurité"] }
+      ],
+      traits: [
+        { name: "Sportif",              equipment: ["Montre de sport"] },
+        { name: "Intellectuel",         equipment: ["Lunettes de lecture"] },
+        { name: "Fumeur",               equipment: ["Paquet de cigarettes"] },
+        { name: "Amateur de café",      equipment: ["Thermos de café"] },
+        { name: "Joueur de poker",      equipment: ["Jeu de cartes"] },
+        { name: "Cinéphile",            equipment: ["Carte d'abonnement cinéma"] },
+        { name: "Photographe amateur",  equipment: ["Appareil photo"] },
+        { name: "Voyageur",             equipment: ["Passeport"] },
+        { name: "Musicien amateur",     equipment: ["Instrument portable"] },
+        { name: "Gamer",                equipment: ["Casque de gaming"] },
+        { name: "Écologiste",           equipment: ["Bouteille réutilisable"] },
+        { name: "Bricoleur",            equipment: ["Multi-outils"] },
+        { name: "Collectionneur",       equipment: ["Objet de collection"] },
+        { name: "Artiste",              equipment: ["Carnet de croquis"] },
+        { name: "Paranoïaque",          equipment: ["Spray au poivre"] },
+        { name: "Ex-militaire",         equipment: ["Carte militaire"] },
+        { name: "Allergique",           equipment: ["Médicament contre les allergies"] },
+        { name: "Adolescent",           equipment: ["Smartphone"] },
+        { name: "Âgé",                  equipment: ["Lunettes de lecture"] },
+        { name: "Étudiant",             equipment: ["Manuel"] },
+        { name: "Fortuné",              equipment: ["Montre de luxe"] },
+        { name: "Pauvre",               equipment: ["Vêtements usés"] },
+        { name: "Religieux",            equipment: ["Symbole religieux"] },
+        { name: "Militant",             equipment: ["Badge de protestation"] },
+        { name: "Geek",                 equipment: ["Montre connectée"] }
+      ],
+      equipment: [
+        "Smartphone","Portefeuille","Clés","Montre","Lunettes de soleil",
+        "Sac à dos","Sac à main","Parapluie","Chapeau","Carnet",
+        "Stylo","Couteau suisse","Écouteurs","Chargeur portable","Médicament",
+        "Bouteille d'eau","Barre énergétique","Carte de crédit","Carte d'identité","Ordinateur portable",
+        "Tablette","Appareil photo","GPS","Livre","Magazine",
+        "Trousse de premiers secours","Lampe de poche","Multi-outil","Corde","Ruban adhésif",
+        "Gants","Masque","Désinfectant","Boussole","Carte routière",
+        "Jumelles","Couteau de survie","Sifflet","Allumettes","Briquet"
+      ],
+      attributes: ["Force","Agilité","Intelligence","Charisme"],
+      abilities:  ["Artisanat","Survie","Persuasion"],
+      traitGroups: {
+        age:     ["Adolescent","Âgé"],
+        military:["Ex-militaire"],
+        hobby:   ["Gamer","Photographe amateur","Musicien amateur","Bricoleur","Artiste"]
+      },
+      incompatibleTraits: {
+        "Adolescent":  ["Ex-militaire","Fortuné"],
+        "Âgé":         ["Gamer","Étudiant"],
+        "Pauvre":      ["Fortuné"]
+      },
+      ethnicityLabels: {
+        american:    "Américain",
+        french:      "Français",
+        northAfrican:"Nord-Africain",
+        hispanic:    "Hispanique",
+        westAfrican: "Ouest-Africain",
+        indian:      "Indien",
+        slavic:      "Slave",
+        eastAsian:   "Asiatique",
+        teen:        "Ado"
+      }
+    };
+
+    // ── Config génération ────────────────────────────────
+    var cfg = {
+      traits:     { mundane:{min:1,max:2}, better:{min:1,max:2}, superior:{min:2,max:3}, elite:{min:2,max:4} },
+      equipment:  { mundane:{min:0,max:1}, better:{min:0,max:2}, superior:{min:1,max:3}, elite:{min:2,max:4} },
+      attributes: { mundane:{base:1,max:1}, better:{base:1,max:2}, superior:{base:1,max:2}, elite:{base:2,max:3} },
+      abilities:  { mundane:{points:0,max:0}, better:{points:1,max:1}, superior:{points:3,max:2}, elite:{points:5,max:3} }
+    };
+
+    // ── État ─────────────────────────────────────────────
+    var count = 4;
+    var probs = { mundane:40, better:30, superior:20, elite:10 };
+    var filtersGender = { male:true, female:true };
+    var filtersAge    = { teenager:true, adult:true, elderly:true };
+    var filtersEth    = { american:true, french:true, northAfrican:true, hispanic:true, westAfrican:true, indian:true, slavic:true, eastAsian:true, teen:true };
+
+    // ── UI ───────────────────────────────────────────────
+    container.innerHTML =
+      '<div class="gen-panel">' +
+        '<div class="gen-controls">' +
+          '<div class="gen-count-wrap">' +
+            '<span class="gen-lbl">Nombre de PNJ</span>' +
+            '<div class="gen-seuil">' +
+              '<button class="gen-seuil-btn" data-el="dec">−</button>' +
+              '<span class="gen-seuil-val" data-el="count">4</span>' +
+              '<button class="gen-seuil-btn" data-el="inc">+</button>' +
+            '</div>' +
+            '<span class="gen-hint">(1–12)</span>' +
+          '</div>' +
+          '<button class="gen-roll-btn" data-el="generate">⚡ Générer</button>' +
+          '<button class="gen-adv-toggle" data-el="adv-toggle">Options ▾</button>' +
+        '</div>' +
+        '<div class="gen-advanced" data-el="advanced" style="display:none">' +
+          '<div class="gen-adv-section">' +
+            '<h4>Probabilités de rang</h4>' +
+            '<div class="gen-prob-grid">' +
+              '<div class="gen-prob-row"><span class="gen-prob-label gen-prob-label--mundane">Ordinaire</span><input type="range" min="0" max="100" step="5" value="40" data-prob="mundane" class="gen-slider"><span class="gen-prob-val" data-prob-val="mundane">40%</span></div>' +
+              '<div class="gen-prob-row"><span class="gen-prob-label gen-prob-label--better">Meilleur</span><input type="range" min="0" max="100" step="5" value="30" data-prob="better" class="gen-slider"><span class="gen-prob-val" data-prob-val="better">30%</span></div>' +
+              '<div class="gen-prob-row"><span class="gen-prob-label gen-prob-label--superior">Supérieur</span><input type="range" min="0" max="100" step="5" value="20" data-prob="superior" class="gen-slider"><span class="gen-prob-val" data-prob-val="superior">20%</span></div>' +
+              '<div class="gen-prob-row"><span class="gen-prob-label gen-prob-label--elite">Élite</span><input type="range" min="0" max="100" step="5" value="10" data-prob="elite" class="gen-slider"><span class="gen-prob-val" data-prob-val="elite">10%</span></div>' +
+              '<div class="gen-prob-total" data-el="prob-total">Total : 100%</div>' +
+            '</div>' +
+          '</div>' +
+          '<div class="gen-adv-section">' +
+            '<h4>Filtres</h4>' +
+            '<div class="gen-filter-grid">' +
+              '<div class="gen-filter-group">' +
+                '<span class="gen-filter-title">Genre</span>' +
+                '<label class="gen-filter-opt"><input type="checkbox" data-filter="gender-male" checked> Homme</label>' +
+                '<label class="gen-filter-opt"><input type="checkbox" data-filter="gender-female" checked> Femme</label>' +
+              '</div>' +
+              '<div class="gen-filter-group">' +
+                '<span class="gen-filter-title">Âge</span>' +
+                '<label class="gen-filter-opt"><input type="checkbox" data-filter="age-teenager" checked> Adolescent (13-19)</label>' +
+                '<label class="gen-filter-opt"><input type="checkbox" data-filter="age-adult" checked> Adulte (20-64)</label>' +
+                '<label class="gen-filter-opt"><input type="checkbox" data-filter="age-elderly" checked> Âgé (65+)</label>' +
+              '</div>' +
+            '</div>' +
+            '<div class="gen-filter-group">' +
+              '<span class="gen-filter-title">Origines</span>' +
+              '<div class="gen-ethnicity-grid">' +
+                '<label class="gen-filter-opt"><input type="checkbox" data-filter="eth-american" checked> Américain</label>' +
+                '<label class="gen-filter-opt"><input type="checkbox" data-filter="eth-french" checked> Français</label>' +
+                '<label class="gen-filter-opt"><input type="checkbox" data-filter="eth-northAfrican" checked> Nord-Africain</label>' +
+                '<label class="gen-filter-opt"><input type="checkbox" data-filter="eth-hispanic" checked> Hispanique</label>' +
+                '<label class="gen-filter-opt"><input type="checkbox" data-filter="eth-westAfrican" checked> Ouest-Africain</label>' +
+                '<label class="gen-filter-opt"><input type="checkbox" data-filter="eth-indian" checked> Indien</label>' +
+                '<label class="gen-filter-opt"><input type="checkbox" data-filter="eth-slavic" checked> Slave</label>' +
+                '<label class="gen-filter-opt"><input type="checkbox" data-filter="eth-eastAsian" checked> Asiatique</label>' +
+                '<label class="gen-filter-opt"><input type="checkbox" data-filter="eth-teen" checked> Ado</label>' +
+              '</div>' +
+            '</div>' +
+          '</div>' +
+        '</div>' +
+      '</div>' +
+      '<div class="gen-grid" data-el="grid"></div>';
+
+    // ── Éléments DOM ─────────────────────────────────────
+    var countEl  = container.querySelector('[data-el="count"]');
+    var gridEl   = container.querySelector('[data-el="grid"]');
+    var advEl    = container.querySelector('[data-el="advanced"]');
+    var advToggle = container.querySelector('[data-el="adv-toggle"]');
+
+    // Compteur
+    container.querySelector('[data-el="dec"]').addEventListener('click', function () {
+      if (count > 1) countEl.textContent = --count;
+    });
+    container.querySelector('[data-el="inc"]').addEventListener('click', function () {
+      if (count < 12) countEl.textContent = ++count;
+    });
+
+    // Toggle options avancées
+    advToggle.addEventListener('click', function () {
+      var open = advEl.style.display !== 'none';
+      advEl.style.display = open ? 'none' : 'grid';
+      advToggle.textContent = open ? 'Options ▾' : 'Options ▴';
+    });
+
+    // Sliders de probabilité
+    container.querySelectorAll('[data-prob]').forEach(function (slider) {
+      slider.addEventListener('input', function () {
+        var key = this.dataset.prob;
+        probs[key] = parseInt(this.value);
+        container.querySelector('[data-prob-val="' + key + '"]').textContent = probs[key] + '%';
+        var total = probs.mundane + probs.better + probs.superior + probs.elite;
+        var totalEl = container.querySelector('[data-el="prob-total"]');
+        totalEl.textContent = 'Total : ' + total + '%';
+        totalEl.style.color = total === 100 ? '' : 'var(--rogue-intensity-light)';
+      });
+    });
+
+    // Filtres
+    container.querySelectorAll('[data-filter]').forEach(function (cb) {
+      cb.addEventListener('change', function () {
+        var key = this.dataset.filter;
+        if (key === 'gender-male')      filtersGender.male     = this.checked;
+        else if (key === 'gender-female') filtersGender.female = this.checked;
+        else if (key === 'age-teenager')  filtersAge.teenager  = this.checked;
+        else if (key === 'age-adult')     filtersAge.adult     = this.checked;
+        else if (key === 'age-elderly')   filtersAge.elderly   = this.checked;
+        else if (key.startsWith('eth-'))  filtersEth[key.replace('eth-','')] = this.checked;
+      });
+    });
+
+    // Bouton générer
+    container.querySelector('[data-el="generate"]').addEventListener('click', function () {
+      gridEl.innerHTML = '';
+      for (var i = 0; i < count; i++) {
+        try { gridEl.appendChild(buildCard(createNPC(i + 1))); }
+        catch (e) { console.error('Erreur PNJ #' + (i+1), e); }
+      }
+    });
+
+    // ── Utilitaires ──────────────────────────────────────
+    function randItem(arr) { return arr[Math.floor(Math.random() * arr.length)]; }
+
+    function shuffle(arr) {
+      var a = arr.slice();
+      for (var i = a.length - 1; i > 0; i--) {
+        var j = Math.floor(Math.random() * (i + 1));
+        var t = a[i]; a[i] = a[j]; a[j] = t;
+      }
+      return a;
+    }
+
+    function randInt(min, max) { return Math.floor(Math.random() * (max - min + 1)) + min; }
+
+    // ── Génération ───────────────────────────────────────
+    function getRarity() {
+      var total = probs.mundane + probs.better + probs.superior + probs.elite;
+      if (total === 0) return 'mundane';
+      var r = Math.floor(Math.random() * total);
+      if (r < probs.mundane) return 'mundane';
+      if (r < probs.mundane + probs.better) return 'better';
+      if (r < probs.mundane + probs.better + probs.superior) return 'superior';
+      return 'elite';
+    }
+
+    function getName() {
+      var selected = Object.keys(filtersEth).filter(function (k) { return filtersEth[k]; });
+      if (!selected.length) selected = Object.keys(filtersEth);
+      var ethnicity = randItem(selected);
+
+      var gender;
+      if (filtersGender.male && filtersGender.female) gender = Math.random() > 0.5 ? 'male' : 'female';
+      else if (filtersGender.male) gender = 'male';
+      else gender = 'female';
+
+      var fns = DB.firstNames[ethnicity] && DB.firstNames[ethnicity][gender];
+      var lns = DB.lastNames[ethnicity];
+      if (!fns || !lns) return { name: 'Inconnu', gender: gender, ethnicity: ethnicity };
+      return { name: randItem(fns) + ' ' + randItem(lns), gender: gender, ethnicity: ethnicity };
+    }
+
+    function getAge(traits) {
+      var ag = DB.traitGroups.age;
+      if (traits.indexOf(ag[0]) !== -1) return randInt(13, 19);
+      if (traits.indexOf(ag[1]) !== -1) return randInt(65, 89);
+      return randInt(20, 64);
+    }
+
+    function getOccupation(rarity) {
+      var max = { mundane:1, better:2, superior:3, elite:4 }[rarity];
+      var eli = DB.occupations.filter(function (o) { return o.difficulty <= max; });
+      return randItem(eli);
+    }
+
+    function compatible(existing, newT) {
+      var ic = DB.incompatibleTraits;
+      var gr = DB.traitGroups;
+      for (var i = 0; i < existing.length; i++) {
+        var e = existing[i];
+        if (ic[e] && ic[e].indexOf(newT) !== -1) return false;
+        if (ic[newT] && ic[newT].indexOf(e) !== -1) return false;
+        for (var g in gr) {
+          if (gr[g].indexOf(e) !== -1 && gr[g].indexOf(newT) !== -1 && e !== newT) return false;
+        }
+      }
+      return true;
+    }
+
+    function getTraits(rarity) {
+      var s = cfg.traits[rarity];
+      var n = randInt(s.min, s.max);
+      var ag = DB.traitGroups.age;
+      var pool = shuffle(DB.traits.slice());
+      if (!filtersAge.teenager) pool = pool.filter(function (t) { return t.name !== ag[0]; });
+      if (!filtersAge.elderly)  pool = pool.filter(function (t) { return t.name !== ag[1]; });
+
+      var sel = [];
+      // Forcer le trait d'âge si une seule catégorie sélectionnée
+      if (filtersAge.teenager && !filtersAge.adult && !filtersAge.elderly) {
+        var ft = DB.traits.filter(function (t) { return t.name === ag[0]; })[0];
+        if (ft) sel.push(ft);
+      } else if (!filtersAge.teenager && !filtersAge.adult && filtersAge.elderly) {
+        var ft = DB.traits.filter(function (t) { return t.name === ag[1]; })[0];
+        if (ft) sel.push(ft);
+      }
+
+      for (var i = 0; i < pool.length && sel.length < n; i++) {
+        var tr = pool[i];
+        if (sel.filter(function (s) { return s.name === tr.name; }).length) continue;
+        if (compatible(sel.map(function (s) { return s.name; }), tr.name)) sel.push(tr);
+      }
+      return sel;
+    }
+
+    function getEquipment(occ, traits) {
+      var eq = occ.equipment.slice();
+      traits.forEach(function (t) {
+        if (t.equipment && t.equipment[0] && eq.indexOf(t.equipment[0]) === -1) eq.push(t.equipment[0]);
+      });
+      var bonus = shuffle(DB.equipment.filter(function (e) { return eq.indexOf(e) === -1; })).slice(0, 2);
+      bonus.forEach(function (b) { eq.push(b); });
+      return eq;
+    }
+
+    function genAttributes(rarity) {
+      var s = cfg.attributes[rarity];
+      var a = {};
+      DB.attributes.forEach(function (k) { a[k] = s.base; });
+      var pts = { mundane:0, better:2, superior:4, elite:5 }[rarity];
+      var tries = 0;
+      while (pts > 0 && tries++ < 100) {
+        var k = randItem(DB.attributes);
+        if (a[k] < s.max) { a[k]++; pts--; }
+      }
+      return a;
+    }
+
+    function genAbilities(rarity) {
+      var s = cfg.abilities[rarity];
+      var a = {};
+      DB.abilities.forEach(function (k) { a[k] = 0; });
+      var pts = s.points;
+      var tries = 0;
+      while (pts > 0 && tries++ < 100) {
+        var k = randItem(DB.abilities);
+        if (a[k] < s.max) { a[k]++; pts--; }
+      }
+      return a;
+    }
+
+    function createNPC(id) {
+      var rarity = getRarity();
+      var nd = getName();
+      var traits = getTraits(rarity);
+      var occ = getOccupation(rarity);
+      return {
+        id: id, name: nd.name, gender: nd.gender, ethnicity: nd.ethnicity,
+        age: getAge(traits.map(function (t) { return t.name; })),
+        occupation: occ.name, rarity: rarity,
+        traits: traits.map(function (t) { return t.name; }),
+        equipment: getEquipment(occ, traits),
+        attributes: genAttributes(rarity),
+        abilities: genAbilities(rarity)
+      };
+    }
+
+    // ── Rendu carte ──────────────────────────────────────
+    function buildCard(npc) {
+      var labels = { mundane:'Ordinaire', better:'Meilleur', superior:'Supérieur', elite:'Élite' };
+      var card = document.createElement('div');
+      card.className = 'gen-card gen-card--' + npc.rarity;
+
+      var tagsHtml = npc.traits.map(function (t) {
+        return '<span class="gen-tag">' + t + '</span>';
+      }).join('');
+
+      var eqVisible = npc.equipment.slice(0, 6);
+      var eqHidden  = npc.equipment.length - 6;
+      var eqHtml = eqVisible.map(function (e) {
+        return '<span class="gen-tag gen-tag--eq">' + e + '</span>';
+      }).join('');
+      if (eqHidden > 0) eqHtml += '<span class="gen-tag gen-tag--more">+' + eqHidden + '</span>';
+
+      var attHtml = Object.keys(npc.attributes).map(function (k) {
+        return '<div class="gen-stat"><span class="gen-stat__key">' + k + '</span><span class="gen-stat__val">' + npc.attributes[k] + '</span></div>';
+      }).join('');
+
+      var ablHtml = Object.keys(npc.abilities).map(function (k) {
+        var v = npc.abilities[k];
+        return '<div class="gen-stat"><span class="gen-stat__key">' + k + '</span><span class="gen-stat__val">' + (v >= 0 ? '+' : '') + v + '</span></div>';
+      }).join('');
+
+      var seed = 'npc-' + npc.id + '-' + npc.ethnicity + '-' + npc.gender + '-' + Date.now();
+      var ethLabel = DB.ethnicityLabels[npc.ethnicity] || npc.ethnicity;
+
+      card.innerHTML =
+        '<div class="gen-card__img">' +
+          '<img src="https://picsum.photos/seed/' + seed + '/240/120" alt="" loading="lazy">' +
+          '<span class="gen-badge gen-badge--' + npc.rarity + '">' + labels[npc.rarity] + '</span>' +
+          '<span class="gen-eth-badge">' + ethLabel + '</span>' +
+        '</div>' +
+        '<div class="gen-card__body">' +
+          '<div class="gen-card__head">' +
+            '<strong class="gen-card__name">' + npc.name + '</strong>' +
+            '<span class="gen-card__meta">' + (npc.gender === 'male' ? '♂' : '♀') + ' · ' + npc.age + ' ans</span>' +
+          '</div>' +
+          '<div class="gen-card__occ">' + npc.occupation + '</div>' +
+          '<div class="gen-card__section"><span class="gen-card__section-title">Traits</span><div class="gen-tags">' + tagsHtml + '</div></div>' +
+          '<div class="gen-card__section"><span class="gen-card__section-title">Équipement</span><div class="gen-tags">' + eqHtml + '</div></div>' +
+          '<div class="gen-card__section"><span class="gen-card__section-title">Caractéristiques</span><div class="gen-stats">' + attHtml + '</div></div>' +
+          '<div class="gen-card__section"><span class="gen-card__section-title">Compétences</span><div class="gen-stats">' + ablHtml + '</div></div>' +
+        '</div>';
+
+      return card;
+    }
+  }
+
+  /* ══════════════════════════════════════════════════════
      INIT — active les composants au chargement
   ══════════════════════════════════════════════════════ */
 
@@ -861,6 +1311,7 @@
     document.querySelectorAll('.rogue-roller-adv').forEach(buildAdvantageRoller);
     document.querySelectorAll('.rogue-result-table').forEach(buildResultTable);
     document.querySelectorAll('.rogue-sim').forEach(buildSimulator);
+    document.querySelectorAll('.rogue-gen').forEach(buildNPCGenerator);
     initStickyHeaders();
   }
 

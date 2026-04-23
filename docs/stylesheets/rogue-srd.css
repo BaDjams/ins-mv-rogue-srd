@@ -1183,3 +1183,368 @@ body,
   .rogue-roller__die { width: 56px; height: 56px; font-size: 1.8em; }
   .rogue-roller__dice { gap: 16px; }
 }
+
+/* ═══════════════════════════════════════════════════════
+   9. GÉNÉRATEUR DE PNJ
+   ═══════════════════════════════════════════════════════ */
+
+/* — Panneau de contrôles — */
+.gen-panel {
+  background: var(--rogue-bg-2);
+  border: 1px solid var(--rogue-border);
+  border-radius: 14px;
+  padding: 24px 28px;
+  margin-bottom: 28px;
+}
+
+.gen-controls {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.gen-count-wrap {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.gen-lbl {
+  font-family: var(--rogue-font-label);
+  font-size: 0.7em;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--rogue-text-faint);
+}
+
+.gen-hint {
+  font-family: var(--rogue-font-body);
+  font-size: 0.8em;
+  color: var(--rogue-text-faint);
+  font-style: italic;
+}
+
+.gen-seuil {
+  display: flex;
+  align-items: center;
+  border: 1px solid var(--rogue-angel-border);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.gen-seuil-btn {
+  font-size: 1.2em;
+  font-weight: 700;
+  width: 34px;
+  height: 34px;
+  background: var(--rogue-angel-subtle);
+  color: var(--rogue-angel-light);
+  border: none;
+  cursor: pointer;
+  transition: background 0.15s;
+  line-height: 1;
+}
+.gen-seuil-btn:hover { background: var(--rogue-angel-dim); }
+
+.gen-seuil-val {
+  min-width: 40px;
+  text-align: center;
+  font-family: var(--rogue-font-label);
+  font-size: 1.3em;
+  font-weight: 700;
+  color: var(--rogue-angel-light);
+  padding: 0 6px;
+}
+
+.gen-roll-btn {
+  font-family: var(--rogue-font-label);
+  font-size: 0.82em;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 11px 28px;
+  border-radius: 8px;
+  background: var(--rogue-angel);
+  color: var(--rogue-bg);
+  border: none;
+  cursor: pointer;
+  font-weight: 700;
+  transition: background 0.2s, transform 0.1s;
+}
+.gen-roll-btn:hover  { background: var(--rogue-angel-light); }
+.gen-roll-btn:active { transform: scale(0.97); }
+
+.gen-adv-toggle {
+  font-family: var(--rogue-font-label);
+  font-size: 0.68em;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 8px 16px;
+  border-radius: 6px;
+  background: transparent;
+  border: 1px solid var(--rogue-border-faint);
+  color: var(--rogue-text-faint);
+  cursor: pointer;
+  transition: all 0.15s;
+  margin-left: auto;
+}
+.gen-adv-toggle:hover { border-color: var(--rogue-border); color: var(--rogue-text); }
+
+/* — Panneau avancé — */
+.gen-advanced {
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 1px solid var(--rogue-border-faint);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+@media (max-width: 700px) {
+  .gen-advanced { grid-template-columns: 1fr; }
+}
+
+.gen-adv-section h4 {
+  font-family: var(--rogue-font-label);
+  font-size: 0.65em;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--rogue-text-faint);
+  margin-bottom: 12px;
+}
+
+/* — Probabilités — */
+.gen-prob-grid { display: flex; flex-direction: column; gap: 8px; }
+
+.gen-prob-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.gen-prob-label {
+  font-family: var(--rogue-font-label);
+  font-size: 0.68em;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  width: 80px;
+  flex-shrink: 0;
+}
+.gen-prob-label--mundane  { color: var(--rogue-text-dim); }
+.gen-prob-label--better   { color: var(--rogue-angel-light); }
+.gen-prob-label--superior { color: oklch(65% 0.2 290); }
+.gen-prob-label--elite    { color: var(--rogue-divine); }
+
+.gen-slider {
+  flex: 1;
+  accent-color: var(--rogue-angel);
+  height: 4px;
+}
+
+.gen-prob-val {
+  font-family: var(--rogue-font-label);
+  font-size: 0.7em;
+  color: var(--rogue-text-dim);
+  width: 36px;
+  text-align: right;
+}
+
+.gen-prob-total {
+  font-family: var(--rogue-font-label);
+  font-size: 0.65em;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--rogue-text-faint);
+  text-align: right;
+  margin-top: 4px;
+}
+
+/* — Filtres — */
+.gen-filter-grid {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-bottom: 12px;
+}
+
+.gen-filter-group {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.gen-filter-title {
+  font-family: var(--rogue-font-label);
+  font-size: 0.62em;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--rogue-text-faint);
+  margin-bottom: 3px;
+}
+
+.gen-filter-opt {
+  font-family: var(--rogue-font-body);
+  font-size: 0.85em;
+  color: var(--rogue-text-dim);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.gen-ethnicity-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 4px 12px;
+}
+
+/* — Grille de cartes PNJ — */
+.gen-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 16px;
+}
+
+/* — Carte PNJ — */
+.gen-card {
+  background: var(--rogue-bg-3);
+  border-radius: 10px;
+  border: 2px solid var(--rogue-border);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s;
+}
+.gen-card:hover { transform: translateY(-2px); }
+
+.gen-card--mundane  { border-color: oklch(42% 0.02 275 / 0.6); box-shadow: 0 0 10px oklch(42% 0.02 275 / 0.15); }
+.gen-card--better   { border-color: var(--rogue-angel-border); box-shadow: 0 0 10px var(--rogue-angel-subtle); }
+.gen-card--superior { border-color: oklch(58% 0.22 290 / 0.45); box-shadow: 0 0 10px oklch(58% 0.22 290 / 0.15); }
+.gen-card--elite    { border-color: var(--rogue-divine-border); box-shadow: 0 0 12px var(--rogue-divine-subtle); }
+
+.gen-card__img {
+  position: relative;
+  height: 110px;
+  overflow: hidden;
+  background: var(--rogue-bg-4);
+}
+.gen-card__img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.gen-badge {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  font-family: var(--rogue-font-label);
+  font-size: 0.6em;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-weight: 700;
+  padding: 3px 8px;
+  border-radius: 20px;
+  color: var(--rogue-bg);
+}
+.gen-badge--mundane  { background: oklch(60% 0.02 275); }
+.gen-badge--better   { background: var(--rogue-angel); }
+.gen-badge--superior { background: oklch(58% 0.22 290); }
+.gen-badge--elite    { background: oklch(78% 0.14 85); }
+
+.gen-eth-badge {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  font-family: var(--rogue-font-label);
+  font-size: 0.58em;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 2px 7px;
+  border-radius: 3px;
+  background: rgba(0,0,0,0.55);
+  color: var(--rogue-text-dim);
+}
+
+.gen-card__body { padding: 14px 16px; flex-grow: 1; display: flex; flex-direction: column; gap: 10px; }
+
+.gen-card__head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 8px;
+}
+
+.gen-card__name {
+  font-family: var(--rogue-font-display);
+  font-size: 0.95em;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  color: var(--rogue-text);
+}
+
+.gen-card__meta {
+  font-family: var(--rogue-font-label);
+  font-size: 0.62em;
+  letter-spacing: 0.06em;
+  color: var(--rogue-text-faint);
+  white-space: nowrap;
+}
+
+.gen-card__occ {
+  font-family: var(--rogue-font-body);
+  font-size: 0.85em;
+  font-style: italic;
+  color: var(--rogue-text-dim);
+  margin-top: -4px;
+}
+
+.gen-card__section { display: flex; flex-direction: column; gap: 5px; }
+
+.gen-card__section-title {
+  font-family: var(--rogue-font-label);
+  font-size: 0.6em;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--rogue-text-faint);
+}
+
+.gen-tags { display: flex; flex-wrap: wrap; gap: 4px; }
+
+.gen-tag {
+  font-family: var(--rogue-font-body);
+  font-size: 0.78em;
+  padding: 2px 7px;
+  border-radius: 4px;
+  background: oklch(100% 0 0 / 0.05);
+  border: 1px solid var(--rogue-border-faint);
+  color: var(--rogue-text-dim);
+}
+
+.gen-tag--eq {
+  border-style: dashed;
+  background: transparent;
+}
+
+.gen-tag--more {
+  background: var(--rogue-bg-4);
+  color: var(--rogue-text-faint);
+  font-style: italic;
+}
+
+.gen-stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4px 8px;
+}
+
+.gen-stat {
+  display: flex;
+  justify-content: space-between;
+  font-family: var(--rogue-font-body);
+  font-size: 0.84em;
+}
+
+.gen-stat__key { color: var(--rogue-text-dim); }
+.gen-stat__val { font-weight: 700; color: var(--rogue-text); font-family: var(--rogue-font-label); }

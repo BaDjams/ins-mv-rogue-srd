@@ -1,7 +1,5 @@
 # Générateur d'Hôtes & PNJ
 
-Génération aléatoire d'hôtes humains sous forme de cartes de personnage.
+Génération aléatoire d'hôtes humains sous forme de cartes de personnage. Chaque PNJ possède une identité, un rang, une profession, des traits, de l'équipement et des caractéristiques.
 
-!!! note "En cours de développement"
-    Ce module reprendra et adaptera le générateur développé dans le projet précédent.
-    Les cartes générées incluront : identité, caractéristiques, compétences, trait distinctif et background.
+<div class="rogue-gen"></div>
