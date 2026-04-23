@@ -982,7 +982,7 @@
     };
 
     // ── État ─────────────────────────────────────────────
-    var count = 4;
+    var count = 6;
     var probs = { mundane:40, better:30, superior:20, elite:10 };
     var filtersGender = { male:true, female:true };
     var filtersAge    = { teenager:true, adult:true, elderly:true };
@@ -996,7 +996,7 @@
             '<span class="gen-lbl">Nombre de PNJ</span>' +
             '<div class="gen-seuil">' +
               '<button class="gen-seuil-btn" data-el="dec">−</button>' +
-              '<span class="gen-seuil-val" data-el="count">4</span>' +
+              '<span class="gen-seuil-val" data-el="count">6</span>' +
               '<button class="gen-seuil-btn" data-el="inc">+</button>' +
             '</div>' +
             '<span class="gen-hint">(1–12)</span>' +
