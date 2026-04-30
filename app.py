@@ -348,7 +348,7 @@ html.angelic .cm-em { color: #204080 !important; }
 
 <script src="https://uicdn.toast.com/editor/latest/toastui-editor-all.min.js"></script>
 <script>
-const NAV = {{ nav_json }};
+const NAV = {{ nav_json|safe }};
 
 let editor = null, currentFile = null, dirty = false;
 
