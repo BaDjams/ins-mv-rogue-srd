@@ -234,9 +234,9 @@ html, body { height: 100%; background: var(--bg); color: var(--text); font-famil
 .toastui-editor-defaultUI { background: #1c1c30 !important; border: none !important; }
 .toastui-editor-toolbar { background: #131326 !important; border-bottom: 1px solid var(--border) !important; }
 .toastui-editor-toolbar-group { border-right: 1px solid var(--border) !important; }
-.toastui-editor-toolbar-icons { border: none !important; background: transparent !important; color: #8888aa !important; }
-.toastui-editor-toolbar-icons:hover { background: rgba(255,255,255,.07) !important; color: #cccce0 !important; }
-.toastui-editor-toolbar-icons.active { background: rgba(230,74,25,.2) !important; color: var(--accent) !important; }
+.toastui-editor-toolbar-icons { border: none !important; background-color: transparent !important; color: #8888aa !important; }
+.toastui-editor-toolbar-icons:hover { background-color: rgba(255,255,255,.07) !important; color: #cccce0 !important; }
+.toastui-editor-toolbar-icons.active { background-color: rgba(230,74,25,.2) !important; color: var(--accent) !important; }
 .toastui-editor-mode-switch { background: #131326 !important; border-top: 1px solid var(--border) !important; }
 .toastui-editor-mode-switch .tab-item { color: var(--muted) !important; background: transparent !important; border: none !important; }
 .toastui-editor-mode-switch .tab-item.active { color: var(--accent) !important; background: rgba(230,74,25,.1) !important; }
@@ -285,8 +285,8 @@ html.angelic .toastui-editor-defaultUI { background: #ffffff !important; }
 html.angelic .toastui-editor-toolbar { background: #f5f4f0 !important; border-bottom: 1px solid var(--border) !important; }
 html.angelic .toastui-editor-toolbar-group { border-right: 1px solid var(--border) !important; }
 html.angelic .toastui-editor-toolbar-icons { color: #887060 !important; }
-html.angelic .toastui-editor-toolbar-icons:hover { background: rgba(0,0,0,.07) !important; color: #1a1820 !important; }
-html.angelic .toastui-editor-toolbar-icons.active { background: rgba(192,48,16,.15) !important; }
+html.angelic .toastui-editor-toolbar-icons:hover { background-color: rgba(0,0,0,.07) !important; color: #1a1820 !important; }
+html.angelic .toastui-editor-toolbar-icons.active { background-color: rgba(192,48,16,.15) !important; }
 html.angelic .toastui-editor-mode-switch { background: #f0ece4 !important; border-top: 1px solid var(--border) !important; }
 html.angelic .toastui-editor-mode-switch .tab-item { color: var(--muted) !important; }
 html.angelic .toastui-editor-mode-switch .tab-item.active { color: var(--accent) !important; background: rgba(192,48,16,.08) !important; }
