@@ -9,7 +9,7 @@ import os
 import sqlite3
 import json
 from pathlib import Path
-from flask import Flask, request, jsonify, render_template_string, session, redirect, url_for
+from flask import Flask, request, jsonify, render_template_string, Response, session, redirect, url_for
 
 app = Flask(__name__)
 app.secret_key = os.environ.get("SECRET_KEY", "ins-mv-rogue-secret-changeme")
@@ -348,7 +348,7 @@ html.angelic .cm-em { color: #204080 !important; }
 
 <script src="https://uicdn.toast.com/editor/3.2.2/toastui-editor-all.min.js"></script>
 <script>
-const NAV = {{ nav_json|safe }};
+const NAV = __NAV_JSON__;
 
 let editor = null, currentFile = null, dirty = false;
 
@@ -511,8 +511,8 @@ def logout():
 
 @app.route("/")
 def index():
-    nav_json = json.dumps(NAV, ensure_ascii=False)
-    return render_template_string(EDITOR_HTML, nav_json=nav_json)
+    html = EDITOR_HTML.replace("__NAV_JSON__", json.dumps(NAV, ensure_ascii=False))
+    return Response(html, mimetype="text/html")
 
 
 @app.route("/api/file", methods=["GET"])
