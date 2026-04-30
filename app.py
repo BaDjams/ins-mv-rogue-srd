@@ -409,7 +409,7 @@ async function openFile(filename, label) {
     else editor.setMarkdown(data.content);
     setDirty(false);
   } catch (err) {
-    alert('Erreur de chargement : ' + err.message + '\n(' + err.constructor.name + ')');
+    alert('Erreur de chargement : ' + err.message + ' [' + err.constructor.name + ']');
   }
 }
 
