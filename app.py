@@ -143,7 +143,7 @@ EDITOR_HTML = """<!DOCTYPE html>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Éditeur WYSIWYG — INS-MV ROGUE</title>
-<link rel="stylesheet" href="https://uicdn.toast.com/editor/latest/toastui-editor.min.css">
+<link rel="stylesheet" href="https://uicdn.toast.com/editor/3.2.2/toastui-editor.min.css">
 <style>
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -346,7 +346,7 @@ html.angelic .cm-em { color: #204080 !important; }
   </main>
 </div>
 
-<script src="https://uicdn.toast.com/editor/latest/toastui-editor-all.min.js"></script>
+<script src="https://uicdn.toast.com/editor/3.2.2/toastui-editor-all.min.js"></script>
 <script>
 const NAV = {{ nav_json|safe }};
 
@@ -409,7 +409,7 @@ async function openFile(filename, label) {
     else editor.setMarkdown(data.content);
     setDirty(false);
   } catch (err) {
-    alert('Erreur de chargement : ' + err.message);
+    alert('Erreur de chargement : ' + err.message + '\n(' + err.constructor.name + ')');
   }
 }
 
