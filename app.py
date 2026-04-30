@@ -137,6 +137,176 @@ button:hover { background: #ff6d3a; }
 </body>
 </html>"""
 
+READER_HTML = """<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>INS-MV ROGUE — SRD</title>
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --bg: #0f0f1a; --sidebar: #141428; --header: #0d0d1f; --border: #2a2a45;
+  --text: #d0d0e0; --muted: #666688; --accent: #e64a19; --section: #e8b04a;
+  --w-side: 260px; --h-head: 52px;
+}
+html, body { height: 100%; background: var(--bg); color: var(--text); font-family: 'Segoe UI', system-ui, sans-serif; font-size: 14px; }
+#header {
+  position: fixed; top: 0; left: 0; right: 0; height: var(--h-head);
+  background: var(--header); border-bottom: 1px solid var(--border);
+  display: flex; align-items: center; padding: 0 16px; gap: 12px; z-index: 200;
+}
+#logo { font-size: 13px; font-weight: 800; color: var(--accent); letter-spacing: .06em; text-transform: uppercase; white-space: nowrap; flex-shrink: 0; }
+#page-title { flex: 1; font-size: 14px; font-weight: 600; color: var(--text); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+#btn-theme, #btn-admin {
+  padding: 5px 12px; border-radius: 6px; border: 1px solid var(--border);
+  background: transparent; color: var(--muted); font-size: 12px; cursor: pointer;
+  flex-shrink: 0; text-decoration: none; transition: all .2s;
+}
+#btn-theme:hover, #btn-admin:hover { color: var(--text); border-color: var(--text); }
+#layout { display: flex; height: 100vh; padding-top: var(--h-head); }
+#sidebar {
+  width: var(--w-side); flex-shrink: 0;
+  background: var(--sidebar); border-right: 1px solid var(--border);
+  overflow-y: auto; overflow-x: hidden; padding: 8px 0 32px;
+}
+#sidebar::-webkit-scrollbar { width: 5px; }
+#sidebar::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
+.nav-section { padding: 16px 16px 4px; font-size: 10px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--section); }
+.nav-item {
+  display: block; width: 100%;
+  padding: 7px 16px 7px calc(16px + var(--d, 0) * 14px);
+  font-size: 13px; color: var(--text); background: none; border: none;
+  border-left: 2px solid transparent; text-align: left; cursor: pointer;
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+  transition: background .12s, border-color .12s;
+}
+.nav-item:hover { background: rgba(255,255,255,.05); }
+.nav-item.active { background: rgba(230,74,25,.12); border-left-color: var(--accent); color: #fff; font-weight: 600; }
+#main { flex: 1; overflow-y: auto; }
+#content { max-width: 860px; margin: 0 auto; padding: 40px 48px 80px; line-height: 1.75; font-size: 15px; }
+#content h1 { font-size: 1.9em; color: #f0f0ff; border-bottom: 1px solid var(--border); padding-bottom: 10px; margin: 0 0 24px; }
+#content h2 { font-size: 1.4em; color: #f0f0ff; border-bottom: 1px solid var(--border); padding-bottom: 6px; margin: 40px 0 16px; }
+#content h3 { font-size: 1.15em; color: var(--section); margin: 28px 0 12px; }
+#content h4 { font-size: 1em; color: var(--text); font-weight: 700; margin: 20px 0 10px; }
+#content p { margin: 0 0 14px; }
+#content ul, #content ol { margin: 0 0 14px; padding-left: 28px; }
+#content li { margin-bottom: 6px; }
+#content a { color: var(--accent); text-decoration: none; }
+#content a:hover { text-decoration: underline; }
+#content strong { color: #f0d080; font-weight: 700; }
+#content em { color: #a0c0ff; }
+#content hr { border: none; border-top: 1px solid var(--border); margin: 28px 0; }
+#content blockquote { border-left: 3px solid var(--accent); background: rgba(230,74,25,.05); padding: 12px 18px; margin: 0 0 14px; color: var(--muted); border-radius: 0 4px 4px 0; }
+#content code { background: #252540; color: #e8a87c; padding: 2px 7px; border-radius: 4px; font-family: 'Consolas', monospace; font-size: .9em; }
+#content pre { background: #18182e; border: 1px solid var(--border); border-radius: 8px; padding: 16px 20px; overflow-x: auto; margin: 0 0 16px; }
+#content pre code { background: none; color: #c8d0e0; padding: 0; }
+#content table { border-collapse: collapse; width: 100%; margin: 0 0 20px; font-size: .95em; }
+#content th { background: #252545; color: #f0f0f0; padding: 9px 14px; text-align: left; border: 1px solid var(--border); }
+#content td { padding: 8px 14px; border: 1px solid var(--border); vertical-align: top; }
+#content tr:nth-child(even) td { background: rgba(255,255,255,.025); }
+#content tr:hover td { background: rgba(255,255,255,.04); }
+html.angelic {
+  --bg: #f5f4f0; --sidebar: #eceae4; --header: #e8e5de; --border: #d0ccc0;
+  --text: #1a1820; --muted: #887870; --accent: #c03010; --section: #7050a0;
+}
+html.angelic .nav-item:hover { background: rgba(0,0,0,.05); }
+html.angelic .nav-item.active { background: rgba(192,48,16,.10); color: #1a1820; }
+html.angelic #content h1, html.angelic #content h2 { color: #0a0810; }
+html.angelic #content h3 { color: #7050a0; }
+html.angelic #content strong { color: #804000; }
+html.angelic #content em { color: #204080; }
+html.angelic #content code { background: #ede8e0; color: #804020; }
+html.angelic #content pre { background: #f0ece4; }
+html.angelic #content pre code { color: #3a3830; }
+html.angelic #content blockquote { background: rgba(192,48,16,.04); }
+html.angelic #content th { background: #e0dcd4; color: #1a1820; }
+html.angelic #content tr:nth-child(even) td { background: rgba(0,0,0,.02); }
+html.angelic #content tr:hover td { background: rgba(0,0,0,.04); }
+</style>
+</head>
+<script>if (localStorage.getItem('theme') === 'angelic') document.documentElement.classList.add('angelic');</script>
+<body>
+<header id="header">
+  <div id="logo">⚔ INS·MV ROGUE</div>
+  <span id="page-title">SRD</span>
+  <button id="btn-theme">☀ Angélique</button>
+  <a id="btn-admin" href="/admin">⚙ Admin</a>
+</header>
+<div id="layout">
+  <aside id="sidebar"><div id="nav-list"></div></aside>
+  <main id="main"><article id="content"></article></main>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/marked@9/marked.min.js"></script>
+<script>
+const NAV = __NAV_JSON__;
+const elNavList = document.getElementById('nav-list');
+const elTitle   = document.getElementById('page-title');
+const elContent = document.getElementById('content');
+
+function buildNav() {
+  NAV.forEach(item => {
+    if (item.section) {
+      const el = document.createElement('div');
+      el.className = 'nav-section';
+      el.textContent = item.label;
+      elNavList.appendChild(el);
+    } else {
+      const el = document.createElement('button');
+      el.className = 'nav-item';
+      el.style.setProperty('--d', item.indent || 0);
+      el.textContent = item.label;
+      el.dataset.file = item.file;
+      el.addEventListener('click', () => { location.hash = item.file; });
+      elNavList.appendChild(el);
+    }
+  });
+}
+
+async function loadPage(filename) {
+  const item = NAV.find(n => n.file === filename);
+  const label = item?.label || filename;
+  document.querySelectorAll('.nav-item').forEach(e => e.classList.remove('active'));
+  document.querySelector(`.nav-item[data-file="${filename}"]`)?.classList.add('active');
+  elTitle.textContent = label;
+  document.title = label + ' — INS-MV ROGUE SRD';
+  try {
+    const resp = await fetch('/api/page?f=' + encodeURIComponent(filename));
+    const data = await resp.json();
+    if (data.error) { elContent.innerHTML = '<p style="color:var(--accent);padding:40px 0">Chapitre introuvable.</p>'; return; }
+    elContent.innerHTML = marked.parse(data.content || '');
+    document.getElementById('main').scrollTop = 0;
+  } catch {
+    elContent.innerHTML = '<p style="color:var(--accent);padding:40px 0">Erreur de chargement.</p>';
+  }
+}
+
+function loadFromHash() {
+  const hash = decodeURIComponent(location.hash.slice(1));
+  if (hash.endsWith('.md')) {
+    loadPage(hash);
+  } else {
+    const first = NAV.find(n => n.file);
+    if (first) location.hash = first.file;
+  }
+}
+
+const elBtnTheme = document.getElementById('btn-theme');
+function applyTheme(angelic) {
+  document.documentElement.classList.toggle('angelic', angelic);
+  elBtnTheme.textContent = angelic ? '🌑 Démoniaque' : '☀ Angélique';
+  localStorage.setItem('theme', angelic ? 'angelic' : 'demonic');
+}
+elBtnTheme.addEventListener('click', () => applyTheme(!document.documentElement.classList.contains('angelic')));
+applyTheme(localStorage.getItem('theme') === 'angelic');
+
+window.addEventListener('hashchange', loadFromHash);
+buildNav();
+loadFromHash();
+</script>
+</body>
+</html>"""
+
 EDITOR_HTML = """<!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -488,7 +658,7 @@ buildNav();
 
 @app.before_request
 def require_login():
-    if request.endpoint in ("login", "logout"):
+    if request.endpoint in ("login", "logout", "reader", "api_page"):
         return
     if not session.get("logged_in"):
         return redirect(url_for("login"))
@@ -500,7 +670,7 @@ def login():
     if request.method == "POST":
         if request.form.get("password") == PASSWORD:
             session["logged_in"] = True
-            return redirect("/")
+            return redirect("/admin")
         error = "Mot de passe incorrect"
     return render_template_string(LOGIN_HTML, error=error)
 
@@ -512,9 +682,29 @@ def logout():
 
 
 @app.route("/")
-def index():
+def reader():
+    html = READER_HTML.replace("__NAV_JSON__", json.dumps(NAV, ensure_ascii=False))
+    return Response(html, mimetype="text/html")
+
+
+@app.route("/admin")
+def admin():
     html = EDITOR_HTML.replace("__NAV_JSON__", json.dumps(NAV, ensure_ascii=False))
     return Response(html, mimetype="text/html")
+
+
+@app.route("/api/page")
+def api_page():
+    fname = request.args.get("f", "")
+    if not fname or ".." in fname:
+        return jsonify({"error": "Fichier introuvable"}), 404
+    with get_db() as db:
+        row = db.execute(
+            "SELECT content FROM pages WHERE filename=?", (fname,)
+        ).fetchone()
+    if not row:
+        return jsonify({"error": "Fichier introuvable"}), 404
+    return jsonify({"content": row["content"]})
 
 
 @app.route("/api/file", methods=["GET"])
