@@ -398,18 +398,27 @@ async function openFile(filename, label) {
   document.querySelector(`.nav-item[data-file="${filename}"]`)?.classList.add('active');
   try {
     const resp = await fetch('/api/file?f=' + encodeURIComponent(filename));
+    if (!resp.ok) {
+      const text = await resp.text();
+      console.error('API error', resp.status, text.slice(0, 200));
+      alert('Erreur HTTP ' + resp.status + ' — voir console');
+      return;
+    }
     const data = await resp.json();
+    console.log('API response:', data);
     if (data.error) { alert('Erreur : ' + data.error); return; }
     currentFile = filename;
     elTitle.textContent = label || filename;
     elPath.textContent  = filename;
     elPlaceholder.style.display = 'none';
     elEditorWrap.style.display  = 'block';
-    if (!editor) initEditor(data.content);
-    else editor.setMarkdown(data.content);
+    const content = data.content ?? '';
+    if (!editor) initEditor(content);
+    else editor.setMarkdown(content);
     setDirty(false);
   } catch (err) {
-    alert('Erreur de chargement : ' + err.message + ' [' + err.constructor.name + ']');
+    console.error('openFile error:', err);
+    alert('Erreur de chargement : ' + err.message + ' [' + (err.constructor?.name ?? '?') + ']');
   }
 }
 
