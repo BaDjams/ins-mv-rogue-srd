@@ -432,13 +432,6 @@ function initEditor(initialValue) {
     height: editorHeight(),
     initialValue: initialValue || '',
     usageStatistics: false,
-    toolbarItems: [
-      ['heading', 'bold', 'italic', 'strike'],
-      ['hr', 'quote'],
-      ['ul', 'ol', 'task'],
-      ['table', 'link'],
-      ['code', 'codeBlock'],
-    ],
   });
   editor.on('change', () => { if (!dirty) setDirty(true); });
   window.addEventListener('resize', () => editor.setHeight(editorHeight()));
