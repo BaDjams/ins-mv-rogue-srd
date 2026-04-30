@@ -1,0 +1,1560 @@
+/*
+ * INS-MV ROGUE — SRD Stylesheet
+ * Pour MkDocs Material (thème sombre / slate)
+ * Intégration : ajouter dans mkdocs.yml sous extra_css: [stylesheets/rogue-srd.css]
+ * Fonts : ajouter dans mkdocs.yml sous extra_css ou via <link> dans overrides/main.html :
+ *   https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700
+ *     &family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400
+ *     &family=Barlow+Condensed:wght@300;400;500;600&display=swap
+ */
+
+/* ═══════════════════════════════════════════════════════
+   1. TOKENS — Système de couleurs INS-MV ROGUE
+   ═══════════════════════════════════════════════════════ */
+
+:root,
+[data-md-color-scheme="slate"] {
+
+  /* — Fond & surfaces — */
+  --rogue-bg:        #0f0f1a;
+  --rogue-bg-2:      oklch(14% 0.025 275);
+  --rogue-bg-3:      oklch(17% 0.03 275);
+  --rogue-bg-4:      oklch(20% 0.035 275);
+
+  /* — Âme / Angélique (Saphir) — */
+  --rogue-angel:         oklch(58% 0.22 240);
+  --rogue-angel-light:   oklch(72% 0.18 235);
+  --rogue-angel-dim:     oklch(40% 0.16 240);
+  --rogue-angel-subtle:  oklch(58% 0.22 240 / 0.13);
+  --rogue-angel-border:  oklch(58% 0.22 240 / 0.38);
+
+  /* — Hôte / Humain (Blanc cassé) — */
+  --rogue-host:          oklch(87% 0.03 80);
+  --rogue-host-light:    oklch(94% 0.015 80);
+  --rogue-host-dim:      oklch(65% 0.02 80);
+  --rogue-host-subtle:   oklch(87% 0.03 80 / 0.08);
+  --rogue-host-border:   oklch(87% 0.03 80 / 0.28);
+
+  /* — Intensité / Rouge — */
+  --rogue-intensity:         oklch(60% 0.26 18);
+  --rogue-intensity-light:   oklch(70% 0.22 18);
+  --rogue-intensity-dim:     oklch(40% 0.2 18);
+  --rogue-intensity-subtle:  oklch(60% 0.26 18 / 0.12);
+  --rogue-intensity-border:  oklch(60% 0.26 18 / 0.35);
+
+  /* — Divin (Or chaud) — */
+  --rogue-divine:        oklch(88% 0.14 95);
+  --rogue-divine-subtle: oklch(88% 0.14 95 / 0.1);
+  --rogue-divine-border: oklch(88% 0.14 95 / 0.3);
+
+  /* — Texte — */
+  --rogue-text:       oklch(88% 0.015 275);
+  --rogue-text-dim:   oklch(65% 0.02 275);
+  --rogue-text-faint: oklch(42% 0.025 275);
+
+  /* — Bordures — */
+  --rogue-border:       oklch(28% 0.04 275 / 0.6);
+  --rogue-border-faint: oklch(22% 0.03 275 / 0.5);
+
+  /* — Typographie — */
+  --rogue-font-display: 'Cinzel', Georgia, serif;
+  --rogue-font-body:    'Crimson Pro', Georgia, serif;
+  --rogue-font-label:   'Barlow Condensed', system-ui, sans-serif;
+
+  /* ── Surcharge MkDocs Material ── */
+  --md-default-bg-color:           var(--rogue-bg);
+  --md-default-bg-color--light:    var(--rogue-bg-2);
+  --md-default-bg-color--lighter:  var(--rogue-bg-3);
+  --md-default-bg-color--lightest: var(--rogue-bg-4);
+
+  --md-default-fg-color:            var(--rogue-text);
+  --md-default-fg-color--light:     var(--rogue-text-dim);
+  --md-default-fg-color--lighter:   var(--rogue-text-faint);
+  --md-default-fg-color--lightest:  oklch(30% 0.03 275);
+
+  --md-primary-fg-color:            var(--rogue-angel);
+  --md-primary-fg-color--light:     var(--rogue-angel-light);
+  --md-primary-fg-color--dark:      var(--rogue-angel-dim);
+  --md-primary-bg-color:            var(--rogue-bg);
+
+  --md-accent-fg-color:             var(--rogue-intensity);
+  --md-accent-fg-color--transparent: var(--rogue-intensity-subtle);
+
+  --md-code-bg-color:               var(--rogue-bg-3);
+  --md-code-fg-color:               var(--rogue-text-dim);
+
+  --md-typeset-a-color:             var(--rogue-angel-light);
+
+  /* ── Alias pour les tables d'équipement ── */
+  --color-background-secondary: var(--rogue-bg-3);
+  --color-border-tertiary:      var(--rogue-border);
+  --color-text-primary:         var(--rogue-text);
+  --color-text-secondary:       var(--rogue-text-dim);
+}
+
+.rogue-equip-table thead th {
+  background: var(--rogue-bg-3);
+}
+
+/* ═══════════════════════════════════════════════════════
+   2. TYPOGRAPHIE GLOBALE
+   ═══════════════════════════════════════════════════════ */
+
+body,
+.md-typeset {
+  font-family: var(--rogue-font-body);
+  font-size: 18px;
+  line-height: 1.75;
+  color: var(--rogue-text);
+  text-wrap: pretty;
+}
+
+.md-typeset h1,
+.md-typeset h2,
+.md-typeset h3,
+.md-typeset h4,
+.md-typeset h5 {
+  font-family: var(--rogue-font-display);
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  line-height: 1.2;
+  color: var(--rogue-text);
+}
+
+.md-typeset h1 { font-size: 2.2em; margin-bottom: 0.5em; }
+.md-typeset h2 { font-size: 1.5em; margin-top: 2em; padding-bottom: 0.3em; border-bottom: 1px solid var(--rogue-border-faint); }
+.md-typeset h3 { font-size: 1.2em; margin-top: 1.6em; }
+.md-typeset h4 { font-size: 1em; letter-spacing: 0.08em; text-transform: uppercase; color: var(--rogue-text-dim); font-family: var(--rogue-font-label); font-weight: 500; }
+
+.md-typeset p { font-size: 1em; margin-bottom: 0.9em; }
+
+.md-typeset a {
+  color: var(--rogue-angel-light);
+  text-decoration: none;
+  border-bottom: 1px solid var(--rogue-angel-border);
+  transition: color 0.15s, border-color 0.15s;
+}
+.md-typeset a:hover {
+  color: var(--rogue-text);
+  border-bottom-color: var(--rogue-text);
+}
+
+.md-typeset strong { font-weight: 600; color: var(--rogue-text); }
+.md-typeset em     { color: var(--rogue-text-dim); }
+
+/* — Navigation — */
+.md-header { background: var(--rogue-bg-2); border-bottom: 1px solid var(--rogue-border); }
+.md-nav__title { font-family: var(--rogue-font-display); font-size: 0.9em; letter-spacing: 0.06em; }
+.md-nav__link { font-family: var(--rogue-font-label); font-size: 0.85em; letter-spacing: 0.04em; }
+.md-nav__link--active { color: var(--rogue-angel-light) !important; }
+
+/* — Icônes du header (hamburger + loupe) — visibles sur fond sombre — */
+.md-header__button {
+  color: var(--rogue-text);
+}
+.md-header__button:hover {
+  color: var(--rogue-angel-light);
+  opacity: 1;
+}
+.md-search__icon {
+  color: var(--rogue-text);
+}
+
+/* ═══════════════════════════════════════════════════════
+   3. TABLEAUX
+   ═══════════════════════════════════════════════════════ */
+
+.md-typeset table {
+  border-collapse: collapse;
+  width: 100%;
+  font-family: var(--rogue-font-body);
+  font-size: 0.95em;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid var(--rogue-border);
+}
+
+.md-typeset table thead {
+  background: var(--rogue-bg-4);
+  font-family: var(--rogue-font-label);
+  font-size: 0.75em;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--rogue-text-faint);
+}
+
+.md-typeset table thead th {
+  padding: 10px 16px;
+  border-bottom: 1px solid var(--rogue-border);
+  font-weight: 500;
+}
+
+.md-typeset table tbody tr {
+  border-bottom: 1px solid var(--rogue-border-faint);
+  transition: background 0.12s;
+}
+.md-typeset table tbody tr:last-child { border-bottom: none; }
+.md-typeset table tbody tr:hover { background: oklch(100% 0 0 / 0.03); }
+
+.md-typeset table tbody td {
+  padding: 11px 16px;
+  vertical-align: top;
+}
+
+/* Colonnes colorées selon le type */
+.md-typeset table tbody td:first-child {
+  font-family: var(--rogue-font-label);
+  font-weight: 600;
+  font-size: 1.05em;
+}
+
+/* ═══════════════════════════════════════════════════════
+   4. ADMONITIONS (MkDocs) — Remapping des types
+   ═══════════════════════════════════════════════════════ */
+
+/* — Base — */
+.md-typeset .admonition,
+.md-typeset details {
+  font-family: var(--rogue-font-body);
+  font-size: 0.95em;
+  border-radius: 8px;
+  border-left-width: 3px;
+  background: var(--rogue-bg-3);
+}
+
+.md-typeset .admonition-title,
+.md-typeset summary {
+  font-family: var(--rogue-font-label);
+  font-size: 0.78em;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-weight: 500;
+  padding: 10px 16px;
+}
+
+/* note → Note de conception (Angélique) */
+.md-typeset .admonition.note,
+.md-typeset details.note {
+  border-left-color: var(--rogue-angel);
+  background: var(--rogue-angel-subtle);
+}
+.md-typeset .admonition.note > .admonition-title,
+.md-typeset details.note > summary {
+  background: var(--rogue-angel-subtle);
+  color: var(--rogue-angel-light);
+}
+.md-typeset .admonition.note > .admonition-title::before,
+.md-typeset details.note > summary::before {
+  background-color: var(--rogue-angel);
+  -webkit-mask-image: none;
+  mask-image: none;
+  content: "✦";
+  font-size: 0.9em;
+  width: auto;
+  height: auto;
+  background: none;
+  color: var(--rogue-angel);
+}
+
+/* tip → Exemple de jeu (Hôte) */
+.md-typeset .admonition.tip,
+.md-typeset details.tip {
+  border-left-color: var(--rogue-host);
+  background: var(--rogue-host-subtle);
+}
+.md-typeset .admonition.tip > .admonition-title,
+.md-typeset details.tip > summary {
+  background: var(--rogue-host-subtle);
+  color: var(--rogue-host);
+}
+
+/* warning → Intervention Démoniaque (Intensité) */
+.md-typeset .admonition.warning,
+.md-typeset details.warning {
+  border-left-color: var(--rogue-intensity);
+  background: var(--rogue-intensity-subtle);
+}
+.md-typeset .admonition.warning > .admonition-title,
+.md-typeset details.warning > summary {
+  background: var(--rogue-intensity-subtle);
+  color: var(--rogue-intensity-light);
+}
+
+/* info → Règle importante (neutre) */
+.md-typeset .admonition.info,
+.md-typeset details.info {
+  border-left-color: var(--rogue-border);
+  background: var(--rogue-bg-3);
+}
+.md-typeset .admonition.info > .admonition-title,
+.md-typeset details.info > summary {
+  background: var(--rogue-bg-4);
+  color: var(--rogue-text-dim);
+}
+
+/* success → Intervention Divine (Or) */
+.md-typeset .admonition.success,
+.md-typeset details.success {
+  border-left-color: var(--rogue-divine);
+  background: var(--rogue-divine-subtle);
+}
+.md-typeset .admonition.success > .admonition-title,
+.md-typeset details.success > summary {
+  background: var(--rogue-divine-subtle);
+  color: var(--rogue-divine);
+}
+
+/* ═══════════════════════════════════════════════════════
+   5. CODE
+   ═══════════════════════════════════════════════════════ */
+
+.md-typeset code {
+  font-size: 0.85em;
+  background: var(--rogue-bg-3);
+  border: 1px solid var(--rogue-border-faint);
+  border-radius: 4px;
+  padding: 1px 5px;
+  color: var(--rogue-host);
+  font-family: 'JetBrains Mono', 'Fira Code', monospace;
+}
+
+.md-typeset pre code {
+  background: transparent;
+  border: none;
+  padding: 0;
+  color: var(--rogue-text-dim);
+}
+
+.md-typeset pre {
+  background: var(--rogue-bg-3);
+  border: 1px solid var(--rogue-border);
+  border-radius: 8px;
+}
+
+/* ═══════════════════════════════════════════════════════
+   6. COMPOSANTS CUSTOM — Classes utilitaires
+   ═══════════════════════════════════════════════════════ */
+
+/* ── .rogue-card — carte générique ── */
+.rogue-card {
+  background: var(--rogue-bg-3);
+  border: 1px solid var(--rogue-border);
+  border-radius: 12px;
+  padding: 24px 28px;
+  margin: 24px 0;
+}
+
+.rogue-card--angel {
+  background: var(--rogue-angel-subtle);
+  border-color: var(--rogue-angel-border);
+}
+
+.rogue-card--host {
+  background: var(--rogue-host-subtle);
+  border-color: var(--rogue-host-border);
+}
+
+.rogue-card--intensity {
+  background: var(--rogue-intensity-subtle);
+  border-color: var(--rogue-intensity-border);
+}
+
+.rogue-card--divine {
+  background: var(--rogue-divine-subtle);
+  border-color: var(--rogue-divine-border);
+}
+
+/* ── .rogue-card-grid — grille de cartes ── */
+.rogue-card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 12px;
+  margin: 24px 0;
+}
+
+/* ── .rogue-stat — carte de caractéristique ── */
+.rogue-stat {
+  background: var(--rogue-bg-3);
+  border: 1px solid var(--rogue-border);
+  border-radius: 10px;
+  padding: 18px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.rogue-stat__label {
+  font-family: var(--rogue-font-label);
+  font-size: 0.65em;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--rogue-text-faint);
+}
+
+.rogue-stat__name {
+  font-family: var(--rogue-font-display);
+  font-size: 0.95em;
+  letter-spacing: 0.04em;
+  color: var(--rogue-text);
+}
+
+.rogue-stat__value {
+  font-family: var(--rogue-font-label);
+  font-size: 2em;
+  font-weight: 600;
+  line-height: 1;
+  margin-top: 4px;
+}
+
+.rogue-stat--angel .rogue-stat__value,
+.rogue-stat--angel .rogue-stat__label { color: var(--rogue-angel-light); }
+.rogue-stat--angel { border-left: 3px solid var(--rogue-angel); }
+
+.rogue-stat--host .rogue-stat__value,
+.rogue-stat--host .rogue-stat__label { color: var(--rogue-host); }
+.rogue-stat--host { border-left: 3px solid var(--rogue-host); }
+
+.rogue-stat__desc {
+  font-family: var(--rogue-font-body);
+  font-size: 0.82em;
+  color: var(--rogue-text-dim);
+  line-height: 1.5;
+  margin-top: 4px;
+}
+
+/* ── .rogue-dice-display — affichage des 3 dés ── */
+.rogue-dice-display {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 16px 0;
+}
+
+.rogue-die {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 8px;
+  font-family: var(--rogue-font-label);
+  font-size: 1.5em;
+  font-weight: 700;
+  border: 2px solid;
+  flex-shrink: 0;
+}
+
+.rogue-die--angel {
+  background: var(--rogue-angel-subtle);
+  border-color: var(--rogue-angel-border);
+  color: var(--rogue-angel-light);
+  box-shadow: 0 0 12px var(--rogue-angel-subtle);
+}
+
+.rogue-die--host {
+  background: var(--rogue-host-subtle);
+  border-color: var(--rogue-host-border);
+  color: var(--rogue-host);
+  box-shadow: 0 0 12px var(--rogue-host-subtle);
+}
+
+.rogue-die--intensity {
+  background: var(--rogue-intensity-subtle);
+  border-color: var(--rogue-intensity-border);
+  color: var(--rogue-intensity-light);
+  box-shadow: 0 0 12px var(--rogue-intensity-subtle);
+}
+
+.rogue-die__label {
+  font-family: var(--rogue-font-label);
+  font-size: 0.68em;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--rogue-text-faint);
+  margin-top: 4px;
+  text-align: center;
+}
+
+/* ── .rogue-example — encart exemple de jeu ── */
+.rogue-example {
+  border-left: 3px solid var(--rogue-host-border);
+  padding: 4px 0 4px 24px;
+  margin: 28px 0;
+}
+
+.rogue-example::before {
+  content: "▶  Exemple de jeu";
+  display: block;
+  font-family: var(--rogue-font-label);
+  font-size: 0.68em;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--rogue-host);
+  margin-bottom: 10px;
+  opacity: 0.9;
+}
+
+.rogue-example p {
+  font-size: 0.9em;
+  color: var(--rogue-text-dim);
+  line-height: 1.7;
+}
+
+/* ── .rogue-note — encart note de conception ── */
+.rogue-note {
+  border-left: 3px solid var(--rogue-angel-border);
+  padding: 4px 0 4px 24px;
+  margin: 28px 0;
+}
+
+.rogue-note::before {
+  content: "✦  Note de conception";
+  display: block;
+  font-family: var(--rogue-font-label);
+  font-size: 0.68em;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--rogue-angel-light);
+  margin-bottom: 10px;
+  opacity: 0.9;
+}
+
+.rogue-note p {
+  font-size: 0.9em;
+  color: var(--rogue-text-dim);
+  font-style: italic;
+  line-height: 1.7;
+}
+
+/* ── .rogue-result — ligne de résultat coloré ── */
+.rogue-result {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--rogue-font-label);
+  font-size: 0.78em;
+  letter-spacing: 0.06em;
+  padding: 4px 10px;
+  border-radius: 4px;
+}
+
+.rogue-result--failure    { background: oklch(60% 0.26 18 / 0.08); color: var(--rogue-intensity-light); border: 1px solid var(--rogue-intensity-border); }
+.rogue-result--partial    { background: oklch(87% 0.03 80 / 0.06); color: var(--rogue-host); border: 1px solid var(--rogue-host-border); }
+.rogue-result--success    { background: var(--rogue-angel-subtle); color: var(--rogue-angel-light); border: 1px solid var(--rogue-angel-border); }
+.rogue-result--critical   { background: var(--rogue-divine-subtle); color: var(--rogue-divine); border: 1px solid var(--rogue-divine-border); }
+
+/* ── .rogue-intervention — encart 111/666 ── */
+.rogue-intervention {
+  border-radius: 12px;
+  padding: 24px 28px;
+  margin: 20px 0;
+  border: 1px solid;
+  position: relative;
+  overflow: hidden;
+}
+
+.rogue-intervention--divine {
+  background: var(--rogue-divine-subtle);
+  border-color: var(--rogue-divine-border);
+}
+
+.rogue-intervention--demonic {
+  background: var(--rogue-intensity-subtle);
+  border-color: var(--rogue-intensity-border);
+}
+
+.rogue-intervention__badge {
+  font-family: var(--rogue-font-label);
+  font-size: 0.68em;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+  opacity: 0.8;
+}
+.rogue-intervention--divine  .rogue-intervention__badge { color: var(--rogue-divine); }
+.rogue-intervention--demonic .rogue-intervention__badge { color: var(--rogue-intensity-light); }
+
+.rogue-intervention__dice {
+  display: flex;
+  gap: 4px;
+  margin-bottom: 12px;
+}
+
+.rogue-intervention__title {
+  font-family: var(--rogue-font-display) !important;
+  font-size: 1.1em !important;
+  margin: 0 0 10px !important;
+  padding: 0 !important;
+  border: none !important;
+}
+.rogue-intervention--divine  .rogue-intervention__title { color: var(--rogue-divine); }
+.rogue-intervention--demonic .rogue-intervention__title { color: var(--rogue-intensity-light); }
+
+/* ── .rogue-tag — badge inline ── */
+.rogue-tag {
+  display: inline-block;
+  font-family: var(--rogue-font-label);
+  font-size: 0.68em;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 2px 7px;
+  border-radius: 3px;
+  vertical-align: middle;
+  margin: 0 2px;
+}
+.rogue-tag--angel     { background: var(--rogue-angel-subtle);    color: var(--rogue-angel-light);   border: 1px solid var(--rogue-angel-border); }
+.rogue-tag--host      { background: var(--rogue-host-subtle);     color: var(--rogue-host);           border: 1px solid var(--rogue-host-border); }
+.rogue-tag--intensity { background: var(--rogue-intensity-subtle); color: var(--rogue-intensity-light); border: 1px solid var(--rogue-intensity-border); }
+.rogue-tag--divine    { background: var(--rogue-divine-subtle);   color: var(--rogue-divine);         border: 1px solid var(--rogue-divine-border); }
+
+/* ── .rogue-steps — séquence numérotée ── */
+.rogue-steps {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1px;
+  background: var(--rogue-border-faint);
+  border-radius: 10px;
+  overflow: hidden;
+  margin: 20px 0;
+}
+
+.rogue-step {
+  background: var(--rogue-bg-3);
+  padding: 18px 20px;
+}
+
+.rogue-step__num {
+  font-family: var(--rogue-font-label);
+  font-size: 0.65em;
+  letter-spacing: 0.14em;
+  color: var(--rogue-text-faint);
+  margin-bottom: 6px;
+}
+
+.rogue-step__title {
+  font-family: var(--rogue-font-display);
+  font-size: 0.88em;
+  color: var(--rogue-text);
+  margin-bottom: 6px;
+  letter-spacing: 0.04em;
+}
+
+.rogue-step__desc {
+  font-family: var(--rogue-font-body);
+  font-size: 0.84em;
+  color: var(--rogue-text-dim);
+  line-height: 1.5;
+}
+
+/* ── .rogue-divider ── */
+.rogue-divider {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin: 40px 0;
+}
+.rogue-divider::before,
+.rogue-divider::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: var(--rogue-border-faint);
+}
+.rogue-divider::after { content: ""; }
+
+/* ── Dice Roller Widget ── */
+.rogue-roller {
+  background: var(--rogue-bg-3);
+  border: 1px solid var(--rogue-border);
+  border-radius: 16px;
+  padding: 28px 32px;
+  margin: 32px 0;
+  font-family: var(--rogue-font-label);
+}
+
+.rogue-roller__label {
+  font-size: 0.65em;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--rogue-text-faint);
+  margin-bottom: 20px;
+}
+
+.rogue-roller__dice {
+  display: flex;
+  gap: 32px;
+  justify-content: center;
+  align-items: flex-end;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+}
+
+.rogue-roller__die-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.rogue-roller__die {
+  width: 72px;
+  height: 72px;
+  border-radius: 14px;
+  border: 2px solid;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.2em;
+  font-weight: 700;
+  transition: transform 0.05s;
+  cursor: default;
+  user-select: none;
+}
+
+.rogue-roller__die--rolling {
+  animation: rogue-shake 0.08s infinite;
+}
+
+.rogue-roller__die--angel {
+  background: var(--rogue-angel-subtle);
+  border-color: var(--rogue-angel-border);
+  color: var(--rogue-angel-light);
+  box-shadow: 0 0 20px var(--rogue-angel-subtle), inset 0 0 30px oklch(58% 0.22 240 / 0.05);
+}
+
+.rogue-roller__die--host {
+  background: var(--rogue-host-subtle);
+  border-color: var(--rogue-host-border);
+  color: var(--rogue-host);
+  box-shadow: 0 0 20px var(--rogue-host-subtle), inset 0 0 30px oklch(87% 0.03 80 / 0.03);
+}
+
+.rogue-roller__die--intensity {
+  background: var(--rogue-intensity-subtle);
+  border-color: var(--rogue-intensity-border);
+  color: var(--rogue-intensity-light);
+  box-shadow: 0 0 20px var(--rogue-intensity-subtle), inset 0 0 30px oklch(60% 0.26 18 / 0.05);
+}
+
+.rogue-roller__die-label {
+  font-size: 0.65em;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--rogue-text-faint);
+  text-align: center;
+}
+
+.rogue-roller__die-sub {
+  font-size: 0.6em;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  text-align: center;
+  margin-top: -4px;
+  font-style: normal;
+}
+.rogue-roller__die-sub--angel     { color: var(--rogue-angel); }
+.rogue-roller__die-sub--host      { color: var(--rogue-host-dim); }
+.rogue-roller__die-sub--intensity { color: var(--rogue-intensity-dim); }
+
+.rogue-roller__code {
+  text-align: center;
+  font-size: 1.4em;
+  letter-spacing: 0.2em;
+  color: var(--rogue-text-dim);
+  margin-bottom: 16px;
+  font-family: var(--rogue-font-label);
+}
+
+.rogue-roller__result {
+  text-align: center;
+  min-height: 52px;
+  margin-bottom: 20px;
+  transition: all 0.3s;
+}
+
+.rogue-roller__result-name {
+  font-family: var(--rogue-font-display);
+  font-size: 1.1em;
+  letter-spacing: 0.06em;
+  margin-bottom: 4px;
+}
+
+.rogue-roller__result-desc {
+  font-family: var(--rogue-font-body);
+  font-size: 0.9em;
+  color: var(--rogue-text-dim);
+  font-style: italic;
+}
+
+.rogue-roller__btn {
+  display: block;
+  margin: 0 auto;
+  background: var(--rogue-angel-subtle);
+  border: 1px solid var(--rogue-angel-border);
+  color: var(--rogue-angel-light);
+  font-family: var(--rogue-font-label);
+  font-size: 0.78em;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 10px 32px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.rogue-roller__btn:hover {
+  background: oklch(58% 0.22 240 / 0.22);
+  border-color: oklch(58% 0.22 240 / 0.6);
+}
+
+.rogue-roller__btn:disabled {
+  opacity: 0.4;
+  cursor: default;
+}
+
+@keyframes rogue-shake {
+  0%  { transform: translate(-1px, -1px) rotate(-1deg); }
+  25% { transform: translate(1px, 0px)  rotate(1deg); }
+  50% { transform: translate(-1px, 1px) rotate(0deg); }
+  75% { transform: translate(1px, -1px) rotate(-1deg); }
+  100%{ transform: translate(0, 0) rotate(1deg); }
+}
+
+@keyframes rogue-fadein {
+  from { opacity: 0; transform: translateY(4px); }
+  to   { opacity: 1; transform: none; }
+}
+
+.rogue-fadein { animation: rogue-fadein 0.3s ease forwards; }
+
+/* ═══════════════════════════════════════════════════════
+   7. SIMULATEUR D666
+   ═══════════════════════════════════════════════════════ */
+
+/* — Paramètres — */
+.sim-params {
+  background: var(--rogue-bg-2);
+  border: 1px solid var(--rogue-border);
+  border-radius: 14px;
+  padding: 28px 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+.sim-row {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  transition: opacity 0.25s;
+}
+
+.sim-row--dim { opacity: 0.38; pointer-events: none; }
+
+.sim-lbl {
+  font-family: var(--rogue-font-label);
+  font-size: 0.7em;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--rogue-text-faint);
+  min-width: 150px;
+}
+
+.sim-hint {
+  font-family: var(--rogue-font-body);
+  font-size: 0.8em;
+  color: var(--rogue-text-faint);
+  font-style: italic;
+}
+
+/* — Seuil — */
+.sim-seuil {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  border: 1px solid var(--rogue-angel-border);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.sim-seuil-btn {
+  font-size: 1.2em;
+  font-weight: 700;
+  width: 38px;
+  height: 38px;
+  background: var(--rogue-angel-subtle);
+  color: var(--rogue-angel-light);
+  border: none;
+  cursor: pointer;
+  transition: background 0.15s;
+  line-height: 1;
+}
+
+.sim-seuil-btn:hover { background: var(--rogue-angel-dim); }
+
+.sim-seuil-val {
+  min-width: 48px;
+  text-align: center;
+  font-family: var(--rogue-font-label);
+  font-size: 1.5em;
+  font-weight: 700;
+  color: var(--rogue-angel-light);
+  padding: 0 6px;
+}
+
+/* — Toggles — */
+.sim-tog-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.sim-tog {
+  font-family: var(--rogue-font-label);
+  font-size: 0.68em;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 7px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  border: 1px solid var(--rogue-border-faint);
+  background: transparent;
+  color: var(--rogue-text-faint);
+  transition: all 0.15s;
+}
+
+.sim-tog:hover { border-color: var(--rogue-border); color: var(--rogue-text); }
+
+/* Angel type */
+.sim-tog--angel.sim-tog--on {
+  background: var(--rogue-angel-subtle);
+  border-color: var(--rogue-angel-border);
+  color: var(--rogue-angel-light);
+}
+
+/* Host type */
+.sim-tog--host.sim-tog--on {
+  background: var(--rogue-host-subtle);
+  border-color: var(--rogue-host-border);
+  color: var(--rogue-host-light);
+}
+
+/* Modifier: none */
+.sim-tog--none.sim-tog--on {
+  background: var(--rogue-bg-4);
+  border-color: var(--rogue-border);
+  color: var(--rogue-text);
+}
+
+/* Modifier: avantage */
+.sim-tog--a.sim-tog--on {
+  background: var(--rogue-angel-subtle);
+  border-color: var(--rogue-angel-border);
+  color: var(--rogue-angel-light);
+}
+
+/* Modifier: double avantage */
+.sim-tog--da.sim-tog--on {
+  background: var(--rogue-divine-subtle);
+  border-color: oklch(68% 0.18 80 / 0.4);
+  color: var(--rogue-divine);
+}
+
+/* Modifier: désavantage */
+.sim-tog--d.sim-tog--on {
+  background: var(--rogue-intensity-subtle);
+  border-color: var(--rogue-intensity-border);
+  color: var(--rogue-intensity-light);
+}
+
+/* Modifier: double désavantage */
+.sim-tog--dd.sim-tog--on {
+  background: oklch(35% 0.2 18 / 0.25);
+  border-color: oklch(45% 0.22 18 / 0.5);
+  color: oklch(70% 0.22 18);
+}
+
+/* — Bouton Lancer — */
+.sim-roll-btn {
+  align-self: flex-start;
+  font-family: var(--rogue-font-label);
+  font-size: 0.85em;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 13px 32px;
+  border-radius: 8px;
+  background: var(--rogue-angel);
+  color: var(--rogue-bg);
+  border: none;
+  cursor: pointer;
+  font-weight: 700;
+  transition: background 0.2s, transform 0.1s;
+}
+
+.sim-roll-btn:hover   { background: var(--rogue-angel-light); }
+.sim-roll-btn:active  { transform: scale(0.97); }
+
+/* — Zone résultat — */
+.sim-result {
+  margin-top: 20px;
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity 0.3s, transform 0.3s;
+  pointer-events: none;
+}
+
+.sim-result--visible {
+  opacity: 1;
+  transform: none;
+  pointer-events: auto;
+}
+
+/* — Dés — */
+.sim-dice {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.sim-die {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  transition: opacity 0.25s;
+}
+
+.sim-die--dim { opacity: 0.28; }
+
+.sim-die--kept .rogue-roller__die {
+  box-shadow: 0 0 0 2px var(--rogue-angel-light);
+}
+
+.sim-die-lbl {
+  font-family: var(--rogue-font-label);
+  font-size: 0.65em;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--rogue-text-dim);
+}
+
+.sim-die-sub {
+  font-family: var(--rogue-font-body);
+  font-size: 0.72em;
+  color: var(--rogue-text-faint);
+}
+
+.sim-die-badge {
+  font-size: 0.6em;
+  font-family: var(--rogue-font-label);
+  letter-spacing: 0.06em;
+  padding: 2px 7px;
+  border-radius: 4px;
+}
+
+.sim-die-badge--kept {
+  background: var(--rogue-angel-subtle);
+  color: var(--rogue-angel-light);
+  border: 1px solid var(--rogue-angel-border);
+}
+
+.sim-die-badge--exp {
+  background: var(--rogue-intensity-subtle);
+  color: var(--rogue-intensity-light);
+  border: 1px solid var(--rogue-intensity-border);
+}
+
+/* — Bandeau résultat — */
+.sim-outcome {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 20px;
+  border-radius: 10px;
+  margin-bottom: 16px;
+  border: 1px solid transparent;
+}
+
+.sim-outcome-icon { font-size: 1.4em; }
+
+.sim-outcome-body {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.sim-outcome-label {
+  font-family: var(--rogue-font-display);
+  font-size: 1.2em;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+
+.sim-outcome-intensity {
+  font-family: var(--rogue-font-label);
+  font-size: 0.82em;
+  letter-spacing: 0.08em;
+  opacity: 0.85;
+}
+
+/* Séparateurs dans la rangée de dés */
+.sim-dice-sep {
+  align-self: center;
+  font-size: 1.3em;
+  color: var(--rogue-border);
+  padding: 0 4px;
+  margin-top: -20px;
+}
+
+.sim-dice-plus {
+  align-self: center;
+  font-family: var(--rogue-font-label);
+  font-size: 1.1em;
+  font-weight: 700;
+  color: var(--rogue-intensity-dim);
+  padding: 0 2px;
+  margin-top: -20px;
+}
+
+.sim-outcome--success  { background: var(--rogue-angel-subtle); border-color: var(--rogue-angel-border); color: var(--rogue-angel-light); }
+.sim-outcome--critsuc  { background: var(--rogue-divine-subtle); border-color: oklch(68% 0.18 80 / 0.4); color: var(--rogue-divine); }
+.sim-outcome--failure  { background: var(--rogue-bg-3); border-color: var(--rogue-border-faint); color: var(--rogue-text-dim); }
+.sim-outcome--critfail { background: var(--rogue-intensity-subtle); border-color: var(--rogue-intensity-border); color: var(--rogue-intensity-light); }
+.sim-outcome--divine   { background: var(--rogue-divine-subtle); border-color: oklch(68% 0.18 80 / 0.5); color: var(--rogue-divine); }
+.sim-outcome--demonic  { background: oklch(35% 0.2 18 / 0.2); border-color: oklch(45% 0.22 18 / 0.4); color: oklch(70% 0.22 18); }
+
+/* — Étapes de calcul — */
+.sim-steps {
+  background: var(--rogue-bg-2);
+  border: 1px solid var(--rogue-border-faint);
+  border-radius: 10px;
+  padding: 16px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.sim-step {
+  font-family: var(--rogue-font-body);
+  font-size: 0.9em;
+  color: var(--rogue-text-dim);
+  line-height: 1.5;
+  padding: 2px 0;
+  border-bottom: 1px solid var(--rogue-border-faint);
+}
+
+.sim-step:last-child { border-bottom: none; }
+
+.sim-intensity-final {
+  font-family: var(--rogue-font-label);
+  font-size: 1.05em;
+  font-weight: 700;
+  color: var(--rogue-intensity-light);
+  letter-spacing: 0.05em;
+}
+
+/* ═══════════════════════════════════════════════════════
+   8. MISE EN PAGE — Volet de droite masqué
+   ═══════════════════════════════════════════════════════ */
+
+/* Table des matières droite masquée globalement */
+.md-sidebar--secondary {
+  display: none;
+}
+
+/* Le contenu principal récupère l'espace libéré */
+@media screen and (min-width: 76.1875em) {
+  .md-content__inner {
+    margin-right: 0;
+    max-width: 100%;
+  }
+}
+
+/* ═══════════════════════════════════════════════════════
+   8. RESPONSIVE
+   ═══════════════════════════════════════════════════════ */
+
+@media (max-width: 600px) {
+  .rogue-card-grid { grid-template-columns: 1fr; }
+  .rogue-steps { grid-template-columns: 1fr; }
+  .rogue-roller__die { width: 56px; height: 56px; font-size: 1.8em; }
+  .rogue-roller__dice { gap: 16px; }
+}
+
+/* ═══════════════════════════════════════════════════════
+   9. GÉNÉRATEUR DE PNJ
+   ═══════════════════════════════════════════════════════ */
+
+/* — Panneau de contrôles — */
+.gen-panel {
+  background: var(--rogue-bg-2);
+  border: 1px solid var(--rogue-border);
+  border-radius: 14px;
+  padding: 24px 28px;
+  margin-bottom: 28px;
+}
+
+.gen-controls {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.gen-count-wrap {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.gen-lbl {
+  font-family: var(--rogue-font-label);
+  font-size: 0.7em;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--rogue-text-faint);
+}
+
+.gen-hint {
+  font-family: var(--rogue-font-body);
+  font-size: 0.8em;
+  color: var(--rogue-text-faint);
+  font-style: italic;
+}
+
+.gen-seuil {
+  display: flex;
+  align-items: center;
+  border: 1px solid var(--rogue-angel-border);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.gen-seuil-btn {
+  font-size: 1.2em;
+  font-weight: 700;
+  width: 34px;
+  height: 34px;
+  background: var(--rogue-angel-subtle);
+  color: var(--rogue-angel-light);
+  border: none;
+  cursor: pointer;
+  transition: background 0.15s;
+  line-height: 1;
+}
+.gen-seuil-btn:hover { background: var(--rogue-angel-dim); }
+
+.gen-seuil-val {
+  min-width: 40px;
+  text-align: center;
+  font-family: var(--rogue-font-label);
+  font-size: 1.3em;
+  font-weight: 700;
+  color: var(--rogue-angel-light);
+  padding: 0 6px;
+}
+
+.gen-roll-btn {
+  font-family: var(--rogue-font-label);
+  font-size: 0.82em;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 11px 28px;
+  border-radius: 8px;
+  background: var(--rogue-angel);
+  color: var(--rogue-bg);
+  border: none;
+  cursor: pointer;
+  font-weight: 700;
+  transition: background 0.2s, transform 0.1s;
+}
+.gen-roll-btn:hover  { background: var(--rogue-angel-light); }
+.gen-roll-btn:active { transform: scale(0.97); }
+
+.gen-adv-toggle {
+  font-family: var(--rogue-font-label);
+  font-size: 0.68em;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 8px 16px;
+  border-radius: 6px;
+  background: transparent;
+  border: 1px solid var(--rogue-border-faint);
+  color: var(--rogue-text-faint);
+  cursor: pointer;
+  transition: all 0.15s;
+  margin-left: auto;
+}
+.gen-adv-toggle:hover { border-color: var(--rogue-border); color: var(--rogue-text); }
+
+/* — Panneau avancé — */
+.gen-advanced {
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 1px solid var(--rogue-border-faint);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+@media (max-width: 700px) {
+  .gen-advanced { grid-template-columns: 1fr; }
+}
+
+.gen-adv-section h4 {
+  font-family: var(--rogue-font-label);
+  font-size: 0.65em;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--rogue-text-faint);
+  margin-bottom: 12px;
+}
+
+/* — Probabilités — */
+.gen-prob-grid { display: flex; flex-direction: column; gap: 8px; }
+
+.gen-prob-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.gen-prob-label {
+  font-family: var(--rogue-font-label);
+  font-size: 0.68em;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  width: 80px;
+  flex-shrink: 0;
+}
+.gen-prob-label--mundane  { color: var(--rogue-text-dim); }
+.gen-prob-label--better   { color: var(--rogue-angel-light); }
+.gen-prob-label--superior { color: oklch(65% 0.2 290); }
+.gen-prob-label--elite    { color: var(--rogue-divine); }
+
+.gen-slider {
+  flex: 1;
+  accent-color: var(--rogue-angel);
+  height: 4px;
+}
+
+.gen-prob-val {
+  font-family: var(--rogue-font-label);
+  font-size: 0.7em;
+  color: var(--rogue-text-dim);
+  width: 36px;
+  text-align: right;
+}
+
+.gen-prob-total {
+  font-family: var(--rogue-font-label);
+  font-size: 0.65em;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--rogue-text-faint);
+  text-align: right;
+  margin-top: 4px;
+}
+
+/* — Filtres — */
+.gen-filter-grid {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-bottom: 12px;
+}
+
+.gen-filter-group {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.gen-filter-title {
+  font-family: var(--rogue-font-label);
+  font-size: 0.62em;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--rogue-text-faint);
+  margin-bottom: 3px;
+}
+
+.gen-filter-opt {
+  font-family: var(--rogue-font-body);
+  font-size: 0.85em;
+  color: var(--rogue-text-dim);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.gen-ethnicity-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 4px 12px;
+}
+
+/* — Grille de cartes PNJ — */
+.gen-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+@media (max-width: 900px) {
+  .gen-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 560px) {
+  .gen-grid { grid-template-columns: 1fr; }
+}
+
+/* — Carte PNJ — */
+.gen-card {
+  background: var(--rogue-bg-3);
+  border-radius: 10px;
+  border: 2px solid var(--rogue-border);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s;
+}
+.gen-card:hover { transform: translateY(-2px); }
+
+.gen-card--mundane  { border-color: oklch(42% 0.02 275 / 0.6); box-shadow: 0 0 10px oklch(42% 0.02 275 / 0.15); }
+.gen-card--better   { border-color: var(--rogue-angel-border); box-shadow: 0 0 10px var(--rogue-angel-subtle); }
+.gen-card--superior { border-color: oklch(58% 0.22 290 / 0.45); box-shadow: 0 0 10px oklch(58% 0.22 290 / 0.15); }
+.gen-card--elite    { border-color: var(--rogue-divine-border); box-shadow: 0 0 12px var(--rogue-divine-subtle); }
+
+.gen-card__img {
+  position: relative;
+  aspect-ratio: 1;
+  overflow: hidden;
+  background: var(--rogue-bg-4);
+}
+.gen-card__img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+.gen-badge {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  font-family: var(--rogue-font-label);
+  font-size: 0.6em;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-weight: 700;
+  padding: 3px 8px;
+  border-radius: 20px;
+  color: var(--rogue-bg);
+}
+.gen-badge--mundane  { background: oklch(60% 0.02 275); }
+.gen-badge--better   { background: var(--rogue-angel); }
+.gen-badge--superior { background: oklch(58% 0.22 290); }
+.gen-badge--elite    { background: oklch(78% 0.14 85); }
+
+.gen-eth-badge {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  font-family: var(--rogue-font-label);
+  font-size: 0.58em;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 2px 7px;
+  border-radius: 3px;
+  background: rgba(0,0,0,0.55);
+  color: var(--rogue-text-dim);
+}
+
+.gen-card__body { padding: 10px 12px; flex-grow: 1; display: flex; flex-direction: column; gap: 6px; }
+
+.gen-card__head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 8px;
+}
+
+.gen-card__name {
+  font-family: var(--rogue-font-display);
+  font-size: 0.95em;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  color: var(--rogue-text);
+}
+
+.gen-card__meta {
+  font-family: var(--rogue-font-label);
+  font-size: 0.75em;
+  letter-spacing: 0.05em;
+  font-weight: 500;
+  color: var(--rogue-text-dim);
+  white-space: nowrap;
+}
+
+.gen-card__occ {
+  font-family: var(--rogue-font-body);
+  font-size: 0.82em;
+  font-style: italic;
+  color: var(--rogue-text-dim);
+  margin-top: -2px;
+}
+
+.gen-card__section { display: flex; flex-direction: column; gap: 3px; }
+
+.gen-card__section-title {
+  font-family: var(--rogue-font-label);
+  font-size: 0.6em;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--rogue-text-faint);
+}
+
+.gen-tags { display: flex; flex-wrap: wrap; gap: 3px; }
+
+.gen-tag {
+  font-family: var(--rogue-font-body);
+  font-size: 0.78em;
+  padding: 2px 7px;
+  border-radius: 4px;
+  background: oklch(100% 0 0 / 0.05);
+  border: 1px solid var(--rogue-border-faint);
+  color: var(--rogue-text-dim);
+}
+
+.gen-tag--eq {
+  border-style: dashed;
+  background: transparent;
+}
+
+.gen-tag--more {
+  background: var(--rogue-bg-4);
+  color: var(--rogue-text-faint);
+  font-style: italic;
+}
+
+.gen-stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4px 8px;
+}
+
+.gen-stat {
+  display: flex;
+  justify-content: space-between;
+  font-family: var(--rogue-font-body);
+  font-size: 0.84em;
+}
+
+.gen-stat__key { color: var(--rogue-text-dim); }
+.gen-stat__val { font-weight: 700; color: var(--rogue-text); font-family: var(--rogue-font-label); }

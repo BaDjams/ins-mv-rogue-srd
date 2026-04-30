@@ -1,0 +1,1988 @@
+
+<!doctype html>
+<html lang="fr" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="System Reference Document pour INS-MV ROGUE">
+      
+      
+      
+        <link rel="canonical" href="https://BaDjams.github.io/ins-mv-rogue-srd/reincarnation/">
+      
+      
+        <link rel="prev" href="../progression/">
+      
+      
+        <link rel="next" href="../resolution/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>Réincarnation - INS-MV ROGUE — SRD</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../stylesheets/rogue-srd.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Barlow+Condensed:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="deep-orange" data-md-color-accent="orange">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#reincarnation" class="md-skip">
+          Aller au contenu
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="En-tête">
+    <a href=".." title="INS-MV ROGUE — SRD" class="md-header__button md-logo" aria-label="INS-MV ROGUE — SRD" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            INS-MV ROGUE — SRD
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Réincarnation
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Rechercher" placeholder="Rechercher" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Recherche">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Effacer" aria-label="Effacer" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initialisation de la recherche
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Onglets" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Accueil
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../srd/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  SRD
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../simulateur/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Simulateur
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../generateur/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Générateur
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="INS-MV ROGUE — SRD" class="md-nav__button md-logo" aria-label="INS-MV ROGUE — SRD" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    INS-MV ROGUE — SRD
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Accueil
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SRD
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    SRD
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../srd/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    System Reference Document
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Contexte
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Contexte
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../contexte/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Le monde du jeu
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Personnage
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Personnage
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../caracteristiques/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Caractéristiques & attributs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../creation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Création d'âme
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../rang/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Rang céleste
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../progression/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Progression
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Réincarnation
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Réincarnation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table des matières">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table des matières
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#principes-de-base" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Principes de base
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conditions-pour-la-reincarnation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Conditions pour la réincarnation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#processus-de-reincarnation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Processus de réincarnation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cas-particuliers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cas particuliers
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#echec-de-reincarnation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Échec de réincarnation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#note-pour-le-mj-demons-recurrents" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Note pour le MJ : Démons récurrents
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#les-enfants" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Les enfants
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#les-limbes-le-monde-des-ames-en-attente" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Les Limbes : Le Monde des Âmes en Attente
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_4" id="__nav_2_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Mécanique
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Mécanique
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../resolution/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Résolution D666
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../combat/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Combat & initiative
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pouvoirs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Pouvoirs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../competences/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Compétences
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../energie/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Énergie
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../blessures/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Blessures
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_5" id="__nav_2_5_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Référence
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Référence
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mots-cles/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Mots-clés
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../etats/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    États
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_5_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_5_3" id="__nav_2_5_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Équipement
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_5_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_5_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Équipement
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../equipement/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ÉQUIPEMENT
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../equipement-melee/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Armes de mêlée
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../equipement-armes-feu/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Armes à feu
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../equipement-distance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Armes à distance
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../equipement-explosifs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Explosifs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../equipement-protections/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Protections
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../equipement-boucliers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Boucliers
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../simulateur/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Simulateur
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../generateur/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Générateur
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table des matières">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table des matières
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#principes-de-base" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Principes de base
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conditions-pour-la-reincarnation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Conditions pour la réincarnation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#processus-de-reincarnation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Processus de réincarnation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cas-particuliers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cas particuliers
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#echec-de-reincarnation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Échec de réincarnation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#note-pour-le-mj-demons-recurrents" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Note pour le MJ : Démons récurrents
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#les-enfants" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Les enfants
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#les-limbes-le-monde-des-ames-en-attente" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Les Limbes : Le Monde des Âmes en Attente
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="reincarnation">RÉINCARNATION</h1>
+<h2 id="principes-de-base"><strong>Principes de base</strong></h2>
+<p>Lorsqu'un hôte meurt ou que l'âme surnaturelle décide de le quitter
+volontairement, celle-ci dispose d'un temps limité pour trouver un
+nouvel hôte. Le nombre d'incarnations disponibles est égal au Rang
+Céleste de la créature.</p>
+<p>Une fois le quota d'incarnations épuisé, l'âme retourne définitivement
+à son plan d'origine (Paradis, Enfer, ou Limbes) et le dernier corps
+occupé se dissipe dans le néant.</p>
+<h2 id="conditions-pour-la-reincarnation"><strong>Conditions pour la réincarnation</strong></h2>
+<p>Un hôte valide doit remplir plusieurs critères :</p>
+<p><strong>Hôte humain</strong></p>
+<ul>
+<li>
+<p>En vie</p>
+</li>
+<li>
+<p>État stable (Status interdits : en combat, terrifié, épuisé,
+    pétrifié, en feu, gravement blessé)</p>
+</li>
+<li>
+<p>Exception : Les serviteurs de faction (Soldats de Dieu, cultistes
+    démoniaques) sont disponibles même en état instable ou en combat</p>
+</li>
+<li>
+<p>Autre exception : certains démons peuvent parfois se retrouver
+    incarnés dans des corps humains déjà morts. Cela nécessite
+    cependant des conditions particulières impliquant de la magie
+    noire.</p>
+</li>
+</ul>
+<p><strong>Compatibilité spirituelle</strong></p>
+<ul>
+<li>
+<p>Pas déjà possédé par une autre âme surnaturelle</p>
+</li>
+<li>
+<p>Pas protégé par une bénédiction ou malédiction majeure</p>
+</li>
+<li>
+<p>Pas transformé en créature morte-vivante ou maudite</p>
+</li>
+</ul>
+<p><strong>Proximité géographique</strong></p>
+<ul>
+<li>Dans le rayon d'action de l'âme errante</li>
+</ul>
+<h2 id="processus-de-reincarnation"><strong>Processus de réincarnation</strong></h2>
+<p>Au départ de l'hôte initial (volontaire ou forcé par la mort), l'âme
+dispose d'un nombre de tours égal à son <strong>Rang Hiérarchique</strong> pour
+trouver un nouvel hôte.</p>
+<p><strong>Déplacement</strong></p>
+<ul>
+<li>
+<p>Chaque tour, l'âme peut parcourir environ 100 mètres</p>
+</li>
+<li>
+<p>Elle perçoit les hôtes potentiels dans cette zone</p>
+</li>
+</ul>
+<p><strong>Sélection de l'hôte</strong> En fonction de la densité de population de la
+zone, le MJ fait piocher au joueur entre 1 et 3 cartes Citoyen :</p>
+<ul>
+<li>
+<p>Zone urbaine dense : 3 cartes</p>
+</li>
+<li>
+<p>Zone urbaine normale : 2 cartes</p>
+</li>
+<li>
+<p>Zone rurale/isolée : 1 carte</p>
+</li>
+<li>
+<p>Zone désertique : 0 carte (voir cas particuliers)</p>
+</li>
+</ul>
+<p>Le joueur choisit l'un des hôtes proposés.</p>
+<p><strong>Durée de l'incarnation</strong> Une fois l'hôte choisi, le processus
+d'incarnation prend <strong>1d6 minutes</strong>, laissant le temps aux ennemis de
+prendre l'<a href="../resolution/">avantage</a> ou de fuir.</p>
+<h2 id="cas-particuliers"><strong>Cas particuliers</strong></h2>
+<p><strong>Zone désertique (aucun humain disponible)</strong> Si aucun citoyen n'est
+disponible, le joueur doit se rabattre sur un hôte animal présent dans
+la zone. Il prend alors les statistiques de l'animal (voir section
+Animaux). L'incarnation dans un animal prend également 1d6 minutes.</p>
+<p><strong>Choix volontaire d'un animal</strong> Quelle que soit la zone, le joueur
+peut toujours choisir de s'incarner dans un hôte animal cohérent avec
+l'environnement à la place d'un citoyen disponible.</p>
+<p><strong>Serviteurs de faction (Soldats de Dieu, cultistes, etc.)</strong> Si un
+serviteur de la faction appropriée est présent dans la zone :</p>
+<ul>
+<li>
+<p>Le processus est quasi-instantané : <strong>1d6 secondes</strong> au lieu de
+    minutes</p>
+</li>
+<li>
+<p>Les serviteurs sont disponibles même en état instable ou impliqués
+    dans un combat</p>
+</li>
+<li>
+<p>Ils sont bénis/consacrés pour servir de vaisseaux et acceptent
+    automatiquement l'incarnation</p>
+</li>
+</ul>
+<h2 id="echec-de-reincarnation"><strong>Échec de réincarnation</strong></h2>
+<p>Si l'âme n'a pas trouvé d'hôte valide avant l'expiration de son
+temps (Rang Hiérarchique en tours), elle consomme une incarnation
+supplémentaire et retourne temporairement à son plan d'origine. Elle ne
+pourra revenir en mission qu'après un temps de récupération déterminé
+par le MJ.</p>
+<p>Si c'était sa dernière incarnation disponible, l'âme retourne
+définitivement au Paradis ou en Enfer.</p>
+<h2 id="note-pour-le-mj-demons-recurrents"><strong>Note pour le MJ : Démons récurrents</strong></h2>
+<p>Lors de la conception de scénarios incluant des démons antagonistes,
+pensez à préciser combien d'incarnations il leur reste. Cela permet
+plusieurs usages narratifs intéressants :</p>
+<p>Un démon à sa dernière incarnation sera bien plus prudent et
+calculateur, ce qui en fait un adversaire dangereux et imprévisible. À
+l'inverse, un démon disposant encore de plusieurs incarnations pourra
+prendre des risques, fuir pour donner l'alerte à ses alliés, ou servir
+d'éclaireur sacrifiable.</p>
+<p>Les démons récurrents qui échappent aux joueurs peuvent devenir des
+némesis mémorables, apprenant de chaque affrontement et revenant avec de
+nouveaux hôtes et de nouvelles stratégies. Leur capacité à fuir et se
+réincarner en fait d'excellents messagers pour avertir leurs supérieurs
+de l'arrivée des anges.</p>
+<p>Important : si au moment de la mort de l'hote, un personnage détient un
+<strong>jeton Touché par la Grâce</strong> (anges) ou une <strong>Marque du Diable</strong>
+(démons), le jeton est consommé et l'incarnation est "gratuite". Un
+personnage ne peut jamais posséder plus d'un jeton à la fois.</p>
+<h2 id="les-enfants">Les enfants</h2>
+<p>Parmi tous les hôtes possibles, il en est un très particulier : les
+enfants. Les corps des enfants âgés de moins de dix ans, bénis par leur
+pureté et leur innocence, possèdent une capacité exceptionnelle à
+canaliser l'énergie divine. Cependant, incarner un enfant est une faute
+gravissime aux yeux de la hiérarchie céleste. L'ange qui ose se cacher
+dans le corps d'un enfant s'expose à une punition sans appel. Si
+certains décident tout de même de la faire, ils seront traqués par les
+anges de Jordy.</p>
+<p>Les démons n'ont pas ces états d'âme. Ils sont eux aussi traqués par les
+anges de Jordy.</p>
+<h2 id="les-limbes-le-monde-des-ames-en-attente"><strong>Les Limbes : Le Monde des Âmes en Attente</strong></h2>
+<p>Entre les plans terrestres et les royaumes éternels existe un territoire
+mystérieux que les théologiens nomment les Limbes, mais que les âmes
+surnaturelles connaissent sous un nom plus simple : le Monde des Morts.
+Cette réalité parallèle constitue une instance quasi-identique à notre
+univers physique, superposée comme un calque translucide sur le monde
+des vivants.</p>
+<p>Lorsqu'une âme humaine quitte son enveloppe charnelle, elle ne rejoint
+pas immédiatement son destin éternel. À la place, elle se retrouve
+projetée dans cette version spectrale de la réalité, coincée dans un
+état d'attente qui peut durer des minutes, des années, voire des
+siècles. Car même Dieu, dans Son omniscience distraite par Ses 47 623
+autres univers, a fini par déléguer cette tâche fastidieuse à une
+administration céleste qui, contrairement à Lui, n'a pas accès au mode
+"lecture des pensées" et doit se contenter de preuves matérielles pour
+instruire chaque dossier.</p>
+<p><strong>L'Évolution de la Justice Divine</strong></p>
+<p>Il fut un temps où les choses étaient plus simples. À l'époque où
+l'humanité se comptait en milliers plutôt qu'en milliards, Dieu
+pouvait Se permettre une justice expéditive : un coup d'œil rapide sur
+l'âme, un jugement instantané, et hop, direction le Paradis ou
+l'Enfer. Mais avec l'explosion démographique, le flux des défunts
+commença à créer des embouteillages dans le système de transit
+post-mortem.</p>
+<p>C'est alors que Dieu eut une idée géniale : Il créa La Mort, cette dame
+squelette en robe noire avec sa fameuse faux. À l'origine, elle était
+un ange du Service du Jugement, incarnée sur Terre avec pour mission de
+"dégrossir" le travail. Son rôle consistait à superviser les décès
+naturels - ces cas faciles à instruire comme les morts dans le sommeil,
+les maladies en phase terminale, ou les accidents clairement
+documentés - pour garantir un transit fluide vers l'au-delà sans
+encombrer les bureaux célestes.</p>
+<p>La Mort excellait dans sa mission, mais petit à petit, sa discrétion
+légendaire commença à poser problème. Malgré tous ses efforts pour
+passer inaperçue, les humains la remarquaient de plus en plus. Pire
+encore, ils se mirent à la craindre, ce qui compliquait considérablement
+son travail de terrain. Parallèlement, les dossiers devenaient de plus
+en plus complexes : crimes sophistiqués, testaments contestés, morts
+suspectes nécessitant des enquêtes approfondies.</p>
+<p>Finalement, La Mort retourna au bureau des Jugements, où son expertise
+en matière de "dossiers simples" était devenue moins pertinente face à
+la montée en complexité des affaires humaines.</p>
+<p><strong>La Crise des Limbes et le Grand Reset</strong></p>
+<p>La situation empira dramatiquement lors de la fermeture temporaire du
+Paradis et de l'Enfer pendant le Grand Reset. Cette interruption de
+service, nécessaire pour la mise à jour des systèmes divins et
+infernaux, créa un arriéré colossal dans les Limbes. Les âmes
+s'accumulaient par millions, transformant ce qui était censé être une
+salle d'attente en véritable cité fantomatique.</p>
+<p>Face à cet engorgement sans précédent, l'administration céleste
+envisagea sérieusement de faire appel aux Langoliers, ces créatures
+dévoreuses des branches caduques du temps spécialisées dans le
+"nettoyage" dimensionnel. Leur efficacité était légendaire, mais leur
+méthode... radicale. Heureusement, Dieu refusa catégoriquement cette
+solution expéditive : aucune âme ne devait être perdue, même au prix
+d'un arriéré administratif considérable. "Elles seront jugées en temps
+utile", déclara-t-Il, avant de retourner surveiller l'éclosion de
+papillons télépathiques dans l'univers n°23 847.</p>
+<p><strong>Les Âmes Errantes et la Bureaucratie Divine</strong></p>
+<p>Aujourd'hui, dans les Limbes, les défunts conservent leur apparence et
+leur personnalité d'avant la mort, évoluant dans un monde étrangement
+vide d'autres présences vivantes. Cette proximité physique avec notre
+réalité explique pourquoi certains lieux deviennent "hantés" : l'âme
+du défunt, coincée par un dossier en souffrance au Service du Jugement
+des Âmes (bureau 2847-B, troisième nuage à droite), tente désespérément
+d'attirer l'attention des vivants pour fournir les pièces manquantes à
+son procès posthume.</p>
+<p>Cette situation crée des opportunités uniques pour les anges incarnés.
+Le pouvoir de Dialogue Éthéré leur permet de communiquer avec ces âmes
+en attente, transformant les enquêtes surnaturelles en véritables
+collaborations entre les victimes et les enquêteurs. Dans l'univers
+d'INS-MV Rogue, les "chasseurs de fantômes" les plus efficaces ne
+sont pas ceux qui bannissent les esprits, mais ceux qui comprennent que
+même dans l'au-delà, rien ne vaut un bon dossier complet avec toutes
+les pièces justificatives.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Retour en haut de la page
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.tabs", "navigation.sections", "navigation.indexes", "navigation.top", "search.suggest", "search.highlight", "content.code.copy"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copi\u00e9 dans le presse-papier", "clipboard.copy": "Copier dans le presse-papier", "search.result.more.one": "1 de plus sur cette page", "search.result.more.other": "# de plus sur cette page", "search.result.none": "Aucun document trouv\u00e9", "search.result.one": "1 document trouv\u00e9", "search.result.other": "# documents trouv\u00e9s", "search.result.placeholder": "Taper pour d\u00e9marrer la recherche", "search.result.term.missing": "Non trouv\u00e9", "select.version": "S\u00e9lectionner la version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="../javascripts/rogue-srd.js"></script>
+      
+    
+  </body>
+</html>
