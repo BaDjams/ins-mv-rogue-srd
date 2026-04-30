@@ -87,11 +87,11 @@ Définissez votre fonction spécifique au service de votre supérieur.
 
 ## Étape 3 : Points d'énergie initiaux
 
-**Formule : PE = Rang Céleste (+ 1 par niveau de Conduit Divin)**
+**Formule : PE = Rang Céleste**
 
 Les [Points d'Énergie](energie.md) ne représentent pas une réserve de puissance, mais un **seuil de tolérance** : ils absorbent les conséquences du drain avant que l'hôte n'en paie le prix. Un personnage joueur débute au Rang Céleste 3, ce qui lui confère **3 PE** à la création.
 
-Le trait **Conduit Divin** (niveaux 1 à 3, choisi à l'Étape 5) ajoute 1 PE permanent par niveau, indépendamment du Rang Céleste.
+Certains traits d'âme comme **Conduit Divin** permettent d'augmenter cette tolérance, indépendamment du Rang Céleste.
 
 Les PE se rechargent intégralement au **lever du soleil** pour les anges et à la **tombée de la nuit** pour les démons.
 

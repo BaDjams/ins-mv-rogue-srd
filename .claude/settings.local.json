@@ -3,7 +3,27 @@
     "allow": [
       "Bash(git add *)",
       "Bash(git commit -m ' *)",
-      "Bash(git push *)"
+      "Bash(git push *)",
+      "Bash(python tools/fix_escapes.py)",
+      "Bash(python -c ' *)",
+      "Bash(pip install *)",
+      "Bash(python tools/wiki_linker.py --dry-run)",
+      "Bash(python tools/wiki_linker.py)",
+      "Bash(pip show *)",
+      "Bash(gh run *)",
+      "Bash(mkdocs build *)",
+      "Bash(python -m mkdocs build --site-dir /tmp/srd-test2)",
+      "Bash(python -m mkdocs build --site-dir /tmp/srd-sim)",
+      "Bash(python -m mkdocs build --site-dir /tmp/srd-v3)",
+      "Bash(git commit *)",
+      "Bash(python -)",
+      "Bash(python c:/Users/CADO/Documents/GitHub/ins-mv-rogue-srd/tools/fix_encoding.py)",
+      "WebSearch",
+      "WebFetch(domain:hankhank10.github.io)",
+      "WebFetch(domain:github.com)",
+      "Bash(node --input-type=module)",
+      "Bash(node --check \"c:\\\\Users\\\\CADO\\\\Documents\\\\GitHub\\\\ins-mv-rogue-srd\\\\docs\\\\javascripts\\\\rogue-srd.js\")",
+      "Bash(python -c \"import admin; print\\('Syntax OK'\\)\")"
     ]
   }
 }
