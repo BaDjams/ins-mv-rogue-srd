@@ -188,6 +188,12 @@ html, body { height: 100%; background: var(--bg); color: var(--text); font-famil
 }
 #btn-save:hover:not(:disabled) { background: var(--accent2); }
 #btn-save:disabled { background: #252540; color: var(--muted); cursor: default; }
+#btn-theme {
+  padding: 5px 12px; border-radius: 6px; border: 1px solid var(--border);
+  background: transparent; color: var(--muted); font-size: 12px; cursor: pointer; flex-shrink: 0;
+  transition: all .2s;
+}
+#btn-theme:hover { color: var(--text); border-color: var(--text); }
 #btn-logout {
   padding: 5px 12px; border-radius: 6px; border: 1px solid var(--border);
   background: transparent; color: var(--muted); font-size: 12px; cursor: pointer; flex-shrink: 0;
@@ -254,8 +260,58 @@ html, body { height: 100%; background: var(--bg); color: var(--text); font-famil
 .cm-strong { color: #f0d080 !important; }
 .cm-em { color: #90b0f0 !important; }
 .cm-link, .cm-url { color: var(--accent) !important; }
+
+/* ─── Thème Angélique (clair) ─────────────────────────────────────── */
+html.angelic {
+  --bg:      #f5f4f0;
+  --sidebar: #eceae4;
+  --header:  #e8e5de;
+  --border:  #d0ccc0;
+  --text:    #1a1820;
+  --muted:   #887870;
+  --accent:  #c03010;
+  --accent2: #e04828;
+  --section: #7050a0;
+  --saved:   #2a7a30;
+  --unsaved: #c03010;
+}
+html.angelic .nav-item:hover { background: rgba(0,0,0,.05); }
+html.angelic .nav-item.active { background: rgba(192,48,16,.10); color: #1a1820; }
+html.angelic #placeholder p { color: #aaa090; }
+html.angelic #btn-save:disabled { background: #ddd8d0; }
+html.angelic #btn-theme { border-color: #c0bab0; }
+
+html.angelic .toastui-editor-defaultUI { background: #ffffff !important; }
+html.angelic .toastui-editor-toolbar { background: #f5f4f0 !important; border-bottom: 1px solid var(--border) !important; }
+html.angelic .toastui-editor-toolbar-group { border-right: 1px solid var(--border) !important; }
+html.angelic .toastui-editor-toolbar-icons { color: #887060 !important; }
+html.angelic .toastui-editor-toolbar-icons:hover { background: rgba(0,0,0,.07) !important; color: #1a1820 !important; }
+html.angelic .toastui-editor-toolbar-icons.active { background: rgba(192,48,16,.15) !important; }
+html.angelic .toastui-editor-mode-switch { background: #f0ece4 !important; border-top: 1px solid var(--border) !important; }
+html.angelic .toastui-editor-mode-switch .tab-item { color: var(--muted) !important; }
+html.angelic .toastui-editor-mode-switch .tab-item.active { color: var(--accent) !important; background: rgba(192,48,16,.08) !important; }
+html.angelic .toastui-editor-contents { color: #1a1820 !important; }
+html.angelic .toastui-editor-contents h1,
+html.angelic .toastui-editor-contents h2,
+html.angelic .toastui-editor-contents h3,
+html.angelic .toastui-editor-contents h4 { color: #0a0810 !important; border-bottom-color: var(--border) !important; }
+html.angelic .toastui-editor-contents strong { color: #804000 !important; }
+html.angelic .toastui-editor-contents em { color: #204080 !important; }
+html.angelic .toastui-editor-contents code { background: #ede8e0 !important; color: #804020 !important; }
+html.angelic .toastui-editor-contents pre { background: #f0ece4 !important; border: 1px solid var(--border) !important; }
+html.angelic .toastui-editor-contents blockquote { background: rgba(192,48,16,.04) !important; }
+html.angelic .toastui-editor-contents table th { background: #e0dcd4 !important; color: #1a1820 !important; }
+html.angelic .toastui-editor-contents table tr:nth-child(even) td { background: rgba(0,0,0,.02) !important; }
+html.angelic .ProseMirror { background: #ffffff !important; color: #1a1820 !important; }
+html.angelic .CodeMirror { background: #ffffff !important; color: #1a1820 !important; }
+html.angelic .CodeMirror-selected,
+html.angelic .CodeMirror-focused .CodeMirror-selected { background: rgba(192,48,16,.15) !important; }
+html.angelic .cm-header { color: #8b1a10 !important; }
+html.angelic .cm-strong { color: #804000 !important; }
+html.angelic .cm-em { color: #204080 !important; }
 </style>
 </head>
+<script>if (localStorage.getItem('theme') === 'angelic') document.documentElement.classList.add('angelic');</script>
 <body>
 
 <header id="header">
@@ -266,6 +322,7 @@ html, body { height: 100%; background: var(--bg); color: var(--text); font-famil
   </div>
   <span id="status" class="st-clean">✓ Sauvegardé</span>
   <button id="btn-save" disabled>Sauvegarder</button>
+  <button id="btn-theme" title="Basculer le thème">☀ Angélique</button>
   <form action="/logout" method="post" style="display:inline">
     <button id="btn-logout" type="submit">Déconnexion</button>
   </form>
@@ -402,6 +459,16 @@ async function saveFile() {
     elBtnSave.textContent = 'Sauvegarder';
   }
 }
+
+// Theme toggle
+const elBtnTheme = document.getElementById('btn-theme');
+function applyTheme(angelic) {
+  document.documentElement.classList.toggle('angelic', angelic);
+  elBtnTheme.textContent = angelic ? '🌑 Démoniaque' : '☀ Angélique';
+  localStorage.setItem('theme', angelic ? 'angelic' : 'demonic');
+}
+elBtnTheme.addEventListener('click', () => applyTheme(!document.documentElement.classList.contains('angelic')));
+applyTheme(localStorage.getItem('theme') === 'angelic');
 
 elBtnSave.addEventListener('click', saveFile);
 document.addEventListener('keydown', e => {
