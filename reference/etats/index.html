@@ -1,0 +1,667 @@
+<!DOCTYPE html><html lang="fr" dir="ltr" data-theme="dark" data-has-toc data-has-sidebar class="astro-bguv2lll"> <head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><title>États | INS·MV ROGUE SRD</title><link rel="canonical" href="https://badjams.github.io/ins-mv-rogue-srd/reference/etats/"/><link rel="sitemap" href="/ins-mv-rogue-srd/sitemap-index.xml"/><script src="/ins-mv-rogue-srd/scripts/rogue-srd.js" defer></script><link rel="shortcut icon" href="/ins-mv-rogue-srd/favicon.svg" type="image/svg+xml"/><meta name="generator" content="Astro v5.18.1"/><meta name="generator" content="Starlight v0.32.6"/><meta property="og:title" content="États"/><meta property="og:type" content="article"/><meta property="og:url" content="https://badjams.github.io/ins-mv-rogue-srd/reference/etats/"/><meta property="og:locale" content="fr"/><meta property="og:description" content="System Reference Document pour INS-MV ROGUE"/><meta property="og:site_name" content="INS·MV ROGUE SRD"/><meta name="twitter:card" content="summary_large_image"/><meta name="description" content="System Reference Document pour INS-MV ROGUE"/><script>
+	window.StarlightThemeProvider = (() => {
+		const storedTheme =
+			typeof localStorage !== 'undefined' && localStorage.getItem('starlight-theme');
+		const theme =
+			storedTheme ||
+			(window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+		document.documentElement.dataset.theme = theme === 'light' ? 'light' : 'dark';
+		return {
+			updatePickers(theme = storedTheme || 'auto') {
+				document.querySelectorAll('starlight-theme-select').forEach((picker) => {
+					const select = picker.querySelector('select');
+					if (select) select.value = theme;
+					/** @type {HTMLTemplateElement | null} */
+					const tmpl = document.querySelector(`#theme-icons`);
+					const newIcon = tmpl && tmpl.content.querySelector('.' + theme);
+					if (newIcon) {
+						const oldIcon = picker.querySelector('svg.label-icon');
+						if (oldIcon) {
+							oldIcon.replaceChildren(...newIcon.cloneNode(true).childNodes);
+						}
+					}
+				});
+			},
+		};
+	})();
+</script><template id="theme-icons"><svg aria-hidden="true" class="light astro-c6vsoqas" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1em;"><path d="M5 12a1 1 0 0 0-1-1H3a1 1 0 0 0 0 2h1a1 1 0 0 0 1-1Zm.64 5-.71.71a1 1 0 0 0 0 1.41 1 1 0 0 0 1.41 0l.71-.71A1 1 0 0 0 5.64 17ZM12 5a1 1 0 0 0 1-1V3a1 1 0 0 0-2 0v1a1 1 0 0 0 1 1Zm5.66 2.34a1 1 0 0 0 .7-.29l.71-.71a1 1 0 1 0-1.41-1.41l-.66.71a1 1 0 0 0 0 1.41 1 1 0 0 0 .66.29Zm-12-.29a1 1 0 0 0 1.41 0 1 1 0 0 0 0-1.41l-.71-.71a1.004 1.004 0 1 0-1.43 1.41l.73.71ZM21 11h-1a1 1 0 0 0 0 2h1a1 1 0 0 0 0-2Zm-2.64 6A1 1 0 0 0 17 18.36l.71.71a1 1 0 0 0 1.41 0 1 1 0 0 0 0-1.41l-.76-.66ZM12 6.5a5.5 5.5 0 1 0 5.5 5.5A5.51 5.51 0 0 0 12 6.5Zm0 9a3.5 3.5 0 1 1 0-7 3.5 3.5 0 0 1 0 7Zm0 3.5a1 1 0 0 0-1 1v1a1 1 0 0 0 2 0v-1a1 1 0 0 0-1-1Z"/></svg> <svg aria-hidden="true" class="dark astro-c6vsoqas" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1em;"><path d="M21.64 13a1 1 0 0 0-1.05-.14 8.049 8.049 0 0 1-3.37.73 8.15 8.15 0 0 1-8.14-8.1 8.59 8.59 0 0 1 .25-2A1 1 0 0 0 8 2.36a10.14 10.14 0 1 0 14 11.69 1 1 0 0 0-.36-1.05Zm-9.5 6.69A8.14 8.14 0 0 1 7.08 5.22v.27a10.15 10.15 0 0 0 10.14 10.14 9.784 9.784 0 0 0 2.1-.22 8.11 8.11 0 0 1-7.18 4.32v-.04Z"/></svg> <svg aria-hidden="true" class="auto astro-c6vsoqas" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1em;"><path d="M21 14h-1V7a3 3 0 0 0-3-3H7a3 3 0 0 0-3 3v7H3a1 1 0 0 0-1 1v2a3 3 0 0 0 3 3h14a3 3 0 0 0 3-3v-2a1 1 0 0 0-1-1ZM6 7a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v7H6V7Zm14 10a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1v-1h16v1Z"/></svg> </template><link rel="stylesheet" href="/ins-mv-rogue-srd/_astro/print.BJ0teN4y.css" media="print"><link rel="stylesheet" href="/ins-mv-rogue-srd/_astro/index.xhjxHGZv.css"><script type="module" src="/ins-mv-rogue-srd/_astro/page.B1D-nYk3.js"></script></head> <body class="astro-bguv2lll"> <a href="#_top" class="astro-7q3lir66">Aller au contenu</a>  <div class="page sl-flex astro-vrdttmbt"> <header class="header astro-vrdttmbt"><div class="header sl-flex astro-kmkmnagf"> <div class="title-wrapper sl-flex astro-kmkmnagf"> <a href="/ins-mv-rogue-srd/" class="site-title sl-flex astro-m46x6ez3">  <span class="astro-m46x6ez3" translate="no"> INS·MV ROGUE SRD </span> </a>  </div> <div class="sl-flex print:hidden astro-kmkmnagf"> <site-search class="astro-kmkmnagf astro-v37mnknz" data-translations="{&#34;placeholder&#34;:&#34;Rechercher&#34;}"> <button data-open-modal disabled aria-label="Rechercher" aria-keyshortcuts="Control+K" class="astro-v37mnknz"> <svg aria-hidden="true" class="astro-v37mnknz astro-c6vsoqas" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1em;"><path d="M21.71 20.29 18 16.61A9 9 0 1 0 16.61 18l3.68 3.68a.999.999 0 0 0 1.42 0 1 1 0 0 0 0-1.39ZM11 18a7 7 0 1 1 0-14 7 7 0 0 1 0 14Z"/></svg>  <span class="sl-hidden md:sl-block astro-v37mnknz" aria-hidden="true">Rechercher</span> <kbd class="sl-hidden md:sl-flex astro-v37mnknz" style="display: none;"> <kbd class="astro-v37mnknz">Ctrl</kbd><kbd class="astro-v37mnknz">K</kbd> </kbd> </button> <dialog style="padding:0" aria-label="Rechercher" class="astro-v37mnknz"> <div class="dialog-frame sl-flex astro-v37mnknz">  <button data-close-modal class="sl-flex md:sl-hidden astro-v37mnknz"> Annuler </button> <div class="search-container astro-v37mnknz"> <div id="starlight__search" class="astro-v37mnknz"></div> </div> </div> </dialog> </site-search>  <script>
+	(() => {
+		const openBtn = document.querySelector('button[data-open-modal]');
+		const shortcut = openBtn?.querySelector('kbd');
+		if (!openBtn || !(shortcut instanceof HTMLElement)) return;
+		const platformKey = shortcut.querySelector('kbd');
+		if (platformKey && /(Mac|iPhone|iPod|iPad)/i.test(navigator.platform)) {
+			platformKey.textContent = '⌘';
+			openBtn.setAttribute('aria-keyshortcuts', 'Meta+K');
+		}
+		shortcut.style.display = '';
+	})();
+</script> <script type="module" src="/ins-mv-rogue-srd/_astro/Search.astro_astro_type_script_index_0_lang.DY7By7OT.js"></script>   </div> <div class="sl-hidden md:sl-flex print:hidden right-group astro-kmkmnagf"> <div class="sl-flex social-icons astro-kmkmnagf"> <a href="https://github.com/BaDjams/ins-mv-rogue-srd" rel="me" class="sl-flex astro-wy4te6ga"><span class="sr-only astro-wy4te6ga">GitHub</span><svg aria-hidden="true" class="astro-wy4te6ga astro-c6vsoqas" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1em;"><path d="M12 .3a12 12 0 0 0-3.8 23.38c.6.12.83-.26.83-.57L9 21.07c-3.34.72-4.04-1.61-4.04-1.61-.55-1.39-1.34-1.76-1.34-1.76-1.08-.74.09-.73.09-.73 1.2.09 1.83 1.24 1.83 1.24 1.08 1.83 2.81 1.3 3.5 1 .1-.78.42-1.31.76-1.61-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.14-.3-.54-1.52.1-3.18 0 0 1-.32 3.3 1.23a11.5 11.5 0 0 1 6 0c2.28-1.55 3.29-1.23 3.29-1.23.64 1.66.24 2.88.12 3.18a4.65 4.65 0 0 1 1.23 3.22c0 4.61-2.8 5.63-5.48 5.92.42.36.81 1.1.81 2.22l-.01 3.29c0 .31.2.69.82.57A12 12 0 0 0 12 .3Z"/></svg> </a> </div> <starlight-theme-select>  <label style="--sl-select-width: 6.25em" class="astro-4yphtoen"> <span class="sr-only astro-4yphtoen">Selectionner le thème</span> <svg aria-hidden="true" class="icon label-icon astro-4yphtoen astro-c6vsoqas" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1em;"><path d="M21 14h-1V7a3 3 0 0 0-3-3H7a3 3 0 0 0-3 3v7H3a1 1 0 0 0-1 1v2a3 3 0 0 0 3 3h14a3 3 0 0 0 3-3v-2a1 1 0 0 0-1-1ZM6 7a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v7H6V7Zm14 10a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1v-1h16v1Z"/></svg>  <select value="auto" autocomplete="off" class="astro-4yphtoen"> <option value="dark" class="astro-4yphtoen">Sombre</option><option value="light" class="astro-4yphtoen">Clair</option><option value="auto" selected class="astro-4yphtoen">Auto</option> </select> <svg aria-hidden="true" class="icon caret astro-4yphtoen astro-c6vsoqas" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1em;"><path d="M17 9.17a1 1 0 0 0-1.41 0L12 12.71 8.46 9.17a1 1 0 1 0-1.41 1.42l4.24 4.24a1.002 1.002 0 0 0 1.42 0L17 10.59a1.002 1.002 0 0 0 0-1.42Z"/></svg>  </label>  </starlight-theme-select>  <script>
+	StarlightThemeProvider.updatePickers();
+</script> <script type="module">const r="starlight-theme",o=e=>e==="auto"||e==="dark"||e==="light"?e:"auto",c=()=>o(typeof localStorage<"u"&&localStorage.getItem(r));function n(e){typeof localStorage<"u"&&localStorage.setItem(r,e==="light"||e==="dark"?e:"")}const l=()=>matchMedia("(prefers-color-scheme: light)").matches?"light":"dark";function t(e){StarlightThemeProvider.updatePickers(e),document.documentElement.dataset.theme=e==="auto"?l():e,n(e)}matchMedia("(prefers-color-scheme: light)").addEventListener("change",()=>{c()==="auto"&&t("auto")});class s extends HTMLElement{constructor(){super(),t(c()),this.querySelector("select")?.addEventListener("change",a=>{a.currentTarget instanceof HTMLSelectElement&&t(o(a.currentTarget.value))})}}customElements.define("starlight-theme-select",s);</script> <script type="module">class s extends HTMLElement{constructor(){super();const e=this.querySelector("select");e&&(e.addEventListener("change",t=>{t.currentTarget instanceof HTMLSelectElement&&(window.location.pathname=t.currentTarget.value)}),window.addEventListener("pageshow",t=>{if(!t.persisted)return;const n=e.querySelector("option[selected]")?.index;n!==e.selectedIndex&&(e.selectedIndex=n??0)}))}}customElements.define("starlight-lang-select",s);</script> </div> </div> </header> <nav class="sidebar print:hidden astro-vrdttmbt" aria-label="principale"> <starlight-menu-button class="print:hidden astro-jif73yzw"> <button aria-expanded="false" aria-label="Menu" aria-controls="starlight__sidebar" class="sl-flex md:sl-hidden astro-jif73yzw"> <svg aria-hidden="true" class="astro-jif73yzw astro-c6vsoqas" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1em;"><path d="M3 8h18a1 1 0 1 0 0-2H3a1 1 0 0 0 0 2Zm18 8H3a1 1 0 0 0 0 2h18a1 1 0 0 0 0-2Zm0-5H3a1 1 0 0 0 0 2h18a1 1 0 0 0 0-2Z"/></svg>  </button> </starlight-menu-button> <script type="module">class s extends HTMLElement{constructor(){super(),this.btn=this.querySelector("button"),this.btn.addEventListener("click",()=>this.toggleExpanded());const t=this.closest("nav");t&&t.addEventListener("keyup",e=>this.closeOnEscape(e))}setExpanded(t){this.setAttribute("aria-expanded",String(t)),document.body.toggleAttribute("data-mobile-menu-expanded",t)}toggleExpanded(){this.setExpanded(this.getAttribute("aria-expanded")!=="true")}closeOnEscape(t){t.code==="Escape"&&(this.setExpanded(!1),this.btn.focus())}}customElements.define("starlight-menu-button",s);</script>   <div id="starlight__sidebar" class="sidebar-pane astro-vrdttmbt"> <div class="sidebar-content sl-flex astro-vrdttmbt"> <sl-sidebar-state-persist data-hash="1fpkjlk" class="astro-kku4brbg"> <script aria-hidden="true">
+		(() => {
+			try {
+				if (!matchMedia('(min-width: 50em)').matches) return;
+				/** @type {HTMLElement | null} */
+				const target = document.querySelector('sl-sidebar-state-persist');
+				const state = JSON.parse(sessionStorage.getItem('sl-sidebar-state') || '0');
+				if (!target || !state || target.dataset.hash !== state.hash) return;
+				window._starlightScrollRestore = state.scroll;
+				customElements.define(
+					'sl-sidebar-restore',
+					class SidebarRestore extends HTMLElement {
+						connectedCallback() {
+							try {
+								const idx = parseInt(this.dataset.index || '');
+								const details = this.closest('details');
+								if (details && typeof state.open[idx] === 'boolean') details.open = state.open[idx];
+							} catch {}
+						}
+					}
+				);
+			} catch {}
+		})();
+	</script>  <ul class="top-level astro-3ii7xxms"> <li class="astro-3ii7xxms"> <a href="/ins-mv-rogue-srd/" aria-current="false" class="large astro-3ii7xxms"> <span class="astro-3ii7xxms">Accueil</span>  </a> </li><li class="astro-3ii7xxms"> <a href="/ins-mv-rogue-srd/srd/" aria-current="false" class="large astro-3ii7xxms"> <span class="astro-3ii7xxms">SRD</span>  </a> </li><li class="astro-3ii7xxms"> <details open class="astro-3ii7xxms"> <sl-sidebar-restore data-index="0"></sl-sidebar-restore> <summary class="astro-3ii7xxms"> <div class="group-label astro-3ii7xxms"> <span class="large astro-3ii7xxms">Contexte</span>  </div> <svg aria-hidden="true" class="caret astro-3ii7xxms astro-c6vsoqas" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1.25rem;"><path d="m14.83 11.29-4.24-4.24a1 1 0 1 0-1.42 1.41L12.71 12l-3.54 3.54a1 1 0 0 0 0 1.41 1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.24-4.24a1.002 1.002 0 0 0 0-1.42Z"/></svg>  </summary> <ul class="astro-3ii7xxms"> <li class="astro-3ii7xxms"> <a href="/ins-mv-rogue-srd/contexte/contexte/" aria-current="false" class="astro-3ii7xxms"> <span class="astro-3ii7xxms">Le monde du jeu</span>  </a> </li> </ul>  </details> </li><li class="astro-3ii7xxms"> <details open class="astro-3ii7xxms"> <sl-sidebar-restore data-index="1"></sl-sidebar-restore> <summary class="astro-3ii7xxms"> <div class="group-label astro-3ii7xxms"> <span class="large astro-3ii7xxms">Personnage</span>  </div> <svg aria-hidden="true" class="caret astro-3ii7xxms astro-c6vsoqas" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1.25rem;"><path d="m14.83 11.29-4.24-4.24a1 1 0 1 0-1.42 1.41L12.71 12l-3.54 3.54a1 1 0 0 0 0 1.41 1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.24-4.24a1.002 1.002 0 0 0 0-1.42Z"/></svg>  </summary> <ul class="astro-3ii7xxms"> <li class="astro-3ii7xxms"> <a href="/ins-mv-rogue-srd/personnage/caracteristiques/" aria-current="false" class="astro-3ii7xxms"> <span class="astro-3ii7xxms">Caractéristiques &amp; Attributs</span>  </a> </li><li class="astro-3ii7xxms"> <a href="/ins-mv-rogue-srd/personnage/creation/" aria-current="false" class="astro-3ii7xxms"> <span class="astro-3ii7xxms">Création d&#39;âme</span>  </a> </li><li class="astro-3ii7xxms"> <a href="/ins-mv-rogue-srd/personnage/rang/" aria-current="false" class="astro-3ii7xxms"> <span class="astro-3ii7xxms">Rang céleste</span>  </a> </li><li class="astro-3ii7xxms"> <a href="/ins-mv-rogue-srd/personnage/progression/" aria-current="false" class="astro-3ii7xxms"> <span class="astro-3ii7xxms">Position hiérarchique</span>  </a> </li><li class="astro-3ii7xxms"> <a href="/ins-mv-rogue-srd/personnage/reincarnation/" aria-current="false" class="astro-3ii7xxms"> <span class="astro-3ii7xxms">Réincarnation</span>  </a> </li> </ul>  </details> </li><li class="astro-3ii7xxms"> <details open class="astro-3ii7xxms"> <sl-sidebar-restore data-index="2"></sl-sidebar-restore> <summary class="astro-3ii7xxms"> <div class="group-label astro-3ii7xxms"> <span class="large astro-3ii7xxms">Mécanique</span>  </div> <svg aria-hidden="true" class="caret astro-3ii7xxms astro-c6vsoqas" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1.25rem;"><path d="m14.83 11.29-4.24-4.24a1 1 0 1 0-1.42 1.41L12.71 12l-3.54 3.54a1 1 0 0 0 0 1.41 1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.24-4.24a1.002 1.002 0 0 0 0-1.42Z"/></svg>  </summary> <ul class="astro-3ii7xxms"> <li class="astro-3ii7xxms"> <a href="/ins-mv-rogue-srd/mecanique/resolution/" aria-current="false" class="astro-3ii7xxms"> <span class="astro-3ii7xxms">Résolution D666</span>  </a> </li><li class="astro-3ii7xxms"> <a href="/ins-mv-rogue-srd/mecanique/combat/" aria-current="false" class="astro-3ii7xxms"> <span class="astro-3ii7xxms">Combat &amp; initiative</span>  </a> </li><li class="astro-3ii7xxms"> <a href="/ins-mv-rogue-srd/mecanique/pouvoirs/" aria-current="false" class="astro-3ii7xxms"> <span class="astro-3ii7xxms">POUVOIRS</span>  </a> </li><li class="astro-3ii7xxms"> <a href="/ins-mv-rogue-srd/mecanique/competences/" aria-current="false" class="astro-3ii7xxms"> <span class="astro-3ii7xxms">Compétences</span>  </a> </li><li class="astro-3ii7xxms"> <a href="/ins-mv-rogue-srd/mecanique/energie/" aria-current="false" class="astro-3ii7xxms"> <span class="astro-3ii7xxms">Énergie</span>  </a> </li><li class="astro-3ii7xxms"> <a href="/ins-mv-rogue-srd/mecanique/blessures/" aria-current="false" class="astro-3ii7xxms"> <span class="astro-3ii7xxms">DÉGÂTS ET BLESSURES</span>  </a> </li> </ul>  </details> </li><li class="astro-3ii7xxms"> <details open class="astro-3ii7xxms"> <sl-sidebar-restore data-index="3"></sl-sidebar-restore> <summary class="astro-3ii7xxms"> <div class="group-label astro-3ii7xxms"> <span class="large astro-3ii7xxms">Référence</span>  </div> <svg aria-hidden="true" class="caret astro-3ii7xxms astro-c6vsoqas" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1.25rem;"><path d="m14.83 11.29-4.24-4.24a1 1 0 1 0-1.42 1.41L12.71 12l-3.54 3.54a1 1 0 0 0 0 1.41 1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.24-4.24a1.002 1.002 0 0 0 0-1.42Z"/></svg>  </summary> <ul class="astro-3ii7xxms"> <li class="astro-3ii7xxms"> <details open class="astro-3ii7xxms"> <sl-sidebar-restore data-index="4"></sl-sidebar-restore> <summary class="astro-3ii7xxms"> <div class="group-label astro-3ii7xxms"> <span class="large astro-3ii7xxms">equipement</span>  </div> <svg aria-hidden="true" class="caret astro-3ii7xxms astro-c6vsoqas" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1.25rem;"><path d="m14.83 11.29-4.24-4.24a1 1 0 1 0-1.42 1.41L12.71 12l-3.54 3.54a1 1 0 0 0 0 1.41 1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.24-4.24a1.002 1.002 0 0 0 0-1.42Z"/></svg>  </summary> <ul class="astro-3ii7xxms"> <li class="astro-3ii7xxms"> <a href="/ins-mv-rogue-srd/reference/equipement/melee/" aria-current="false" class="astro-3ii7xxms"> <span class="astro-3ii7xxms">Armes de mêlée</span>  </a> </li><li class="astro-3ii7xxms"> <a href="/ins-mv-rogue-srd/reference/equipement/armes-feu/" aria-current="false" class="astro-3ii7xxms"> <span class="astro-3ii7xxms">Armes à feu</span>  </a> </li><li class="astro-3ii7xxms"> <a href="/ins-mv-rogue-srd/reference/equipement/" aria-current="false" class="astro-3ii7xxms"> <span class="astro-3ii7xxms">Vue d&#39;ensemble</span>  </a> </li><li class="astro-3ii7xxms"> <a href="/ins-mv-rogue-srd/reference/equipement/distance/" aria-current="false" class="astro-3ii7xxms"> <span class="astro-3ii7xxms">Armes à distance</span>  </a> </li><li class="astro-3ii7xxms"> <a href="/ins-mv-rogue-srd/reference/equipement/explosifs/" aria-current="false" class="astro-3ii7xxms"> <span class="astro-3ii7xxms">Explosifs</span>  </a> </li><li class="astro-3ii7xxms"> <a href="/ins-mv-rogue-srd/reference/equipement/protections/" aria-current="false" class="astro-3ii7xxms"> <span class="astro-3ii7xxms">Protections</span>  </a> </li><li class="astro-3ii7xxms"> <a href="/ins-mv-rogue-srd/reference/equipement/boucliers/" aria-current="false" class="astro-3ii7xxms"> <span class="astro-3ii7xxms">Boucliers</span>  </a> </li> </ul>  </details> </li><li class="astro-3ii7xxms"> <a href="/ins-mv-rogue-srd/reference/mots-cles/" aria-current="false" class="astro-3ii7xxms"> <span class="astro-3ii7xxms">Mots-clés</span>  </a> </li><li class="astro-3ii7xxms"> <a href="/ins-mv-rogue-srd/reference/etats/" aria-current="page" class="astro-3ii7xxms"> <span class="astro-3ii7xxms">États</span>  </a> </li> </ul>  </details> </li><li class="astro-3ii7xxms"> <a href="/ins-mv-rogue-srd/simulateur/" aria-current="false" class="large astro-3ii7xxms"> <span class="astro-3ii7xxms">Simulateur</span>  </a> </li><li class="astro-3ii7xxms"> <a href="/ins-mv-rogue-srd/generateur/" aria-current="false" class="large astro-3ii7xxms"> <span class="astro-3ii7xxms">Générateur</span>  </a> </li> </ul>   <script aria-hidden="true">
+		(() => {
+			const scroller = document.getElementById('starlight__sidebar');
+			if (!window._starlightScrollRestore || !scroller) return;
+			scroller.scrollTop = window._starlightScrollRestore;
+			delete window._starlightScrollRestore;
+		})();
+	</script> </sl-sidebar-state-persist>  <div class="md:sl-hidden"> <div class="mobile-preferences sl-flex astro-wu23bvmt"> <div class="sl-flex social-icons astro-wu23bvmt"> <a href="https://github.com/BaDjams/ins-mv-rogue-srd" rel="me" class="sl-flex astro-wy4te6ga"><span class="sr-only astro-wy4te6ga">GitHub</span><svg aria-hidden="true" class="astro-wy4te6ga astro-c6vsoqas" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1em;"><path d="M12 .3a12 12 0 0 0-3.8 23.38c.6.12.83-.26.83-.57L9 21.07c-3.34.72-4.04-1.61-4.04-1.61-.55-1.39-1.34-1.76-1.34-1.76-1.08-.74.09-.73.09-.73 1.2.09 1.83 1.24 1.83 1.24 1.08 1.83 2.81 1.3 3.5 1 .1-.78.42-1.31.76-1.61-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.14-.3-.54-1.52.1-3.18 0 0 1-.32 3.3 1.23a11.5 11.5 0 0 1 6 0c2.28-1.55 3.29-1.23 3.29-1.23.64 1.66.24 2.88.12 3.18a4.65 4.65 0 0 1 1.23 3.22c0 4.61-2.8 5.63-5.48 5.92.42.36.81 1.1.81 2.22l-.01 3.29c0 .31.2.69.82.57A12 12 0 0 0 12 .3Z"/></svg> </a> </div> <starlight-theme-select>  <label style="--sl-select-width: 6.25em" class="astro-4yphtoen"> <span class="sr-only astro-4yphtoen">Selectionner le thème</span> <svg aria-hidden="true" class="icon label-icon astro-4yphtoen astro-c6vsoqas" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1em;"><path d="M21 14h-1V7a3 3 0 0 0-3-3H7a3 3 0 0 0-3 3v7H3a1 1 0 0 0-1 1v2a3 3 0 0 0 3 3h14a3 3 0 0 0 3-3v-2a1 1 0 0 0-1-1ZM6 7a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v7H6V7Zm14 10a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1v-1h16v1Z"/></svg>  <select value="auto" autocomplete="off" class="astro-4yphtoen"> <option value="dark" class="astro-4yphtoen">Sombre</option><option value="light" class="astro-4yphtoen">Clair</option><option value="auto" selected class="astro-4yphtoen">Auto</option> </select> <svg aria-hidden="true" class="icon caret astro-4yphtoen astro-c6vsoqas" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1em;"><path d="M17 9.17a1 1 0 0 0-1.41 0L12 12.71 8.46 9.17a1 1 0 1 0-1.41 1.42l4.24 4.24a1.002 1.002 0 0 0 1.42 0L17 10.59a1.002 1.002 0 0 0 0-1.42Z"/></svg>  </label>  </starlight-theme-select>  <script>
+	StarlightThemeProvider.updatePickers();
+</script>   </div>  </div> </div> </div> </nav> <div class="main-frame astro-vrdttmbt">  <script type="module">const a=document.getElementById("starlight__sidebar"),n=a?.querySelector("sl-sidebar-state-persist"),o="sl-sidebar-state",i=()=>{let t=[];const e=n?.dataset.hash||"";try{const s=sessionStorage.getItem(o),r=JSON.parse(s||"{}");Array.isArray(r.open)&&r.hash===e&&(t=r.open)}catch{}return{hash:e,open:t,scroll:a?.scrollTop||0}},c=t=>{try{sessionStorage.setItem(o,JSON.stringify(t))}catch{}},d=()=>c(i()),l=(t,e)=>{const s=i();s.open[e]=t,c(s)};n?.addEventListener("click",t=>{if(!(t.target instanceof Element))return;const e=t.target.closest("summary")?.closest("details");if(!e)return;const s=e.querySelector("sl-sidebar-restore"),r=parseInt(s?.dataset.index||"");isNaN(r)||l(!e.open,r)});addEventListener("visibilitychange",()=>{document.visibilityState==="hidden"&&d()});addEventListener("pageHide",d);</script> <div class="lg:sl-flex astro-67yu43on"> <aside class="right-sidebar-container print:hidden astro-67yu43on"> <div class="right-sidebar astro-67yu43on"> <script type="module" src="/ins-mv-rogue-srd/_astro/MobileTableOfContents.astro_astro_type_script_index_0_lang.C181hMzK.js"></script><script type="module" src="/ins-mv-rogue-srd/_astro/TableOfContents.astro_astro_type_script_index_0_lang.CKWWgpjV.js"></script><div class="lg:sl-hidden astro-pb3aqygn"><mobile-starlight-toc data-min-h="2" data-max-h="3" class="astro-doynk5tl"><nav aria-labelledby="starlight__on-this-page--mobile" class="astro-doynk5tl"><details id="starlight__mobile-toc" class="astro-doynk5tl"><summary id="starlight__on-this-page--mobile" class="sl-flex astro-doynk5tl"><div class="toggle sl-flex astro-doynk5tl">Sur cette page<svg aria-hidden="true" class="caret astro-doynk5tl astro-c6vsoqas" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1rem;"><path d="m14.83 11.29-4.24-4.24a1 1 0 1 0-1.42 1.41L12.71 12l-3.54 3.54a1 1 0 0 0 0 1.41 1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.24-4.24a1.002 1.002 0 0 0 0-1.42Z"/></svg> </div><span class="display-current astro-doynk5tl"></span></summary><div class="dropdown astro-doynk5tl"><ul class="isMobile astro-g2bywc46" style="--depth: 0;"> <li class="astro-g2bywc46" style="--depth: 0;"> <a href="#_top" class="astro-g2bywc46" style="--depth: 0;"> <span class="astro-g2bywc46" style="--depth: 0;">Vue d’ensemble</span> </a>  </li><li class="astro-g2bywc46" style="--depth: 0;"> <a href="#règles-générales" class="astro-g2bywc46" style="--depth: 0;"> <span class="astro-g2bywc46" style="--depth: 0;">Règles générales</span> </a> <ul class="isMobile astro-g2bywc46" style="--depth: 1;"> <li class="astro-g2bywc46" style="--depth: 1;"> <a href="#cumul-et-durée" class="astro-g2bywc46" style="--depth: 1;"> <span class="astro-g2bywc46" style="--depth: 1;">Cumul et durée</span> </a>  </li><li class="astro-g2bywc46" style="--depth: 1;"> <a href="#dissipation" class="astro-g2bywc46" style="--depth: 1;"> <span class="astro-g2bywc46" style="--depth: 1;">Dissipation</span> </a>  </li> </ul>  </li><li class="astro-g2bywc46" style="--depth: 0;"> <a href="#états-physiques" class="astro-g2bywc46" style="--depth: 0;"> <span class="astro-g2bywc46" style="--depth: 0;">États physiques</span> </a> <ul class="isMobile astro-g2bywc46" style="--depth: 1;"> <li class="astro-g2bywc46" style="--depth: 1;"> <a href="#à-terre" class="astro-g2bywc46" style="--depth: 1;"> <span class="astro-g2bywc46" style="--depth: 1;">À Terre</span> </a>  </li><li class="astro-g2bywc46" style="--depth: 1;"> <a href="#agrippé" class="astro-g2bywc46" style="--depth: 1;"> <span class="astro-g2bywc46" style="--depth: 1;">Agrippé</span> </a>  </li><li class="astro-g2bywc46" style="--depth: 1;"> <a href="#entravé" class="astro-g2bywc46" style="--depth: 1;"> <span class="astro-g2bywc46" style="--depth: 1;">Entravé</span> </a>  </li><li class="astro-g2bywc46" style="--depth: 1;"> <a href="#aveuglé" class="astro-g2bywc46" style="--depth: 1;"> <span class="astro-g2bywc46" style="--depth: 1;">Aveuglé</span> </a>  </li><li class="astro-g2bywc46" style="--depth: 1;"> <a href="#assourdi" class="astro-g2bywc46" style="--depth: 1;"> <span class="astro-g2bywc46" style="--depth: 1;">Assourdi</span> </a>  </li><li class="astro-g2bywc46" style="--depth: 1;"> <a href="#empoisonné" class="astro-g2bywc46" style="--depth: 1;"> <span class="astro-g2bywc46" style="--depth: 1;">Empoisonné</span> </a>  </li><li class="astro-g2bywc46" style="--depth: 1;"> <a href="#malade" class="astro-g2bywc46" style="--depth: 1;"> <span class="astro-g2bywc46" style="--depth: 1;">Malade</span> </a>  </li> </ul>  </li><li class="astro-g2bywc46" style="--depth: 0;"> <a href="#états-mentaux" class="astro-g2bywc46" style="--depth: 0;"> <span class="astro-g2bywc46" style="--depth: 0;">États mentaux</span> </a> <ul class="isMobile astro-g2bywc46" style="--depth: 1;"> <li class="astro-g2bywc46" style="--depth: 1;"> <a href="#charmé" class="astro-g2bywc46" style="--depth: 1;"> <span class="astro-g2bywc46" style="--depth: 1;">Charmé</span> </a>  </li><li class="astro-g2bywc46" style="--depth: 1;"> <a href="#effrayé" class="astro-g2bywc46" style="--depth: 1;"> <span class="astro-g2bywc46" style="--depth: 1;">Effrayé</span> </a>  </li><li class="astro-g2bywc46" style="--depth: 1;"> <a href="#confus" class="astro-g2bywc46" style="--depth: 1;"> <span class="astro-g2bywc46" style="--depth: 1;">Confus</span> </a>  </li><li class="astro-g2bywc46" style="--depth: 1;"> <a href="#dominé" class="astro-g2bywc46" style="--depth: 1;"> <span class="astro-g2bywc46" style="--depth: 1;">Dominé</span> </a>  </li> </ul>  </li><li class="astro-g2bywc46" style="--depth: 0;"> <a href="#états-de-combat" class="astro-g2bywc46" style="--depth: 0;"> <span class="astro-g2bywc46" style="--depth: 0;">États de combat</span> </a> <ul class="isMobile astro-g2bywc46" style="--depth: 1;"> <li class="astro-g2bywc46" style="--depth: 1;"> <a href="#incapable-dagir" class="astro-g2bywc46" style="--depth: 1;"> <span class="astro-g2bywc46" style="--depth: 1;">Incapable d’agir</span> </a>  </li><li class="astro-g2bywc46" style="--depth: 1;"> <a href="#étourdi" class="astro-g2bywc46" style="--depth: 1;"> <span class="astro-g2bywc46" style="--depth: 1;">Étourdi</span> </a>  </li><li class="astro-g2bywc46" style="--depth: 1;"> <a href="#paralysé" class="astro-g2bywc46" style="--depth: 1;"> <span class="astro-g2bywc46" style="--depth: 1;">Paralysé</span> </a>  </li><li class="astro-g2bywc46" style="--depth: 1;"> <a href="#inconscient" class="astro-g2bywc46" style="--depth: 1;"> <span class="astro-g2bywc46" style="--depth: 1;">Inconscient</span> </a>  </li><li class="astro-g2bywc46" style="--depth: 1;"> <a href="#pétrifié" class="astro-g2bywc46" style="--depth: 1;"> <span class="astro-g2bywc46" style="--depth: 1;">Pétrifié</span> </a>  </li> </ul>  </li><li class="astro-g2bywc46" style="--depth: 0;"> <a href="#états-spéciaux" class="astro-g2bywc46" style="--depth: 0;"> <span class="astro-g2bywc46" style="--depth: 0;">États spéciaux</span> </a> <ul class="isMobile astro-g2bywc46" style="--depth: 1;"> <li class="astro-g2bywc46" style="--depth: 1;"> <a href="#épuisé-niveaux-16" class="astro-g2bywc46" style="--depth: 1;"> <span class="astro-g2bywc46" style="--depth: 1;">Épuisé (niveaux 1–6)</span> </a>  </li><li class="astro-g2bywc46" style="--depth: 1;"> <a href="#invisible" class="astro-g2bywc46" style="--depth: 1;"> <span class="astro-g2bywc46" style="--depth: 1;">Invisible</span> </a>  </li><li class="astro-g2bywc46" style="--depth: 1;"> <a href="#sanguin" class="astro-g2bywc46" style="--depth: 1;"> <span class="astro-g2bywc46" style="--depth: 1;">Sanguin</span> </a>  </li> </ul>  </li><li class="astro-g2bywc46" style="--depth: 0;"> <a href="#états-environnementaux" class="astro-g2bywc46" style="--depth: 0;"> <span class="astro-g2bywc46" style="--depth: 0;">États environnementaux</span> </a> <ul class="isMobile astro-g2bywc46" style="--depth: 1;"> <li class="astro-g2bywc46" style="--depth: 1;"> <a href="#en-feu" class="astro-g2bywc46" style="--depth: 1;"> <span class="astro-g2bywc46" style="--depth: 1;">En feu</span> </a>  </li><li class="astro-g2bywc46" style="--depth: 1;"> <a href="#gelé" class="astro-g2bywc46" style="--depth: 1;"> <span class="astro-g2bywc46" style="--depth: 1;">Gelé</span> </a>  </li><li class="astro-g2bywc46" style="--depth: 1;"> <a href="#électrocuté" class="astro-g2bywc46" style="--depth: 1;"> <span class="astro-g2bywc46" style="--depth: 1;">Électrocuté</span> </a>  </li><li class="astro-g2bywc46" style="--depth: 1;"> <a href="#corrodé" class="astro-g2bywc46" style="--depth: 1;"> <span class="astro-g2bywc46" style="--depth: 1;">Corrodé</span> </a>  </li> </ul>  </li><li class="astro-g2bywc46" style="--depth: 0;"> <a href="#états-divins" class="astro-g2bywc46" style="--depth: 0;"> <span class="astro-g2bywc46" style="--depth: 0;">États divins</span> </a> <ul class="isMobile astro-g2bywc46" style="--depth: 1;"> <li class="astro-g2bywc46" style="--depth: 1;"> <a href="#béni" class="astro-g2bywc46" style="--depth: 1;"> <span class="astro-g2bywc46" style="--depth: 1;">Béni</span> </a>  </li><li class="astro-g2bywc46" style="--depth: 1;"> <a href="#maudit" class="astro-g2bywc46" style="--depth: 1;"> <span class="astro-g2bywc46" style="--depth: 1;">Maudit</span> </a>  </li><li class="astro-g2bywc46" style="--depth: 1;"> <a href="#sanctifié" class="astro-g2bywc46" style="--depth: 1;"> <span class="astro-g2bywc46" style="--depth: 1;">Sanctifié</span> </a>  </li><li class="astro-g2bywc46" style="--depth: 1;"> <a href="#profané" class="astro-g2bywc46" style="--depth: 1;"> <span class="astro-g2bywc46" style="--depth: 1;">Profané</span> </a>  </li><li class="astro-g2bywc46" style="--depth: 1;"> <a href="#désincarné" class="astro-g2bywc46" style="--depth: 1;"> <span class="astro-g2bywc46" style="--depth: 1;">Désincarné</span> </a>  </li><li class="astro-g2bywc46" style="--depth: 1;"> <a href="#surchargé-spirituellement" class="astro-g2bywc46" style="--depth: 1;"> <span class="astro-g2bywc46" style="--depth: 1;">Surchargé spirituellement</span> </a>  </li><li class="astro-g2bywc46" style="--depth: 1;"> <a href="#révélé" class="astro-g2bywc46" style="--depth: 1;"> <span class="astro-g2bywc46" style="--depth: 1;">Révélé</span> </a>  </li><li class="astro-g2bywc46" style="--depth: 1;"> <a href="#incarnation-ratée" class="astro-g2bywc46" style="--depth: 1;"> <span class="astro-g2bywc46" style="--depth: 1;">Incarnation ratée</span> </a>  </li><li class="astro-g2bywc46" style="--depth: 1;"> <a href="#forme-véritable" class="astro-g2bywc46" style="--depth: 1;"> <span class="astro-g2bywc46" style="--depth: 1;">Forme véritable</span> </a>  </li> </ul>  </li><li class="astro-g2bywc46" style="--depth: 0;"> <a href="#états-affectant-les-objets" class="astro-g2bywc46" style="--depth: 0;"> <span class="astro-g2bywc46" style="--depth: 0;">États affectant les objets</span> </a> <ul class="isMobile astro-g2bywc46" style="--depth: 1;"> <li class="astro-g2bywc46" style="--depth: 1;"> <a href="#endommagé" class="astro-g2bywc46" style="--depth: 1;"> <span class="astro-g2bywc46" style="--depth: 1;">Endommagé</span> </a>  </li><li class="astro-g2bywc46" style="--depth: 1;"> <a href="#gravement-endommagé" class="astro-g2bywc46" style="--depth: 1;"> <span class="astro-g2bywc46" style="--depth: 1;">Gravement endommagé</span> </a>  </li><li class="astro-g2bywc46" style="--depth: 1;"> <a href="#cassé" class="astro-g2bywc46" style="--depth: 1;"> <span class="astro-g2bywc46" style="--depth: 1;">Cassé</span> </a>  </li><li class="astro-g2bywc46" style="--depth: 1;"> <a href="#détruit" class="astro-g2bywc46" style="--depth: 1;"> <span class="astro-g2bywc46" style="--depth: 1;">Détruit</span> </a>  </li><li class="astro-g2bywc46" style="--depth: 1;"> <a href="#rouillé-métaux-uniquement" class="astro-g2bywc46" style="--depth: 1;"> <span class="astro-g2bywc46" style="--depth: 1;">Rouillé (métaux uniquement)</span> </a>  </li><li class="astro-g2bywc46" style="--depth: 1;"> <a href="#corrodé-objets-exposés-à-lacide" class="astro-g2bywc46" style="--depth: 1;"> <span class="astro-g2bywc46" style="--depth: 1;">Corrodé (objets exposés à l’acide)</span> </a>  </li><li class="astro-g2bywc46" style="--depth: 1;"> <a href="#gelé-objets-exposés-au-froid-extrême" class="astro-g2bywc46" style="--depth: 1;"> <span class="astro-g2bywc46" style="--depth: 1;">Gelé (objets exposés au froid extrême)</span> </a>  </li><li class="astro-g2bywc46" style="--depth: 1;"> <a href="#en-fusion-objets-exposés-à-chaleur-extrême" class="astro-g2bywc46" style="--depth: 1;"> <span class="astro-g2bywc46" style="--depth: 1;">En fusion (objets exposés à chaleur extrême)</span> </a>  </li><li class="astro-g2bywc46" style="--depth: 1;"> <a href="#électrifié-objets-conducteurs-sous-tension" class="astro-g2bywc46" style="--depth: 1;"> <span class="astro-g2bywc46" style="--depth: 1;">Électrifié (objets conducteurs sous tension)</span> </a>  </li><li class="astro-g2bywc46" style="--depth: 1;"> <a href="#maudit-objets-affectés-par-magie-noire" class="astro-g2bywc46" style="--depth: 1;"> <span class="astro-g2bywc46" style="--depth: 1;">Maudit (objets affectés par magie noire)</span> </a>  </li><li class="astro-g2bywc46" style="--depth: 1;"> <a href="#béni-objets-touchés-par-la-grâce-divine" class="astro-g2bywc46" style="--depth: 1;"> <span class="astro-g2bywc46" style="--depth: 1;">Béni (objets touchés par la grâce divine)</span> </a>  </li><li class="astro-g2bywc46" style="--depth: 1;"> <a href="#surchargé-objets-technologiquesmagiques" class="astro-g2bywc46" style="--depth: 1;"> <span class="astro-g2bywc46" style="--depth: 1;">Surchargé (objets technologiques/magiques)</span> </a>  </li><li class="astro-g2bywc46" style="--depth: 1;"> <a href="#submergé-objets-sous-leau" class="astro-g2bywc46" style="--depth: 1;"> <span class="astro-g2bywc46" style="--depth: 1;">Submergé (objets sous l’eau)</span> </a>  </li><li class="astro-g2bywc46" style="--depth: 1;"> <a href="#instable-objets-magiques-dysfonctionnels" class="astro-g2bywc46" style="--depth: 1;"> <span class="astro-g2bywc46" style="--depth: 1;">Instable (objets magiques dysfonctionnels)</span> </a>  </li> </ul>  </li><li class="astro-g2bywc46" style="--depth: 0;"> <a href="#réparation-des-objets" class="astro-g2bywc46" style="--depth: 0;"> <span class="astro-g2bywc46" style="--depth: 0;">Réparation des objets</span> </a> <ul class="isMobile astro-g2bywc46" style="--depth: 1;"> <li class="astro-g2bywc46" style="--depth: 1;"> <a href="#réparation-mundane" class="astro-g2bywc46" style="--depth: 1;"> <span class="astro-g2bywc46" style="--depth: 1;">Réparation mundane</span> </a>  </li><li class="astro-g2bywc46" style="--depth: 1;"> <a href="#réparation-magique" class="astro-g2bywc46" style="--depth: 1;"> <span class="astro-g2bywc46" style="--depth: 1;">Réparation magique</span> </a>  </li><li class="astro-g2bywc46" style="--depth: 1;"> <a href="#objets-magiques" class="astro-g2bywc46" style="--depth: 1;"> <span class="astro-g2bywc46" style="--depth: 1;">Objets magiques</span> </a>  </li> </ul>  </li> </ul> </div></details></nav></mobile-starlight-toc></div><div class="right-sidebar-panel sl-hidden lg:sl-block astro-pb3aqygn"><div class="sl-container astro-pb3aqygn"><starlight-toc data-min-h="2" data-max-h="3"><nav aria-labelledby="starlight__on-this-page"><h2 id="starlight__on-this-page">Sur cette page</h2><ul class="astro-g2bywc46" style="--depth: 0;"> <li class="astro-g2bywc46" style="--depth: 0;"> <a href="#_top" class="astro-g2bywc46" style="--depth: 0;"> <span class="astro-g2bywc46" style="--depth: 0;">Vue d’ensemble</span> </a>  </li><li class="astro-g2bywc46" style="--depth: 0;"> <a href="#règles-générales" class="astro-g2bywc46" style="--depth: 0;"> <span class="astro-g2bywc46" style="--depth: 0;">Règles générales</span> </a> <ul class="astro-g2bywc46" style="--depth: 1;"> <li class="astro-g2bywc46" style="--depth: 1;"> <a href="#cumul-et-durée" class="astro-g2bywc46" style="--depth: 1;"> <span class="astro-g2bywc46" style="--depth: 1;">Cumul et durée</span> </a>  </li><li class="astro-g2bywc46" style="--depth: 1;"> <a href="#dissipation" class="astro-g2bywc46" style="--depth: 1;"> <span class="astro-g2bywc46" style="--depth: 1;">Dissipation</span> </a>  </li> </ul>  </li><li class="astro-g2bywc46" style="--depth: 0;"> <a href="#états-physiques" class="astro-g2bywc46" style="--depth: 0;"> <span class="astro-g2bywc46" style="--depth: 0;">États physiques</span> </a> <ul class="astro-g2bywc46" style="--depth: 1;"> <li class="astro-g2bywc46" style="--depth: 1;"> <a href="#à-terre" class="astro-g2bywc46" style="--depth: 1;"> <span class="astro-g2bywc46" style="--depth: 1;">À Terre</span> </a>  </li><li class="astro-g2bywc46" style="--depth: 1;"> <a href="#agrippé" class="astro-g2bywc46" style="--depth: 1;"> <span class="astro-g2bywc46" style="--depth: 1;">Agrippé</span> </a>  </li><li class="astro-g2bywc46" style="--depth: 1;"> <a href="#entravé" class="astro-g2bywc46" style="--depth: 1;"> <span class="astro-g2bywc46" style="--depth: 1;">Entravé</span> </a>  </li><li class="astro-g2bywc46" style="--depth: 1;"> <a href="#aveuglé" class="astro-g2bywc46" style="--depth: 1;"> <span class="astro-g2bywc46" style="--depth: 1;">Aveuglé</span> </a>  </li><li class="astro-g2bywc46" style="--depth: 1;"> <a href="#assourdi" class="astro-g2bywc46" style="--depth: 1;"> <span class="astro-g2bywc46" style="--depth: 1;">Assourdi</span> </a>  </li><li class="astro-g2bywc46" style="--depth: 1;"> <a href="#empoisonné" class="astro-g2bywc46" style="--depth: 1;"> <span class="astro-g2bywc46" style="--depth: 1;">Empoisonné</span> </a>  </li><li class="astro-g2bywc46" style="--depth: 1;"> <a href="#malade" class="astro-g2bywc46" style="--depth: 1;"> <span class="astro-g2bywc46" style="--depth: 1;">Malade</span> </a>  </li> </ul>  </li><li class="astro-g2bywc46" style="--depth: 0;"> <a href="#états-mentaux" class="astro-g2bywc46" style="--depth: 0;"> <span class="astro-g2bywc46" style="--depth: 0;">États mentaux</span> </a> <ul class="astro-g2bywc46" style="--depth: 1;"> <li class="astro-g2bywc46" style="--depth: 1;"> <a href="#charmé" class="astro-g2bywc46" style="--depth: 1;"> <span class="astro-g2bywc46" style="--depth: 1;">Charmé</span> </a>  </li><li class="astro-g2bywc46" style="--depth: 1;"> <a href="#effrayé" class="astro-g2bywc46" style="--depth: 1;"> <span class="astro-g2bywc46" style="--depth: 1;">Effrayé</span> </a>  </li><li class="astro-g2bywc46" style="--depth: 1;"> <a href="#confus" class="astro-g2bywc46" style="--depth: 1;"> <span class="astro-g2bywc46" style="--depth: 1;">Confus</span> </a>  </li><li class="astro-g2bywc46" style="--depth: 1;"> <a href="#dominé" class="astro-g2bywc46" style="--depth: 1;"> <span class="astro-g2bywc46" style="--depth: 1;">Dominé</span> </a>  </li> </ul>  </li><li class="astro-g2bywc46" style="--depth: 0;"> <a href="#états-de-combat" class="astro-g2bywc46" style="--depth: 0;"> <span class="astro-g2bywc46" style="--depth: 0;">États de combat</span> </a> <ul class="astro-g2bywc46" style="--depth: 1;"> <li class="astro-g2bywc46" style="--depth: 1;"> <a href="#incapable-dagir" class="astro-g2bywc46" style="--depth: 1;"> <span class="astro-g2bywc46" style="--depth: 1;">Incapable d’agir</span> </a>  </li><li class="astro-g2bywc46" style="--depth: 1;"> <a href="#étourdi" class="astro-g2bywc46" style="--depth: 1;"> <span class="astro-g2bywc46" style="--depth: 1;">Étourdi</span> </a>  </li><li class="astro-g2bywc46" style="--depth: 1;"> <a href="#paralysé" class="astro-g2bywc46" style="--depth: 1;"> <span class="astro-g2bywc46" style="--depth: 1;">Paralysé</span> </a>  </li><li class="astro-g2bywc46" style="--depth: 1;"> <a href="#inconscient" class="astro-g2bywc46" style="--depth: 1;"> <span class="astro-g2bywc46" style="--depth: 1;">Inconscient</span> </a>  </li><li class="astro-g2bywc46" style="--depth: 1;"> <a href="#pétrifié" class="astro-g2bywc46" style="--depth: 1;"> <span class="astro-g2bywc46" style="--depth: 1;">Pétrifié</span> </a>  </li> </ul>  </li><li class="astro-g2bywc46" style="--depth: 0;"> <a href="#états-spéciaux" class="astro-g2bywc46" style="--depth: 0;"> <span class="astro-g2bywc46" style="--depth: 0;">États spéciaux</span> </a> <ul class="astro-g2bywc46" style="--depth: 1;"> <li class="astro-g2bywc46" style="--depth: 1;"> <a href="#épuisé-niveaux-16" class="astro-g2bywc46" style="--depth: 1;"> <span class="astro-g2bywc46" style="--depth: 1;">Épuisé (niveaux 1–6)</span> </a>  </li><li class="astro-g2bywc46" style="--depth: 1;"> <a href="#invisible" class="astro-g2bywc46" style="--depth: 1;"> <span class="astro-g2bywc46" style="--depth: 1;">Invisible</span> </a>  </li><li class="astro-g2bywc46" style="--depth: 1;"> <a href="#sanguin" class="astro-g2bywc46" style="--depth: 1;"> <span class="astro-g2bywc46" style="--depth: 1;">Sanguin</span> </a>  </li> </ul>  </li><li class="astro-g2bywc46" style="--depth: 0;"> <a href="#états-environnementaux" class="astro-g2bywc46" style="--depth: 0;"> <span class="astro-g2bywc46" style="--depth: 0;">États environnementaux</span> </a> <ul class="astro-g2bywc46" style="--depth: 1;"> <li class="astro-g2bywc46" style="--depth: 1;"> <a href="#en-feu" class="astro-g2bywc46" style="--depth: 1;"> <span class="astro-g2bywc46" style="--depth: 1;">En feu</span> </a>  </li><li class="astro-g2bywc46" style="--depth: 1;"> <a href="#gelé" class="astro-g2bywc46" style="--depth: 1;"> <span class="astro-g2bywc46" style="--depth: 1;">Gelé</span> </a>  </li><li class="astro-g2bywc46" style="--depth: 1;"> <a href="#électrocuté" class="astro-g2bywc46" style="--depth: 1;"> <span class="astro-g2bywc46" style="--depth: 1;">Électrocuté</span> </a>  </li><li class="astro-g2bywc46" style="--depth: 1;"> <a href="#corrodé" class="astro-g2bywc46" style="--depth: 1;"> <span class="astro-g2bywc46" style="--depth: 1;">Corrodé</span> </a>  </li> </ul>  </li><li class="astro-g2bywc46" style="--depth: 0;"> <a href="#états-divins" class="astro-g2bywc46" style="--depth: 0;"> <span class="astro-g2bywc46" style="--depth: 0;">États divins</span> </a> <ul class="astro-g2bywc46" style="--depth: 1;"> <li class="astro-g2bywc46" style="--depth: 1;"> <a href="#béni" class="astro-g2bywc46" style="--depth: 1;"> <span class="astro-g2bywc46" style="--depth: 1;">Béni</span> </a>  </li><li class="astro-g2bywc46" style="--depth: 1;"> <a href="#maudit" class="astro-g2bywc46" style="--depth: 1;"> <span class="astro-g2bywc46" style="--depth: 1;">Maudit</span> </a>  </li><li class="astro-g2bywc46" style="--depth: 1;"> <a href="#sanctifié" class="astro-g2bywc46" style="--depth: 1;"> <span class="astro-g2bywc46" style="--depth: 1;">Sanctifié</span> </a>  </li><li class="astro-g2bywc46" style="--depth: 1;"> <a href="#profané" class="astro-g2bywc46" style="--depth: 1;"> <span class="astro-g2bywc46" style="--depth: 1;">Profané</span> </a>  </li><li class="astro-g2bywc46" style="--depth: 1;"> <a href="#désincarné" class="astro-g2bywc46" style="--depth: 1;"> <span class="astro-g2bywc46" style="--depth: 1;">Désincarné</span> </a>  </li><li class="astro-g2bywc46" style="--depth: 1;"> <a href="#surchargé-spirituellement" class="astro-g2bywc46" style="--depth: 1;"> <span class="astro-g2bywc46" style="--depth: 1;">Surchargé spirituellement</span> </a>  </li><li class="astro-g2bywc46" style="--depth: 1;"> <a href="#révélé" class="astro-g2bywc46" style="--depth: 1;"> <span class="astro-g2bywc46" style="--depth: 1;">Révélé</span> </a>  </li><li class="astro-g2bywc46" style="--depth: 1;"> <a href="#incarnation-ratée" class="astro-g2bywc46" style="--depth: 1;"> <span class="astro-g2bywc46" style="--depth: 1;">Incarnation ratée</span> </a>  </li><li class="astro-g2bywc46" style="--depth: 1;"> <a href="#forme-véritable" class="astro-g2bywc46" style="--depth: 1;"> <span class="astro-g2bywc46" style="--depth: 1;">Forme véritable</span> </a>  </li> </ul>  </li><li class="astro-g2bywc46" style="--depth: 0;"> <a href="#états-affectant-les-objets" class="astro-g2bywc46" style="--depth: 0;"> <span class="astro-g2bywc46" style="--depth: 0;">États affectant les objets</span> </a> <ul class="astro-g2bywc46" style="--depth: 1;"> <li class="astro-g2bywc46" style="--depth: 1;"> <a href="#endommagé" class="astro-g2bywc46" style="--depth: 1;"> <span class="astro-g2bywc46" style="--depth: 1;">Endommagé</span> </a>  </li><li class="astro-g2bywc46" style="--depth: 1;"> <a href="#gravement-endommagé" class="astro-g2bywc46" style="--depth: 1;"> <span class="astro-g2bywc46" style="--depth: 1;">Gravement endommagé</span> </a>  </li><li class="astro-g2bywc46" style="--depth: 1;"> <a href="#cassé" class="astro-g2bywc46" style="--depth: 1;"> <span class="astro-g2bywc46" style="--depth: 1;">Cassé</span> </a>  </li><li class="astro-g2bywc46" style="--depth: 1;"> <a href="#détruit" class="astro-g2bywc46" style="--depth: 1;"> <span class="astro-g2bywc46" style="--depth: 1;">Détruit</span> </a>  </li><li class="astro-g2bywc46" style="--depth: 1;"> <a href="#rouillé-métaux-uniquement" class="astro-g2bywc46" style="--depth: 1;"> <span class="astro-g2bywc46" style="--depth: 1;">Rouillé (métaux uniquement)</span> </a>  </li><li class="astro-g2bywc46" style="--depth: 1;"> <a href="#corrodé-objets-exposés-à-lacide" class="astro-g2bywc46" style="--depth: 1;"> <span class="astro-g2bywc46" style="--depth: 1;">Corrodé (objets exposés à l’acide)</span> </a>  </li><li class="astro-g2bywc46" style="--depth: 1;"> <a href="#gelé-objets-exposés-au-froid-extrême" class="astro-g2bywc46" style="--depth: 1;"> <span class="astro-g2bywc46" style="--depth: 1;">Gelé (objets exposés au froid extrême)</span> </a>  </li><li class="astro-g2bywc46" style="--depth: 1;"> <a href="#en-fusion-objets-exposés-à-chaleur-extrême" class="astro-g2bywc46" style="--depth: 1;"> <span class="astro-g2bywc46" style="--depth: 1;">En fusion (objets exposés à chaleur extrême)</span> </a>  </li><li class="astro-g2bywc46" style="--depth: 1;"> <a href="#électrifié-objets-conducteurs-sous-tension" class="astro-g2bywc46" style="--depth: 1;"> <span class="astro-g2bywc46" style="--depth: 1;">Électrifié (objets conducteurs sous tension)</span> </a>  </li><li class="astro-g2bywc46" style="--depth: 1;"> <a href="#maudit-objets-affectés-par-magie-noire" class="astro-g2bywc46" style="--depth: 1;"> <span class="astro-g2bywc46" style="--depth: 1;">Maudit (objets affectés par magie noire)</span> </a>  </li><li class="astro-g2bywc46" style="--depth: 1;"> <a href="#béni-objets-touchés-par-la-grâce-divine" class="astro-g2bywc46" style="--depth: 1;"> <span class="astro-g2bywc46" style="--depth: 1;">Béni (objets touchés par la grâce divine)</span> </a>  </li><li class="astro-g2bywc46" style="--depth: 1;"> <a href="#surchargé-objets-technologiquesmagiques" class="astro-g2bywc46" style="--depth: 1;"> <span class="astro-g2bywc46" style="--depth: 1;">Surchargé (objets technologiques/magiques)</span> </a>  </li><li class="astro-g2bywc46" style="--depth: 1;"> <a href="#submergé-objets-sous-leau" class="astro-g2bywc46" style="--depth: 1;"> <span class="astro-g2bywc46" style="--depth: 1;">Submergé (objets sous l’eau)</span> </a>  </li><li class="astro-g2bywc46" style="--depth: 1;"> <a href="#instable-objets-magiques-dysfonctionnels" class="astro-g2bywc46" style="--depth: 1;"> <span class="astro-g2bywc46" style="--depth: 1;">Instable (objets magiques dysfonctionnels)</span> </a>  </li> </ul>  </li><li class="astro-g2bywc46" style="--depth: 0;"> <a href="#réparation-des-objets" class="astro-g2bywc46" style="--depth: 0;"> <span class="astro-g2bywc46" style="--depth: 0;">Réparation des objets</span> </a> <ul class="astro-g2bywc46" style="--depth: 1;"> <li class="astro-g2bywc46" style="--depth: 1;"> <a href="#réparation-mundane" class="astro-g2bywc46" style="--depth: 1;"> <span class="astro-g2bywc46" style="--depth: 1;">Réparation mundane</span> </a>  </li><li class="astro-g2bywc46" style="--depth: 1;"> <a href="#réparation-magique" class="astro-g2bywc46" style="--depth: 1;"> <span class="astro-g2bywc46" style="--depth: 1;">Réparation magique</span> </a>  </li><li class="astro-g2bywc46" style="--depth: 1;"> <a href="#objets-magiques" class="astro-g2bywc46" style="--depth: 1;"> <span class="astro-g2bywc46" style="--depth: 1;">Objets magiques</span> </a>  </li> </ul>  </li> </ul> </nav></starlight-toc></div></div> </div> </aside> <div class="main-pane astro-67yu43on">  <main data-pagefind-body class="astro-bguv2lll" lang="fr" dir="ltr">    <div class="content-panel astro-7nkwcw3z"> <div class="sl-container astro-7nkwcw3z"> <h1 id="_top" class="astro-j6tvhyss">États</h1>  </div> </div>  <div class="content-panel astro-7nkwcw3z"> <div class="sl-container astro-7nkwcw3z"> <div class="sl-markdown-content"> <h2 id="règles-générales">Règles générales</h2>
+<h3 id="cumul-et-durée">Cumul et durée</h3>
+<ul>
+<li><strong>Un même état ne se cumule pas</strong> : Une créature est soit affectée par un état, soit elle ne l’est pas</li>
+<li><strong>États multiples</strong> : Différents états peuvent se cumuler (ex : Aveuglé + Empoisonné)</li>
+<li><strong>Durée</strong> : Chaque état a sa propre durée, indépendamment des autres</li>
+<li><strong>Résistance</strong> : Les créatures de <a href="rang.md">rang céleste</a> élevé peuvent résister à certains états</li>
+<li><strong>Immunité</strong> : Certaines créatures sont complètement immunisées à des états spécifiques</li>
+</ul>
+<h3 id="dissipation">Dissipation</h3>
+<ul>
+<li><strong>Repos complet</strong> (8h) : Supprime automatiquement les états de fatigue et mentaux mineurs</li>
+<li><strong>Pouvoirs de soins</strong> : Peuvent dissiper certains états selon leur description</li>
+<li><strong>Conditions spécifiques</strong> : Certains états nécessitent des actions particulières pour être levés</li>
+</ul>
+<hr>
+<h2 id="états-physiques">États physiques</h2>
+<h3 id="à-terre">À Terre</h3>
+<p><strong>Description :</strong> Renversé au sol, position vulnérable.</p>
+<p><strong>Effets :</strong></p>
+<ul>
+<li>Seule action de déplacement possible : ramper (coût normal de 2 PA)</li>
+<li>Les attaques au corps à corps contre la créature ont un <a href="resolution.md">avantage</a></li>
+<li>Les attaques à distance contre la créature ont un <a href="resolution.md">désavantage</a> si l’attaquant est à plus de 6m</li>
+<li>Se relever coûte 1 PA supplémentaire</li>
+</ul>
+<p><strong>Fin :</strong> Jusqu’à ce que la créature se relève ou soit relevée par un allié.</p>
+<hr>
+<h3 id="agrippé">Agrippé</h3>
+<p><strong>Description :</strong> Maintenu fermement par une autre créature ou un effet.</p>
+<p><strong>Effets :</strong></p>
+<ul>
+<li>Vitesse de déplacement réduite à 0</li>
+<li>Ne peut bénéficier d’aucun bonus de vitesse</li>
+<li>L’état se termine si l’agrippeur devient Incapable d’agir</li>
+</ul>
+<p><strong>Fin :</strong> Jet de Force ou Agilité opposé contre l’agrippeur (2 PA), ou si l’agrippeur lâche prise.</p>
+<hr>
+<h3 id="entravé">Entravé</h3>
+<p><strong>Description :</strong> Lié par des cordes, chaînes ou magie.</p>
+<p><strong>Effets :</strong></p>
+<ul>
+<li>Vitesse de déplacement réduite à 0</li>
+<li>Désavantage sur tous les jets d’Agilité</li>
+<li>Les attaques contre la créature ont un avantage</li>
+<li>Les attaques de la créature ont un désavantage</li>
+</ul>
+<p><strong>Fin :</strong> Selon la nature des entraves (test de Force, Intrusion, ou destruction des liens).</p>
+<hr>
+<h3 id="aveuglé">Aveuglé</h3>
+<p><strong>Description :</strong> Privé de vision, temporairement ou définitivement.</p>
+<p><strong>Effets :</strong></p>
+<ul>
+<li>Échec automatique de tous les jets basés sur la vue</li>
+<li>Désavantage sur tous les jets d’attaque</li>
+<li>Les attaques contre la créature ont un avantage</li>
+<li>Impossible d’utiliser des pouvoirs nécessitant de voir la cible</li>
+</ul>
+<p><strong>Fin :</strong> Variable selon la cause.</p>
+<hr>
+<h3 id="assourdi">Assourdi</h3>
+<p><strong>Description :</strong> Ouïe altérée ou supprimée.</p>
+<p><strong>Effets :</strong></p>
+<ul>
+<li>Échec automatique de tous les jets basés sur l’ouïe</li>
+<li>Impossible d’entendre les conversations</li>
+<li>Désavantage sur les jets de Vigilance auditifs</li>
+<li>Impossible de coordonner des actions silencieuses avec des alliés</li>
+</ul>
+<p><strong>Fin :</strong> Variable selon la cause.</p>
+<hr>
+<h3 id="empoisonné">Empoisonné</h3>
+<p><strong>Description :</strong> Affecté par une substance toxique.</p>
+<p><strong>Effets :</strong></p>
+<ul>
+<li>Désavantage sur tous les jets d’attaque et de <a href="caracteristiques.md">caractéristiques</a> physiques</li>
+<li>Peut perdre des PV selon le poison (voir description spécifique)</li>
+<li>Désavantage sur les jets de Vigueur</li>
+</ul>
+<p><strong>Fin :</strong> Variable selon le poison, souvent après réussite d’un jet de Vigueur.</p>
+<hr>
+<h3 id="malade">Malade</h3>
+<p><strong>Description :</strong> Affaibli par une maladie naturelle ou surnaturelle.</p>
+<p><strong>Effets :</strong></p>
+<ul>
+<li>Désavantage sur tous les jets physiques</li>
+<li>Récupération de PV réduite de moitié</li>
+<li>Peut avoir des symptômes spécifiques selon la maladie</li>
+</ul>
+<p><strong>Fin :</strong> Jusqu’à guérison (repos prolongé, soins médicaux, ou pouvoirs).</p>
+<hr>
+<h2 id="états-mentaux">États mentaux</h2>
+<h3 id="charmé">Charmé</h3>
+<p><strong>Description :</strong> Sous l’influence mentale d’une autre créature.</p>
+<p><strong>Effets :</strong></p>
+<ul>
+<li>Considère le charmeur comme un ami proche</li>
+<li>Ne peut attaquer le charmeur ou le cibler avec des effets hostiles</li>
+<li>Le charmeur a un avantage sur tous les jets d’Influence contre la créature</li>
+<li>Obéit aux suggestions raisonnables du charmeur</li>
+</ul>
+<p><strong>Fin :</strong> Variable selon la source, ou si le charmeur attaque la créature.</p>
+<hr>
+<h3 id="effrayé">Effrayé</h3>
+<p><strong>Description :</strong> Submergé par la peur d’une source spécifique.</p>
+<p><strong>Effets :</strong></p>
+<ul>
+<li>Désavantage sur tous les jets d’attaque tant que la source de peur est visible</li>
+<li>Désavantage sur tous les jets de caractéristiques tant que la source est visible</li>
+<li>Ne peut volontairement se rapprocher de la source de peur</li>
+<li>Peut être forcé de fuir si l’intensité de la peur est extrême</li>
+</ul>
+<p><strong>Fin :</strong> Variable selon la source, souvent fin du combat ou éloignement de la source.</p>
+<hr>
+<h3 id="confus">Confus</h3>
+<p><strong>Description :</strong> Désorienté, incapable de distinguer alliés et ennemis.</p>
+<p><strong>Effets :</strong></p>
+<p>À chaque tour, lance 1d6 pour déterminer l’action :</p>
+<ul>
+<li><strong>1–2</strong> : Attaque un allié au hasard (si possible)</li>
+<li><strong>3–4</strong> : Reste immobile et babille de manière incohérente</li>
+<li><strong>5–6</strong> : Agit normalement</li>
+</ul>
+<p><strong>Fin :</strong> Variable selon la source.</p>
+<hr>
+<h3 id="dominé">Dominé</h3>
+<p><strong>Description :</strong> Contrôle mental total par une autre créature.</p>
+<p><strong>Effets :</strong></p>
+<ul>
+<li>Le dominateur contrôle complètement les actions de la créature</li>
+<li>La créature utilise ses propres statistiques mais obéit aux ordres</li>
+<li>Le dominateur peut utiliser les PA de la créature à sa place</li>
+<li>La créature garde ses souvenirs mais ne peut résister</li>
+</ul>
+<p><strong>Fin :</strong> Variable selon la source, très difficile à dissiper.</p>
+<hr>
+<h2 id="états-de-combat">États de combat</h2>
+<h3 id="incapable-dagir">Incapable d’agir</h3>
+<p><strong>Description :</strong> Ne peut effectuer aucune action volontaire.</p>
+<p><strong>Effets :</strong></p>
+<ul>
+<li>Ne peut effectuer aucune action (ni 1 PA, ni 2 PA)</li>
+<li>Ne peut effectuer aucune réaction</li>
+<li>Peut encore parler et effectuer des actions gratuites très simples</li>
+</ul>
+<p><strong>Fin :</strong> Variable selon la cause.</p>
+<hr>
+<h3 id="étourdi">Étourdi</h3>
+<p><strong>Description :</strong> Désorienté par un choc violent.</p>
+<p><strong>Effets :</strong></p>
+<ul>
+<li>Incapable d’agir (voir l’état)</li>
+<li>Ne peut se déplacer</li>
+<li>Parle de manière hésitante</li>
+<li>Échec automatique des jets de Force et Agilité</li>
+<li>Les attaques contre la créature ont un avantage</li>
+</ul>
+<p><strong>Fin :</strong> Jusqu’à la fin du prochain tour, sauf mention contraire.</p>
+<hr>
+<h3 id="paralysé">Paralysé</h3>
+<p><strong>Description :</strong> Incapable de bouger par paralysie physique ou mentale.</p>
+<p><strong>Effets :</strong></p>
+<ul>
+<li>Incapable d’agir (voir l’état)</li>
+<li>Ne peut se déplacer ni parler</li>
+<li>Échec automatique des jets de Force et Agilité</li>
+<li>Les attaques contre la créature ont un avantage</li>
+<li>Toute attaque au corps à corps qui touche est un <a href="resolution.md">coup critique</a></li>
+</ul>
+<p><strong>Fin :</strong> Variable selon la source.</p>
+<hr>
+<h3 id="inconscient">Inconscient</h3>
+<p><strong>Description :</strong> Évanoui et inconscient de son environnement.</p>
+<p><strong>Effets :</strong></p>
+<ul>
+<li>Incapable d’agir (voir l’état)</li>
+<li>Ne peut se déplacer ni parler</li>
+<li>N’est pas conscient de son environnement</li>
+<li>Lâche tout ce qu’il tenait et tombe À Terre</li>
+<li>Échec automatique des jets de Force et Agilité</li>
+<li>Les attaques contre la créature ont un avantage</li>
+<li>Toute attaque au corps à corps qui touche est un coup critique</li>
+</ul>
+<p><strong>Fin :</strong> Récupère conscience selon la cause, ou réveil forcé (dégâts, bruit fort, etc.).</p>
+<hr>
+<h3 id="pétrifié">Pétrifié</h3>
+<p><strong>Description :</strong> Transformé en pierre ou substance similaire.</p>
+<p><strong>Effets :</strong></p>
+<ul>
+<li>Incapable d’agir (voir l’état)</li>
+<li>Ne peut se déplacer ni parler</li>
+<li>N’est pas conscient de son environnement</li>
+<li>Poids multiplié par 10, vieillissement arrêté</li>
+<li>Résistance à tous les types de dégâts</li>
+<li>Immunité aux poisons et maladies (effets suspendus, pas annulés)</li>
+</ul>
+<p><strong>Fin :</strong> Magie puissante ou conditions très spécifiques.</p>
+<hr>
+<h2 id="états-spéciaux">États spéciaux</h2>
+<h3 id="épuisé-niveaux-16">Épuisé (niveaux 1–6)</h3>
+<p><strong>Description :</strong> Fatigue extrême affectant toutes les capacités.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Niveau</th><th>Effet</th></tr></thead><tbody><tr><td><strong>1</strong></td><td>Désavantage sur tous les jets de caractéristiques</td></tr><tr><td><strong>2</strong></td><td>Vitesse de déplacement réduite de moitié</td></tr><tr><td><strong>3</strong></td><td>Désavantage sur tous les jets d’attaque et de sauvegarde</td></tr><tr><td><strong>4</strong></td><td>Points d’Action maximum réduits de moitié</td></tr><tr><td><strong>5</strong></td><td>Vitesse de déplacement réduite à 0</td></tr><tr><td><strong>6</strong></td><td>Mort</td></tr></tbody></table>
+<p><strong>Fin :</strong> Un repos prolongé (8h) réduit l’épuisement de 1 niveau.</p>
+<hr>
+<h3 id="invisible">Invisible</h3>
+<p><strong>Description :</strong> Impossible à voir sans aide magique ou sens spécial.</p>
+<p><strong>Effets :</strong></p>
+<ul>
+<li>Considéré comme masqué pour tous les tests de discrétion</li>
+<li>Les attaques contre la créature ont un désavantage</li>
+<li>Les attaques de la créature ont un avantage</li>
+<li>Position détectable par le bruit ou les traces laissées</li>
+<li>L’état se brise si la créature attaque ou utilise un pouvoir offensif</li>
+</ul>
+<p><strong>Fin :</strong> Variable selon la source, souvent après action agressive.</p>
+<hr>
+<h3 id="sanguin">Sanguin</h3>
+<p><strong>Description :</strong> Blessé sérieusement, en dessous de 50% de ses PV.</p>
+<p><strong>Effets :</strong></p>
+<ul>
+<li>État automatique quand une créature passe sous 50% de ses PV max</li>
+<li>Peut déclencher des capacités spéciales (rage, pouvoirs de survie, etc.)</li>
+<li>Visible par tous (blessures, sang, faiblesse)</li>
+<li>Certaines créatures deviennent plus dangereuses quand Sanguines</li>
+</ul>
+<p><strong>Fin :</strong> Quand la créature remonte au-dessus de 50% de ses PV max.</p>
+<hr>
+<h2 id="états-environnementaux">États environnementaux</h2>
+<h3 id="en-feu">En feu</h3>
+<p><strong>Description :</strong> Littéralement en flammes.</p>
+<p><strong>Effets :</strong></p>
+<ul>
+<li>Subit 2 points de dégâts de feu au début de chaque tour</li>
+<li>Le feu peut se propager aux objets inflammables à proximité</li>
+<li>Illumine la zone dans un rayon de 2m</li>
+</ul>
+<p><strong>Fin :</strong> Action de 1 PA pour s’éteindre (se rouler au sol, etc.) ou être éteint par un allié.</p>
+<hr>
+<h3 id="gelé">Gelé</h3>
+<p><strong>Description :</strong> Partiellement gelé par le froid extrême.</p>
+<p><strong>Effets :</strong></p>
+<ul>
+<li>Vitesse de déplacement réduite de moitié</li>
+<li>Désavantage sur tous les jets d’Agilité</li>
+<li>Actions de déplacement coûtent 1 PA supplémentaire</li>
+</ul>
+<p><strong>Fin :</strong> Réchauffement (chaleur, feu, sorts) ou après 10 tours à température normale.</p>
+<hr>
+<h3 id="électrocuté">Électrocuté</h3>
+<p><strong>Description :</strong> Affecté par des décharges électriques.</p>
+<p><strong>Effets :</strong></p>
+<ul>
+<li>Désavantage sur tous les jets pour 1 tour</li>
+<li>Les objets électroniques portés peuvent être endommagés</li>
+<li>Si dans l’eau, les dégâts électriques sont doublés</li>
+</ul>
+<p><strong>Fin :</strong> Après 1 tour, sauf nouvelle exposition.</p>
+<hr>
+<h3 id="corrodé">Corrodé</h3>
+<p><strong>Description :</strong> Chair ou équipement rongé par l’acide.</p>
+<p><strong>Effets :</strong></p>
+<ul>
+<li>L’armure perd 1 point de PA par tour (permanent)</li>
+<li>Subit 1 dégât d’acide par tour</li>
+<li>L’équipement peut être détruit si PA tombe à 0</li>
+</ul>
+<p><strong>Fin :</strong> Nettoyage approprié ou neutralisation de l’acide.</p>
+<hr>
+<h2 id="états-divins">États divins</h2>
+<h3 id="béni">Béni</h3>
+<p><strong>Description :</strong> Touché par la grâce divine.</p>
+<p><strong>Effets :</strong></p>
+<ul>
+<li>Avantage sur tous les jets de résistance contre les effets démoniaques</li>
+<li>Les créatures du Mal ont un désavantage pour attaquer directement</li>
+<li>+1 aux jets de récupération de PV naturelle</li>
+</ul>
+<p><strong>Fin :</strong> Variable selon la source, souvent 24h.</p>
+<hr>
+<h3 id="maudit">Maudit</h3>
+<p><strong>Description :</strong> Marqué par une force maléfique.</p>
+<p><strong>Effets :</strong></p>
+<ul>
+<li>Désavantage sur tous les jets de récupération</li>
+<li>Ne peut récupérer de PV naturellement (doit utiliser des moyens spéciaux)</li>
+<li>Les pouvoirs de soins divins sont inefficaces</li>
+</ul>
+<p><strong>Fin :</strong> <a href="resolution.md">Intervention divine</a>, rituels de purification, ou conditions très spécifiques.</p>
+<hr>
+<h3 id="sanctifié">Sanctifié</h3>
+<p><strong>Description :</strong> Consacré temporairement, canal pur de l’énergie divine.</p>
+<p><strong>Effets :</strong></p>
+<ul>
+<li>Tous les pouvoirs divins ont un <a href="resolution.md">dé d’intensité</a> explosif</li>
+<li>+3 dégâts contre les créatures du Mal</li>
+<li>Résistance aux dégâts des créatures du Mal</li>
+<li>Aura de 2m qui gêne les créatures maléfiques (désavantage)</li>
+</ul>
+<p><strong>Fin :</strong> 10 tours.</p>
+<hr>
+<h3 id="profané">Profané</h3>
+<p><strong>Description :</strong> Souillé par l’énergie démoniaque.</p>
+<p><strong>Effets :</strong></p>
+<ul>
+<li>Tous les pouvoirs infernaux ont un dé d’intensité explosif</li>
+<li>+3 dégâts contre les créatures du Bien</li>
+<li>Résistance aux dégâts des créatures du Bien</li>
+<li>Aura de 2m qui gêne les créatures divines (désavantage)</li>
+</ul>
+<p><strong>Fin :</strong> 10 tours.</p>
+<hr>
+<h3 id="désincarné">Désincarné</h3>
+<p><strong>Description :</strong> L’âme surnaturelle est temporairement séparée de son hôte.</p>
+<p><strong>Effets :</strong></p>
+<ul>
+<li>Ne peut utiliser que les attributs surnaturels (PUI, INF, RES, CLA)</li>
+<li>Ne peut interagir physiquement avec le monde</li>
+<li>Invisible et intangible pour les humains normaux</li>
+<li>Peut être vu par les autres créatures surnaturelles</li>
+<li>Doit <a href="reincarnation.md">se réincarner</a> dans les 10 tours ou retourner dans son plan d’origine</li>
+</ul>
+<p><strong>Fin :</strong> <a href="reincarnation.md">Réincarnation</a> dans un nouvel hôte.</p>
+<hr>
+<h3 id="surchargé-spirituellement">Surchargé spirituellement</h3>
+<p><strong>Description :</strong> Trop d’énergie surnaturelle, corps humain en surcharge.</p>
+<p><strong>Effets :</strong></p>
+<ul>
+<li>+1 à tous les attributs surnaturels</li>
+<li>Double coût en PE pour tous les pouvoirs</li>
+<li>Subit 1 dégât par tour (non réductible par le rang céleste)</li>
+<li>Le corps de l’hôte montre des signes de stress (veines qui brillent, yeux lumineux)</li>
+<li>Désavantage sur tous les jets de discrétion sociale</li>
+</ul>
+<p><strong>Fin :</strong> Après 1 heure ou dépense de toute l’énergie surnaturelle accumulée.</p>
+<hr>
+<h3 id="révélé">Révélé</h3>
+<p><strong>Description :</strong> La vraie nature surnaturelle est visible par tous.</p>
+<p><strong>Effets :</strong></p>
+<ul>
+<li>Les humains peuvent voir l’aura angélique/démoniaque</li>
+<li>Impossible de se faire passer pour un humain normal</li>
+<li>Avantage sur tous les jets d’intimidation</li>
+<li>Désavantage sur tous les jets de discrétion sociale</li>
+</ul>
+<p><strong>Fin :</strong> Variable selon la cause, souvent 1 heure.</p>
+<hr>
+<h3 id="incarnation-ratée">Incarnation ratée</h3>
+<p><strong>Description :</strong> L’âme humaine n’est pas totalement “en sommeil” lors de l’incarnation.</p>
+<p><strong>Effets :</strong></p>
+<ul>
+<li>Deux âmes cohabitent dans le même corps (ange/démon + humain)</li>
+<li>Les résultats de 5 et 6 sur le dé d’action sont considérés comme des échecs automatiques (résistance de l’âme humaine)</li>
+<li>Désavantage sur tous les jets tant que le conflit persiste</li>
+<li>1 affaiblissement d’âme par tour dû au stress spirituel (compte dans le quota journalier de PE)</li>
+<li>L’âme humaine conserve ses souvenirs et sa personnalité</li>
+</ul>
+<p><strong>Fin :</strong> L’ange/démon doit forcer le départ de l’âme humaine (jet de PUI vs VOL humaine) ou abandonner cet hôte.</p>
+<hr>
+<h3 id="forme-véritable">Forme véritable</h3>
+<p><strong>Description :</strong> L’ange/démon manifeste sa véritable essence à travers l’hôte humain.</p>
+<p><strong>Effets :</strong></p>
+<ul>
+<li>Utilise exclusivement les attributs surnaturels à leur plein potentiel</li>
+<li>+2 à tous les attributs surnaturels (PUI, INF, RES, CLA)</li>
+<li>Tous les pouvoirs ont un dé d’intensité explosif</li>
+<li><strong>Volant</strong> : Ailes d’ange/démon visibles et fonctionnelles, capacité de vol</li>
+<li>L’hôte humain subit 2 dégâts par tour (non réductibles par rang céleste)</li>
+<li>Aura surnaturelle visible : impossible de se faire passer pour humain</li>
+<li>Coût d’activation : 5 PE, puis 2 PE par tour pour maintenir</li>
+</ul>
+<p><strong>Fin :</strong> Quand l’ange/démon cesse de maintenir l’état ou quand l’hôte tombe à 0 PV.</p>
+<hr>
+<h2 id="états-affectant-les-objets">États affectant les objets</h2>
+<div class="admonition note">
+<p class="admonition-title">Règles générales pour les objets</p>
+<ul>
+<li><strong><a href="blessures.md">Points de Vie</a></strong> : Les objets ont des PV selon leur taille et résistance</li>
+<li><strong>PA (Points d’Armure)</strong> : Selon le matériau (bois 2, métal 5, pierre 8, etc.)</li>
+<li><strong>Immunités</strong> : Tous les objets sont immunisés aux dégâts mentaux et de poison</li>
+<li><strong>Objets portés</strong> : Utilisent la CA et les jets de sauvegarde du porteur</li>
+<li><strong>Objets magiques</strong> : Résistance à tous les dégâts, PV doublés</li>
+</ul>
+</div>
+<h3 id="endommagé">Endommagé</h3>
+<p><strong>Description :</strong> L’objet a subi des dégâts mais reste fonctionnel.</p>
+<p><strong>Effets :</strong></p>
+<ul>
+<li>S’applique quand l’objet perd 25% de ses PV max</li>
+<li><strong>Armes</strong> : -1 aux jets d’attaque</li>
+<li><strong>Armures</strong> : -1 PA permanent</li>
+<li><strong>Objets complexes</strong> : Dysfonctionnement sur un résultat de 1 au dé d’intensité</li>
+</ul>
+<p><strong>Fin :</strong> Réparation complète ou destruction de l’objet.</p>
+<hr>
+<h3 id="gravement-endommagé">Gravement endommagé</h3>
+<p><strong>Description :</strong> L’objet est sérieusement abîmé et à peine fonctionnel.</p>
+<p><strong>Effets :</strong></p>
+<ul>
+<li>S’applique quand l’objet perd 50% de ses PV max</li>
+<li><strong>Armes</strong> : -2 aux jets d’attaque, -1 aux dégâts</li>
+<li><strong>Armures</strong> : -2 PA permanent</li>
+<li><strong>Objets complexes</strong> : Dysfonctionnement sur un résultat de 1–2 au dé d’intensité</li>
+<li>Visible de loin : craquelures, bosses, parties manquantes</li>
+</ul>
+<p><strong>Fin :</strong> Réparation majeure ou destruction de l’objet.</p>
+<hr>
+<h3 id="cassé">Cassé</h3>
+<p><strong>Description :</strong> L’objet ne fonctionne plus du tout.</p>
+<p><strong>Effets :</strong></p>
+<ul>
+<li>S’applique quand l’objet atteint 0 PV</li>
+<li><strong>Armes</strong> : Considérées comme armes improvisées (dégâts réduits)</li>
+<li><strong>Armures</strong> : PA réduite à 0, désavantage aux jets d’Agilité</li>
+<li><strong>Objets magiques</strong> : Pouvoirs magiques inactifs mais objet réparable</li>
+<li><strong>Objets mundanes</strong> : Généralement irrécupérables</li>
+</ul>
+<p><strong>Fin :</strong> Magie puissante ou remplacement complet.</p>
+<hr>
+<h3 id="détruit">Détruit</h3>
+<p><strong>Description :</strong> L’objet est complètement anéanti.</p>
+<p><strong>Effets :</strong></p>
+<ul>
+<li>S’applique avec des dégâts excessifs (double des PV max) ou effets spéciaux</li>
+<li>Aucune possibilité de réparation normale</li>
+<li>Même les objets magiques peuvent être détruits définitivement</li>
+<li>Ne laisse que des débris inutilisables</li>
+</ul>
+<p><strong>Fin :</strong> Irréversible, sauf magie de très haut niveau.</p>
+<hr>
+<h3 id="rouillé-métaux-uniquement">Rouillé (métaux uniquement)</h3>
+<p><strong>Description :</strong> Corrosion progressive du métal.</p>
+<p><strong>Effets :</strong></p>
+<ul>
+<li><strong>Environnement humide</strong> : Perte de 1 PV par semaine</li>
+<li><strong>Immersion ou humidité extrême</strong> : Perte de 1 PV par jour</li>
+<li>Une arme rouillée est automatiquement considérée comme <strong>Endommagée</strong></li>
+<li>Aspect terne et orangé caractéristique</li>
+<li>Progression vers l’état Cassé si non traité</li>
+</ul>
+<p><strong>Fin :</strong> Nettoyage approprié, magie, ou progression vers destruction.</p>
+<hr>
+<h3 id="corrodé-objets-exposés-à-lacide">Corrodé (objets exposés à l’acide)</h3>
+<p><strong>Description :</strong> Rongé par des substances acides.</p>
+<p><strong>Effets :</strong></p>
+<ul>
+<li>Perte immédiate de 1 PV par tour d’exposition</li>
+<li><strong>Métal</strong> : PA réduite de 1 par tour</li>
+<li><strong>Tissu/Cuir</strong> : Destruction en 3 tours</li>
+<li><strong>Pierre</strong> : Résiste mieux, perte de 1 PV par tour seulement</li>
+</ul>
+<p><strong>Fin :</strong> Éloignement de la source d’acide ou neutralisation.</p>
+<hr>
+<h3 id="gelé-objets-exposés-au-froid-extrême">Gelé (objets exposés au froid extrême)</h3>
+<p><strong>Description :</strong> Rendu cassant par le froid.</p>
+<p><strong>Effets :</strong></p>
+<ul>
+<li>Vulnérabilité aux dégâts contondants (dégâts doublés)</li>
+<li><strong>Liquides</strong> : Solidification complète, expansion possible</li>
+<li><strong>Métal</strong> : Devient cassant, risque de bris au moindre choc</li>
+<li><strong>Mécanismes</strong> : Blocage complet des parties mobiles</li>
+</ul>
+<p><strong>Fin :</strong> Réchauffement progressif (attention aux chocs thermiques).</p>
+<hr>
+<h3 id="en-fusion-objets-exposés-à-chaleur-extrême">En fusion (objets exposés à chaleur extrême)</h3>
+<p><strong>Description :</strong> Ramollissement ou fusion des matériaux.</p>
+<p><strong>Effets :</strong></p>
+<ul>
+<li><strong>Métal</strong> : Perte de forme, PA réduite à 0, dégâts de feu aux utilisateurs</li>
+<li><strong>Plastique/Résine</strong> : Déformation et toxicité des vapeurs</li>
+<li><strong>Bois</strong> : Carbonisation progressive puis combustion</li>
+<li>Impossible à utiliser tant que l’état persiste</li>
+</ul>
+<p><strong>Fin :</strong> Refroidissement, mais dégâts souvent permanents.</p>
+<hr>
+<h3 id="électrifié-objets-conducteurs-sous-tension">Électrifié (objets conducteurs sous tension)</h3>
+<p><strong>Description :</strong> Objet chargé électriquement.</p>
+<p><strong>Effets :</strong></p>
+<ul>
+<li>Inflige 1 dégât électrique à quiconque le touche sans protection</li>
+<li><strong>Mécanismes électroniques</strong> : Dysfonctionnement ou destruction</li>
+<li><strong>Objets métalliques</strong> : Deviennent dangereux à manipuler</li>
+<li>Peut se propager aux objets métalliques en contact</li>
+</ul>
+<p><strong>Fin :</strong> Décharge complète ou isolation.</p>
+<hr>
+<h3 id="maudit-objets-affectés-par-magie-noire">Maudit (objets affectés par magie noire)</h3>
+<p><strong>Description :</strong> Souillé par des énergies maléfiques.</p>
+<p><strong>Effets :</strong></p>
+<ul>
+<li>L’objet acquiert une “volonté” malveillante</li>
+<li>Fonctionne mal au pire moment (échecs critiques plus fréquents)</li>
+<li>Peut influencer négativement son utilisateur</li>
+<li><strong>Armes</strong> : Risque d’attaquer les alliés</li>
+<li><strong>Armures</strong> : Peut se resserrer ou entraver le porteur</li>
+</ul>
+<p><strong>Fin :</strong> Purification religieuse, magie de haut niveau, ou exorcisme.</p>
+<hr>
+<h3 id="béni-objets-touchés-par-la-grâce-divine">Béni (objets touchés par la grâce divine)</h3>
+<p><strong>Description :</strong> Imprégné d’énergie divine positive.</p>
+<p><strong>Effets :</strong></p>
+<ul>
+<li>+1 aux jets d’attaque ou de protection (selon le type d’objet)</li>
+<li>Brillance douce dans l’obscurité</li>
+<li>Efficacité doublée contre les créatures du Mal</li>
+<li><strong>Armes</strong> : Dégâts sacrés supplémentaires</li>
+<li><strong>Armures</strong> : Résistance aux attaques maléfiques</li>
+</ul>
+<p><strong>Fin :</strong> Variable selon la source, souvent 24h ou une mission.</p>
+<hr>
+<h3 id="surchargé-objets-technologiquesmagiques">Surchargé (objets technologiques/magiques)</h3>
+<p><strong>Description :</strong> Trop d’énergie traverse l’objet.</p>
+<p><strong>Effets :</strong></p>
+<ul>
+<li><strong>Électronique</strong> : Dysfonctionnement sur un résultat de 1–2 au dé d’intensité, écrans qui clignotent</li>
+<li><strong>Objets magiques</strong> : Effets imprévisibles sur un résultat de 1 au dé d’intensité, coût en PE doublé</li>
+<li>Risque d’explosion (dégâts de zone si échec critique)</li>
+<li>Perte progressive de PV (1 par heure)</li>
+</ul>
+<p><strong>Fin :</strong> Décharge contrôlée ou destruction.</p>
+<hr>
+<h3 id="submergé-objets-sous-leau">Submergé (objets sous l’eau)</h3>
+<p><strong>Description :</strong> Immergé dans un liquide.</p>
+<p><strong>Effets :</strong></p>
+<ul>
+<li><strong>Électronique</strong> : Dysfonctionnement immédiat puis destruction</li>
+<li><strong>Parchemins/Livres</strong> : Encre qui coule, pages qui se délitent</li>
+<li><strong>Mécanismes</strong> : Corrosion et blocage progressifs</li>
+<li><strong>Poudre/Explosifs</strong> : Inefficaces jusqu’à séchage complet</li>
+</ul>
+<p><strong>Fin :</strong> Séchage complet (peut laisser des dégâts permanents).</p>
+<hr>
+<h3 id="instable-objets-magiques-dysfonctionnels">Instable (objets magiques dysfonctionnels)</h3>
+<p><strong>Description :</strong> L’enchantement magique est défaillant.</p>
+<p><strong>Effets :</strong></p>
+<ul>
+<li>Dysfonctionnement sur un résultat de 1–2 au dé d’intensité (effet inverse ou aléatoire)</li>
+<li>Peut affecter des cibles non voulues</li>
+<li><strong>Potions</strong> : Effets imprévisibles ou toxiques</li>
+<li><strong>Armes magiques</strong> : Peuvent exploser ou affecter le porteur</li>
+</ul>
+<p><strong>Fin :</strong> Réparation magique experte ou dissipation de la magie.</p>
+<hr>
+<h2 id="réparation-des-objets">Réparation des objets</h2>
+<h3 id="réparation-mundane">Réparation mundane</h3>
+<ul>
+<li><strong>Outils requis</strong> : Selon le matériau (marteau/enclume pour métal, etc.)</li>
+<li><strong>Temps</strong> : 1 heure par point de dégât à réparer</li>
+<li><strong><a href="competences.md">Compétence</a></strong> : Artisanat approprié</li>
+<li><strong>Coût</strong> : 10% de la valeur de l’objet en matériaux</li>
+</ul>
+<h3 id="réparation-magique">Réparation magique</h3>
+<ul>
+<li><strong>Sort de Réparation Mineure</strong> : Restaure 1d4 PV instantanément</li>
+<li><strong>Sort de Réparation Majeure</strong> : Restaure tous les PV, supprime un état négatif</li>
+<li><strong>Bénédiction d’Artisan</strong> : Double l’efficacité des réparations mundanes</li>
+</ul>
+<h3 id="objets-magiques">Objets magiques</h3>
+<ul>
+<li>Nécessitent des composants magiques pour la réparation</li>
+<li>Certains ne peuvent être réparés que par leur créateur original</li>
+<li>Les artefacts peuvent avoir des conditions de réparation uniques</li>
+</ul> </div> <footer class="sl-flex astro-3yyafb3n"> <div class="meta sl-flex astro-3yyafb3n">   </div> <div class="pagination-links print:hidden astro-u2l5gyhi" dir="ltr"> <a href="/ins-mv-rogue-srd/reference/mots-cles/" rel="prev" class="astro-u2l5gyhi"> <svg aria-hidden="true" class="astro-u2l5gyhi astro-c6vsoqas" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1.5rem;"><path d="M17 11H9.41l3.3-3.29a1.004 1.004 0 1 0-1.42-1.42l-5 5a1 1 0 0 0-.21.33 1 1 0 0 0 0 .76 1 1 0 0 0 .21.33l5 5a1.002 1.002 0 0 0 1.639-.325 1 1 0 0 0-.219-1.095L9.41 13H17a1 1 0 0 0 0-2Z"/></svg>  <span class="astro-u2l5gyhi"> Précédent <br class="astro-u2l5gyhi"> <span class="link-title astro-u2l5gyhi">Mots-clés</span> </span> </a> <a href="/ins-mv-rogue-srd/simulateur/" rel="next" class="astro-u2l5gyhi"> <svg aria-hidden="true" class="astro-u2l5gyhi astro-c6vsoqas" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1.5rem;"><path d="M17.92 11.62a1.001 1.001 0 0 0-.21-.33l-5-5a1.003 1.003 0 1 0-1.42 1.42l3.3 3.29H7a1 1 0 0 0 0 2h7.59l-3.3 3.29a1.002 1.002 0 0 0 .325 1.639 1 1 0 0 0 1.095-.219l5-5a1 1 0 0 0 .21-.33 1 1 0 0 0 0-.76Z"/></svg>  <span class="astro-u2l5gyhi"> Suivant <br class="astro-u2l5gyhi"> <span class="link-title astro-u2l5gyhi">Simulateur</span> </span> </a> </div>   </footer>  </div> </div>   </main> </div> </div>  </div> </div>  </body></html>

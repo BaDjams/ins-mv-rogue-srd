@@ -1,0 +1,334 @@
+<!DOCTYPE html><html lang="fr" dir="ltr" data-theme="dark" data-has-toc data-has-sidebar class="astro-bguv2lll"> <head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><title>CONTEXTE DU JEU | INS·MV ROGUE SRD</title><link rel="canonical" href="https://badjams.github.io/ins-mv-rogue-srd/contexte/contexte/"/><link rel="sitemap" href="/ins-mv-rogue-srd/sitemap-index.xml"/><script src="/ins-mv-rogue-srd/scripts/rogue-srd.js" defer></script><link rel="shortcut icon" href="/ins-mv-rogue-srd/favicon.svg" type="image/svg+xml"/><meta name="generator" content="Astro v5.18.1"/><meta name="generator" content="Starlight v0.32.6"/><meta property="og:title" content="CONTEXTE DU JEU"/><meta property="og:type" content="article"/><meta property="og:url" content="https://badjams.github.io/ins-mv-rogue-srd/contexte/contexte/"/><meta property="og:locale" content="fr"/><meta property="og:description" content="System Reference Document pour INS-MV ROGUE"/><meta property="og:site_name" content="INS·MV ROGUE SRD"/><meta name="twitter:card" content="summary_large_image"/><meta name="description" content="System Reference Document pour INS-MV ROGUE"/><script>
+	window.StarlightThemeProvider = (() => {
+		const storedTheme =
+			typeof localStorage !== 'undefined' && localStorage.getItem('starlight-theme');
+		const theme =
+			storedTheme ||
+			(window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+		document.documentElement.dataset.theme = theme === 'light' ? 'light' : 'dark';
+		return {
+			updatePickers(theme = storedTheme || 'auto') {
+				document.querySelectorAll('starlight-theme-select').forEach((picker) => {
+					const select = picker.querySelector('select');
+					if (select) select.value = theme;
+					/** @type {HTMLTemplateElement | null} */
+					const tmpl = document.querySelector(`#theme-icons`);
+					const newIcon = tmpl && tmpl.content.querySelector('.' + theme);
+					if (newIcon) {
+						const oldIcon = picker.querySelector('svg.label-icon');
+						if (oldIcon) {
+							oldIcon.replaceChildren(...newIcon.cloneNode(true).childNodes);
+						}
+					}
+				});
+			},
+		};
+	})();
+</script><template id="theme-icons"><svg aria-hidden="true" class="light astro-c6vsoqas" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1em;"><path d="M5 12a1 1 0 0 0-1-1H3a1 1 0 0 0 0 2h1a1 1 0 0 0 1-1Zm.64 5-.71.71a1 1 0 0 0 0 1.41 1 1 0 0 0 1.41 0l.71-.71A1 1 0 0 0 5.64 17ZM12 5a1 1 0 0 0 1-1V3a1 1 0 0 0-2 0v1a1 1 0 0 0 1 1Zm5.66 2.34a1 1 0 0 0 .7-.29l.71-.71a1 1 0 1 0-1.41-1.41l-.66.71a1 1 0 0 0 0 1.41 1 1 0 0 0 .66.29Zm-12-.29a1 1 0 0 0 1.41 0 1 1 0 0 0 0-1.41l-.71-.71a1.004 1.004 0 1 0-1.43 1.41l.73.71ZM21 11h-1a1 1 0 0 0 0 2h1a1 1 0 0 0 0-2Zm-2.64 6A1 1 0 0 0 17 18.36l.71.71a1 1 0 0 0 1.41 0 1 1 0 0 0 0-1.41l-.76-.66ZM12 6.5a5.5 5.5 0 1 0 5.5 5.5A5.51 5.51 0 0 0 12 6.5Zm0 9a3.5 3.5 0 1 1 0-7 3.5 3.5 0 0 1 0 7Zm0 3.5a1 1 0 0 0-1 1v1a1 1 0 0 0 2 0v-1a1 1 0 0 0-1-1Z"/></svg> <svg aria-hidden="true" class="dark astro-c6vsoqas" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1em;"><path d="M21.64 13a1 1 0 0 0-1.05-.14 8.049 8.049 0 0 1-3.37.73 8.15 8.15 0 0 1-8.14-8.1 8.59 8.59 0 0 1 .25-2A1 1 0 0 0 8 2.36a10.14 10.14 0 1 0 14 11.69 1 1 0 0 0-.36-1.05Zm-9.5 6.69A8.14 8.14 0 0 1 7.08 5.22v.27a10.15 10.15 0 0 0 10.14 10.14 9.784 9.784 0 0 0 2.1-.22 8.11 8.11 0 0 1-7.18 4.32v-.04Z"/></svg> <svg aria-hidden="true" class="auto astro-c6vsoqas" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1em;"><path d="M21 14h-1V7a3 3 0 0 0-3-3H7a3 3 0 0 0-3 3v7H3a1 1 0 0 0-1 1v2a3 3 0 0 0 3 3h14a3 3 0 0 0 3-3v-2a1 1 0 0 0-1-1ZM6 7a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v7H6V7Zm14 10a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1v-1h16v1Z"/></svg> </template><link rel="stylesheet" href="/ins-mv-rogue-srd/_astro/print.BJ0teN4y.css" media="print"><link rel="stylesheet" href="/ins-mv-rogue-srd/_astro/index.xhjxHGZv.css"><script type="module" src="/ins-mv-rogue-srd/_astro/page.B1D-nYk3.js"></script></head> <body class="astro-bguv2lll"> <a href="#_top" class="astro-7q3lir66">Aller au contenu</a>  <div class="page sl-flex astro-vrdttmbt"> <header class="header astro-vrdttmbt"><div class="header sl-flex astro-kmkmnagf"> <div class="title-wrapper sl-flex astro-kmkmnagf"> <a href="/ins-mv-rogue-srd/" class="site-title sl-flex astro-m46x6ez3">  <span class="astro-m46x6ez3" translate="no"> INS·MV ROGUE SRD </span> </a>  </div> <div class="sl-flex print:hidden astro-kmkmnagf"> <site-search class="astro-kmkmnagf astro-v37mnknz" data-translations="{&#34;placeholder&#34;:&#34;Rechercher&#34;}"> <button data-open-modal disabled aria-label="Rechercher" aria-keyshortcuts="Control+K" class="astro-v37mnknz"> <svg aria-hidden="true" class="astro-v37mnknz astro-c6vsoqas" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1em;"><path d="M21.71 20.29 18 16.61A9 9 0 1 0 16.61 18l3.68 3.68a.999.999 0 0 0 1.42 0 1 1 0 0 0 0-1.39ZM11 18a7 7 0 1 1 0-14 7 7 0 0 1 0 14Z"/></svg>  <span class="sl-hidden md:sl-block astro-v37mnknz" aria-hidden="true">Rechercher</span> <kbd class="sl-hidden md:sl-flex astro-v37mnknz" style="display: none;"> <kbd class="astro-v37mnknz">Ctrl</kbd><kbd class="astro-v37mnknz">K</kbd> </kbd> </button> <dialog style="padding:0" aria-label="Rechercher" class="astro-v37mnknz"> <div class="dialog-frame sl-flex astro-v37mnknz">  <button data-close-modal class="sl-flex md:sl-hidden astro-v37mnknz"> Annuler </button> <div class="search-container astro-v37mnknz"> <div id="starlight__search" class="astro-v37mnknz"></div> </div> </div> </dialog> </site-search>  <script>
+	(() => {
+		const openBtn = document.querySelector('button[data-open-modal]');
+		const shortcut = openBtn?.querySelector('kbd');
+		if (!openBtn || !(shortcut instanceof HTMLElement)) return;
+		const platformKey = shortcut.querySelector('kbd');
+		if (platformKey && /(Mac|iPhone|iPod|iPad)/i.test(navigator.platform)) {
+			platformKey.textContent = '⌘';
+			openBtn.setAttribute('aria-keyshortcuts', 'Meta+K');
+		}
+		shortcut.style.display = '';
+	})();
+</script> <script type="module" src="/ins-mv-rogue-srd/_astro/Search.astro_astro_type_script_index_0_lang.DY7By7OT.js"></script>   </div> <div class="sl-hidden md:sl-flex print:hidden right-group astro-kmkmnagf"> <div class="sl-flex social-icons astro-kmkmnagf"> <a href="https://github.com/BaDjams/ins-mv-rogue-srd" rel="me" class="sl-flex astro-wy4te6ga"><span class="sr-only astro-wy4te6ga">GitHub</span><svg aria-hidden="true" class="astro-wy4te6ga astro-c6vsoqas" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1em;"><path d="M12 .3a12 12 0 0 0-3.8 23.38c.6.12.83-.26.83-.57L9 21.07c-3.34.72-4.04-1.61-4.04-1.61-.55-1.39-1.34-1.76-1.34-1.76-1.08-.74.09-.73.09-.73 1.2.09 1.83 1.24 1.83 1.24 1.08 1.83 2.81 1.3 3.5 1 .1-.78.42-1.31.76-1.61-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.14-.3-.54-1.52.1-3.18 0 0 1-.32 3.3 1.23a11.5 11.5 0 0 1 6 0c2.28-1.55 3.29-1.23 3.29-1.23.64 1.66.24 2.88.12 3.18a4.65 4.65 0 0 1 1.23 3.22c0 4.61-2.8 5.63-5.48 5.92.42.36.81 1.1.81 2.22l-.01 3.29c0 .31.2.69.82.57A12 12 0 0 0 12 .3Z"/></svg> </a> </div> <starlight-theme-select>  <label style="--sl-select-width: 6.25em" class="astro-4yphtoen"> <span class="sr-only astro-4yphtoen">Selectionner le thème</span> <svg aria-hidden="true" class="icon label-icon astro-4yphtoen astro-c6vsoqas" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1em;"><path d="M21 14h-1V7a3 3 0 0 0-3-3H7a3 3 0 0 0-3 3v7H3a1 1 0 0 0-1 1v2a3 3 0 0 0 3 3h14a3 3 0 0 0 3-3v-2a1 1 0 0 0-1-1ZM6 7a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v7H6V7Zm14 10a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1v-1h16v1Z"/></svg>  <select value="auto" autocomplete="off" class="astro-4yphtoen"> <option value="dark" class="astro-4yphtoen">Sombre</option><option value="light" class="astro-4yphtoen">Clair</option><option value="auto" selected class="astro-4yphtoen">Auto</option> </select> <svg aria-hidden="true" class="icon caret astro-4yphtoen astro-c6vsoqas" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1em;"><path d="M17 9.17a1 1 0 0 0-1.41 0L12 12.71 8.46 9.17a1 1 0 1 0-1.41 1.42l4.24 4.24a1.002 1.002 0 0 0 1.42 0L17 10.59a1.002 1.002 0 0 0 0-1.42Z"/></svg>  </label>  </starlight-theme-select>  <script>
+	StarlightThemeProvider.updatePickers();
+</script> <script type="module">const r="starlight-theme",o=e=>e==="auto"||e==="dark"||e==="light"?e:"auto",c=()=>o(typeof localStorage<"u"&&localStorage.getItem(r));function n(e){typeof localStorage<"u"&&localStorage.setItem(r,e==="light"||e==="dark"?e:"")}const l=()=>matchMedia("(prefers-color-scheme: light)").matches?"light":"dark";function t(e){StarlightThemeProvider.updatePickers(e),document.documentElement.dataset.theme=e==="auto"?l():e,n(e)}matchMedia("(prefers-color-scheme: light)").addEventListener("change",()=>{c()==="auto"&&t("auto")});class s extends HTMLElement{constructor(){super(),t(c()),this.querySelector("select")?.addEventListener("change",a=>{a.currentTarget instanceof HTMLSelectElement&&t(o(a.currentTarget.value))})}}customElements.define("starlight-theme-select",s);</script> <script type="module">class s extends HTMLElement{constructor(){super();const e=this.querySelector("select");e&&(e.addEventListener("change",t=>{t.currentTarget instanceof HTMLSelectElement&&(window.location.pathname=t.currentTarget.value)}),window.addEventListener("pageshow",t=>{if(!t.persisted)return;const n=e.querySelector("option[selected]")?.index;n!==e.selectedIndex&&(e.selectedIndex=n??0)}))}}customElements.define("starlight-lang-select",s);</script> </div> </div> </header> <nav class="sidebar print:hidden astro-vrdttmbt" aria-label="principale"> <starlight-menu-button class="print:hidden astro-jif73yzw"> <button aria-expanded="false" aria-label="Menu" aria-controls="starlight__sidebar" class="sl-flex md:sl-hidden astro-jif73yzw"> <svg aria-hidden="true" class="astro-jif73yzw astro-c6vsoqas" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1em;"><path d="M3 8h18a1 1 0 1 0 0-2H3a1 1 0 0 0 0 2Zm18 8H3a1 1 0 0 0 0 2h18a1 1 0 0 0 0-2Zm0-5H3a1 1 0 0 0 0 2h18a1 1 0 0 0 0-2Z"/></svg>  </button> </starlight-menu-button> <script type="module">class s extends HTMLElement{constructor(){super(),this.btn=this.querySelector("button"),this.btn.addEventListener("click",()=>this.toggleExpanded());const t=this.closest("nav");t&&t.addEventListener("keyup",e=>this.closeOnEscape(e))}setExpanded(t){this.setAttribute("aria-expanded",String(t)),document.body.toggleAttribute("data-mobile-menu-expanded",t)}toggleExpanded(){this.setExpanded(this.getAttribute("aria-expanded")!=="true")}closeOnEscape(t){t.code==="Escape"&&(this.setExpanded(!1),this.btn.focus())}}customElements.define("starlight-menu-button",s);</script>   <div id="starlight__sidebar" class="sidebar-pane astro-vrdttmbt"> <div class="sidebar-content sl-flex astro-vrdttmbt"> <sl-sidebar-state-persist data-hash="1fpkjlk" class="astro-kku4brbg"> <script aria-hidden="true">
+		(() => {
+			try {
+				if (!matchMedia('(min-width: 50em)').matches) return;
+				/** @type {HTMLElement | null} */
+				const target = document.querySelector('sl-sidebar-state-persist');
+				const state = JSON.parse(sessionStorage.getItem('sl-sidebar-state') || '0');
+				if (!target || !state || target.dataset.hash !== state.hash) return;
+				window._starlightScrollRestore = state.scroll;
+				customElements.define(
+					'sl-sidebar-restore',
+					class SidebarRestore extends HTMLElement {
+						connectedCallback() {
+							try {
+								const idx = parseInt(this.dataset.index || '');
+								const details = this.closest('details');
+								if (details && typeof state.open[idx] === 'boolean') details.open = state.open[idx];
+							} catch {}
+						}
+					}
+				);
+			} catch {}
+		})();
+	</script>  <ul class="top-level astro-3ii7xxms"> <li class="astro-3ii7xxms"> <a href="/ins-mv-rogue-srd/" aria-current="false" class="large astro-3ii7xxms"> <span class="astro-3ii7xxms">Accueil</span>  </a> </li><li class="astro-3ii7xxms"> <a href="/ins-mv-rogue-srd/srd/" aria-current="false" class="large astro-3ii7xxms"> <span class="astro-3ii7xxms">SRD</span>  </a> </li><li class="astro-3ii7xxms"> <details open class="astro-3ii7xxms"> <sl-sidebar-restore data-index="0"></sl-sidebar-restore> <summary class="astro-3ii7xxms"> <div class="group-label astro-3ii7xxms"> <span class="large astro-3ii7xxms">Contexte</span>  </div> <svg aria-hidden="true" class="caret astro-3ii7xxms astro-c6vsoqas" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1.25rem;"><path d="m14.83 11.29-4.24-4.24a1 1 0 1 0-1.42 1.41L12.71 12l-3.54 3.54a1 1 0 0 0 0 1.41 1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.24-4.24a1.002 1.002 0 0 0 0-1.42Z"/></svg>  </summary> <ul class="astro-3ii7xxms"> <li class="astro-3ii7xxms"> <a href="/ins-mv-rogue-srd/contexte/contexte/" aria-current="page" class="astro-3ii7xxms"> <span class="astro-3ii7xxms">Le monde du jeu</span>  </a> </li> </ul>  </details> </li><li class="astro-3ii7xxms"> <details open class="astro-3ii7xxms"> <sl-sidebar-restore data-index="1"></sl-sidebar-restore> <summary class="astro-3ii7xxms"> <div class="group-label astro-3ii7xxms"> <span class="large astro-3ii7xxms">Personnage</span>  </div> <svg aria-hidden="true" class="caret astro-3ii7xxms astro-c6vsoqas" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1.25rem;"><path d="m14.83 11.29-4.24-4.24a1 1 0 1 0-1.42 1.41L12.71 12l-3.54 3.54a1 1 0 0 0 0 1.41 1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.24-4.24a1.002 1.002 0 0 0 0-1.42Z"/></svg>  </summary> <ul class="astro-3ii7xxms"> <li class="astro-3ii7xxms"> <a href="/ins-mv-rogue-srd/personnage/caracteristiques/" aria-current="false" class="astro-3ii7xxms"> <span class="astro-3ii7xxms">Caractéristiques &amp; Attributs</span>  </a> </li><li class="astro-3ii7xxms"> <a href="/ins-mv-rogue-srd/personnage/creation/" aria-current="false" class="astro-3ii7xxms"> <span class="astro-3ii7xxms">Création d&#39;âme</span>  </a> </li><li class="astro-3ii7xxms"> <a href="/ins-mv-rogue-srd/personnage/rang/" aria-current="false" class="astro-3ii7xxms"> <span class="astro-3ii7xxms">Rang céleste</span>  </a> </li><li class="astro-3ii7xxms"> <a href="/ins-mv-rogue-srd/personnage/progression/" aria-current="false" class="astro-3ii7xxms"> <span class="astro-3ii7xxms">Position hiérarchique</span>  </a> </li><li class="astro-3ii7xxms"> <a href="/ins-mv-rogue-srd/personnage/reincarnation/" aria-current="false" class="astro-3ii7xxms"> <span class="astro-3ii7xxms">Réincarnation</span>  </a> </li> </ul>  </details> </li><li class="astro-3ii7xxms"> <details open class="astro-3ii7xxms"> <sl-sidebar-restore data-index="2"></sl-sidebar-restore> <summary class="astro-3ii7xxms"> <div class="group-label astro-3ii7xxms"> <span class="large astro-3ii7xxms">Mécanique</span>  </div> <svg aria-hidden="true" class="caret astro-3ii7xxms astro-c6vsoqas" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1.25rem;"><path d="m14.83 11.29-4.24-4.24a1 1 0 1 0-1.42 1.41L12.71 12l-3.54 3.54a1 1 0 0 0 0 1.41 1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.24-4.24a1.002 1.002 0 0 0 0-1.42Z"/></svg>  </summary> <ul class="astro-3ii7xxms"> <li class="astro-3ii7xxms"> <a href="/ins-mv-rogue-srd/mecanique/resolution/" aria-current="false" class="astro-3ii7xxms"> <span class="astro-3ii7xxms">Résolution D666</span>  </a> </li><li class="astro-3ii7xxms"> <a href="/ins-mv-rogue-srd/mecanique/combat/" aria-current="false" class="astro-3ii7xxms"> <span class="astro-3ii7xxms">Combat &amp; initiative</span>  </a> </li><li class="astro-3ii7xxms"> <a href="/ins-mv-rogue-srd/mecanique/pouvoirs/" aria-current="false" class="astro-3ii7xxms"> <span class="astro-3ii7xxms">POUVOIRS</span>  </a> </li><li class="astro-3ii7xxms"> <a href="/ins-mv-rogue-srd/mecanique/competences/" aria-current="false" class="astro-3ii7xxms"> <span class="astro-3ii7xxms">Compétences</span>  </a> </li><li class="astro-3ii7xxms"> <a href="/ins-mv-rogue-srd/mecanique/energie/" aria-current="false" class="astro-3ii7xxms"> <span class="astro-3ii7xxms">Énergie</span>  </a> </li><li class="astro-3ii7xxms"> <a href="/ins-mv-rogue-srd/mecanique/blessures/" aria-current="false" class="astro-3ii7xxms"> <span class="astro-3ii7xxms">DÉGÂTS ET BLESSURES</span>  </a> </li> </ul>  </details> </li><li class="astro-3ii7xxms"> <details open class="astro-3ii7xxms"> <sl-sidebar-restore data-index="3"></sl-sidebar-restore> <summary class="astro-3ii7xxms"> <div class="group-label astro-3ii7xxms"> <span class="large astro-3ii7xxms">Référence</span>  </div> <svg aria-hidden="true" class="caret astro-3ii7xxms astro-c6vsoqas" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1.25rem;"><path d="m14.83 11.29-4.24-4.24a1 1 0 1 0-1.42 1.41L12.71 12l-3.54 3.54a1 1 0 0 0 0 1.41 1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.24-4.24a1.002 1.002 0 0 0 0-1.42Z"/></svg>  </summary> <ul class="astro-3ii7xxms"> <li class="astro-3ii7xxms"> <details open class="astro-3ii7xxms"> <sl-sidebar-restore data-index="4"></sl-sidebar-restore> <summary class="astro-3ii7xxms"> <div class="group-label astro-3ii7xxms"> <span class="large astro-3ii7xxms">equipement</span>  </div> <svg aria-hidden="true" class="caret astro-3ii7xxms astro-c6vsoqas" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1.25rem;"><path d="m14.83 11.29-4.24-4.24a1 1 0 1 0-1.42 1.41L12.71 12l-3.54 3.54a1 1 0 0 0 0 1.41 1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.24-4.24a1.002 1.002 0 0 0 0-1.42Z"/></svg>  </summary> <ul class="astro-3ii7xxms"> <li class="astro-3ii7xxms"> <a href="/ins-mv-rogue-srd/reference/equipement/melee/" aria-current="false" class="astro-3ii7xxms"> <span class="astro-3ii7xxms">Armes de mêlée</span>  </a> </li><li class="astro-3ii7xxms"> <a href="/ins-mv-rogue-srd/reference/equipement/armes-feu/" aria-current="false" class="astro-3ii7xxms"> <span class="astro-3ii7xxms">Armes à feu</span>  </a> </li><li class="astro-3ii7xxms"> <a href="/ins-mv-rogue-srd/reference/equipement/" aria-current="false" class="astro-3ii7xxms"> <span class="astro-3ii7xxms">Vue d&#39;ensemble</span>  </a> </li><li class="astro-3ii7xxms"> <a href="/ins-mv-rogue-srd/reference/equipement/distance/" aria-current="false" class="astro-3ii7xxms"> <span class="astro-3ii7xxms">Armes à distance</span>  </a> </li><li class="astro-3ii7xxms"> <a href="/ins-mv-rogue-srd/reference/equipement/explosifs/" aria-current="false" class="astro-3ii7xxms"> <span class="astro-3ii7xxms">Explosifs</span>  </a> </li><li class="astro-3ii7xxms"> <a href="/ins-mv-rogue-srd/reference/equipement/protections/" aria-current="false" class="astro-3ii7xxms"> <span class="astro-3ii7xxms">Protections</span>  </a> </li><li class="astro-3ii7xxms"> <a href="/ins-mv-rogue-srd/reference/equipement/boucliers/" aria-current="false" class="astro-3ii7xxms"> <span class="astro-3ii7xxms">Boucliers</span>  </a> </li> </ul>  </details> </li><li class="astro-3ii7xxms"> <a href="/ins-mv-rogue-srd/reference/mots-cles/" aria-current="false" class="astro-3ii7xxms"> <span class="astro-3ii7xxms">Mots-clés</span>  </a> </li><li class="astro-3ii7xxms"> <a href="/ins-mv-rogue-srd/reference/etats/" aria-current="false" class="astro-3ii7xxms"> <span class="astro-3ii7xxms">États</span>  </a> </li> </ul>  </details> </li><li class="astro-3ii7xxms"> <a href="/ins-mv-rogue-srd/simulateur/" aria-current="false" class="large astro-3ii7xxms"> <span class="astro-3ii7xxms">Simulateur</span>  </a> </li><li class="astro-3ii7xxms"> <a href="/ins-mv-rogue-srd/generateur/" aria-current="false" class="large astro-3ii7xxms"> <span class="astro-3ii7xxms">Générateur</span>  </a> </li> </ul>   <script aria-hidden="true">
+		(() => {
+			const scroller = document.getElementById('starlight__sidebar');
+			if (!window._starlightScrollRestore || !scroller) return;
+			scroller.scrollTop = window._starlightScrollRestore;
+			delete window._starlightScrollRestore;
+		})();
+	</script> </sl-sidebar-state-persist>  <div class="md:sl-hidden"> <div class="mobile-preferences sl-flex astro-wu23bvmt"> <div class="sl-flex social-icons astro-wu23bvmt"> <a href="https://github.com/BaDjams/ins-mv-rogue-srd" rel="me" class="sl-flex astro-wy4te6ga"><span class="sr-only astro-wy4te6ga">GitHub</span><svg aria-hidden="true" class="astro-wy4te6ga astro-c6vsoqas" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1em;"><path d="M12 .3a12 12 0 0 0-3.8 23.38c.6.12.83-.26.83-.57L9 21.07c-3.34.72-4.04-1.61-4.04-1.61-.55-1.39-1.34-1.76-1.34-1.76-1.08-.74.09-.73.09-.73 1.2.09 1.83 1.24 1.83 1.24 1.08 1.83 2.81 1.3 3.5 1 .1-.78.42-1.31.76-1.61-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.14-.3-.54-1.52.1-3.18 0 0 1-.32 3.3 1.23a11.5 11.5 0 0 1 6 0c2.28-1.55 3.29-1.23 3.29-1.23.64 1.66.24 2.88.12 3.18a4.65 4.65 0 0 1 1.23 3.22c0 4.61-2.8 5.63-5.48 5.92.42.36.81 1.1.81 2.22l-.01 3.29c0 .31.2.69.82.57A12 12 0 0 0 12 .3Z"/></svg> </a> </div> <starlight-theme-select>  <label style="--sl-select-width: 6.25em" class="astro-4yphtoen"> <span class="sr-only astro-4yphtoen">Selectionner le thème</span> <svg aria-hidden="true" class="icon label-icon astro-4yphtoen astro-c6vsoqas" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1em;"><path d="M21 14h-1V7a3 3 0 0 0-3-3H7a3 3 0 0 0-3 3v7H3a1 1 0 0 0-1 1v2a3 3 0 0 0 3 3h14a3 3 0 0 0 3-3v-2a1 1 0 0 0-1-1ZM6 7a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v7H6V7Zm14 10a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1v-1h16v1Z"/></svg>  <select value="auto" autocomplete="off" class="astro-4yphtoen"> <option value="dark" class="astro-4yphtoen">Sombre</option><option value="light" class="astro-4yphtoen">Clair</option><option value="auto" selected class="astro-4yphtoen">Auto</option> </select> <svg aria-hidden="true" class="icon caret astro-4yphtoen astro-c6vsoqas" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1em;"><path d="M17 9.17a1 1 0 0 0-1.41 0L12 12.71 8.46 9.17a1 1 0 1 0-1.41 1.42l4.24 4.24a1.002 1.002 0 0 0 1.42 0L17 10.59a1.002 1.002 0 0 0 0-1.42Z"/></svg>  </label>  </starlight-theme-select>  <script>
+	StarlightThemeProvider.updatePickers();
+</script>   </div>  </div> </div> </div> </nav> <div class="main-frame astro-vrdttmbt">  <script type="module">const a=document.getElementById("starlight__sidebar"),n=a?.querySelector("sl-sidebar-state-persist"),o="sl-sidebar-state",i=()=>{let t=[];const e=n?.dataset.hash||"";try{const s=sessionStorage.getItem(o),r=JSON.parse(s||"{}");Array.isArray(r.open)&&r.hash===e&&(t=r.open)}catch{}return{hash:e,open:t,scroll:a?.scrollTop||0}},c=t=>{try{sessionStorage.setItem(o,JSON.stringify(t))}catch{}},d=()=>c(i()),l=(t,e)=>{const s=i();s.open[e]=t,c(s)};n?.addEventListener("click",t=>{if(!(t.target instanceof Element))return;const e=t.target.closest("summary")?.closest("details");if(!e)return;const s=e.querySelector("sl-sidebar-restore"),r=parseInt(s?.dataset.index||"");isNaN(r)||l(!e.open,r)});addEventListener("visibilitychange",()=>{document.visibilityState==="hidden"&&d()});addEventListener("pageHide",d);</script> <div class="lg:sl-flex astro-67yu43on"> <aside class="right-sidebar-container print:hidden astro-67yu43on"> <div class="right-sidebar astro-67yu43on"> <script type="module" src="/ins-mv-rogue-srd/_astro/MobileTableOfContents.astro_astro_type_script_index_0_lang.C181hMzK.js"></script><script type="module" src="/ins-mv-rogue-srd/_astro/TableOfContents.astro_astro_type_script_index_0_lang.CKWWgpjV.js"></script><div class="lg:sl-hidden astro-pb3aqygn"><mobile-starlight-toc data-min-h="2" data-max-h="3" class="astro-doynk5tl"><nav aria-labelledby="starlight__on-this-page--mobile" class="astro-doynk5tl"><details id="starlight__mobile-toc" class="astro-doynk5tl"><summary id="starlight__on-this-page--mobile" class="sl-flex astro-doynk5tl"><div class="toggle sl-flex astro-doynk5tl">Sur cette page<svg aria-hidden="true" class="caret astro-doynk5tl astro-c6vsoqas" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1rem;"><path d="m14.83 11.29-4.24-4.24a1 1 0 1 0-1.42 1.41L12.71 12l-3.54 3.54a1 1 0 0 0 0 1.41 1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.24-4.24a1.002 1.002 0 0 0 0-1.42Z"/></svg> </div><span class="display-current astro-doynk5tl"></span></summary><div class="dropdown astro-doynk5tl"><ul class="isMobile astro-g2bywc46" style="--depth: 0;"> <li class="astro-g2bywc46" style="--depth: 0;"> <a href="#_top" class="astro-g2bywc46" style="--depth: 0;"> <span class="astro-g2bywc46" style="--depth: 0;">Vue d’ensemble</span> </a>  </li><li class="astro-g2bywc46" style="--depth: 0;"> <a href="#le-voyage-dans-le-temps--règles-et-gardiens" class="astro-g2bywc46" style="--depth: 0;"> <span class="astro-g2bywc46" style="--depth: 0;">Le voyage dans le temps : Règles et Gardiens</span> </a>  </li><li class="astro-g2bywc46" style="--depth: 0;"> <a href="#omniscient-mais-pas-tout-le-temps" class="astro-g2bywc46" style="--depth: 0;"> <span class="astro-g2bywc46" style="--depth: 0;">Omniscient mais pas tout le temps</span> </a>  </li> </ul> </div></details></nav></mobile-starlight-toc></div><div class="right-sidebar-panel sl-hidden lg:sl-block astro-pb3aqygn"><div class="sl-container astro-pb3aqygn"><starlight-toc data-min-h="2" data-max-h="3"><nav aria-labelledby="starlight__on-this-page"><h2 id="starlight__on-this-page">Sur cette page</h2><ul class="astro-g2bywc46" style="--depth: 0;"> <li class="astro-g2bywc46" style="--depth: 0;"> <a href="#_top" class="astro-g2bywc46" style="--depth: 0;"> <span class="astro-g2bywc46" style="--depth: 0;">Vue d’ensemble</span> </a>  </li><li class="astro-g2bywc46" style="--depth: 0;"> <a href="#le-voyage-dans-le-temps--règles-et-gardiens" class="astro-g2bywc46" style="--depth: 0;"> <span class="astro-g2bywc46" style="--depth: 0;">Le voyage dans le temps : Règles et Gardiens</span> </a>  </li><li class="astro-g2bywc46" style="--depth: 0;"> <a href="#omniscient-mais-pas-tout-le-temps" class="astro-g2bywc46" style="--depth: 0;"> <span class="astro-g2bywc46" style="--depth: 0;">Omniscient mais pas tout le temps</span> </a>  </li> </ul> </nav></starlight-toc></div></div> </div> </aside> <div class="main-pane astro-67yu43on">  <main data-pagefind-body class="astro-bguv2lll" lang="fr" dir="ltr">    <div class="content-panel astro-7nkwcw3z"> <div class="sl-container astro-7nkwcw3z"> <h1 id="_top" class="astro-j6tvhyss">CONTEXTE DU JEU</h1>  </div> </div>  <div class="content-panel astro-7nkwcw3z"> <div class="sl-container astro-7nkwcw3z"> <div class="sl-markdown-content"> <p>Le jeu se déroule de nos jours et la technologie disponible et les
+institutions correspondent à celle du monde réel. Cependant, dans ce
+monde, les anges et les démons mènent une guerre secrète à l’insu de la
+population humaine qui ignore leur existence. Les joueurs pourront
+incarner un groupe d’anges, ou un groupe de démons.
+Les joueurs joueront des anges incarnés sur terre (ou des démons,
+suivant le choix du MJ en début de partie. Pour le reste des règles nous
+utiliserons le terme Ange pour désigner les personnages joués par les
+joueurs, les mécaniques des démons étant les mêmes.
+Les anges, pure énergie céleste sans forme physique (âme angélique)
+s’incarnent dans un corps humain (hôte). Lors de l’incarnation, l’âme
+humaine rejoint immédiatement le paradis, sans tenir compte de ses actes
+passés.
+l’intrigue se passant dans le monde réel de nos jours, il y a beaucoup
+plus d’être humains que d’ange. En effet, le nombre d’anges n’a pas
+évolué depuis la création de l’univers par dieu et il y en a environ
+1000 sur terre et autant dans les cieux.
+Au début de la partie, un hôte humain est sélectionné aléatoirement
+parmi un contingent de soldats de dieu : des humains, particulièrement
+dévoués à la cause angélique et qui sont volontaires pour servir
+d’autres aux anges.
+Si l’hôte humain vient à mourir, l’ange peut <a href="reincarnation.md">se réincarner</a> dans un
+humain proche quelques minutes plus tard, introduisant une dimension
+“rogue like”. Cet hôte humain sera généré aléatoirement à l’aide de
+table de génération de personnage.
+Lorsqu’une âme angélique quitte un hôte, le corps humain se dissipe
+dans le néant, ne laissant aucune trace, mis à part ses possessions et
+ses vêtements au sol. Cela peut entraîner des vagues de disparition
+inquiétantes mais les soldats de dieu, souvent impliqués dans leur vie
+normale dans les administrations, étouffent la plupart des affaires de
+disparition. Ce n’est pas une volonté de nuire, ils œuvrent pour le
+bien puisque les hôtes, littéralement des élus, vont au paradis
+directement. Pour eux c’est l’événement qu’ils attendent avec ferveur
+puisque leur vie entière est destinée à accueillir un ange un jour.</p>
+<p>Version littérale proposée :</p>
+<p>Contexte : Une guerre secrète</p>
+<p>De nos jours, alors que les humains vaquent à leurs occupations
+quotidiennes, une guerre ancestrale se poursuit dans l’ombre. Anges et
+démons s’affrontent depuis la nuit des temps, dissimulant leur
+existence aux yeux des mortels.</p>
+<p>Dans ce conflit éternel, les forces célestes ont un handicap majeur :
+privés de forme physique, les anges doivent s’incarner dans des corps
+humains pour agir sur Terre. Fort heureusement, ils peuvent compter sur
+le soutien des “Soldats de Dieu”, ces humains dévoués qui offrent
+volontairement leur enveloppe charnelle à la cause divine. Lorsqu’un
+ange prend possession d’un tel hôte, l’âme humaine s’envole
+directement vers le Paradis, sans jugement préalable - un arrangement
+qui ravit ces fervents croyants.</p>
+<p>Les anges sont peu nombreux - à peine un millier sur Terre et autant
+dans les cieux - leur nombre n’ayant pas changé depuis la Création. Si
+leur hôte venait à périr, ils pourraient rapidement se réincarner dans
+un autre humain à proximité, tel un phénix renaissant de ses cendres.
+Bien sûr, ce nouvel hôte, choisi au hasard, peut avoir des capacités
+bien différentes du précédent.</p>
+<p>Lorsqu’un ange quitte son hôte, le corps se volatilise mystérieusement,
+ne laissant derrière lui que vêtements et possessions. Ces disparitions
+inexpliquées auraient pu alerter les autorités, si ce n’était pour
+l’aide précieuse des Soldats de Dieu infiltrés dans l’administration.
+Ces derniers étouffent habilement les affaires, convaincus d’œuvrer
+pour une noble cause.</p>
+<p>L’autre camp : Les forces infernales</p>
+<p>Si les anges bénéficient du soutien des Soldats de Dieu, les démons
+doivent se contenter d’un réseau plus… alternatif. Dans les
+bas-fonds de la société, ils cultivent leurs relations avec des adeptes
+dévoués à leur cause. Ces fidèles de l’ombre, contrairement aux Soldats
+de Dieu, ne peuvent pas compter sur une place au paradis, mais les
+démons savent se montrer… convaincants par d’autres moyens.</p>
+<p>Les démons partagent avec les anges la capacité de s’incarner dans des
+corps humains, mais ils disposent d’un atout macabre : la possibilité
+d’investir des corps récemment décédés. Cette capacité, bien que peu
+ragoûtante, leur offre une flexibilité tactique non négligeable,
+particulièrement dans les situations où les témoins gênants abondent.</p>
+<p>Sans le réseau administratif bien huilé des Soldats de Dieu, les démons
+doivent faire preuve de plus d’imagination pour dissimuler leurs
+activités. Heureusement pour eux, le monde moderne offre suffisamment de
+zones d’ombre où peuvent se perdre quelques cadavres ambulants ou
+disparitions inexpliquées. Leurs adeptes, souvent liés au crime organisé
+ou à des groupuscules marginaux, excellent dans l’art de faire
+disparaître les traces compromettantes.</p>
+<p>Les mécaniques de jeu restent identiques à celles des anges, mais leur
+style d’opération différent reflète bien la nature plus… pragmatique
+des forces infernales.</p>
+<p>Les autres mondes :</p>
+<p>L’univers de la terre est loin d’être la seule tentative de Dieu pour
+Créer. Il existe une multitude d’univers imaginés pour certains en une
+fraction de seconde, pour d’autres cela prît jusqu’à 6 jours, voire plus
+(ce qui est énorme pour Dieu qui a un temps d’attention proche du
+résultat d’une division par zéro.)</p>
+<p>Le Paradis est un de ces univers, l’Enfer en est un autre. Le monde des
+Rêves encore un autre (celui-ci sera détaillé dans un paragraphe dédié,
+tant il offre de possibilités).</p>
+<p>Les êtres divins ont la possibilité de voyager entre ces mondes, sous
+certaines conditions cependant :</p>
+<ul>
+<li>connaître et emprunter les passages.</li>
+<li>se défaire de leur hôte, celle-ci étant liée à un univers.</li>
+</ul>
+<p>Les mondes les plus denses imposent de s’incarner dans un hôte.
+D’autres, plus éthérés, permettent aux anges d’utiliser leur forme
+véritable. Sous cette forme, les anges utilisent exclusivement leurs
+<a href="caracteristiques.md">attributs célestes</a> à leur plein potentiel.</p>
+<p>Les âmes doivent être incarnées dans un être vivant pour séjourner
+durablement dans l’univers “Terre”.</p>
+<h2 id="le-voyage-dans-le-temps--règles-et-gardiens"><strong>Le voyage dans le temps : Règles et Gardiens</strong></h2>
+<p>Le temps est une conception liée à un univers. Certains n’en ont pas,
+comme le paradis ou l’enfer, d’autres en ont mais avec des règles
+fluctuantes, en fonction de l’humeur de Dieu : certains autorisent
+parfaitement les paradoxes, d’autres les interdisent (comme c’est le
+cas sur terre).</p>
+<p>Sur terre, l’univers est régi par les paramètres suivants :</p>
+<ul>
+<li>
+<p><strong>modifier le passé influe directement le futur</strong>, il n’y a pas de
+création d’embranchements.</p>
+</li>
+<li>
+<p><strong>aucun humain ne peut théoriquement voyager dans le temps</strong>, en
+voici la raison : les humains sont des réceptacles pour les âmes
+terrestres qui s’incarnent à la naissance. leur ordre
+d’incarnation est défini et pour garantir le libre arbitre, les
+âmes sont incarnées dans l’ordre des naissances, sans choix
+possible de l’enveloppe humaine. Si un humain venait à voyager
+dans le passé, quelle que soit l’époque et perturbait le rythme
+des naissances, même de 1 seule (par exemple en créant un
+événement qui empêcherait ou retarderait une procréation), il
+perturberait l’ordre des incarnations de toutes les âmes jusqu’à
+la fin des temps. y compris la sienne. Cela veut dire que dès son
+premier “acte” il peut déclencher la modification et donc son
+âme se serait incarnée dans un tout autre corps, d’une toute
+autre famille, sans possibilité de re-créer les circonstances qui
+l’amènent à voyager dans le temps.</p>
+</li>
+<li>
+<p><strong>les âmes “libres”, comme les anges et les démons</strong>, n’ont pas
+ce problème puisqu’elles n’entrent pas dans l’ordre établi des
+incarnations. elles peuvent donc parfaitement voyager dans le
+temps, si tant est qu’ils trouvent un moyen de le faire.</p>
+</li>
+<li>
+<p><strong>Dieu préfère se plaindre du surcroît de travail</strong> mais réécrire le
+futur est une mécanique autonome de l’univers “terre”, qu’il a
+inclus le 4e jour. ça se fait tout seul. c’est justement fait
+pour “tester” les effets du libre arbitre : si on change un
+truc, il se passe quoi ? Mais comme c’est SON jouet, il préfère
+être le seul à l’utiliser et donc n’aime pas que les archanges
+ou les princes se mettent à changer le passé et donc le futur. En
+plus, il doit se retaper des siècles de film pour bien comprendre
+la nouvelle intrigue.</p>
+</li>
+<li>
+<p><strong>Comme toutes les Créations de Dieu, il y a des failles</strong> et ce ne
+serait pas impossible que des humains puissent voyager dans le
+temps sans que leur âme soit touchée. le taux d’échec est proche
+de 1/10<sup>334</sup> mais ça peut arriver.</p>
+</li>
+</ul>
+<p><strong>Les Langoliers : Les Éboueurs du Temps</strong></p>
+<p>Face aux complications temporelles créées par les voyages dans le passé,
+Dieu a mis en place un système de maintenance automatique
+particulièrement efficace : les Langoliers. Ces créatures fascinantes, à
+mi-chemin entre la mécanique horlogère divine et l’appétit dévorant,
+ont pour unique mission de dévorer les branches caduques du temps.</p>
+<p>Lorsqu’une modification du passé se produit, elle ne fait pas
+disparaître instantanément l’ancienne timeline. Au lieu de cela,
+l’univers se retrouve temporairement avec deux versions de la réalité :
+la nouvelle, vivante et active, et l’ancienne, devenue obsolète mais
+qui continue d’exister comme une branche morte sur l’arbre du temps.
+C’est là qu’interviennent les Langoliers.</p>
+<p>Ces créatures ressemblent à d’immenses sphères organiques hérissées de
+milliers de dents acérées disposées en rangées concentriques, leur
+gueule béante s’ouvrant et se refermant constamment dans un mouvement
+hypnotique. Invisibles, intangibles et parfaitement silencieuses pour
+les humains ordinaires, elles évoluent dans une dimension légèrement
+décalée de notre réalité. Seules les créatures surnaturelles disposant
+de pouvoirs de perception appropriés peuvent les détecter, ainsi que
+certains médiums particulièrement sensibles aux phénomènes
+interdimensionnels.</p>
+<p>La probabilité qu’un médium utilise son don au moment précis où un
+Langolier passe faire le ménage dans une timeline est hautement
+improbable, puisque les voyages temporels demeurent normalement la
+chasse gardée de Dieu Lui-même. Néanmoins, cela s’est déjà produit,
+entraînant l’internement du pauvre hère dans un asile psychiatrique. Ce
+témoin maudit aurait cependant raconté ses visions terrifiantes
+d’entités mécaniques dévorant la réalité à un certain écrivain du nom
+de H.P. Lovecraft…</p>
+<p>Elles “sentent” les incohérences temporelles et se dirigent
+instinctivement vers les zones où l’histoire a été réécrite. Leur tâche
+consiste à “manger” littéralement tout ce qui appartient à l’ancienne
+timeline : objets, lieux, événements, et même les traces mémorielles de
+ce qui n’existe plus.</p>
+<p><strong>Le Processus de Nettoyage Temporel</strong></p>
+<p>Quand les Langoliers arrivent dans une zone de paradoxe temporel, ils
+procèdent méthodiquement :</p>
+<ol>
+<li>
+<p><strong>Identification</strong> : Ils détectent automatiquement tout ce qui
+appartient à la branche temporelle obsolète</p>
+</li>
+<li>
+<p><strong>Dévoration</strong> : Ils consument ces éléments, les faisant disparaître
+définitivement de l’existence</p>
+</li>
+<li>
+<p><strong>Stabilisation</strong> : Une fois le nettoyage terminé, il ne reste que
+la nouvelle timeline, désormais unique et stable</p>
+</li>
+</ol>
+<p>Ce système explique pourquoi les voyages dans le temps ne créent pas
+d’accumulation infinie de paradoxes. Les Langoliers agissent comme un
+système immunitaire temporel, empêchant l’univers de s’encombrer de
+versions contradictoires de la réalité.</p>
+<p><strong>Précautions et Dangers</strong></p>
+<p>Bien que les Langoliers soient théoriquement programmés pour ne
+s’attaquer qu’aux éléments de timelines caduques, ils restent des
+créatures dangereuses. Leur méthode de “nettoyage” ne fait aucune
+distinction entre les objets et les êtres vivants qui se trouveraient
+dans une zone temporellement incorrecte. C’est pourquoi
+l’administration céleste avait songé à les utiliser pour régler le
+problème d’engorgement des Limbes - solution que Dieu jugea, à juste
+titre, trop radicale.</p>
+<p>Dans l’univers d’INS-MV Rogue, croiser des Langoliers est un événement
+rare mais mémorable, généralement signe qu’une manipulation temporelle
+majeure a eu lieu dans les environs et que l’univers procède à sa
+maintenance.</p>
+<h2 id="omniscient-mais-pas-tout-le-temps">Omniscient mais pas tout le temps</h2>
+<p>Dieu est omniscient, omnipotent et omniprésent. Du moins, c’est ce
+qu’Il prétend dans Son CV. La réalité est légèrement plus nuancée :
+Dieu possède effectivement toutes ces capacités, mais Il a aussi un
+défaut d’attention chronique qui ferait passer un enfant hyperactif
+pour un moine zen.</p>
+<p>Le problème, c’est que Dieu S’ennuie. Rapidement. Très rapidement.
+Quand on maîtrise l’art de la Création au point de pouvoir concevoir un
+univers entier en claquant des doigts, maintenir Son attention sur une
+seule réalité devient un défi colossal. Notre univers, qu’Il a pourtant
+mis six jours entiers à peaufiner (un record de concentration divine !),
+ne représente plus qu’une distraction parmi des milliers d’autres.</p>
+<p>Actuellement, Dieu jongle entre 47 623 univers différents, chacun avec
+ses propres règles, ses propres créatures, et ses propres
+expérimentations cosmiques. Il y a l’univers n°23 891 où la gravité
+change de direction selon l’humeur collective des habitants, l’univers
+n°41 337 peuplé exclusivement de créatures géométriques conscientes, et
+ne parlons même pas de l’univers n°47 624 où Il teste actuellement des
+papillons à dix-sept ailes qui communiquent par télépathie quantique.</p>
+<p>Cette dispersion divine explique nombre de petits dysfonctionnements
+dans notre réalité. Pourquoi la restauration d’énergie des anges
+peut-elle prendre dix minutes de retard ? Parce que Dieu était en train
+de résoudre une crise diplomatique entre des nuages pensants dans
+l’univers n°12 445. Pourquoi certains miracles semblent-ils parfois…
+approximatifs ? Parce que Dieu n’avait qu’un œil sur notre monde,
+l’autre étant focalisé sur la création d’une nouvelle espèce de
+plantes carnivores musicales.</p>
+<p>Heureusement, Dieu a mis en place des systèmes automatiques pour gérer
+la plupart des mécaniques universelles. Le cycle jour/nuit, la physique
+de base, la restauration d’énergie des créatures surnaturelles… tout
+cela fonctionne en pilote automatique. Mais parfois, très rarement, Son
+attention Se repose entièrement sur notre petit univers. Ces moments-là,
+même les Archanges les sentent passer : soudain, tout fonctionne avec
+une précision absolue, les miracles deviennent spectaculaires, et
+l’univers entier semble retenir son souffle.</p>
+<p>Puis Dieu repart créer ailleurs, et nous retournons à notre
+fonctionnement “normal” - c’est-à-dire avec ces petits aléas qui font
+le charme de notre existence.</p> </div> <footer class="sl-flex astro-3yyafb3n"> <div class="meta sl-flex astro-3yyafb3n">   </div> <div class="pagination-links print:hidden astro-u2l5gyhi" dir="ltr"> <a href="/ins-mv-rogue-srd/srd/" rel="prev" class="astro-u2l5gyhi"> <svg aria-hidden="true" class="astro-u2l5gyhi astro-c6vsoqas" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1.5rem;"><path d="M17 11H9.41l3.3-3.29a1.004 1.004 0 1 0-1.42-1.42l-5 5a1 1 0 0 0-.21.33 1 1 0 0 0 0 .76 1 1 0 0 0 .21.33l5 5a1.002 1.002 0 0 0 1.639-.325 1 1 0 0 0-.219-1.095L9.41 13H17a1 1 0 0 0 0-2Z"/></svg>  <span class="astro-u2l5gyhi"> Précédent <br class="astro-u2l5gyhi"> <span class="link-title astro-u2l5gyhi">SRD</span> </span> </a> <a href="/ins-mv-rogue-srd/personnage/caracteristiques/" rel="next" class="astro-u2l5gyhi"> <svg aria-hidden="true" class="astro-u2l5gyhi astro-c6vsoqas" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1.5rem;"><path d="M17.92 11.62a1.001 1.001 0 0 0-.21-.33l-5-5a1.003 1.003 0 1 0-1.42 1.42l3.3 3.29H7a1 1 0 0 0 0 2h7.59l-3.3 3.29a1.002 1.002 0 0 0 .325 1.639 1 1 0 0 0 1.095-.219l5-5a1 1 0 0 0 .21-.33 1 1 0 0 0 0-.76Z"/></svg>  <span class="astro-u2l5gyhi"> Suivant <br class="astro-u2l5gyhi"> <span class="link-title astro-u2l5gyhi">Caractéristiques &amp; Attributs</span> </span> </a> </div>   </footer>  </div> </div>   </main> </div> </div>  </div> </div>  </body></html>
