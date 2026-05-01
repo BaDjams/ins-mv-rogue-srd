@@ -23,7 +23,18 @@
       "WebFetch(domain:github.com)",
       "Bash(node --input-type=module)",
       "Bash(node --check \"c:\\\\Users\\\\CADO\\\\Documents\\\\GitHub\\\\ins-mv-rogue-srd\\\\docs\\\\javascripts\\\\rogue-srd.js\")",
-      "Bash(python -c \"import admin; print\\('Syntax OK'\\)\")"
+      "Bash(python -c \"import admin; print\\('Syntax OK'\\)\")",
+      "Bash(python create_db.py)",
+      "Bash(python -c \"import sqlite3; from pathlib import Path; db=sqlite3.connect\\('srd.db'\\); r=db.execute\\('SELECT filename, length\\(content\\) as len FROM pages'\\).fetchall\\(\\); [print\\(f'  {row[0]:40s} {row[1]:6d} octets'\\) for row in r]; db.close\\(\\)\")",
+      "Bash(python -c \"import app; print\\('OK — routes:', [str\\(r\\) for r in app.app.url_map.iter_rules\\(\\)]\\)\")",
+      "Bash(python -c \"import ast, sys; ast.parse\\(open\\('app.py'\\).read\\(\\)\\); print\\('Syntaxe OK'\\)\")",
+      "Bash(python -c \"import ast; ast.parse\\(open\\('app.py', encoding='utf-8'\\).read\\(\\)\\); print\\('Syntaxe OK'\\)\")",
+      "Bash(sqlite3 srd.db \".schema\")",
+      "Bash(npm --version)",
+      "Bash(npm install *)",
+      "Bash(npm run *)",
+      "Bash(python tools/migrate_content.py)",
+      "Bash(grep \"\\\\*\\\\|_\\\\|\\\\`\")"
     ]
   }
 }

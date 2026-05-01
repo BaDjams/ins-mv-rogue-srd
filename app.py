@@ -300,6 +300,18 @@ function applyTheme(angelic) {
 elBtnTheme.addEventListener('click', () => applyTheme(!document.documentElement.classList.contains('angelic')));
 applyTheme(localStorage.getItem('theme') === 'angelic');
 
+// Liens inter-pages : intercepte les clics sur *.md et navigue via le hash
+document.getElementById('main').addEventListener('click', e => {
+  const a = e.target.closest('a[href]');
+  if (!a) return;
+  const href = a.getAttribute('href');
+  // Lien relatif vers un .md (pas http, pas /absolu, pas #ancre)
+  if (href && /^[^/#][^/]*[.]md(#.*)?$/.test(href)) {
+    e.preventDefault();
+    location.hash = href.replace(/#.*$/, '');
+  }
+});
+
 window.addEventListener('hashchange', loadFromHash);
 buildNav();
 loadFromHash();

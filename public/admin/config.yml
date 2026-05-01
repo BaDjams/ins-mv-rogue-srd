@@ -1,0 +1,118 @@
+backend:
+  name: github
+  repo: BaDjams/ins-mv-rogue-srd
+  branch: main
+  # Pour GitHub Pages : remplacer base_url par l'URL de votre Sveltia Auth worker
+  # Voir : https://github.com/sveltia/sveltia-cms-auth
+  # base_url: https://votre-worker.workers.dev
+
+media_folder: public/images
+public_folder: /ins-mv-rogue-srd/images
+
+# Locale par défaut
+locale: fr
+
+collections:
+  # ─── Pages libres (Accueil, SRD, Simulateur, Générateur) ───────────────────
+  - name: pages
+    label: Pages
+    label_singular: Page
+    folder: src/content/docs
+    create: false
+    delete: false
+    filter: { field: "sidebar.order", value_type: number }
+    fields:
+      - { label: Titre, name: title, widget: string }
+      - label: Sidebar
+        name: sidebar
+        widget: object
+        fields:
+          - { label: Ordre, name: order, widget: number, value_type: int }
+          - { label: Étiquette (optionnel), name: label, widget: string, required: false }
+      - { label: Description, name: description, widget: string, required: false }
+      - { label: Contenu, name: body, widget: markdown }
+
+  # ─── Contexte ───────────────────────────────────────────────────────────────
+  - name: contexte
+    label: Contexte
+    label_singular: Page de contexte
+    folder: src/content/docs/contexte
+    create: true
+    delete: true
+    fields:
+      - { label: Titre, name: title, widget: string }
+      - label: Sidebar
+        name: sidebar
+        widget: object
+        fields:
+          - { label: Ordre, name: order, widget: number, value_type: int }
+          - { label: Étiquette (optionnel), name: label, widget: string, required: false }
+      - { label: Contenu, name: body, widget: markdown }
+
+  # ─── Personnage ──────────────────────────────────────────────────────────────
+  - name: personnage
+    label: Personnage
+    label_singular: Page Personnage
+    folder: src/content/docs/personnage
+    create: true
+    delete: true
+    fields:
+      - { label: Titre, name: title, widget: string }
+      - label: Sidebar
+        name: sidebar
+        widget: object
+        fields:
+          - { label: Ordre, name: order, widget: number, value_type: int }
+          - { label: Étiquette (optionnel), name: label, widget: string, required: false }
+      - { label: Contenu, name: body, widget: markdown }
+
+  # ─── Mécanique ───────────────────────────────────────────────────────────────
+  - name: mecanique
+    label: Mécanique
+    label_singular: Page Mécanique
+    folder: src/content/docs/mecanique
+    create: true
+    delete: true
+    fields:
+      - { label: Titre, name: title, widget: string }
+      - label: Sidebar
+        name: sidebar
+        widget: object
+        fields:
+          - { label: Ordre, name: order, widget: number, value_type: int }
+          - { label: Étiquette (optionnel), name: label, widget: string, required: false }
+      - { label: Contenu, name: body, widget: markdown }
+
+  # ─── Référence ───────────────────────────────────────────────────────────────
+  - name: reference
+    label: Référence
+    label_singular: Page Référence
+    folder: src/content/docs/reference
+    create: true
+    delete: true
+    fields:
+      - { label: Titre, name: title, widget: string }
+      - label: Sidebar
+        name: sidebar
+        widget: object
+        fields:
+          - { label: Ordre, name: order, widget: number, value_type: int }
+          - { label: Étiquette (optionnel), name: label, widget: string, required: false }
+      - { label: Contenu, name: body, widget: markdown }
+
+  # ─── Équipement (sous-section de Référence) ──────────────────────────────────
+  - name: equipement
+    label: Équipement
+    label_singular: Page Équipement
+    folder: src/content/docs/reference/equipement
+    create: true
+    delete: true
+    fields:
+      - { label: Titre, name: title, widget: string }
+      - label: Sidebar
+        name: sidebar
+        widget: object
+        fields:
+          - { label: Ordre, name: order, widget: number, value_type: int }
+          - { label: Étiquette (optionnel), name: label, widget: string, required: false }
+      - { label: Contenu, name: body, widget: markdown }
