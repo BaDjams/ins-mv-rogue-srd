@@ -2,9 +2,10 @@ backend:
   name: github
   repo: BaDjams/ins-mv-rogue-srd
   branch: main
-  # Pour GitHub Pages : remplacer base_url par l'URL de votre Sveltia Auth worker
-  # Voir : https://github.com/sveltia/sveltia-cms-auth
-  # base_url: https://votre-worker.workers.dev
+  base_url: https://ins-mv-rogue-srd-sveltia-cms.romain-jamet.workers.dev
+
+# Décommenter pour utiliser le backend local (dev uniquement, sans OAuth)
+# local_backend: true
 
 media_folder: public/images
 public_folder: /ins-mv-rogue-srd/images
