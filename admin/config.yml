@@ -2,7 +2,6 @@ backend:
   name: github
   repo: BaDjams/ins-mv-rogue-srd
   branch: main
-  base_url: https://ins-mv-rogue-srd-sveltia-cms.romain-jamet.workers.dev
 
 # Décommenter pour utiliser le backend local (dev uniquement, sans OAuth)
 # local_backend: true
