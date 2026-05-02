@@ -106,7 +106,11 @@ Les PE se rechargent intégralement au **lever du soleil** pour les anges et à 
 
 ---
 
-## Étape 4 : Pouvoirs initiaux (3 au total)
+## Étape 4 : Pouvoirs initiaux
+
+Toute âme surnaturelle dispose automatiquement de **Présence Surnaturelle**, un pouvoir intrinsèque de Rang 1 qui permet, en action gratuite avant un jet, soit de prendre l'avantage sur ce jet, soit de substituer un attribut surnaturel à la caractéristique physique correspondante (FOR↔PUI, AGI↔INF, VIG↔RES, PER↔CLA). Ce pouvoir n'est pas à choisir, ne compte pas dans les 3 ci-dessous, et son fonctionnement détaillé est décrit dans le chapitre [Énergie](../mecanique/energie.md).
+
+Le personnage choisit ensuite **3 pouvoirs supplémentaires** au moment de la création :
 
 ### 1. Pouvoir du supérieur hiérarchique
 
@@ -143,9 +147,7 @@ Pouvoirs basiques utiles mais pas forcément en rapport avec votre concept initi
 
 Choisissez **2 traits sur la liste des Traits d'Âme**. Ces traits restent constants à travers toutes les incarnations.
 
-**Conduit Divin X** (X = 1, 2 ou 3)
-
-Certaines âmes ont passé suffisamment de siècles à canaliser la puissance divine pour développer une tolérance que leurs pairs envient discrètement. Chaque niveau de ce trait ajoute 1 PE permanent, indépendamment du [Rang Céleste](rang.md). Un ange de Rang 2 avec Conduit Divin 3 dispose de 5 PE — autant qu'un Archange, sur ce seul plan. Ce qui ne l'empêche pas de rester un ange de Rang 2 sur tout le reste, mais lui donne une endurance magique remarquable pour quelqu'un de son niveau.
+**Conduit Divin X** (X = 1, 2 ou 3) — exemple notable. Augmente le seuil de tolérance au drain en ajoutant X PE permanents au-dessus du Rang Céleste. Définition complète et exemples chiffrés dans le chapitre [Énergie](../mecanique/energie.md).
 
 ---
 
@@ -165,7 +167,7 @@ Certaines âmes ont passé suffisamment de siècles à canaliser la puissance di
 2. **Hiérarchie** : Supérieur hiérarchique + rôle spécifique
 3. **Attributs** : Répartition 3/2/2/1 dans PUI/INF/RES/CLA
 4. **Énergie** : PE = Rang céleste (+ Conduit Divin X si ce trait est choisi)
-5. **Pouvoirs** : 3 pouvoirs (1 supérieur + 1 rôle + 1 aléatoire)
+5. **Pouvoirs** : Présence Surnaturelle (intrinsèque, automatique) + 3 pouvoirs choisis (1 supérieur + 1 rôle + 1 aléatoire)
 6. **Traits d'Âme** : 2 traits permanents
 7. **Roleplay** : Objectifs et motivations
 </div>

@@ -19,7 +19,7 @@ Avant de lancer les dés, il est essentiel de déterminer la nature de l'action 
 
 **Pouvoir surnaturel ou attribut angélique** : Dans ce cas, le dé bleu sera utilisé pour déterminer le succès de l'action. Le seuil de réussite est égal à l'attribut angélique (valeur de 1 à 5) associé au pouvoir.
 
-**[Compétence](competences.md) ou caractéristique humaine** : Si l'action repose sur une compétence ou une caractéristique humaine de l'hôte, c'est le dé blanc qui sera utilisé. Le seuil de réussite est alors égal à la somme de la compétence (de +0 à +2) et de la caractéristique humaine (de 1 à 3) associée à cette compétence.
+**[Compétence](competences.md) ou caractéristique humaine** : Si l'action repose sur une compétence ou une caractéristique humaine de l'hôte, c'est le dé blanc qui sera utilisé. Le seuil de réussite est égal à la somme de la caractéristique humaine pertinente (de 1 à 3) et du palier de compétence : **Aucun (+0), Compétent (+1), Expert (+2)**. L'absence de compétence ne pénalise pas le jet — elle prive simplement du bonus.
 
 
 <div class="admonition note">
@@ -147,7 +147,7 @@ Si par malheur, un personnage vient à cumuler 2 désavantages, alors, en plus d
 
 ### Règles importantes
 
-- Utiliser une compétence que l'hôte ne possède pas entraîne un désavantage.
+- Tenter une action sans la compétence correspondante ne pénalise plus le jet — le personnage agit simplement sur sa caractéristique seule, sans bonus de palier. Le désavantage n'est appliqué que pour des raisons situationnelles (matériel inadapté, conditions hostiles, etc.).
 - Utiliser une compétence que l'hôte possède sans le matériel adéquat (s'il existe) entraîne un désavantage. Les compétences nécessitant un matériel spécifique sont indiquées par un astérisque sur la fiche.
 - Utiliser une [spécialisation](competences.md) que l'hôte possède, en rapport avec la situation, accorde un avantage (après approbation du MJ).
 

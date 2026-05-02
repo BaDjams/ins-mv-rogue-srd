@@ -93,8 +93,13 @@ augmenté au-delà du Rang Céleste du personnage.
 -   **Non-réductible :** Ne peut être réduit par l'armure ou la
     résistance physique
 
--   **Concentration :** [Désavantage](resolution.md) permanent sur toutes les actions
-    tant que maintenue, aucune limite de durée
+-   **Concentration :** Coût initial + coût par tour. Se brise sur
+    perturbation majeure (blessure subie). Maintenir un pouvoir au-delà
+    du tour de lancement requiert d'adopter la [posture de
+    Concentration](combat.md) au tour suivant ; tant que cette posture
+    est maintenue, aucun désavantage n'est imposé aux actions du
+    lanceur, mais ses adversaires bénéficient d'un avantage pour le
+    toucher (l'âme tournée vers l'intérieur laisse le corps exposé).
 
 -   **Durée fixe :** Exactement 3 tours puis dissipation automatique.
     Prolongation = nouveau jet + nouveau coût
@@ -102,8 +107,11 @@ augmenté au-delà du Rang Céleste du personnage.
 -   **Couper un pouvoir :** [Action gratuite](combat.md), peut être fait à tout
     moment
 
--   **Contrôle mental/Possession :** Le contrôleur partage ses PA totaux
-    entre son hôte et toutes ses cibles contrôlées.
+-   **Contrôle mental/Possession :** Le contrôleur ne dispose toujours
+    que d'une Action Complexe et d'une Action Simple par tour, qu'il
+    doit répartir entre son propre hôte et l'ensemble des cibles qu'il
+    contrôle. Diriger plusieurs corps en simultané, c'est plus de
+    leviers, pas plus de temps pour les actionner.
 
 -   Certains pouvoir précisent que le lanceur subit une ou plusieurs
     blessures aggravées. Ces blessures aggravées sont infligées
@@ -127,20 +135,24 @@ augmenté au-delà du Rang Céleste du personnage.
     des PE au tour 4, 7, 10, etc.
 
 -   **Arrêter un pouvoir de concentration :** Action gratuite, effet
-    immédiat, récupération immédiate de l'efficacité normale (perte
-    du désavantage).
+    immédiat. Le lanceur n'a plus besoin de maintenir la posture de
+    Concentration et peut adopter la posture de son choix au tour
+    suivant.
 
 ## **Exemples Pratiques**
 
 **Résilience X**
 
--   **Prérequis :** Rang 2
+-   **Prérequis :** Rang 1
 
 -   **Type :** Passif, Permanent
 
 -   **Effet :** Divise tous les dégâts subis par X
 
--   **Pouvoir automatique** pour tous les anges et démons incarnés
+-   **Pouvoir automatique** pour tous les anges et démons incarnés. Les
+    créatures surnaturelles inférieures (Rang 2) qui en disposent
+    divisent par 2. Les humains (Rang 1) en sont théoriquement
+    porteurs, mais diviser par 1 ne sert à rien.
 
 **Calculs :**
 
@@ -148,8 +160,8 @@ augmenté au-delà du Rang Céleste du personnage.
 
 -   Archange Rang 4 : Niveau maximum = 4 - 1 + 1 = **4** → Résilience 4
 
--   Humain Rang 1 : Ne peut pas disposer de ce pouvoir (et ça servirait
-    de toute façon à rien de diviser les dégâts par 1)
+-   Humain Rang 1 : Niveau maximum = 1 - 1 + 1 = **1** → Résilience 1
+    (sans effet pratique)
 
 **Feu Ardent X**
 

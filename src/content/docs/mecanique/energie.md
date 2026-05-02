@@ -24,7 +24,7 @@ Chaque ange dispose d'un nombre de Points d'Énergie (PE) égal à son [Rang Cé
 Les PE persistent d'une incarnation à l'autre. Un ange qui perd son hôte à court d'énergie repart dans le suivant dans le même état. L'âme se souvient de ses efforts, même si le corps est neuf. À la [réincarnation](reincarnation.md) — et uniquement là — le compteur d'affaiblissements d'âme repart à zéro.
 </div>
 
-Le trait **Conduit Divin** (niveaux 1 à 3) représente une affinité développée avec le flux divin — certaines âmes anciennes ont simplement appris à gérer des débits que leurs pairs ne sauraient supporter. Chaque niveau ajoute 1 PE permanent au-dessus du Rang Céleste.
+Le trait **Conduit Divin** (niveaux 1 à 3) représente une affinité développée avec le flux divin — certaines âmes anciennes ont simplement appris à gérer des débits que leurs pairs ne sauraient supporter. Chaque niveau ajoute 1 PE permanent au-dessus du Rang Céleste. Ce trait ne modifie pas le Rang lui-même ni l'accès aux pouvoirs : uniquement l'endurance spirituelle face au drain. Un ange de Rang 2 avec Conduit Divin 3 dispose de 5 PE — autant qu'un Archange, sur ce seul plan. Ce qui ne l'empêche pas de rester un ange de Rang 2 sur tout le reste, mais lui donne une endurance magique remarquable pour quelqu'un de son niveau.
 
 ---
 

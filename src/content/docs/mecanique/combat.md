@@ -31,7 +31,7 @@ sidebar:
 
 Certaines capacités permettent d'agir hors de votre tour. Vous pouvez effectuer **1 réaction par round** (Esquive, Parade, Contre-attaque, Attaque d'Opportunité).
 
-Une réaction de défense réussie ajoute votre **Intensité à votre PA** pour ce coup uniquement.
+Une réaction de défense réussie ajoute votre **Intensité aux PA** (Points d'Armure) pour ce coup uniquement — la parade ou l'esquive renforce momentanément la protection effective.
 
 ### Initiative
 
@@ -119,23 +119,27 @@ Une fois l'ordre d'initiative établi, à leur tour, les joueurs choisissent les
 
     **Will (Tyrael)** : "Je dégaine mon épée, je me rapproche du démon le plus proche et je l'attaque."
 
-    **François (MJ)** : "Parfait : 1 PA pour sortir ton épée, 1 PA pour se rapprocher et 2 PA pour attaquer, on est à 4, c'est ok pour moi. Will, lance le D666 !"
+    **François (MJ)** : "Dégainer ton épée et te rapprocher, c'est deux Actions Simples — tu peux convertir ton Action Complexe en Action Simple, donc OK pour aujourd'hui. Tu sacrifies ton attaque ce tour ? Ah non, attends — dégainer + se rapprocher, c'est trop. Tu dégaines (Action Simple), tu te rapproches (déplacement, Action Simple aussi), et tu n'as plus d'Action Complexe pour attaquer. Soit tu attaques sans avoir bougé, soit tu attaques en restant à distance, soit tu te rapproches et tu attaques au tour suivant. Tu choisis quoi ?"
 
-    **Will (Tyrael)** : lance le D666 → "J'ai 5 sur le bleu, 1 sur le blanc, et 3 sur le rouge. Comme j'ai 2 en Agilité et +2 en Armes de Mêlée, mon seuil avec l'épée est 4, donc ça passe !"
+    **Will (Tyrael)** : "Je vais utiliser ma Charge en posture offensive : ça combine déplacement et attaque en une Action Complexe. Mais il faut que je dégaine d'abord — ça reste mon Action Simple. Parfait."
 
-    **François (MJ)** : "Bien joué, Tyrael. Tu réussis ton attaque et inflige un total de 9 points de dégâts, correspondant à ton dé d'intensité (3), les dégâts de ton épée (+3) et ta [marge de réussite](resolution.md) (4-1). Le démon est blessé !"
+    **François (MJ)** : "Très bien : Action Simple pour dégainer, Action Complexe pour la Charge. Lance le D666 !"
+
+    **Will (Tyrael)** : lance le D666 → "J'ai 5 sur le bleu, 1 sur le blanc, et 3 sur le rouge. Comme j'ai 2 en Agilité et +2 en Armes de Mêlée (Expert), mon seuil avec l'épée est 4. Mon dé blanc fait 1, donc ça passe largement !"
+
+    **François (MJ)** : "Bien joué, Tyrael. Ta Charge réussit avec une marge de 3, et le bonus de la Charge ajoute +2 dégâts. Donc dé d'intensité (3) + dégâts d'épée (Code 3) + marge (3) + Charge (+2) = 11. Sauf que la marge et le dé d'intensité ne s'additionnent pas, on retient max(3, 3) = 3. Total : 3 + 3 + 2 = 8 dégâts. Le démon est blessé !"
 
     ---
 
     **François (MJ)** : "Myrael, à toi !"
 
-    **Fred (Myrael)** : "Je me déplace d'abord derrière un abri pour éviter de rester exposé, puis j'utilise Bouclier de la Foi pour me protéger."
+    **Fred (Myrael)** : "Je me déplace d'abord derrière un abri (Action Simple), puis j'utilise Bouclier de la Foi pour me protéger (Action Complexe)."
 
-    **François (MJ)** : "Bien, tu peux faire les deux. Pour le bouclier, rappelle-toi qu'il te coûtera 3 [points d'énergie](energie.md)."
+    **François (MJ)** : "Bien, tu peux faire les deux. Pour le bouclier, rappelle-toi qu'il te coûtera des dés de drain au lancement."
 
     **Fred (Myrael)** : lance le D666 → "J'ai 3 sur le bleu, 2 sur le blanc, et 4 sur le rouge."
 
-    **François (MJ)** : "Parfait, avec le résultat du dé bleu, ça passe tout juste, tu as 3 en ALTERATION, ton bouclier est activé. Sa protection est égale au résultat du dé d'intensité rouge + la marge de réussite — mais elle est égale à zéro pour ton jet — donc il absorbera 4 points de dégâts avant d'être détruit."
+    **François (MJ)** : "Parfait, avec le résultat du dé bleu, ça passe tout juste, tu as 3 en ALTERATION, ton bouclier est activé. Sa protection est égale au dé d'intensité rouge + la marge de réussite — donc 4 + 0 = 4 points absorbés avant d'être détruit."
 
     ---
 
@@ -143,7 +147,7 @@ Une fois l'ordre d'initiative établi, à leur tour, les joueurs choisissent les
 
     **Fred (Myrael)** : "Moi !"
 
-    **François (MJ)** : "Très bien : il aura un désavantage pour te toucher, mais tu auras 2 points d'actions en moins au début de ton tour."
+    **François (MJ)** : "Très bien : il aura un désavantage pour te toucher. Note que tu consommes ta réaction du round."
 
     **François (MJ)** : lance le D666 → "J'ai 4 sur le bleu, 5 sur le blanc, et 2 sur le rouge. Son seuil de réussite est 3 pour l'attaque au corps à corps, donc il échoue. Tyrael, il te rate !"
 
@@ -153,11 +157,11 @@ Une fois l'ordre d'initiative établi, à leur tour, les joueurs choisissent les
 
     **Fred (Myrael)** : "Oh non ! En plus, mon esquive ne sert à rien : ses deux dés d'action sont identiques."
 
-    **François (MJ)** : "Exact, de plus le coup critique signifie que l'attaque est une réussite spectaculaire, donc l'intensité de l'attaque sera doublée. Les griffes acérées du démon infligent +2, ce à quoi il faut rajouter la marge de réussite (2 car il avait +3 en Corps à Corps). On a donc un total de 5 (dé d'intensité) +2+2 soit 9. Que je multiplie par 2 = 18 points de dégâts !"
+    **François (MJ)** : "Exact, et le coup critique rend le dé d'intensité explosif. Lançons l'explosion : le 5 initial + un dé d'explosion qui fait 4. Total intensité : 9. Les griffes acérées du démon infligent +2, marge de 2 (seuil 3, dé blanc 1). On retient max(marge, intensité) = max(2, 9) = 9. Donc 9 + 2 = 11 dégâts."
 
-    **Fred (Myrael)** : "Aïe ! Mon Bouclier de la Foi absorbe 4 points de dégâts, mais je prends donc les 14 points restants."
+    **Fred (Myrael)** : "Aïe ! Mon Bouclier de la Foi absorbe 4 points de dégâts, je prends 7 points restants."
 
-    **François (MJ)** : "C'est bien ça, Myrael. Ton bouclier de foi se fissure sous l'impact et se dissipe. Le démon te blesse sérieusement avec ses griffes acérées. N'oublie pas cependant que comme tu es un ange, tu divises les dégâts subis par 3, arrondis à l'inférieur. Tu ne perds donc que 4 points de santé."
+    **François (MJ)** : "C'est bien ça, Myrael. Ton bouclier de foi se fissure sous l'impact et se dissipe. Le démon te blesse sérieusement avec ses griffes acérées. N'oublie pas cependant que comme tu es un ange, tu divises les dégâts subis par 3, arrondi à l'inférieur. Tu ne subis donc que 2 blessures."
 
     ---
 
@@ -165,11 +169,11 @@ Une fois l'ordre d'initiative établi, à leur tour, les joueurs choisissent les
 
     **Romain (Azrael)** : "Je vais utiliser mon pouvoir Feu Purificateur pour essayer de toucher les deux démons en même temps."
 
-    **François (MJ)** : "Bonne idée ! Tu es assez proche pour les atteindre dans un cône. Cela te coûtera 2 points d'énergie divine."
+    **François (MJ)** : "Bonne idée ! Tu es assez proche pour les atteindre dans un cône. C'est ton Action Complexe du tour."
 
     **Romain (Azrael)** : lance le D666 → "J'ai 2 sur le bleu, 4 sur le blanc et 5 sur le rouge. Mon seuil pour ce pouvoir est 3, donc c'est une réussite puisque mon dé bleu est en dessous."
 
-    **François (MJ)** : "Bien joué, Azrael ! Tu as réussi. Le dé rouge montre une intensité de 5, donc les démons subissent 5 (dé d'intensité), +1 (marge de réussite), +2 du pouvoir Feu Purificateur, pour un total de 8 points de dégâts chacun. Cependant, comme vous, ils divisent les dégâts par 3, ils ne subissent donc que 2. Comme tout le monde a joué, passons au tour suivant !"
+    **François (MJ)** : "Bien joué, Azrael ! Tu as réussi avec une marge de 1. Le dé rouge montre une intensité de 5 — on retient max(1, 5) = 5. Les démons subissent 5 + 2 (Feu Purificateur) = 7 dégâts chacun. Cependant, comme vous, ils divisent les dégâts par 3, ils ne subissent donc que 2. Comme tout le monde a joué, passons au tour suivant !"
 
 ---
 

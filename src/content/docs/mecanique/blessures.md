@@ -49,17 +49,17 @@ Indicateur clé : Si le texte dit "subit des blessures" sans mentionner
 
 Natures de dégâts et blessures
 
-Dégâts normaux conduisent à des Blessures normales (X)
+Dégâts normaux conduisent à des Blessures létales (X)
 
 -   Guérissent naturellement (1 par jour)
 
-Dégâts aggravés conduisent à des Blessures aggravées (⊗)
+Dégâts aggravés conduisent à des Blessures aggravées (⭙)
 
 -   Ne guérissent jamais naturellement
 
 -   Nécessitent [intervention divine](resolution.md) ou démoniaque
 
-Dégâts non-létaux conduisent à des Blessures non-létales (○)
+Dégâts non-létaux conduisent à des Blessures non-létales (/)
 
 -   Guérissent rapidement (1 par heure de repos)
 
@@ -224,22 +224,19 @@ préalable.
 
 ## **Exemple Pratique**
 
-**Mirael** (Ange, 10 PV) subit des dégâts en combat :
+**Mirael** (Ange, 10 PV, Résilience 3) reçoit plusieurs attaques en combat :
 
-1.  Reçoit 3 dégâts non létaux → Coche (/) (/) (/) dans les cases 1-3
+1.  Une attaque inflige 9 dégâts non létaux → après Résilience (9/3=3), Mirael **subit** 3 blessures non létales → coche (/) (/) (/) dans les cases 1-3.
 
-2.  Reçoit 2 dégâts létaux → Les cases 1-2 s'aggravent en (X) (X), la
-    case 3 reste (/)
+2.  Une attaque inflige 6 dégâts létaux → après Résilience (6/3=2), Mirael **subit** 2 blessures létales → les cases 1-2 s'upgradent en (X) (X), la case 3 reste (/).
 
-3.  Utilise un pouvoir coûtant 3 PE → Subit 1 blessure aggravée, la case
-    1 devient (⭙)
+3.  Mirael lance un pouvoir qui dépasse son seuil de tolérance → **subit** directement 1 blessure aggravée (sans réduction), la case 1 devient (⭙).
 
-4.  État intermédiaire : (⭙) (X) (/) + 7 cases vides
+4.  État intermédiaire : (⭙) (X) (/) + 7 cases vides.
 
-5.  Reçoit une balle infligeant 3 blessures létales → Les cases 3, 4 et
-    5 deviennent (X)
+5.  Une balle inflige 9 dégâts létaux → après Résilience (9/3=3), Mirael **subit** 3 blessures létales → les cases 3 (qui upgrade depuis /), 4 et 5 deviennent (X).
 
-6.  État final : (⭙) (X) (X) (X) (X) + 5 cases vides
+6.  État final : (⭙) (X) (X) (X) (X) + 5 cases vides.
 
 **Guérison :**
 

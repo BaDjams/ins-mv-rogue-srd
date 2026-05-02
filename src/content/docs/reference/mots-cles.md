@@ -26,7 +26,7 @@ La plupart des mots-clés donnent des avantages/désavantages selon le contexte.
 - **Résiliente** : Premier échec critique par session devient un échec normal
 - **Focalisée** : Peut relancer 1 [dé d'intensité](resolution.md) par session, le dé relancé est explosif
 - **Fanatique** : +1 intensité finale (après tous calculs) pour toute action en rapport avec le mot-clé choisi (validé par le MJ)
-- **Conduit Divin X** (X = 1, 2 ou 3) : Affinité développée avec le flux de la puissance divine. +X PE permanents au-dessus du [Rang céleste](rang.md). Ne modifie pas le Rang ni l'accès aux pouvoirs — uniquement l'endurance spirituelle face au [drain](energie.md).
+- **Conduit Divin X** (X = 1, 2 ou 3) : Affinité développée avec le flux de la puissance divine. +X PE permanents au-dessus du [Rang céleste](../personnage/rang.md). Définition complète : voir [Énergie](../mecanique/energie.md).
 
 **Exemples d'avantages/désavantages contextuels**
 
@@ -44,7 +44,7 @@ La plupart des mots-clés donnent des avantages/désavantages selon le contexte.
 - **Athée** : Résiste aux effets spirituels (avantage), mais désavantage aux jets de pouvoir de l'âme incarnée
 - **Malédiction** : Ne peut récupérer de PV que par absorption (morsure/consommation de victimes)
 - **Drogué** : Désavantage permanent aux jets physiques jusqu'à désintoxication
-- **Réflexes Câblés** : +2 PA par tour
+- **Réflexes Câblés** : Permet une réaction supplémentaire par round (deux au lieu d'une) — l'hôte est physiquement précâblé pour les réflexes éclairs.
 
 
 <div class="admonition note">
@@ -98,18 +98,18 @@ Les hôtes animaux perdent **1 PV toutes les (Taille × 10) minutes** à cause d
 - **Gatling** : Peut tirer en rafale avec jusqu'à 5 balles (au lieu de 3)
 - **Précision** : Double la portée efficace, avantage aux tirs longue distance
 - **Vorpal** : Sur un [coup critique](resolution.md), décapitation/destruction instantanée
-- **Perce-blindage** : Ignore complètement la VA
+- **Perce-blindage** : Ignore complètement la PA
 - **Anti-véhicule** : Double les dégâts contre les cibles dures, divise par 2 contre les cibles molles
 - **Feu** : Met la cible en feu (2 dégâts par tour jusqu'à extinction)
-- **Glace** : Ralentit la cible (désavantage aux actions physiques pendant 3 tours, coût en PA doublé pour les déplacements)
-- **Foudre** : Paralyse 1 tour et court-circuite l'électronique dans un rayon de 2m. Sur échec critique, la cible devient "Survoltée" (+2 PA par tour)
+- **Glace** : Ralentit la cible (désavantage aux actions physiques pendant 3 tours, déplacement réduit de moitié)
+- **Foudre** : Paralyse 1 tour et court-circuite l'électronique dans un rayon de 2m. Sur échec critique, la cible devient "Survoltée" : avantage à l'initiative et à toutes ses actions pendant 1d6 tours, suivi d'un effondrement (état [Sonné](etats.md) une fois l'effet dissipé).
 - **Air** : Repousse la cible (test de Force ou être projeté, peut causer chute/collision)
 - **Pierre/Terre** : Assomme et peut entraver (désavantage aux actions de mouvement, test pour se libérer)
 - **Eau** : Trempe et désactive l'électronique, peut noyer si maintenu
 - **Poison X** : Test de Vigueur ou empoisonnement (X dégâts/tour, durée = marge d'échec, X indique la puissance)
 - **Ombre** : Aveugle temporairement, désavantage aux jets de perception, ignore l'armure si la cible n'est pas totalement illuminée
 - **Lumière** : Aveugle les créatures des ténèbres, révèle illusions et invisibilité, +2 dégâts aux morts-vivants
-- **Acide X** : Corrode l'armure (-X VA permanent par tour) et dégâts aux objets, X indique la puissance de corrosion
+- **Acide X** : Corrode l'armure (-X PA permanent par tour) et dégâts aux objets, X indique la puissance de corrosion
 
 **Exemples d'avantages/désavantages contextuels**
 
@@ -121,12 +121,12 @@ Les hôtes animaux perdent **1 PV toutes les (Taille × 10) minutes** à cause d
 
 **Effets spécifiques**
 
-- **Sacré/Magique/Maudit** : Double la VA de base
+- **Sacré/Magique/Maudit** : Double la PA de base
 - **Béni** : Avantage aux jets de résistance contre les attaques du Mal
 - **Profane** : Avantage aux jets de résistance contre les attaques du Bien
 - **Camouflage** : Avantage en discrétion dans l'environnement approprié
 - **Cérémoniel** : Avantage aux jets sociaux avec sa propre faction
-- **Renforcé** : Double VA mais désavantage aux jets d'agilité
+- **Renforcé** : Double PA mais désavantage aux jets d'agilité
 - **Léger** : Aucun malus de mouvement même pour armures lourdes
 
 ---
@@ -150,7 +150,7 @@ Les hôtes animaux perdent **1 PV toutes les (Taille × 10) minutes** à cause d
 
 **Effets spécifiques**
 
-- **Blindé** : VA contre les armes légères, résiste aux explosions
+- **Blindé** : PA contre les armes légères, résiste aux explosions
 - **Rapide** : Double la vitesse de déplacement
 - **Silencieux** : Moteur électrique ou très discret
 - **Tout-terrain** : Aucun malus sur terrain difficile

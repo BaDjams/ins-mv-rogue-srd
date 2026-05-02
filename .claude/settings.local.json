@@ -34,7 +34,8 @@
       "Bash(npm install *)",
       "Bash(npm run *)",
       "Bash(python tools/migrate_content.py)",
-      "Bash(grep \"\\\\*\\\\|_\\\\|\\\\`\")"
+      "Bash(grep \"\\\\*\\\\|_\\\\|\\\\`\")",
+      "Bash(git apply *)"
     ]
   }
 }

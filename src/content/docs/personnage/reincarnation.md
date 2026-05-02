@@ -13,8 +13,9 @@ nouvel hôte. Le nombre d'incarnations disponibles est égal au Rang
 Céleste de la créature.
 
 Une fois le quota d'incarnations épuisé, l'âme retourne définitivement
-à son plan d'origine (Paradis, Enfer, ou Limbes) et le dernier corps
-occupé se dissipe dans le néant.
+à son plan d'origine (Paradis, Enfer, ou Limbes). Le dernier corps
+occupé reste sur place comme une dépouille ordinaire — comme tous les
+hôtes précédents.
 
 ## **Conditions pour la réincarnation**
 
@@ -50,7 +51,7 @@ Un hôte valide doit remplir plusieurs critères :
 ## **Processus de réincarnation**
 
 Au départ de l'hôte initial (volontaire ou forcé par la mort), l'âme
-dispose d'un nombre de tours égal à son **Rang Hiérarchique** pour
+dispose d'un nombre de tours égal à son **Rang Céleste** pour
 trouver un nouvel hôte.
 
 **Déplacement**
@@ -102,7 +103,7 @@ serviteur de la faction appropriée est présent dans la zone :
 ## **Échec de réincarnation**
 
 Si l'âme n'a pas trouvé d'hôte valide avant l'expiration de son
-temps (Rang Hiérarchique en tours), elle consomme une incarnation
+temps (Rang Céleste en tours), elle consomme une incarnation
 supplémentaire et retourne temporairement à son plan d'origine. Elle ne
 pourra revenir en mission qu'après un temps de récupération déterminé
 par le MJ.

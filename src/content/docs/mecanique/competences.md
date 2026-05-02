@@ -5,18 +5,21 @@ sidebar:
   label: "Compétences"
 ---
 
-Les anges, créatures de pur esprit brut, ne possèdent pas de compétences. Mais les humains ont cette miraculeuse faculté à apprendre et transmettre leur savoir. Les humains disposent de compétences notées de +0 à +3 :
+Les anges, créatures de pur esprit brut, ne possèdent pas de compétences. Mais les humains ont cette miraculeuse faculté à apprendre et transmettre leur savoir. Les humains disposent de compétences sur trois paliers seulement :
 
-| Niveau | Valeur | Description |
+| Palier | Bonus au seuil | Description |
 |---|---|---|
-| **Aucun** | +0 | Pas de formation spécifique. Un jet sans compétence utilise la caractéristique seule. |
-| **Débutant** | +1 | Initié par un professionnel ou pratique occasionnelle. Maîtrise des bases. |
-| **Confirmé** | +2 | Pratique régulière (min. 2×/semaine) depuis au moins un an auprès d'un expert. Peut initier un novice. Peut acquérir une spécialisation. |
-| **Expert** | +3 | Exercice quotidien, reconnu comme autorité. Peut former des confirmés. Peut acquérir une spécialisation. |
+| **Aucun** | +0 | Pas de formation. Le jet repose sur la caractéristique seule. **Aucun désavantage** : ignorer une compétence ne pénalise pas le jet, ça empêche simplement d'en tirer le bénéfice. |
+| **Compétent** | +1 | Formation sérieuse ou pratique régulière (de l'ordre de l'année auprès d'un mentor, ou plusieurs années en autodidacte). Peut initier un débutant. |
+| **Expert** | +2 | Maîtrise reconnue, exercice quotidien, autorité dans le domaine. Peut former des Compétents. Compétent en prérequis : on ne saute pas le palier. |
 
-Les compétences possèdent des **spécialisations** accessibles à partir du niveau confirmé (+2). Une spécialisation confère un [avantage](resolution.md) à tous les jets relevant de ce domaine particulier.
+Le bonus s'ajoute au seuil de réussite normalement déterminé par la caractéristique. Pour davantage que +2, il n'existe pas de palier supérieur : un personnage particulièrement doué est modélisé par plusieurs compétences pertinentes plutôt que par un score qui grimpe.
 
-Lorsqu'une âme surnaturelle s'incarne dans un humain, elle accède aux compétences et spécialisations maîtrisées initialement par l'humain, ainsi qu'à tous ses souvenirs.
+Les compétences possèdent des **spécialisations** accessibles à partir d'Expert. Une spécialisation pertinente accorde un [avantage](resolution.md) sur le jet (après validation du MJ). Les spécialisations listées ci-dessous sont des suggestions, pas un catalogue limitatif.
+
+À côté des compétences, certains personnages disposent de **traits** — des mots-clés libres, sans prérequis, qui décrivent une particularité utile (Ambidextre, Œil de lynx, Fluide en mandarin, Sang-froid notoire, etc.). Un trait n'a pas de palier ; il s'applique de manière situationnelle et son effet mécanique (avantage, accès narratif, neutralisation d'un désavantage) est tranché par le MJ au cas par cas.
+
+Lorsqu'une âme surnaturelle s'incarne dans un humain, elle accède aux compétences, traits, spécialisations et souvenirs de son hôte.
 
 
 <div class="admonition note">

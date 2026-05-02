@@ -182,14 +182,20 @@ définitivement son plan d'origine (Paradis, Enfer, ou Limbes).
 
 ## **Mécanisme de réincarnation (Anges et Démons)**
 
-Lorsqu'un hôte meurt (atteint 0 PV), l'âme surnaturelle a quelques
+Lorsqu'un hôte meurt (dernière case ⭙ remplie), l'âme surnaturelle a quelques
 minutes pour trouver un nouvel hôte dans un rayon proche (quelques
 centaines de mètres). La [réincarnation](reincarnation.md) est automatique et ne coûte pas
 de PE, mais consomme une incarnation du quota.
 
-Le corps de l'ancien hôte reste sur place, mort. Il ne se dissipe que
-si l'âme surnaturelle a épuisé son quota d'incarnations et retourne
-définitivement au Paradis/Enfer.
+Le corps de l'ancien hôte reste sur place : c'est un mort ordinaire,
+avec tout ce que cela implique en termes de constat de décès, d'enquête
+éventuelle, et de questions pénibles. Quand le quota d'incarnations
+est épuisé, l'âme retourne définitivement au Paradis ou en Enfer — le
+dernier corps occupé reste lui aussi sur place comme une dépouille
+normale. La gestion de ces décès, parfois nombreux et dans des
+circonstances peu plausibles, fait partie du travail des Soldats de
+Dieu (ou de leurs équivalents infernaux) : étouffer les affaires,
+requalifier les rapports, distribuer le bon classement administratif.
 
 **Compteur d'incarnations** : Les joueurs doivent noter sur leur fiche
 combien d'incarnations leur restent (départ : 3 pour les anges/démons).
