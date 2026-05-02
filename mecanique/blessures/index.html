@@ -124,11 +124,11 @@ de dégâts :</p>
 <p>Indicateur clé : Si le texte dit “subit des blessures” sans mentionner
 “inflige des dégâts” au préalable, c’est direct.</p>
 <p>Natures de dégâts et blessures</p>
-<p>Dégâts normaux conduisent à des Blessures normales (X)</p>
+<p>Dégâts normaux conduisent à des Blessures létales (X)</p>
 <ul>
 <li>Guérissent naturellement (1 par jour)</li>
 </ul>
-<p>Dégâts aggravés conduisent à des Blessures aggravées (⊗)</p>
+<p>Dégâts aggravés conduisent à des Blessures aggravées (⭙)</p>
 <ul>
 <li>
 <p>Ne guérissent jamais naturellement</p>
@@ -137,7 +137,7 @@ de dégâts :</p>
 <p>Nécessitent <a href="resolution.md">intervention divine</a> ou démoniaque</p>
 </li>
 </ul>
-<p>Dégâts non-létaux conduisent à des Blessures non-létales (○)</p>
+<p>Dégâts non-létaux conduisent à des Blessures non-létales (/)</p>
 <ul>
 <li>Guérissent rapidement (1 par heure de repos)</li>
 </ul>
@@ -277,28 +277,25 @@ blessures aggravées</p>
 directement toutes les blessures, y compris aggravées, sans conversion
 préalable.</p>
 <h2 id="exemple-pratique"><strong>Exemple Pratique</strong></h2>
-<p><strong>Mirael</strong> (Ange, 10 PV) subit des dégâts en combat :</p>
+<p><strong>Mirael</strong> (Ange, 10 PV, Résilience 3) reçoit plusieurs attaques en combat :</p>
 <ol>
 <li>
-<p>Reçoit 3 dégâts non létaux → Coche (/) (/) (/) dans les cases 1-3</p>
+<p>Une attaque inflige 9 dégâts non létaux → après Résilience (9/3=3), Mirael <strong>subit</strong> 3 blessures non létales → coche (/) (/) (/) dans les cases 1-3.</p>
 </li>
 <li>
-<p>Reçoit 2 dégâts létaux → Les cases 1-2 s’aggravent en (X) (X), la
-case 3 reste (/)</p>
+<p>Une attaque inflige 6 dégâts létaux → après Résilience (6/3=2), Mirael <strong>subit</strong> 2 blessures létales → les cases 1-2 s’upgradent en (X) (X), la case 3 reste (/).</p>
 </li>
 <li>
-<p>Utilise un pouvoir coûtant 3 PE → Subit 1 blessure aggravée, la case
-1 devient (⭙)</p>
+<p>Mirael lance un pouvoir qui dépasse son seuil de tolérance → <strong>subit</strong> directement 1 blessure aggravée (sans réduction), la case 1 devient (⭙).</p>
 </li>
 <li>
-<p>État intermédiaire : (⭙) (X) (/) + 7 cases vides</p>
+<p>État intermédiaire : (⭙) (X) (/) + 7 cases vides.</p>
 </li>
 <li>
-<p>Reçoit une balle infligeant 3 blessures létales → Les cases 3, 4 et
-5 deviennent (X)</p>
+<p>Une balle inflige 9 dégâts létaux → après Résilience (9/3=3), Mirael <strong>subit</strong> 3 blessures létales → les cases 3 (qui upgrade depuis /), 4 et 5 deviennent (X).</p>
 </li>
 <li>
-<p>État final : (⭙) (X) (X) (X) (X) + 5 cases vides</p>
+<p>État final : (⭙) (X) (X) (X) (X) + 5 cases vides.</p>
 </li>
 </ol>
 <p><strong>Guérison :</strong></p>
