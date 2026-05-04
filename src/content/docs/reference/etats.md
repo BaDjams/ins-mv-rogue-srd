@@ -12,7 +12,7 @@ sidebar:
 - **Un même état ne se cumule pas** : Une créature est soit affectée par un état, soit elle ne l'est pas
 - **États multiples** : Différents états peuvent se cumuler (ex : Aveuglé + Empoisonné)
 - **Durée** : Chaque état a sa propre durée, indépendamment des autres
-- **Résistance** : Les créatures de [rang céleste](rang.md) élevé peuvent résister à certains états
+- **Résistance** : Les créatures de [rang céleste](../personnage/rang.md) élevé peuvent résister à certains états
 - **Immunité** : Certaines créatures sont complètement immunisées à des états spécifiques
 
 ### Dissipation
@@ -32,8 +32,8 @@ sidebar:
 **Effets :**
 
 - Seule action de déplacement possible : ramper (coût normal de 2 PA)
-- Les attaques au corps à corps contre la créature ont un [avantage](resolution.md)
-- Les attaques à distance contre la créature ont un [désavantage](resolution.md) si l'attaquant est à plus de 6m
+- Les attaques au corps à corps contre la créature ont un [avantage](../mecanique/resolution.md)
+- Les attaques à distance contre la créature ont un [désavantage](../mecanique/resolution.md) si l'attaquant est à plus de 6m
 - Se relever coûte 1 PA supplémentaire
 
 **Fin :** Jusqu'à ce que la créature se relève ou soit relevée par un allié.
@@ -105,7 +105,7 @@ sidebar:
 
 **Effets :**
 
-- Désavantage sur tous les jets d'attaque et de [caractéristiques](caracteristiques.md) physiques
+- Désavantage sur tous les jets d'attaque et de [caractéristiques](../personnage/caracteristiques.md) physiques
 - Peut perdre des PV selon le poison (voir description spécifique)
 - Désavantage sur les jets de Vigueur
 
@@ -232,7 +232,7 @@ sidebar:
 - Ne peut se déplacer ni parler
 - Échec automatique des jets de Force et Agilité
 - Les attaques contre la créature ont un avantage
-- Toute attaque au corps à corps qui touche est un [coup critique](resolution.md)
+- Toute attaque au corps à corps qui touche est un [coup critique](../mecanique/resolution.md)
 
 **Fin :** Variable selon la source.
 
@@ -407,7 +407,7 @@ sidebar:
 - Ne peut récupérer de PV naturellement (doit utiliser des moyens spéciaux)
 - Les pouvoirs de soins divins sont inefficaces
 
-**Fin :** [Intervention divine](resolution.md), rituels de purification, ou conditions très spécifiques.
+**Fin :** [Intervention divine](../mecanique/resolution.md), rituels de purification, ou conditions très spécifiques.
 
 ---
 
@@ -417,7 +417,7 @@ sidebar:
 
 **Effets :**
 
-- Tous les pouvoirs divins ont un [dé d'intensité](resolution.md) explosif
+- Tous les pouvoirs divins ont un [dé d'intensité](../mecanique/resolution.md) explosif
 - +3 dégâts contre les créatures du Mal
 - Résistance aux dégâts des créatures du Mal
 - Aura de 2m qui gêne les créatures maléfiques (désavantage)
@@ -451,9 +451,9 @@ sidebar:
 - Ne peut interagir physiquement avec le monde
 - Invisible et intangible pour les humains normaux
 - Peut être vu par les autres créatures surnaturelles
-- Doit [se réincarner](reincarnation.md) dans les 10 tours ou retourner dans son plan d'origine
+- Doit [se réincarner](../personnage/reincarnation.md) dans les 10 tours ou retourner dans son plan d'origine
 
-**Fin :** [Réincarnation](reincarnation.md) dans un nouvel hôte.
+**Fin :** [Réincarnation](../personnage/reincarnation.md) dans un nouvel hôte.
 
 ---
 
@@ -528,7 +528,7 @@ sidebar:
 <div class="admonition note">
 <p class="admonition-title">Règles générales pour les objets</p>
 
-- **[Points de Vie](blessures.md)** : Les objets ont des PV selon leur taille et résistance
+- **[Points de Vie](../mecanique/blessures.md)** : Les objets ont des PV selon leur taille et résistance
 - **PA (Points d'Armure)** : Selon le matériau (bois 2, métal 5, pierre 8, etc.)
 - **Immunités** : Tous les objets sont immunisés aux dégâts mentaux et de poison
 - **Objets portés** : Utilisent la CA et les jets de sauvegarde du porteur
@@ -756,7 +756,7 @@ sidebar:
 
 - **Outils requis** : Selon le matériau (marteau/enclume pour métal, etc.)
 - **Temps** : 1 heure par point de dégât à réparer
-- **[Compétence](competences.md)** : Artisanat approprié
+- **[Compétence](../mecanique/competences.md)** : Artisanat approprié
 - **Coût** : 10% de la valeur de l'objet en matériaux
 
 ### Réparation magique

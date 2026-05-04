@@ -25,7 +25,7 @@ Avant de lancer les dés, il est essentiel de déterminer la nature de l'action 
 <div class="admonition note">
 <p class="admonition-title">Important</p>
 
-Les [compétences](competences.md) appartiennent au cerveau de l'hôte, pas à l'âme surnaturelle. L'ange ou le démon accède temporairement aux compétences de son hôte actuel. Si l'hôte meurt et que l'âme se [réincarne](reincarnation.md), les compétences disponibles seront celles du nouvel hôte.
+Les [compétences](competences.md) appartiennent au cerveau de l'hôte, pas à l'âme surnaturelle. L'ange ou le démon accède temporairement aux compétences de son hôte actuel. Si l'hôte meurt et que l'âme se [réincarne](../personnage/reincarnation.md), les compétences disponibles seront celles du nouvel hôte.
 </div>
 
 À partir de cette étape, le dé utilisé pour déterminer le succès de l'action (bleu ou blanc, selon la nature de l'action) sera appelé **"Dé d'action"**.
@@ -61,7 +61,7 @@ Si le seuil est de 6 ou plus (par exemple, un ange avec PUI 5 qui dépense 2 PE 
 
     **Exemple** : Seuil 7, dé d'action = 1 → Réussite avec marge de 6 !
 
-    Cela récompense les combinaisons optimisées d'[attributs célestes](caracteristiques.md) et de compétences élevées en générant des marges spectaculaires.
+    Cela récompense les combinaisons optimisées d'[attributs célestes](../personnage/caracteristiques.md) et de compétences élevées en générant des marges spectaculaires.
 
 Si une règle précise que la marge n'est pas prise en compte, considérer la marge comme égale à 0.
 

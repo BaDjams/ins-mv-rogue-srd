@@ -71,7 +71,7 @@ l'attaquant) alors que lors de la division des dégâts par la
 Résilience, l'arrondi se fait toujours à l'inférieur (favorable au
 défenseur).
 
-Exemple : Azrael active son aura de sainteté qui **inflige** Rang hiérarchique x [rang céleste](rang.md) /2 dégâts aggravés à toutes les cibles démoniaques au contact. 3×3/2 = 4,5, donc arrondi à 5 dégâts.
+Exemple : Azrael active son aura de sainteté qui **inflige** Rang hiérarchique x [rang céleste](../personnage/rang.md) /2 dégâts aggravés à toutes les cibles démoniaques au contact. 3×3/2 = 4,5, donc arrondi à 5 dégâts.
 Belphess la démone aux belles fesses est très très au contact et **subit** donc 5/3=1 blessure aggravée (on arrondit à l'inférieur lors de la division par la résilience). Belphess pousse un gémissement équivoque.
 
 Pour les effets bénéfiques (soins, récupération), l'arrondi se fait à

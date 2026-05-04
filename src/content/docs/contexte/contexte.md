@@ -10,15 +10,15 @@ sidebar:
 
 Le monde visible est celui que tout le monde connaît. Derrière lui se cache un monde occulte : des factions anciennes, des entités aux pouvoirs surnaturels, des guerres menées dans l'ombre depuis des siècles. Les personnages joueurs appartiennent à ce monde caché — ou viennent d'y être brutalement introduits.
 
-Le système ROGUE repose sur un unique mécanism central, le **[D666](mecanique/resolution.md)** : trois dés à six faces de couleurs différentes, lus comme un nombre à trois chiffres. Ce système s'adapte à une grande variété de cadres de jeu (appelés **settings**), chacun apportant ses propres règles qui viennent se brancher sur le socle commun.
+Le système ROGUE repose sur un unique mécanism central, le **[D666](../mecanique/resolution.md)** : trois dés à six faces de couleurs différentes, lus comme un nombre à trois chiffres. Ce système s'adapte à une grande variété de cadres de jeu (appelés **settings**), chacun apportant ses propres règles qui viennent se brancher sur le socle commun.
 
 ### Niveaux de jeu
 
 ROGUE se joue à plusieurs échelles de puissance :
 
-**Street level** — Les personnages sont des humains qui ont levé le voile sur le monde caché. Enquêteurs, chasseurs, initiés, survivants : ils luttent avec leurs compétences, leur réseau et leurs ressources contre des forces qui les surpassent. Chaque victoire coûte quelque chose.
+**Street level** — Les personnages sont des humains qui ont levé le voile sur le monde caché. Enquêteurs, chasseurs, initiés, survivants : ils luttent avec leurs [compétences](../mecanique/competences.md), leur réseau et leurs ressources contre des forces qui les surpassent. Chaque victoire coûte quelque chose.
 
-**Surnaturel incarné** — Les personnages sont des entités d'une autre nature — âmes, esprits, créatures — contraintes d'agir dans un corps mortel. Leur puissance surnaturelle est réelle, mais le corps humain est fragile, et la mort d'un hôte n'est qu'un contretemps. C'est à ce niveau que s'exprime la dimension *rogue-like* du jeu : à chaque réincarnation, les dés redistribuent les cartes.
+**Surnaturel incarné** — Les personnages sont des entités d'une autre nature — âmes, esprits, créatures — contraintes d'agir dans un corps mortel. Leur puissance surnaturelle est réelle, mais le corps humain est fragile, et la mort d'un hôte n'est qu'un contretemps. C'est à ce niveau que s'exprime la dimension *rogue-like* du jeu : à chaque [réincarnation](../personnage/reincarnation.md), les dés redistribuent les cartes.
 
 **Guerre céleste** — Les personnages sont des acteurs majeurs d'un conflit cosmique entre les forces du Bien et du Mal. Les enjeux sont planétaires, les pouvoirs colossaux, et chaque décision peut peser des siècles.
 
@@ -32,7 +32,7 @@ Chaque setting précise : qui sont les personnages, à quelle échelle ils opèr
 
 Dans ce conflit éternel, les forces célestes ont un handicap majeur : privés de forme physique, les anges doivent s'incarner dans des corps humains pour agir sur Terre. Fort heureusement, ils peuvent compter sur le soutien des "Soldats de Dieu", ces humains dévoués qui offrent volontairement leur enveloppe charnelle à la cause divine. Lorsqu'un ange prend possession d'un tel hôte, l'âme humaine s'envole directement vers le Paradis, sans jugement préalable - un arrangement qui ravit ces fervents croyants.
 
-Les anges sont peu nombreux - à peine un millier sur Terre et autant dans les cieux - leur nombre n'ayant pas changé depuis la Création. Si leur hôte venait à périr, ils pourraient rapidement se réincarner dans un autre humain à proximité, tel un phénix renaissant de ses cendres. Bien sûr, ce nouvel hôte, choisi au hasard, peut avoir des capacités bien différentes du précédent.
+Les anges sont peu nombreux - à peine un millier sur Terre et autant dans les cieux - leur nombre n'ayant pas changé depuis la Création. Si leur hôte venait à périr, ils pourraient rapidement [se réincarner](../personnage/reincarnation.md) dans un autre humain à proximité, tel un phénix renaissant de ses cendres. Bien sûr, ce nouvel hôte, choisi au hasard, peut avoir des capacités bien différentes du précédent.
 
 Quand l'âme angélique change d'hôte, le corps de l'ancien reste sur place comme un mort ordinaire — pas de dissipation, pas de néant, juste un cadavre qu'il va falloir expliquer. Et même quand la mort est techniquement banale, allez justifier auprès des autorités comment un ado s'est retrouvé carbonisé par la foudre derrière un cinéma de quartier en plein mois d'août. C'est précisément ce travail de classement qui occupe les Soldats de Dieu infiltrés dans l'administration : étouffer, requalifier, faire signer le bon formulaire au bon endroit. Ce n'est pas une volonté de nuire, ils œuvrent pour le bien puisque les hôtes, littéralement des élus, vont au paradis directement. Pour un Soldat de Dieu c'est l'événement qu'ils attendent avec ferveur puisque leur vie entière est destinée à accueillir un ange un jour. Leur position privilégiée au sein de l'administration leur permet aussi de repérer plus facilement les signes d'agissements surnaturels, démoniaques ou autres...
 
@@ -59,7 +59,7 @@ Les êtres divins ont la possibilité de voyager entre ces mondes, sous certaine
 - connaître et emprunter les passages.
 - se défaire de leur hôte, celle-ci étant liée à un univers.
 
-Les mondes les plus denses imposent de s'incarner dans un hôte. D'autres, plus éthérés, permettent aux anges d'utiliser leur forme véritable. Sous cette forme, les anges utilisent exclusivement leurs [attributs célestes](caracteristiques.md) à leur plein potentiel.
+Les mondes les plus denses imposent de s'incarner dans un hôte. D'autres, plus éthérés, permettent aux anges d'utiliser leur forme véritable. Sous cette forme, les anges utilisent exclusivement leurs [attributs célestes](../personnage/caracteristiques.md) à leur plein potentiel.
 
 Les âmes doivent être incarnées dans un être vivant pour séjourner durablement dans l'univers "Terre".
 

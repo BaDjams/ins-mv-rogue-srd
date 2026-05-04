@@ -1,13 +1,12 @@
 #!/usr/bin/env python3
 """
-wiki_linker.py — Outil de wiki-linking pour INS-MV ROGUE SRD
+wiki_linker.py — Outil de wiki-linking pour INS-MV ROGUE SRD (Astro/Starlight)
 
-Identifie les mentions de règles et chapitres dans les fichiers .md
-et crée des liens automatiques pointant vers la page définissant la règle,
-à la manière d'un wiki.
+Identifie les mentions de règles dans les fichiers .md de src/content/docs/
+et crée des liens relatifs conformes à Astro Starlight.
 
 Usage :
-    python tools/wiki_linker.py [--dry-run] [--file docs/combat.md]
+    python tools/wiki_linker.py [--dry-run] [--file src/content/docs/mecanique/combat.md]
 
 Options :
     --dry-run   Affiche les modifications sans écrire les fichiers
@@ -15,12 +14,12 @@ Options :
     --reset     Supprime tous les liens wiki existants (mode déliage)
 """
 
+import os
 import re
 import sys
 import argparse
 from pathlib import Path
 
-# Fix Windows console encoding
 if sys.stdout.encoding and sys.stdout.encoding.lower() not in ("utf-8", "utf8"):
     sys.stdout = open(sys.stdout.fileno(), mode="w", encoding="utf-8", buffering=1)
 
@@ -31,23 +30,55 @@ except ImportError:
     sys.exit(1)
 
 TOOLS_DIR = Path(__file__).parent
-DOCS_DIR = TOOLS_DIR.parent / "docs"
+DOCS_DIR = TOOLS_DIR.parent / "src" / "content" / "docs"
 CONFIG_FILE = TOOLS_DIR / "wiki_links.yml"
 
-# ── Tokenisation ─────────────────────────────────────────────────────────────
 
-# Zones protégées : ne jamais y appliquer de liens
+# ── Index des pages ────────────────────────────────────────────────────────────
+
+def build_page_index() -> dict[str, Path]:
+    """
+    Construit slug → chemin absolu pour tous les .md dans DOCS_DIR.
+    Le slug est le chemin relatif à DOCS_DIR sans extension.
+    Ex: "mecanique/resolution" → Path(".../mecanique/resolution.md")
+    """
+    index = {}
+    for path in DOCS_DIR.rglob("*.md"):
+        slug = path.relative_to(DOCS_DIR).with_suffix("").as_posix()
+        index[slug] = path
+    return index
+
+
+def resolve_link(source_path: Path, target_slug: str, page_index: dict, anchor: str = "") -> str:
+    """
+    Calcule le lien .md relatif de source_path vers target_slug.
+    Ex: de mecanique/combat.md vers reference/etats → ../reference/etats.md
+    """
+    target_path = page_index.get(target_slug)
+    if target_path is None:
+        return target_slug + ".md"  # fallback si slug inconnu
+
+    rel = os.path.relpath(str(target_path), str(source_path.parent))
+    rel = Path(rel).as_posix()  # normalise les séparateurs (Windows)
+
+    if anchor:
+        rel += "#" + anchor
+    return rel
+
+
+# ── Tokenisation ───────────────────────────────────────────────────────────────
+
 PROTECTED_PATTERNS = [
-    r"```[\s\S]*?```",          # blocs de code délimités
-    r"~~~[\s\S]*?~~~",          # blocs de code alternatifs
-    r"`[^`\n]+`",               # code en ligne
-    r"!\[[^\]]*\]\([^)]*\)",    # images ![alt](url)
-    r"\[[^\]]*\]\([^)]*\)",     # liens existants [text](url)
-    r"\[[^\]]*\]\[[^\]]*\]",    # liens référence [text][ref]
-    r"^\s{0,3}#{1,6}[^\n]*",   # titres
-    r"^\s{0,3}[!?]{3}[^\n]*",  # en-têtes d'admonitions (!!!  ???)
-    r"^\s*\|[^\n]*",            # lignes de tableau
-    r"<[^>]+>",                 # balises HTML
+    r"```[\s\S]*?```",           # blocs de code délimités
+    r"~~~[\s\S]*?~~~",           # blocs de code alternatifs
+    r"`[^`\n]+`",                # code inline
+    r"!\[[^\]]*\]\([^)]*\)",     # images ![alt](url)
+    r"\[[^\]]*\]\([^)]*\)",      # liens existants [text](url)
+    r"\[[^\]]*\]\[[^\]]*\]",     # liens référence [text][ref]
+    r"^\s{0,3}#{1,6}[^\n]*",    # titres
+    r"^\s{0,3}[!?]{3}[^\n]*",   # en-têtes d'admonitions
+    r"^\s*\|[^\n]*",             # lignes de tableau
+    r"<[^>]+>",                  # balises HTML
 ]
 
 _PROTECTED_RE = re.compile(
@@ -62,7 +93,7 @@ def tokenize(text: str) -> list[tuple[str, str]]:
     last = 0
     for m in _PROTECTED_RE.finditer(text):
         if m.start() > last:
-            tokens.append(("text", text[last : m.start()]))
+            tokens.append(("text", text[last:m.start()]))
         tokens.append(("protected", m.group()))
         last = m.end()
     if last < len(text):
@@ -74,52 +105,40 @@ def untokenize(tokens: list[tuple[str, str]]) -> str:
     return "".join(v for _, v in tokens)
 
 
-# ── Application des liens ─────────────────────────────────────────────────────
-
-
-def build_url(entry: dict) -> str:
-    url = entry["target"]
-    if entry.get("anchor"):
-        url += "#" + entry["anchor"]
-    return url
-
+# ── Application des liens ──────────────────────────────────────────────────────
 
 def apply_links_to_text(
     segment: str, term_pattern: re.Pattern, url: str, already_linked: set
 ) -> tuple[str, bool]:
-    """
-    Remplace la première occurrence non encore liée du terme dans segment.
-    Retourne (nouveau_segment, a_modifié).
-    """
     m = term_pattern.search(segment)
     if m and m.group(0).lower() not in already_linked:
         matched = m.group(0)
         replacement = f"[{matched}]({url})"
-        segment = segment[: m.start()] + replacement + segment[m.end() :]
+        segment = segment[:m.start()] + replacement + segment[m.end():]
         already_linked.add(matched.lower())
         return segment, True
     return segment, False
 
 
-def process_content(text: str, links_config: list, current_file: str) -> str:
+def process_content(text: str, links_config: list, source_path: Path, page_index: dict) -> str:
     """Applique tous les liens wiki sur le contenu d'un fichier."""
     tokens = tokenize(text)
-    # Terme déjà lié dans cette page (première occurrence seulement par défaut)
     linked_terms: set[str] = set()
+    source_slug = source_path.relative_to(DOCS_DIR).with_suffix("").as_posix()
 
     for entry in links_config:
+        target_slug = entry["target"]
         # Ne pas lier un terme à la page qui le définit
-        if entry["target"] == current_file:
+        if target_slug == source_slug:
             continue
 
-        url = build_url(entry)
+        url = resolve_link(source_path, target_slug, page_index, entry.get("anchor", ""))
         first_only = entry.get("first_only", True)
 
         for term in entry["terms"]:
             if first_only and term.lower() in linked_terms:
                 continue
 
-            # Regex : correspondance de mot entier, insensible à la casse
             try:
                 pattern = re.compile(
                     r"(?<!\w)" + re.escape(term) + r"(?!\w)",
@@ -132,9 +151,7 @@ def process_content(text: str, links_config: list, current_file: str) -> str:
             term_linked = False
             for kind, value in tokens:
                 if kind == "text" and not (first_only and term_linked):
-                    new_value, changed = apply_links_to_text(
-                        value, pattern, url, linked_terms
-                    )
+                    new_value, changed = apply_links_to_text(value, pattern, url, linked_terms)
                     modified_tokens.append((kind, new_value))
                     if changed:
                         term_linked = True
@@ -145,28 +162,30 @@ def process_content(text: str, links_config: list, current_file: str) -> str:
     return untokenize(tokens)
 
 
-# ── Mode déliage ──────────────────────────────────────────────────────────────
+# ── Mode déliage ───────────────────────────────────────────────────────────────
 
-_WIKI_LINK_RE = re.compile(r"\[([^\]]+)\]\(([^)]+\.md[^)]*)\)")
+# Correspond à tout lien Markdown [text](chemin.md) ou [text](../chemin.md#ancre)
+_WIKI_LINK_RE = re.compile(r"\[([^\]]+)\]\(([^)]*\.md[^)]*)\)")
 
 
 def remove_wiki_links(text: str, links_config: list) -> str:
-    """Supprime les liens wiki générés (garde les liens non-SRD)."""
-    all_targets = {entry["target"] for entry in links_config}
+    """
+    Supprime les liens vers des pages du SRD (quel que soit le chemin relatif).
+    Identifie une cible par son stem (nom sans extension ni répertoire).
+    """
+    known_stems = {entry["target"].split("/")[-1] for entry in links_config}
 
     def replacer(m):
         label, url = m.group(1), m.group(2)
-        # Ne supprime que les liens vers des pages du SRD
-        base = url.split("#")[0]
-        if base in all_targets:
+        stem = Path(url.split("#")[0]).stem
+        if stem in known_stems:
             return label
         return m.group(0)
 
     return _WIKI_LINK_RE.sub(replacer, text)
 
 
-# ── Entrée principale ─────────────────────────────────────────────────────────
-
+# ── Entrée principale ──────────────────────────────────────────────────────────
 
 def load_config() -> list:
     with CONFIG_FILE.open(encoding="utf-8") as f:
@@ -174,54 +193,58 @@ def load_config() -> list:
     return data.get("links", [])
 
 
-def process_file(path: Path, links_config: list, dry_run: bool, reset: bool):
+def process_file(path: Path, links_config: list, page_index: dict, dry_run: bool, reset: bool):
     text = path.read_bytes().decode("utf-8").replace("\r\n", "\n")
-    current_file = path.name
 
     if reset:
         result = remove_wiki_links(text, links_config)
     else:
-        result = process_content(text, links_config, current_file)
+        result = process_content(text, links_config, path, page_index)
 
     if result == text:
-        print(f"  (inchangé)  {path.name}")
+        print(f"  (inchangé)  {path.relative_to(DOCS_DIR)}")
         return
 
     if dry_run:
-        # Affiche un diff compact
         import difflib
         diff = difflib.unified_diff(
             text.splitlines(keepends=True),
             result.splitlines(keepends=True),
-            fromfile=f"a/{path.name}",
-            tofile=f"b/{path.name}",
+            fromfile=f"a/{path.relative_to(DOCS_DIR)}",
+            tofile=f"b/{path.relative_to(DOCS_DIR)}",
             n=1,
         )
-        print("".join(list(diff)[:60]))
+        print("".join(list(diff)[:80]))
     else:
         path.write_bytes(result.encode("utf-8"))
-        print(f"  ✓  {path.name}")
+        print(f"  ✓  {path.relative_to(DOCS_DIR)}")
 
 
 def main():
-    parser = argparse.ArgumentParser(description=__doc__)
+    parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     parser.add_argument("--dry-run", action="store_true", help="Pas d'écriture")
-    parser.add_argument("--file", help="Traite uniquement ce fichier")
-    parser.add_argument("--reset", action="store_true", help="Supprime les liens wiki")
+    parser.add_argument("--file", help="Chemin vers un fichier .md spécifique")
+    parser.add_argument("--reset", action="store_true", help="Supprime les liens wiki existants")
     args = parser.parse_args()
 
     links_config = load_config()
+    page_index = build_page_index()
+
+    if not page_index:
+        print(f"Aucun fichier .md trouvé dans {DOCS_DIR}. Vérifie le chemin.")
+        sys.exit(1)
 
     if args.file:
         files = [Path(args.file)]
     else:
-        files = sorted(DOCS_DIR.glob("*.md"))
+        files = sorted(DOCS_DIR.rglob("*.md"))
 
     mode = "RESET" if args.reset else ("DRY-RUN" if args.dry_run else "APPLY")
-    print(f"[wiki_linker] Mode : {mode} — {len(files)} fichier(s)\n")
+    print(f"[wiki_linker] Mode : {mode} — {len(files)} fichier(s)")
+    print(f"[wiki_linker] Docs : {DOCS_DIR}\n")
 
     for path in files:
-        process_file(path, links_config, dry_run=args.dry_run, reset=args.reset)
+        process_file(path, links_config, page_index, dry_run=args.dry_run, reset=args.reset)
 
     print("\nTerminé.")
 

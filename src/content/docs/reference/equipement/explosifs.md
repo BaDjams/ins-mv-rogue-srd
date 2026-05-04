@@ -4,13 +4,13 @@ sidebar:
   order: 4
 ---
 
-Les explosifs infligent leurs dégâts à 100% dans le rayon principal et à 50% dans le rayon secondaire. Le dé d'intensité est toujours explosif pour les explosifs. Les dégâts indiqués sont le Code de base — ils ne dépendent pas de la FOR ni d'une compétence de mélée.
+Les explosifs infligent leurs dégâts à 100% dans le rayon principal et à 50% dans le rayon secondaire. Le [dé d'intensité](../../mecanique/resolution.md) est toujours explosif pour les explosifs. Les dégâts indiqués sont le Code de base — ils ne dépendent pas de la FOR ni d'une [compétence](../../mecanique/competences.md) de mélée.
 
 
 <div class="admonition warning">
 <p class="admonition-title">Compétence requise</p>
 
-L'utilisation d'explosifs requiert la compétence **Explosifs**. Un usage sans compétence entraîne un désavantage et le MJ est fortement encouragé à improviser des complications créatives.
+L'utilisation d'explosifs requiert la compétence **Explosifs**. Un usage sans compétence entraîne un [désavantage](../../mecanique/resolution.md) et le MJ est fortement encouragé à improviser des complications créatives.
 </div>
 
 <div style="overflow-x:auto;">

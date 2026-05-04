@@ -43,7 +43,7 @@ Lance [D666](resolution.md). Initiative = **Dé blanc + [Dé d'intensité](resol
 
 ## Postures Tactiques
 
-Au début de chacun de ses tours, un personnage annonce sa posture. Ce choix est gratuit — pas d'action requise — mais il engage pour tout le tour et peut affecter les jets des autres personnages. Un personnage qui n'annonce rien, surpris, [sonné](etats.md) ou simplement indécis, est considéré en posture défensive. Parce que se mettre à couvert est un réflexe sain, et que les anges qui ont survécu plusieurs millénaires l'ont appris à leurs dépens.
+Au début de chacun de ses tours, un personnage annonce sa posture. Ce choix est gratuit — pas d'action requise — mais il engage pour tout le tour et peut affecter les jets des autres personnages. Un personnage qui n'annonce rien, surpris, [sonné](../reference/etats.md) ou simplement indécis, est considéré en posture défensive. Parce que se mettre à couvert est un réflexe sain, et que les anges qui ont survécu plusieurs millénaires l'ont appris à leurs dépens.
 
 ### Posture Offensive — *"Frapper fort, frapper vite."*
 
@@ -139,7 +139,7 @@ Une fois l'ordre d'initiative établi, à leur tour, les joueurs choisissent les
 
     **Fred (Myrael)** : lance le D666 → "J'ai 3 sur le bleu, 2 sur le blanc, et 4 sur le rouge."
 
-    **François (MJ)** : "Parfait, avec le résultat du dé bleu, ça passe tout juste, tu as 3 en ALTERATION, ton bouclier est activé. Sa protection est égale au dé d'intensité rouge + la marge de réussite — donc 4 + 0 = 4 points absorbés avant d'être détruit."
+    **François (MJ)** : "Parfait, avec le résultat du dé bleu, ça passe tout juste, tu as 3 en ALTERATION, ton bouclier est activé. Sa protection est égale au dé d'intensité rouge + la [marge de réussite](resolution.md) — donc 4 + 0 = 4 points absorbés avant d'être détruit."
 
     ---
 

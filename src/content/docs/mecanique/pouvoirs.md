@@ -6,7 +6,7 @@ sidebar:
 
 ## Principe Général
 
-Le [rang céleste](rang.md) d'une créature détermine sa capacité à maîtriser des
+Le [rang céleste](../personnage/rang.md) d'une créature détermine sa capacité à maîtriser des
 pouvoirs surnaturels. Plus une créature a un rang élevé, plus elle peut
 accéder à des pouvoirs puissants et les développer à un niveau avancé.
 
@@ -30,7 +30,7 @@ Chaque pouvoir possède un rang (0 à 6). Le rang détermine à la fois l'accès
 - Il lui reste 1 PE de marge pour la journée
 </div>
 
-Pour le détail complet du mécanisme (seuil de tolérance, Consommation, Présence Surnaturelle), voir le chapitre [Énergie](energie.md).
+Pour le détail complet du mécanisme (seuil de tolérance, Consommation, Présence Surnaturelle), voir le chapitre Énergie.
 
 ---
 
@@ -101,7 +101,7 @@ augmenté au-delà du Rang Céleste du personnage.
 -   **Couper un pouvoir :** [Action gratuite](combat.md), peut être fait à tout
     moment
 
--   **Contrôle mental/Possession :** Le contrôleur ne dispose toujours que d'une Action Complexe et d'une Action Simple par tour, à répartir entre son hôte et ses cibles contrôlées.
+-   **Contrôle mental/Possession :** Le contrôleur ne dispose toujours que d'une [Action Complexe](combat.md) et d'une [Action Simple](combat.md) par tour, à répartir entre son hôte et ses cibles contrôlées.
 
 -   Certains pouvoir précisent que le lanceur subit une ou plusieurs
     blessures aggravées. Ces blessures aggravées sont infligées

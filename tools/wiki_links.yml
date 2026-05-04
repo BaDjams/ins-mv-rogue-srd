@@ -1,85 +1,85 @@
-# Dictionnaire de liens wiki — INS-MV ROGUE SRD
+# Dictionnaire de liens wiki — INS-MV ROGUE SRD (Astro/Starlight)
 #
-# Chaque entrée associe un ou plusieurs termes à une page cible.
+# Chaque entrée associe des termes à une page cible.
 # - terms     : liste des expressions à lier (insensible à la casse)
-# - target    : fichier cible (relatif au dossier docs/)
+# - target    : slug de la page cible (chemin relatif à src/content/docs/, sans .md)
 # - anchor    : ancre optionnelle (#section)
-# - first_only: true (défaut) → un seul lien par page ; false → tous les occurrences
+# - first_only: true (défaut) → un seul lien par page ; false → toutes les occurrences
 #
-# L'outil ne lie pas un terme à la page qui le définit (auto-liens ignorés).
+# L'outil génère automatiquement le chemin relatif correct selon la position
+# du fichier source. Il ne lie jamais un terme à la page qui le définit.
 
 links:
 
   # ── Résolution ──────────────────────────────────────────────────────────────
   - terms: ["D666"]
-    target: "resolution.md"
+    target: "mecanique/resolution"
 
   - terms: ["marge de réussite"]
-    target: "resolution.md"
+    target: "mecanique/resolution"
 
   - terms: ["dé d'intensité", "dé rouge"]
-    target: "resolution.md"
+    target: "mecanique/resolution"
 
   - terms: ["avantage", "désavantage"]
-    target: "resolution.md"
+    target: "mecanique/resolution"
 
   - terms: ["coup critique", "réussite critique"]
-    target: "resolution.md"
+    target: "mecanique/resolution"
 
   - terms: ["intervention divine", "intervention démoniaque"]
-    target: "resolution.md"
+    target: "mecanique/resolution"
 
   # ── Caractéristiques ────────────────────────────────────────────────────────
   - terms: ["caractéristiques", "attributs célestes"]
-    target: "caracteristiques.md"
+    target: "personnage/caracteristiques"
 
   # ── Rang céleste ─────────────────────────────────────────────────────────────
   - terms: ["rang céleste"]
-    target: "rang.md"
+    target: "personnage/rang"
 
   # ── Compétences ──────────────────────────────────────────────────────────────
   - terms: ["compétence", "compétences", "spécialisation"]
-    target: "competences.md"
+    target: "mecanique/competences"
 
   # ── Énergie ──────────────────────────────────────────────────────────────────
   - terms: ["points d'énergie", "points d'Énergie"]
-    target: "energie.md"
+    target: "mecanique/energie"
 
   - terms: ["drain"]
-    target: "energie.md"
+    target: "mecanique/energie"
 
   - terms: ["restauration de l'énergie"]
-    target: "energie.md"
+    target: "mecanique/energie"
 
   # ── Combat ───────────────────────────────────────────────────────────────────
   - terms: ["posture offensive", "posture défensive", "posture de concentration"]
-    target: "combat.md"
+    target: "mecanique/combat"
 
   - terms: ["initiative"]
-    target: "combat.md"
+    target: "mecanique/combat"
 
   - terms: ["action complexe", "action simple", "action gratuite"]
-    target: "combat.md"
+    target: "mecanique/combat"
 
   - terms: ["riposte"]
-    target: "combat.md"
-
-  # ── Pouvoirs ─────────────────────────────────────────────────────────────────
-  - terms: ["résilience"]
-    target: "blessures.md"
+    target: "mecanique/combat"
 
   # ── Blessures ────────────────────────────────────────────────────────────────
+  - terms: ["résilience"]
+    target: "mecanique/blessures"
+
   - terms: ["points de vie"]
-    target: "blessures.md"
+    target: "mecanique/blessures"
 
   # ── Réincarnation ────────────────────────────────────────────────────────────
   - terms: ["réincarnation", "se réincarner", "réincarne"]
-    target: "reincarnation.md"
+    target: "personnage/reincarnation"
 
   # ── Mots-clés / traits ───────────────────────────────────────────────────────
   - terms: ["mots-clés", "mot-clé"]
-    target: "mots-cles.md"
+    target: "reference/mots-cles"
 
   # ── États ─────────────────────────────────────────────────────────────────────
   - terms: ["sonné", "à terre", "inconscient", "mourant"]
-    target: "etats.md"
+    target: "reference/etats"

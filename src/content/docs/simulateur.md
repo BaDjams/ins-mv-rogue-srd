@@ -1,5 +1,5 @@
 ---
-title: Simulateur D666
+title: Simulateur [D666](mecanique/resolution.md)
 sidebar:
   order: 10
 ---

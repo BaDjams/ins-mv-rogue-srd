@@ -19,17 +19,17 @@ Le monde du jeu, la guerre céleste, les factions et l'univers.
 
 <div class="rogue-card rogue-card--host">
 <strong>Personnage</strong><br>
-Création d'âme, caractéristiques, rang céleste, progression, réincarnation.
+Création d'âme, [caractéristiques](personnage/caracteristiques.md), [rang céleste](personnage/rang.md), progression, [réincarnation](personnage/reincarnation.md).
 </div>
 
 <div class="rogue-card rogue-card--intensity">
 <strong>Mécanique</strong><br>
-Résolution D666, combat, pouvoirs, compétences, énergie, blessures.
+Résolution [D666](mecanique/resolution.md), combat, pouvoirs, [compétences](mecanique/competences.md), énergie, blessures.
 </div>
 
 <div class="rogue-card rogue-card--divine">
 <strong>Référence</strong><br>
-Mots-clés, états, équipement — toutes les tables et glossaires.
+[Mots-clés](reference/mots-cles.md), états, équipement — toutes les tables et glossaires.
 </div>
 
 </div>

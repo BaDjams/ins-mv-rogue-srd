@@ -96,9 +96,9 @@ Définissez votre fonction spécifique au service de votre supérieur.
 
 ## Étape 3 : Points d'énergie initiaux
 
-**Formule : PE = Rang Céleste**
+**Formule : PE = [Rang Céleste](rang.md)**
 
-Les [Points d'Énergie](energie.md) ne représentent pas une réserve de puissance, mais un **seuil de tolérance** : ils absorbent les conséquences du drain avant que l'hôte n'en paie le prix. Un personnage joueur débute au Rang Céleste 3, ce qui lui confère **3 PE** à la création.
+Les [Points d'Énergie](../mecanique/energie.md) ne représentent pas une réserve de puissance, mais un **seuil de tolérance** : ils absorbent les conséquences du [drain](../mecanique/energie.md) avant que l'hôte n'en paie le prix. Un personnage joueur débute au Rang Céleste 3, ce qui lui confère **3 PE** à la création.
 
 Certains traits d'âme comme **Conduit Divin** permettent d'augmenter cette tolérance, indépendamment du Rang Céleste.
 
@@ -108,7 +108,7 @@ Les PE se rechargent intégralement au **lever du soleil** pour les anges et à 
 
 ## Étape 4 : Pouvoirs initiaux
 
-Toute âme surnaturelle dispose automatiquement de **Présence Surnaturelle** (pouvoir intrinsèque de Rang 1, voir [Énergie](../mecanique/energie.md)). Le personnage choisit ensuite **3 pouvoirs supplémentaires** :
+Toute âme surnaturelle dispose automatiquement de **Présence Surnaturelle** (pouvoir intrinsèque de Rang 1, voir Énergie). Le personnage choisit ensuite **3 pouvoirs supplémentaires** :
 
 ### 1. Pouvoir du supérieur hiérarchique
 
@@ -145,7 +145,7 @@ Pouvoirs basiques utiles mais pas forcément en rapport avec votre concept initi
 
 Choisissez **2 traits sur la liste des Traits d'Âme**. Ces traits restent constants à travers toutes les incarnations.
 
-**Conduit Divin X** (X = 1, 2 ou 3) — exemple notable. Augmente le seuil de tolérance au drain en ajoutant X PE permanents au-dessus du Rang Céleste. Définition complète et exemples chiffrés dans le chapitre [Énergie](../mecanique/energie.md).
+**Conduit Divin X** (X = 1, 2 ou 3) — exemple notable. Augmente le seuil de tolérance au drain en ajoutant X PE permanents au-dessus du Rang Céleste. Définition complète et exemples chiffrés dans le chapitre Énergie.
 
 ---
 
@@ -183,4 +183,4 @@ L'hôte sera déterminé séparément par tirage de cartes au début de chaque m
 
 - **Avantages contextuels** : Se cumulent selon l'appréciation du MJ
 - **Effets spécifiques** : Ne se cumulent généralement pas sauf mention contraire
-- **Cohérence narrative** : Le MJ peut ignorer un [mot-clé](mots-cles.md) qui ne s'applique pas à la situation
+- **Cohérence narrative** : Le MJ peut ignorer un [mot-clé](../reference/mots-cles.md) qui ne s'applique pas à la situation

@@ -17,7 +17,7 @@ Deux descripteurs narratifs reflètent cette réalité organisationnelle, dont l
 | Cadre | Chevalier | Tyran | Ancien | Officier |
 | Cadre Supérieur | Aide de camp d'Archange | Lieutenant de Prince | Maître | Haut Commandement |
 
-Pas d'effet mécanique direct sur les pouvoirs, le [drain](energie.md) ou le Rang Céleste : ces descripteurs définissent uniquement les ressources et relations sociales accessibles. Un Archange est un Rang Céleste 4 — sa position au conseil céleste est une autre affaire entièrement. Le tableau ci-dessus n'est qu'un exemple pour la guerre céleste ; d'autres factions ou campagnes définiront leurs propres échelons.
+Pas d'effet mécanique direct sur les pouvoirs, le [drain](../mecanique/energie.md) ou le Rang Céleste : ces descripteurs définissent uniquement les ressources et relations sociales accessibles. Un Archange est un Rang Céleste 4 — sa position au conseil céleste est une autre affaire entièrement. Le tableau ci-dessus n'est qu'un exemple pour la guerre céleste ; d'autres factions ou campagnes définiront leurs propres échelons.
 
 # PROGRESSION DE PERSONNAGES
 
@@ -30,7 +30,7 @@ expérience pourrait être dépensée afin de :
 - Augmenter les [caractéristiques](caracteristiques.md) de l'ange (nouveau niveau x2)
 
 Si un ange réussit à terminer un scénario sans [se réincarner](reincarnation.md), il aura la
-possibilité d'acquérir le pouvoir "[compétence](competences.md) résiduelle" qui
+possibilité d'acquérir le pouvoir "[compétence](../mecanique/competences.md) résiduelle" qui
 correspond à la compétence la plus haute de l'hôte humain. Ce pouvoir
 spécial garantira au moins 1 rang dans la compétence résiduelle acquise
 lors des prochaines incarnations.
