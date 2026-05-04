@@ -57,7 +57,7 @@ Dégâts aggravés conduisent à des Blessures aggravées (⭙)
 
 -   Ne guérissent jamais naturellement
 
--   Nécessitent [intervention divine](resolution#interventions-divine-et-démoniaque) ou démoniaque
+-   Nécessitent [intervention divine](../resolution#interventions-divine-et-démoniaque) ou démoniaque
 
 Dégâts non-létaux conduisent à des Blessures non-létales (/)
 
@@ -71,11 +71,11 @@ l'attaquant) alors que lors de la division des dégâts par la
 Résilience, l'arrondi se fait toujours à l'inférieur (favorable au
 défenseur).
 
-Exemple : Azrael active son aura de sainteté qui **inflige** Rang hiérarchique x [rang céleste](../personnage/rang) /2 dégâts aggravés à toutes les cibles démoniaques au contact. 3×3/2 = 4,5, donc arrondi à 5 dégâts.
+Exemple : Azrael active son aura de sainteté qui **inflige** Rang hiérarchique x [rang céleste](../../personnage/rang) /2 dégâts aggravés à toutes les cibles démoniaques au contact. 3×3/2 = 4,5, donc arrondi à 5 dégâts.
 Belphess la démone aux belles fesses est très très au contact et **subit** donc 5/3=1 blessure aggravée (on arrondit à l'inférieur lors de la division par la résilience). Belphess pousse un gémissement équivoque.
 
 Pour les effets bénéfiques (soins, récupération), l'arrondi se fait à
-l'[avantage](resolution#avantage) du lanceur.
+l'[avantage](../resolution#avantage) du lanceur.
 
 # POINTS DE VIE
 
@@ -305,7 +305,7 @@ une créature vivante récupère les points de vie au rythme de (rang) /
 semaine (voir chapitre sur le rang céleste).
 En plus de cette récupération naturelle, une créature surnaturelle
 récupère des points de vie au rythme de (rang)/jour (au même moment que
-l'énergie, voir la section "[restauration de l'énergie](energie)").
+l'énergie, voir la section "[restauration de l'énergie](../energie)").
 Note : Certaines créatures maudites comme les vampires ne restaurent pas
 leur points de vie automatiquement, ils sont obligés de les prendre à
 leur victime (et disposent d'une capacité spéciale pour cela). ces

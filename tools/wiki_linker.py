@@ -49,17 +49,36 @@ def build_page_index() -> dict[str, Path]:
     return index
 
 
+def _url_dir(path: Path) -> Path:
+    """
+    Retourne le répertoire virtuel correspondant à l'URL de la page.
+
+    Astro route chaque fichier à /<dir>/<stem>/ sauf index.md → /<dir>/.
+    Pour calculer des chemins relatifs corrects entre URLs, on doit travailler
+    depuis ce répertoire virtuel plutôt que depuis le répertoire du fichier.
+
+    Exemples :
+      contexte/contexte.md   → docs/contexte/contexte   (URL /contexte/contexte/)
+      mecanique/combat.md    → docs/mecanique/combat     (URL /mecanique/combat/)
+      reference/equip/index.md → docs/reference/equip   (URL /reference/equip/)
+      srd.md                 → docs/srd                  (URL /srd/)
+    """
+    if path.stem == "index":
+        return path.parent
+    return path.parent / path.stem
+
+
 def resolve_link(source_path: Path, target_slug: str, page_index: dict, anchor: str = "") -> str:
     """
-    Calcule le lien relatif (sans .md) de source_path vers target_slug.
-    Ex: de mecanique/combat.md vers reference/etats → ../reference/etats
+    Calcule le lien relatif (sans .md) entre deux URLs Astro.
+    Ex: de mecanique/combat.md vers reference/etats → ../../reference/etats
     """
     target_path = page_index.get(target_slug)
     if target_path is None:
         return target_slug  # fallback si slug inconnu
 
-    rel = os.path.relpath(str(target_path), str(source_path.parent))
-    rel = Path(rel).with_suffix("").as_posix()  # supprime .md, normalise séparateurs
+    rel = os.path.relpath(str(_url_dir(target_path)), str(_url_dir(source_path)))
+    rel = Path(rel).as_posix()  # normalise les séparateurs (Windows)
 
     if anchor:
         rel += "#" + anchor

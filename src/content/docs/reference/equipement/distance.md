@@ -11,7 +11,7 @@ Arcs, arbalètes, armes de jet et armes de siège. Le modificateur de dégâts s
   <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:1rem;">
     <input id="search-dist" type="text" placeholder="Rechercher..." style="flex:1;min-width:160px;padding:6px 10px;background:var(--color-background-secondary);border:0.5px solid var(--color-border-tertiary);border-radius:6px;color:var(--color-text-primary);font-size:13px;">
     <select id="filter-comp-dist" style="padding:6px 10px;background:var(--color-background-secondary);border:0.5px solid var(--color-border-tertiary);border-radius:6px;color:var(--color-text-primary);font-size:13px;">
-      <option value="">Toutes [compétences](../../mecanique/competences)</option>
+      <option value="">Toutes [compétences](../../../mecanique/competences)</option>
       <option>Tir à l'arc</option>
       <option>Arbalète</option>
       <option>Armes de jet</option>
@@ -23,7 +23,7 @@ Arcs, arbalètes, armes de jet et armes de siège. Le modificateur de dégâts s
     <thead>
       <tr style="background:var(--color-background-secondary);text-align:left;">
         <th style="padding:8px 10px;border-bottom:1px solid var(--color-border-tertiary);">Nom</th>
-        <th style="padding:8px 10px;border-bottom:1px solid var(--color-border-tertiary);">[Compétence](../../mecanique/competences)</th>
+        <th style="padding:8px 10px;border-bottom:1px solid var(--color-border-tertiary);">[Compétence](../../../mecanique/competences)</th>
         <th style="padding:8px 10px;border-bottom:1px solid var(--color-border-tertiary);" title="FOR + modificateur (ou valeur fixe pour arbalètes/armes de siège)">Dégâts</th>
         <th style="padding:8px 10px;border-bottom:1px solid var(--color-border-tertiary);" title="Type de dégâts infligés">Type</th>
         <th style="padding:8px 10px;border-bottom:1px solid var(--color-border-tertiary);">Maniement</th>

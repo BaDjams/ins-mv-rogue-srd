@@ -15,13 +15,13 @@ Chaque âme surnaturelle peut canaliser la puissance divine librement, pour ses 
 
 ## Points d'Énergie — la capacité du tuyau
 
-Chaque ange dispose d'un nombre de Points d'Énergie (PE) égal à son [Rang Céleste](../personnage/rang). Ces PE ne représentent pas une réserve à vider, mais un seuil de tolérance : ils absorbent les conséquences des excès de canalisation avant que l'hôte n'en paie le prix. Ils se rechargent intégralement au lever du soleil pour les anges, et à la tombée de la nuit pour les démons — moment qui, comme tout événement cosmique dans cet univers, peut souffrir d'un léger décalage si Dieu est occupé à créer autre chose.
+Chaque ange dispose d'un nombre de Points d'Énergie (PE) égal à son [Rang Céleste](../../personnage/rang). Ces PE ne représentent pas une réserve à vider, mais un seuil de tolérance : ils absorbent les conséquences des excès de canalisation avant que l'hôte n'en paie le prix. Ils se rechargent intégralement au lever du soleil pour les anges, et à la tombée de la nuit pour les démons — moment qui, comme tout événement cosmique dans cet univers, peut souffrir d'un léger décalage si Dieu est occupé à créer autre chose.
 
 
 <div class="admonition note">
 <p class="admonition-title">Persistance entre incarnations</p>
 
-Les PE persistent d'une incarnation à l'autre. Un ange qui perd son hôte à court d'énergie repart dans le suivant dans le même état. L'âme se souvient de ses efforts, même si le corps est neuf. À la [réincarnation](../personnage/reincarnation) — et uniquement là — le compteur d'affaiblissements d'âme repart à zéro.
+Les PE persistent d'une incarnation à l'autre. Un ange qui perd son hôte à court d'énergie repart dans le suivant dans le même état. L'âme se souvient de ses efforts, même si le corps est neuf. À la [réincarnation](../../personnage/reincarnation) — et uniquement là — le compteur d'affaiblissements d'âme repart à zéro.
 </div>
 
 Le trait **Conduit Divin** (niveaux 1 à 3) représente une affinité développée avec le flux divin — certaines âmes anciennes ont simplement appris à gérer des débits que leurs pairs ne sauraient supporter. Chaque niveau ajoute 1 PE permanent au-dessus du Rang Céleste. Ce trait ne modifie pas le Rang lui-même ni l'accès aux pouvoirs : uniquement l'endurance spirituelle face au drain. Un ange de Rang 2 avec Conduit Divin 3 dispose de 5 PE — autant qu'un Archange, sur ce seul plan. Ce qui ne l'empêche pas de rester un ange de Rang 2 sur tout le reste, mais lui donne une endurance magique remarquable pour quelqu'un de son niveau.
@@ -38,15 +38,15 @@ Les dégâts d'un pouvoir offensif lancé au rang R sont :
 
 > `(Code + max(Marge, Dé rouge)) × R`
 
-Le **Multiciblage**, option disponible sur certains pouvoirs et uniquement activable en [posture de concentration](combat#postures-tactiques) (y compris pour un pouvoir instantané), ajoute 1 niveau de surcharge effectif par cible supplémentaire. Un pouvoir de Rang 2 appliqué à 3 cibles est lancé comme un Rang 4 — 4 dés de drain, dégâts × 4. Pas d'affaiblissement d'âme direct supplémentaire : c'est simplement le coût naturel de la surcharge.
+Le **Multiciblage**, option disponible sur certains pouvoirs et uniquement activable en [posture de concentration](../combat#postures-tactiques) (y compris pour un pouvoir instantané), ajoute 1 niveau de surcharge effectif par cible supplémentaire. Un pouvoir de Rang 2 appliqué à 3 cibles est lancé comme un Rang 4 — 4 dés de drain, dégâts × 4. Pas d'affaiblissement d'âme direct supplémentaire : c'est simplement le coût naturel de la surcharge.
 
 ---
 
 ## Présence Surnaturelle *(pouvoir intrinsèque)*
 
-*Rang 1 — Actif — [action gratuite](combat#déclaration-des-actions)*
+*Rang 1 — Actif — [action gratuite](../combat#déclaration-des-actions)*
 
-Toute âme incarnée peut, en une action gratuite déclarée avant le jet, soit prendre l'[avantage](resolution#avantage) sur ce jet, soit substituer un attribut d'âme à une caractéristique physique. Ces deux options représentent le même phénomène : laisser transparaître, l'espace d'un instant, la véritable nature de l'être qui habite ce corps. Cela génère 1 dé de drain — un seul 6 suffit à coûter 1 PE. Surcharge impossible.
+Toute âme incarnée peut, en une action gratuite déclarée avant le jet, soit prendre l'[avantage](../resolution#avantage) sur ce jet, soit substituer un attribut d'âme à une caractéristique physique. Ces deux options représentent le même phénomène : laisser transparaître, l'espace d'un instant, la véritable nature de l'être qui habite ce corps. Cela génère 1 dé de drain — un seul 6 suffit à coûter 1 PE. Surcharge impossible.
 
 | Caractéristique physique | Attribut d'âme substituable |
 |---|---|
@@ -59,7 +59,7 @@ Toute âme incarnée peut, en une action gratuite déclarée avant le jet, soit 
 
 ## Le seuil de tolérance
 
-Les X premiers affaiblissements d'âme de la journée (X = PE du personnage) sont absorbés sans conséquence. L'âme encaisse à la place de l'hôte. Au-delà de ce seuil, chaque affaiblissement supplémentaire inflige une blessure aggravée directe à l'hôte — non réduite par l'armure ni par la [Résilience](blessures).
+Les X premiers affaiblissements d'âme de la journée (X = PE du personnage) sont absorbés sans conséquence. L'âme encaisse à la place de l'hôte. Au-delà de ce seuil, chaque affaiblissement supplémentaire inflige une blessure aggravée directe à l'hôte — non réduite par l'armure ni par la [Résilience](../blessures).
 
 
 <div class="admonition danger">
@@ -70,4 +70,4 @@ Lorsque les affaiblissements d'âme dépassent les PE disponibles, la puissance 
 
     Un ange de Rang 3 peut encaisser trois affaiblissements gratuitement dans la journée. Le quatrième commence à consumer son hôte. Un Archange de Rang 5 peut lancer des pouvoirs de haut rang en rafale avant que quoi que ce soit ne morde vraiment. Et un ange de Rang 1 qui surcharge un pouvoir à 6 lance 6 dés de drain avec un seul PE de marge — c'est courageux, ou imprudent, selon le résultat.
 
-    Si la Consommation tue l'hôte, l'ange se [réincarne](../personnage/reincarnation) normalement — mais le compteur d'affaiblissements repart à zéro. Jusqu'au lever du soleil suivant cependant, cette ardoise vierge ne se recharge pas : un nouveau lancer de haut rang mordra immédiatement sur l'hôte suivant. Les anges qui abusent de cette mécanique finissent par consumer leurs hôtes en série, ce qui finit par attirer l'attention — des démons, des inquisiteurs, ou pire, de la hiérarchie.
+    Si la Consommation tue l'hôte, l'ange se [réincarne](../../personnage/reincarnation) normalement — mais le compteur d'affaiblissements repart à zéro. Jusqu'au lever du soleil suivant cependant, cette ardoise vierge ne se recharge pas : un nouveau lancer de haut rang mordra immédiatement sur l'hôte suivant. Les anges qui abusent de cette mécanique finissent par consumer leurs hôtes en série, ce qui finit par attirer l'attention — des démons, des inquisiteurs, ou pire, de la hiérarchie.

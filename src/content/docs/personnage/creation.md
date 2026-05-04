@@ -96,9 +96,9 @@ Définissez votre fonction spécifique au service de votre supérieur.
 
 ## Étape 3 : Points d'énergie initiaux
 
-**Formule : PE = [Rang Céleste](rang)**
+**Formule : PE = [Rang Céleste](../rang)**
 
-Les [Points d'Énergie](../mecanique/energie) ne représentent pas une réserve de puissance, mais un **seuil de tolérance** : ils absorbent les conséquences du [drain](../mecanique/energie#rang-des-pouvoirs-et-drain) avant que l'hôte n'en paie le prix. Un personnage joueur débute au Rang Céleste 3, ce qui lui confère **3 PE** à la création.
+Les [Points d'Énergie](../../mecanique/energie) ne représentent pas une réserve de puissance, mais un **seuil de tolérance** : ils absorbent les conséquences du [drain](../../mecanique/energie#rang-des-pouvoirs-et-drain) avant que l'hôte n'en paie le prix. Un personnage joueur débute au Rang Céleste 3, ce qui lui confère **3 PE** à la création.
 
 Certains traits d'âme comme **Conduit Divin** permettent d'augmenter cette tolérance, indépendamment du Rang Céleste.
 
@@ -174,7 +174,7 @@ Choisissez **2 traits sur la liste des Traits d'Âme**. Ces traits restent const
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 
-L'hôte sera déterminé séparément par tirage de cartes au début de chaque mission/[réincarnation](reincarnation).
+L'hôte sera déterminé séparément par tirage de cartes au début de chaque mission/[réincarnation](../reincarnation).
 </div>
 
 ---
@@ -183,4 +183,4 @@ L'hôte sera déterminé séparément par tirage de cartes au début de chaque m
 
 - **Avantages contextuels** : Se cumulent selon l'appréciation du MJ
 - **Effets spécifiques** : Ne se cumulent généralement pas sauf mention contraire
-- **Cohérence narrative** : Le MJ peut ignorer un [mot-clé](../reference/mots-cles) qui ne s'applique pas à la situation
+- **Cohérence narrative** : Le MJ peut ignorer un [mot-clé](../../reference/mots-cles) qui ne s'applique pas à la situation

@@ -60,7 +60,7 @@ Mais les **PNJ humains** conservent leur esprit, leur libre arbitre — et donc 
 <div class="admonition note">
 <p class="admonition-title">Charisme et apparence</p>
 
-L'apparence et le charisme ne se résument pas à une caractéristique chiffrée. Un personnage particulièrement beau possède simplement le trait **Beau**, ou **Charismatique** pour un charme exceptionnel. Ces traits s'appliquent à toutes les créatures, pas seulement aux humains (voir chapitre [Mots-clés](../reference/mots-cles)).
+L'apparence et le charisme ne se résument pas à une caractéristique chiffrée. Un personnage particulièrement beau possède simplement le trait **Beau**, ou **Charismatique** pour un charme exceptionnel. Ces traits s'appliquent à toutes les créatures, pas seulement aux humains (voir chapitre [Mots-clés](../../reference/mots-cles)).
 </div>
 
 

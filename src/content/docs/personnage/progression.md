@@ -4,7 +4,7 @@ sidebar:
   order: 4
 ---
 
-La puissance d'une âme — son [Rang Céleste](rang) — n'a rien à voir avec sa place dans l'organigramme de sa faction. Un ange de Rang Céleste 2 particulièrement fiable peut très bien commander une cellule opérationnelle, tandis qu'un Rang Céleste 4 fraîchement recruté exécute les ordres qu'on lui donne. Le cosmos n'est pas une méritocratie. La bureaucratie céleste non plus.
+La puissance d'une âme — son [Rang Céleste](../rang) — n'a rien à voir avec sa place dans l'organigramme de sa faction. Un ange de Rang Céleste 2 particulièrement fiable peut très bien commander une cellule opérationnelle, tandis qu'un Rang Céleste 4 fraîchement recruté exécute les ordres qu'on lui donne. Le cosmos n'est pas une méritocratie. La bureaucratie céleste non plus.
 
 Deux descripteurs narratifs reflètent cette réalité organisationnelle, dont le nom varie selon la faction :
 
@@ -17,7 +17,7 @@ Deux descripteurs narratifs reflètent cette réalité organisationnelle, dont l
 | Cadre | Chevalier | Tyran | Ancien | Officier |
 | Cadre Supérieur | Aide de camp d'Archange | Lieutenant de Prince | Maître | Haut Commandement |
 
-Pas d'effet mécanique direct sur les pouvoirs, le [drain](../mecanique/energie#rang-des-pouvoirs-et-drain) ou le Rang Céleste : ces descripteurs définissent uniquement les ressources et relations sociales accessibles. Un Archange est un Rang Céleste 4 — sa position au conseil céleste est une autre affaire entièrement. Le tableau ci-dessus n'est qu'un exemple pour la guerre céleste ; d'autres factions ou campagnes définiront leurs propres échelons.
+Pas d'effet mécanique direct sur les pouvoirs, le [drain](../../mecanique/energie#rang-des-pouvoirs-et-drain) ou le Rang Céleste : ces descripteurs définissent uniquement les ressources et relations sociales accessibles. Un Archange est un Rang Céleste 4 — sa position au conseil céleste est une autre affaire entièrement. Le tableau ci-dessus n'est qu'un exemple pour la guerre céleste ; d'autres factions ou campagnes définiront leurs propres échelons.
 
 # PROGRESSION DE PERSONNAGES
 
@@ -27,10 +27,10 @@ expérience pourrait être dépensée afin de :
 
 - Acquérir un nouveau pouvoir (5 points)
 - Augmenter un niveau supérieur d'un pouvoir existant (5 points)
-- Augmenter les [caractéristiques](caracteristiques) de l'ange (nouveau niveau x2)
+- Augmenter les [caractéristiques](../caracteristiques) de l'ange (nouveau niveau x2)
 
-Si un ange réussit à terminer un scénario sans [se réincarner](reincarnation), il aura la
-possibilité d'acquérir le pouvoir "[compétence](../mecanique/competences) résiduelle" qui
+Si un ange réussit à terminer un scénario sans [se réincarner](../reincarnation), il aura la
+possibilité d'acquérir le pouvoir "[compétence](../../mecanique/competences) résiduelle" qui
 correspond à la compétence la plus haute de l'hôte humain. Ce pouvoir
 spécial garantira au moins 1 rang dans la compétence résiduelle acquise
 lors des prochaines incarnations.

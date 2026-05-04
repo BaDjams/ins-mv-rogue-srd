@@ -6,13 +6,13 @@ sidebar:
 
 ## Principe Général
 
-Le [rang céleste](../personnage/rang) d'une créature détermine sa capacité à maîtriser des
+Le [rang céleste](../../personnage/rang) d'une créature détermine sa capacité à maîtriser des
 pouvoirs surnaturels. Plus une créature a un rang élevé, plus elle peut
 accéder à des pouvoirs puissants et les développer à un niveau avancé.
 
 ## Rang des pouvoirs et Drain
 
-Chaque pouvoir possède un rang (0 à 6). Le rang détermine à la fois l'accès et le coût en [drain](energie#rang-des-pouvoirs-et-drain).
+Chaque pouvoir possède un rang (0 à 6). Le rang détermine à la fois l'accès et le coût en [drain](../energie#rang-des-pouvoirs-et-drain).
 
 - **Rang 0** : gratuit, accessible aux humains initiés, 0 dé de drain.
 - **Rang 1–6** : dés de drain = rang effectif de lancement. Chaque 6 = 1 affaiblissement d'âme.
@@ -53,7 +53,7 @@ Quel que soit le niveau prérequis d'un pouvoir, il ne pourra être
 augmenté au-delà du Rang Céleste du personnage.
 
 -   **Exemple 1 :** Un pouvoir avec un prérequis de Rang 1 (comme
-    *[Résilience](blessures)*) peut être amélioré deux fois par un Ange de Rang 3,
+    *[Résilience](../blessures)*) peut être amélioré deux fois par un Ange de Rang 3,
     atteignant *Résilience 3*.
 
 -   **Exemple 2 :** Un pouvoir avec un prérequis de Rang 2 (comme *Feu
@@ -83,25 +83,25 @@ augmenté au-delà du Rang Céleste du personnage.
 
 **Mécaniques**
 
--   **PE :** [Points d'Énergie](energie)
+-   **PE :** [Points d'Énergie](../energie)
 
--   **Intensité :** Résultat du [dé rouge](resolution) + [marge de réussite](resolution#3-marge-de-réussite)
+-   **Intensité :** Résultat du [dé rouge](../resolution) + [marge de réussite](../resolution#3-marge-de-réussite)
 
--   **Dé explosif :** Le [dé d'intensité](resolution) explose sur un 6 (relance et
+-   **Dé explosif :** Le [dé d'intensité](../resolution) explose sur un 6 (relance et
     additionne)
 
 -   **Non-réductible :** Ne peut être réduit par l'armure ou la
     résistance physique
 
--   **Concentration :** Coût initial + coût par tour. Maintenir un pouvoir au-delà du tour de lancement requiert d'adopter la [posture de Concentration](combat#postures-tactiques), avec les contreparties qu'elle implique.
+-   **Concentration :** Coût initial + coût par tour. Maintenir un pouvoir au-delà du tour de lancement requiert d'adopter la [posture de Concentration](../combat#postures-tactiques), avec les contreparties qu'elle implique.
 
 -   **Durée fixe :** Exactement 3 tours puis dissipation automatique.
     Prolongation = nouveau jet + nouveau coût
 
--   **Couper un pouvoir :** [Action gratuite](combat#déclaration-des-actions), peut être fait à tout
+-   **Couper un pouvoir :** [Action gratuite](../combat#déclaration-des-actions), peut être fait à tout
     moment
 
--   **Contrôle mental/Possession :** Le contrôleur ne dispose toujours que d'une [Action Complexe](combat#déclaration-des-actions) et d'une [Action Simple](combat#déclaration-des-actions) par tour, à répartir entre son hôte et ses cibles contrôlées.
+-   **Contrôle mental/Possession :** Le contrôleur ne dispose toujours que d'une [Action Complexe](../combat#déclaration-des-actions) et d'une [Action Simple](../combat#déclaration-des-actions) par tour, à répartir entre son hôte et ses cibles contrôlées.
 
 -   Certains pouvoir précisent que le lanceur subit une ou plusieurs
     blessures aggravées. Ces blessures aggravées sont infligées
@@ -170,7 +170,7 @@ augmenté au-delà du Rang Céleste du personnage.
 
 -   **Type :** Passif
 
--   **Effet :** Bonus d'[initiative](combat#initiative) et d'actions
+-   **Effet :** Bonus d'[initiative](../combat#initiative) et d'actions
 
 **Calculs :**
 

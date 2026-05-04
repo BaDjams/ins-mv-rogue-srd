@@ -15,9 +15,9 @@ Les anges, créatures de pur esprit brut, ne possèdent pas de compétences. Mai
 | **Professionnel** | +2 | En vit. Peut former un confirmé. |
 | **Expert** | +3 | Maîtrise reconnue, autorité dans le domaine. |
 
-Le bonus s'ajoute au seuil de réussite déterminé par la caractéristique pertinente. Une compétence Professionnel ou Expert peut nommer une **spécialisation** — un sous-domaine particulièrement maîtrisé qui accorde un [avantage](resolution#avantage) quand il est pertinent. Les spécialisations listées ci-dessous sont indicatives.
+Le bonus s'ajoute au seuil de réussite déterminé par la caractéristique pertinente. Une compétence Professionnel ou Expert peut nommer une **spécialisation** — un sous-domaine particulièrement maîtrisé qui accorde un [avantage](../resolution#avantage) quand il est pertinent. Les spécialisations listées ci-dessous sont indicatives.
 
-À côté des compétences, certains personnages disposent de **traits** : des [mots-clés](../reference/mots-cles) libres (Ambidextre, Œil de lynx, Fluide en mandarin, Sang-froid notoire…) dont l'effet est tranché par le MJ selon la situation.
+À côté des compétences, certains personnages disposent de **traits** : des [mots-clés](../../reference/mots-cles) libres (Ambidextre, Œil de lynx, Fluide en mandarin, Sang-froid notoire…) dont l'effet est tranché par le MJ selon la situation.
 
 Lorsqu'une âme surnaturelle s'incarne dans un humain, elle accède aux compétences, traits et souvenirs de son hôte.
 
