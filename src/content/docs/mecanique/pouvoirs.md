@@ -93,13 +93,7 @@ augmenté au-delà du Rang Céleste du personnage.
 -   **Non-réductible :** Ne peut être réduit par l'armure ou la
     résistance physique
 
--   **Concentration :** Coût initial + coût par tour. Se brise sur
-    perturbation majeure (blessure subie). Maintenir un pouvoir au-delà
-    du tour de lancement requiert d'adopter la [posture de
-    Concentration](combat.md) au tour suivant ; tant que cette posture
-    est maintenue, aucun désavantage n'est imposé aux actions du
-    lanceur, mais ses adversaires bénéficient d'un avantage pour le
-    toucher (l'âme tournée vers l'intérieur laisse le corps exposé).
+-   **Concentration :** Coût initial + coût par tour. Maintenir un pouvoir au-delà du tour de lancement requiert d'adopter la [posture de Concentration](combat.md), avec les contreparties qu'elle implique.
 
 -   **Durée fixe :** Exactement 3 tours puis dissipation automatique.
     Prolongation = nouveau jet + nouveau coût
@@ -107,11 +101,7 @@ augmenté au-delà du Rang Céleste du personnage.
 -   **Couper un pouvoir :** [Action gratuite](combat.md), peut être fait à tout
     moment
 
--   **Contrôle mental/Possession :** Le contrôleur ne dispose toujours
-    que d'une Action Complexe et d'une Action Simple par tour, qu'il
-    doit répartir entre son propre hôte et l'ensemble des cibles qu'il
-    contrôle. Diriger plusieurs corps en simultané, c'est plus de
-    leviers, pas plus de temps pour les actionner.
+-   **Contrôle mental/Possession :** Le contrôleur ne dispose toujours que d'une Action Complexe et d'une Action Simple par tour, à répartir entre son hôte et ses cibles contrôlées.
 
 -   Certains pouvoir précisent que le lanceur subit une ou plusieurs
     blessures aggravées. Ces blessures aggravées sont infligées
@@ -134,10 +124,7 @@ augmenté au-delà du Rang Céleste du personnage.
 -   **Prolonger un pouvoir :** Nouveau jet de pouvoir + dépense complète
     des PE au tour 4, 7, 10, etc.
 
--   **Arrêter un pouvoir de concentration :** Action gratuite, effet
-    immédiat. Le lanceur n'a plus besoin de maintenir la posture de
-    Concentration et peut adopter la posture de son choix au tour
-    suivant.
+-   **Arrêter un pouvoir de concentration :** Action gratuite, effet immédiat.
 
 ## **Exemples Pratiques**
 
@@ -149,10 +136,7 @@ augmenté au-delà du Rang Céleste du personnage.
 
 -   **Effet :** Divise tous les dégâts subis par X
 
--   **Pouvoir automatique** pour tous les anges et démons incarnés. Les
-    créatures surnaturelles inférieures (Rang 2) qui en disposent
-    divisent par 2. Les humains (Rang 1) en sont théoriquement
-    porteurs, mais diviser par 1 ne sert à rien.
+-   **Pouvoir automatique** pour tous les anges et démons incarnés.
 
 **Calculs :**
 

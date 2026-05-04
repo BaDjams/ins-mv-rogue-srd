@@ -4,30 +4,39 @@ sidebar:
   order: 1
   label: Le monde du jeu
 ---
+## Présentation du jeu
 
-Le jeu se déroule de nos jours et la technologie disponible et les institutions correspondent à celle du monde réel. Cependant, dans ce monde, les anges et les démons mènent une guerre secrète à l'insu de la population humaine qui ignore leur existence. Les joueurs pourront incarner un groupe d'anges, ou un groupe de démons.
-Les joueurs joueront des anges incarnés sur terre (ou des démons, suivant le choix du MJ en début de partie. Pour le reste des règles nous utiliserons le terme Ange pour désigner les personnages joués par les joueurs, les mécaniques des démons étant les mêmes.
-Les anges, pure énergie céleste sans forme physique (âme angélique) s'incarnent dans un corps humain  hôte). Lors de l'incarnation, l'âme humaine rejoint immédiatement le paradis, sans tenir compte de ses actes
-passés.
-L'intrigue se passant dans le monde réel de nos jours, il y a beaucoup plus d'être humains que d'ange. En effet, le nombre d'anges n'a pas évolué depuis la création de l'univers par dieu et il y en a environ 1000 sur terre et autant dans les cieux.
-Au début de la partie, un hôte humain est sélectionné aléatoirement parmi un contingent de soldats de dieu : des humains, particulièrement dévoués à la cause angélique et qui sont volontaires pour servir d'autres aux anges.
-Si l'hôte humain vient à mourir, l'ange peut [se réincarner](reincarnation.md) dans un humain proche quelques minutes plus tard, introduisant une dimension "rogue like". Cet hôte humain sera généré aléatoirement à l'aide de table de génération de personnage.
-Quand l'âme angélique change d'hôte, le corps de l'ancien reste sur place comme un mort ordinaire — pas de dissipation, pas de néant, juste un cadavre qu'il va falloir expliquer. Et même quand la mort est techniquement banale, allez justifier auprès des autorités comment un ado s'est retrouvé carbonisé par la foudre derrière un cinéma de quartier en plein mois d'août. C'est précisément ce travail de classement qui occupe les Soldats de Dieu infiltrés dans l'administration : étouffer, requalifier, faire signer le bon formulaire au bon endroit. Ce n'est pas une volonté de nuire, ils œuvrent pour le bien puisque les hôtes, littéralement des élus, vont au paradis directement. Pour eux c'est l'événement qu'ils attendent avec ferveur puisque leur vie entière est destinée à accueillir un ange un jour.
+**ROGUE** est un jeu de rôle de dark fantasy dans lequel les personnages sont pris entre des forces qui les dépassent — et doivent pourtant agir.
 
-Version littérale proposée :
+Le monde visible est celui que tout le monde connaît. Derrière lui se cache un monde occulte : des factions anciennes, des entités aux pouvoirs surnaturels, des guerres menées dans l'ombre depuis des siècles. Les personnages joueurs appartiennent à ce monde caché — ou viennent d'y être brutalement introduits.
 
-Contexte : Une guerre secrète
+Le système ROGUE repose sur un unique mécanism central, le **[D666](mecanique/resolution.md)** : trois dés à six faces de couleurs différentes, lus comme un nombre à trois chiffres. Ce système s'adapte à une grande variété de cadres de jeu (appelés **settings**), chacun apportant ses propres règles qui viennent se brancher sur le socle commun.
+
+### Niveaux de jeu
+
+ROGUE se joue à plusieurs échelles de puissance :
+
+**Street level** — Les personnages sont des humains qui ont levé le voile sur le monde caché. Enquêteurs, chasseurs, initiés, survivants : ils luttent avec leurs compétences, leur réseau et leurs ressources contre des forces qui les surpassent. Chaque victoire coûte quelque chose.
+
+**Surnaturel incarné** — Les personnages sont des entités d'une autre nature — âmes, esprits, créatures — contraintes d'agir dans un corps mortel. Leur puissance surnaturelle est réelle, mais le corps humain est fragile, et la mort d'un hôte n'est qu'un contretemps. C'est à ce niveau que s'exprime la dimension *rogue-like* du jeu : à chaque réincarnation, les dés redistribuent les cartes.
+
+**Guerre céleste** — Les personnages sont des acteurs majeurs d'un conflit cosmique entre les forces du Bien et du Mal. Les enjeux sont planétaires, les pouvoirs colossaux, et chaque décision peut peser des siècles.
+
+### Structure d'un setting
+
+Chaque setting précise : qui sont les personnages, à quelle échelle ils opèrent, quelles règles spécifiques s'appliquent (factions, pouvoirs, équipement, hôtes). Le SRD décrit le setting de référence — la **guerre céleste contemporaine** — mais le système est conçu pour accueillir d'autres univers.
+
+## ** Contexte : Une guerre secrète **
 
  De nos jours, alors que les humains vaquent à leurs occupations quotidiennes, une guerre ancestrale se poursuit dans l'ombre. Anges et démons s'affrontent depuis la nuit des temps, dissimulant leur existence aux yeux des mortels.
 
-Dans ce conflit éternel, les forces célestes ont un handicap majeur : privés de forme physique, les anges doivent s'incarner dans des corps humains pour agir sur Terre. Fort heureusement, ils peuvent compter sur
-le soutien des "Soldats de Dieu", ces humains dévoués qui offrent volontairement leur enveloppe charnelle à la cause divine. Lorsqu'un ange prend possession d'un tel hôte, l'âme humaine s'envole directement vers le Paradis, sans jugement préalable - un arrangement qui ravit ces fervents croyants.
+Dans ce conflit éternel, les forces célestes ont un handicap majeur : privés de forme physique, les anges doivent s'incarner dans des corps humains pour agir sur Terre. Fort heureusement, ils peuvent compter sur le soutien des "Soldats de Dieu", ces humains dévoués qui offrent volontairement leur enveloppe charnelle à la cause divine. Lorsqu'un ange prend possession d'un tel hôte, l'âme humaine s'envole directement vers le Paradis, sans jugement préalable - un arrangement qui ravit ces fervents croyants.
 
 Les anges sont peu nombreux - à peine un millier sur Terre et autant dans les cieux - leur nombre n'ayant pas changé depuis la Création. Si leur hôte venait à périr, ils pourraient rapidement se réincarner dans un autre humain à proximité, tel un phénix renaissant de ses cendres. Bien sûr, ce nouvel hôte, choisi au hasard, peut avoir des capacités bien différentes du précédent.
 
-Lorsqu'un ange quitte son hôte parce que celui-ci est mort, le corps reste sur place comme un cadavre ordinaire — pas de dissolution, pas de mystère ésotérique, juste un mort de plus à expliquer. Ces décès, même quand ils sont techniquement naturels ou accidentels, ont la fâcheuse tendance à se produire dans des circonstances délicates à classer (un coup de couteau bien placé pendant une bagarre, une chute du quatrième étage, une intoxication médicamenteuse soudaine chez un sujet en parfaite santé). Heureusement, les Soldats de Dieu infiltrés dans l'administration savent étouffer, requalifier et faire signer le bon formulaire au bon endroit, convaincus d'œuvrer pour une noble cause.
+Quand l'âme angélique change d'hôte, le corps de l'ancien reste sur place comme un mort ordinaire — pas de dissipation, pas de néant, juste un cadavre qu'il va falloir expliquer. Et même quand la mort est techniquement banale, allez justifier auprès des autorités comment un ado s'est retrouvé carbonisé par la foudre derrière un cinéma de quartier en plein mois d'août. C'est précisément ce travail de classement qui occupe les Soldats de Dieu infiltrés dans l'administration : étouffer, requalifier, faire signer le bon formulaire au bon endroit. Ce n'est pas une volonté de nuire, ils œuvrent pour le bien puisque les hôtes, littéralement des élus, vont au paradis directement. Pour un Soldat de Dieu c'est l'événement qu'ils attendent avec ferveur puisque leur vie entière est destinée à accueillir un ange un jour. Leur position privilégiée au sein de l'administration leur permet aussi de repérer plus facilement les signes d'agissements surnaturels, démoniaques ou autres...
 
-L'autre camp : Les forces infernales
+## ** L'autre camp : Les forces infernales **
 
 Si les anges bénéficient du soutien des Soldats de Dieu, les démons doivent se contenter d'un réseau plus alternatif. Dans les bas-fonds de la société, ils cultivent leurs relations avec des adeptes dévoués à leur cause. Ces fidèles de l'ombre, contrairement aux Soldats de Dieu, ne peuvent pas compter sur une place au paradis, mais les démons savent se montrer convaincants par d'autres moyens.
 
@@ -38,7 +47,7 @@ Sans le réseau administratif bien huilé des Soldats de Dieu, les démons doive
 
 Les mécaniques de jeu restent identiques à celles des anges, mais leur style d'opération différent reflète bien la nature plus... pragmatique des forces infernales.
 
-Les autres mondes : 
+## ** Les autres mondes : **
 
 L'univers de la terre est loin d'être la seule tentative de Dieu pour Créer. Il existe une multitude d'univers imaginés pour certains en une fraction de seconde, pour d'autres cela prît jusqu'à 6 jours, voire plus
 (ce qui est énorme pour Dieu qui a un temps d'attention proche du résultat d'une division par zéro.)

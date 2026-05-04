@@ -108,9 +108,7 @@ Les PE se rechargent intégralement au **lever du soleil** pour les anges et à 
 
 ## Étape 4 : Pouvoirs initiaux
 
-Toute âme surnaturelle dispose automatiquement de **Présence Surnaturelle**, un pouvoir intrinsèque de Rang 1 qui permet, en action gratuite avant un jet, soit de prendre l'avantage sur ce jet, soit de substituer un attribut surnaturel à la caractéristique physique correspondante (FOR↔PUI, AGI↔INF, VIG↔RES, PER↔CLA). Ce pouvoir n'est pas à choisir, ne compte pas dans les 3 ci-dessous, et son fonctionnement détaillé est décrit dans le chapitre [Énergie](../mecanique/energie.md).
-
-Le personnage choisit ensuite **3 pouvoirs supplémentaires** au moment de la création :
+Toute âme surnaturelle dispose automatiquement de **Présence Surnaturelle** (pouvoir intrinsèque de Rang 1, voir [Énergie](../mecanique/energie.md)). Le personnage choisit ensuite **3 pouvoirs supplémentaires** :
 
 ### 1. Pouvoir du supérieur hiérarchique
 
