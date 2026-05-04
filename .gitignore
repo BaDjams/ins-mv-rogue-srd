@@ -1,0 +1,17 @@
+# Astro
+dist/
+.astro/
+
+# Node
+node_modules/
+
+# Python (legacy)
+__pycache__/
+*.pyc
+*.pyo
+srd.db
+
+# Env
+.env
+.env.*
+!.env.example
