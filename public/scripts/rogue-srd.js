@@ -1369,6 +1369,21 @@
   }
 
   /* ══════════════════════════════════════════════════════
+     ADMIN HEADER LINK
+  ══════════════════════════════════════════════════════ */
+
+  function initAdminLink() {
+    if (document.querySelector('.admin-header-link')) return;
+    var target = document.querySelector('header .social-icons');
+    if (!target) return;
+    var a = document.createElement('a');
+    a.href = '/ins-mv-rogue-srd/admin/';
+    a.className = 'admin-header-link';
+    a.textContent = 'Admin';
+    target.prepend(a);
+  }
+
+  /* ══════════════════════════════════════════════════════
      INIT — active les composants au chargement
   ══════════════════════════════════════════════════════ */
 
@@ -1379,6 +1394,7 @@
     document.querySelectorAll('.rogue-sim').forEach(buildSimulator);
     document.querySelectorAll('.rogue-gen').forEach(buildNPCGenerator);
     initStickyHeaders();
+    initAdminLink();
   }
 
   if (document.readyState === 'loading') {
@@ -1387,10 +1403,7 @@
     init();
   }
 
-  // MkDocs Material recharge les pages via XHR (navigation SPA)
-  // On réactive les composants après chaque navigation
-  if (typeof document$ !== 'undefined') {
-    document$.subscribe(init);
-  }
+  // Astro View Transitions : réactive les composants après chaque navigation
+  document.addEventListener('astro:page-load', init);
 
 })();

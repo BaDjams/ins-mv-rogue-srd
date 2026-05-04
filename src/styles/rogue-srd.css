@@ -861,7 +861,39 @@
 .gen-stat__val { font-weight: 700; color: var(--rogue-text); font-family: var(--rogue-font-label); }
 
 /* ═══════════════════════════════════════════════════════
-   10. RESPONSIVE
+   10. OVERRIDES STARLIGHT — Header & Sidebar
+   ═══════════════════════════════════════════════════════ */
+
+/* Item actif dans la sidebar : texte blanc lisible sur fond accent */
+nav a[aria-current="page"],
+nav a[aria-current="page"]:hover {
+  color: #ffffff;
+}
+
+/* Lien Admin dans le header */
+.admin-header-link {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.28em 0.65em;
+  font-family: var(--rogue-font-label);
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none !important;
+  color: var(--rogue-text-dim);
+  border: 1px solid var(--rogue-border);
+  border-radius: 5px;
+  transition: color 0.18s, border-color 0.18s;
+  white-space: nowrap;
+}
+.admin-header-link:hover {
+  color: var(--rogue-divine);
+  border-color: var(--rogue-divine-border);
+}
+
+/* ═══════════════════════════════════════════════════════
+   11. RESPONSIVE
    ═══════════════════════════════════════════════════════ */
 
 @media (max-width: 700px) {
