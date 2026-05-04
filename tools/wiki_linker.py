@@ -51,15 +51,15 @@ def build_page_index() -> dict[str, Path]:
 
 def resolve_link(source_path: Path, target_slug: str, page_index: dict, anchor: str = "") -> str:
     """
-    Calcule le lien .md relatif de source_path vers target_slug.
-    Ex: de mecanique/combat.md vers reference/etats → ../reference/etats.md
+    Calcule le lien relatif (sans .md) de source_path vers target_slug.
+    Ex: de mecanique/combat.md vers reference/etats → ../reference/etats
     """
     target_path = page_index.get(target_slug)
     if target_path is None:
-        return target_slug + ".md"  # fallback si slug inconnu
+        return target_slug  # fallback si slug inconnu
 
     rel = os.path.relpath(str(target_path), str(source_path.parent))
-    rel = Path(rel).as_posix()  # normalise les séparateurs (Windows)
+    rel = Path(rel).with_suffix("").as_posix()  # supprime .md, normalise séparateurs
 
     if anchor:
         rel += "#" + anchor
@@ -164,20 +164,26 @@ def process_content(text: str, links_config: list, source_path: Path, page_index
 
 # ── Mode déliage ───────────────────────────────────────────────────────────────
 
-# Correspond à tout lien Markdown [text](chemin.md) ou [text](../chemin.md#ancre)
-_WIKI_LINK_RE = re.compile(r"\[([^\]]+)\]\(([^)]*\.md[^)]*)\)")
+# Correspond à tout lien Markdown inline [text](url) — exclut les images ![alt](url)
+_WIKI_LINK_RE = re.compile(r"(?<!!)(?<!\])\[([^\]]+)\]\(([^)]+)\)")
 
 
 def remove_wiki_links(text: str, links_config: list) -> str:
     """
-    Supprime les liens vers des pages du SRD (quel que soit le chemin relatif).
-    Identifie une cible par son stem (nom sans extension ni répertoire).
+    Supprime les liens vers des pages du SRD (avec ou sans extension .md).
+    Identifie une cible par son stem/nom (sans extension ni répertoire).
+    Ignore les URLs externes (contenant ://).
     """
     known_stems = {entry["target"].split("/")[-1] for entry in links_config}
 
     def replacer(m):
         label, url = m.group(1), m.group(2)
-        stem = Path(url.split("#")[0]).stem
+        if "://" in url:
+            return m.group(0)  # lien externe, on ne touche pas
+        path = url.split("#")[0].rstrip("/")
+        # Stem : nom de fichier sans extension (gère .md et sans extension)
+        p = Path(path)
+        stem = p.stem if p.suffix else p.name
         if stem in known_stems:
             return label
         return m.group(0)

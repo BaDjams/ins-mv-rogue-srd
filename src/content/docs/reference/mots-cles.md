@@ -18,15 +18,15 @@ La plupart des mots-clés donnent des avantages/désavantages selon le contexte.
 **Effets spécifiques**
 
 - **Ancienne** : A parfois des flashbacks obscurs d'incarnations passées (information + roleplay)
-- **Vétéran des anciennes éditions** : Votre âme a participé à des événements d'ampleur cosmique AVANT le grand reset. Elle n'en garde aucun souvenir mais bénéficie d'une [réincarnation](../personnage/reincarnation.md) bonus. Parce que.
+- **Vétéran des anciennes éditions** : Votre âme a participé à des événements d'ampleur cosmique AVANT le grand reset. Elle n'en garde aucun souvenir mais bénéficie d'une [réincarnation](../personnage/reincarnation) bonus. Parce que.
 - **Protégée** : Commence chaque mission avec un jeton "Touché par la Grâce" / "Marque du Diable"
 - **Adaptable** : Réduit les malus de réincarnation d'urgence (moins de choc lors des changements d'hôte)
-- **Inspirante** : Peut donner un [avantage](../mecanique/resolution.md) à un allié 1 fois par tour (coût : 1 PE)
-- **Intuitive** : Avantage pour détecter le danger, les adversaires ont un [désavantage](../mecanique/resolution.md) pour la surprendre
+- **Inspirante** : Peut donner un [avantage](../mecanique/resolution#avantage) à un allié 1 fois par tour (coût : 1 PE)
+- **Intuitive** : Avantage pour détecter le danger, les adversaires ont un [désavantage](../mecanique/resolution#désavantage) pour la surprendre
 - **Résiliente** : Premier échec critique par session devient un échec normal
-- **Focalisée** : Peut relancer 1 [dé d'intensité](../mecanique/resolution.md) par session, le dé relancé est explosif
+- **Focalisée** : Peut relancer 1 [dé d'intensité](../mecanique/resolution) par session, le dé relancé est explosif
 - **Fanatique** : +1 intensité finale (après tous calculs) pour toute action en rapport avec le mot-clé choisi (validé par le MJ)
-- **Conduit Divin X** (X = 1, 2 ou 3) : Affinité développée avec le flux de la puissance divine. +X PE permanents au-dessus du [Rang céleste](../personnage/rang.md). Définition complète : voir Énergie.
+- **Conduit Divin X** (X = 1, 2 ou 3) : Affinité développée avec le flux de la puissance divine. +X PE permanents au-dessus du [Rang céleste](../personnage/rang). Définition complète : voir Énergie.
 
 **Exemples d'avantages/désavantages contextuels**
 
@@ -97,12 +97,12 @@ Les hôtes animaux perdent **1 PV toutes les (Taille × 10) minutes** à cause d
 - **Automatique** : Peut tirer en rafale (voir règles de combat)
 - **Gatling** : Peut tirer en rafale avec jusqu'à 5 balles (au lieu de 3)
 - **Précision** : Double la portée efficace, avantage aux tirs longue distance
-- **Vorpal** : Sur un [coup critique](../mecanique/resolution.md), décapitation/destruction instantanée
+- **Vorpal** : Sur un [coup critique](../mecanique/resolution#réussite-critique), décapitation/destruction instantanée
 - **Perce-blindage** : Ignore complètement la PA
 - **Anti-véhicule** : Double les dégâts contre les cibles dures, divise par 2 contre les cibles molles
 - **Feu** : Met la cible en feu (2 dégâts par tour jusqu'à extinction)
 - **Glace** : Ralentit la cible (désavantage aux actions physiques pendant 3 tours, déplacement réduit de moitié)
-- **Foudre** : Paralyse 1 tour et court-circuite l'électronique dans un rayon de 2m. Sur échec critique, la cible devient "Survoltée" : avantage à l'[initiative](../mecanique/combat.md) et à toutes ses actions pendant 1d6 tours, suivi d'un effondrement (état [Sonné](etats.md) une fois l'effet dissipé).
+- **Foudre** : Paralyse 1 tour et court-circuite l'électronique dans un rayon de 2m. Sur échec critique, la cible devient "Survoltée" : avantage à l'[initiative](../mecanique/combat#initiative) et à toutes ses actions pendant 1d6 tours, suivi d'un effondrement (état [Sonné](etats#étourdi) une fois l'effet dissipé).
 - **Air** : Repousse la cible (test de Force ou être projeté, peut causer chute/collision)
 - **Pierre/Terre** : Assomme et peut entraver (désavantage aux actions de mouvement, test pour se libérer)
 - **Eau** : Trempe et désactive l'électronique, peut noyer si maintenu

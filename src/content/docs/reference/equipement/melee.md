@@ -5,13 +5,13 @@ sidebar:
   label: "Armes de mêlée"
 ---
 
-Le Code de dégâts des armes de mélée est **FOR + Modificateur** (ou AGI pour les armes finesse : rapière, fleuret, wakizashi, nunchaku). Les armes d'artisanat et de survie utilisent la [compétence](../../mecanique/competences.md) indiquée plutôt que Mélée.
+Le Code de dégâts des armes de mélée est **FOR + Modificateur** (ou AGI pour les armes finesse : rapière, fleuret, wakizashi, nunchaku). Les armes d'artisanat et de survie utilisent la [compétence](../../mecanique/competences) indiquée plutôt que Mélée.
 
 <div id="table-melee">
   <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:1rem;">
     <input id="search-melee" type="text" placeholder="Rechercher..." style="flex:1;min-width:160px;padding:6px 10px;background:var(--color-background-secondary);border:0.5px solid var(--color-border-tertiary);border-radius:6px;color:var(--color-text-primary);font-size:13px;">
     <select id="filter-comp" style="padding:6px 10px;background:var(--color-background-secondary);border:0.5px solid var(--color-border-tertiary);border-radius:6px;color:var(--color-text-primary);font-size:13px;">
-      <option value="">Toutes [compétences](../../mecanique/competences.md)</option>
+      <option value="">Toutes [compétences](../../mecanique/competences)</option>
       <option>Mélée</option>
       <option>Artisanat</option>
       <option>Survie</option>

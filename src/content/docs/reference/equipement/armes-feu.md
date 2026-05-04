@@ -5,7 +5,7 @@ sidebar:
   label: "Armes à feu"
 ---
 
-Les armes à feu utilisent la [compétence](../../mecanique/competences.md) **Armes à feu**. Le Code de dégâts correspond à la puissance du calibre — deux armes chambrées pour le même calibre ont le même Code de base. La **Pénétration** réduit la [Résilience](../../mecanique/blessures.md) de la cible pour cette attaque.
+Les armes à feu utilisent la [compétence](../../mecanique/competences) **Armes à feu**. Le Code de dégâts correspond à la puissance du calibre — deux armes chambrées pour le même calibre ont le même Code de base. La **Pénétration** réduit la [Résilience](../../mecanique/blessures) de la cible pour cette attaque.
 
 **Modes de tir :** SA = semi-automatique &middot; DA/SA = double/simple action &middot; FA = full-auto (rafale/saturation) &middot; Répétition manuelle = un coup par action, rechargement inclus.
 

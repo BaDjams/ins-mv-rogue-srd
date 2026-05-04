@@ -15,7 +15,7 @@ sidebar:
 
 **1 Action Complexe** (nécessite un jet de dés)
 
-- Attaquer, utiliser un pouvoir, utiliser une [compétence](competences.md)
+- Attaquer, utiliser un pouvoir, utiliser une [compétence](competences)
 
 **1 Action Simple** (pas de jet)
 
@@ -35,7 +35,7 @@ Une réaction de défense réussie ajoute votre **Intensité aux PA** (Points d'
 
 ### Initiative
 
-Lance [D666](resolution.md). Initiative = **Dé blanc + [Dé d'intensité](resolution.md)**.
+Lance [D666](resolution). Initiative = **Dé blanc + [Dé d'intensité](resolution)**.
 
 Égalité : AGI > PER > Joueurs > PNJ > MJ tranche.
 
@@ -43,13 +43,13 @@ Lance [D666](resolution.md). Initiative = **Dé blanc + [Dé d'intensité](resol
 
 ## Postures Tactiques
 
-Au début de chacun de ses tours, un personnage annonce sa posture. Ce choix est gratuit — pas d'action requise — mais il engage pour tout le tour et peut affecter les jets des autres personnages. Un personnage qui n'annonce rien, surpris, [sonné](../reference/etats.md) ou simplement indécis, est considéré en posture défensive. Parce que se mettre à couvert est un réflexe sain, et que les anges qui ont survécu plusieurs millénaires l'ont appris à leurs dépens.
+Au début de chacun de ses tours, un personnage annonce sa posture. Ce choix est gratuit — pas d'action requise — mais il engage pour tout le tour et peut affecter les jets des autres personnages. Un personnage qui n'annonce rien, surpris, [sonné](../reference/etats#étourdi) ou simplement indécis, est considéré en posture défensive. Parce que se mettre à couvert est un réflexe sain, et que les anges qui ont survécu plusieurs millénaires l'ont appris à leurs dépens.
 
 ### Posture Offensive — *"Frapper fort, frapper vite."*
 
-Certains anges — et la plupart des démons, ce qui en dit long — préfèrent résoudre les problèmes avant qu'ils ne se posent. En posture offensive, le personnage prend l'[avantage](resolution.md) sur toutes ses attaques. En contrepartie, ses adversaires bénéficient également d'un avantage pour l'atteindre : difficile d'esquiver quand on fonce tête baissée.
+Certains anges — et la plupart des démons, ce qui en dit long — préfèrent résoudre les problèmes avant qu'ils ne se posent. En posture offensive, le personnage prend l'[avantage](resolution#avantage) sur toutes ses attaques. En contrepartie, ses adversaires bénéficient également d'un avantage pour l'atteindre : difficile d'esquiver quand on fonce tête baissée.
 
-Trois manœuvres sont accessibles depuis cette posture. La **Charge** combine déplacement et attaque en une seule action complexe, et inflige +2 dégâts si elle touche — un classique intemporel, apprécié autant par les séraphins que par les rugbymen. L'**Attaque Double** permet de cibler deux adversaires adjacents en un seul jet — c'est la posture des cibles qui détermine l'avantage ou le [désavantage](resolution.md), pas la manœuvre elle-même. La **Frappe Puissante** rend le dé d'intensité explosif sur l'attaque concernée, pour ceux qui veulent transformer un succès ordinaire en souvenir douloureux.
+Trois manœuvres sont accessibles depuis cette posture. La **Charge** combine déplacement et attaque en une seule action complexe, et inflige +2 dégâts si elle touche — un classique intemporel, apprécié autant par les séraphins que par les rugbymen. L'**Attaque Double** permet de cibler deux adversaires adjacents en un seul jet — c'est la posture des cibles qui détermine l'avantage ou le [désavantage](resolution#désavantage), pas la manœuvre elle-même. La **Frappe Puissante** rend le dé d'intensité explosif sur l'attaque concernée, pour ceux qui veulent transformer un succès ordinaire en souvenir douloureux.
 
 Concernant l'Attaque Double, la posture des cibles compte : si au moins une cible est en posture défensive, le jet se fait sans avantage. Si les deux sont en posture offensive, les ouvertures se multiplient et le jet bénéficie d'un double avantage — dé d'intensité explosif inclus. Si les deux sont défensives, le désavantage est doublé. Il n'y a qu'un seul jet pour les deux cibles : une réussite les touche toutes les deux, un échec les manque toutes les deux — et peut déclencher une riposte.
 
@@ -75,7 +75,7 @@ En posture de concentration, les pouvoirs maintenus ne causent aucun désavantag
 
 La **Fragilité** est la règle critique de cette posture : dès que le personnage subit une blessure — une seule, même légère — il retombe automatiquement en posture défensive et tous ses pouvoirs maintenus s'arrêtent. La douleur physique coupe le lien. Les anges de haut rang ont développé des techniques pour minimiser ce risque. Les autres apprennent vite.
 
-La **Concentration Absolue** est une manœuvre passive qui permet de maintenir deux pouvoirs simultanément — réservé aux âmes suffisamment disciplinées pour ne pas se perdre dans leurs propres flux divins. Certains pouvoirs disposent par ailleurs d'une option **Multiciblage**, uniquement activable en posture de concentration, y compris pour un pouvoir instantané : chaque cible supplémentaire compte comme un niveau de Boost supplémentaire sur le pouvoir, avec les dés de [drain](energie.md) que cela implique.
+La **Concentration Absolue** est une manœuvre passive qui permet de maintenir deux pouvoirs simultanément — réservé aux âmes suffisamment disciplinées pour ne pas se perdre dans leurs propres flux divins. Certains pouvoirs disposent par ailleurs d'une option **Multiciblage**, uniquement activable en posture de concentration, y compris pour un pouvoir instantané : chaque cible supplémentaire compte comme un niveau de Boost supplémentaire sur le pouvoir, avec les dés de [drain](energie#rang-des-pouvoirs-et-drain) que cela implique.
 
 ---
 
@@ -94,7 +94,7 @@ Les personnages agissent ensuite dans l'ordre, du score d'initiative le plus él
 Le groupe d'anges — Mirael, Tyrael et Azrael — tombe nez à nez avec deux démons sur une place abandonnée. Ils se préparent à agir. François, le MJ, demande aux joueurs de lancer leur initiative pour déterminer qui agit en premier.
 </div>
 
-    **François (MJ)** : "Très bien, lancez chacun votre D666 pour l'initiative. Prenez le résultat du dé blanc, puis ajoutez le [dé rouge](resolution.md). Celui qui a le score le plus élevé agit en premier ! Will, ton perso a un avantage car il a le pouvoir passif de Vigilance. Romain par contre, ton personnage a un désavantage car il marche derrière Mirael et Tyrael, et ne voit pas tout de suite les démons."
+    **François (MJ)** : "Très bien, lancez chacun votre D666 pour l'initiative. Prenez le résultat du dé blanc, puis ajoutez le [dé rouge](resolution). Celui qui a le score le plus élevé agit en premier ! Will, ton perso a un avantage car il a le pouvoir passif de Vigilance. Romain par contre, ton personnage a un désavantage car il marche derrière Mirael et Tyrael, et ne voit pas tout de suite les démons."
 
     **Fred (Mirael)** : lance le D666 → "J'ai un 3 sur le bleu, un 5 sur le blanc et un 2 sur le rouge. Donc mon initiative est 5 + 2 = 7."
 
@@ -139,7 +139,7 @@ Une fois l'ordre d'initiative établi, à leur tour, les joueurs choisissent les
 
     **Fred (Myrael)** : lance le D666 → "J'ai 3 sur le bleu, 2 sur le blanc, et 4 sur le rouge."
 
-    **François (MJ)** : "Parfait, avec le résultat du dé bleu, ça passe tout juste, tu as 3 en ALTERATION, ton bouclier est activé. Sa protection est égale au dé d'intensité rouge + la [marge de réussite](resolution.md) — donc 4 + 0 = 4 points absorbés avant d'être détruit."
+    **François (MJ)** : "Parfait, avec le résultat du dé bleu, ça passe tout juste, tu as 3 en ALTERATION, ton bouclier est activé. Sa protection est égale au dé d'intensité rouge + la [marge de réussite](resolution#3-marge-de-réussite) — donc 4 + 0 = 4 points absorbés avant d'être détruit."
 
     ---
 
@@ -153,7 +153,7 @@ Une fois l'ordre d'initiative établi, à leur tour, les joueurs choisissent les
 
     **Will (Tyrael)** : "Ouf, ça m'arrange !"
 
-    **François (MJ)** : lance le D666 → "Pour le deuxième démon, j'obtiens un 1 sur le bleu, 1 sur le blanc et 5 sur le rouge. C'est un [coup critique](resolution.md) !"
+    **François (MJ)** : lance le D666 → "Pour le deuxième démon, j'obtiens un 1 sur le bleu, 1 sur le blanc et 5 sur le rouge. C'est un [coup critique](resolution#réussite-critique) !"
 
     **Fred (Myrael)** : "Oh non ! En plus, mon esquive ne sert à rien : ses deux dés d'action sont identiques."
 

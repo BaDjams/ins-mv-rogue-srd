@@ -19,13 +19,13 @@ Avant de lancer les dés, il est essentiel de déterminer la nature de l'action 
 
 **Pouvoir surnaturel ou attribut angélique** : Dans ce cas, le dé bleu sera utilisé pour déterminer le succès de l'action. Le seuil de réussite est égal à l'attribut angélique (valeur de 1 à 5) associé au pouvoir.
 
-**[Compétence](competences.md) ou caractéristique humaine** : Si l'action repose sur une compétence ou une caractéristique humaine de l'hôte, c'est le dé blanc qui sera utilisé. Le seuil de réussite est égal à la somme de la caractéristique humaine pertinente (de 1 à 3) et du bonus de compétence : Débutant **+0**, Confirmé **+1**, Professionnel **+2**, Expert **+3**. Un personnage Incompétent n'ajoute rien et subit en plus un désavantage sur le jet.
+**[Compétence](competences) ou caractéristique humaine** : Si l'action repose sur une compétence ou une caractéristique humaine de l'hôte, c'est le dé blanc qui sera utilisé. Le seuil de réussite est égal à la somme de la caractéristique humaine pertinente (de 1 à 3) et du bonus de compétence : Débutant **+0**, Confirmé **+1**, Professionnel **+2**, Expert **+3**. Un personnage Incompétent n'ajoute rien et subit en plus un désavantage sur le jet.
 
 
 <div class="admonition note">
 <p class="admonition-title">Important</p>
 
-Les [compétences](competences.md) appartiennent au cerveau de l'hôte, pas à l'âme surnaturelle. L'ange ou le démon accède temporairement aux compétences de son hôte actuel. Si l'hôte meurt et que l'âme se [réincarne](../personnage/reincarnation.md), les compétences disponibles seront celles du nouvel hôte.
+Les [compétences](competences) appartiennent au cerveau de l'hôte, pas à l'âme surnaturelle. L'ange ou le démon accède temporairement aux compétences de son hôte actuel. Si l'hôte meurt et que l'âme se [réincarne](../personnage/reincarnation), les compétences disponibles seront celles du nouvel hôte.
 </div>
 
 À partir de cette étape, le dé utilisé pour déterminer le succès de l'action (bleu ou blanc, selon la nature de l'action) sera appelé **"Dé d'action"**.
@@ -61,7 +61,7 @@ Si le seuil est de 6 ou plus (par exemple, un ange avec PUI 5 qui dépense 2 PE 
 
     **Exemple** : Seuil 7, dé d'action = 1 → Réussite avec marge de 6 !
 
-    Cela récompense les combinaisons optimisées d'[attributs célestes](../personnage/caracteristiques.md) et de compétences élevées en générant des marges spectaculaires.
+    Cela récompense les combinaisons optimisées d'[attributs célestes](../personnage/caracteristiques) et de compétences élevées en générant des marges spectaculaires.
 
 Si une règle précise que la marge n'est pas prise en compte, considérer la marge comme égale à 0.
 
@@ -149,7 +149,7 @@ Si par malheur, un personnage vient à cumuler 2 désavantages, alors, en plus d
 
 - Tenter une action sans connaître la compétence (Incompétent) impose un désavantage sur le jet.
 - Utiliser une compétence sans le matériel adéquat (s'il existe) impose un désavantage. Les compétences nécessitant un matériel spécifique sont indiquées par un astérisque sur la fiche.
-- Utiliser une [spécialisation](competences.md) pertinente accorde un avantage.
+- Utiliser une [spécialisation](competences) pertinente accorde un avantage.
 
 ---
 

@@ -51,7 +51,7 @@ Un hôte valide doit remplir plusieurs critères :
 ## **Processus de réincarnation**
 
 Au départ de l'hôte initial (volontaire ou forcé par la mort), l'âme
-dispose d'un nombre de tours égal à son **[Rang Céleste](rang.md)** pour
+dispose d'un nombre de tours égal à son **[Rang Céleste](rang)** pour
 trouver un nouvel hôte.
 
 **Déplacement**
@@ -75,7 +75,7 @@ Le joueur choisit l'un des hôtes proposés.
 
 **Durée de l'incarnation** Une fois l'hôte choisi, le processus
 d'incarnation prend **1d6 minutes**, laissant le temps aux ennemis de
-prendre l'[avantage](../mecanique/resolution.md) ou de fuir.
+prendre l'[avantage](../mecanique/resolution#avantage) ou de fuir.
 
 ## **Cas particuliers**
 

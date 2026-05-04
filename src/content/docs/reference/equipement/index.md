@@ -7,13 +7,13 @@ sidebar:
 
 ## Système de dégâts des armes :
 
-**Dégâts finaux = Code** *(de l'arme/effet)* **+ max(Marge, [Dé rouge](../../mecanique/resolution.md)) — PA** *(min 0).*
+**Dégâts finaux = Code** *(de l'arme/effet)* **+ max(Marge, [Dé rouge](../../mecanique/resolution)) — PA** *(min 0).*
 
 Applique ensuite les effets spéciaux (critique, sacré, etc.).
 
 - **Code** : valeur fixe de l'arme/effet.
 - **Marge** : différence entre le seuil de réussite et le résultat du Dé d'action.
-- **Dé rouge** : [dé d'intensité](../../mecanique/resolution.md) — explosif si indiqué.
+- **Dé rouge** : [dé d'intensité](../../mecanique/resolution) — explosif si indiqué.
 - **max(Marge, Dé rouge)** : on retient le meilleur des deux, sans les additionner.
 - **PA** : Points d'Armure de la **zone touchée**. Sans visée : utilise la **PA du torse**. Les boucliers portés **ajoutent** leur PA au torse.
 
@@ -21,7 +21,7 @@ Applique ensuite les effets spéciaux (critique, sacré, etc.).
 <div class="admonition note">
 <p class="admonition-title">Pourquoi max() et non addition ?</p>
 
-À bas niveau de [compétence](../../mecanique/competences.md), le dé rouge peut compenser une faible marge. À haut niveau, la compétence domine naturellement. Le dé rouge explosif (déclenché par l'[avantage](../../mecanique/resolution.md) ou un critique) reste le levier des personnages puissants — il peut toujours surprendre, mais ne s'empile plus avec une déjà grande marge.
+À bas niveau de [compétence](../../mecanique/competences), le dé rouge peut compenser une faible marge. À haut niveau, la compétence domine naturellement. Le dé rouge explosif (déclenché par l'[avantage](../../mecanique/resolution#avantage) ou un critique) reste le levier des personnages puissants — il peut toujours surprendre, mais ne s'empile plus avec une déjà grande marge.
 </div>
 
 1. Code de dégâts :
@@ -35,7 +35,7 @@ et de la quantité. Le dé d'intensité associé à l'utilisation
 d'explosifs est toujours... explosif!
 
 2. Tir en rafale : le joueur lance les dés une fois et compare avec son
-seuil de réussite : la [marge de réussite](../../mecanique/resolution.md), c'est le nombre de balles qui
+seuil de réussite : la [marge de réussite](../../mecanique/resolution#3-marge-de-réussite), c'est le nombre de balles qui
 touchent (maximum 3)
 les dégâts sont égaux au dé d'intensité + (code de dégâts de l'arme x
 le nombre de balles qui touchent).
