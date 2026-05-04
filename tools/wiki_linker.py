@@ -88,16 +88,18 @@ def resolve_link(source_path: Path, target_slug: str, page_index: dict, anchor: 
 # ── Tokenisation ───────────────────────────────────────────────────────────────
 
 PROTECTED_PATTERNS = [
-    r"```[\s\S]*?```",           # blocs de code délimités
-    r"~~~[\s\S]*?~~~",           # blocs de code alternatifs
-    r"`[^`\n]+`",                # code inline
-    r"!\[[^\]]*\]\([^)]*\)",     # images ![alt](url)
-    r"\[[^\]]*\]\([^)]*\)",      # liens existants [text](url)
-    r"\[[^\]]*\]\[[^\]]*\]",     # liens référence [text][ref]
-    r"^\s{0,3}#{1,6}[^\n]*",    # titres
-    r"^\s{0,3}[!?]{3}[^\n]*",   # en-têtes d'admonitions
-    r"^\s*\|[^\n]*",             # lignes de tableau
-    r"<[^>]+>",                  # balises HTML
+    r"```[\s\S]*?```",                  # blocs de code délimités
+    r"~~~[\s\S]*?~~~",                  # blocs de code alternatifs
+    r"`[^`\n]+`",                       # code inline
+    r"<script\b[^>]*>[\s\S]*?</script>",# blocs JavaScript (avant le tag générique)
+    r"<style\b[^>]*>[\s\S]*?</style>",  # blocs CSS
+    r"!\[[^\]]*\]\([^)]*\)",            # images ![alt](url)
+    r"\[[^\]]*\]\([^)]*\)",             # liens existants [text](url)
+    r"\[[^\]]*\]\[[^\]]*\]",            # liens référence [text][ref]
+    r"^\s{0,3}#{1,6}[^\n]*",           # titres
+    r"^\s{0,3}[!?]{3}[^\n]*",          # en-têtes d'admonitions
+    r"^\s*\|[^\n]*",                    # lignes de tableau
+    r"<[^>]+>",                         # balises HTML inline
 ]
 
 _PROTECTED_RE = re.compile(
