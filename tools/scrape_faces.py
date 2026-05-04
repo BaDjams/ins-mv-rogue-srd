@@ -1,7 +1,7 @@
 """Télécharge N visages depuis thispersondoesnotexist.com dans un dossier local.
 
 Usage:
-    python tools/scrape_faces.py [--count 50] [--out docs/faces] [--delay 1.5]
+    python tools/scrape_faces.py [--count 50] [--out public/faces] [--delay 1.5]
 
 Chaque requête renvoie un visage différent (pas d'API, juste un GET).
 Les images sont nommées face_001.jpg, face_002.jpg, etc.
@@ -20,7 +20,7 @@ HEADERS = {
     "Referer": "https://thispersondoesnotexist.com/",
 }
 
-DEFAULT_OUT = os.path.join(os.path.dirname(__file__), "..", "docs", "faces")
+DEFAULT_OUT = os.path.join(os.path.dirname(__file__), "..", "public", "faces")
 
 
 def download_one(path: str) -> bool:
