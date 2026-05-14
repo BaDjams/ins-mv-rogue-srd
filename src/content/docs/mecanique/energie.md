@@ -1,8 +1,8 @@
 ---
-title: Énergie, Drain & Consommation
+title: Énergie, Drain & Consummation
 sidebar:
   order: 5
-  label: Énergie
+  label: Énergie  Drain Consummation
 ---
 
 La puissance divine est partout. Elle imprègne chaque atome de création, circule dans les lignes invisibles qui relient le Paradis à la Terre, et se manifeste dès qu'une âme surnaturelle tend la main vers elle. Un ange n'a pas besoin de _stocker_ cette énergie — elle est inépuisable, infinie, généreusement offerte par un Dieu qui a certes d'autres préoccupations mais n'a jamais coupé le robinet.
