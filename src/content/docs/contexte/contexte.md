@@ -1,16 +1,17 @@
 ---
-title: CONTEXTE DU JEU
+title: Contexte du jeu
 sidebar:
   order: 1
   label: Le monde du jeu
 ---
+
 ## Présentation du jeu
 
 **ROGUE** est un jeu de rôle de dark fantasy dans lequel les personnages sont pris entre des forces qui les dépassent — et doivent pourtant agir.
 
 Le monde visible est celui que tout le monde connaît. Derrière lui se cache un monde occulte : des factions anciennes, des entités aux pouvoirs surnaturels, des guerres menées dans l'ombre depuis des siècles. Les personnages joueurs appartiennent à ce monde caché — ou viennent d'y être brutalement introduits.
 
-Le système ROGUE repose sur un unique mécanism central, le **[D666](../../mecanique/resolution)** : trois dés à six faces de couleurs différentes, lus comme un nombre à trois chiffres. Ce système s'adapte à une grande variété de cadres de jeu (appelés **settings**), chacun apportant ses propres règles qui viennent se brancher sur le socle commun.
+Le système ROGUE repose sur un unique mécanism central, le [**D666**](../../mecanique/resolution) : trois dés à six faces de couleurs différentes, lus comme un nombre à trois chiffres. Ce système s'adapte à une grande variété de cadres de jeu (appelés **settings**), chacun apportant ses propres règles qui viennent se brancher sur le socle commun.
 
 ### Niveaux de jeu
 
@@ -18,7 +19,7 @@ ROGUE se joue à plusieurs échelles de puissance :
 
 **Street level** — Les personnages sont des humains qui ont levé le voile sur le monde caché. Enquêteurs, chasseurs, initiés, survivants : ils luttent avec leurs [compétences](../../mecanique/competences), leur réseau et leurs ressources contre des forces qui les surpassent. Chaque victoire coûte quelque chose.
 
-**Surnaturel incarné** — Les personnages sont des entités d'une autre nature — âmes, esprits, créatures — contraintes d'agir dans un corps mortel. Leur puissance surnaturelle est réelle, mais le corps humain est fragile, et la mort d'un hôte n'est qu'un contretemps. C'est à ce niveau que s'exprime la dimension *rogue-like* du jeu : à chaque [réincarnation](../../personnage/reincarnation), les dés redistribuent les cartes.
+**Surnaturel incarné** — Les personnages sont des entités d'une autre nature — âmes, esprits, créatures — contraintes d'agir dans un corps mortel. Leur puissance surnaturelle est réelle, mais le corps humain est fragile, et la mort d'un hôte n'est qu'un contretemps. C'est à ce niveau que s'exprime la dimension _rogue-like_ du jeu : à chaque [réincarnation](../../personnage/reincarnation), les dés redistribuent les cartes.
 
 **Guerre céleste** — Les personnages sont des acteurs majeurs d'un conflit cosmique entre les forces du Bien et du Mal. Les enjeux sont planétaires, les pouvoirs colossaux, et chaque décision peut peser des siècles.
 
@@ -26,7 +27,7 @@ ROGUE se joue à plusieurs échelles de puissance :
 
 Chaque setting précise : qui sont les personnages, à quelle échelle ils opèrent, quelles règles spécifiques s'appliquent (factions, pouvoirs, équipement, hôtes). Le SRD décrit le setting de référence — la **guerre céleste contemporaine** — mais le système est conçu pour accueillir d'autres univers.
 
-## ** Contexte : Une guerre secrète **
+## \*\* Contexte : Une guerre secrète \*\*
 
  De nos jours, alors que les humains vaquent à leurs occupations quotidiennes, une guerre ancestrale se poursuit dans l'ombre. Anges et démons s'affrontent depuis la nuit des temps, dissimulant leur existence aux yeux des mortels.
 
@@ -36,7 +37,7 @@ Les anges sont peu nombreux - à peine un millier sur Terre et autant dans les c
 
 Quand l'âme angélique change d'hôte, le corps de l'ancien reste sur place comme un mort ordinaire — pas de dissipation, pas de néant, juste un cadavre qu'il va falloir expliquer. Et même quand la mort est techniquement banale, allez justifier auprès des autorités comment un ado s'est retrouvé carbonisé par la foudre derrière un cinéma de quartier en plein mois d'août. C'est précisément ce travail de classement qui occupe les Soldats de Dieu infiltrés dans l'administration : étouffer, requalifier, faire signer le bon formulaire au bon endroit. Ce n'est pas une volonté de nuire, ils œuvrent pour le bien puisque les hôtes, littéralement des élus, vont au paradis directement. Pour un Soldat de Dieu c'est l'événement qu'ils attendent avec ferveur puisque leur vie entière est destinée à accueillir un ange un jour. Leur position privilégiée au sein de l'administration leur permet aussi de repérer plus facilement les signes d'agissements surnaturels, démoniaques ou autres...
 
-## ** L'autre camp : Les forces infernales **
+## \*\* L'autre camp : Les forces infernales \*\*
 
 Si les anges bénéficient du soutien des Soldats de Dieu, les démons doivent se contenter d'un réseau plus alternatif. Dans les bas-fonds de la société, ils cultivent leurs relations avec des adeptes dévoués à leur cause. Ces fidèles de l'ombre, contrairement aux Soldats de Dieu, ne peuvent pas compter sur une place au paradis, mais les démons savent se montrer convaincants par d'autres moyens.
 
@@ -47,7 +48,7 @@ Sans le réseau administratif bien huilé des Soldats de Dieu, les démons doive
 
 Les mécaniques de jeu restent identiques à celles des anges, mais leur style d'opération différent reflète bien la nature plus... pragmatique des forces infernales.
 
-## ** Les autres mondes : **
+## \*\* Les autres mondes : \*\*
 
 L'univers de la terre est loin d'être la seule tentative de Dieu pour Créer. Il existe une multitude d'univers imaginés pour certains en une fraction de seconde, pour d'autres cela prît jusqu'à 6 jours, voire plus
 (ce qui est énorme pour Dieu qui a un temps d'attention proche du résultat d'une division par zéro.)
