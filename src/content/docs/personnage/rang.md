@@ -1,8 +1,8 @@
 ---
-title: RANG CÉLESTE
+title: Rang Céleste
 sidebar:
   order: 3
-  label: "Rang céleste"
+  label: Rang céleste
 ---
 
 Toute créature vivante créée par Dieu se voit attribuer une Âme à la
@@ -138,7 +138,6 @@ Le rang céleste est une des mécaniques les plus fondamentales de la
 création, et paradoxalement, celle dont personne (ou presque) ne connaît
 l'existence.
 
-
 # Incarnations et Rang Céleste
 
 Le nombre d'incarnations disponibles pour une âme est directement lié à
@@ -150,26 +149,20 @@ définitivement son plan d'origine (Paradis, Enfer, ou Limbes).
 **Rang Céleste 1 (Humains, animaux, plantes)** : 1 incarnation
 
 -   Naissance = première et unique incarnation
-
 -   À la mort, l'âme part aux Limbes en attente de jugement
 
 **Rang Céleste 2 (Créatures maudites, morts-vivants)** : 2 incarnations
 
 -   Première vie = incarnation humaine normale
-
 -   Mort = première incarnation consommée
-
 -   Résurrection/transformation en vampire/zombie = deuxième incarnation
     (la dernière)
-
 -   Seconde mort définitive = retour aux Limbes ou en Enfer
 
 **Rang Céleste 3 (Anges, Démons)** : 3 incarnations
 
 -   Chaque mort d'hôte consomme une incarnation
-
 -   L'ange/démon peut [se réincarner](../reincarnation) dans un nouvel hôte proche
-
 -   Après la troisième mort, retour forcé au Paradis/Enfer
 
 **Rang Céleste 4 (Archanges, Princes-Démons)** : 4 incarnations
@@ -187,4 +180,3 @@ Lorsqu'un hôte meurt, l'âme surnaturelle a quelques minutes pour trouver un no
 Le corps de l'ancien hôte reste sur place : un mort de plus, avec tout ce que cela implique en termes de constat et d'enquête. Quand le quota est épuisé, l'âme retourne à son plan d'origine et le dernier corps reste lui aussi sur place.
 
 **Compteur d'incarnations** : Les joueurs notent sur leur fiche combien d'incarnations leur restent (départ : 3 pour les anges/démons).
-
