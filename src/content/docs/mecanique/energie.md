@@ -5,17 +5,17 @@ sidebar:
   label: Énergie  Drain Consummation
 ---
 
-La puissance divine est partout. Elle imprègne chaque atome de création, circule dans les lignes invisibles qui relient le Paradis à la Terre, et se manifeste dès qu'une âme surnaturelle tend la main vers elle. Un ange n'a pas besoin de _stocker_ cette énergie — elle est inépuisable, infinie, généreusement offerte par un Dieu qui a certes d'autres préoccupations mais n'a jamais coupé le robinet.
+La puissance divine est partout. Elle imprègne chaque atome de création, circule dans les lignes invisibles qui relient le Paradis à la Terre, et se manifeste dès qu'une âme surnaturelle tend la main vers elle. Une telle créature n'a pas besoin de _stocker_ cette énergie — elle est inépuisable, infinie, généreusement offerte par un Dieu qui a certes d'autres préoccupations mais n'a jamais coupé le robinet.
 
-Le problème n'est pas la quantité. Le problème est le tuyau.
+Le problème n'est pas la quantité. Le problème est la taille tuyau.
 
-Chaque âme surnaturelle peut canaliser la puissance divine librement, pour ses usages courants — se déplacer, percevoir l'invisible, maintenir un pouvoir passif, ou simplement exister avec grâce dans un corps humain. Ces actions ne coûtent rien. Là où les choses se compliquent, c'est lorsqu'un ange décide d'ouvrir le tuyau plus grand que ce que son âme peut raisonnablement soutenir.
+Chaque âme surnaturelle peut canaliser la puissance divine librement, pour ses usages courants — se déplacer, percevoir l'invisible, maintenir un pouvoir passif, ou simplement exister avec grâce. Ces actions ne coûtent rien. Là où les choses se compliquent, c'est lorsqu'elle décide de canaliser plus que ce que son âme peut raisonnablement soutenir.
 
 ***
 
-## Points d'Énergie — la capacité du tuyau
+## Points d'Énergie
 
-Chaque ange dispose d'un nombre de Points d'Énergie (PE) égal à son [Rang Céleste](../../personnage/rang). Ces PE ne représentent pas une réserve à vider, mais un seuil de tolérance : ils absorbent les conséquences des excès de canalisation avant que l'hôte n'en paie le prix. Ils se rechargent intégralement au lever du soleil pour les anges, et à la tombée de la nuit pour les démons — moment qui, comme tout événement cosmique dans cet univers, peut souffrir d'un léger décalage si Dieu est occupé à créer autre chose.
+Chaque âme dispose d'un nombre de Points d'Énergie (PE) égal à son [Rang Céleste](../../personnage/rang). Ces PE ne représentent pas une réserve à vider, mais un seuil de tolérance : ils absorbent les conséquences des excès de canalisation avant que l'hôte n'en paie le prix. Ils se rechargent intégralement au lever du soleil pour les anges, et à la tombée de la nuit pour les démons — moment qui, comme tout événement cosmique dans cet univers, peut souffrir d'un léger décalage si Dieu est occupé à créer autre chose.
 
 <div class="admonition note">
 <p class="admonition-title">Persistance entre incarnations</p>
@@ -31,13 +31,19 @@ Le trait **Conduit Divin** (niveaux 1 à 3) représente une affinité développ�
 
 Chaque pouvoir possède un rang, de 0 à 6. Les pouvoirs de Rang 0 sont des tours de passe-passe mineurs, accessibles à tout humain initié — ils ne génèrent aucun dé de drain et ne coûtent rien, même sans âme surnaturelle. Au-delà, le rang du pouvoir détermine directement le nombre de dés de drain lancés au moment du lancement : un pouvoir de Rang 3 génère 3 dés de drain, un pouvoir de Rang 5 en génère 5. Chaque 6 obtenu sur ces dés représente un affaiblissement d'âme.
 
-Une créature ne peut lancer que des pouvoirs dont le rang est inférieur ou égal à son Rang Céleste. En revanche, une fois qu'un pouvoir est accessible, il est possible de le **surcharger** : le lancer à un rang supérieur à son rang naturel, jusqu'au plafond universel de 6. Les dés de drain correspondent alors au rang effectif de lancement. On ne peut pas faire l'inverse — un pouvoir de Rang 3 se lance avec 3 dés de drain au minimum. La puissance coule à son niveau naturel, pas en dessous.
-
-Les dégâts d'un pouvoir offensif lancé au rang R sont :
+Une créature ne peut lancer que des pouvoirs dont le rang est inférieur ou égal à son Rang Céleste. Les dégâts d'un pouvoir offensif lancé au rang R sont :
 
 > `(Code + max(Marge, Dé rouge)) × R`
 
-Le **Multiciblage**, option disponible sur certains pouvoirs et uniquement activable en [posture de concentration](../combat#postures-tactiques) (y compris pour un pouvoir instantané), ajoute 1 niveau de surcharge effectif par cible supplémentaire. Un pouvoir de Rang 2 appliqué à 3 cibles est lancé comme un Rang 4 — 4 dés de drain, dégâts × 4. Pas d'affaiblissement d'âme direct supplémentaire : c'est simplement le coût naturel de la surcharge.
+Certains pouvoir proposent des options qui viennent augmenter le nombre de dés de drain : 
+
+La **Surcharge** : le pouvoir est lancé à un rang supérieur à son rang naturel, jusqu'au plafond universel de 6. Les dés de drain correspondent alors au rang effectif de lancement. On ne peut pas faire l'inverse — un pouvoir de Rang 3 se lance avec 3 dés de drain au minimum. Si le pouvoir génère des dégats, ils sont calculés en fonction du rang augmenté, et non du rang de base. 
+
+Le **Multi-ciblage**, uniquement activable en [posture de concentration](../combat#postures-tactiques), ajoute 1 dé de drain par cible supplémentaire. Un pouvoir de Rang 2 appliqué à 2 cibles en plus de la première génère alors 4 dés de drain, mais la formule de dégats prend toujours en compte le rang du sort lancé. 
+
+L'**Expansion** enfin, est une option bien pratique : pour un dé de drain supplémentaire, il est possible de multiplier la portée, la durée ou tout autre limite technique du pouvoir par 2 pour chaque dé de drain généré par cette option. Ainsi, un pouvoir de boule de feu lancé avec l'option "Expansion 2" verra sa portée maximale multipliée par 4.
+
+ Il est tout à fait possible de mixer plusieurs options sur un seul lancement de pouvoir mais il faut garder à l'esprit qu'un pouvoir ne peut pas générer plus de 6 dés de drain. De même un pouvoir de rang 6 générant déjà 6 dés de drain, il est impossible de lui appliquer des options. Mais ces pouvoirs divins sont largement assez puissants pour ne pas en avoir besoin.
 
 ***
 
