@@ -1,7 +1,7 @@
 ---
 title: Résolution — Le D666
 sidebar:
-  order: 5
+  order: 1
   label: Résolution D666
 ---
 
