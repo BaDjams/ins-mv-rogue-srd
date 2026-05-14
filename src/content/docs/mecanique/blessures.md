@@ -1,7 +1,8 @@
 ---
-title: DÉGÂTS ET BLESSURES
+title: Dégâts & Blessures
 sidebar:
   order: 6
+  label: Dégâts & Blessures
 ---
 
 Terminologie : INFLIGER vs SUBIR
@@ -11,13 +12,11 @@ Pour éviter toute confusion, le jeu utilise une terminologie stricte :
 On INFLIGE des dégâts (actif, offensif)
 
 -   Les dégâts sont le montant brut avant réductions
-
 -   Exemple : "Cette attaque inflige 10 dégâts"
 
 On SUBIT des blessures (passif, résultat final)
 
 -   Les blessures sont marquées sur la fiche de PV après réductions
-
 -   Exemple : "Le défenseur subit 3 blessures"
 
 Flux de résolution : De l'attaque à la blessure
@@ -25,13 +24,9 @@ Flux de résolution : De l'attaque à la blessure
 Lorsqu'une attaque inflige des dégâts :
 
 1.  Calcul des dégâts bruts (Code + Intensité + Marge + modificateurs)
-
 2.  Nature des dégâts (normaux, aggravés, ou non-létaux)
-
 3.  Réduction : Armure (soustraction du PA, sauf mention contraire)
-
 4.  Réduction : Résilience (division, arrondi inférieur)
-
 5.  Blessures finales : Le défenseur subit X blessures (marquées sur la
     fiche)
 
@@ -41,7 +36,6 @@ Certains effets utilisent directement le verbe "subir" sans mentionner
 de dégâts :
 
 -   Aucune réduction (ni PA, ni Résilience)
-
 -   Marquées immédiatement sur la fiche
 
 Indicateur clé : Si le texte dit "subit des blessures" sans mentionner
@@ -56,7 +50,6 @@ Dégâts normaux conduisent à des Blessures létales (X)
 Dégâts aggravés conduisent à des Blessures aggravées (⭙)
 
 -   Ne guérissent jamais naturellement
-
 -   Nécessitent [intervention divine](../resolution#interventions-divine-et-démoniaque) ou démoniaque
 
 Dégâts non-létaux conduisent à des Blessures non-létales (/)
@@ -126,30 +119,24 @@ céleste)
 **Causes :**
 
 -   Utilisation de pouvoirs surnaturels coûtant plus de 1 PE
-
 -   Attaques de créatures particulièrement dangereuses (vampires, démons
     majeurs)
-
 -   Armes maudites ou sacrées
-
 -   Dégâts spirituels directs
 
 **Upgrade :** Peut transformer n'importe quelle blessure existante
 
-**Ces blessures ne guérissent jamais naturellement. Seule une
+\*\*Ces blessures ne guérissent jamais naturellement. Seule une
 intervention divine, démoniaque, une capacité surnaturelle ou un pouvoir
-adapté peut les soigner.**
+adapté peut les soigner.\*\*
 
 ## **Règles de Progression des Blessures**
 
 Les blessures s'**upgradent** toujours vers le type le plus grave :
 
 -   Une case vide peut recevoir n'importe quel type de blessure
-
 -   Une case (/) peut devenir (X) ou (⭙)
-
 -   Une case (X) peut devenir (⭙)
-
 -   Une case (⭙) reste (⭙)
 
 **Important :** Seules les blessures non létales nécessitent une case
@@ -202,7 +189,6 @@ de guérison du personnage, plutôt qu'une après l'autre.
 
 -   **Aucun pouvoir de guérison** ne peut directement soigner les
     blessures aggravées
-
 -   La "Guérison Rapide" n'affecte que les blessures (/) et (X)
 
 **Conversion Nécessaire**
@@ -211,9 +197,7 @@ Pour guérir d'une blessure aggravée (⭙), il faut d'abord la
 **convertir** en blessure létale (X) via :
 
 -   Pouvoirs de conversion spécifiques
-
 -   Rituels de purification spirituelle
-
 -   Intervention divine
 
 **Objets Exceptionnels**
@@ -227,30 +211,23 @@ préalable.
 **Mirael** (Ange, 10 PV, Résilience 3) reçoit plusieurs attaques en combat :
 
 1.  Une attaque inflige 9 dégâts non létaux → après Résilience (9/3=3), Mirael **subit** 3 blessures non létales → coche (/) (/) (/) dans les cases 1-3.
-
 2.  Une attaque inflige 6 dégâts létaux → après Résilience (6/3=2), Mirael **subit** 2 blessures létales → les cases 1-2 s'upgradent en (X) (X), la case 3 reste (/).
-
 3.  Mirael lance un pouvoir qui dépasse son seuil de tolérance → **subit** directement 1 blessure aggravée (sans réduction), la case 1 devient (⭙).
-
 4.  État intermédiaire : (⭙) (X) (/) + 7 cases vides.
-
 5.  Une balle inflige 9 dégâts létaux → après Résilience (9/3=3), Mirael **subit** 3 blessures létales → les cases 3 (qui upgrade depuis /), 4 et 5 deviennent (X).
-
 6.  État final : (⭙) (X) (X) (X) (X) + 5 cases vides.
 
 **Guérison :**
 
 -   Cases 3-6 (X) : 1 minute pour la case 3 (ancienne /), 1 semaine
     chacune pour les cases 4-6
-
 -   Case 2 (X) : 1 semaine
-
 -   Case 1 (⭙) : Conversion nécessaire puis 1 semaine
 
 voici les points de vie d'autres créatures, pour exemple :
 
 | **Tranche de poids** | **Exemple d'animaux** | **Taille** | **Taille (SW)** | **Taille (D&D)** |
-|---|---|:---:|---|---|
+| --- | --- | --- | --- | --- |
 | < 100 g | Colibri, Souris, Musaraigne, Moineau | 1 | Taille -2 | Minuscule (Tiny) |
 | 100 g – 1 kg | Rat, Pigeon, Écureuil, Furet | 2 | Taille -1 à -2 | Minuscule (Tiny) |
 | 1 kg – 5 kg | Chat domestique, Lapin, Renard, Chien (petites races), Compsognathus | 3 | Taille -1 | Petite (Small) |
@@ -292,7 +269,6 @@ vulnérables.
 Enfin, certaines créatures peuvent être tout bonnement insensibles à
 certaines formes de dommages ou états. Voir la section "états".
 
-
 <div class="admonition note">
 <p class="admonition-title">Rôle des armes spéciales</p>
 
@@ -310,4 +286,3 @@ Note : Certaines créatures maudites comme les vampires ne restaurent pas
 leur points de vie automatiquement, ils sont obligés de les prendre à
 leur victime (et disposent d'une capacité spéciale pour cela). ces
 créatures disposent du trait "Maudit".
-
