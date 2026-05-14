@@ -1,8 +1,8 @@
 ---
-title: RÉINCARNATION
+title: Réincarnation
 sidebar:
   order: 5
-  label: "Réincarnation"
+  label: Réincarnation
 ---
 
 ## **Principes de base**
@@ -24,13 +24,10 @@ Un hôte valide doit remplir plusieurs critères :
 **Hôte humain**
 
 -   En vie
-
 -   État stable (Status interdits : en combat, terrifié, épuisé,
     pétrifié, en feu, gravement blessé)
-
 -   Exception : Les serviteurs de faction (Soldats de Dieu, cultistes
     démoniaques) sont disponibles même en état instable ou en combat
-
 -   Autre exception : certains démons peuvent parfois se retrouver
     incarnés dans des corps humains déjà morts. Cela nécessite
     cependant des conditions particulières impliquant de la magie
@@ -39,9 +36,7 @@ Un hôte valide doit remplir plusieurs critères :
 **Compatibilité spirituelle**
 
 -   Pas déjà possédé par une autre âme surnaturelle
-
 -   Pas protégé par une bénédiction ou malédiction majeure
-
 -   Pas transformé en créature morte-vivante ou maudite
 
 **Proximité géographique**
@@ -51,24 +46,20 @@ Un hôte valide doit remplir plusieurs critères :
 ## **Processus de réincarnation**
 
 Au départ de l'hôte initial (volontaire ou forcé par la mort), l'âme
-dispose d'un nombre de tours égal à son **[Rang Céleste](../rang)** pour
+dispose d'un nombre de tours égal à son [**Rang Céleste**](../rang) pour
 trouver un nouvel hôte.
 
 **Déplacement**
 
 -   Chaque tour, l'âme peut parcourir environ 100 mètres
-
 -   Elle perçoit les hôtes potentiels dans cette zone
 
 **Sélection de l'hôte** En fonction de la densité de population de la
 zone, le MJ fait piocher au joueur entre 1 et 3 cartes Citoyen :
 
 -   Zone urbaine dense : 3 cartes
-
 -   Zone urbaine normale : 2 cartes
-
 -   Zone rurale/isolée : 1 carte
-
 -   Zone désertique : 0 carte (voir cas particuliers)
 
 Le joueur choisit l'un des hôtes proposés.
@@ -93,10 +84,8 @@ serviteur de la faction appropriée est présent dans la zone :
 
 -   Le processus est quasi-instantané : **1d6 secondes** au lieu de
     minutes
-
 -   Les serviteurs sont disponibles même en état instable ou impliqués
     dans un combat
-
 -   Ils sont bénis/consacrés pour servir de vaisseaux et acceptent
     automatiquement l'incarnation
 
@@ -236,4 +225,3 @@ d'INS-MV Rogue, les "chasseurs de fantômes" les plus efficaces ne
 sont pas ceux qui bannissent les esprits, mais ceux qui comprennent que
 même dans l'au-delà, rien ne vaut un bon dossier complet avec toutes
 les pièces justificatives.
-
