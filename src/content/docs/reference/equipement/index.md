@@ -1,13 +1,13 @@
 ---
-title: ÉQUIPEMENT
+title: Équipement
 sidebar:
   order: 3
-  label: "Vue d'ensemble"
+  label: Vue d'ensemble
 ---
 
 ## Système de dégâts des armes :
 
-**Dégâts finaux = Code** *(de l'arme/effet)* **+ max(Marge, [Dé rouge](../../mecanique/resolution)) — PA** *(min 0).*
+**Dégâts finaux = Code** _(de l'arme/effet)_ **+ max(Marge,** [**Dé rouge**](../../mecanique/resolution)**) — PA** _(min 0)._
 
 Applique ensuite les effets spéciaux (critique, sacré, etc.).
 
@@ -17,7 +17,6 @@ Applique ensuite les effets spéciaux (critique, sacré, etc.).
 - **max(Marge, Dé rouge)** : on retient le meilleur des deux, sans les additionner.
 - **PA** : Points d'Armure de la **zone touchée**. Sans visée : utilise la **PA du torse**. Les boucliers portés **ajoutent** leur PA au torse.
 
-
 <div class="admonition note">
 <p class="admonition-title">Pourquoi max() et non addition ?</p>
 
@@ -25,6 +24,7 @@ Applique ensuite les effets spéciaux (critique, sacré, etc.).
 </div>
 
 1. Code de dégâts :
+
 - Armes à distance : déterminée en fonction du projectile et de la
 longueur du canon.
 - Armes de mêlée : FOR + modificateur de l'arme
@@ -39,11 +39,9 @@ seuil de réussite : la [marge de réussite](../../mecanique/resolution#3-marge-
 touchent (maximum 3)
 les dégâts sont égaux au dé d'intensité + (code de dégâts de l'arme x
 le nombre de balles qui touchent).
-
 3. Tir de saturation : tir en continu d'une dizaine de balles pour
 « saturer » une zone. Toutes les cibles dans la zone auront un
 désavantages à toute action autre que rester ou se mettre à couvert.
-
 4. Dégâts de zone : Une fois calculés, les dégâts sont infligés à 100%
 à toutes les cibles situées dans le rayon d'action principal, et à 50% à
 toutes les cibles situées dans le rayon d'action secondaire.
@@ -53,5 +51,4 @@ Exemple du tir au pistolet :
 Glock 17 : Code **2**, tu réussis avec **Marge 2**, dé rouge **3** →
 max(2, 3) = **3** → **Dégâts bruts = 2 + 3 = 5**. La cible a **PA 2** → **3** dégâts finaux.
 
-*(Avec l'ancienne formule addition : 2 + 2 + 3 = 7. La nouvelle formule est plus sobre et avantage la compétence sur le hasard.)*
-
+_(Avec l'ancienne formule addition : 2 + 2 + 3 = 7. La nouvelle formule est plus sobre et avantage la compétence sur le hasard.)_
