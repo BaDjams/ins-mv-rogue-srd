@@ -1,8 +1,8 @@
 ---
 title: Résolution — Le D666
 sidebar:
-  order: 1
-  label: "Résolution D666"
+  order: 5
+  label: Résolution D666
 ---
 
 Le jeu utilise trois dés à 6 faces (D6), chacun identifié par une couleur spécifique, pour former un **D666**, offrant ainsi 216 résultats possibles. Les dés doivent être lus dans cet ordre :
@@ -11,7 +11,7 @@ Le jeu utilise trois dés à 6 faces (D6), chacun identifié par une couleur sp�
 - **Dé blanc (dizaines)** : représente la partie humaine du personnage.
 - **Dé rouge (unités)** : détermine l'intensité de la réussite de l'action.
 
----
+***
 
 ## 1. Préparation de l'action
 
@@ -19,8 +19,7 @@ Avant de lancer les dés, il est essentiel de déterminer la nature de l'action 
 
 **Pouvoir surnaturel ou attribut angélique** : Dans ce cas, le dé bleu sera utilisé pour déterminer le succès de l'action. Le seuil de réussite est égal à l'attribut angélique (valeur de 1 à 5) associé au pouvoir.
 
-**[Compétence](../competences) ou caractéristique humaine** : Si l'action repose sur une compétence ou une caractéristique humaine de l'hôte, c'est le dé blanc qui sera utilisé. Le seuil de réussite est égal à la somme de la caractéristique humaine pertinente (de 1 à 3) et du bonus de compétence : Débutant **+0**, Confirmé **+1**, Professionnel **+2**, Expert **+3**. Un personnage Incompétent n'ajoute rien et subit en plus un désavantage sur le jet.
-
+[**Compétence**](../competences) **ou caractéristique humaine** : Si l'action repose sur une compétence ou une caractéristique humaine de l'hôte, c'est le dé blanc qui sera utilisé. Le seuil de réussite est égal à la somme de la caractéristique humaine pertinente (de 1 à 3) et du bonus de compétence : Débutant **+0**, Confirmé **+1**, Professionnel **+2**, Expert **+3**. Un personnage Incompétent n'ajoute rien et subit en plus un désavantage sur le jet.
 
 <div class="admonition note">
 <p class="admonition-title">Important</p>
@@ -32,7 +31,7 @@ Les [compétences](../competences) appartiennent au cerveau de l'hôte, pas à l
 
 Il n'y a aucun bonus ou malus qui s'applique au seuil de réussite. Les bonus ou malus circonstanciels sont gérés grâce à la mécanique d'avantages / désavantages (voir ci-dessous).
 
----
+***
 
 ## 2. Lancer des dés et détermination du succès
 
@@ -46,12 +45,11 @@ Pour réussir l'action, le résultat du Dé d'action doit être **inférieur ou 
 2. Un **1** sur le Dé d'action est toujours une réussite.
 3. Bien que chaque dé soit calculé indépendamment, on les lance simultanément pour gagner du temps. Par exemple, un résultat de "352" sur le D666 signifie que le dé bleu a donné 3, le dé blanc 5, et le dé rouge 2.
 
----
+***
 
 ## 3. Marge de réussite
 
 Il s'agit de la différence entre le seuil de réussite et le résultat du Dé d'action. Pour le calcul des dégâts, la marge et le dé rouge ne s'additionnent pas : on retient le meilleur des deux — **max(Marge, Dé rouge)**. Une grande marge garantit un résultat minimum solide ; le dé rouge peut rattraper une faible marge, mais ne s'empile pas avec une bonne.
-
 
 <div class="admonition note">
 <p class="admonition-title">Note sur les seuils élevés</p>
@@ -65,7 +63,7 @@ Si le seuil est de 6 ou plus (par exemple, un ange avec PUI 5 qui dépense 2 PE 
 
 Si une règle précise que la marge n'est pas prise en compte, considérer la marge comme égale à 0.
 
----
+***
 
 ## 4. Intensité de la réussite
 
@@ -87,6 +85,7 @@ Dans certains cas précisés dans les règles, le dé d'intensité (rouge) devie
 **Garantie** : Un dé explosif génère toujours au minimum un résultat de 2 (pire cas : 1 + 1).
 
 **Exemple simple** :
+
 - Dé initial : 3 → ajoute 1 dé d'explosion → **6** → enchaîne → **2** → stop
 - **Total : 3 + 6 + 2 = 11**
 
@@ -108,7 +107,7 @@ Lorsque plusieurs effets rendent le dé d'intensité explosif (Critique, Double 
 - 2 sources : dé initial + 2 dés d'explosion (minimum garanti : 3)
 - 3 sources : dé initial + 3 dés d'explosion (minimum garanti : 4)
 
----
+***
 
 ## 5. Avantages et désavantages
 
@@ -134,7 +133,6 @@ Si pour un même jet, on cumule deux avantages ou plus, alors le dé d'intensit�
 
 **Exemple** : Sur un jet avec double avantage, le résultat indique 254, le joueur choisit 2 grâce à son premier avantage. Son dé d'intensité devient explosif (second avantage) : dé initial **4** → ajoute 1 dé d'explosion → **6** → enchaîne → **3**, pour un résultat d'intensité de 13 (4 + 6 + 3), auquel on ajoute la marge de réussite.
 
-
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 
@@ -151,7 +149,7 @@ Si par malheur, un personnage vient à cumuler 2 désavantages, alors, en plus d
 - Utiliser une compétence sans le matériel adéquat (s'il existe) impose un désavantage. Les compétences nécessitant un matériel spécifique sont indiquées par un astérisque sur la fiche.
 - Utiliser une [spécialisation](../competences) pertinente accorde un avantage.
 
----
+***
 
 ## 6. Résultats spéciaux
 
@@ -202,7 +200,7 @@ Lorsque le D666 indique **111**, il s'agit d'une **intervention divine**. Lorsqu
     - Toutes les actions du personnage bénéficient d'un double avantage jusqu'au début de son prochain tour.
     - Toutes les actions ciblant le personnage obtiennent un double désavantage, même celles visant à l'aider ou le soigner.
 
----
+***
 
 ## 7. Jets ouverts et fermés
 
@@ -228,14 +226,13 @@ Pour préserver le suspense ou éviter de révéler des informations cruciales, 
 
 Le MJ peut toujours décider de transformer un jet ouvert en jet fermé (ou vice-versa) s'il estime que cela sert mieux la narration.
 
-
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
 
 Dans le cas des jets fermés, le roleplay est particulièrement encouragé puisque le joueur devra interpréter son personnage sans connaître le résultat exact de son action.
 </div>
 
----
+***
 
 ## 8. Jets en opposition
 
@@ -244,14 +241,13 @@ Lorsqu'on effectue un jet en opposition, chacun des 2 (ou plus) protagonistes fa
 - Les 2 actions échouent (on ignore les résultats et on passe au tour/joueur suivant)
 - Les 2 actions réussissent (les 2 actions sont résolues en même temps. Oui, un double KO est possible)
 
-
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 
 Lors d'un jet en opposition, si l'un des protagonistes n'est pas au courant de ce qu'il se passe, il est alors "pris au dépourvu" et subira un désavantage sur son jet.
 </div>
 
----
+***
 
 ## 9. Jets de caractéristique "pure"
 
