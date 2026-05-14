@@ -1,5 +1,5 @@
 ---
-title: Contexte du jeu
+title: Présentation
 sidebar:
   order: 1
   label: Le monde du jeu
