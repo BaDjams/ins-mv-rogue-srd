@@ -17,11 +17,9 @@ Chaque âme surnaturelle peut canaliser la puissance divine librement, pour ses 
 
 Chaque âme dispose d'un nombre de Points d'Énergie (PE) égal à son [Rang Céleste](../../personnage/rang). Ces PE ne représentent pas une réserve à vider, mais un seuil de tolérance : ils absorbent les conséquences des excès de canalisation avant que l'hôte n'en paie le prix. Ils se rechargent intégralement au lever du soleil pour les anges, et à la tombée de la nuit pour les démons — moment qui, comme tout événement cosmique dans cet univers, peut souffrir d'un léger décalage si Dieu est occupé à créer autre chose.
 
-<div class="admonition note">
-<p class="admonition-title">Persistance entre incarnations</p>
+### Persistance entre incarnations
 
-Les PE persistent d'une incarnation à l'autre. Un ange qui perd son hôte à court d'énergie repart dans le suivant dans le même état. L'âme se souvient de ses efforts, même si le corps est neuf. À la [réincarnation](../../personnage/reincarnation) — et uniquement là — le compteur d'affaiblissements d'âme repart à zéro.
-</div>
+Les PE persistent d'une incarnation à l'autre. Un ange qui perd son hôte à court d'énergie repart dans le suivant dans le même état. L'âme se souvient de ses efforts, même si le corps est neuf.
 
 Le trait **Conduit Divin** (niveaux 1 à 3) représente une affinité développée avec le flux divin — certaines âmes anciennes ont simplement appris à gérer des débits que leurs pairs ne sauraient supporter. Chaque niveau ajoute 1 PE permanent au-dessus du Rang Céleste. Ce trait ne modifie pas le Rang lui-même ni l'accès aux pouvoirs : uniquement l'endurance spirituelle face au drain. Un ange de Rang 2 avec Conduit Divin 3 dispose de 5 PE — autant qu'un Archange, sur ce seul plan. Ce qui ne l'empêche pas de rester un ange de Rang 2 sur tout le reste, mais lui donne une endurance magique remarquable pour quelqu'un de son niveau.
 
@@ -37,13 +35,13 @@ Une créature ne peut lancer que des pouvoirs dont le rang est inférieur ou ég
 
 Certains pouvoir proposent des options qui viennent augmenter le nombre de dés de drain : 
 
-La **Surcharge** : le pouvoir est lancé à un rang supérieur à son rang naturel, jusqu'au plafond universel de 6. Les dés de drain correspondent alors au rang effectif de lancement. On ne peut pas faire l'inverse — un pouvoir de Rang 3 se lance avec 3 dés de drain au minimum. Si le pouvoir génère des dégats, ils sont calculés en fonction du rang augmenté, et non du rang de base. 
+La **Surcharge** : le pouvoir est lancé à un rang supérieur à son rang naturel, jusqu'au plafond universel de 6. Les dés de drain correspondent alors au rang effectif de lancement. On ne peut pas faire l'inverse — un pouvoir de Rang 3 se lance avec 3 dés de drain au minimum. Si le pouvoir génère des dégâts, ils sont calculés en fonction du rang augmenté, et non du rang de base. 
 
-Le **Multi-ciblage**, uniquement activable en [posture de concentration](../combat#postures-tactiques), ajoute 1 dé de drain par cible supplémentaire. Un pouvoir de Rang 2 appliqué à 2 cibles en plus de la première génère alors 4 dés de drain, mais la formule de dégats prend toujours en compte le rang du sort lancé. 
+Le **Multi-ciblage**, uniquement activable en [posture de concentration](../combat#postures-tactiques), ajoute 1 dé de drain par cible supplémentaire. Un pouvoir de Rang 2 appliqué à 2 cibles en plus de la première génère alors 4 dés de drain, mais la formule de dégâts prend toujours en compte le rang du sort lancé. 
 
 L'**Expansion** enfin, est une option bien pratique : pour un dé de drain supplémentaire, il est possible de multiplier la portée, la durée ou tout autre limite technique du pouvoir par 2 pour chaque dé de drain généré par cette option. Ainsi, un pouvoir de boule de feu lancé avec l'option "Expansion 2" verra sa portée maximale multipliée par 4.
 
- Il est tout à fait possible de mixer plusieurs options sur un seul lancement de pouvoir mais il faut garder à l'esprit qu'un pouvoir ne peut pas générer plus de 6 dés de drain. De même un pouvoir de rang 6 générant déjà 6 dés de drain, il est impossible de lui appliquer des options. Mais ces pouvoirs divins sont largement assez puissants pour ne pas en avoir besoin.
+Il est tout à fait possible de mixer plusieurs options sur un seul lancement de pouvoir mais il faut garder à l'esprit qu'un pouvoir ne peut pas générer plus de 6 dés de drain. De même un pouvoir de rang 6 générant déjà 6 dés de drain, il est impossible de lui appliquer des options. Mais ces pouvoirs divins sont largement assez puissants pour ne pas en avoir besoin.
 
 ***
 
