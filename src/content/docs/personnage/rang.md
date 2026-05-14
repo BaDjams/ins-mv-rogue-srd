@@ -5,146 +5,67 @@ sidebar:
   label: Rang céleste
 ---
 
-Toute créature vivante créée par Dieu se voit attribuer une Âme à la
-naissance, quel que soit l'univers, quel que soit le monde. C'est une
-des premières règles de Dieu : toutes les créatures vivantes ont une
-âme. Les corps de ces créatures ne sont que les réceptacles de ces âmes.
+Toute créature vivante créée par Dieu se voit attribuer une Âme à la naissance, quel que soit l'univers, quel que soit le monde. C'est une des premières règles de Dieu : toutes les créatures vivantes ont une âme. Les corps de ces créatures ne sont que les réceptacles de ces âmes.
 
-Certaines âmes cependant, n'ont pas ou plus de corps. Les anges et les
-démons en font partie.
+Certaines âmes cependant, n'ont pas ou plus de corps. Les anges et les démons en font partie.
 
-Ce que même les Archanges ignorent, c'est que Dieu a mis en place un
-système de classification connu de Lui Seul : le **Rang Céleste**. Cette
-hiérarchie secrète détermine la puissance réelle de chaque âme en
-fonction de sa "proximité" avec Lui. Plus une âme à un rang élevé,
-plus elle est proche de Dieu et plus elle est puissante. Ce n'est pas
-une échelle linéaire et on ne peut décemment penser qu'un Archange ne
-soit que 4 fois plus puissant qu'un humain.
+Ce que même les Archanges ignorent, c'est que Dieu a mis en place un système de classification connu de Lui Seul : le **Rang Céleste**. Cette hiérarchie secrète détermine la puissance réelle de chaque âme en fonction de sa "proximité" avec Lui. Plus une âme à un rang élevé, plus elle est proche de Dieu et plus elle est puissante. Ce n'est pas une échelle linéaire et on ne peut décemment penser qu'un Archange ne soit que 4 fois plus puissant qu'un humain.
 
 ## L'Échelle de Dieu
 
-Pour les Archanges, la hiérarchie est simple : il y a eux, puis Dieu.
-Point. Ils savent qu'ils sont plus puissants que les anges
-"ordinaires", mais ils attribuent cette différence à l'ancienneté,
-aux responsabilités, ou à la faveur divine. L'idée même qu'il existe
-une mécanique sous-jacente, un système de "niveaux de pouvoir" leur
-est étrangère.
+Pour les Archanges, la hiérarchie est simple : il y a eux, puis Dieu. Point. Ils savent qu'ils sont plus puissants que les anges "ordinaires", mais ils attribuent cette différence à l'ancienneté, aux responsabilités, ou à la faveur divine. L'idée même qu'il existe une mécanique sous-jacente, un système de "niveaux de pouvoir" leur est étrangère.
 
-L'archange Michel ne sait pas qu'il peut diviser les dégâts par 4 alors
-qu'un ange lambda ne les divise que par 3, il pense simplement :
-"J'ai plus d'expérience" ou "Dieu m'a béni pour mes services". Il
-ne réalise pas qu'il s'agit d'une différence systémique et mesurable.
+L'archange Michel ne sait pas qu'il peut diviser les dégâts par 4 alors qu'un ange lambda ne les divise que par 3, il pense simplement : "J'ai plus d'expérience" ou "Dieu m'a béni pour mes services". Il ne réalise pas qu'il s'agit d'une différence systémique et mesurable.
 
-**La seule exception possible :** Yves, l'Archange de la Connaissance,
-pourrait avoir eu des discussions avec Dieu sur ce sujet. Mais même lui
-ne possède pas une vision complète du système. Dieu garde jalousement
-ses mécaniques de création.
+**La seule exception possible :** Yves, l'Archange de la Connaissance, pourrait avoir eu des discussions avec Dieu sur ce sujet. Mais même lui ne possède pas une vision complète du système. Dieu garde jalousement ses mécaniques de création.
 
 ## Rangs célestes
 
-**Rang 1 - Créations terrestres :** Animaux, humains, plantes... Toute
-la faune et la flore que Dieu a semé à travers l'univers lors de Sa
-grande période créatrice des six premiers jours. Ces créatures forment
-l'écrasante majorité des êtres vivants et constituent la base de
-l'écosystème divin. Bien qu'apparemment "ordinaires", elles
-possèdent cette étincelle de vie que Dieu chérit particulièrement -
-après tout, Il a passé six jours entiers à les peaufiner ! Certaines
-espèces terrestres montrent d'ailleurs une sagesse qui échappe parfois
-aux créatures de rangs supérieurs : les dauphins comprennent l'humour
-divin, les chats ignorent superbement la hiérarchie céleste, et les
-corbeaux semblent parfois en savoir plus qu'ils ne le devraient sur les
-affaires angéliques.
+**Rang 1 - Créations terrestres :** 
+
+Animaux, humains, plantes... Toute la faune et la flore que Dieu a semé à travers l'univers lors de Sa grande période créatrice des six premiers jours. Ces créatures forment l'écrasante majorité des êtres vivants et constituent la base de l'écosystème divin. Bien qu'apparemment "ordinaires", elles possèdent cette étincelle de vie que Dieu chérit particulièrement - après tout, Il a passé six jours entiers à les peaufiner ! Certaines espèces terrestres montrent d'ailleurs une sagesse qui échappe parfois aux créatures de rangs supérieurs : les dauphins comprennent l'humour divin, les chats ignorent superbement la hiérarchie céleste, et les corbeaux semblent parfois en savoir plus qu'ils ne le devraient sur les affaires angéliques.
 
 **Rang 2 - Créations surnaturelles inférieures :**
 
-Initialement imaginé par Dieu pour récompenser Ses humains favoris les
-plus méritants (paladins loyaux bons, saints exceptionnels, héros
-légendaires...), ce rang s'est rapidement pollué avec le temps de
-toutes sortes de créatures loufoques que Dieu appréciait pour des
-raisons que Lui seul connaît. Reuben de la Pat'Patrouille côtoie
-désormais certains Pokémon particulièrement attachants et cette licorne
-rose invisible que Gary (8 ans, de Toulouse) a dessinée un mercredi
-pluvieux.
+Initialement imaginé par Dieu pour récompenser Ses humains favoris les plus méritants (paladins loyaux bons, saints exceptionnels, héros légendaires...), ce rang s'est rapidement pollué avec le temps de toutes sortes de créatures loufoques que Dieu appréciait pour des raisons que Lui seul connaît. Reuben de la Pat'Patrouille y côtoie désormais certains Pokémon particulièrement attachants et cette licorne rose invisible que Gary (8 ans, de Toulouse) a dessinée un mercredi pluvieux.
 
-Mais le véritable chaos a commencé durant le Premier Grand Jeu, cette
-fameuse "course aux âmes" entre Paradis et Enfer. Pour permettre à
-Satan de prouver que chaque âme rejoignait volontairement les rangs
-infernaux, Dieu autorisa les pactes démoniaques. Malheureusement, cette
-ouverture juridique a laissé le champ libre à de nombreux biais
-d'interprétation : vampires nés de contrats mal rédigés, zombies issus
-de clauses ambiguës sur la "vie éternelle", et autres créatures
-résultant d'erreurs de paperasserie infernale.
+Mais le véritable chaos a commencé durant le Premier Grand Jeu, cette fameuse "course aux âmes" entre Paradis et Enfer. Pour permettre à Satan de prouver que chaque âme rejoignait volontairement les rangs
+infernaux, Dieu autorisa les pactes démoniaques. Malheureusement, cette ouverture juridique a laissé le champ libre à de nombreux biais d'interprétation : vampires nés de contrats mal rédigés, zombies issus
+de clauses ambiguës sur la "vie éternelle", et autres créatures résultant d'erreurs de paperasserie infernale.
 
-Mention spéciale à Vlad l'Empaleur, avec un pacte si mal ficelé qu'il
-est devenu propriétaire des âmes de ses victimes, frôlant désormais le
-rang 4 en termes de puissance brute.
+Mention spéciale à Vlad l'Empaleur, avec un pacte si mal ficelé qu'il est devenu propriétaire des âmes de ses victimes et de toutes celles de leurs victimes subséquentes. A la tête du premier business modèle pyramidal de l'histoire de la création, il est comparable à un Archange en termes de puissance brute.
 
 **Rang 3 - Créations surnaturelles supérieures :**
 
-Anges, Démons, et autres entités spirituelles dotées d'une véritable
-conscience cosmique. Ces créatures représentent l'élite des forces
-surnaturelles : capables de s'incarner, de voyager entre les plans
-d'existence, et de manipuler les énergies divines ou infernales.
-Contrairement aux créatures du rang 2 - souvent liées par des pactes ou
-des malédictions - elles agissent selon leur nature profonde et leur
-mission cosmique. Les Anges œuvrent pour la gloire divine, les Démons
-pour la corruption des âmes, mais tous comprennent les véritables enjeux
-de la guerre éternelle qui se déroule dans l'ombre du monde des
-humains. C'est à ce rang que se situent tous les personnages joueurs,
-qu'ils soient messagers célestes ou émissaires des ténèbres, mais aussi
-d'autres créatures de grande puissance dont la liste exacte reste
-encore à établir.
+Anges, Démons, et autres entités spirituelles dotées d'une véritable conscience cosmique. Ces créatures représentent l'élite des forces surnaturelles : capables de s'incarner, de voyager entre les plans d'existence, et de manipuler les énergies divines ou infernales. Contrairement aux créatures du rang 2 - souvent liées par des pactes ou des malédictions - elles agissent selon leur nature profonde et leur mission cosmique. Les Anges œuvrent pour la gloire divine, les Démons pour la corruption des âmes, mais tous comprennent les véritables enjeux de la guerre éternelle qui se déroule dans l'ombre du monde des humains. 
 
-**Rang 4 - Créations surnaturelles majeures :** Archanges, Princes
-démons, Dragons millénaires, et autres entités capables de remodeler la
-réalité d'un simple geste. Ces êtres transcendent largement les
-préoccupations terrestres : un Archange peut décimer une armée de mille
-soldats par sa seule colère, briser l'âme d'un ange rebelle en
-quelques instants, ou invoquer des miracles qui défient les lois
-physiques. Les Princes démons rivalisent en pouvoir destructeur,
-capables d'ouvrir des brèches entre les mondes ou de corrompre des
-nations entières. À ce niveau, la différence de puissance devient
-qualitative plutôt que quantitative : ces entités opèrent selon des
-règles qui échappent aux créatures inférieures et leur simple présence
-peut altérer la réalité environnante. A l'époque, c'est à ce niveau
-qu'oeuvraient les "Divinités" grecques et romaines par exemple.
+Par le passé, à part peut-être Zeus ou Odin qui sortaient vraiment du lot, c'est à ce niveau qu'œuvraient les "Divinités" anciennes, mais aussi d'autres créatures de grande puissance dont la liste exacte reste encore à établir.
 
-**Rang 5 - [DONNÉES INSUFFISANTES] :**
+**Rang 4 - Créations surnaturelles majeures :** 
 
-Si on lui pose la question s'il éxiste des créations d'une puissance
-supérieure aux archanges, Yves répond simplement : "Bien sûr : Dieu!"
+Archanges, Princes démons, Dragons millénaires, et autres entités capables de remodeler la réalité d'un simple geste. Ces êtres transcendent largement les préoccupations terrestres : un Archange peut décimer une armée de mille soldats par sa seule colère, briser l'âme d'un ange rebelle en quelques instants, ou invoquer des miracles qui défient les lois physiques. Les Princes démons rivalisent en pouvoir destructeur,
+capables d'ouvrir des brèches entre les mondes ou de corrompre des nations entières. À ce niveau, la différence de puissance devient qualitative plutôt que quantitative : ces entités opèrent selon des règles qui échappent aux créatures inférieures et leur simple présence peut altérer la réalité environnante. 
 
-Ses archives mentionnent cependant des "anomalies" et des "entités
-théoriques", mais les dossiers sont soit effacés, soit rédigés dans une
-langue que même les anges érudits ne reconnaissent pas.
+**Rang 5 - Satan :** 
 
-Quoi qu'il en soit, si de telles entités existent vraiment, elles
-opèrent selon des règles qui échappent à la compréhension commune. Leur
-puissance ne se mesure pas en miracles ou en destructions, mais en...
-autre chose. Quelque chose que même Dieu préfère peut-être ne pas trop
-détailler dans Son curriculum vitae. Un livre relié en peau humaine et
-rédigé avec du sang humain mentionne quelques-unes de ces créatures mais
-hélas, il semble que cet ouvrage se soit perdu dans le temps et
-l'espace...
+Le Diable, la Bête, Stan, l'Archange Déchu, Samael le Porteur de Lumière. Quel que soit le nom qu'on lui donne, c'est toujours le même : un être rebelle, d'une puissance extrême, rongé par la colère et le ressentiment, qui a subi plus de colère divine que n'importe quelle créature sur terre et qui malgré ça n'a jamais plié le genoux. Il est séducteur, calculateur, il paraitrait même agréable, du moment que vous servez ses intérêts. Archange, il était parmi les meilleurs en à peu près tout. Depuis sa chute, la puissance accumulée par les âmes qui hantent les prisons infernales l'a rendu plus puissant que n'importe lequel de ses frère. Sauf peut-être Jésus, mais c'est normal c'est le chouchou de Papa.
 
-**Rang 6 - Dieu :** Le Créateur, l'Alpha et l'Oméga, Celui qui divise
-par zéro et trouve ça drôle. Actuellement occupé à inventer de nouveaux
-univers (Il en est à Son 47 623e, un monde où la gravité fonctionne à
-l'envers les mardis), Dieu semble parfois Se désintéresser de notre
-réalité. Heureusement, les mécaniques qu'Il a mis en place fonctionnent
-en autonomie - enfin, la plupart du temps.
+**Rang 6 - [DONNÉES INSUFFISANTES] :**
 
-Le rang céleste est une des mécaniques les plus fondamentales de la
-création, et paradoxalement, celle dont personne (ou presque) ne connaît
-l'existence.
+Si on lui pose la question s'il existe des créations d'une puissance supérieure aux archanges, Yves répond simplement : "Bien sûr : Dieu!"
+
+Ses archives mentionnent cependant des "anomalies" et des "entités théoriques", mais les dossiers sont soit effacés, soit rédigés dans une langue que même les anges érudits ne reconnaissent pas.
+
+Quoi qu'il en soit, si de telles entités existent vraiment, elles opèrent selon des règles qui échappent à la compréhension commune. Leur puissance ne se mesure pas en miracles ou en destructions, mais en autre chose. Quelque chose que même Dieu préfère peut-être ne pas trop détailler dans Son curriculum vitae. Un livre relié en peau humaine et rédigé avec du sang humain mentionne quelques-unes de ces créatures mais
+hélas, il semble que cet ouvrage se soit perdu dans le temps et l'espace...
+
+**Rang 7 - Dieu :** 
+
+Le Créateur, l'Alpha et l'Oméga, Celui qui divise par zéro et trouve ça drôle. Actuellement occupé à inventer de nouveaux univers (Il en est à Son 47 623e, un monde où la gravité fonctionne à l'envers les mardis), Dieu semble parfois Se désintéresser de notre réalité. Heureusement, les mécaniques qu'Il a mis en place fonctionnent en autonomie - enfin, la plupart du temps. Le rang céleste est une des mécaniques les plus fondamentales de la création, et paradoxalement, celle dont personne (ou presque) ne connaît l'existence.
 
 # Incarnations et Rang Céleste
 
-Le nombre d'incarnations disponibles pour une âme est directement lié à
-son Rang Céleste. Une fois ce quota épuisé, l'âme rejoint
-définitivement son plan d'origine (Paradis, Enfer, ou Limbes).
-
-**Nombre d'incarnations = Rang Céleste**
+Le nombre d'incarnations disponibles pour une âme est égale à son Rang Céleste. Une fois ce quota épuisé, l'âme rejoint définitivement son plan d'origine (Paradis, Enfer, ou Limbes).
 
 **Rang Céleste 1 (Humains, animaux, plantes)** : 1 incarnation
 
@@ -179,4 +100,4 @@ Lorsqu'un hôte meurt, l'âme surnaturelle a quelques minutes pour trouver un no
 
 Le corps de l'ancien hôte reste sur place : un mort de plus, avec tout ce que cela implique en termes de constat et d'enquête. Quand le quota est épuisé, l'âme retourne à son plan d'origine et le dernier corps reste lui aussi sur place.
 
-**Compteur d'incarnations** : Les joueurs notent sur leur fiche combien d'incarnations leur restent (départ : 3 pour les anges/démons).
+**Compteur d'incarnations** : Les joueurs notent sur leur fiche combien d'incarnations leur restent.
