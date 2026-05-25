@@ -906,3 +906,68 @@ nav a[aria-current="page"]:hover {
   .rogue-roller__die { width: 56px; height: 56px; font-size: 1.8em; }
   .rogue-roller__dice { gap: 16px; }
 }
+
+/* ═══════════════════════════════════════════════════════
+   12. IMPRESSION (@media print)
+   ═══════════════════════════════════════════════════════ */
+
+@media print {
+  /* Masquer les éléments de navigation et interactifs */
+  .sidebar,
+  header.header,
+  nav,
+  .sl-sidebar,
+  .rogue-roller,
+  .rogue-result-table,
+  .rogue-simulator,
+  .rogue-generator,
+  .gen-controls,
+  .sim-controls,
+  footer {
+    display: none !important;
+  }
+
+  /* Corps du document */
+  body, .sl-markdown-content {
+    font-size: 10pt;
+    line-height: 1.5;
+    color: #000;
+    background: #fff;
+  }
+
+  /* Contenu principal pleine largeur */
+  .main-frame,
+  .content-panel,
+  .sl-content-wrapper {
+    padding: 0 !important;
+    margin: 0 !important;
+    max-width: 100% !important;
+  }
+
+  /* Titres */
+  h1 { font-size: 18pt; page-break-before: always; }
+  h1:first-of-type { page-break-before: avoid; }
+  h2 { font-size: 14pt; }
+  h3 { font-size: 12pt; }
+  h4 { font-size: 11pt; }
+
+  /* Éviter les coupures malheureuses */
+  h1, h2, h3, h4 { page-break-after: avoid; }
+  table, figure    { page-break-inside: avoid; }
+
+  /* Liens : afficher l'URL */
+  a[href]::after { content: none; }
+  a              { color: inherit; text-decoration: none; }
+
+  /* Tableaux */
+  table { border-collapse: collapse; font-size: 9pt; width: 100%; }
+  th, td { border: 1px solid #999; padding: 3pt 6pt; }
+  th { background: #eee !important; }
+
+  /* Cartes */
+  .rogue-card-grid { grid-template-columns: 1fr 1fr; }
+  .rogue-card      { border: 1px solid #ccc; background: #f8f8f8 !important; }
+
+  /* Admonitions */
+  .admonition { border-left: 3pt solid #555; background: #f4f4f4 !important; }
+}

@@ -1,0 +1,112 @@
+---
+import { getCollection, render } from 'astro:content';
+
+const EXPORT_ORDER = [
+  'srd',
+  'contexte/contexte',
+  'personnage/caracteristiques',
+  'personnage/creation',
+  'personnage/progression',
+  'personnage/rang',
+  'personnage/reincarnation',
+  'mecanique/resolution',
+  'mecanique/combat',
+  'mecanique/competences',
+  'mecanique/energie',
+  'mecanique/pouvoirs',
+  'mecanique/blessures',
+  'reference/mots-cles',
+  'reference/etats',
+  'reference/equipement/index',
+  'reference/equipement/armes-feu',
+  'reference/equipement/melee',
+  'reference/equipement/distance',
+  'reference/equipement/explosifs',
+  'reference/equipement/protections',
+  'reference/equipement/boucliers',
+];
+
+const allDocs = await getCollection('docs');
+
+const orderedDocs = EXPORT_ORDER
+  .map(slug => allDocs.find(e => e.id.replace(/\.mdx?$/, '') === slug))
+  .filter((e): e is NonNullable<typeof e> => e != null);
+
+const sections = await Promise.all(
+  orderedDocs.map(async (entry) => {
+    const { Content } = await render(entry);
+    return { entry, Content };
+  })
+);
+
+const base = import.meta.env.BASE_URL;
+const docxUrl = `${base}downloads/ins-mv-rogue-srd.docx`;
+---
+
+<div class="export-actions">
+  <button onclick="window.print()" class="export-btn export-btn--pdf">⬇ Télécharger PDF</button>
+  <a href={docxUrl} class="export-btn export-btn--docx" download>⬇ Télécharger DOCX</a>
+</div>
+
+<div class="export-notice">
+  Pour le PDF : utilisez le bouton ci-dessus, puis dans la boîte de dialogue d'impression choisissez <strong>Enregistrer en PDF</strong>.
+</div>
+
+{sections.map(({ entry, Content }) => (
+  <section class="export-section">
+    <Content />
+  </section>
+))}
+
+<style>
+  .export-actions {
+    display: flex;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+    margin-bottom: 0.75rem;
+  }
+
+  .export-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.45rem 1.2rem;
+    border-radius: 4px;
+    font-family: var(--rogue-font-label, 'Barlow Condensed', system-ui, sans-serif);
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    transition: opacity 0.15s;
+  }
+  .export-btn:hover { opacity: 0.82; }
+
+  .export-btn--pdf  { background: var(--rogue-intensity, #c53030); color: #fff; }
+  .export-btn--docx { background: var(--rogue-angel,    #2b6cb0); color: #fff; }
+
+  .export-notice {
+    font-size: 0.82rem;
+    color: var(--sl-color-gray-3);
+    margin-bottom: 2rem;
+  }
+
+  .export-section {
+    margin-bottom: 2.5rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid var(--sl-color-gray-5);
+  }
+  .export-section:last-child {
+    border-bottom: none;
+  }
+
+  @media print {
+    .export-actions,
+    .export-notice { display: none !important; }
+
+    .export-section { page-break-after: always; }
+    .export-section:last-child { page-break-after: avoid; }
+  }
+</style>

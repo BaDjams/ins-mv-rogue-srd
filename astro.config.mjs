@@ -43,6 +43,7 @@ export default defineConfig({
         },
         { label: 'Simulateur', slug: 'simulateur' },
         { label: 'Générateur', slug: 'generateur' },
+        { label: '↓ Télécharger', slug: 'telecharger' },
       ],
     }),
   ],
