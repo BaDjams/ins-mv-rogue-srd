@@ -27,19 +27,51 @@ export default defineConfig({
         { label: 'SRD', slug: 'srd' },
         {
           label: 'Contexte',
-          autogenerate: { directory: 'contexte' },
+          items: [
+            { label: 'Le monde du jeu', slug: 'contexte/contexte' },
+            { label: 'Setting', slug: 'contexte/ins-mv-rogue' },
+          ],
         },
         {
           label: 'Personnage',
-          autogenerate: { directory: 'personnage' },
+          items: [
+            { label: 'Caractéristiques & Attributs', slug: 'personnage/caracteristiques' },
+            { label: "Création d'âme", slug: 'personnage/creation' },
+            { label: 'Rang céleste', slug: 'personnage/rang' },
+            { label: 'Position hiérarchique', slug: 'personnage/progression' },
+            { label: 'Réincarnation', slug: 'personnage/reincarnation' },
+          ],
         },
         {
           label: 'Mécanique',
-          autogenerate: { directory: 'mecanique' },
+          items: [
+            { label: 'Résolution D666', slug: 'mecanique/resolution' },
+            { label: 'Compétences', slug: 'mecanique/competences' },
+            { label: 'Combat & initiative', slug: 'mecanique/combat' },
+            { label: 'Dégâts & Blessures', slug: 'mecanique/blessures' },
+            { label: 'Pouvoirs', slug: 'mecanique/pouvoirs' },
+            { label: 'Énergie, Drain & Consommation', slug: 'mecanique/energie' },
+          ],
         },
         {
           label: 'Référence',
-          autogenerate: { directory: 'reference' },
+          items: [
+            {
+              label: 'Équipement',
+              collapsed: true,
+              items: [
+                { label: "Vue d'ensemble", slug: 'reference/equipement' },
+                { label: 'Armes de mêlée', slug: 'reference/equipement/melee' },
+                { label: 'Armes à distance', slug: 'reference/equipement/distance' },
+                { label: 'Armes à feu', slug: 'reference/equipement/armes-feu' },
+                { label: 'Explosifs', slug: 'reference/equipement/explosifs' },
+                { label: 'Protections', slug: 'reference/equipement/protections' },
+                { label: 'Boucliers', slug: 'reference/equipement/boucliers' },
+              ],
+            },
+            { label: 'Mots-clés', slug: 'reference/mots-cles' },
+            { label: 'États', slug: 'reference/etats' },
+          ],
         },
         { label: 'Simulateur', slug: 'simulateur' },
         { label: 'Générateur', slug: 'generateur' },
