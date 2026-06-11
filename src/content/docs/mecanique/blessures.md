@@ -23,7 +23,7 @@ Flux de résolution : De l'attaque à la blessure
 
 Lorsqu'une attaque inflige des dégâts :
 
-1.  Calcul des dégâts bruts (Code + Intensité + Marge + modificateurs)
+1.  Calcul des dégâts bruts (`Code + max(Marge, Dé rouge)` + modificateurs — voir [Résolution](../resolution#marge-de-réussite))
 2.  Nature des dégâts (normaux, aggravés, ou non-létaux)
 3.  Réduction : Armure (soustraction du PA, sauf mention contraire)
 4.  Réduction : Résilience (division, arrondi inférieur)
@@ -45,7 +45,7 @@ Natures de dégâts et blessures
 
 Dégâts normaux conduisent à des Blessures létales (X)
 
--   Guérissent naturellement (1 par jour)
+-   Guérissent naturellement (voir [Restauration](#restauration-des-points-de-vie))
 
 Dégâts aggravés conduisent à des Blessures aggravées (⭙)
 
@@ -54,7 +54,7 @@ Dégâts aggravés conduisent à des Blessures aggravées (⭙)
 
 Dégâts non-létaux conduisent à des Blessures non-létales (/)
 
--   Guérissent rapidement (1 par heure de repos)
+-   Guérissent rapidement (1 par minute de repos)
 
 Règle d'arrondi
 
@@ -64,8 +64,8 @@ l'attaquant) alors que lors de la division des dégâts par la
 Résilience, l'arrondi se fait toujours à l'inférieur (favorable au
 défenseur).
 
-Exemple : Azrael active son aura de sainteté qui **inflige** Rang hiérarchique x [rang céleste](../../personnage/rang) /2 dégâts aggravés à toutes les cibles démoniaques au contact. 3×3/2 = 4,5, donc arrondi à 5 dégâts.
-Belphess la démone aux belles fesses est très très au contact et **subit** donc 5/3=1 blessure aggravée (on arrondit à l'inférieur lors de la division par la résilience). Belphess pousse un gémissement équivoque.
+Exemple : Azrael active son aura de sainteté (pouvoir de Rang 1, option [Stigmate](../energie#rang-des-pouvoirs-et-drain)) qui **inflige** 5 dégâts aggravés à toutes les cibles démoniaques au contact.
+Belphess la démone aux belles fesses est très très au contact. Le Rang 1 du pouvoir réduit sa Résilience 3 à un facteur 2 : elle **subit** donc 5/2 = 2 blessures aggravées (on arrondit à l'inférieur lors de la division par la résilience). Belphess pousse un gémissement nettement moins équivoque.
 
 Pour les effets bénéfiques (soins, récupération), l'arrondi se fait à
 l'[avantage](../resolution#avantage) du lanceur.
@@ -109,8 +109,8 @@ dégâts de combat
 **Upgrade :** Peut transformer une blessure non létale (/) en blessure
 létale (X) en complétant la croix
 
-**Guérison :** 1 semaine par coche (récupération naturelle selon le rang
-céleste)
+**Guérison :** Récupération naturelle selon le rang céleste (voir
+[Restauration](#restauration-des-points-de-vie))
 
 **Blessures Aggravées (⭙)**
 
@@ -118,11 +118,10 @@ céleste)
 
 **Causes :**
 
--   Utilisation de pouvoirs surnaturels coûtant plus de 1 PE
--   Attaques de créatures particulièrement dangereuses (vampires, démons
-    majeurs)
--   Armes maudites ou sacrées
--   Dégâts spirituels directs
+-   La [Consommation](../energie#le-seuil-de-tolérance) : tout
+    affaiblissement d'âme au-delà du seuil de tolérance
+-   Les armes portant le mot-clé **Stigmate**
+-   Les pouvoirs lancés avec l'option **Stigmate**
 
 **Upgrade :** Peut transformer n'importe quelle blessure existante
 
@@ -260,11 +259,19 @@ diviserait les dégâts d'une attaque par 4.
 Cette division s'applique **avant** de déterminer le nombre de cases à
 cocher, mais ne change pas le type de blessure infligée.
 
-Notons que certaines armes "magiques" ou "célestes" réduisent, voire
-annulent l'effet de division des dommages. Les balles en argent en sont
-un exemple parfait puisqu'ils réduisent le facteur de division de 1
-contre les loups garous et les vampires, les rendant particulièrement
-vulnérables.
+La Résilience ne protège que du profane. Tout ce qui est surnaturel la
+traverse, en tout ou partie :
+
+-   **Pouvoirs** : le [rang de lancement](../energie#rang-des-pouvoirs-et-drain)
+    réduit d'autant le facteur de division, jusqu'à un minimum de 1. Un
+    pouvoir de Rang 2 face à une Résilience 3 divise par 1 —
+    c'est-à-dire pas du tout.
+-   **Armes spéciales** : le mot-clé **Fléau X** réduit le facteur de
+    division de X, le cas échéant contre une catégorie de créatures
+    précisée entre parenthèses. Les balles en argent portent *Fléau 1
+    (Maudits)* — de quoi rendre les loups-garous et les vampires
+    particulièrement nerveux. Les armes forgées au Paradis ou en Enfer
+    portent un Fléau fixé à la forge, généralement sans condition.
 
 Enfin, certaines créatures peuvent être tout bonnement insensibles à
 certaines formes de dommages ou états. Voir la section "états".
@@ -272,7 +279,7 @@ certaines formes de dommages ou états. Voir la section "états".
 <div class="admonition note">
 <p class="admonition-title">Rôle des armes spéciales</p>
 
-Les armes spéciales (argent, armes célestes, armes maudites) ne font pas plus de dégâts bruts — elles réduisent ou annulent la Résilience de l'adversaire. C'est le seul levier qui permet à un humain bien préparé (inquisiteur, chasseur) de menacer réellement un être surnaturel de haut rang.
+Les armes spéciales ne font pas plus de dégâts bruts — elles percent les défenses surnaturelles (**Fléau**) ou laissent des plaies qui ne se referment pas (**Stigmate**), au cas par cas selon leur description. C'est le seul levier qui permet à un humain bien préparé (inquisiteur, chasseur) de menacer réellement un être surnaturel de haut rang.
 </div>
 
 ## Restauration des points de vie :
