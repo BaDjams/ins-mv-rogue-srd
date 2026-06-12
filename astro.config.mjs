@@ -60,7 +60,6 @@ export default defineConfig({
               label: 'Équipement',
               collapsed: true,
               items: [
-                { label: "Vue d'ensemble", slug: 'reference/equipement' },
                 { label: 'Armes de mêlée', slug: 'reference/equipement/melee' },
                 { label: 'Armes à distance', slug: 'reference/equipement/distance' },
                 { label: 'Armes à feu', slug: 'reference/equipement/armes-feu' },
