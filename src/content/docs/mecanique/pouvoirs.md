@@ -16,18 +16,19 @@ accéder à des pouvoirs puissants et les développer à un niveau avancé.
 Chaque pouvoir possède un rang (0 à 6). Le rang détermine à la fois l'accès et le coût en [drain](../energie#rang-des-pouvoirs-et-drain).
 
 - **Rang 0** : gratuit, accessible aux humains initiés, 0 dé de drain.
-- **Rang 1–6** : dés de drain = rang effectif de lancement. Chaque 6 = 1 affaiblissement d'âme.
-- **Accès** : Rang Céleste ≥ rang du pouvoir. Pas de downgrade possible.
-- **Surcharge** : lancer un pouvoir à un rang supérieur à son rang naturel (jusqu'à 6). Les dés de drain et les dégâts correspondent au rang effectif.
-- **Dégâts offensifs** : `(Code + max(Marge, Dé rouge)) × rang effectif`
+- **Rang de base** : tout pouvoir possède un rang de base (1 au minimum) correspondant à son effet le plus modeste. Lancé tel quel, il reste à son rang de base.
+- **Rang effectif** : rang de base augmenté des rangs ajoutés (surcharge, mots-clés), plafonné à 6. Il fixe les dés de drain : chaque 6 = 1 affaiblissement d'âme.
+- **Accès** : le rang de base d'un pouvoir doit être inférieur ou égal au Rang Céleste. Un pouvoir dont le rang de base dépasse le Rang Céleste est hors de portée — aucune surcharge ne permet d'y accéder.
+- **Surcharge** : un pouvoir accessible peut être porté à un rang effectif supérieur à son rang de base, jusqu'à 6. Chaque rang effectif au-dessus du Rang Céleste inflige 1 affaiblissement automatique, en sus du drain.
+- **Dégâts offensifs** : `PUI + rangs + max(Marge, Dé rouge)`, où *rangs* est le nombre de rangs consacrés aux dégâts (1 au minimum). La formule remplace l'ancien multiplicateur : un pouvoir frappe désormais comme une arme dont le Code vaudrait `PUI + rangs`.
 
 <div class="admonition example">
-<p class="admonition-title">Exemple : Ange Rang 3 (3 PE), pouvoir Rang 2 surchargé à 4</p>
+<p class="admonition-title">Exemple : Ange (Rang Céleste 3), pouvoir de rang de base 2 surchargé à un rang effectif de 4</p>
 
-- Dés de drain : 4 (rang effectif)
-- Résultat supposé : deux 6 → 2 affaiblissements d'âme
-- L'ange dispose de 3 PE → quota non dépassé → 0 blessure aggravée
-- Il lui reste 1 PE de marge pour la journée
+- Accès : rang de base 2 ≤ Rang Céleste 3 → autorisé.
+- Rang effectif 4 → 4 dés de drain.
+- Le rang effectif dépasse le Rang Céleste de 1 → 1 affaiblissement automatique.
+- Les 6 obtenus au drain se résolvent ensuite selon la Consommation (voir Énergie).
 </div>
 
 Pour le détail complet du mécanisme (seuil de tolérance, Consommation, Présence Surnaturelle), voir le chapitre Énergie.
