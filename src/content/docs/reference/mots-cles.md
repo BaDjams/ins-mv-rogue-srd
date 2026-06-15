@@ -88,11 +88,12 @@ Les hôtes animaux perdent **1 PV toutes les (Taille × 10) minutes** à cause d
 **Effets spécifiques**
 
 - **Explosif** : Dé d'intensité explosif sur les dégâts
-- **Sacré/Magique/Maudit** : Réduit la division des dégâts de 1 point (min. 1)
+- **Fléau X** : Réduit le facteur de [Résilience](../../mecanique/blessures#division-des-dommages-encaissés) de la cible de X (minimum 1), le cas échéant contre une catégorie de créatures précisée entre parenthèses. Ex : *Fléau 1 (Maudits)* sur les balles en argent.
+- **Stigmate** : Les dégâts infligés sont [aggravés](../../mecanique/blessures#types-de-blessures) — les plaies ne se referment jamais naturellement.
 - **Béni** : +2 dégâts contre les créatures du Mal
 - **Profane** : +2 dégâts contre les créatures du Bien
 - **Silencieux** : Ne produit aucun bruit, parfait pour l'infiltration
-- **Non-létal** : Inflige des dégâts temporaires (récupérés après 1h de repos)
+- **Non-létal** : Inflige des dégâts temporaires (1 blessure récupérée par minute de repos)
 - **Artisanal/Vieillissant/Ancien/Abîmé** : Si le dé d'intensité indique 1, l'arme se bloque ou explose
 - **Automatique** : Peut tirer en rafale (voir règles de combat)
 - **Gatling** : Peut tirer en rafale avec jusqu'à 5 balles (au lieu de 3)
