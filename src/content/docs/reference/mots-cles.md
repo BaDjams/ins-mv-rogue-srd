@@ -93,7 +93,7 @@ Les hôtes animaux perdent **1 PV toutes les (Taille × 10) minutes** à cause d
 - **Béni** : +2 dégâts contre les créatures du Mal
 - **Profane** : +2 dégâts contre les créatures du Bien
 - **Silencieux** : Ne produit aucun bruit, parfait pour l'infiltration
-- **Non-létal** : Inflige des dégâts temporaires (1 blessure récupérée par minute de repos)
+- **Non-létal** : Inflige des dégâts temporaires (disparaissent au prochain repos hors combat). Peut déclencher les états [Meurtri](../../reference/etats#meurtri) ou [Épuisé](../../reference/etats#épuisé-niveaux-16) selon leur accumulation. Les créatures surnaturelles y sont immunisées.
 - **Artisanal/Vieillissant/Ancien/Abîmé** : Si le dé d'intensité indique 1, l'arme se bloque ou explose
 - **Automatique** : Peut tirer en rafale (voir règles de combat)
 - **Gatling** : Peut tirer en rafale avec jusqu'à 5 balles (au lieu de 3)

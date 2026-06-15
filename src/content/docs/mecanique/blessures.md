@@ -54,7 +54,9 @@ Dégâts aggravés conduisent à des Blessures aggravées (⭙)
 
 Dégâts non-létaux conduisent à des Blessures non-létales (/)
 
--   Guérissent rapidement (1 par minute de repos)
+-   Disparaissent lors du prochain repos hors combat (pas de minuterie)
+-   Accumulation : état [Meurtri](../reference/etats#meurtri) dès la moitié des PV en (/), [Épuisé niveau 1](../reference/etats#épuisé-niveaux-16) si jauge entièrement en (/)
+-   Les âmes surnaturelles sont immunisées à ces états — le corps subit les coups, l'âme les ignore. Certains effets portant un mot-clé explicite peuvent lever cette immunité.
 
 Règle d'arrondi
 
@@ -96,8 +98,9 @@ leur gravité détermine le type de marque utilisée.
 
 **Restriction :** Ne peut être cochée que dans une case vide
 
-**Guérison :** 1 minute par coche (soit 10-15 minutes au total pour se
-remettre)
+**Guérison :** Toutes les blessures non-létales disparaissent lors d'un repos hors combat. Aucune minuterie — une pause entre deux scènes suffit.
+
+**États associés :** [Meurtri](../reference/etats#meurtri) (≥ moitié des PV en /) et [Épuisé niveau 1](../reference/etats#épuisé-niveaux-16) (jauge entièrement en /). Les créatures surnaturelles sont immunisées à ces états.
 
 **Blessures Létales (X)**
 
@@ -218,9 +221,7 @@ préalable.
 
 **Guérison :**
 
--   Cases 3-6 (X) : 1 minute pour la case 3 (ancienne /), 1 semaine
-    chacune pour les cases 4-6
--   Case 2 (X) : 1 semaine
+-   Cases 2-6 (X) : récupération naturelle selon le rang céleste (voir [Restauration](#restauration-des-points-de-vie)) — la case 3, anciennement (/), guérit comme une blessure létale depuis qu'elle a été upgradée
 -   Case 1 (⭙) : Conversion nécessaire puis 1 semaine
 
 voici les points de vie d'autres créatures, pour exemple :

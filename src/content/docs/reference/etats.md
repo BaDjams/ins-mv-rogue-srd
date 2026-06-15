@@ -127,6 +127,23 @@ sidebar:
 
 ---
 
+### Meurtri
+
+**Description :** Contusions, foulures, épuisement musculaire — le corps accuse les coups sans que les organes vitaux soient touchés. L'âme surnaturelle qui l'habite l'ignore superbement.
+
+**Déclenchement :** Automatique dès que les blessures non-létales (/) occupent au moins la moitié des cases de PV.
+
+**Effets :**
+
+- Désavantage sur tous les jets physiques (FOR, AGI, VIG)
+- Si la jauge est entièrement remplie de (/), déclenche également [Épuisé](#épuisé-niveaux-16) niveau 1
+
+**Immunité surnaturelle :** Les anges, démons et créatures surnaturelles sont immunisées aux effets de cet état — l'âme ignore ce que le corps ressent. Un effet portant un mot-clé explicite (ex : *Ail* contre un vampire, *Eau bénite* contre un démon) peut lever cette immunité au cas par cas.
+
+**Fin :** Lors d'un repos hors combat. Toutes les blessures (/) disparaissent et l'état est levé simultanément.
+
+---
+
 ## États mentaux
 
 ### Charmé
