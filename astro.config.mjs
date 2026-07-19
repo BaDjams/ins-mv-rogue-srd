@@ -1,10 +1,59 @@
 import { defineConfig } from 'astro/config';
 import starlight from '@astrojs/starlight';
+import AstroPWA from '@vite-pwa/astro';
+
+const base = '/ins-mv-rogue-srd';
 
 export default defineConfig({
   site: 'https://BaDjams.github.io',
-  base: '/ins-mv-rogue-srd',
+  base,
   integrations: [
+    AstroPWA({
+      registerType: 'autoUpdate',
+      // vite-plugin-pwa attend une base terminée par "/" (Astro, lui, la stocke sans slash final).
+      base: base + '/',
+      scope: base + '/',
+      includeAssets: ['icon.svg', 'favicon-32.png'],
+      manifest: {
+        id: base + '/',
+        name: 'INS·MV ROGUE — SRD',
+        short_name: 'ROGUE SRD',
+        description: 'System Reference Document pour INS-MV ROGUE, disponible hors-ligne.',
+        lang: 'fr',
+        start_url: base + '/',
+        scope: base + '/',
+        display: 'standalone',
+        background_color: '#0f0f1a',
+        theme_color: '#0f0f1a',
+        icons: [
+          { src: 'icons/icon-192.png', sizes: '192x192', type: 'image/png', purpose: 'any' },
+          { src: 'icons/icon-512.png', sizes: '512x512', type: 'image/png', purpose: 'any' },
+          { src: 'icons/icon-512-maskable.png', sizes: '512x512', type: 'image/png', purpose: 'maskable' },
+        ],
+      },
+      workbox: {
+        // Toujours vérifier une version plus récente en priorité ; ne retombe sur le
+        // cache que si le réseau est indisponible, pour garder le contenu à jour hors-ligne.
+        navigateFallback: base + '/',
+        globPatterns: ['**/*.{css,js,html,svg,png,ico,woff2}'],
+        runtimeCaching: [
+          {
+            urlPattern: ({ request }) => request.mode === 'navigate',
+            handler: 'NetworkFirst',
+            options: { cacheName: 'pages', networkTimeoutSeconds: 3 },
+          },
+          {
+            urlPattern: ({ request }) =>
+              ['style', 'script', 'image', 'font'].includes(request.destination),
+            handler: 'StaleWhileRevalidate',
+            options: { cacheName: 'assets' },
+          },
+        ],
+      },
+      devOptions: {
+        enabled: true,
+      },
+    }),
     starlight({
       title: 'INS·MV ROGUE SRD',
       description: 'System Reference Document pour INS-MV ROGUE',
@@ -16,10 +65,47 @@ export default defineConfig({
         github: 'https://github.com/BaDjams/ins-mv-rogue-srd',
       },
       customCss: ['./src/styles/rogue-srd.css'],
+      favicon: '/favicon-32.png',
       head: [
         {
           tag: 'script',
           attrs: { src: '/ins-mv-rogue-srd/scripts/rogue-srd.js', defer: true },
+        },
+        {
+          tag: 'link',
+          attrs: { rel: 'manifest', href: base + '/manifest.webmanifest' },
+        },
+        {
+          tag: 'link',
+          attrs: { rel: 'apple-touch-icon', href: base + '/icons/apple-touch-icon.png' },
+        },
+        {
+          tag: 'meta',
+          attrs: { name: 'apple-mobile-web-app-capable', content: 'yes' },
+        },
+        {
+          tag: 'meta',
+          attrs: { name: 'apple-mobile-web-app-status-bar-style', content: 'black-translucent' },
+        },
+        {
+          tag: 'meta',
+          attrs: { name: 'apple-mobile-web-app-title', content: 'ROGUE SRD' },
+        },
+        {
+          tag: 'meta',
+          attrs: { name: 'theme-color', content: '#0f0f1a' },
+        },
+        // @vite-pwa/astro ne génère le service worker (sw.js) qu'au build, sans jamais
+        // l'enregistrer lui-même sur les pages statiques Starlight : on le fait ici.
+        {
+          tag: 'script',
+          content: `
+            if ('serviceWorker' in navigator) {
+              window.addEventListener('load', () => {
+                navigator.serviceWorker.register('${base}/sw.js', { scope: '${base}/' });
+              });
+            }
+          `,
         },
       ],
       sidebar: [
