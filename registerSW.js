@@ -1,0 +1,1 @@
+if('serviceWorker' in navigator) {window.addEventListener('load', () => {navigator.serviceWorker.register('/ins-mv-rogue-srd/sw.js', { scope: '/ins-mv-rogue-srd/' })})}
