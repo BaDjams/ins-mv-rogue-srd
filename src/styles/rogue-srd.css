@@ -833,6 +833,9 @@ a.rogue-card--divine:hover    { border-color: var(--rogue-divine); }
 .gen-roll-btn:active { transform: scale(0.97); }
 .gen-adv-toggle { font-family: var(--rogue-font-label); font-size: 0.68em; letter-spacing: 0.1em; text-transform: uppercase; padding: 8px 16px; border-radius: 6px; background: transparent; border: 1px solid var(--rogue-border-faint); color: var(--rogue-text-faint); cursor: pointer; transition: all 0.15s; margin-left: auto; }
 .gen-adv-toggle:hover { border-color: var(--rogue-border); color: var(--rogue-text); }
+.gen-io-btn { font-family: var(--rogue-font-label); font-size: 0.68em; letter-spacing: 0.1em; text-transform: uppercase; padding: 8px 16px; border-radius: 6px; background: transparent; border: 1px solid var(--rogue-border-faint); color: var(--rogue-text-faint); cursor: pointer; transition: all 0.15s; }
+.gen-io-btn:hover:not(:disabled) { border-color: var(--rogue-border); color: var(--rogue-text); }
+.gen-io-btn:disabled { opacity: 0.4; cursor: not-allowed; }
 .gen-advanced { margin-top: 20px; padding-top: 20px; border-top: 1px solid var(--rogue-border-faint); display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
 .gen-adv-section h4 { font-family: var(--rogue-font-label); font-size: 0.65em; letter-spacing: 0.14em; text-transform: uppercase; color: var(--rogue-text-faint); margin-bottom: 12px; }
 .gen-prob-grid { display: flex; flex-direction: column; gap: 8px; }
