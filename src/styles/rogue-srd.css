@@ -669,7 +669,7 @@ a.rogue-card--divine:hover    { border-color: var(--rogue-divine); }
   letter-spacing: 0.04em;
   text-transform: uppercase;
   text-align: center;
-  margin-top: -4px;
+  margin-top: -4px !important; /* cf. reset ci-dessous */
 }
 .rogue-roller__die-sub--angel     { color: var(--rogue-angel); }
 .rogue-roller__die-sub--host      { color: var(--rogue-host-dim); }
@@ -783,7 +783,7 @@ a.rogue-card--divine:hover    { border-color: var(--rogue-divine); }
 }
 .sim-roll-btn:hover  { background: var(--rogue-angel-light); }
 .sim-roll-btn:active { transform: scale(0.97); }
-.sim-result { margin-top: 20px; opacity: 0; transform: translateY(8px); transition: opacity 0.3s, transform 0.3s; pointer-events: none; }
+.sim-result { margin-top: 20px !important; opacity: 0; transform: translateY(8px); transition: opacity 0.3s, transform 0.3s; pointer-events: none; }
 .sim-result--visible { opacity: 1; transform: none; pointer-events: auto; }
 .sim-dice { display: flex; align-items: flex-start; gap: 16px; flex-wrap: wrap; margin-bottom: 20px; }
 .sim-die { display: flex; flex-direction: column; align-items: center; gap: 6px; transition: opacity 0.25s; }
@@ -836,7 +836,7 @@ a.rogue-card--divine:hover    { border-color: var(--rogue-divine); }
 .gen-io-btn { font-family: var(--rogue-font-label); font-size: 0.68em; letter-spacing: 0.1em; text-transform: uppercase; padding: 8px 16px; border-radius: 6px; background: transparent; border: 1px solid var(--rogue-border-faint); color: var(--rogue-text-faint); cursor: pointer; transition: all 0.15s; }
 .gen-io-btn:hover:not(:disabled) { border-color: var(--rogue-border); color: var(--rogue-text); }
 .gen-io-btn:disabled { opacity: 0.4; cursor: not-allowed; }
-.gen-advanced { margin-top: 20px; padding-top: 20px; border-top: 1px solid var(--rogue-border-faint); display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+.gen-advanced { margin-top: 20px !important; padding-top: 20px; border-top: 1px solid var(--rogue-border-faint); display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
 .gen-adv-section h4 { font-family: var(--rogue-font-label); font-size: 0.65em; letter-spacing: 0.14em; text-transform: uppercase; color: var(--rogue-text-faint); margin-bottom: 12px; }
 .gen-prob-grid { display: flex; flex-direction: column; gap: 8px; }
 .gen-prob-row { display: flex; align-items: center; gap: 10px; }
@@ -847,7 +847,7 @@ a.rogue-card--divine:hover    { border-color: var(--rogue-divine); }
 .gen-prob-label--elite    { color: var(--rogue-divine); }
 .gen-slider { flex: 1; accent-color: var(--rogue-angel); height: 4px; }
 .gen-prob-val { font-family: var(--rogue-font-label); font-size: 0.7em; color: var(--rogue-text-dim); width: 36px; text-align: right; }
-.gen-prob-total { font-family: var(--rogue-font-label); font-size: 0.65em; letter-spacing: 0.1em; text-transform: uppercase; color: var(--rogue-text-faint); text-align: right; margin-top: 4px; }
+.gen-prob-total { font-family: var(--rogue-font-label); font-size: 0.65em; letter-spacing: 0.1em; text-transform: uppercase; color: var(--rogue-text-faint); text-align: right; margin-top: 4px !important; }
 .gen-filter-grid { display: flex; gap: 16px; flex-wrap: wrap; margin-bottom: 12px; }
 .gen-filter-group { display: flex; flex-direction: column; gap: 5px; }
 .gen-filter-title { font-family: var(--rogue-font-label); font-size: 0.62em; letter-spacing: 0.1em; text-transform: uppercase; color: var(--rogue-text-faint); margin-bottom: 3px; }
@@ -872,7 +872,7 @@ a.rogue-card--divine:hover    { border-color: var(--rogue-divine); }
 .gen-card__head { display: flex; justify-content: space-between; align-items: baseline; gap: 6px; }
 .gen-card__name { font-family: var(--rogue-font-display); font-size: 0.95em; font-weight: 600; letter-spacing: 0.03em; color: var(--rogue-text); min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 .gen-card__meta { font-family: var(--rogue-font-label); font-size: 0.75em; letter-spacing: 0.05em; font-weight: 500; color: var(--rogue-text-dim); white-space: nowrap; flex-shrink: 0; }
-.gen-card__occ { font-family: var(--rogue-font-body); font-size: 0.82em; font-style: italic; color: var(--rogue-text-dim); margin-top: -2px; }
+.gen-card__occ { font-family: var(--rogue-font-body); font-size: 0.82em; font-style: italic; color: var(--rogue-text-dim); margin-top: -2px !important; }
 .gen-card__section { display: flex; flex-direction: column; gap: 3px; }
 .gen-card__section-title { font-family: var(--rogue-font-label); font-size: 0.6em; letter-spacing: 0.12em; text-transform: uppercase; color: var(--rogue-text-faint); }
 .gen-tags { display: flex; flex-wrap: wrap; gap: 3px; }
@@ -994,3 +994,16 @@ nav a[aria-current="page"]:hover {
   /* Admonitions */
   .admonition { border-left: 3pt solid #555; background: #f4f4f4 !important; }
 }
+
+/* ═══════════════════════════════════════════════════════
+   13. CORRECTIF — Espacement Starlight dans les widgets JS
+   ═══════════════════════════════════════════════════════ */
+
+/* Starlight applique automatiquement margin-top:1rem à tout élément non-inline qui
+   suit un autre élément non-inline dans le contenu markdown, y compris en profondeur
+   (règle ".sl-markdown-content :not(a,strong,em,...) + :not(a,strong,em,...)"). Cela
+   casse l'espacement voulu (géré via gap/margin-bottom) dans nos widgets générés en JS
+   (simulateur, générateur, roller). On neutralise cet ajout ici ; les quelques
+   margin-top volontaires de ces composants sont marqués !important pour continuer à
+   s'appliquer malgré ce reset. */
+.rogue-gen *, .rogue-sim *, .rogue-roller * { margin-top: 0 !important; }
