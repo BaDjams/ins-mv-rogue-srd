@@ -51,6 +51,8 @@ export default defineConfig({
             { label: 'Dégâts & Blessures', slug: 'mecanique/blessures' },
             { label: 'Pouvoirs', slug: 'mecanique/pouvoirs' },
             { label: 'Énergie, Drain & Consommation', slug: 'mecanique/energie' },
+            { label: 'Mots-clés de pouvoirs', slug: 'mecanique/mots-cles-pouvoirs' },
+            { label: 'Santé Mentale', slug: 'mecanique/sante-mentale' },
           ],
         },
         {

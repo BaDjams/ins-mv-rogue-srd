@@ -92,7 +92,13 @@ leur gravité détermine le type de marque utilisée.
 **Marquage :** Simple trait diagonal
 
 **Causes :** Fatigue extrême, coups assommants, douleur intense,
-épuisement magique léger
+drain magique dans les limites du [Rang Céleste](../../personnage/rang) (un 6 sur un dé de [drain](../energie#rang-des-pouvoirs-et-drain))
+
+<div class="admonition note">
+<p class="admonition-title">Immunités à la fatigue</p>
+
+Certaines âmes sont immunisées aux blessures non-létales d'origine physique ordinaire (fatigue, essoufflement, coups assommants) — l'immunité, si elle existe, dépend du type d'âme incarnée et est précisée dans sa description. Le drain magique, lui, reste toujours efficace : ce n'est pas de la fatigue du corps, mais l'usure du canal entre l'âme et son hôte.
+</div>
 
 **Restriction :** Ne peut être cochée que dans une case vide
 
@@ -118,7 +124,7 @@ céleste)
 
 **Causes :**
 
--   Utilisation de pouvoirs surnaturels coûtant plus de 1 PE
+-   Drain automatique généré par un rang de lancement au-delà du [Rang Céleste](../../personnage/rang) (voir [Énergie](../energie))
 -   Attaques de créatures particulièrement dangereuses (vampires, démons
     majeurs)
 -   Armes maudites ou sacrées
@@ -212,7 +218,7 @@ préalable.
 
 1.  Une attaque inflige 9 dégâts non létaux → après Résilience (9/3=3), Mirael **subit** 3 blessures non létales → coche (/) (/) (/) dans les cases 1-3.
 2.  Une attaque inflige 6 dégâts létaux → après Résilience (6/3=2), Mirael **subit** 2 blessures létales → les cases 1-2 s'upgradent en (X) (X), la case 3 reste (/).
-3.  Mirael lance un pouvoir qui dépasse son seuil de tolérance → **subit** directement 1 blessure aggravée (sans réduction), la case 1 devient (⭙).
+3.  Mirael surcharge un pouvoir au-delà de son Rang Céleste → drain automatique → **subit** directement 1 blessure aggravée (sans réduction), la case 1 devient (⭙).
 4.  État intermédiaire : (⭙) (X) (/) + 7 cases vides.
 5.  Une balle inflige 9 dégâts létaux → après Résilience (9/3=3), Mirael **subit** 3 blessures létales → les cases 3 (qui upgrade depuis /), 4 et 5 deviennent (X).
 6.  État final : (⭙) (X) (X) (X) (X) + 5 cases vides.
@@ -280,8 +286,7 @@ Les armes spéciales (argent, armes célestes, armes maudites) ne font pas plus 
 une créature vivante récupère les points de vie au rythme de (rang) /
 semaine (voir chapitre sur le rang céleste).
 En plus de cette récupération naturelle, une créature surnaturelle
-récupère des points de vie au rythme de (rang)/jour (au même moment que
-l'énergie, voir la section "[restauration de l'énergie](../energie)").
+récupère des points de vie au rythme de (rang)/jour.
 Note : Certaines créatures maudites comme les vampires ne restaurent pas
 leur points de vie automatiquement, ils sont obligés de les prendre à
 leur victime (et disposent d'une capacité spéciale pour cela). ces

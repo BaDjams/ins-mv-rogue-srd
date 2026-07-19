@@ -75,7 +75,7 @@ En posture de concentration, les pouvoirs maintenus ne causent aucun désavantag
 
 La **Fragilité** est la règle critique de cette posture : dès que le personnage subit une blessure — une seule, même légère — il retombe automatiquement en posture défensive et tous ses pouvoirs maintenus s'arrêtent. La douleur physique coupe le lien. Les anges de haut rang ont développé des techniques pour minimiser ce risque. Les autres apprennent vite.
 
-La **Concentration Absolue** est une manœuvre passive qui permet de maintenir deux pouvoirs simultanément — réservé aux âmes suffisamment disciplinées pour ne pas se perdre dans leurs propres flux divins. Certains pouvoirs disposent par ailleurs d'une option **Multiciblage**, uniquement activable en posture de concentration, y compris pour un pouvoir instantané : chaque cible supplémentaire compte comme un niveau de Boost supplémentaire sur le pouvoir, avec les dés de [drain](../energie#rang-des-pouvoirs-et-drain) que cela implique.
+La **Concentration Absolue** est une manœuvre passive qui permet de maintenir deux pouvoirs simultanément — réservé aux âmes suffisamment disciplinées pour ne pas se perdre dans leurs propres flux divins. Certains pouvoirs disposent par ailleurs d'une option **Multiciblage**, uniquement activable en posture de concentration, y compris pour un pouvoir instantané : chaque cible supplémentaire augmente le rang effectif du pouvoir de 1 (mot-clé [Multicible](../mots-cles-pouvoirs)), avec le [drain](../energie#rang-des-pouvoirs-et-drain) que cela implique — les dégâts, eux, restent calculés sur le rang de lancement.
 
 ---
 

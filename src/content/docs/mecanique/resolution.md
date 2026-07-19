@@ -54,7 +54,7 @@ Il s'agit de la différence entre le seuil de réussite et le résultat du Dé d
 <div class="admonition note">
 <p class="admonition-title">Note sur les seuils élevés</p>
 
-Si le seuil est de 6 ou plus (par exemple, un ange avec PUI 5 qui dépense 2 PE pour substituer PUI à FOR et possède +2 en Corps à Corps, donnant un seuil de 7), le 6 reste toujours un échec. L'intérêt d'avoir un seuil supérieur ou égal à 6 réside alors dans le fait qu'un résultat de 5 ou moins réussit et génère une marge importante.
+Si le seuil est de 6 ou plus (par exemple, un ange avec PUI 5 qui substitue PUI à FOR par sa [Présence Surnaturelle](../energie#présence-surnaturelle-pouvoir-intrinsèque) et possède +2 en Corps à Corps, donnant un seuil de 7), le 6 reste toujours un échec. L'intérêt d'avoir un seuil supérieur ou égal à 6 réside alors dans le fait qu'un résultat de 5 ou moins réussit et génère une marge importante.
 </div>
 
     **Exemple** : Seuil 7, dé d'action = 1 → Réussite avec marge de 6 !
@@ -176,19 +176,19 @@ Lorsque le D666 indique **111**, il s'agit d'une **intervention divine**. Lorsqu
 - La créature ciblée est éliminée automatiquement sans même calculer les dommages de l'attaque de manière particulièrement cinématographique, faisant intervenir les archanges ou la main de dieu elle-même, OU l'issue du combat devient particulièrement favorable (dégâts de zone centrés sur le lanceur sur toutes les créatures du mal, aura de paix qui calme tout le monde si humains, etc, à la discrétion du MJ)
 - Hors combat, l'action entreprise réussit de manière spectaculaire et peut s'étendre à l'intégralité de la scène, à la discrétion du MJ. Afin de préserver la narration, le MJ peut décider à la place de donner un jeton **"Touché par la Grâce"** qui permettra à son détenteur de déclencher les effets supplémentaires listés ci-dessous au moment de son choix. Le jeton sera alors détruit. Les éventuels effets durables persistent jusqu'à la tombée de la nuit.
 - **Effets supplémentaires** :
-    - Le compteur d'affaiblissements d'âme du lanceur est remis à zéro, et ceux de ses compagnons sont réduits de moitié (arrondi inférieur).
+    - Toutes les blessures non-létales du lanceur sont immédiatement effacées, et celles de ses compagnons réduites de moitié (arrondi inférieur).
     - Toutes les actions du personnage et de ses alliés bénéficient d'un double avantage jusqu'au début du prochain tour du lanceur.
 
 **Intervention démoniaque (666)** : L'action de l'ange échoue de façon particulièrement humiliante
 
-- L'ange gagne immédiatement un nombre d'affaiblissements d'âme égal à la moitié de ses PE (arrondi supérieur), pouvant déclencher des blessures aggravées si le seuil est dépassé.
+- L'ange subit immédiatement un nombre de blessures aggravées égal à la moitié de son [Rang Céleste](../../personnage/rang) (arrondi supérieur).
 - Double désavantage pour l'ange et tous ses alliés jusqu'à la fin de son prochain tour
 
 #### Pour les Démons
 
 **Intervention divine (111)** : L'action échoue de façon particulièrement humiliante
 
-- Le démon gagne immédiatement un nombre d'affaiblissements d'âme égal à la moitié de ses PE (arrondi supérieur).
+- Le démon subit immédiatement un nombre de blessures aggravées égal à la moitié de son [Rang Céleste](../../personnage/rang) (arrondi supérieur).
 - Double désavantage pour le démon et tous ses alliés jusqu'à la fin de son prochain tour
 
 **Intervention démoniaque (666)** : L'action réussit de manière particulièrement spectaculaire
@@ -196,7 +196,7 @@ Lorsque le D666 indique **111**, il s'agit d'une **intervention divine**. Lorsqu
 - En combat, la créature ciblée est éliminée de manière particulièrement cinématographique, faisant intervenir les princes démons ou Satan lui-même, OU l'issue du combat devient particulièrement favorable (dégâts de zone centrés sur le lanceur sur toutes les créatures, démons mineurs qui investissent la zone pour foutre le bordel etc, à la discrétion du MJ)
 - Hors combat, l'action entreprise réussit de manière spectaculaire et peut s'étendre à l'intégralité de la scène, à la discrétion du MJ. Afin de préserver la narration, le MJ peut décider à la place de donner un jeton **"Marque du Diable"** qui permettra à son détenteur de déclencher les effets supplémentaires listés ci-dessous au moment de son choix. Le jeton sera alors détruit. Les éventuels effets durables persistent jusqu'au lever du soleil.
 - **Effets supplémentaires** :
-    - Le compteur d'affaiblissements d'âme du lanceur est remis à zéro, et ceux de ses compagnons sont réduits de moitié (arrondi inférieur).
+    - Toutes les blessures non-létales du lanceur sont immédiatement effacées, et celles de ses compagnons réduites de moitié (arrondi inférieur).
     - Toutes les actions du personnage bénéficient d'un double avantage jusqu'au début de son prochain tour.
     - Toutes les actions ciblant le personnage obtiennent un double désavantage, même celles visant à l'aider ou le soigner.
 

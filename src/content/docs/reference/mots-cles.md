@@ -21,12 +21,12 @@ La plupart des mots-clés donnent des avantages/désavantages selon le contexte.
 - **Vétéran des anciennes éditions** : Votre âme a participé à des événements d'ampleur cosmique AVANT le grand reset. Elle n'en garde aucun souvenir mais bénéficie d'une [réincarnation](../../personnage/reincarnation) bonus. Parce que.
 - **Protégée** : Commence chaque mission avec un jeton "Touché par la Grâce" / "Marque du Diable"
 - **Adaptable** : Réduit les malus de réincarnation d'urgence (moins de choc lors des changements d'hôte)
-- **Inspirante** : Peut donner un [avantage](../../mecanique/resolution#avantage) à un allié 1 fois par tour (coût : 1 PE)
+- **Inspirante** : Peut donner un [avantage](../../mecanique/resolution#avantage) à un allié 1 fois par tour (génère 1 dé de [drain](../../mecanique/energie#rang-des-pouvoirs-et-drain))
 - **Intuitive** : Avantage pour détecter le danger, les adversaires ont un [désavantage](../../mecanique/resolution#désavantage) pour la surprendre
 - **Résiliente** : Premier échec critique par session devient un échec normal
 - **Focalisée** : Peut relancer 1 [dé d'intensité](../../mecanique/resolution) par session, le dé relancé est explosif
 - **Fanatique** : +1 intensité finale (après tous calculs) pour toute action en rapport avec le mot-clé choisi (validé par le MJ)
-- **Conduit Divin X** (X = 1, 2 ou 3) : Affinité développée avec le flux de la puissance divine. +X PE permanents au-dessus du [Rang céleste](../../personnage/rang). Définition complète : voir Énergie.
+- **Conduit Divin X** (X = 1, 2 ou 3) : Affinité développée avec le flux de la puissance divine. Une fois par combat et par niveau, transforme un drain automatique en simple dé de drain. Définition complète : voir [Énergie](../../mecanique/energie#conduit-divin).
 
 **Exemples d'avantages/désavantages contextuels**
 
@@ -40,7 +40,7 @@ La plupart des mots-clés donnent des avantages/désavantages selon le contexte.
 
 - **Soldat de Dieu** : Impossible à posséder par le camp d'en face
 - **Innocent** : Avantage à toutes les actions impliquant ce qui les intéresse, désavantage pour les corvées (ranger, nettoyer, etc.)
-- **Médium** : Dispose de 5 PE (récupérés à midi) et accès à une liste restreinte de pouvoirs mineurs (Détection du surnaturel, Dialogue éthéré avec les âmes en attente de jugement, Guérison mineure, etc.)
+- **Médium** : Accès à une liste restreinte de pouvoirs mineurs de Rang 0-1 (Détection du surnaturel, Dialogue éthéré avec les âmes en attente de jugement, Guérison mineure, etc.), soumis aux mêmes règles de [drain](../../mecanique/energie#rang-des-pouvoirs-et-drain) que toute âme de Rang Céleste 1.
 - **Athée** : Résiste aux effets spirituels (avantage), mais désavantage aux jets de pouvoir de l'âme incarnée
 - **Malédiction** : Ne peut récupérer de PV que par absorption (morsure/consommation de victimes)
 - **Drogué** : Désavantage permanent aux jets physiques jusqu'à désintoxication
@@ -51,7 +51,6 @@ La plupart des mots-clés donnent des avantages/désavantages selon le contexte.
 <p class="admonition-title">Note</p>
 
 - L'athéisme ne peut affecter que les hôtes humains. Une âme angélique/démoniaque incarnée sait que Dieu existe.
-- Les humains non-alignés récupèrent leurs PE à midi.
 - Le Dialogue éthéré permet de communiquer avec les âmes coincées dans les Limbes en attente de jugement.
 </div>
 
