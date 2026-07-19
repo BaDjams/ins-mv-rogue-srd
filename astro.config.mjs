@@ -16,9 +16,9 @@ export default defineConfig({
       includeAssets: ['icon.svg', 'favicon-32.png'],
       manifest: {
         id: base + '/',
-        name: 'INS·MV ROGUE — SRD',
+        name: 'ROGUE — SRD',
         short_name: 'ROGUE SRD',
-        description: 'System Reference Document pour INS-MV ROGUE, disponible hors-ligne.',
+        description: 'System Reference Document du jeu de rôle ROGUE, disponible hors-ligne.',
         lang: 'fr',
         start_url: base + '/',
         scope: base + '/',
@@ -55,8 +55,8 @@ export default defineConfig({
       },
     }),
     starlight({
-      title: 'INS·MV ROGUE SRD',
-      description: 'System Reference Document pour INS-MV ROGUE',
+      title: 'ROGUE SRD',
+      description: 'System Reference Document du jeu de rôle ROGUE, avec le setting INS-MV',
       defaultLocale: 'root',
       locales: {
         root: { label: 'Français', lang: 'fr' },
@@ -110,7 +110,6 @@ export default defineConfig({
       ],
       sidebar: [
         { label: 'Accueil', slug: 'index' },
-        { label: 'SRD', slug: 'srd' },
         {
           label: 'Contexte',
           items: [

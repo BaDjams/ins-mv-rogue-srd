@@ -23,7 +23,7 @@ DOCS_DIR = Path("src/content/docs")
 OUTPUT   = Path("public/downloads/ins-mv-rogue-srd.docx")
 
 EXPORT_ORDER = [
-    "srd",
+    "index",
     "contexte/contexte",
     "personnage/caracteristiques",
     "personnage/creation",
@@ -319,21 +319,23 @@ def process_content(doc, content, tables, indent=None):
             i += 1
             continue
 
-        # Bloc <div ...> ... </div> (admonitions, cartes, etc.)
-        m_div = re.match(r'^<div\b[^>]*>', stripped)
-        if m_div and not stripped.startswith('</'):
+        # Bloc <div ...> ... </div> ou <a ...> ... </a> (admonitions, cartes-liens, etc.)
+        m_block = re.match(r'^<(div|a)\b[^>]*>', stripped)
+        if m_block and not stripped.startswith('</'):
             flush_table()
+            tag = m_block.group(1)
             class_m = re.search(r'class="([^"]*)"', stripped)
             classes = class_m.group(1).split() if class_m else []
 
-            depth = stripped.count('<div') - stripped.count('</div')
+            open_re, close_re = f'<{tag}', f'</{tag}'
+            depth = stripped.count(open_re) - stripped.count(close_re)
             inner_lines = []
             i += 1
             while i < len(lines) and depth > 0:
                 l = lines[i]
-                depth += l.count('<div') - l.count('</div')
+                depth += l.count(open_re) - l.count(close_re)
                 if depth <= 0:
-                    l = re.sub(r'</div>\s*$', '', l)
+                    l = re.sub(rf'</{tag}>\s*$', '', l)
                     if l.strip():
                         inner_lines.append(l)
                     i += 1
@@ -344,7 +346,7 @@ def process_content(doc, content, tables, indent=None):
             render_div_block(doc, classes, '\n'.join(inner_lines), tables, indent)
             continue
 
-        if stripped.startswith('</div'):
+        if stripped.startswith('</div') or stripped.startswith('</a'):
             i += 1
             continue
 
@@ -477,7 +479,7 @@ def add_title_page(doc):
     p = doc.add_paragraph()
     p.alignment = WD_ALIGN_PARAGRAPH.CENTER
     p.paragraph_format.space_before = Pt(120)
-    r = p.add_run("INS·MV ROGUE")
+    r = p.add_run("ROGUE")
     r.font.name  = "Cambria"
     r.font.size  = Pt(32)
     r.font.bold  = True

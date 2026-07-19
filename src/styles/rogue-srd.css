@@ -158,7 +158,13 @@
 .sl-markdown-content h3 { font-size: 1.2em; margin-top: 1.6em; }
 .sl-markdown-content h4 { font-size: 1em; letter-spacing: 0.08em; text-transform: uppercase; color: var(--rogue-text-dim); font-family: var(--rogue-font-label); font-weight: 500; }
 
-.sl-markdown-content p { font-size: 1em; margin-bottom: 0.9em; }
+.sl-markdown-content p {
+  font-size: 1em;
+  margin-bottom: 0.9em;
+  text-align: justify;
+  text-wrap: pretty;
+  hyphens: auto;
+}
 
 .sl-markdown-content a {
   color: var(--rogue-angel-light);
@@ -348,16 +354,30 @@
 
 /* ── .rogue-card — carte générique ── */
 .rogue-card {
+  display: block;
   background: var(--rogue-bg-3);
   border: 1px solid var(--rogue-border);
   border-radius: 12px;
   padding: 24px 28px;
   margin: 24px 0;
 }
+a.rogue-card {
+  color: var(--rogue-text);
+  text-decoration: none;
+  transition: transform 0.15s, border-color 0.15s;
+}
+a.rogue-card:hover {
+  transform: translateY(-2px);
+  border-color: var(--rogue-text-dim);
+}
 .rogue-card--angel     { background: var(--rogue-angel-subtle);     border-color: var(--rogue-angel-border); }
 .rogue-card--host      { background: var(--rogue-host-subtle);      border-color: var(--rogue-host-border); }
 .rogue-card--intensity { background: var(--rogue-intensity-subtle); border-color: var(--rogue-intensity-border); }
 .rogue-card--divine    { background: var(--rogue-divine-subtle);    border-color: var(--rogue-divine-border); }
+a.rogue-card--angel:hover     { border-color: var(--rogue-angel); }
+a.rogue-card--host:hover      { border-color: var(--rogue-host); }
+a.rogue-card--intensity:hover { border-color: var(--rogue-intensity); }
+a.rogue-card--divine:hover    { border-color: var(--rogue-divine); }
 
 /* ── .rogue-card-grid ── */
 .rogue-card-grid {
