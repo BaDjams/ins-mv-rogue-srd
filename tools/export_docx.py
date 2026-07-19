@@ -3,12 +3,13 @@
 Génère public/downloads/ins-mv-rogue-srd.docx à partir des fichiers markdown du SRD.
 
 Dépendances :
-    pip install python-docx markdown
+    pip install python-docx
 
 Usage :
     python tools/export_docx.py
 """
 
+import json
 import re
 from pathlib import Path
 
@@ -53,6 +54,9 @@ RED_INTENSE = RGBColor(0xC5, 0x30, 0x30)   # rouge intensité
 GOLD_DIVINE = RGBColor(0x92, 0x70, 0x0A)   # or divin
 GREY_DIM    = RGBColor(0x4A, 0x4A, 0x6A)
 
+INDENT_STEP = Cm(0.5)
+TABLE_PLACEHOLDER_RE = re.compile(r'\x00TABLE:(\d+)\x00')
+
 # ── Helpers XML ──────────────────────────────────────────────────────────────
 
 def _set_cell_shading(cell, hex_fill):
@@ -77,6 +81,14 @@ def _add_border_left(paragraph, hex_color="2B6CB0", size_pt=12):
     pPr.append(pBdr)
 
 
+def _apply_indent(paragraph, indent, bordered=True):
+    if indent is None:
+        return
+    paragraph.paragraph_format.left_indent = indent
+    if bordered:
+        _add_border_left(paragraph, size_pt=8)
+
+
 # ── Markdown inline parser ────────────────────────────────────────────────────
 
 _INLINE_RE = re.compile(
@@ -84,35 +96,64 @@ _INLINE_RE = re.compile(
     r'|\*\*(?P<bo>.+?)\*\*'
     r'|\*(?P<it>.+?)\*'
     r'|`(?P<code>.+?)`'
-    r'|\[(?P<lt>[^\]]+)\]\([^\)]+\)'   # lien → texte seul
+    r'|\[(?P<lt>[^\]]+)\]\([^\)]+\)'   # lien → texte seul (mise en forme imbriquée gérée séparément)
     r')'
 )
 
-def add_inline(para, raw_text):
-    """Ajoute du texte avec mise en forme inline (gras/italique/code/liens)."""
-    text = re.sub(r'<[^>]+>', '', raw_text)   # strip HTML résiduel
+
+def _strip_link_inline_markup(text):
+    """Retire un éventuel gras/italique enveloppant tout le texte d'un lien, renvoie (texte, gras, italique)."""
+    m = re.match(r'^\*\*\*(.+)\*\*\*$', text, re.DOTALL)
+    if m:
+        return m.group(1), True, True
+    m = re.match(r'^\*\*(.+)\*\*$', text, re.DOTALL)
+    if m:
+        return m.group(1), True, False
+    m = re.match(r'^\*(.+)\*$', text, re.DOTALL)
+    if m:
+        return m.group(1), False, True
+    return text, False, False
+
+
+def _html_inline_to_md(text):
+    """Convertit les balises HTML inline résiduelles (strong/em/br) en équivalents markdown."""
+    text = re.sub(r'<br\s*/?>', '\n', text)
+    text = re.sub(r'<strong>(.*?)</strong>', r'**\1**', text, flags=re.DOTALL)
+    text = re.sub(r'<em>(.*?)</em>', r'*\1*', text, flags=re.DOTALL)
+    return text
+
+
+def add_inline(para, raw_text, bold=False, italic=False):
+    """Ajoute du texte avec mise en forme inline (gras/italique/code/liens), imbrications comprises."""
+    text = _html_inline_to_md(raw_text)
+    text = re.sub(r'<[^>]+>', '', text)   # strip HTML résiduel
     last = 0
     for m in _INLINE_RE.finditer(text):
         before = text[last:m.start()]
         if before:
-            para.add_run(before)
+            r = para.add_run(before)
+            r.bold = bold; r.italic = italic
         if m.group("boi"):
-            r = para.add_run(m.group("boi"))
-            r.bold = True; r.italic = True
+            add_inline(para, m.group("boi"), bold=True, italic=True)
         elif m.group("bo"):
-            para.add_run(m.group("bo")).bold = True
+            add_inline(para, m.group("bo"), bold=True, italic=italic)
         elif m.group("it"):
-            para.add_run(m.group("it")).italic = True
+            add_inline(para, m.group("it"), bold=bold, italic=True)
         elif m.group("code"):
             r = para.add_run(m.group("code"))
             r.font.name = "Courier New"; r.font.size = Pt(9)
+            r.bold = bold; r.italic = italic
         elif m.group("lt"):
-            r = para.add_run(m.group("lt"))
+            inner, lbold, litalic = _strip_link_inline_markup(m.group("lt"))
+            r = para.add_run(inner)
             r.font.color.rgb = BLUE_ANGEL
+            r.bold = bold or lbold
+            r.italic = italic or litalic
         last = m.end()
     tail = text[last:]
     if tail:
-        para.add_run(tail)
+        r = para.add_run(tail)
+        r.bold = bold; r.italic = italic
 
 
 # ── Frontmatter ───────────────────────────────────────────────────────────────
@@ -127,9 +168,123 @@ def strip_frontmatter(text):
     return (t.group(1).strip() if t else ''), body.strip()
 
 
+# ── Extraction des tableaux HTML (statiques ou générés en JS) ─────────────────
+
+def _clean_cell_html(html):
+    text = _html_inline_to_md(html)
+    text = re.sub(r'<[^>]+>', '', text)
+    text = re.sub(r'\[([^\]]+)\]\([^\)]+\)', r'\1', text)  # lien -> texte
+    text = re.sub(r'\*\*\*(.+?)\*\*\*', r'\1', text)
+    text = re.sub(r'\*\*(.+?)\*\*', r'\1', text)
+    text = re.sub(r'\*(.+?)\*', r'\1', text)
+    text = re.sub(r'\s+', ' ', text).strip()
+    return text
+
+
+def _parse_html_table(table_html, scripts):
+    headers = [_clean_cell_html(re.sub(r'\s*⇅\s*$', '', h))
+               for h in re.findall(r'<th\b[^>]*>(.*?)</th>', table_html, re.DOTALL)]
+
+    rows = []
+    for tr in re.findall(r'<tr\b[^>]*>(.*?)</tr>', table_html, re.DOTALL):
+        if '<th' in tr:
+            continue
+        cells = re.findall(r'<td\b[^>]*>(.*?)</td>', tr, re.DOTALL)
+        if not cells:
+            continue
+        rows.append([_clean_cell_html(c) for c in cells])
+
+    # Tableau vide côté HTML : généré dynamiquement par un <script> (recherche/filtres JS)
+    if not rows and scripts:
+        for script in scripts:
+            data_m = re.search(r'var\s+DATA_\w+\s*=\s*(\[.*?\]);', script, re.DOTALL)
+            map_m  = re.search(r'\.map\(\s*function\s*\(r\)\s*\{(.*?)\}\)\s*\.join', script, re.DOTALL)
+            if not data_m or not map_m:
+                continue
+            try:
+                data = json.loads(data_m.group(1))
+            except json.JSONDecodeError:
+                continue
+            # Une clé par cellule <td> du gabarit (dernière référence r[...] rencontrée dans
+            # son segment), pour ignorer les éventuelles variables intermédiaires (ex: couleur
+            # calculée en amont) sans dépendre de la façon dont la cellule est concaténée.
+            keys = []
+            for seg in re.split(r'(?=<td)', map_m.group(1)):
+                if '<td' not in seg:
+                    continue
+                seg_keys = re.findall(r"r\[([\"'])((?:(?!\1).)*)\1\]", seg)
+                if seg_keys:
+                    keys.append(seg_keys[-1][1])
+            if not data or len(keys) != len(headers):
+                continue
+            for row in data:
+                rows.append([str(row.get(k, '') if row.get(k) is not None else '') for k in keys])
+            break
+
+    return {"headers": headers, "rows": rows}
+
+
+def extract_tables(text):
+    """Repère les tableaux (statiques ou générés en JS via <script>), les remplace par un
+    marqueur, et renvoie (texte_modifié, liste_de_tableaux)."""
+    tables = []
+
+    # Bloc complet "widget de recherche + table vide + script de rendu"
+    def repl_widget(m):
+        table_html = m.group(1)
+        script     = m.group(2)
+        tables.append(_parse_html_table(table_html, [script]))
+        return f'\n\x00TABLE:{len(tables) - 1}\x00\n'
+
+    text = re.sub(
+        r'<div id="table-[\w-]+">(.*?)</div>\s*\n<script>(.*?)</script>',
+        repl_widget, text, flags=re.DOTALL,
+    )
+
+    # Tableaux HTML statiques restants
+    def repl_static(m):
+        tables.append(_parse_html_table(m.group(0), []))
+        return f'\n\x00TABLE:{len(tables) - 1}\x00\n'
+
+    text = re.sub(r'<table\b.*?</table>', repl_static, text, flags=re.DOTALL)
+
+    # Scripts orphelins restants (aucun tableau associé trouvé) : à ignorer totalement
+    text = re.sub(r'<script>.*?</script>', '', text, flags=re.DOTALL)
+
+    return text, tables
+
+
+def render_table(doc, table, indent=None):
+    headers, rows = table["headers"], table["rows"]
+    if not rows:
+        return
+    cols = len(headers) if headers else max(len(r) for r in rows)
+    t = doc.add_table(rows=(1 if headers else 0) + len(rows), cols=cols)
+    t.style = "Table Grid"
+
+    ri = 0
+    if headers:
+        for ci, h in enumerate(headers):
+            cell = t.rows[0].cells[ci]
+            cell.text = h
+            _set_cell_shading(cell, "E8E8F0")
+            for run in cell.paragraphs[0].runs:
+                run.bold = True
+        ri = 1
+
+    for row in rows:
+        for ci in range(cols):
+            val = row[ci] if ci < len(row) else ''
+            cell = t.rows[ri].cells[ci]
+            cell.text = str(val)
+        ri += 1
+
+    doc.add_paragraph()
+
+
 # ── Convertisseur principal ───────────────────────────────────────────────────
 
-def process_content(doc, content):
+def process_content(doc, content, tables, indent=None):
     lines = content.split('\n')
     i = 0
     table_rows = []
@@ -138,24 +293,13 @@ def process_content(doc, content):
         nonlocal table_rows
         if not table_rows:
             return
-        cols = max(len(r) for r in table_rows)
-        t = doc.add_table(rows=len(table_rows), cols=cols)
-        t.style = "Table Grid"
-        for ri, row in enumerate(table_rows):
-            for ci in range(cols):
-                cell = t.rows[ri].cells[ci]
-                val  = row[ci] if ci < len(row) else ''
-                val  = re.sub(r'\*\*(.+?)\*\*', r'\1', val)
-                val  = re.sub(r'\*(.+?)\*',     r'\1', val)
-                val  = re.sub(r'`(.+?)`',        r'\1', val)
-                val  = re.sub(r'\[([^\]]+)\]\([^\)]+\)', r'\1', val)
-                cell.text = val.strip()
-                if ri == 0:
-                    _set_cell_shading(cell, "E8E8F0")
-                    for run in cell.paragraphs[0].runs:
-                        run.bold = True
-        doc.add_paragraph()
+        render_table(doc, {"headers": table_rows[0], "rows": table_rows[1:]}, indent=indent)
         table_rows = []
+
+    def add_para(style=None):
+        p = doc.add_paragraph(style=style)
+        _apply_indent(p, indent, bordered=False)
+        return p
 
     while i < len(lines):
         line = lines[i]
@@ -167,38 +311,49 @@ def process_content(doc, content):
             i += 1
             continue
 
-        # Blocs HTML (admonitions, cards, div personnalisés)
-        if stripped.startswith('<') and not stripped.startswith('</'):
-            html_lines = []
-            depth = 0
-            while i < len(lines):
+        # Marqueur de tableau extrait en amont
+        tm = TABLE_PLACEHOLDER_RE.match(stripped)
+        if tm:
+            flush_table()
+            render_table(doc, tables[int(tm.group(1))], indent=indent)
+            i += 1
+            continue
+
+        # Bloc <div ...> ... </div> (admonitions, cartes, etc.)
+        m_div = re.match(r'^<div\b[^>]*>', stripped)
+        if m_div and not stripped.startswith('</'):
+            flush_table()
+            class_m = re.search(r'class="([^"]*)"', stripped)
+            classes = class_m.group(1).split() if class_m else []
+
+            depth = stripped.count('<div') - stripped.count('</div')
+            inner_lines = []
+            i += 1
+            while i < len(lines) and depth > 0:
                 l = lines[i]
-                html_lines.append(l)
                 depth += l.count('<div') - l.count('</div')
-                i += 1
-                if depth <= 0 and len(html_lines) > 1:
+                if depth <= 0:
+                    l = re.sub(r'</div>\s*$', '', l)
+                    if l.strip():
+                        inner_lines.append(l)
+                    i += 1
                     break
-            block = '\n'.join(html_lines)
-            text  = re.sub(r'<[^>]+>', ' ', block)
-            text  = re.sub(r'\s+', ' ', text).strip()
-            if not text:
-                continue
-            is_title = 'admonition-title' in block
-            p = doc.add_paragraph()
-            if is_title:
-                r = p.add_run(text)
-                r.bold = True; r.font.color.rgb = BLUE_ANGEL
-            else:
-                _add_border_left(p)
-                p.paragraph_format.left_indent = Cm(0.5)
-                add_inline(p, text)
+                inner_lines.append(l)
+                i += 1
+
+            render_div_block(doc, classes, '\n'.join(inner_lines), tables, indent)
+            continue
+
+        if stripped.startswith('</div'):
+            i += 1
             continue
 
         # Séparateur horizontal
         if re.match(r'^[-*_]{3,}$', stripped):
             flush_table()
-            p = doc.add_paragraph('─' * 60)
-            p.runs[0].font.color.rgb = GREY_DIM
+            p = add_para()
+            r = p.add_run('─' * 60)
+            r.font.color.rgb = GREY_DIM
             i += 1
             continue
 
@@ -207,10 +362,9 @@ def process_content(doc, content):
         if m:
             flush_table()
             level = min(len(m.group(1)), 6)
-            text  = re.sub(r'<[^>]+>', '', m.group(2))
-            text  = re.sub(r'\*\*(.+?)\*\*', r'\1', text)
-            text  = re.sub(r'\*(.+?)\*',     r'\1', text)
-            doc.add_heading(text.strip(), level=level)
+            h = doc.add_heading('', level=level)
+            _apply_indent(h, indent, bordered=False)
+            add_inline(h, m.group(2))
             i += 1
             continue
 
@@ -220,7 +374,7 @@ def process_content(doc, content):
                 i += 1
                 continue
             cells = [c.strip() for c in stripped.strip('|').split('|')]
-            table_rows.append(cells)
+            table_rows.append([_clean_cell_html(c) for c in cells])
             i += 1
             continue
 
@@ -229,9 +383,9 @@ def process_content(doc, content):
         # Listes à puces
         m_ul = re.match(r'^(\s*)-\s+(.+)$', line)
         if m_ul:
-            indent = len(m_ul.group(1)) // 2
-            p = doc.add_paragraph(style='List Bullet')
-            p.paragraph_format.left_indent = Cm(0.5 + indent * 0.5)
+            lvl = len(m_ul.group(1)) // 2
+            p = add_para(style='List Bullet')
+            p.paragraph_format.left_indent = (indent or Cm(0)) + Cm(0.5 + lvl * 0.5)
             add_inline(p, m_ul.group(2))
             i += 1
             continue
@@ -239,20 +393,57 @@ def process_content(doc, content):
         # Listes numérotées
         m_ol = re.match(r'^(\s*)\d+\.\s+(.+)$', line)
         if m_ol:
-            indent = len(m_ol.group(1)) // 2
-            p = doc.add_paragraph(style='List Number')
-            p.paragraph_format.left_indent = Cm(0.5 + indent * 0.5)
+            lvl = len(m_ol.group(1)) // 2
+            p = add_para(style='List Number')
+            p.paragraph_format.left_indent = (indent or Cm(0)) + Cm(0.5 + lvl * 0.5)
             add_inline(p, m_ol.group(2))
             i += 1
             continue
 
         # Paragraphe ordinaire
-        if stripped:
-            p = doc.add_paragraph()
-            add_inline(p, stripped)
+        p = add_para()
+        add_inline(p, stripped)
         i += 1
 
     flush_table()
+
+
+def render_div_block(doc, classes, inner_text, tables, indent):
+    """Rend un bloc <div> (admonition, carte, grille de cartes...) en isolant un éventuel
+    titre puis en traitant le corps via process_content (récursif, avec indentation)."""
+
+    # Grille de cartes : chaque enfant est son propre bloc, pas de titre au niveau de la grille
+    if 'rogue-card-grid' in classes:
+        process_content(doc, inner_text, tables, indent=indent)
+        return
+
+    title = None
+
+    m = re.search(r'<p class="admonition-title">(.*?)</p>', inner_text, re.DOTALL)
+    if m:
+        title = _clean_cell_html(m.group(1))
+        inner_text = inner_text[:m.start()] + inner_text[m.end():]
+    else:
+        m2 = re.match(r'\s*<strong>(.*?)</strong>\s*(<br\s*/?>)?', inner_text, re.DOTALL)
+        if m2:
+            title = _clean_cell_html(m2.group(1))
+            inner_text = inner_text[m2.end():]
+
+    body_indent = (indent or Cm(0)) + INDENT_STEP
+
+    if title:
+        p = doc.add_paragraph()
+        _apply_indent(p, indent, bordered=True)
+        p.paragraph_format.space_after = Pt(2)
+        r = p.add_run(title)
+        r.bold = True
+        r.font.color.rgb = BLUE_ANGEL
+    else:
+        body_indent = indent
+
+    body = inner_text.strip('\n')
+    if body.strip():
+        process_content(doc, body, tables, indent=body_indent)
 
 
 # ── Document setup ────────────────────────────────────────────────────────────
@@ -319,12 +510,13 @@ def main():
 
         text         = path.read_text(encoding='utf-8')
         title, body  = strip_frontmatter(text)
+        body, tables = extract_tables(body)
         print(f"  ✓ {slug}: {title}")
 
         if title:
             doc.add_heading(title, level=1)
 
-        process_content(doc, body)
+        process_content(doc, body, tables)
         doc.add_page_break()
 
     doc.save(OUTPUT)

@@ -26,5 +26,3 @@ ROGUE se joue à plusieurs échelles de puissance :
 ### Structure d'un setting
 
 Chaque setting précise : qui sont les personnages, à quelle échelle ils opèrent, quelles règles spécifiques s'appliquent (factions, pouvoirs, équipement, hôtes). Le SRD décrit le setting de référence — **le fan game INS-MV : Rogue** — mais le système est conçu pour accueillir d'autres univers.
-
-##
