@@ -1013,6 +1013,7 @@
     var probs = { mundane:40, better:30, superior:20, elite:10 };
     var filtersGender = { male:true, female:true };
     var filtersEth    = { french:true, northAfrican:true, westAfrican:true, hispanic:true, slavic:true, eastAsian:true, american:true, indian:true };
+    var lastBatch = []; // dernier lot de PNJ généré ou importé, pour l'export JSON
 
     // ── UI ───────────────────────────────────────────────
     container.innerHTML =
@@ -1029,6 +1030,9 @@
           '</div>' +
           '<button class="gen-roll-btn" data-el="generate">⚡ Générer</button>' +
           '<button class="gen-adv-toggle" data-el="adv-toggle">Options ▾</button>' +
+          '<button class="gen-io-btn" data-el="export" disabled>💾 Exporter JSON</button>' +
+          '<button class="gen-io-btn" data-el="import">📂 Importer JSON</button>' +
+          '<input type="file" accept="application/json" data-el="import-file" style="display:none">' +
         '</div>' +
         '<div class="gen-advanced" data-el="advanced" style="display:none">' +
           '<div class="gen-adv-section">' +
@@ -1069,10 +1073,13 @@
       '<div class="gen-grid" data-el="grid"></div>';
 
     // ── Éléments DOM ─────────────────────────────────────
-    var countEl  = container.querySelector('[data-el="count"]');
-    var gridEl   = container.querySelector('[data-el="grid"]');
-    var advEl    = container.querySelector('[data-el="advanced"]');
-    var advToggle = container.querySelector('[data-el="adv-toggle"]');
+    var countEl    = container.querySelector('[data-el="count"]');
+    var gridEl     = container.querySelector('[data-el="grid"]');
+    var advEl      = container.querySelector('[data-el="advanced"]');
+    var advToggle  = container.querySelector('[data-el="adv-toggle"]');
+    var exportBtn  = container.querySelector('[data-el="export"]');
+    var importBtn  = container.querySelector('[data-el="import"]');
+    var importFile = container.querySelector('[data-el="import-file"]');
 
     // Compteur
     container.querySelector('[data-el="dec"]').addEventListener('click', function () {
@@ -1118,6 +1125,8 @@
       btn.disabled = true;
       btn.textContent = '⏳ Génération…';
       gridEl.innerHTML = '';
+      lastBatch = [];
+      exportBtn.disabled = true;
 
       var done = 0;
       var total = count;
@@ -1126,10 +1135,12 @@
         if (id > total) {
           btn.disabled = false;
           btn.textContent = '⚡ Générer';
+          exportBtn.disabled = lastBatch.length === 0;
           return;
         }
         createNPC(id)
           .then(function(npc) {
+            lastBatch.push(npc);
             try { gridEl.appendChild(buildCard(npc)); }
             catch(e) { console.error('Erreur carte PNJ', e); }
           })
@@ -1145,6 +1156,47 @@
       }
 
       next(1);
+    });
+
+    // Export du dernier lot de PNJ (généré ou importé) en JSON
+    exportBtn.addEventListener('click', function () {
+      var blob = new Blob([JSON.stringify(lastBatch, null, 2)], { type: 'application/json' });
+      var url  = URL.createObjectURL(blob);
+      var a    = document.createElement('a');
+      a.href = url;
+      a.download = 'pnj-' + new Date().toISOString().slice(0, 10) + '.json';
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      URL.revokeObjectURL(url);
+    });
+
+    // Import d'un lot de PNJ depuis un fichier JSON précédemment exporté
+    importBtn.addEventListener('click', function () { importFile.click(); });
+    importFile.addEventListener('change', function () {
+      var file = this.files[0];
+      this.value = ''; // permet de réimporter le même fichier ensuite
+      if (!file) return;
+
+      var reader = new FileReader();
+      reader.onload = function () {
+        var data;
+        try {
+          data = JSON.parse(reader.result);
+          if (!Array.isArray(data)) throw new Error('le fichier ne contient pas une liste de PNJ');
+        } catch (e) {
+          alert('Fichier JSON invalide : ' + e.message);
+          return;
+        }
+        gridEl.innerHTML = '';
+        lastBatch = data;
+        data.forEach(function (npc) {
+          try { gridEl.appendChild(buildCard(npc)); }
+          catch (e) { console.error('Erreur carte PNJ importée', e); }
+        });
+        exportBtn.disabled = lastBatch.length === 0;
+      };
+      reader.readAsText(file);
     });
 
     // ── Utilitaires ──────────────────────────────────────
