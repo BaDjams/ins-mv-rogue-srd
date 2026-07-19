@@ -94,19 +94,7 @@ Définissez votre fonction spécifique au service de votre supérieur.
 
 ---
 
-## Étape 3 : Points d'énergie initiaux
-
-**Formule : PE = [Rang Céleste](../rang)**
-
-Les [Points d'Énergie](../../mecanique/energie) ne représentent pas une réserve de puissance, mais un **seuil de tolérance** : ils absorbent les conséquences du [drain](../../mecanique/energie#rang-des-pouvoirs-et-drain) avant que l'hôte n'en paie le prix. Un personnage joueur débute au Rang Céleste 3, ce qui lui confère **3 PE** à la création.
-
-Certains traits d'âme comme **Conduit Divin** permettent d'augmenter cette tolérance, indépendamment du Rang Céleste.
-
-Les PE se rechargent intégralement au **lever du soleil** pour les anges et à la **tombée de la nuit** pour les démons.
-
----
-
-## Étape 4 : Pouvoirs initiaux
+## Étape 3 : Pouvoirs initiaux
 
 Toute âme surnaturelle dispose automatiquement de **Présence Surnaturelle** (pouvoir intrinsèque de Rang 1, voir Énergie). Le personnage choisit ensuite **3 pouvoirs supplémentaires** :
 
@@ -141,15 +129,15 @@ Pouvoirs basiques utiles mais pas forcément en rapport avec votre concept initi
 
 ---
 
-## Étape 5 : Traits d'Âme
+## Étape 4 : Traits d'Âme
 
 Choisissez **2 traits sur la liste des Traits d'Âme**. Ces traits restent constants à travers toutes les incarnations.
 
-**Conduit Divin X** (X = 1, 2 ou 3) — exemple notable. Augmente le seuil de tolérance au drain en ajoutant X PE permanents au-dessus du Rang Céleste. Définition complète et exemples chiffrés dans le chapitre Énergie.
+**Conduit Divin X** (X = 1, 2 ou 3) — exemple notable. Une fois par combat et par niveau, transforme un drain automatique en simple dé de drain. Définition complète dans le chapitre Énergie.
 
 ---
 
-## Étape 6 : Objectifs et motivations
+## Étape 5 : Objectifs et motivations
 
 - **Objectif principal** (lié au Nouveau Grand Jeu) : Comment votre personnage interprète-t-il "Vendez-moi du rêve" ?
 - **Motivation personnelle** : Qu'est-ce qui pousse votre âme au-delà du devoir ?
@@ -164,10 +152,9 @@ Choisissez **2 traits sur la liste des Traits d'Âme**. Ces traits restent const
 1. **Concept** : Nom, nature (ange/démon)
 2. **Hiérarchie** : Supérieur hiérarchique + rôle spécifique
 3. **Attributs** : Répartition 3/2/2/1 dans PUI/INF/RES/CLA
-4. **Énergie** : PE = Rang céleste (+ Conduit Divin X si ce trait est choisi)
-5. **Pouvoirs** : Présence Surnaturelle (intrinsèque, automatique) + 3 pouvoirs choisis (1 supérieur + 1 rôle + 1 aléatoire)
-6. **Traits d'Âme** : 2 traits permanents
-7. **Roleplay** : Objectifs et motivations
+4. **Pouvoirs** : Présence Surnaturelle (intrinsèque, automatique) + 3 pouvoirs choisis (1 supérieur + 1 rôle + 1 aléatoire)
+5. **Traits d'Âme** : 2 traits permanents
+6. **Roleplay** : Objectifs et motivations
 </div>
 
 

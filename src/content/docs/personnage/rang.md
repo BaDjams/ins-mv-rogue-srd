@@ -96,7 +96,7 @@ Le nombre d'incarnations disponibles pour une âme est égale à son Rang Céles
 
 ## **Mécanisme de réincarnation (Anges et Démons)**
 
-Lorsqu'un hôte meurt, l'âme surnaturelle a quelques minutes pour trouver un nouvel hôte dans un rayon proche. La [réincarnation](../reincarnation) est automatique et ne coûte pas de PE, mais consomme une incarnation du quota.
+Lorsqu'un hôte meurt, l'âme surnaturelle a quelques minutes pour trouver un nouvel hôte dans un rayon proche. La [réincarnation](../reincarnation) est automatique et ne génère aucun drain, mais consomme une incarnation du quota.
 
 Le corps de l'ancien hôte reste sur place : un mort de plus, avec tout ce que cela implique en termes de constat et d'enquête. Quand le quota est épuisé, l'âme retourne à son plan d'origine et le dernier corps reste lui aussi sur place.
 

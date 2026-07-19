@@ -16,21 +16,21 @@ accéder à des pouvoirs puissants et les développer à un niveau avancé.
 Chaque pouvoir possède un rang (0 à 6). Le rang détermine à la fois l'accès et le coût en [drain](../energie#rang-des-pouvoirs-et-drain).
 
 - **Rang 0** : gratuit, accessible aux humains initiés, 0 dé de drain.
-- **Rang 1–6** : dés de drain = rang effectif de lancement. Chaque 6 = 1 affaiblissement d'âme.
-- **Accès** : Rang Céleste ≥ rang du pouvoir. Pas de downgrade possible.
-- **Surcharge** : lancer un pouvoir à un rang supérieur à son rang naturel (jusqu'à 6). Les dés de drain et les dégâts correspondent au rang effectif.
-- **Dégâts offensifs** : `(Code + max(Marge, Dé rouge)) × rang effectif`
+- **Rang 1–6** : le rang effectif de lancement détermine le drain — 1 dé de drain par rang jusqu'au Rang Céleste (un 6 inflige 1 blessure non-létale), 1 drain automatique par rang au-delà (1 blessure aggravée directe, sauf conversion par [Conduit Divin](../energie#conduit-divin)).
+- **Accès** : rang de base ≤ Rang Céleste pour les pouvoirs actifs ; les pouvoirs passifs sont calés sur le Rang Céleste. Pas de downgrade possible.
+- **Surcharge** : lancer un pouvoir actif à un rang supérieur à son rang de base, jusqu'à 6 — y compris au-delà du Rang Céleste. Les dégâts sont calculés sur le rang de lancement.
+- **Mots-clés** : rang effectif = rang de lancement + somme des coûts des [mots-clés](../mots-cles-pouvoirs), plafonné à 6. Ne compte que pour le drain.
+- **Dégâts offensifs** : `PUI + rang de lancement + max(Marge, Dé rouge)`
 
 <div class="admonition example">
-<p class="admonition-title">Exemple : Ange Rang 3 (3 PE), pouvoir Rang 2 surchargé à 4</p>
+<p class="admonition-title">Exemple : Ange Rang 3, pouvoir Rang 2 surchargé à 4</p>
 
-- Dés de drain : 4 (rang effectif)
-- Résultat supposé : deux 6 → 2 affaiblissements d'âme
-- L'ange dispose de 3 PE → quota non dépassé → 0 blessure aggravée
-- Il lui reste 1 PE de marge pour la journée
+- Drain : 3 dés (jusqu'au Rang Céleste) + 1 drain automatique (1 rang au-delà du Rang 3)
+- Résultat supposé : un 6 sur les dés → 1 blessure non-létale
+- Le drain automatique inflige en plus 1 blessure aggravée directe, sauf conversion par Conduit Divin
 </div>
 
-Pour le détail complet du mécanisme (seuil de tolérance, Consommation, Présence Surnaturelle), voir le chapitre Énergie.
+Pour le détail complet du mécanisme (Consommation, Conduit Divin, Présence Surnaturelle), voir le chapitre Énergie.
 
 ***
 
@@ -41,28 +41,25 @@ Pour le détail complet du mécanisme (seuil de tolérance, Consommation, Prése
 Une créature ne peut acquérir un pouvoir que si son rang céleste est
 **supérieur ou égal** au rang prérequis du pouvoir.
 
-\*Exemple : Un ange de rang 3 peut acquérir des pouvoirs ayant pour
+_Exemple : Un ange de rang 3 peut acquérir des pouvoirs ayant pour
 prérequis les rangs 1, 2 ou 3, mais pas ceux nécessitant un rang 4 ou
-plus.\*
+plus._
 
-## Limitation des Niveaux de Pouvoir
+## Pouvoirs actifs et pouvoirs passifs
 
-Pour les pouvoirs possédant plusieurs niveaux (notés X), le niveau
-maximum qu'une créature peut atteindre est limité par son Rang Céleste.
-Quel que soit le niveau prérequis d'un pouvoir, il ne pourra être
-augmenté au-delà du Rang Céleste du personnage.
+Au-delà du prérequis d'accès, tout dépend de la nature du pouvoir.
 
--   **Exemple 1 :** Un pouvoir avec un prérequis de Rang 1 (comme
-    [_Résilience_](../blessures)) peut être amélioré deux fois par un Ange de Rang 3,
-    atteignant _Résilience 3_.
--   **Exemple 2 :** Un pouvoir avec un prérequis de Rang 2 (comme \*Feu
-    Ardent\*) peut être amélioré une seule fois par un Ange de Rang 3,
-    atteignant _Feu Ardent 2_.
--   **Exemple 3 :** Un pouvoir avec un prérequis de Rang 3 (comme
-    _Châtiment_) ne peut pas être amélioré au-delà du Rang 3 par un
-    Ange de Rang 3.
+Un **pouvoir actif** se lance : jet, [drain](../energie#rang-des-pouvoirs-et-drain), éventuelle [Surcharge](../energie#rang-des-pouvoirs-et-drain). Son rang de base, choisi à l'acquisition et améliorable par la [progression](../../personnage/progression), ne peut jamais dépasser le Rang Céleste de son propriétaire. En revanche, rien n'interdit de le lancer plus fort qu'il n'a été appris : la Surcharge permet de monter jusqu'au rang 6, le drain se chargeant de rappeler à chacun où se situent ses limites réelles.
 
-## **Règles de spécifiques aux Pouvoirs**
+Un **pouvoir passif** ne se lance pas : il est toujours actif, ne génère aucun drain, et son rang est calé sur le Rang Céleste de son propriétaire — ni plus, ni moins. Il évolue automatiquement avec lui. Un ange de Rang 3 a _Résilience 3_ ; s'il devient Archange, sa Résilience passe à 4 sans rien dépenser. C'est un des rares avantages de la promotion interne.
+
+_Exemples :_
+
+- _Résilience_ (passif, prérequis Rang 1) : calée sur le Rang Céleste. Ange Rang 3 → Résilience 3 ; Archange Rang 4 → Résilience 4 ; humain Rang 1 → Résilience 1, sans effet pratique.
+- _Feu Ardent_ (actif, prérequis Rang 2) : un ange de Rang 3 peut l'acquérir au rang de base 2 ou 3, et le surcharger jusqu'au rang 6 au lancement.
+- _Rapidité Céleste_ (passif, prérequis Rang 3) : inaccessible en dessous du Rang 3 ; calée sur le Rang Céleste au-delà.
+
+## **Règles spécifiques aux Pouvoirs**
 
 **Légende des Types**
 
@@ -76,7 +73,6 @@ augmenté au-delà du Rang Céleste du personnage.
 
 **Mécaniques**
 
--   **PE :** [Points d'Énergie](../energie)
 -   **Intensité :** Résultat du [dé rouge](../resolution) + [marge de réussite](../resolution#3-marge-de-réussite)
 -   **Dé explosif :** Le [dé d'intensité](../resolution) explose sur un 6 (relance et
     additionne)
@@ -103,53 +99,12 @@ augmenté au-delà du Rang Céleste du personnage.
     fois lancés,
 -   Les effets **permanents** persistent jusqu'à dissipation active ou
     condition spéciale,
--   **Prolonger un pouvoir :** Nouveau jet de pouvoir + dépense complète
-    des PE au tour 4, 7, 10, etc.
+-   **Prolonger un pouvoir :** Nouveau jet de pouvoir + nouveau drain
+    complet au rang de lancement initial, au tour 4, 7, 10, etc.
 -   **Arrêter un pouvoir de concentration :** Action gratuite, effet immédiat.
 
-## **Exemples Pratiques**
+## Note sur les armes
 
-**Résilience X**
-
--   **Prérequis :** Rang 1
--   **Type :** Passif, Permanent
--   **Effet :** Divise tous les dégâts subis par X
--   **Pouvoir automatique** pour tous les anges et démons incarnés.
-
-**Calculs :**
-
--   Ange Rang 3 : Niveau maximum = 3 - 1 + 1 = **3** → Résilience 3
--   Archange Rang 4 : Niveau maximum = 4 - 1 + 1 = **4** → Résilience 4
--   Humain Rang 1 : Niveau maximum = 1 - 1 + 1 = **1** → Résilience 1
-    (sans effet pratique)
-
-**Feu Ardent X**
-
--   **Prérequis :** Rang 2
--   **Type :** Actif, Durée 3 tours
--   **Effet :** Génère une aura de feu qui consume les adversaires
-    proches
-
-**Calculs :**
-
--   Ange Rang 3 : Niveau maximum = 3 - 2 + 1 = **2** → Feu Ardent 2
--   Démon Rang 3 : Feu Ardent 3 impossible (3 + 2 - 1 = 4 > 3)
--   Archange Rang 4 : Niveau maximum = 4 - 2 + 1 = **3** → Feu Ardent 3
-
-**Rapidité Céleste X**
-
--   **Prérequis :** Rang 3
--   **Type :** Passif
--   **Effet :** Bonus d'[initiative](../combat#initiative) et d'actions
-
-**Calculs :**
-
--   Ange Rang 3 : Niveau maximum = 3 - 3 + 1 = **1** → Rapidité Céleste
-    1
--   Archange Rang 4 : Niveau maximum = 4 - 3 + 1 = **2** → Rapidité
-    Céleste 2
--   Ange Rang 2 : Pouvoir inaccessible (rang insuffisant)
-
-\*Note : Les armes sacrées, magiques ou maudites conservent leurs effets
+_Les armes sacrées, magiques ou maudites conservent leurs effets
 spéciaux pour pénétrer ou contourner certaines défenses, indépendamment
-du niveau de Résilience.\*
+du niveau de Résilience._

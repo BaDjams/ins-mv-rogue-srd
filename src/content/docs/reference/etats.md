@@ -464,12 +464,12 @@ sidebar:
 **Effets :**
 
 - +1 à tous les attributs surnaturels
-- Double coût en PE pour tous les pouvoirs
+- Le drain de tous les pouvoirs lancés est doublé (dés et drains automatiques comptés deux fois)
 - Subit 1 dégât par tour (non réductible par le rang céleste)
 - Le corps de l'hôte montre des signes de stress (veines qui brillent, yeux lumineux)
 - Désavantage sur tous les jets de discrétion sociale
 
-**Fin :** Après 1 heure ou dépense de toute l'énergie surnaturelle accumulée.
+**Fin :** Après 1 heure, ou au premier drain automatique subi (la surcharge se libère d'un coup).
 
 ---
 
@@ -497,7 +497,7 @@ sidebar:
 - Deux âmes cohabitent dans le même corps (ange/démon + humain)
 - Les résultats de 5 et 6 sur le dé d'action sont considérés comme des échecs automatiques (résistance de l'âme humaine)
 - Désavantage sur tous les jets tant que le conflit persiste
-- 1 affaiblissement d'âme par tour dû au stress spirituel (compte dans le quota journalier de PE)
+- 1 drain automatique par tour dû au stress spirituel, indépendamment de tout pouvoir lancé
 - L'âme humaine conserve ses souvenirs et sa personnalité
 
 **Fin :** L'ange/démon doit forcer le départ de l'âme humaine (jet de PUI vs VOL humaine) ou abandonner cet hôte.
@@ -516,7 +516,7 @@ sidebar:
 - **Volant** : Ailes d'ange/démon visibles et fonctionnelles, capacité de vol
 - L'hôte humain subit 2 dégâts par tour (non réductibles par rang céleste)
 - Aura surnaturelle visible : impossible de se faire passer pour humain
-- Coût d'activation : 5 PE, puis 2 PE par tour pour maintenir
+- Coût d'activation : drain équivalent à un lancement de rang 5, puis drain de rang 2 par tour pour maintenir
 
 **Fin :** Quand l'ange/démon cesse de maintenir l'état ou quand l'hôte tombe à 0 PV.
 
@@ -712,7 +712,7 @@ sidebar:
 **Effets :**
 
 - **Électronique** : Dysfonctionnement sur un résultat de 1–2 au dé d'intensité, écrans qui clignotent
-- **Objets magiques** : Effets imprévisibles sur un résultat de 1 au dé d'intensité, coût en PE doublé
+- **Objets magiques** : Effets imprévisibles sur un résultat de 1 au dé d'intensité, drain doublé pour l'utilisateur
 - Risque d'explosion (dégâts de zone si échec critique)
 - Perte progressive de PV (1 par heure)
 
