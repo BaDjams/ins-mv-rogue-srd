@@ -39,7 +39,7 @@
 	})();
 </script> <script type="module" src="/ins-mv-rogue-srd/_astro/Search.astro_astro_type_script_index_0_lang.DY7By7OT.js"></script>   </div> <div class="sl-hidden md:sl-flex print:hidden right-group astro-kmkmnagf"> <div class="sl-flex social-icons astro-kmkmnagf"> <a href="https://github.com/BaDjams/ins-mv-rogue-srd" rel="me" class="sl-flex astro-wy4te6ga"><span class="sr-only astro-wy4te6ga">GitHub</span><svg aria-hidden="true" class="astro-wy4te6ga astro-c6vsoqas" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1em;"><path d="M12 .3a12 12 0 0 0-3.8 23.38c.6.12.83-.26.83-.57L9 21.07c-3.34.72-4.04-1.61-4.04-1.61-.55-1.39-1.34-1.76-1.34-1.76-1.08-.74.09-.73.09-.73 1.2.09 1.83 1.24 1.83 1.24 1.08 1.83 2.81 1.3 3.5 1 .1-.78.42-1.31.76-1.61-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.14-.3-.54-1.52.1-3.18 0 0 1-.32 3.3 1.23a11.5 11.5 0 0 1 6 0c2.28-1.55 3.29-1.23 3.29-1.23.64 1.66.24 2.88.12 3.18a4.65 4.65 0 0 1 1.23 3.22c0 4.61-2.8 5.63-5.48 5.92.42.36.81 1.1.81 2.22l-.01 3.29c0 .31.2.69.82.57A12 12 0 0 0 12 .3Z"/></svg> </a> </div> <starlight-theme-select>  <label style="--sl-select-width: 6.25em" class="astro-4yphtoen"> <span class="sr-only astro-4yphtoen">Selectionner le thème</span> <svg aria-hidden="true" class="icon label-icon astro-4yphtoen astro-c6vsoqas" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1em;"><path d="M21 14h-1V7a3 3 0 0 0-3-3H7a3 3 0 0 0-3 3v7H3a1 1 0 0 0-1 1v2a3 3 0 0 0 3 3h14a3 3 0 0 0 3-3v-2a1 1 0 0 0-1-1ZM6 7a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v7H6V7Zm14 10a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1v-1h16v1Z"/></svg>  <select value="auto" autocomplete="off" class="astro-4yphtoen"> <option value="dark" class="astro-4yphtoen">Sombre</option><option value="light" class="astro-4yphtoen">Clair</option><option value="auto" selected class="astro-4yphtoen">Auto</option> </select> <svg aria-hidden="true" class="icon caret astro-4yphtoen astro-c6vsoqas" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1em;"><path d="M17 9.17a1 1 0 0 0-1.41 0L12 12.71 8.46 9.17a1 1 0 1 0-1.41 1.42l4.24 4.24a1.002 1.002 0 0 0 1.42 0L17 10.59a1.002 1.002 0 0 0 0-1.42Z"/></svg>  </label>  </starlight-theme-select>  <script>
 	StarlightThemeProvider.updatePickers();
-</script> <script type="module">const r="starlight-theme",o=e=>e==="auto"||e==="dark"||e==="light"?e:"auto",c=()=>o(typeof localStorage<"u"&&localStorage.getItem(r));function n(e){typeof localStorage<"u"&&localStorage.setItem(r,e==="light"||e==="dark"?e:"")}const l=()=>matchMedia("(prefers-color-scheme: light)").matches?"light":"dark";function t(e){StarlightThemeProvider.updatePickers(e),document.documentElement.dataset.theme=e==="auto"?l():e,n(e)}matchMedia("(prefers-color-scheme: light)").addEventListener("change",()=>{c()==="auto"&&t("auto")});class s extends HTMLElement{constructor(){super(),t(c()),this.querySelector("select")?.addEventListener("change",a=>{a.currentTarget instanceof HTMLSelectElement&&t(o(a.currentTarget.value))})}}customElements.define("starlight-theme-select",s);</script> <script type="module">class s extends HTMLElement{constructor(){super();const e=this.querySelector("select");e&&(e.addEventListener("change",t=>{t.currentTarget instanceof HTMLSelectElement&&(window.location.pathname=t.currentTarget.value)}),window.addEventListener("pageshow",t=>{if(!t.persisted)return;const n=e.querySelector("option[selected]")?.index;n!==e.selectedIndex&&(e.selectedIndex=n??0)}))}}customElements.define("starlight-lang-select",s);</script> </div> </div> </header> <nav class="sidebar print:hidden astro-vrdttmbt" aria-label="principale"> <starlight-menu-button class="print:hidden astro-jif73yzw"> <button aria-expanded="false" aria-label="Menu" aria-controls="starlight__sidebar" class="sl-flex md:sl-hidden astro-jif73yzw"> <svg aria-hidden="true" class="astro-jif73yzw astro-c6vsoqas" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1em;"><path d="M3 8h18a1 1 0 1 0 0-2H3a1 1 0 0 0 0 2Zm18 8H3a1 1 0 0 0 0 2h18a1 1 0 0 0 0-2Zm0-5H3a1 1 0 0 0 0 2h18a1 1 0 0 0 0-2Z"/></svg>  </button> </starlight-menu-button> <script type="module">class s extends HTMLElement{constructor(){super(),this.btn=this.querySelector("button"),this.btn.addEventListener("click",()=>this.toggleExpanded());const t=this.closest("nav");t&&t.addEventListener("keyup",e=>this.closeOnEscape(e))}setExpanded(t){this.setAttribute("aria-expanded",String(t)),document.body.toggleAttribute("data-mobile-menu-expanded",t)}toggleExpanded(){this.setExpanded(this.getAttribute("aria-expanded")!=="true")}closeOnEscape(t){t.code==="Escape"&&(this.setExpanded(!1),this.btn.focus())}}customElements.define("starlight-menu-button",s);</script>   <div id="starlight__sidebar" class="sidebar-pane astro-vrdttmbt"> <div class="sidebar-content sl-flex astro-vrdttmbt"> <sl-sidebar-state-persist data-hash="1crvhp5" class="astro-kku4brbg"> <script aria-hidden="true">
+</script> <script type="module">const r="starlight-theme",o=e=>e==="auto"||e==="dark"||e==="light"?e:"auto",c=()=>o(typeof localStorage<"u"&&localStorage.getItem(r));function n(e){typeof localStorage<"u"&&localStorage.setItem(r,e==="light"||e==="dark"?e:"")}const l=()=>matchMedia("(prefers-color-scheme: light)").matches?"light":"dark";function t(e){StarlightThemeProvider.updatePickers(e),document.documentElement.dataset.theme=e==="auto"?l():e,n(e)}matchMedia("(prefers-color-scheme: light)").addEventListener("change",()=>{c()==="auto"&&t("auto")});class s extends HTMLElement{constructor(){super(),t(c()),this.querySelector("select")?.addEventListener("change",a=>{a.currentTarget instanceof HTMLSelectElement&&t(o(a.currentTarget.value))})}}customElements.define("starlight-theme-select",s);</script> <script type="module">class s extends HTMLElement{constructor(){super();const e=this.querySelector("select");e&&(e.addEventListener("change",t=>{t.currentTarget instanceof HTMLSelectElement&&(window.location.pathname=t.currentTarget.value)}),window.addEventListener("pageshow",t=>{if(!t.persisted)return;const n=e.querySelector("option[selected]")?.index;n!==e.selectedIndex&&(e.selectedIndex=n??0)}))}}customElements.define("starlight-lang-select",s);</script> </div> </div> </header> <nav class="sidebar print:hidden astro-vrdttmbt" aria-label="principale"> <starlight-menu-button class="print:hidden astro-jif73yzw"> <button aria-expanded="false" aria-label="Menu" aria-controls="starlight__sidebar" class="sl-flex md:sl-hidden astro-jif73yzw"> <svg aria-hidden="true" class="astro-jif73yzw astro-c6vsoqas" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1em;"><path d="M3 8h18a1 1 0 1 0 0-2H3a1 1 0 0 0 0 2Zm18 8H3a1 1 0 0 0 0 2h18a1 1 0 0 0 0-2Zm0-5H3a1 1 0 0 0 0 2h18a1 1 0 0 0 0-2Z"/></svg>  </button> </starlight-menu-button> <script type="module">class s extends HTMLElement{constructor(){super(),this.btn=this.querySelector("button"),this.btn.addEventListener("click",()=>this.toggleExpanded());const t=this.closest("nav");t&&t.addEventListener("keyup",e=>this.closeOnEscape(e))}setExpanded(t){this.setAttribute("aria-expanded",String(t)),document.body.toggleAttribute("data-mobile-menu-expanded",t)}toggleExpanded(){this.setExpanded(this.getAttribute("aria-expanded")!=="true")}closeOnEscape(t){t.code==="Escape"&&(this.setExpanded(!1),this.btn.focus())}}customElements.define("starlight-menu-button",s);</script>   <div id="starlight__sidebar" class="sidebar-pane astro-vrdttmbt"> <div class="sidebar-content sl-flex astro-vrdttmbt"> <sl-sidebar-state-persist data-hash="1f1dnbc" class="astro-kku4brbg"> <script aria-hidden="true">
 		(() => {
 			try {
 				if (!matchMedia('(min-width: 50em)').matches) return;
@@ -62,7 +62,7 @@
 				);
 			} catch {}
 		})();
-	</script>  <ul class="top-level astro-3ii7xxms"> <li class="astro-3ii7xxms"> <a href="/ins-mv-rogue-srd/" aria-current="false" class="large astro-3ii7xxms"> <span class="astro-3ii7xxms">Accueil</span>  </a> </li><li class="astro-3ii7xxms"> <a href="/ins-mv-rogue-srd/srd/" aria-current="false" class="large astro-3ii7xxms"> <span class="astro-3ii7xxms">SRD</span>  </a> </li><li class="astro-3ii7xxms"> <details open class="astro-3ii7xxms"> <sl-sidebar-restore data-index="0"></sl-sidebar-restore> <summary class="astro-3ii7xxms"> <div class="group-label astro-3ii7xxms"> <span class="large astro-3ii7xxms">Contexte</span>  </div> <svg aria-hidden="true" class="caret astro-3ii7xxms astro-c6vsoqas" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1.25rem;"><path d="m14.83 11.29-4.24-4.24a1 1 0 1 0-1.42 1.41L12.71 12l-3.54 3.54a1 1 0 0 0 0 1.41 1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.24-4.24a1.002 1.002 0 0 0 0-1.42Z"/></svg>  </summary> <ul class="astro-3ii7xxms"> <li class="astro-3ii7xxms"> <a href="/ins-mv-rogue-srd/contexte/contexte/" aria-current="false" class="astro-3ii7xxms"> <span class="astro-3ii7xxms">Le monde du jeu</span>  </a> </li><li class="astro-3ii7xxms"> <a href="/ins-mv-rogue-srd/contexte/ins-mv-rogue/" aria-current="false" class="astro-3ii7xxms"> <span class="astro-3ii7xxms">Setting</span>  </a> </li> </ul>  </details> </li><li class="astro-3ii7xxms"> <details open class="astro-3ii7xxms"> <sl-sidebar-restore data-index="1"></sl-sidebar-restore> <summary class="astro-3ii7xxms"> <div class="group-label astro-3ii7xxms"> <span class="large astro-3ii7xxms">Personnage</span>  </div> <svg aria-hidden="true" class="caret astro-3ii7xxms astro-c6vsoqas" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1.25rem;"><path d="m14.83 11.29-4.24-4.24a1 1 0 1 0-1.42 1.41L12.71 12l-3.54 3.54a1 1 0 0 0 0 1.41 1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.24-4.24a1.002 1.002 0 0 0 0-1.42Z"/></svg>  </summary> <ul class="astro-3ii7xxms"> <li class="astro-3ii7xxms"> <a href="/ins-mv-rogue-srd/personnage/caracteristiques/" aria-current="false" class="astro-3ii7xxms"> <span class="astro-3ii7xxms">Caractéristiques &amp; Attributs</span>  </a> </li><li class="astro-3ii7xxms"> <a href="/ins-mv-rogue-srd/personnage/creation/" aria-current="false" class="astro-3ii7xxms"> <span class="astro-3ii7xxms">Création d&#39;âme</span>  </a> </li><li class="astro-3ii7xxms"> <a href="/ins-mv-rogue-srd/personnage/rang/" aria-current="false" class="astro-3ii7xxms"> <span class="astro-3ii7xxms">Rang céleste</span>  </a> </li><li class="astro-3ii7xxms"> <a href="/ins-mv-rogue-srd/personnage/progression/" aria-current="false" class="astro-3ii7xxms"> <span class="astro-3ii7xxms">Position hiérarchique</span>  </a> </li><li class="astro-3ii7xxms"> <a href="/ins-mv-rogue-srd/personnage/reincarnation/" aria-current="false" class="astro-3ii7xxms"> <span class="astro-3ii7xxms">Réincarnation</span>  </a> </li> </ul>  </details> </li><li class="astro-3ii7xxms"> <details open class="astro-3ii7xxms"> <sl-sidebar-restore data-index="2"></sl-sidebar-restore> <summary class="astro-3ii7xxms"> <div class="group-label astro-3ii7xxms"> <span class="large astro-3ii7xxms">Mécanique</span>  </div> <svg aria-hidden="true" class="caret astro-3ii7xxms astro-c6vsoqas" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1.25rem;"><path d="m14.83 11.29-4.24-4.24a1 1 0 1 0-1.42 1.41L12.71 12l-3.54 3.54a1 1 0 0 0 0 1.41 1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.24-4.24a1.002 1.002 0 0 0 0-1.42Z"/></svg>  </summary> <ul class="astro-3ii7xxms"> <li class="astro-3ii7xxms"> <a href="/ins-mv-rogue-srd/mecanique/resolution/" aria-current="false" class="astro-3ii7xxms"> <span class="astro-3ii7xxms">Résolution D666</span>  </a> </li><li class="astro-3ii7xxms"> <a href="/ins-mv-rogue-srd/mecanique/competences/" aria-current="false" class="astro-3ii7xxms"> <span class="astro-3ii7xxms">Compétences</span>  </a> </li><li class="astro-3ii7xxms"> <a href="/ins-mv-rogue-srd/mecanique/combat/" aria-current="false" class="astro-3ii7xxms"> <span class="astro-3ii7xxms">Combat &amp; initiative</span>  </a> </li><li class="astro-3ii7xxms"> <a href="/ins-mv-rogue-srd/mecanique/blessures/" aria-current="false" class="astro-3ii7xxms"> <span class="astro-3ii7xxms">Dégâts &amp; Blessures</span>  </a> </li><li class="astro-3ii7xxms"> <a href="/ins-mv-rogue-srd/mecanique/pouvoirs/" aria-current="false" class="astro-3ii7xxms"> <span class="astro-3ii7xxms">Pouvoirs</span>  </a> </li><li class="astro-3ii7xxms"> <a href="/ins-mv-rogue-srd/mecanique/energie/" aria-current="false" class="astro-3ii7xxms"> <span class="astro-3ii7xxms">Énergie, Drain &amp; Consommation</span>  </a> </li> </ul>  </details> </li><li class="astro-3ii7xxms"> <details open class="astro-3ii7xxms"> <sl-sidebar-restore data-index="3"></sl-sidebar-restore> <summary class="astro-3ii7xxms"> <div class="group-label astro-3ii7xxms"> <span class="large astro-3ii7xxms">Référence</span>  </div> <svg aria-hidden="true" class="caret astro-3ii7xxms astro-c6vsoqas" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1.25rem;"><path d="m14.83 11.29-4.24-4.24a1 1 0 1 0-1.42 1.41L12.71 12l-3.54 3.54a1 1 0 0 0 0 1.41 1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.24-4.24a1.002 1.002 0 0 0 0-1.42Z"/></svg>  </summary> <ul class="astro-3ii7xxms"> <li class="astro-3ii7xxms"> <details class="astro-3ii7xxms"> <sl-sidebar-restore data-index="4"></sl-sidebar-restore> <summary class="astro-3ii7xxms"> <div class="group-label astro-3ii7xxms"> <span class="large astro-3ii7xxms">Équipement</span>  </div> <svg aria-hidden="true" class="caret astro-3ii7xxms astro-c6vsoqas" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1.25rem;"><path d="m14.83 11.29-4.24-4.24a1 1 0 1 0-1.42 1.41L12.71 12l-3.54 3.54a1 1 0 0 0 0 1.41 1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.24-4.24a1.002 1.002 0 0 0 0-1.42Z"/></svg>  </summary> <ul class="astro-3ii7xxms"> <li class="astro-3ii7xxms"> <a href="/ins-mv-rogue-srd/reference/equipement/" aria-current="false" class="astro-3ii7xxms"> <span class="astro-3ii7xxms">Vue d&#39;ensemble</span>  </a> </li><li class="astro-3ii7xxms"> <a href="/ins-mv-rogue-srd/reference/equipement/melee/" aria-current="false" class="astro-3ii7xxms"> <span class="astro-3ii7xxms">Armes de mêlée</span>  </a> </li><li class="astro-3ii7xxms"> <a href="/ins-mv-rogue-srd/reference/equipement/distance/" aria-current="false" class="astro-3ii7xxms"> <span class="astro-3ii7xxms">Armes à distance</span>  </a> </li><li class="astro-3ii7xxms"> <a href="/ins-mv-rogue-srd/reference/equipement/armes-feu/" aria-current="false" class="astro-3ii7xxms"> <span class="astro-3ii7xxms">Armes à feu</span>  </a> </li><li class="astro-3ii7xxms"> <a href="/ins-mv-rogue-srd/reference/equipement/explosifs/" aria-current="false" class="astro-3ii7xxms"> <span class="astro-3ii7xxms">Explosifs</span>  </a> </li><li class="astro-3ii7xxms"> <a href="/ins-mv-rogue-srd/reference/equipement/protections/" aria-current="false" class="astro-3ii7xxms"> <span class="astro-3ii7xxms">Protections</span>  </a> </li><li class="astro-3ii7xxms"> <a href="/ins-mv-rogue-srd/reference/equipement/boucliers/" aria-current="false" class="astro-3ii7xxms"> <span class="astro-3ii7xxms">Boucliers</span>  </a> </li> </ul>  </details> </li><li class="astro-3ii7xxms"> <a href="/ins-mv-rogue-srd/reference/mots-cles/" aria-current="false" class="astro-3ii7xxms"> <span class="astro-3ii7xxms">Mots-clés</span>  </a> </li><li class="astro-3ii7xxms"> <a href="/ins-mv-rogue-srd/reference/etats/" aria-current="false" class="astro-3ii7xxms"> <span class="astro-3ii7xxms">États</span>  </a> </li> </ul>  </details> </li><li class="astro-3ii7xxms"> <a href="/ins-mv-rogue-srd/simulateur/" aria-current="false" class="large astro-3ii7xxms"> <span class="astro-3ii7xxms">Simulateur</span>  </a> </li><li class="astro-3ii7xxms"> <a href="/ins-mv-rogue-srd/generateur/" aria-current="false" class="large astro-3ii7xxms"> <span class="astro-3ii7xxms">Générateur</span>  </a> </li><li class="astro-3ii7xxms"> <a href="/ins-mv-rogue-srd/telecharger/" aria-current="page" class="large astro-3ii7xxms"> <span class="astro-3ii7xxms">↓ Télécharger</span>  </a> </li> </ul>   <script aria-hidden="true">
+	</script>  <ul class="top-level astro-3ii7xxms"> <li class="astro-3ii7xxms"> <a href="/ins-mv-rogue-srd/" aria-current="false" class="large astro-3ii7xxms"> <span class="astro-3ii7xxms">Accueil</span>  </a> </li><li class="astro-3ii7xxms"> <a href="/ins-mv-rogue-srd/srd/" aria-current="false" class="large astro-3ii7xxms"> <span class="astro-3ii7xxms">SRD</span>  </a> </li><li class="astro-3ii7xxms"> <details open class="astro-3ii7xxms"> <sl-sidebar-restore data-index="0"></sl-sidebar-restore> <summary class="astro-3ii7xxms"> <div class="group-label astro-3ii7xxms"> <span class="large astro-3ii7xxms">Contexte</span>  </div> <svg aria-hidden="true" class="caret astro-3ii7xxms astro-c6vsoqas" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1.25rem;"><path d="m14.83 11.29-4.24-4.24a1 1 0 1 0-1.42 1.41L12.71 12l-3.54 3.54a1 1 0 0 0 0 1.41 1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.24-4.24a1.002 1.002 0 0 0 0-1.42Z"/></svg>  </summary> <ul class="astro-3ii7xxms"> <li class="astro-3ii7xxms"> <a href="/ins-mv-rogue-srd/contexte/contexte/" aria-current="false" class="astro-3ii7xxms"> <span class="astro-3ii7xxms">Le monde du jeu</span>  </a> </li><li class="astro-3ii7xxms"> <a href="/ins-mv-rogue-srd/contexte/ins-mv-rogue/" aria-current="false" class="astro-3ii7xxms"> <span class="astro-3ii7xxms">Setting</span>  </a> </li> </ul>  </details> </li><li class="astro-3ii7xxms"> <details open class="astro-3ii7xxms"> <sl-sidebar-restore data-index="1"></sl-sidebar-restore> <summary class="astro-3ii7xxms"> <div class="group-label astro-3ii7xxms"> <span class="large astro-3ii7xxms">Personnage</span>  </div> <svg aria-hidden="true" class="caret astro-3ii7xxms astro-c6vsoqas" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1.25rem;"><path d="m14.83 11.29-4.24-4.24a1 1 0 1 0-1.42 1.41L12.71 12l-3.54 3.54a1 1 0 0 0 0 1.41 1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.24-4.24a1.002 1.002 0 0 0 0-1.42Z"/></svg>  </summary> <ul class="astro-3ii7xxms"> <li class="astro-3ii7xxms"> <a href="/ins-mv-rogue-srd/personnage/caracteristiques/" aria-current="false" class="astro-3ii7xxms"> <span class="astro-3ii7xxms">Caractéristiques &amp; Attributs</span>  </a> </li><li class="astro-3ii7xxms"> <a href="/ins-mv-rogue-srd/personnage/creation/" aria-current="false" class="astro-3ii7xxms"> <span class="astro-3ii7xxms">Création d&#39;âme</span>  </a> </li><li class="astro-3ii7xxms"> <a href="/ins-mv-rogue-srd/personnage/rang/" aria-current="false" class="astro-3ii7xxms"> <span class="astro-3ii7xxms">Rang céleste</span>  </a> </li><li class="astro-3ii7xxms"> <a href="/ins-mv-rogue-srd/personnage/progression/" aria-current="false" class="astro-3ii7xxms"> <span class="astro-3ii7xxms">Position hiérarchique</span>  </a> </li><li class="astro-3ii7xxms"> <a href="/ins-mv-rogue-srd/personnage/reincarnation/" aria-current="false" class="astro-3ii7xxms"> <span class="astro-3ii7xxms">Réincarnation</span>  </a> </li> </ul>  </details> </li><li class="astro-3ii7xxms"> <details open class="astro-3ii7xxms"> <sl-sidebar-restore data-index="2"></sl-sidebar-restore> <summary class="astro-3ii7xxms"> <div class="group-label astro-3ii7xxms"> <span class="large astro-3ii7xxms">Mécanique</span>  </div> <svg aria-hidden="true" class="caret astro-3ii7xxms astro-c6vsoqas" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1.25rem;"><path d="m14.83 11.29-4.24-4.24a1 1 0 1 0-1.42 1.41L12.71 12l-3.54 3.54a1 1 0 0 0 0 1.41 1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.24-4.24a1.002 1.002 0 0 0 0-1.42Z"/></svg>  </summary> <ul class="astro-3ii7xxms"> <li class="astro-3ii7xxms"> <a href="/ins-mv-rogue-srd/mecanique/resolution/" aria-current="false" class="astro-3ii7xxms"> <span class="astro-3ii7xxms">Résolution D666</span>  </a> </li><li class="astro-3ii7xxms"> <a href="/ins-mv-rogue-srd/mecanique/competences/" aria-current="false" class="astro-3ii7xxms"> <span class="astro-3ii7xxms">Compétences</span>  </a> </li><li class="astro-3ii7xxms"> <a href="/ins-mv-rogue-srd/mecanique/combat/" aria-current="false" class="astro-3ii7xxms"> <span class="astro-3ii7xxms">Combat &amp; initiative</span>  </a> </li><li class="astro-3ii7xxms"> <a href="/ins-mv-rogue-srd/mecanique/blessures/" aria-current="false" class="astro-3ii7xxms"> <span class="astro-3ii7xxms">Dégâts &amp; Blessures</span>  </a> </li><li class="astro-3ii7xxms"> <a href="/ins-mv-rogue-srd/mecanique/pouvoirs/" aria-current="false" class="astro-3ii7xxms"> <span class="astro-3ii7xxms">Pouvoirs</span>  </a> </li><li class="astro-3ii7xxms"> <a href="/ins-mv-rogue-srd/mecanique/energie/" aria-current="false" class="astro-3ii7xxms"> <span class="astro-3ii7xxms">Énergie, Drain &amp; Consommation</span>  </a> </li><li class="astro-3ii7xxms"> <a href="/ins-mv-rogue-srd/mecanique/mots-cles-pouvoirs/" aria-current="false" class="astro-3ii7xxms"> <span class="astro-3ii7xxms">Mots-clés de pouvoirs</span>  </a> </li><li class="astro-3ii7xxms"> <a href="/ins-mv-rogue-srd/mecanique/sante-mentale/" aria-current="false" class="astro-3ii7xxms"> <span class="astro-3ii7xxms">Santé Mentale</span>  </a> </li> </ul>  </details> </li><li class="astro-3ii7xxms"> <details open class="astro-3ii7xxms"> <sl-sidebar-restore data-index="3"></sl-sidebar-restore> <summary class="astro-3ii7xxms"> <div class="group-label astro-3ii7xxms"> <span class="large astro-3ii7xxms">Référence</span>  </div> <svg aria-hidden="true" class="caret astro-3ii7xxms astro-c6vsoqas" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1.25rem;"><path d="m14.83 11.29-4.24-4.24a1 1 0 1 0-1.42 1.41L12.71 12l-3.54 3.54a1 1 0 0 0 0 1.41 1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.24-4.24a1.002 1.002 0 0 0 0-1.42Z"/></svg>  </summary> <ul class="astro-3ii7xxms"> <li class="astro-3ii7xxms"> <details class="astro-3ii7xxms"> <sl-sidebar-restore data-index="4"></sl-sidebar-restore> <summary class="astro-3ii7xxms"> <div class="group-label astro-3ii7xxms"> <span class="large astro-3ii7xxms">Équipement</span>  </div> <svg aria-hidden="true" class="caret astro-3ii7xxms astro-c6vsoqas" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1.25rem;"><path d="m14.83 11.29-4.24-4.24a1 1 0 1 0-1.42 1.41L12.71 12l-3.54 3.54a1 1 0 0 0 0 1.41 1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.24-4.24a1.002 1.002 0 0 0 0-1.42Z"/></svg>  </summary> <ul class="astro-3ii7xxms"> <li class="astro-3ii7xxms"> <a href="/ins-mv-rogue-srd/reference/equipement/" aria-current="false" class="astro-3ii7xxms"> <span class="astro-3ii7xxms">Vue d&#39;ensemble</span>  </a> </li><li class="astro-3ii7xxms"> <a href="/ins-mv-rogue-srd/reference/equipement/melee/" aria-current="false" class="astro-3ii7xxms"> <span class="astro-3ii7xxms">Armes de mêlée</span>  </a> </li><li class="astro-3ii7xxms"> <a href="/ins-mv-rogue-srd/reference/equipement/distance/" aria-current="false" class="astro-3ii7xxms"> <span class="astro-3ii7xxms">Armes à distance</span>  </a> </li><li class="astro-3ii7xxms"> <a href="/ins-mv-rogue-srd/reference/equipement/armes-feu/" aria-current="false" class="astro-3ii7xxms"> <span class="astro-3ii7xxms">Armes à feu</span>  </a> </li><li class="astro-3ii7xxms"> <a href="/ins-mv-rogue-srd/reference/equipement/explosifs/" aria-current="false" class="astro-3ii7xxms"> <span class="astro-3ii7xxms">Explosifs</span>  </a> </li><li class="astro-3ii7xxms"> <a href="/ins-mv-rogue-srd/reference/equipement/protections/" aria-current="false" class="astro-3ii7xxms"> <span class="astro-3ii7xxms">Protections</span>  </a> </li><li class="astro-3ii7xxms"> <a href="/ins-mv-rogue-srd/reference/equipement/boucliers/" aria-current="false" class="astro-3ii7xxms"> <span class="astro-3ii7xxms">Boucliers</span>  </a> </li> </ul>  </details> </li><li class="astro-3ii7xxms"> <a href="/ins-mv-rogue-srd/reference/mots-cles/" aria-current="false" class="astro-3ii7xxms"> <span class="astro-3ii7xxms">Mots-clés</span>  </a> </li><li class="astro-3ii7xxms"> <a href="/ins-mv-rogue-srd/reference/etats/" aria-current="false" class="astro-3ii7xxms"> <span class="astro-3ii7xxms">États</span>  </a> </li> </ul>  </details> </li><li class="astro-3ii7xxms"> <a href="/ins-mv-rogue-srd/simulateur/" aria-current="false" class="large astro-3ii7xxms"> <span class="astro-3ii7xxms">Simulateur</span>  </a> </li><li class="astro-3ii7xxms"> <a href="/ins-mv-rogue-srd/generateur/" aria-current="false" class="large astro-3ii7xxms"> <span class="astro-3ii7xxms">Générateur</span>  </a> </li><li class="astro-3ii7xxms"> <a href="/ins-mv-rogue-srd/telecharger/" aria-current="page" class="large astro-3ii7xxms"> <span class="astro-3ii7xxms">↓ Télécharger</span>  </a> </li> </ul>   <script aria-hidden="true">
 		(() => {
 			const scroller = document.getElementById('starlight__sidebar');
 			if (!window._starlightScrollRestore || !scroller) return;
@@ -126,7 +126,7 @@ Résolution [D666](../mecanique/resolution), combat, pouvoirs, [compétences](..
 <p><em>Exemples : Repérer une cible cachée, entendre des bruits lointains, détecter une embuscade.</em></p>
 <hr>
 <h2 id="attributs-de-lâme-surnaturelle">Attributs de l’âme surnaturelle</h2>
-<p>Ces attributs reflètent les qualités intrinsèques et surnaturelles de l’âme angélique ou démoniaque. Ils remplacent les caractéristiques humaines correspondantes lorsque l’ange dépense 2 PE pour une substitution d’attribut.</p>
+<p>Ces attributs reflètent les qualités intrinsèques et surnaturelles de l’âme angélique ou démoniaque. Ils remplacent les caractéristiques humaines correspondantes lorsque l’âme laisse transparaître sa véritable nature grâce à son pouvoir intrinsèque de <a href="../../mecanique/energie#pr%C3%A9sence-surnaturelle-pouvoir-intrins%C3%A8que">Présence Surnaturelle</a> — une action gratuite qui génère 1 dé de drain.</p>
 
 
 
@@ -349,13 +349,7 @@ Résolution [D666](../mecanique/resolution), combat, pouvoirs, [compétences](..
 <li><strong>Érudit (tous)</strong> : Au choix du joueur</li>
 </ul>
 <hr>
-<h2 id="étape-3--points-dénergie-initiaux">Étape 3 : Points d’énergie initiaux</h2>
-<p><strong>Formule : PE = <a href="../rang">Rang Céleste</a></strong></p>
-<p>Les <a href="../../mecanique/energie">Points d’Énergie</a> ne représentent pas une réserve de puissance, mais un <strong>seuil de tolérance</strong> : ils absorbent les conséquences du <a href="../../mecanique/energie#rang-des-pouvoirs-et-drain">drain</a> avant que l’hôte n’en paie le prix. Un personnage joueur débute au Rang Céleste 3, ce qui lui confère <strong>3 PE</strong> à la création.</p>
-<p>Certains traits d’âme comme <strong>Conduit Divin</strong> permettent d’augmenter cette tolérance, indépendamment du Rang Céleste.</p>
-<p>Les PE se rechargent intégralement au <strong>lever du soleil</strong> pour les anges et à la <strong>tombée de la nuit</strong> pour les démons.</p>
-<hr>
-<h2 id="étape-4--pouvoirs-initiaux">Étape 4 : Pouvoirs initiaux</h2>
+<h2 id="étape-3--pouvoirs-initiaux">Étape 3 : Pouvoirs initiaux</h2>
 <p>Toute âme surnaturelle dispose automatiquement de <strong>Présence Surnaturelle</strong> (pouvoir intrinsèque de Rang 1, voir Énergie). Le personnage choisit ensuite <strong>3 pouvoirs supplémentaires</strong> :</p>
 <h3 id="1-pouvoir-du-supérieur-hiérarchique">1. Pouvoir du supérieur hiérarchique</h3>
 <p><strong>Choix libre</strong> dans la liste spécifique à votre Archange ou Prince-Démon.</p>
@@ -379,11 +373,11 @@ Résolution [D666](../mecanique/resolution), combat, pouvoirs, [compétences](..
 <p><em>“Croyez-nous, c’est pour votre bien. La hiérarchie sait ce qu’elle fait.”</em></p>
 <p>Pouvoirs basiques utiles mais pas forcément en rapport avec votre concept initial. Peut créer des synergies inattendues ou des situations comiques.</p>
 <hr>
-<h2 id="étape-5--traits-dâme">Étape 5 : Traits d’Âme</h2>
+<h2 id="étape-4--traits-dâme">Étape 4 : Traits d’Âme</h2>
 <p>Choisissez <strong>2 traits sur la liste des Traits d’Âme</strong>. Ces traits restent constants à travers toutes les incarnations.</p>
-<p><strong>Conduit Divin X</strong> (X = 1, 2 ou 3) — exemple notable. Augmente le seuil de tolérance au drain en ajoutant X PE permanents au-dessus du Rang Céleste. Définition complète et exemples chiffrés dans le chapitre Énergie.</p>
+<p><strong>Conduit Divin X</strong> (X = 1, 2 ou 3) — exemple notable. Une fois par combat et par niveau, transforme un drain automatique en simple dé de drain. Définition complète dans le chapitre Énergie.</p>
 <hr>
-<h2 id="étape-6--objectifs-et-motivations">Étape 6 : Objectifs et motivations</h2>
+<h2 id="étape-5--objectifs-et-motivations">Étape 5 : Objectifs et motivations</h2>
 <ul>
 <li><strong>Objectif principal</strong> (lié au Nouveau Grand Jeu) : Comment votre personnage interprète-t-il “Vendez-moi du rêve” ?</li>
 <li><strong>Motivation personnelle</strong> : Qu’est-ce qui pousse votre âme au-delà du devoir ?</li>
@@ -396,7 +390,6 @@ Résolution [D666](../mecanique/resolution), combat, pouvoirs, [compétences](..
 <li><strong>Concept</strong> : Nom, nature (ange/démon)</li>
 <li><strong>Hiérarchie</strong> : Supérieur hiérarchique + rôle spécifique</li>
 <li><strong>Attributs</strong> : Répartition 3/2/2/1 dans PUI/INF/RES/CLA</li>
-<li><strong>Énergie</strong> : PE = Rang céleste (+ Conduit Divin X si ce trait est choisi)</li>
 <li><strong>Pouvoirs</strong> : Présence Surnaturelle (intrinsèque, automatique) + 3 pouvoirs choisis (1 supérieur + 1 rôle + 1 aléatoire)</li>
 <li><strong>Traits d’Âme</strong> : 2 traits permanents</li>
 <li><strong>Roleplay</strong> : Objectifs et motivations</li>
@@ -523,7 +516,7 @@ hélas, il semble que cet ouvrage se soit perdu dans le temps et l’espace…</
 <li>Réservé aux entités cosmiques majeures</li>
 </ul>
 <h2 id="mécanisme-de-réincarnation-anges-et-démons"><strong>Mécanisme de réincarnation (Anges et Démons)</strong></h2>
-<p>Lorsqu’un hôte meurt, l’âme surnaturelle a quelques minutes pour trouver un nouvel hôte dans un rayon proche. La <a href="../reincarnation">réincarnation</a> est automatique et ne coûte pas de PE, mais consomme une incarnation du quota.</p>
+<p>Lorsqu’un hôte meurt, l’âme surnaturelle a quelques minutes pour trouver un nouvel hôte dans un rayon proche. La <a href="../reincarnation">réincarnation</a> est automatique et ne génère aucun drain, mais consomme une incarnation du quota.</p>
 <p>Le corps de l’ancien hôte reste sur place : un mort de plus, avec tout ce que cela implique en termes de constat et d’enquête. Quand le quota est épuisé, l’âme retourne à son plan d’origine et le dernier corps reste lui aussi sur place.</p>
 <p><strong>Compteur d’incarnations</strong> : Les joueurs notent sur leur fiche combien d’incarnations leur restent.</p> </section><section class="export-section astro-tc7gsgdq"> <h2 id="principes-de-base"><strong>Principes de base</strong></h2>
 <p>Lorsqu’un hôte meurt ou que l’âme surnaturelle décide de le quitter
@@ -740,7 +733,7 @@ les pièces justificatives.</p> </section><section class="export-section astro-t
 <p>Il s’agit de la différence entre le seuil de réussite et le résultat du Dé d’action. Pour le calcul des dégâts, la marge et le dé rouge ne s’additionnent pas : on retient le meilleur des deux — <strong>max(Marge, Dé rouge)</strong>. Une grande marge garantit un résultat minimum solide ; le dé rouge peut rattraper une faible marge, mais ne s’empile pas avec une bonne.</p>
 <div class="admonition note">
 <p class="admonition-title">Note sur les seuils élevés</p>
-<p>Si le seuil est de 6 ou plus (par exemple, un ange avec PUI 5 qui dépense 2 PE pour substituer PUI à FOR et possède +2 en Corps à Corps, donnant un seuil de 7), le 6 reste toujours un échec. L’intérêt d’avoir un seuil supérieur ou égal à 6 réside alors dans le fait qu’un résultat de 5 ou moins réussit et génère une marge importante.</p>
+<p>Si le seuil est de 6 ou plus (par exemple, un ange avec PUI 5 qui substitue PUI à FOR par sa <a href="../energie#pr%C3%A9sence-surnaturelle-pouvoir-intrins%C3%A8que">Présence Surnaturelle</a> et possède +2 en Corps à Corps, donnant un seuil de 7), le 6 reste toujours un échec. L’intérêt d’avoir un seuil supérieur ou égal à 6 réside alors dans le fait qu’un résultat de 5 ou moins réussit et génère une marge importante.</p>
 </div>
 <div class="expressive-code"><link rel="stylesheet" href="/ins-mv-rogue-srd/_astro/ec.tm3va.css"><script type="module" src="/ins-mv-rogue-srd/_astro/ec.8zarh.js"></script><figure class="frame not-content"><figcaption class="header"></figcaption><pre data-language="plaintext"><code><div class="ec-line"><div class="code"><span style="--0:#d6deeb;--1:#403f53">**Exemple** : Seuil 7, dé d'action = 1 → Réussite avec marge de 6 !</span></div></div><div class="ec-line"><div class="code">
 </div></div><div class="ec-line"><div class="code"><span style="--0:#d6deeb;--1:#403f53">Cela récompense les combinaisons optimisées d'[attributs célestes](../../personnage/caracteristiques) et de compétences élevées en générant des marges spectaculaires.</span></div></div></code></pre><div class="copy"><button title="Copier dans le presse-papiers" data-copied="Copié !" data-code="**Exemple** : Seuil 7, dé d&#x27;action = 1 → Réussite avec marge de 6 !Cela récompense les combinaisons optimisées d&#x27;[attributs célestes](../../personnage/caracteristiques) et de compétences élevées en générant des marges spectaculaires."><div></div></button></div></figure></div>
@@ -822,20 +815,20 @@ les pièces justificatives.</p> </section><section class="export-section astro-t
 <li>Hors combat, l’action entreprise réussit de manière spectaculaire et peut s’étendre à l’intégralité de la scène, à la discrétion du MJ. Afin de préserver la narration, le MJ peut décider à la place de donner un jeton <strong>“Touché par la Grâce”</strong> qui permettra à son détenteur de déclencher les effets supplémentaires listés ci-dessous au moment de son choix. Le jeton sera alors détruit. Les éventuels effets durables persistent jusqu’à la tombée de la nuit.</li>
 <li><strong>Effets supplémentaires</strong> :
 <ul>
-<li>Le compteur d’affaiblissements d’âme du lanceur est remis à zéro, et ceux de ses compagnons sont réduits de moitié (arrondi inférieur).</li>
+<li>Toutes les blessures non-létales du lanceur sont immédiatement effacées, et celles de ses compagnons réduites de moitié (arrondi inférieur).</li>
 <li>Toutes les actions du personnage et de ses alliés bénéficient d’un double avantage jusqu’au début du prochain tour du lanceur.</li>
 </ul>
 </li>
 </ul>
 <p><strong>Intervention démoniaque (666)</strong> : L’action de l’ange échoue de façon particulièrement humiliante</p>
 <ul>
-<li>L’ange gagne immédiatement un nombre d’affaiblissements d’âme égal à la moitié de ses PE (arrondi supérieur), pouvant déclencher des blessures aggravées si le seuil est dépassé.</li>
+<li>L’ange subit immédiatement un nombre de blessures aggravées égal à la moitié de son <a href="../../personnage/rang">Rang Céleste</a> (arrondi supérieur).</li>
 <li>Double désavantage pour l’ange et tous ses alliés jusqu’à la fin de son prochain tour</li>
 </ul>
 <h4 id="pour-les-démons">Pour les Démons</h4>
 <p><strong>Intervention divine (111)</strong> : L’action échoue de façon particulièrement humiliante</p>
 <ul>
-<li>Le démon gagne immédiatement un nombre d’affaiblissements d’âme égal à la moitié de ses PE (arrondi supérieur).</li>
+<li>Le démon subit immédiatement un nombre de blessures aggravées égal à la moitié de son <a href="../../personnage/rang">Rang Céleste</a> (arrondi supérieur).</li>
 <li>Double désavantage pour le démon et tous ses alliés jusqu’à la fin de son prochain tour</li>
 </ul>
 <p><strong>Intervention démoniaque (666)</strong> : L’action réussit de manière particulièrement spectaculaire</p>
@@ -844,7 +837,7 @@ les pièces justificatives.</p> </section><section class="export-section astro-t
 <li>Hors combat, l’action entreprise réussit de manière spectaculaire et peut s’étendre à l’intégralité de la scène, à la discrétion du MJ. Afin de préserver la narration, le MJ peut décider à la place de donner un jeton <strong>“Marque du Diable”</strong> qui permettra à son détenteur de déclencher les effets supplémentaires listés ci-dessous au moment de son choix. Le jeton sera alors détruit. Les éventuels effets durables persistent jusqu’au lever du soleil.</li>
 <li><strong>Effets supplémentaires</strong> :
 <ul>
-<li>Le compteur d’affaiblissements d’âme du lanceur est remis à zéro, et ceux de ses compagnons sont réduits de moitié (arrondi inférieur).</li>
+<li>Toutes les blessures non-létales du lanceur sont immédiatement effacées, et celles de ses compagnons réduites de moitié (arrondi inférieur).</li>
 <li>Toutes les actions du personnage bénéficient d’un double avantage jusqu’au début de son prochain tour.</li>
 <li>Toutes les actions ciblant le personnage obtiennent un double désavantage, même celles visant à l’aider ou le soigner.</li>
 </ul>
@@ -928,7 +921,7 @@ les pièces justificatives.</p> </section><section class="export-section astro-t
 <p>La seule posture qui permette de maintenir un pouvoir actif au-delà du tour où il a été lancé. Un personnage qui lance un pouvoir à maintien en posture offensive ou défensive peut le faire, mais devra passer en concentration au tour suivant s’il veut le conserver — la puissance divine prend le dessus, gratuitement et sans discussion.</p>
 <p>En posture de concentration, les pouvoirs maintenus ne causent aucun désavantage sur les autres actions. En revanche, l’âme étant entièrement tournée vers l’intérieur, le corps est laissé sans surveillance : les attaquants bénéficient d’un avantage pour toucher le personnage. C’est le compromis habituel entre puissance et survie.</p>
 <p>La <strong>Fragilité</strong> est la règle critique de cette posture : dès que le personnage subit une blessure — une seule, même légère — il retombe automatiquement en posture défensive et tous ses pouvoirs maintenus s’arrêtent. La douleur physique coupe le lien. Les anges de haut rang ont développé des techniques pour minimiser ce risque. Les autres apprennent vite.</p>
-<p>La <strong>Concentration Absolue</strong> est une manœuvre passive qui permet de maintenir deux pouvoirs simultanément — réservé aux âmes suffisamment disciplinées pour ne pas se perdre dans leurs propres flux divins. Certains pouvoirs disposent par ailleurs d’une option <strong>Multiciblage</strong>, uniquement activable en posture de concentration, y compris pour un pouvoir instantané : chaque cible supplémentaire compte comme un niveau de Boost supplémentaire sur le pouvoir, avec les dés de <a href="../energie#rang-des-pouvoirs-et-drain">drain</a> que cela implique.</p>
+<p>La <strong>Concentration Absolue</strong> est une manœuvre passive qui permet de maintenir deux pouvoirs simultanément — réservé aux âmes suffisamment disciplinées pour ne pas se perdre dans leurs propres flux divins. Certains pouvoirs disposent par ailleurs d’une option <strong>Multiciblage</strong>, uniquement activable en posture de concentration, y compris pour un pouvoir instantané : chaque cible supplémentaire augmente le rang effectif du pouvoir de 1 (mot-clé <a href="../mots-cles-pouvoirs">Multicible</a>), avec le <a href="../energie#rang-des-pouvoirs-et-drain">drain</a> que cela implique — les dégâts, eux, restent calculés sur le rang de lancement.</p>
 <hr>
 <h2 id="détermination-de-linitiative">Détermination de l’initiative</h2>
 <p>En général, le MJ décide de faire jouer les joueurs dans l’ordre de leurs préférence, puis les adversaires (c’est plus simple à gérer !) lorsqu’un ordre d’initiative est important, le MJ applique la règle suivante :</p>
@@ -1169,30 +1162,36 @@ les pièces justificatives.</p> </section><section class="export-section astro-t
 <h3 id="16-enseignement">16. Enseignement</h3>
 <p>Permet d’enseigner ses compétences primaires ou secondaires aux autres.</p>
 <p><strong>Spécialisations :</strong> Primaire, Secondaire, Maternelle, Universitaire, Grève, Remplacement.</p> </section><section class="export-section astro-tc7gsgdq"> <p>La puissance divine est partout. Elle imprègne chaque atome de création, circule dans les lignes invisibles qui relient le Paradis à la Terre, et se manifeste dès qu’une âme surnaturelle tend la main vers elle. Une telle créature n’a pas besoin de <em>stocker</em> cette énergie — elle est inépuisable, infinie, généreusement offerte par un Dieu qui a certes d’autres préoccupations mais n’a jamais coupé le robinet.</p>
-<p>Le problème n’est pas la quantité. Le problème est la taille tuyau.</p>
+<p>Le problème n’est pas la quantité. Le problème est la taille du tuyau.</p>
 <p>Chaque âme surnaturelle peut canaliser la puissance divine librement, pour ses usages courants — se déplacer, percevoir l’invisible, maintenir un pouvoir passif, ou simplement exister avec grâce. Ces actions ne coûtent rien. Là où les choses se compliquent, c’est lorsqu’elle décide de canaliser plus que ce que son âme peut raisonnablement soutenir.</p>
 <hr>
-<h2 id="points-dénergie">Points d’Énergie</h2>
-<p>Chaque âme dispose d’un nombre de Points d’Énergie (PE) égal à son <a href="../../personnage/rang">Rang Céleste</a>. Ces PE ne représentent pas une réserve à vider, mais un seuil de tolérance : ils absorbent les conséquences des excès de canalisation avant que l’hôte n’en paie le prix. Ils se rechargent intégralement au lever du soleil pour les anges, et à la tombée de la nuit pour les démons — moment qui, comme tout événement cosmique dans cet univers, peut souffrir d’un léger décalage si Dieu est occupé à créer autre chose.</p>
-<h3 id="persistance-entre-incarnations">Persistance entre incarnations</h3>
-<p>Les PE persistent d’une incarnation à l’autre. Un ange qui perd son hôte à court d’énergie repart dans le suivant dans le même état. L’âme se souvient de ses efforts, même si le corps est neuf.</p>
-<p>Le trait <strong>Conduit Divin</strong> (niveaux 1 à 3) représente une affinité développée avec le flux divin — certaines âmes anciennes ont simplement appris à gérer des débits que leurs pairs ne sauraient supporter. Chaque niveau ajoute 1 PE permanent au-dessus du Rang Céleste. Ce trait ne modifie pas le Rang lui-même ni l’accès aux pouvoirs : uniquement l’endurance spirituelle face au drain. Un ange de Rang 2 avec Conduit Divin 3 dispose de 5 PE — autant qu’un Archange, sur ce seul plan. Ce qui ne l’empêche pas de rester un ange de Rang 2 sur tout le reste, mais lui donne une endurance magique remarquable pour quelqu’un de son niveau.</p>
-<hr>
 <h2 id="rang-des-pouvoirs-et-drain">Rang des pouvoirs et Drain</h2>
-<p>Chaque pouvoir possède un rang, de 0 à 6. Les pouvoirs de Rang 0 sont des tours de passe-passe mineurs, accessibles à tout humain initié — ils ne génèrent aucun dé de drain et ne coûtent rien, même sans âme surnaturelle. Au-delà, le rang du pouvoir détermine directement le nombre de dés de drain lancés au moment du lancement : un pouvoir de Rang 3 génère 3 dés de drain, un pouvoir de Rang 5 en génère 5. Chaque 6 obtenu sur ces dés représente un affaiblissement d’âme.</p>
-<p>Une créature ne peut lancer que des pouvoirs dont le rang est inférieur ou égal à son Rang Céleste. Les dégâts d’un pouvoir offensif lancé au rang R sont :</p>
+<p>Chaque pouvoir possède un rang, de 0 à 6. Les pouvoirs de Rang 0 sont des tours de passe-passe mineurs, accessibles à tout humain initié — ils ne génèrent aucun drain et ne coûtent rien, même sans âme surnaturelle.</p>
+<p>Un pouvoir actif ne peut être acquis qu’à un rang de base inférieur ou égal au Rang Céleste de son propriétaire. Les pouvoirs passifs, eux, sont calés sur le Rang Céleste et évoluent avec lui — voir <a href="../pouvoirs#pouvoirs-actifs-et-pouvoirs-passifs">Pouvoirs</a>. Les dégâts d’un pouvoir offensif lancé au rang R sont :</p>
 <blockquote>
-<p><code dir="auto">(Code + max(Marge, Dé rouge)) × R</code></p>
+<p><code dir="auto">PUI + R + max(Marge, Dé rouge)</code></p>
 </blockquote>
-<p>Certains pouvoir proposent des options qui viennent augmenter le nombre de dés de drain :</p>
-<p>La <strong>Surcharge</strong> : le pouvoir est lancé à un rang supérieur à son rang naturel, jusqu’au plafond universel de 6. Les dés de drain correspondent alors au rang effectif de lancement. On ne peut pas faire l’inverse — un pouvoir de Rang 3 se lance avec 3 dés de drain au minimum. Si le pouvoir génère des dégâts, ils sont calculés en fonction du rang augmenté, et non du rang de base.</p>
-<p>Le <strong>Multi-ciblage</strong>, uniquement activable en <a href="../combat#postures-tactiques">posture de concentration</a>, ajoute 1 dé de drain par cible supplémentaire. Un pouvoir de Rang 2 appliqué à 2 cibles en plus de la première génère alors 4 dés de drain, mais la formule de dégâts prend toujours en compte le rang du sort lancé.</p>
-<p>L’<strong>Expansion</strong> enfin, est une option bien pratique : pour un dé de drain supplémentaire, il est possible de multiplier la portée, la durée ou tout autre limite technique du pouvoir par 2 pour chaque dé de drain généré par cette option. Ainsi, un pouvoir de boule de feu lancé avec l’option “Expansion 2” verra sa portée maximale multipliée par 4.</p>
-<p>Il est tout à fait possible de mixer plusieurs options sur un seul lancement de pouvoir mais il faut garder à l’esprit qu’un pouvoir ne peut pas générer plus de 6 dés de drain. De même un pouvoir de rang 6 générant déjà 6 dés de drain, il est impossible de lui appliquer des options. Mais ces pouvoirs divins sont largement assez puissants pour ne pas en avoir besoin.</p>
+<p>Le drain se calcule au moment du lancement, rang par rang. Tant que le rang de lancement reste dans les limites du Rang Céleste, chaque rang génère un <strong>dé de drain</strong> : un 6 inflige une <strong>blessure non-létale</strong> — de la fatigue magique, qui se soigne aussi vite qu’un coup de mou (1 case par minute). Chaque rang de lancement au-delà du Rang Céleste génère à la place un <strong>drain automatique</strong> : pas de dé, pas de chance, une <strong>blessure aggravée</strong> directe, non réduite par l’armure ni par la <a href="../blessures">Résilience</a>.</p>
+<p>La <strong>Surcharge</strong> permet de lancer un pouvoir actif à un rang supérieur à son rang de base, jusqu’au plafond universel de 6 — y compris au-delà de son propre Rang Céleste, pour les âmes qui considèrent la prudence comme une vertu strictement humaine. On ne peut pas faire l’inverse — un pouvoir de rang de base 3 se lance au rang 3 minimum. Si le pouvoir génère des dégâts, ils sont calculés sur le rang de lancement, surcharge comprise.</p>
+<p>Un pouvoir peut par ailleurs être modulé au lancement par des <strong>mots-clés</strong> — <a href="../mots-cles-pouvoirs">Multicible, Portée, Durée</a> et quelques autres. Chaque mot-clé a un coût, qui s’ajoute au rang de lancement pour donner le <strong>rang effectif</strong> du pouvoir, plafonné à 6. Le rang effectif ne sert qu’à une seule chose : déterminer le drain, selon la même règle que la Surcharge — des dés jusqu’au Rang Céleste, des drains automatiques au-delà. Les dégâts et la pénétration, eux, restent calculés sur le rang de lancement : multiplier les cibles n’a jamais rendu une boule de feu plus chaude.</p>
+<p>Il est tout à fait possible de combiner Surcharge et mots-clés sur un même lancement, mais le rang effectif ne peut jamais dépasser 6. Un pouvoir lancé au rang 6 n’a donc droit à aucun mot-clé. Mais ces pouvoirs divins sont largement assez puissants pour ne pas en avoir besoin.</p>
+<div class="admonition example">
+<p class="admonition-title">Exemple : Ange Rang 3, pouvoir Rang 2 surchargé à 4</p>
+<ul>
+<li>Drain : 3 dés (dans les limites du Rang Céleste) + 1 drain automatique (1 rang au-delà)</li>
+<li>Résultat supposé : un 6 sur les dés → 1 blessure non-létale</li>
+<li>Le drain automatique inflige quant à lui 1 blessure aggravée directe, sauf conversion par <a href="#conduit-divin">Conduit Divin</a></li>
+<li>Bilan : 1 blessure non-létale + 1 blessure aggravée, pour un pouvoir lancé bien au-delà de ce que ce Rang 3 devrait tenir</li>
+</ul>
+</div>
+<hr>
+<h2 id="conduit-divin">Conduit Divin</h2>
+<p>Certaines âmes anciennes ont appris à gérer des débits que leurs pairs ne sauraient supporter. Le trait <strong>Conduit Divin</strong> (niveaux 1 à 3) permet, <strong>une fois par combat et par niveau</strong>, de transformer un drain automatique en simple dé de drain — troquant une blessure aggravée garantie contre 1 chance sur 6 d’une blessure non-létale. Ce trait ne modifie pas le Rang Céleste lui-même ni l’accès aux pouvoirs : uniquement la capacité à absorber les excès de canalisation sans en payer immédiatement le prix.</p>
+<p>Un ange de Rang 2 avec Conduit Divin 3 peut ainsi encaisser jusqu’à 3 dépassements de rang par combat avant que la situation ne devienne vraiment risquée. Ce qui ne l’empêche pas de rester un ange de Rang 2 sur tout le reste, mais lui donne un sang-froid remarquable pour quelqu’un de son niveau.</p>
 <hr>
 <h2 id="présence-surnaturelle-pouvoir-intrinsèque">Présence Surnaturelle <em>(pouvoir intrinsèque)</em></h2>
 <p><em>Rang 1 — Actif —</em> <a href="../combat#d%C3%A9claration-des-actions"><em>action gratuite</em></a></p>
-<p>Toute âme incarnée peut, en une action gratuite déclarée avant le jet, soit prendre l’<a href="../resolution#avantage">avantage</a> sur ce jet, soit substituer un attribut d’âme à une caractéristique physique. Ces deux options représentent le même phénomène : laisser transparaître, l’espace d’un instant, la véritable nature de l’être qui habite ce corps. Cela génère 1 dé de drain — un seul 6 suffit à coûter 1 PE. Surcharge impossible.</p>
+<p>Toute âme incarnée peut, en une action gratuite déclarée avant le jet, soit prendre l’<a href="../resolution#avantage">avantage</a> sur ce jet, soit substituer un attribut d’âme à une caractéristique physique. Ces deux options représentent le même phénomène : laisser transparaître, l’espace d’un instant, la véritable nature de l’être qui habite ce corps. Cela génère 1 dé de drain — un seul 6 suffit à infliger une blessure non-létale. Surcharge impossible.</p>
 
 
 
@@ -1220,14 +1219,13 @@ les pièces justificatives.</p> </section><section class="export-section astro-t
 
 <table><thead><tr><th>Caractéristique physique</th><th>Attribut d’âme substituable</th></tr></thead><tbody><tr><td>FOR</td><td>PUI</td></tr><tr><td>AGI</td><td>INF</td></tr><tr><td>VIG</td><td>RES</td></tr><tr><td>PER</td><td>CLA</td></tr></tbody></table>
 <hr>
-<h2 id="le-seuil-de-tolérance">Le seuil de tolérance</h2>
-<p>Les X premiers affaiblissements d’âme de la journée (X = PE du personnage) sont absorbés sans conséquence. L’âme encaisse à la place de l’hôte. Au-delà de ce seuil, chaque affaiblissement supplémentaire inflige une blessure aggravée directe à l’hôte — non réduite par l’armure ni par la <a href="../blessures">Résilience</a>.</p>
+<h2 id="la-consommation">La Consommation</h2>
 <div class="admonition danger">
 <p class="admonition-title">La Consommation</p>
-<p>Lorsque les affaiblissements d’âme dépassent les PE disponibles, la puissance divine déborde ce que l’âme peut contenir et brûle littéralement l’enveloppe charnelle de l’intérieur. Ce n’est pas un dégât ordinaire : c’est la gloire divine qui consume ce qu’elle ne peut tenir.</p>
+<p>Un drain automatique n’est jamais une question de chance : c’est la puissance de l’âme, quelle que soit sa nature — divine, infernale, ou toute autre —, qui déborde ce qu’elle peut contenir et brûle littéralement l’enveloppe charnelle de l’intérieur. Rien ne l’arrête à part le <a href="#conduit-divin">Conduit Divin</a> : ni l’armure, ni la Résilience, ni la bonne volonté.</p>
 </div>
-<div class="expressive-code"><link rel="stylesheet" href="/ins-mv-rogue-srd/_astro/ec.tm3va.css"><script type="module" src="/ins-mv-rogue-srd/_astro/ec.8zarh.js"></script><figure class="frame not-content"><figcaption class="header"></figcaption><pre data-language="plaintext"><code><div class="ec-line"><div class="code"><span style="--0:#d6deeb;--1:#403f53">Un ange de Rang 3 peut encaisser trois affaiblissements gratuitement dans la journée. Le quatrième commence à consumer son hôte. Un Archange de Rang 5 peut lancer des pouvoirs de haut rang en rafale avant que quoi que ce soit ne morde vraiment. Et un ange de Rang 1 qui surcharge un pouvoir à 6 lance 6 dés de drain avec un seul PE de marge — c'est courageux, ou imprudent, selon le résultat.</span></div></div><div class="ec-line"><div class="code">
-</div></div><div class="ec-line"><div class="code"><span style="--0:#d6deeb;--1:#403f53">Si la Consommation tue l'hôte, l'ange se [réincarne](../../personnage/reincarnation) normalement — mais le compteur d'affaiblissements repart à zéro. Jusqu'au lever du soleil suivant cependant, cette ardoise vierge ne se recharge pas : un nouveau lancer de haut rang mordra immédiatement sur l'hôte suivant. Les anges qui abusent de cette mécanique finissent par consumer leurs hôtes en série, ce qui finit par attirer l'attention — des démons, des inquisiteurs, ou pire, de la hiérarchie.</span></div></div></code></pre><div class="copy"><button title="Copier dans le presse-papiers" data-copied="Copié !" data-code="Un ange de Rang 3 peut encaisser trois affaiblissements gratuitement dans la journée. Le quatrième commence à consumer son hôte. Un Archange de Rang 5 peut lancer des pouvoirs de haut rang en rafale avant que quoi que ce soit ne morde vraiment. Et un ange de Rang 1 qui surcharge un pouvoir à 6 lance 6 dés de drain avec un seul PE de marge — c&#x27;est courageux, ou imprudent, selon le résultat.Si la Consommation tue l&#x27;hôte, l&#x27;ange se [réincarne](../../personnage/reincarnation) normalement — mais le compteur d&#x27;affaiblissements repart à zéro. Jusqu&#x27;au lever du soleil suivant cependant, cette ardoise vierge ne se recharge pas : un nouveau lancer de haut rang mordra immédiatement sur l&#x27;hôte suivant. Les anges qui abusent de cette mécanique finissent par consumer leurs hôtes en série, ce qui finit par attirer l&#x27;attention — des démons, des inquisiteurs, ou pire, de la hiérarchie."><div></div></button></div></figure></div> </section><section class="export-section astro-tc7gsgdq"> <h2 id="principe-général">Principe Général</h2>
+<p>Un ange de Rang 1 qui surcharge un pouvoir au rang 6 lance 1 dé de drain et encaisse 5 drains automatiques d’un coup — cinq blessures aggravées avant même de savoir si le pouvoir a fait effet. Ce n’est plus de l’imprudence, c’est un plan de carrière de martyr. Un Archange de Rang 5, à l’inverse, peut surcharger largement avant de sentir quoi que ce soit mordre pour de vrai.</p>
+<p>Si la Consommation tue l’hôte, l’ange se <a href="../../personnage/reincarnation">réincarne</a> normalement. Les anges qui abusent de cette mécanique finissent par consumer leurs hôtes en série, ce qui finit par attirer l’attention — des démons, des inquisiteurs, ou pire, de la hiérarchie.</p> </section><section class="export-section astro-tc7gsgdq"> <h2 id="principe-général">Principe Général</h2>
 <p>Le <a href="../../personnage/rang">rang céleste</a> d’une créature détermine sa capacité à maîtriser des
 pouvoirs surnaturels. Plus une créature a un rang élevé, plus elle peut
 accéder à des pouvoirs puissants et les développer à un niveau avancé.</p>
@@ -1235,46 +1233,40 @@ accéder à des pouvoirs puissants et les développer à un niveau avancé.</p>
 <p>Chaque pouvoir possède un rang (0 à 6). Le rang détermine à la fois l’accès et le coût en <a href="../energie#rang-des-pouvoirs-et-drain">drain</a>.</p>
 <ul>
 <li><strong>Rang 0</strong> : gratuit, accessible aux humains initiés, 0 dé de drain.</li>
-<li><strong>Rang 1–6</strong> : dés de drain = rang effectif de lancement. Chaque 6 = 1 affaiblissement d’âme.</li>
-<li><strong>Accès</strong> : Rang Céleste ≥ rang du pouvoir. Pas de downgrade possible.</li>
-<li><strong>Surcharge</strong> : lancer un pouvoir à un rang supérieur à son rang naturel (jusqu’à 6). Les dés de drain et les dégâts correspondent au rang effectif.</li>
-<li><strong>Dégâts offensifs</strong> : <code dir="auto">(Code + max(Marge, Dé rouge)) × rang effectif</code></li>
+<li><strong>Rang 1–6</strong> : le rang effectif de lancement détermine le drain — 1 dé de drain par rang jusqu’au Rang Céleste (un 6 inflige 1 blessure non-létale), 1 drain automatique par rang au-delà (1 blessure aggravée directe, sauf conversion par <a href="../energie#conduit-divin">Conduit Divin</a>).</li>
+<li><strong>Accès</strong> : rang de base ≤ Rang Céleste pour les pouvoirs actifs ; les pouvoirs passifs sont calés sur le Rang Céleste. Pas de downgrade possible.</li>
+<li><strong>Surcharge</strong> : lancer un pouvoir actif à un rang supérieur à son rang de base, jusqu’à 6 — y compris au-delà du Rang Céleste. Les dégâts sont calculés sur le rang de lancement.</li>
+<li><strong>Mots-clés</strong> : rang effectif = rang de lancement + somme des coûts des <a href="../mots-cles-pouvoirs">mots-clés</a>, plafonné à 6. Ne compte que pour le drain.</li>
+<li><strong>Dégâts offensifs</strong> : <code dir="auto">PUI + rang de lancement + max(Marge, Dé rouge)</code></li>
 </ul>
 <div class="admonition example">
-<p class="admonition-title">Exemple : Ange Rang 3 (3 PE), pouvoir Rang 2 surchargé à 4</p>
+<p class="admonition-title">Exemple : Ange Rang 3, pouvoir Rang 2 surchargé à 4</p>
 <ul>
-<li>Dés de drain : 4 (rang effectif)</li>
-<li>Résultat supposé : deux 6 → 2 affaiblissements d’âme</li>
-<li>L’ange dispose de 3 PE → quota non dépassé → 0 blessure aggravée</li>
-<li>Il lui reste 1 PE de marge pour la journée</li>
+<li>Drain : 3 dés (jusqu’au Rang Céleste) + 1 drain automatique (1 rang au-delà du Rang 3)</li>
+<li>Résultat supposé : un 6 sur les dés → 1 blessure non-létale</li>
+<li>Le drain automatique inflige en plus 1 blessure aggravée directe, sauf conversion par Conduit Divin</li>
 </ul>
 </div>
-<p>Pour le détail complet du mécanisme (seuil de tolérance, Consommation, Présence Surnaturelle), voir le chapitre Énergie.</p>
+<p>Pour le détail complet du mécanisme (Consommation, Conduit Divin, Présence Surnaturelle), voir le chapitre Énergie.</p>
 <hr>
 <h2 id="règles-dacquisition-des-pouvoirs">Règles d’Acquisition des Pouvoirs</h2>
 <p><strong>Limitation par Rang Prérequis</strong></p>
 <p>Une créature ne peut acquérir un pouvoir que si son rang céleste est
 <strong>supérieur ou égal</strong> au rang prérequis du pouvoir.</p>
-<p>*Exemple : Un ange de rang 3 peut acquérir des pouvoirs ayant pour
+<p><em>Exemple : Un ange de rang 3 peut acquérir des pouvoirs ayant pour
 prérequis les rangs 1, 2 ou 3, mais pas ceux nécessitant un rang 4 ou
-plus.*</p>
-<h2 id="limitation-des-niveaux-de-pouvoir">Limitation des Niveaux de Pouvoir</h2>
-<p>Pour les pouvoirs possédant plusieurs niveaux (notés X), le niveau
-maximum qu’une créature peut atteindre est limité par son Rang Céleste.
-Quel que soit le niveau prérequis d’un pouvoir, il ne pourra être
-augmenté au-delà du Rang Céleste du personnage.</p>
+plus.</em></p>
+<h2 id="pouvoirs-actifs-et-pouvoirs-passifs">Pouvoirs actifs et pouvoirs passifs</h2>
+<p>Au-delà du prérequis d’accès, tout dépend de la nature du pouvoir.</p>
+<p>Un <strong>pouvoir actif</strong> se lance : jet, <a href="../energie#rang-des-pouvoirs-et-drain">drain</a>, éventuelle <a href="../energie#rang-des-pouvoirs-et-drain">Surcharge</a>. Son rang de base, choisi à l’acquisition et améliorable par la <a href="../../personnage/progression">progression</a>, ne peut jamais dépasser le Rang Céleste de son propriétaire. En revanche, rien n’interdit de le lancer plus fort qu’il n’a été appris : la Surcharge permet de monter jusqu’au rang 6, le drain se chargeant de rappeler à chacun où se situent ses limites réelles.</p>
+<p>Un <strong>pouvoir passif</strong> ne se lance pas : il est toujours actif, ne génère aucun drain, et son rang est calé sur le Rang Céleste de son propriétaire — ni plus, ni moins. Il évolue automatiquement avec lui. Un ange de Rang 3 a <em>Résilience 3</em> ; s’il devient Archange, sa Résilience passe à 4 sans rien dépenser. C’est un des rares avantages de la promotion interne.</p>
+<p><em>Exemples :</em></p>
 <ul>
-<li><strong>Exemple 1 :</strong> Un pouvoir avec un prérequis de Rang 1 (comme
-<a href="../blessures"><em>Résilience</em></a>) peut être amélioré deux fois par un Ange de Rang 3,
-atteignant <em>Résilience 3</em>.</li>
-<li><strong>Exemple 2 :</strong> Un pouvoir avec un prérequis de Rang 2 (comme *Feu
-Ardent*) peut être amélioré une seule fois par un Ange de Rang 3,
-atteignant <em>Feu Ardent 2</em>.</li>
-<li><strong>Exemple 3 :</strong> Un pouvoir avec un prérequis de Rang 3 (comme
-<em>Châtiment</em>) ne peut pas être amélioré au-delà du Rang 3 par un
-Ange de Rang 3.</li>
+<li><em>Résilience</em> (passif, prérequis Rang 1) : calée sur le Rang Céleste. Ange Rang 3 → Résilience 3 ; Archange Rang 4 → Résilience 4 ; humain Rang 1 → Résilience 1, sans effet pratique.</li>
+<li><em>Feu Ardent</em> (actif, prérequis Rang 2) : un ange de Rang 3 peut l’acquérir au rang de base 2 ou 3, et le surcharger jusqu’au rang 6 au lancement.</li>
+<li><em>Rapidité Céleste</em> (passif, prérequis Rang 3) : inaccessible en dessous du Rang 3 ; calée sur le Rang Céleste au-delà.</li>
 </ul>
-<h2 id="règles-de-spécifiques-aux-pouvoirs"><strong>Règles de spécifiques aux Pouvoirs</strong></h2>
+<h2 id="règles-spécifiques-aux-pouvoirs"><strong>Règles spécifiques aux Pouvoirs</strong></h2>
 <p><strong>Légende des Types</strong></p>
 <ul>
 <li><strong>Instantané :</strong> Effet immédiat, pas de durée</li>
@@ -1287,7 +1279,6 @@ perturbé</li>
 </ul>
 <p><strong>Mécaniques</strong></p>
 <ul>
-<li><strong>PE :</strong> <a href="../energie">Points d’Énergie</a></li>
 <li><strong>Intensité :</strong> Résultat du <a href="../resolution">dé rouge</a> + <a href="../resolution#3-marge-de-r%C3%A9ussite">marge de réussite</a></li>
 <li><strong>Dé explosif :</strong> Le <a href="../resolution">dé d’intensité</a> explose sur un 6 (relance et
 additionne)</li>
@@ -1314,55 +1305,14 @@ plus d’un pouvoir à la fois,</li>
 fois lancés,</li>
 <li>Les effets <strong>permanents</strong> persistent jusqu’à dissipation active ou
 condition spéciale,</li>
-<li><strong>Prolonger un pouvoir :</strong> Nouveau jet de pouvoir + dépense complète
-des PE au tour 4, 7, 10, etc.</li>
+<li><strong>Prolonger un pouvoir :</strong> Nouveau jet de pouvoir + nouveau drain
+complet au rang de lancement initial, au tour 4, 7, 10, etc.</li>
 <li><strong>Arrêter un pouvoir de concentration :</strong> Action gratuite, effet immédiat.</li>
 </ul>
-<h2 id="exemples-pratiques"><strong>Exemples Pratiques</strong></h2>
-<p><strong>Résilience X</strong></p>
-<ul>
-<li><strong>Prérequis :</strong> Rang 1</li>
-<li><strong>Type :</strong> Passif, Permanent</li>
-<li><strong>Effet :</strong> Divise tous les dégâts subis par X</li>
-<li><strong>Pouvoir automatique</strong> pour tous les anges et démons incarnés.</li>
-</ul>
-<p><strong>Calculs :</strong></p>
-<ul>
-<li>Ange Rang 3 : Niveau maximum = 3 - 1 + 1 = <strong>3</strong> → Résilience 3</li>
-<li>Archange Rang 4 : Niveau maximum = 4 - 1 + 1 = <strong>4</strong> → Résilience 4</li>
-<li>Humain Rang 1 : Niveau maximum = 1 - 1 + 1 = <strong>1</strong> → Résilience 1
-(sans effet pratique)</li>
-</ul>
-<p><strong>Feu Ardent X</strong></p>
-<ul>
-<li><strong>Prérequis :</strong> Rang 2</li>
-<li><strong>Type :</strong> Actif, Durée 3 tours</li>
-<li><strong>Effet :</strong> Génère une aura de feu qui consume les adversaires
-proches</li>
-</ul>
-<p><strong>Calculs :</strong></p>
-<ul>
-<li>Ange Rang 3 : Niveau maximum = 3 - 2 + 1 = <strong>2</strong> → Feu Ardent 2</li>
-<li>Démon Rang 3 : Feu Ardent 3 impossible (3 + 2 - 1 = 4 > 3)</li>
-<li>Archange Rang 4 : Niveau maximum = 4 - 2 + 1 = <strong>3</strong> → Feu Ardent 3</li>
-</ul>
-<p><strong>Rapidité Céleste X</strong></p>
-<ul>
-<li><strong>Prérequis :</strong> Rang 3</li>
-<li><strong>Type :</strong> Passif</li>
-<li><strong>Effet :</strong> Bonus d’<a href="../combat#initiative">initiative</a> et d’actions</li>
-</ul>
-<p><strong>Calculs :</strong></p>
-<ul>
-<li>Ange Rang 3 : Niveau maximum = 3 - 3 + 1 = <strong>1</strong> → Rapidité Céleste
-1</li>
-<li>Archange Rang 4 : Niveau maximum = 4 - 3 + 1 = <strong>2</strong> → Rapidité
-Céleste 2</li>
-<li>Ange Rang 2 : Pouvoir inaccessible (rang insuffisant)</li>
-</ul>
-<p>*Note : Les armes sacrées, magiques ou maudites conservent leurs effets
+<h2 id="note-sur-les-armes">Note sur les armes</h2>
+<p><em>Les armes sacrées, magiques ou maudites conservent leurs effets
 spéciaux pour pénétrer ou contourner certaines défenses, indépendamment
-du niveau de Résilience.*</p> </section><section class="export-section astro-tc7gsgdq"> <p>Terminologie : INFLIGER vs SUBIR</p>
+du niveau de Résilience.</em></p> </section><section class="export-section astro-tc7gsgdq"> <p>Terminologie : INFLIGER vs SUBIR</p>
 <p>Pour éviter toute confusion, le jeu utilise une terminologie stricte :</p>
 <p>On INFLIGE des dégâts (actif, offensif)</p>
 <ul>
@@ -1431,7 +1381,11 @@ leur gravité détermine le type de marque utilisée.</p>
 <p><strong>Blessures Non Létales (/)</strong></p>
 <p><strong>Marquage :</strong> Simple trait diagonal</p>
 <p><strong>Causes :</strong> Fatigue extrême, coups assommants, douleur intense,
-épuisement magique léger</p>
+drain magique dans les limites du <a href="../../personnage/rang">Rang Céleste</a> (un 6 sur un dé de <a href="../energie#rang-des-pouvoirs-et-drain">drain</a>)</p>
+<div class="admonition note">
+<p class="admonition-title">Immunités à la fatigue</p>
+<p>Certaines âmes sont immunisées aux blessures non-létales d’origine physique ordinaire (fatigue, essoufflement, coups assommants) — l’immunité, si elle existe, dépend du type d’âme incarnée et est précisée dans sa description. Le drain magique, lui, reste toujours efficace : ce n’est pas de la fatigue du corps, mais l’usure du canal entre l’âme et son hôte.</p>
+</div>
 <p><strong>Restriction :</strong> Ne peut être cochée que dans une case vide</p>
 <p><strong>Guérison :</strong> 1 minute par coche (soit 10-15 minutes au total pour se
 remettre)</p>
@@ -1447,7 +1401,7 @@ céleste)</p>
 <p><strong>Marquage :</strong> Croix entourée</p>
 <p><strong>Causes :</strong></p>
 <ul>
-<li>Utilisation de pouvoirs surnaturels coûtant plus de 1 PE</li>
+<li>Drain automatique généré par un rang de lancement au-delà du <a href="../../personnage/rang">Rang Céleste</a> (voir <a href="../energie">Énergie</a>)</li>
 <li>Attaques de créatures particulièrement dangereuses (vampires, démons
 majeurs)</li>
 <li>Armes maudites ou sacrées</li>
@@ -1521,7 +1475,7 @@ préalable.</p>
 <ol>
 <li>Une attaque inflige 9 dégâts non létaux → après Résilience (9/3=3), Mirael <strong>subit</strong> 3 blessures non létales → coche (/) (/) (/) dans les cases 1-3.</li>
 <li>Une attaque inflige 6 dégâts létaux → après Résilience (6/3=2), Mirael <strong>subit</strong> 2 blessures létales → les cases 1-2 s’upgradent en (X) (X), la case 3 reste (/).</li>
-<li>Mirael lance un pouvoir qui dépasse son seuil de tolérance → <strong>subit</strong> directement 1 blessure aggravée (sans réduction), la case 1 devient (⭙).</li>
+<li>Mirael surcharge un pouvoir au-delà de son Rang Céleste → drain automatique → <strong>subit</strong> directement 1 blessure aggravée (sans réduction), la case 1 devient (⭙).</li>
 <li>État intermédiaire : (⭙) (X) (/) + 7 cases vides.</li>
 <li>Une balle inflige 9 dégâts létaux → après Résilience (9/3=3), Mirael <strong>subit</strong> 3 blessures létales → les cases 3 (qui upgrade depuis /), 4 et 5 deviennent (X).</li>
 <li>État final : (⭙) (X) (X) (X) (X) + 5 cases vides.</li>
@@ -1673,8 +1627,7 @@ certaines formes de dommages ou états. Voir la section “états”.</p>
 <p>une créature vivante récupère les points de vie au rythme de (rang) /
 semaine (voir chapitre sur le rang céleste).
 En plus de cette récupération naturelle, une créature surnaturelle
-récupère des points de vie au rythme de (rang)/jour (au même moment que
-l’énergie, voir la section “<a href="../energie">restauration de l’énergie</a>”).
+récupère des points de vie au rythme de (rang)/jour.
 Note : Certaines créatures maudites comme les vampires ne restaurent pas
 leur points de vie automatiquement, ils sont obligés de les prendre à
 leur victime (et disposent d’une capacité spéciale pour cela). ces
@@ -1689,12 +1642,12 @@ créatures disposent du trait “Maudit”.</p> </section><section class="export
 <li><strong>Vétéran des anciennes éditions</strong> : Votre âme a participé à des événements d’ampleur cosmique AVANT le grand reset. Elle n’en garde aucun souvenir mais bénéficie d’une <a href="../../personnage/reincarnation">réincarnation</a> bonus. Parce que.</li>
 <li><strong>Protégée</strong> : Commence chaque mission avec un jeton “Touché par la Grâce” / “Marque du Diable”</li>
 <li><strong>Adaptable</strong> : Réduit les malus de réincarnation d’urgence (moins de choc lors des changements d’hôte)</li>
-<li><strong>Inspirante</strong> : Peut donner un <a href="../../mecanique/resolution#avantage">avantage</a> à un allié 1 fois par tour (coût : 1 PE)</li>
+<li><strong>Inspirante</strong> : Peut donner un <a href="../../mecanique/resolution#avantage">avantage</a> à un allié 1 fois par tour (génère 1 dé de <a href="../../mecanique/energie#rang-des-pouvoirs-et-drain">drain</a>)</li>
 <li><strong>Intuitive</strong> : Avantage pour détecter le danger, les adversaires ont un <a href="../../mecanique/resolution#d%C3%A9savantage">désavantage</a> pour la surprendre</li>
 <li><strong>Résiliente</strong> : Premier échec critique par session devient un échec normal</li>
 <li><strong>Focalisée</strong> : Peut relancer 1 <a href="../../mecanique/resolution">dé d’intensité</a> par session, le dé relancé est explosif</li>
 <li><strong>Fanatique</strong> : +1 intensité finale (après tous calculs) pour toute action en rapport avec le mot-clé choisi (validé par le MJ)</li>
-<li><strong>Conduit Divin X</strong> (X = 1, 2 ou 3) : Affinité développée avec le flux de la puissance divine. +X PE permanents au-dessus du <a href="../../personnage/rang">Rang céleste</a>. Définition complète : voir Énergie.</li>
+<li><strong>Conduit Divin X</strong> (X = 1, 2 ou 3) : Affinité développée avec le flux de la puissance divine. Une fois par combat et par niveau, transforme un drain automatique en simple dé de drain. Définition complète : voir <a href="../../mecanique/energie#conduit-divin">Énergie</a>.</li>
 </ul>
 <p><strong>Exemples d’avantages/désavantages contextuels</strong></p>
 <ul>
@@ -1706,7 +1659,7 @@ créatures disposent du trait “Maudit”.</p> </section><section class="export
 <ul>
 <li><strong>Soldat de Dieu</strong> : Impossible à posséder par le camp d’en face</li>
 <li><strong>Innocent</strong> : Avantage à toutes les actions impliquant ce qui les intéresse, désavantage pour les corvées (ranger, nettoyer, etc.)</li>
-<li><strong>Médium</strong> : Dispose de 5 PE (récupérés à midi) et accès à une liste restreinte de pouvoirs mineurs (Détection du surnaturel, Dialogue éthéré avec les âmes en attente de jugement, Guérison mineure, etc.)</li>
+<li><strong>Médium</strong> : Accès à une liste restreinte de pouvoirs mineurs de Rang 0-1 (Détection du surnaturel, Dialogue éthéré avec les âmes en attente de jugement, Guérison mineure, etc.), soumis aux mêmes règles de <a href="../../mecanique/energie#rang-des-pouvoirs-et-drain">drain</a> que toute âme de Rang Céleste 1.</li>
 <li><strong>Athée</strong> : Résiste aux effets spirituels (avantage), mais désavantage aux jets de pouvoir de l’âme incarnée</li>
 <li><strong>Malédiction</strong> : Ne peut récupérer de PV que par absorption (morsure/consommation de victimes)</li>
 <li><strong>Drogué</strong> : Désavantage permanent aux jets physiques jusqu’à désintoxication</li>
@@ -1716,7 +1669,6 @@ créatures disposent du trait “Maudit”.</p> </section><section class="export
 <p class="admonition-title">Note</p>
 <ul>
 <li>L’athéisme ne peut affecter que les hôtes humains. Une âme angélique/démoniaque incarnée sait que Dieu existe.</li>
-<li>Les humains non-alignés récupèrent leurs PE à midi.</li>
 <li>Le Dialogue éthéré permet de communiquer avec les âmes coincées dans les Limbes en attente de jugement.</li>
 </ul>
 </div>
@@ -2200,12 +2152,12 @@ créatures disposent du trait “Maudit”.</p> </section><section class="export
 <p><strong>Effets :</strong></p>
 <ul>
 <li>+1 à tous les attributs surnaturels</li>
-<li>Double coût en PE pour tous les pouvoirs</li>
+<li>Le drain de tous les pouvoirs lancés est doublé (dés et drains automatiques comptés deux fois)</li>
 <li>Subit 1 dégât par tour (non réductible par le rang céleste)</li>
 <li>Le corps de l’hôte montre des signes de stress (veines qui brillent, yeux lumineux)</li>
 <li>Désavantage sur tous les jets de discrétion sociale</li>
 </ul>
-<p><strong>Fin :</strong> Après 1 heure ou dépense de toute l’énergie surnaturelle accumulée.</p>
+<p><strong>Fin :</strong> Après 1 heure, ou au premier drain automatique subi (la surcharge se libère d’un coup).</p>
 <hr>
 <h3 id="révélé">Révélé</h3>
 <p><strong>Description :</strong> La vraie nature surnaturelle est visible par tous.</p>
@@ -2225,7 +2177,7 @@ créatures disposent du trait “Maudit”.</p> </section><section class="export
 <li>Deux âmes cohabitent dans le même corps (ange/démon + humain)</li>
 <li>Les résultats de 5 et 6 sur le dé d’action sont considérés comme des échecs automatiques (résistance de l’âme humaine)</li>
 <li>Désavantage sur tous les jets tant que le conflit persiste</li>
-<li>1 affaiblissement d’âme par tour dû au stress spirituel (compte dans le quota journalier de PE)</li>
+<li>1 drain automatique par tour dû au stress spirituel, indépendamment de tout pouvoir lancé</li>
 <li>L’âme humaine conserve ses souvenirs et sa personnalité</li>
 </ul>
 <p><strong>Fin :</strong> L’ange/démon doit forcer le départ de l’âme humaine (jet de PUI vs VOL humaine) ou abandonner cet hôte.</p>
@@ -2240,7 +2192,7 @@ créatures disposent du trait “Maudit”.</p> </section><section class="export
 <li><strong>Volant</strong> : Ailes d’ange/démon visibles et fonctionnelles, capacité de vol</li>
 <li>L’hôte humain subit 2 dégâts par tour (non réductibles par rang céleste)</li>
 <li>Aura surnaturelle visible : impossible de se faire passer pour humain</li>
-<li>Coût d’activation : 5 PE, puis 2 PE par tour pour maintenir</li>
+<li>Coût d’activation : drain équivalent à un lancement de rang 5, puis drain de rang 2 par tour pour maintenir</li>
 </ul>
 <p><strong>Fin :</strong> Quand l’ange/démon cesse de maintenir l’état ou quand l’hôte tombe à 0 PV.</p>
 <hr>
@@ -2386,7 +2338,7 @@ créatures disposent du trait “Maudit”.</p> </section><section class="export
 <p><strong>Effets :</strong></p>
 <ul>
 <li><strong>Électronique</strong> : Dysfonctionnement sur un résultat de 1–2 au dé d’intensité, écrans qui clignotent</li>
-<li><strong>Objets magiques</strong> : Effets imprévisibles sur un résultat de 1 au dé d’intensité, coût en PE doublé</li>
+<li><strong>Objets magiques</strong> : Effets imprévisibles sur un résultat de 1 au dé d’intensité, drain doublé pour l’utilisateur</li>
 <li>Risque d’explosion (dégâts de zone si échec critique)</li>
 <li>Perte progressive de PV (1 par heure)</li>
 </ul>
