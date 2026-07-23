@@ -62,33 +62,23 @@ Sur terre, l'univers est régi par les paramètres suivants :
 - Dieu préfère se plaindre du surcroît de travail mais réécrire le futur est une mécanique autonome de l'univers "terre", qu'il a inclus le 4e jour. Ça se fait tout seul. C'est justement fait pour "tester" les effets du libre arbitre : si on change un truc, il se passe quoi ? Mais comme c'est SON jouet, il préfère être le seul à l'utiliser et donc n'aime pas que les archanges ou les princes se mettent à changer le passé et donc le futur. En plus, il doit se retaper des siècles de film pour bien comprendre la nouvelle intrigue.
 - Comme toutes les Créations de Dieu, il y a des failles et ce ne serait pas impossible que des humains puissent voyager dans le temps sans que leur âme soit touchée. Le taux d'échec est proche de 1/10<sup>334</sup> mais ça peut arriver.
 
-### Les Langoliers : les éboueurs du temps
+### Les éboueurs du temps
 
-Face aux complications temporelles créées par les voyages dans le passé, Dieu a mis en place un système de maintenance automatique particulièrement efficace : les Langoliers. Ces créatures fascinantes, à mi-chemin entre la mécanique horlogère divine et l'appétit dévorant, ont pour unique mission de dévorer les branches caduques du temps.
+Face aux complications temporelles créées par les voyages dans le passé, Dieu a mis en place un système de maintenance automatique particulièrement efficace, en mettant à profit l'appétit insatiable de créatures antédiluviennes, avec pour unique mission de dévorer les branches caduques du temps.
 
-Lorsqu'une modification du passé se produit, elle ne fait pas disparaître instantanément l'ancienne timeline. Au lieu de cela, l'univers se retrouve temporairement avec deux versions de la réalité : la nouvelle, vivante et active, et l'ancienne, devenue obsolète mais qui continue d'exister comme une branche morte sur l'arbre du temps. C'est là qu'interviennent les Langoliers.
+Lorsqu'une modification du passé se produit, elle ne fait pas disparaître instantanément l'ancienne timeline. Au lieu de cela, l'univers se retrouve temporairement avec deux versions de la réalité : la nouvelle, vivante et active, et l'ancienne, devenue obsolète mais qui continue d'exister comme une branche morte sur l'arbre du temps. 
 
-Ces créatures ressemblent à d'immenses sphères organiques hérissées de milliers de dents acérées disposées en rangées concentriques, leur gueule béante s'ouvrant et se refermant constamment dans un mouvement hypnotique. Invisibles, intangibles et parfaitement silencieuses pour les humains ordinaires, elles évoluent dans une dimension légèrement décalée de notre réalité. Seules les créatures surnaturelles disposant de pouvoirs de perception appropriés peuvent les détecter, ainsi que certains médiums particulièrement sensibles aux phénomènes interdimensionnels.
+C'est là qu'interviennent ces créatures, ressemblant à d'immenses sphères organiques hérissées de milliers de dents acérées disposées en rangées concentriques, leur gueule béante s'ouvrant et se refermant constamment dans un mouvement hypnotique. Invisibles, intangibles et parfaitement silencieuses pour les humains ordinaires, elles évoluent en marge du temps, dans une dimension légèrement décalée de notre réalité. Seules les créatures surnaturelles disposant de pouvoirs de perception appropriés peuvent les détecter, ainsi que certains médiums particulièrement sensibles aux phénomènes inter dimensionnels.
 
-La probabilité qu'un médium utilise son don au moment précis où un Langolier passe faire le ménage dans une timeline est hautement improbable, puisque les voyages temporels demeurent normalement la chasse gardée de Dieu Lui-même. Néanmoins, cela s'est déjà produit, entraînant l'internement du pauvre hère dans un asile psychiatrique. Ce témoin maudit aurait cependant raconté ses visions terrifiantes d'entités mécaniques dévorant la réalité à un certain écrivain du nom de H.P. Lovecraft...
+La probabilité qu'un médium utilise son don au moment précis où une de ces créatures passe faire le ménage dans une timeline est hautement improbable, puisque les voyages temporels demeurent normalement la chasse gardée de Dieu Lui-même. Néanmoins, cela s'est déjà produit, entraînant l'internement du pauvre hère dans un asile psychiatrique. Ce témoin maudit aurait cependant raconté ses visions terrifiantes d'entités dévorant la réalité à un certain écrivain du nom de H.P. Lovecraft. Il semblerait également que Stephen King les ai aperçus dans ses cauchemars puisqu'elles sont évoquées dans sa nouvelle "Les Langoliers"...
 
-Elles "sentent" les incohérences temporelles et se dirigent instinctivement vers les zones où l'histoire a été réécrite. Leur tâche consiste à "manger" littéralement tout ce qui appartient à l'ancienne timeline : objets, lieux, événements, et même les traces mémorielles de ce qui n'existe plus.
+Ces créatures sans réelle conscience "sentent" les incohérences temporelles et se dirigent instinctivement vers les zones où l'histoire a été réécrite. Leur tâche consiste à "manger" littéralement tout ce qui appartient à l'ancienne timeline : objets, lieux, événements, et même les traces mémorielles de ce qui n'existe plus.
 
-### Le processus de nettoyage temporel
-
-Quand les Langoliers arrivent dans une zone de paradoxe temporel, ils procèdent méthodiquement :
-
-1. **Identification** : Ils détectent automatiquement tout ce qui appartient à la branche temporelle obsolète.
-2. **Dévoration** : Ils consument ces éléments, les faisant disparaître définitivement de l'existence.
-3. **Stabilisation** : Une fois le nettoyage terminé, il ne reste que la nouvelle timeline, désormais unique et stable.
-
-Ce système explique pourquoi les voyages dans le temps ne créent pas d'accumulation infinie de paradoxes. Les Langoliers agissent comme un système immunitaire temporel, empêchant l'univers de s'encombrer de versions contradictoires de la réalité.
+Ce grand nettoyage cosmique explique pourquoi les voyages dans le temps ne créent pas d'accumulation infinie de paradoxes, empêchant l'univers de s'encombrer de versions contradictoires de la réalité.
 
 ### Précautions et dangers
 
-Bien que les Langoliers soient théoriquement programmés pour ne s'attaquer qu'aux éléments de timelines caduques, ils restent des créatures dangereuses. Leur méthode de "nettoyage" ne fait aucune distinction entre les objets et les êtres vivants qui se trouveraient dans une zone temporellement incorrecte. C'est pourquoi l'administration céleste avait songé à les utiliser pour régler le problème d'engorgement des Limbes - solution que Dieu jugea, à juste titre, trop radicale.
-
-Dans l'univers d'INS-MV Rogue, croiser des Langoliers est un événement rare mais mémorable, généralement signe qu'une manipulation temporelle majeure a eu lieu dans les environs et que l'univers procède à sa maintenance.
+Bien que les créatures ne mangent théoriquement que les temporalités caduques, elles restent des créatures potentiellement dangereuses. Leur appétit insatiable ne fait aucune distinction entre les objets et les êtres vivants qui se trouveraient dans une zone temporellement incorrecte. Être dévoré par un Langolier signifie être rayé de la trame même de l'éxistence. L'avantage c'est qu'on n'a aucun souvenir de quelqu'un ayant subi ce funeste sort, puisqu'il n'aurait alors jamais existé.
 
 ***
 
