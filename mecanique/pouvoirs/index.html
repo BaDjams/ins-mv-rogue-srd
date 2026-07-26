@@ -81,18 +81,16 @@
 <h2 id="rang-des-pouvoirs-et-drain">Rang des pouvoirs et Drain</h2>
 <p>Chaque pouvoir possède un rang (1 à 6). Le rang détermine à la fois l’accès et le coût en <a href="../energie#rang-des-pouvoirs-et-drain">drain</a>.</p>
 <ul>
-<li>le rang effectif de lancement détermine le drain — 1 dé de drain par rang jusqu’au Rang Céleste (un 6 inflige 1 blessure non-létale), 1 drain automatique par rang au-delà (1 blessure aggravée directe, sauf conversion par <a href="../energie#conduit-divin">Conduit Divin</a>).</li>
 <li><strong>Accès</strong> : rang de base ≤ Rang Céleste pour les pouvoirs actifs ; les pouvoirs passifs sont calés sur le Rang Céleste. Pas de downgrade possible.</li>
-<li><strong>Surcharge</strong> : lancer un pouvoir actif à un rang supérieur à son rang de base, jusqu’à 6 — y compris au-delà du Rang Céleste. Les dégâts sont calculés sur le rang de lancement.</li>
-<li><strong>Mots-clés</strong> : rang effectif = rang de lancement + rangs de surcharge, plafonné à 6. Compte pour le drain et les dégâts.</li>
-<li><strong>Dégâts offensifs</strong> : <code dir="auto">PUI + rang effectif + max(Marge, Dé rouge)</code></li>
+<li><strong>Surcharge</strong> : lancer un pouvoir actif à un rang supérieur à son rang de base, jusqu’à 6 — y compris au-delà du Rang Céleste. Chaque surcharge ajoute un ou plusieur rang au pouvoir. La somme du rang de base du pouvoir et des rangs de surcharge, appelée rang effectif, ne peut pas excéder 6.</li>
+<li>le rang effectif de lancement détermine le drain : 1 dé de drain par rang jusqu’au Rang Céleste (un 6 inflige 1 blessure non-létale), 1 drain automatique par rang au-delà (1 blessure aggravée directe, sauf conversion par <a href="../energie#conduit-divin">Conduit Divin</a>).</li>
 </ul>
 <div class="admonition example">
-<p class="admonition-title">Exemple : Ange Rang 3, pouvoir Rang 2 surchargé à 4</p>
+<p class="admonition-title">Exemple : un Ange (donc RC 3) lance un pouvoir de Rang 2, surchargé à 4</p>
 <ul>
 <li>Drain : 3 dés (jusqu’au Rang Céleste) + 1 drain automatique (1 rang au-delà du Rang 3)</li>
-<li>Résultat supposé : un 6 sur les dés → 1 blessure non-létale</li>
-<li>Le drain automatique inflige en plus 1 blessure aggravée directe, sauf conversion par Conduit Divin</li>
+<li>On lance les dés de drain, chaque 6 declenche fait subir une blessure non letale au lanceur de sort.</li>
+<li>Le drain automatique inflige en plus 1 blessure aggravée directe.</li>
 </ul>
 </div>
 <p>Pour le détail complet du mécanisme (Consommation, Conduit Divin, Présence Surnaturelle), voir le chapitre Énergie.</p>
