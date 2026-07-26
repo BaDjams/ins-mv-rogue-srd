@@ -7,7 +7,33 @@ sidebar:
 
 ## Principe Général
 
-Le [rang céleste](../../personnage/rang) d'une créature détermine sa capacité à maîtriser despouvoirs surnaturels. Plus une créature a un rang élevé, plus elle peut accéder à des pouvoirs puissants et les développer à un niveau avancé.
+Le [rang céleste](../../personnage/rang) d'une créature détermine sa capacité à maîtriser des pouvoirs surnaturels. Plus une créature a un rang élevé, plus elle peut accéder à des pouvoirs puissants et les développer à un niveau avancé.
+
+**Prérequis :** 
+
+Une créature ne peut acquérir un pouvoir que si son rang céleste (RC) est
+**supérieur ou égal** au rang prérequis du pouvoir.
+
+_Exemple : Un ange de rang 3 peut acquérir des pouvoirs ayant pour
+prérequis les rangs 1, 2 ou 3, mais pas ceux nécessitant un rang 4 ou
+plus._
+Certains pouvoirs précisent également d'autres prérequis, comme "Ange", "Démon" ou "Magie du sang", qui limitent leur obtention à certains types de créatures uniquement.
+
+***
+
+## Pouvoirs actifs et pouvoirs passifs
+
+Au-delà du prérequis d'accès, tout dépend de la nature du pouvoir.
+
+Un **pouvoir passif** ne se lance pas : il est toujours actif et ne génère aucun drain. Il est impossible de surcharger un pouvoir passif. Les pouvoirs passifs ont des rangs que le personnage peut acheter afin de les renforcer. Il est impossible de posséder un pouvoir passif d'un rang supérieur à son rang céleste.
+
+Un **pouvoir actif** se lance : il faut faire un jet de lancement, et ce pouvoir génèrera du [drain](../energie#rang-des-pouvoirs-et-drain), avec une éventuelle [Surcharge](../energie#rang-des-pouvoirs-et-drain). Chaque pouvoir actif dispose d'un rang de base. Il est impossible de posséder un pouvoir actif avec un rang de base supérieur à son rang céleste. En revanche, rien n'interdit de le lancer plus fort qu'il n'a été appris : la Surcharge permet de monter jusqu'au rang 6, le drain se chargeant de rappeler à chacun où se situent ses limites réelles.
+
+_Exemples :_
+
+- _Résilience_ (passif, prérequis : RC 2) : Un ange de rang céleste 3 peut posséder résilience rang 2 puis l'améliorer par l'apprentissage jusqu'à rang 3 mais ne pourra jamais le faire évoluer au delà, car le rang de résilience serait alors supérieur à son rang céleste.
+- _Feu Ardent_ (actif, prérequis : RC 2) : une lyche de Rang 2 peut l'acquérir et le surcharger jusqu'au rang effectif 6. mais elle subira alors un drain énorme! (voir ci-dessous)
+- _Aura divin_ (passif, prérequis : RC 4, Ange) : inaccessible en dessous du Rang 4 ; seuls les Archanges
 
 ## Rang des pouvoirs et Drain
 
@@ -28,33 +54,6 @@ Chaque pouvoir possède un rang (1 à 6). Le rang détermine à la fois l'accès
 </div>
 
 Pour le détail complet du mécanisme (Consommation, Conduit Divin, Présence Surnaturelle), voir le chapitre Énergie.
-
-***
-
-## Règles d'Acquisition des Pouvoirs
-
-**Limitation par Rang Prérequis**
-
-Une créature ne peut acquérir un pouvoir que si son rang céleste est
-**supérieur ou égal** au rang prérequis du pouvoir.
-
-_Exemple : Un ange de rang 3 peut acquérir des pouvoirs ayant pour
-prérequis les rangs 1, 2 ou 3, mais pas ceux nécessitant un rang 4 ou
-plus._
-
-## Pouvoirs actifs et pouvoirs passifs
-
-Au-delà du prérequis d'accès, tout dépend de la nature du pouvoir.
-
-Un **pouvoir actif** se lance : jet, [drain](../energie#rang-des-pouvoirs-et-drain), éventuelle [Surcharge](../energie#rang-des-pouvoirs-et-drain). Son rang de base, choisi à l'acquisition et améliorable par la [progression](../../personnage/progression), ne peut jamais dépasser le Rang Céleste de son propriétaire. En revanche, rien n'interdit de le lancer plus fort qu'il n'a été appris : la Surcharge permet de monter jusqu'au rang 6, le drain se chargeant de rappeler à chacun où se situent ses limites réelles.
-
-Un **pouvoir passif** ne se lance pas : il est toujours actif, ne génère aucun drain, et son rang est calé sur le Rang Céleste de son propriétaire — ni plus, ni moins. Il évolue automatiquement avec lui. Un ange de Rang 3 a _Résilience 3_ ; s'il devient Archange, sa Résilience passe à 4 sans rien dépenser. C'est un des rares avantages de la promotion interne.
-
-_Exemples :_
-
-- _Résilience_ (passif, prérequis Rang 1) : calée sur le Rang Céleste. Ange Rang 3 → Résilience 3 ; Archange Rang 4 → Résilience 4 ; humain Rang 1 → Résilience 1, sans effet pratique.
-- _Feu Ardent_ (actif, prérequis Rang 2) : un ange de Rang 3 peut l'acquérir au rang de base 2 ou 3, et le surcharger jusqu'au rang 6 au lancement.
-- _Rapidité Céleste_ (passif, prérequis Rang 3) : inaccessible en dessous du Rang 3 ; calée sur le Rang Céleste au-delà.
 
 ## **Règles spécifiques aux Pouvoirs**
 
