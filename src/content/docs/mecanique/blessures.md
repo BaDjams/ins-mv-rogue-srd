@@ -61,10 +61,7 @@ Les points de vie (PV) sont déterminés par la caractéristique Vigueur
 selon la formule **VIG x 2 + Taille**. Un humain dispose donc d'entre 8
 et 12 PV.
 
-Plutôt que de soustraire des points de vie, le système utilise une
-**jauge de blessures** composée d'un nombre de cases égal aux PV
-maximum du personnage. Les blessures sont cochées de gauche à droite, et
-leur gravité détermine le type de marque utilisée.
+Plutôt que de soustraire des points de vie, le système utilise une **jauge de blessures** composée d'un nombre de cases égal aux PV maximum du personnage. Les blessures sont cochées de gauche à droite, et leur gravité détermine le type de marque utilisée. Les nouvelles blessures d'un même type "poussent" les anciennes vers la droite.
 
 ## **Types de Blessures**
 
@@ -159,14 +156,7 @@ Certains artefacts légendaires comme **le Saint Graal** peuvent guérir directe
 4.  Une balle inflige 9 dégâts létaux → après Résilience (9/3=3), Mirael **subit** 3 blessures létales →  (⭙) (X) (X) (X) (X) (X) (X) (/) (/) (/). Comme sa dernière case est cochée en non létal, il doit réussir un jet de VIG ou sombrer dans l'inconscience. Il à 3 en VIG et fait 221. C'est réussi (l'intensité de ce jet importe peu), il peut continuer le combat.
 5.  Mirael se prend une attaque massive d'un démon armé de sa lame maudite. Malgré la résilience, Mirael subit 4 blessures aggravées. Sa barre de vie devient : (⭙)(⭙)(⭙)(⭙)(⭙) (X) (X) (X) (X) (X). Sa dernière case est cochée en létal, il doit réussir un jet de VIG ou sombrer en état critique. C'est raté cette fois-ci et Mirael sombre dans l'inconscience, son hôte de son sang. si personne ne vient le sauver, l'hote mourra et Mirael pourra se réincarener.
 
-**Guérison :**
-
--   Cases 3-6 (X) : 1 minute pour la case 3 (ancienne /), 1 semaine
-    chacune pour les cases 4-6
--   Case 2 (X) : 1 semaine
--   Case 1 (⭙) : Conversion nécessaire puis 1 semaine
-
-voici les points de vie d'autres créatures, pour exemple :
+## Calcul des points de vie par type de créatures :
 
 | **Tranche de poids** | **Exemple d'animaux** | **Taille** | **Taille (SW)** | **Taille (D&D)** |
 | --- | --- | --- | --- | --- |
@@ -187,43 +177,21 @@ voici les points de vie d'autres créatures, pour exemple :
 
 ## Division des dommages encaissés :
 
-Certaines créatures surnaturelles sont particulièrement robustes ainsi,
-bon nombre de créatures de Dieu disposent du pouvoir "Résilience" qui
-leur permet de diviser les dégâts qu'ils encaissent par un facteur
-pouvant aller jusqu'à leur rang céleste. Tous les anges et démons
-disposent du pouvoir Résilience 3, leur permettant de diviser tous les
-dommages par 3.
+Certaines créatures surnaturelles sont particulièrement robustes ainsi, bon nombre de créatures de Dieu disposent du pouvoir "Résilience" qui leur permet de diviser les dégâts qu'ils encaissent par un facteur pouvant aller jusqu'à leur rang céleste. Tous les anges et démons disposent du pouvoir Résilience 3, leur permettant de diviser tous les dommages par 3.
 
-Ainsi, les humains et tous les êtres vivants sur terre ne divisent pas
-les dégâts, les êtres surnaturels inférieurs peuvent diviser les dégâts
-par 2 s'ils disposent du pouvoir Résilience. Un Archange attaqué
-diviserait les dégâts d'une attaque par 4.
+Ainsi, les humains et tous les êtres vivants sur terre ne divisent pas les dégâts, les êtres surnaturels inférieurs peuvent diviser les dégâts par 2 s'ils disposent du pouvoir Résilience. Un Archange attaqué diviserait les dégâts d'une attaque par 4.
 
-Cette division s'applique **avant** de déterminer le nombre de cases à
-cocher, mais ne change pas le type de blessure infligée.
+Cette division s'applique **avant** de déterminer le nombre de cases à cocher, mais ne change pas le type de blessure infligée.
 
-Notons que certaines armes "magiques" ou "célestes" réduisent, voire
-annulent l'effet de division des dommages. Les balles en argent en sont
-un exemple parfait puisqu'ils réduisent le facteur de division de 1
-contre les loups garous et les vampires, les rendant particulièrement
-vulnérables.
+Notons que certaines armes "magiques" ou "célestes" réduisent, voire annulent l'effet de division des dommages. Les balles en argent en sont
+un exemple parfait puisqu'ils réduisent le facteur de division de 1 contre les loups garous et les vampires, les rendant particulièrement vulnérables.
 
-Enfin, certaines créatures peuvent être tout bonnement insensibles à
-certaines formes de dommages ou états. Voir la section "états".
+Enfin, certaines créatures peuvent être tout bonnement insensibles à certaines formes de dommages ou états. Voir la section "états".
 
 <div class="admonition note">
 <p class="admonition-title">Rôle des armes spéciales</p>
 
-Les armes spéciales (argent, armes célestes, armes maudites) ne font pas plus de dégâts bruts — elles réduisent ou annulent la Résilience de l'adversaire. C'est le seul levier qui permet à un humain bien préparé (inquisiteur, chasseur) de menacer réellement un être surnaturel de haut rang.
-</div>
+Les armes spéciales (argent, armes célestes, armes maudites) ne font pas plus de dégâts bruts — elles réduisent ou annulent la Résilience de l'adversaire. C'est le seul levier qui permet à un humain bien préparé (inquisiteur, chasseur) de menacer réellement un être surnaturel de haut rang. </div>
 
-## Restauration des points de vie :
-
-une créature vivante récupère les points de vie au rythme de (rang) /
-semaine (voir chapitre sur le rang céleste).
-En plus de cette récupération naturelle, une créature surnaturelle
-récupère des points de vie au rythme de (rang)/jour.
-Note : Certaines créatures maudites comme les vampires ne restaurent pas
-leur points de vie automatiquement, ils sont obligés de les prendre à
-leur victime (et disposent d'une capacité spéciale pour cela). ces
-créatures disposent du trait "Maudit".
+Note : Certaines créatures maudites comme les vampires ne restaurent pas leur points de vie automatiquement, ils sont obligés de les prendre à
+leur victime (et disposent d'une capacité spéciale pour cela). Ces créatures, incapables de guérir naturellement, disposent du trait "Maudit".
