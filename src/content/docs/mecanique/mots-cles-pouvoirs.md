@@ -5,7 +5,7 @@ sidebar:
   label: Mots-clés de pouvoirs
 ---
 
-Un pouvoir n'est pas un sort figé dans un grimoire. C'est un canal ouvert vers la puissance divine, et celui qui réussit à ouvrir ce canal peut en moduler le débit au moment du lancement. Ces modulations sont les **mots-clés de pouvoirs**.
+Un pouvoir n'est pas un sort figé dans un grimoire. C'est un canal ouvert vers la puissance divine, et celui qui le tient peut en moduler le débit au moment du lancement. Ces modulations sont les **mots-clés de pouvoirs**.
 
 Chaque mot-clé a un coût. La somme des coûts s'ajoute au rang de lancement du pouvoir pour donner son **rang effectif**, plafonné à 6 :
 
