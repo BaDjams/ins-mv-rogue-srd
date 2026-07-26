@@ -7,16 +7,13 @@ sidebar:
 
 ## Principe Général
 
-Le [rang céleste](../../personnage/rang) d'une créature détermine sa capacité à maîtriser des
-pouvoirs surnaturels. Plus une créature a un rang élevé, plus elle peut
-accéder à des pouvoirs puissants et les développer à un niveau avancé.
+Le [rang céleste](../../personnage/rang) d'une créature détermine sa capacité à maîtriser despouvoirs surnaturels. Plus une créature a un rang élevé, plus elle peut accéder à des pouvoirs puissants et les développer à un niveau avancé.
 
 ## Rang des pouvoirs et Drain
 
-Chaque pouvoir possède un rang (0 à 6). Le rang détermine à la fois l'accès et le coût en [drain](../energie#rang-des-pouvoirs-et-drain).
+Chaque pouvoir possède un rang (1 à 6). Le rang détermine à la fois l'accès et le coût en [drain](../energie#rang-des-pouvoirs-et-drain).
 
-- **Rang 0** : tours de passe-passe gratuits, accessibles aux humains initiés, 0 dé de drain.
-- **Rang 1–6** : le rang effectif de lancement détermine le drain — 1 dé de drain par rang jusqu'au Rang Céleste (un 6 inflige 1 blessure non-létale), 1 drain automatique par rang au-delà (1 blessure aggravée directe, sauf conversion par [Conduit Divin](../energie#conduit-divin)).
+- le rang effectif de lancement détermine le drain — 1 dé de drain par rang jusqu'au Rang Céleste (un 6 inflige 1 blessure non-létale), 1 drain automatique par rang au-delà (1 blessure aggravée directe, sauf conversion par [Conduit Divin](../energie#conduit-divin)).
 - **Accès** : rang de base ≤ Rang Céleste pour les pouvoirs actifs ; les pouvoirs passifs sont calés sur le Rang Céleste. Pas de downgrade possible.
 - **Surcharge** : lancer un pouvoir actif à un rang supérieur à son rang de base, jusqu'à 6 — y compris au-delà du Rang Céleste. Les dégâts sont calculés sur le rang de lancement.
 - **Mots-clés** : rang effectif = rang de lancement + somme des coûts des [mots-clés](../mots-cles-pouvoirs), plafonné à 6. Ne compte que pour le drain.
