@@ -1239,32 +1239,14 @@ les pièces justificatives.</p> </section><section class="export-section astro-t
 <p>Un ange de Rang 1 qui surcharge un pouvoir au rang 6 lance 1 dé de drain et encaisse 5 drains automatiques d’un coup — cinq blessures aggravées avant même de savoir si le pouvoir a fait effet. Ce n’est plus de l’imprudence, c’est un plan de carrière de martyr. Un Archange de Rang 5, à l’inverse, peut surcharger largement avant de sentir quoi que ce soit mordre pour de vrai.</p>
 <p>Si la Consommation tue l’hôte, l’ange se <a href="../../personnage/reincarnation">réincarne</a> normalement. Les anges qui abusent de cette mécanique finissent par consumer leurs hôtes en série, ce qui finit par attirer l’attention — des démons, des inquisiteurs, ou pire, de la hiérarchie.</p> </section><section class="export-section astro-tc7gsgdq"> <h2 id="principe-général">Principe Général</h2>
 <p>Le <a href="../../personnage/rang">rang céleste</a> d’une créature détermine sa capacité à maîtriser des pouvoirs surnaturels. Plus une créature a un rang élevé, plus elle peut accéder à des pouvoirs puissants et les développer à un niveau avancé.</p>
-<p><strong>Prérequis :</strong></p>
-<p>Une créature ne peut acquérir un pouvoir que si son rang céleste (RC) est
-<strong>supérieur ou égal</strong> au rang prérequis du pouvoir.</p>
-<p><em>Exemple : Un ange de rang 3 peut acquérir des pouvoirs ayant pour
-prérequis les rangs 1, 2 ou 3, mais pas ceux nécessitant un rang 4 ou
-plus.</em>
-Certains pouvoirs précisent également d’autres prérequis, comme “Ange”, “Démon” ou “Magie du sang”, qui limitent leur obtention à certains types de créatures uniquement.</p>
-<hr>
-<h2 id="pouvoirs-actifs-et-pouvoirs-passifs">Pouvoirs actifs et pouvoirs passifs</h2>
-<p>Au-delà du prérequis d’accès, tout dépend de la nature du pouvoir.</p>
-<p>Un <strong>pouvoir passif</strong> ne se lance pas : il est toujours actif et ne génère aucun drain. Il est impossible de surcharger un pouvoir passif. Les pouvoirs passifs ont des rangs que le personnage peut acheter afin de les renforcer. Il est impossible de posséder un pouvoir passif d’un rang supérieur à son rang céleste.</p>
-<p>Un <strong>pouvoir actif</strong> se lance : il faut faire un jet de lancement, et ce pouvoir génèrera du <a href="../energie#rang-des-pouvoirs-et-drain">drain</a>, avec une éventuelle <a href="../energie#rang-des-pouvoirs-et-drain">Surcharge</a>. Chaque pouvoir actif dispose d’un rang de base. Il est impossible de posséder un pouvoir actif avec un rang de base supérieur à son rang céleste. En revanche, rien n’interdit de le lancer plus fort qu’il n’a été appris : la Surcharge permet de monter jusqu’au rang 6, le drain se chargeant de rappeler à chacun où se situent ses limites réelles.</p>
-<p><em>Exemples :</em></p>
-<ul>
-<li><em>Résilience</em> (passif, prérequis : RC 2) : Un ange de rang céleste 3 peut posséder résilience rang 2 puis l’améliorer par l’apprentissage jusqu’à rang 3 mais ne pourra jamais le faire évoluer au delà, car le rang de résilience serait alors supérieur à son rang céleste.</li>
-<li><em>Feu Ardent</em> (actif, prérequis : RC 2) : une lyche de Rang 2 peut l’acquérir et le surcharger jusqu’au rang effectif 6. mais elle subira alors un drain énorme! (voir ci-dessous)</li>
-<li><em>Aura divin</em> (passif, prérequis : RC 4, Ange) : inaccessible en dessous du Rang 4 ; seuls les Archanges</li>
-</ul>
 <h2 id="rang-des-pouvoirs-et-drain">Rang des pouvoirs et Drain</h2>
 <p>Chaque pouvoir possède un rang (1 à 6). Le rang détermine à la fois l’accès et le coût en <a href="../energie#rang-des-pouvoirs-et-drain">drain</a>.</p>
 <ul>
 <li>le rang effectif de lancement détermine le drain — 1 dé de drain par rang jusqu’au Rang Céleste (un 6 inflige 1 blessure non-létale), 1 drain automatique par rang au-delà (1 blessure aggravée directe, sauf conversion par <a href="../energie#conduit-divin">Conduit Divin</a>).</li>
 <li><strong>Accès</strong> : rang de base ≤ Rang Céleste pour les pouvoirs actifs ; les pouvoirs passifs sont calés sur le Rang Céleste. Pas de downgrade possible.</li>
 <li><strong>Surcharge</strong> : lancer un pouvoir actif à un rang supérieur à son rang de base, jusqu’à 6 — y compris au-delà du Rang Céleste. Les dégâts sont calculés sur le rang de lancement.</li>
-<li><strong>Mots-clés</strong> : rang effectif = rang de lancement + somme des coûts des <a href="../mots-cles-pouvoirs">mots-clés</a>, plafonné à 6. Ne compte que pour le drain.</li>
-<li><strong>Dégâts offensifs</strong> : <code dir="auto">PUI + rang de lancement + max(Marge, Dé rouge)</code></li>
+<li><strong>Mots-clés</strong> : rang effectif = rang de lancement + rangs de surcharge, plafonné à 6. Compte pour le drain et les dégâts.</li>
+<li><strong>Dégâts offensifs</strong> : <code dir="auto">PUI + rang effectif + max(Marge, Dé rouge)</code></li>
 </ul>
 <div class="admonition example">
 <p class="admonition-title">Exemple : Ange Rang 3, pouvoir Rang 2 surchargé à 4</p>
@@ -1275,6 +1257,24 @@ Certains pouvoirs précisent également d’autres prérequis, comme “Ange”,
 </ul>
 </div>
 <p>Pour le détail complet du mécanisme (Consommation, Conduit Divin, Présence Surnaturelle), voir le chapitre Énergie.</p>
+<hr>
+<h2 id="règles-dacquisition-des-pouvoirs">Règles d’Acquisition des Pouvoirs</h2>
+<p><strong>Limitation par Rang Prérequis</strong></p>
+<p>Une créature ne peut acquérir un pouvoir que si son rang céleste est
+<strong>supérieur ou égal</strong> au rang prérequis du pouvoir.</p>
+<p><em>Exemple : Un ange de rang 3 peut acquérir des pouvoirs ayant pour
+prérequis les rangs 1, 2 ou 3, mais pas ceux nécessitant un rang 4 ou
+plus.</em></p>
+<h2 id="pouvoirs-actifs-et-pouvoirs-passifs">Pouvoirs actifs et pouvoirs passifs</h2>
+<p>Au-delà du prérequis d’accès, tout dépend de la nature du pouvoir.</p>
+<p>Un <strong>pouvoir actif</strong> se lance : jet, <a href="../energie#rang-des-pouvoirs-et-drain">drain</a>, éventuelle <a href="../energie#rang-des-pouvoirs-et-drain">Surcharge</a>. Son rang de base, choisi à l’acquisition et améliorable par la <a href="../../personnage/progression">progression</a>, ne peut jamais dépasser le Rang Céleste de son propriétaire. En revanche, rien n’interdit de le lancer plus fort qu’il n’a été appris : la Surcharge permet de monter jusqu’au rang 6, le drain se chargeant de rappeler à chacun où se situent ses limites réelles.</p>
+<p>Un <strong>pouvoir passif</strong> ne se lance pas : il est toujours actif, ne génère aucun drain, et son rang est calé sur le Rang Céleste de son propriétaire — ni plus, ni moins. Il évolue automatiquement avec lui. Un ange de Rang 3 a <em>Résilience 3</em> ; s’il devient Archange, sa Résilience passe à 4 sans rien dépenser. C’est un des rares avantages de la promotion interne.</p>
+<p><em>Exemples :</em></p>
+<ul>
+<li><em>Résilience</em> (passif, prérequis Rang 1) : calée sur le Rang Céleste. Ange Rang 3 → Résilience 3 ; Archange Rang 4 → Résilience 4 ; humain Rang 1 → Résilience 1, sans effet pratique.</li>
+<li><em>Feu Ardent</em> (actif, prérequis Rang 2) : un ange de Rang 3 peut l’acquérir au rang de base 2 ou 3, et le surcharger jusqu’au rang 6 au lancement.</li>
+<li><em>Rapidité Céleste</em> (passif, prérequis Rang 3) : inaccessible en dessous du Rang 3 ; calée sur le Rang Céleste au-delà.</li>
+</ul>
 <h2 id="règles-spécifiques-aux-pouvoirs"><strong>Règles spécifiques aux Pouvoirs</strong></h2>
 <p><strong>Légende des Types</strong></p>
 <ul>
