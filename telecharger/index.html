@@ -1324,8 +1324,7 @@ complet au rang de lancement initial, au tour 4, 7, 10, etc.</li>
 <h2 id="note-sur-les-armes">Note sur les armes</h2>
 <p><em>Les armes sacrées, magiques ou maudites conservent leurs effets
 spéciaux pour pénétrer ou contourner certaines défenses, indépendamment
-du niveau de Résilience.</em></p> </section><section class="export-section astro-tc7gsgdq"> <p>Terminologie : INFLIGER vs SUBIR</p>
-<p>Pour éviter toute confusion, le jeu utilise une terminologie stricte :</p>
+du niveau de Résilience.</em></p> </section><section class="export-section astro-tc7gsgdq"> <p>Pour éviter toute confusion, le jeu utilise la terminologie suivante :</p>
 <p>On INFLIGE des dégâts (actif, offensif)</p>
 <ul>
 <li>Les dégâts sont le montant brut avant réductions</li>
@@ -1336,49 +1335,33 @@ du niveau de Résilience.</em></p> </section><section class="export-section astr
 <li>Les blessures sont marquées sur la fiche de PV après réductions</li>
 <li>Exemple : “Le défenseur subit 3 blessures”</li>
 </ul>
-<p>Flux de résolution : De l’attaque à la blessure</p>
+<p>De l’attaque à la blessure :</p>
 <p>Lorsqu’une attaque inflige des dégâts :</p>
 <ol>
-<li>Calcul des dégâts bruts (Code + Intensité + Marge + modificateurs)</li>
-<li>Nature des dégâts (normaux, aggravés, ou non-létaux)</li>
-<li>Réduction : Armure (soustraction du PA, sauf mention contraire)</li>
-<li>Réduction : Résilience (division, arrondi inférieur)</li>
-<li>Blessures finales : Le défenseur subit X blessures (marquées sur la
-fiche)</li>
+<li>Calcul des dégâts bruts = Intensité finale + modificateurs (le code de dégât d’une arme, le rang d’un pouvoir, etc…)</li>
+<li>Réduction : on soustrait les PA de l’armure ou autre réductions de dégâts (sauf mention contraire)</li>
+<li>Réduction : on divise le résultat précédent par la Résilience s’il y a lieu (arrondi à l’inférieur)</li>
+<li>Blessures finales : Le résultat indique le nombre de blessures subies par le défenseur.</li>
 </ol>
-<p>Exception : Blessures directes</p>
-<p>Certains effets utilisent directement le verbe “subir” sans mentionner
-de dégâts :</p>
-<ul>
-<li>Aucune réduction (ni PA, ni Résilience)</li>
-<li>Marquées immédiatement sur la fiche</li>
-</ul>
-<p>Indicateur clé : Si le texte dit “subit des blessures” sans mentionner
-“inflige des dégâts” au préalable, c’est direct.</p>
+<p>Certains effets utilisent directement le verbe “subir” sans mentionner de dégâts (par exemple “sur une réussite, la cible subit une blessure létale”), cela implique donc qu’il n’y a aucune réduction (ni PA, ni Résilience) te que cette blessure est indiquée immédiatement sur la fiche.</p>
 <p>Natures de dégâts et blessures</p>
-<p>Dégâts normaux conduisent à des Blessures létales (X)</p>
+<p>Dégâts non-létaux (fatigue, contusions légères…) conduisent à des Blessures non-létales (/)</p>
 <ul>
-<li>Guérissent naturellement (1 par jour)</li>
+<li>Guérissent rapidement (1 par 5min de repos).</li>
 </ul>
-<p>Dégâts aggravés conduisent à des Blessures aggravées (⭙)</p>
+<p>Dégâts létaux (blessures graves : blessures ouvertes, impacts de bales, coupures, fractures, commotions…) conduisent à des Blessures létales (X)</p>
 <ul>
-<li>Ne guérissent jamais naturellement</li>
-<li>Nécessitent <a href="../resolution#interventions-divine-et-d%C3%A9moniaque">intervention divine</a> ou démoniaque</li>
+<li>Guérissent naturellement (1 par semaine)</li>
 </ul>
-<p>Dégâts non-létaux conduisent à des Blessures non-létales (/)</p>
+<p>Dégâts aggravés (amputations, dégâts magiques particuliers…) conduisent à des Blessures aggravées (⭙)</p>
 <ul>
-<li>Guérissent rapidement (1 par heure de repos)</li>
+<li>Ne guérissent jamais naturellement.</li>
 </ul>
 <p>Règle d’arrondi</p>
-<p>L’arrondi est toujours favorable au personnage actif. Ainsi les dégâts
-infligés par un personnage sont arrondis au supérieur (favorable à
-l’attaquant) alors que lors de la division des dégâts par la
-Résilience, l’arrondi se fait toujours à l’inférieur (favorable au
-défenseur).</p>
-<p>Exemple : Azrael active son aura de sainteté qui <strong>inflige</strong> Rang hiérarchique x <a href="../../personnage/rang">rang céleste</a> /2 dégâts aggravés à toutes les cibles démoniaques au contact. 3×3/2 = 4,5, donc arrondi à 5 dégâts.
-Belphess la démone aux belles fesses est très très au contact et <strong>subit</strong> donc 5/3=1 blessure aggravée (on arrondit à l’inférieur lors de la division par la résilience). Belphess pousse un gémissement équivoque.</p>
-<p>Pour les effets bénéfiques (soins, récupération), l’arrondi se fait à
-l’<a href="../resolution#avantage">avantage</a> du lanceur.</p>
+<p>L’arrondi est toujours favorable au personnage actif. Ainsi les dégâts infligés par un personnage sont arrondis au supérieur (favorable à l’attaquant) alors que lors de la division des dégâts par la Résilience, l’arrondi se fait toujours à l’inférieur (favorable au défenseur).</p>
+<p>Exemple : Azrael active son aura de sainteté qui <strong>inflige</strong> (<a href="../../personnage/rang">rang </a>de pouvoir + Intensité finale) /2 dégâts aggravés à toutes les cibles démoniaques au contact. 3+6/2 = 4,5, donc arrondi à 5 dégâts (l’arrondi profite au personnage actif, en l’état on calcul les dégâts d’Azrael, l’arrondi profite donc à Azrael).
+Belphess la démone aux belles dagues qui n’a pour armure qu’un t-shirt mouillé est très très au contact et <strong>subit</strong> donc 5/3=1 blessure aggravée (on arrondit à l’inférieur lors de la division par la résilience car dans ce calcul, l’arrondi profite à Belphess, le personnage actif du calcul). Belphess pousse un gémissement équivoque.</p>
+<p>Pour les effets bénéfiques (soins, récupération), l’arrondi se fait à l’<a href="../resolution#avantage">avantage</a> du lanceur.</p>
 <h1 id="points-de-vie">POINTS DE VIE</h1>
 <h1 id="système-de-blessures"><strong>SYSTÈME DE BLESSURES</strong></h1>
 <h2 id="principe-général"><strong>Principe Général</strong></h2>
@@ -1391,106 +1374,68 @@ maximum du personnage. Les blessures sont cochées de gauche à droite, et
 leur gravité détermine le type de marque utilisée.</p>
 <h2 id="types-de-blessures"><strong>Types de Blessures</strong></h2>
 <p><strong>Blessures Non Létales (/)</strong></p>
-<p><strong>Marquage :</strong> Simple trait diagonal</p>
-<p><strong>Causes :</strong> Fatigue extrême, coups assommants, douleur intense,
-drain magique dans les limites du <a href="../../personnage/rang">Rang Céleste</a> (un 6 sur un dé de <a href="../energie#rang-des-pouvoirs-et-drain">drain</a>)</p>
+<p><strong>Marquage :</strong> Simple trait diagonal
+<strong>Causes :</strong> Fatigue extrême, coups assommants, douleur intense, drain magique dans les limites du <a href="../../personnage/rang">Rang Céleste</a> (un 6 sur un dé de <a href="../energie#rang-des-pouvoirs-et-drain">drain</a>)
+<strong>Restriction :</strong> Ne peut être cochée que dans une case vide
+<strong>Guérison :</strong> 1 / 5min de repos.</p>
 <div class="admonition note">
 <p class="admonition-title">Immunités à la fatigue</p>
 <p>Certaines âmes sont immunisées aux blessures non-létales d’origine physique ordinaire (fatigue, essoufflement, coups assommants) — l’immunité, si elle existe, dépend du type d’âme incarnée et est précisée dans sa description. Le drain magique, lui, reste toujours efficace : ce n’est pas de la fatigue du corps, mais l’usure du canal entre l’âme et son hôte.</p>
 </div>
-<p><strong>Restriction :</strong> Ne peut être cochée que dans une case vide</p>
-<p><strong>Guérison :</strong> 1 minute par coche (soit 10-15 minutes au total pour se
-remettre)</p>
 <p><strong>Blessures Létales (X)</strong></p>
-<p><strong>Marquage :</strong> Croix complète</p>
-<p><strong>Causes :</strong> Armes tranchantes, balles, feu, acide, la plupart des
-dégâts de combat</p>
-<p><strong>Upgrade :</strong> Peut transformer une blessure non létale (/) en blessure
-létale (X) en complétant la croix</p>
-<p><strong>Guérison :</strong> 1 semaine par coche (récupération naturelle selon le rang
-céleste)</p>
+<p><strong>Marquage :</strong> Croix complète
+<strong>Causes :</strong> Armes tranchantes, balles, feu, acide, la plupart des dégâts de combat
+<strong>Guérison :</strong> 1 semaine par coche (récupération naturelle selon le rang céleste)</p>
 <p><strong>Blessures Aggravées (⭙)</strong></p>
-<p><strong>Marquage :</strong> Croix entourée</p>
-<p><strong>Causes :</strong></p>
-<ul>
-<li>Drain automatique généré par un rang de lancement au-delà du <a href="../../personnage/rang">Rang Céleste</a> (voir <a href="../energie">Énergie</a>)</li>
-<li>Attaques de créatures particulièrement dangereuses (vampires, démons
-majeurs)</li>
-<li>Armes maudites ou sacrées</li>
-<li>Dégâts spirituels directs</li>
-</ul>
-<p><strong>Upgrade :</strong> Peut transformer n’importe quelle blessure existante</p>
-<p>**Ces blessures ne guérissent jamais naturellement. Seule une
-intervention divine, démoniaque, une capacité surnaturelle ou un pouvoir
-adapté peut les soigner.**</p>
+<p><strong>Marquage :</strong> Croix entourée
+<strong>Causes :</strong> Blessures très graves laissant des séquelles permanentes (amputations…), drain automatique généré par un rang de lancement de sort au-delà du <a href="../../personnage/rang">Rang Céleste</a> (voir <a href="../energie">Énergie</a>), certaines sources de dégâts surnaturels décrites comme infligeant ce type de dégats
+Guérison : Ces blessures ne guérissent jamais naturellement. Au mieux une cicatrisation.</p>
 <h2 id="règles-de-progression-des-blessures"><strong>Règles de Progression des Blessures</strong></h2>
-<p>Les blessures s’<strong>upgradent</strong> toujours vers le type le plus grave :</p>
+<p>Les blessures s’<strong>aggravent</strong> toujours vers le type le plus grave :</p>
 <ul>
 <li>Une case vide peut recevoir n’importe quel type de blessure</li>
 <li>Une case (/) peut devenir (X) ou (⭙)</li>
 <li>Une case (X) peut devenir (⭙)</li>
 <li>Une case (⭙) reste (⭙)</li>
 </ul>
-<p><strong>Important :</strong> Seules les blessures non létales nécessitent une case
-vide. Les blessures plus graves peuvent toujours upgrader une blessure
-existante.</p>
+<p><strong>Important :</strong> Seules les blessures non létales nécessitent une case vide. Les blessures plus graves peuvent toujours aggraver une blessure existante.</p>
 <h2 id="seuils-critiques"><strong>Seuils Critiques</strong></h2>
-<p><strong>Jauge Pleine - Dernière Case (/)</strong></p>
-<p><strong>Prochaine blessure non létale :</strong> Jet de Vigueur ou inconscience</p>
-<p><strong>Jauge Pleine - Dernière Case (X)</strong></p>
-<p><strong>Prochaine blessure :</strong> Devient automatiquement (⭙) + Jet de Vigueur ou
-inconscience</p>
-<p><strong>Jauge Pleine - Dernière Case (⭙)</strong></p>
-<p><strong>Prochaine blessure :</strong> <strong>MORT</strong> (quel que soit le type de dégât reçu)</p>
+<p>A chaque fois que le personnage subit une blessure, on vérifie d’abord si l’un des cas suivant s’applique :</p>
+<p><strong>Jauge Pleine - Dernière Case (/) :</strong>  Le personnage doit réussir un jet de VIG ou sombrer dans l’inconscience.
+les prochaines blessures non létales subies seront obligatoirement de type létal (X).</p>
+<p><strong>Jauge Pleine - Dernière Case (X) :</strong>   Le personnage doit réussir un jet de VIG ou sombrer en état critique. Il est alors inconscient et doit recevoir des soins rapidement : tant qu’il n’est pas stabilisé, il subit 1 blessure non létale à chaque tour. Les prochaines blessures létales ou non létales subies seront obligatoirement de type  aggravée (⭙).</p>
+<p><strong>Jauge Pleine - Dernière Case (⭙) :</strong>  <strong>MORT</strong> (pas de jet de sauvegarde contre la mort dans ce jeu)<strong>.</strong></p>
 <h2 id="guérison-accélérée"><strong>Guérison Accélérée</strong></h2>
-<p><strong>Pouvoirs de Guérison Rapide</strong></p>
-<p><strong>Guérison Rapide 1</strong> (Rang requis 2, Passif permanent)</p>
-<ul>
-<li>Blessures létales : 1 jour par coche</li>
-</ul>
-<p><strong>Guérison Rapide 2</strong> (Rang requis 3)</p>
-<ul>
-<li>Blessures létales : 1 heure par coche</li>
-</ul>
-<p><strong>Guérison Rapide 3</strong> (Rang requis 4)</p>
-<ul>
-<li>Blessures létales : 1 minute par coche</li>
-</ul>
-<p><strong>Guérison Rapide 4</strong> (Rang requis 5)</p>
-<ul>
-<li>Blessures létales : 1 tour par coche</li>
-</ul>
-<p><strong>Régénération (Rang requis 2, Concentration)</strong></p>
-<p>Toutes les blessures guérissent simultanément au rythme de la capacité
-de guérison du personnage, plutôt qu’une après l’autre.</p>
+<p><strong>Certains pouvoir ou capacité, comme laguérison rapide ou la régénération permettent de guérir les blessures plus rapidement.</strong></p>
+<p><strong>Guérison Rapide 1</strong> (Rang céleste requis 2, Passif permanent) : Les blessures létales guérissent au rythme accéléré de 1 jour par coche</p>
+<p><strong>Guérison Rapide 2</strong> (Rang céleste requis 3)  Les blessures létales guérissent au rythme impressionnant de 1 heure par coche</p>
+<p><strong>Guérison Rapide 3</strong> (Rang céleste requis 4): Les blessures létales guérissent au rythme effréné de 1 minute par coche</p>
+<p><strong>Guérison Rapide 4</strong> (Rang céleste requis 5) : Les blessures létales guérissent au rythme inquiétant de 1 tour par coche</p>
+<p><strong>Régénération (Rang céleste 2, Concentration, pas de surcharge)</strong>
+Toutes les blessures de même type guérissent simultanément au rythme de la capacité de guérison du personnage, plutôt qu’une après l’autre.</p>
 <h2 id="blessures-aggravées---règles-spéciales"><strong>Blessures Aggravées - Règles Spéciales</strong></h2>
 <p><strong>Limitation des Pouvoirs</strong></p>
 <ul>
-<li><strong>Aucun pouvoir de guérison</strong> ne peut directement soigner les
-blessures aggravées</li>
+<li><strong>Aucun pouvoir de guérison</strong> ne peut directement soigner les blessures aggravées</li>
 <li>La “Guérison Rapide” n’affecte que les blessures (/) et (X)</li>
 </ul>
 <p><strong>Conversion Nécessaire</strong></p>
-<p>Pour guérir d’une blessure aggravée (⭙), il faut d’abord la
-<strong>convertir</strong> en blessure létale (X) via :</p>
+<p>Pour guérir d’une blessure aggravée (⭙), il faut d’abord la <strong>convertir</strong> en blessure létale (X) via :</p>
 <ul>
 <li>Pouvoirs de conversion spécifiques</li>
 <li>Rituels de purification spirituelle</li>
 <li>Intervention divine</li>
 </ul>
 <p><strong>Objets Exceptionnels</strong></p>
-<p>Certains artefacts légendaires comme <strong>le Saint Graal</strong> peuvent guérir
-directement toutes les blessures, y compris aggravées, sans conversion
-préalable.</p>
+<p>Certains artefacts légendaires comme <strong>le Saint Graal</strong> peuvent guérir directement toutes les blessures, y compris aggravées, sans conversion préalable.</p>
 <h2 id="exemple-pratique"><strong>Exemple Pratique</strong></h2>
-<p><strong>Mirael</strong> (Ange, 10 PV, Résilience 3) reçoit plusieurs attaques en combat :</p>
+<p><strong>Mirael</strong> (Ange, 10 PV, Résilience 3) reçoit plusieurs attaques au cours d’un combat :</p>
 <ol>
-<li>Une attaque inflige 9 dégâts non létaux → après Résilience (9/3=3), Mirael <strong>subit</strong> 3 blessures non létales → coche (/) (/) (/) dans les cases 1-3.</li>
-<li>Une attaque inflige 6 dégâts létaux → après Résilience (6/3=2), Mirael <strong>subit</strong> 2 blessures létales → les cases 1-2 s’upgradent en (X) (X), la case 3 reste (/).</li>
-<li>Mirael surcharge un pouvoir au-delà de son Rang Céleste → drain automatique → <strong>subit</strong> directement 1 blessure aggravée (sans réduction), la case 1 devient (⭙).</li>
-<li>État intermédiaire : (⭙) (X) (/) + 7 cases vides.</li>
-<li>Une balle inflige 9 dégâts létaux → après Résilience (9/3=3), Mirael <strong>subit</strong> 3 blessures létales → les cases 3 (qui upgrade depuis /), 4 et 5 deviennent (X).</li>
-<li>État final : (⭙) (X) (X) (X) (X) + 5 cases vides.</li>
+<li>Une attaque inflige 9 dégâts non létaux → après Résilience (9/3=3), Mirael <strong>subit</strong> 3 blessures non létales → coche (/) (/) (/)</li>
+<li>Une attaque inflige 6 dégâts létaux → après Résilience (6/3=2), Mirael <strong>subit</strong> 2 blessures létales → les cases 1-2 s’upgradent en (X) (X), la case 3 reste (/) et Mirael décale ses cases (/) (/) vers la droite pour bien avoir (X) (X) (/) (/) (/)</li>
+<li>Mirael surcharge un pouvoir au rang 4, donc au-delà de son Rang Céleste → drain automatique → <strong>subit</strong> directement 1 blessure aggravée (sans réduction), De plus, 1 dé de drain génère un 6, il subit une blessure non létale en plus  → (⭙) (X) (X) (/) (/) (/) (/) + 3 cases vides.</li>
+<li>Une balle inflige 9 dégâts létaux → après Résilience (9/3=3), Mirael <strong>subit</strong> 3 blessures létales →  (⭙) (X) (X) (X) (X) (X) (X) (/) (/) (/). Comme sa dernière case est cochée en non létal, il doit réussir un jet de VIG ou sombrer dans l’inconscience. Il à 3 en VIG et fait 221. C’est réussi (l’intensité de ce jet importe peu), il peut continuer le combat.</li>
+<li>Mirael se prend une attaque massive d’un démon armé de sa lame maudite. Malgré la résilience, Mirael subit 4 blessures aggravées. Sa barre de vie devient : (⭙)(⭙)(⭙)(⭙)(⭙) (X) (X) (X) (X) (X). Sa dernière case est cochée en létal, il doit réussir un jet de VIG ou sombrer en état critique. C’est raté cette fois-ci et Mirael sombre dans l’inconscience, son hôte de son sang. si personne ne vient le sauver, l’hote mourra et Mirael pourra se réincarener.</li>
 </ol>
 <p><strong>Guérison :</strong></p>
 <ul>
