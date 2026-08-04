@@ -60,9 +60,10 @@ Toute âme incarnée peut, en une action gratuite déclarée avant le jet, soit 
 <div class="admonition danger">
 <p class="admonition-title">La Consommation</p>
 
-Un drain automatique n'est jamais une question de chance : c'est la puissance de l'âme, quelle que soit sa nature — divine, infernale, ou toute autre —, qui déborde ce qu'elle peut contenir et brûle littéralement l'enveloppe charnelle de l'intérieur. Rien ne l'arrête à part le [Conduit Divin](#conduit-divin) : ni l'armure, ni la Résilience, ni la bonne volonté.
+Un drain automatique n'est jamais une question de chance : c'est la puissance de l'âme, quelle que soit sa nature, qui déborde et brûle littéralement l'enveloppe charnelle de l'intérieur. Rien ne l'arrête : ni l'armure, ni la Résilience, ni la bonne volonté.
 </div>
 
 Un ange de Rang 1 qui surcharge un pouvoir au rang 6 lance 1 dé de drain et encaisse 5 drains automatiques d'un coup — cinq blessures aggravées avant même de savoir si le pouvoir a fait effet. Ce n'est plus de l'imprudence, c'est un plan de carrière de martyr. Un Archange de Rang 5, à l'inverse, peut surcharger largement avant de sentir quoi que ce soit mordre pour de vrai.
+Mais ça ressemble à quoi une blessure aggravée due au drain? ça dépend, la plupart subissent un vieillissement accéléré (en moyenne 1 blessure = + 10 ans) mais certains ont plutôt développé à la place des stigmates qui ne cicatrisent jamais, d'autres encore ont sombré dans la folie avec des conséquences désastreuses (cauchemars, privation de sommeil, scarification, automutilations…)
 
-Si la Consommation tue l'hôte, l'ange se [réincarne](../../personnage/reincarnation) normalement. Les anges qui abusent de cette mécanique finissent par consumer leurs hôtes en série, ce qui finit par attirer l'attention — des démons, des inquisiteurs, ou pire, de la hiérarchie.
+Si la Consommation tue l'hôte, l'ange se [réincarne](../../personnage/reincarnation) normalement. Les anges qui abusent de cette mécanique finissent par consumer leurs hôtes en série, ce qui finit par attirer l'attention — des démons, des inquisiteurs, ou pire, de la hiérarchie. Et puis une jeune maman de 70 ans qui "accouche" d'un "bébé" de 50 ans, ça fait littéralement tâche...
