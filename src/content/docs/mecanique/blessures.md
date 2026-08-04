@@ -183,8 +183,7 @@ Ainsi, les humains et tous les êtres vivants sur terre ne divisent pas les dég
 
 Cette division s'applique **avant** de déterminer le nombre de cases à cocher, mais ne change pas le type de blessure infligée.
 
-Notons que certaines armes "magiques" ou "célestes" réduisent, voire annulent l'effet de division des dommages. Les balles en argent en sont
-un exemple parfait puisqu'ils réduisent le facteur de division de 1 contre les loups garous et les vampires, les rendant particulièrement vulnérables.
+Notons que certaines armes "magiques" ou "célestes" réduisent, voire annulent l'effet de division des dommages. Les balles en argent en sont un exemple parfait puisqu'ils réduisent le facteur de division de 1 contre les loups garous et les vampires, les rendant particulièrement vulnérables.
 
 Enfin, certaines créatures peuvent être tout bonnement insensibles à certaines formes de dommages ou états. Voir la section "états".
 
@@ -193,5 +192,4 @@ Enfin, certaines créatures peuvent être tout bonnement insensibles à certaine
 
 Les armes spéciales (argent, armes célestes, armes maudites) ne font pas plus de dégâts bruts — elles réduisent ou annulent la Résilience de l'adversaire. C'est le seul levier qui permet à un humain bien préparé (inquisiteur, chasseur) de menacer réellement un être surnaturel de haut rang. </div>
 
-Note : Certaines créatures maudites comme les vampires ne restaurent pas leur points de vie automatiquement, ils sont obligés de les prendre à
-leur victime (et disposent d'une capacité spéciale pour cela). Ces créatures, incapables de guérir naturellement, disposent du trait "Maudit".
+Note : Certaines créatures maudites comme les vampires ne restaurent pas leur points de vie automatiquement, ils sont obligés de les prendre à leur victime (et disposent d'une capacité spéciale pour cela). Ces créatures, incapables de guérir naturellement, disposent du trait "Maudit".
