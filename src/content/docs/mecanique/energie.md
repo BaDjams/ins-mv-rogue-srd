@@ -25,7 +25,7 @@ Les dégâts d'un pouvoir offensif lancé au rang R effectif (donc en prenant en
 
 Un pouvoir peut par ailleurs être modulé au lancement par des **mots-clés** — [Multicible, Portée, Durée](../mots-cles-pouvoirs) et quelques autres. Chaque mot-clé a un coût, qui s'ajoute au rang de lancement pour donner le **rang effectif** du pouvoir, plafonné à 6. Le rang effectif ne sert qu'à une seule chose : déterminer le drain, selon la même règle que la Surcharge — des dés jusqu'au Rang Céleste, des drains automatiques au-delà. Les dégâts et la pénétration, eux, restent calculés sur le rang de lancement : multiplier les cibles n'a jamais rendu une boule de feu plus chaude.
 
-Le drain se calcule au moment du lancement, rang par rang. Tant que le rang de lancement reste dans les limites du Rang Céleste, chaque rang génère un **dé de drain** : un 6 inflige une **blessure non-létale** — de la fatigue magique, qui se soigne aussi vite qu'un coup de mou (1 case par minute). Chaque rang de lancement au-delà du Rang Céleste génère à la place un **drain automatique** : pas de dé, pas de chance, une **blessure aggravée** directe, non réduite par l'armure ni par la [Résilience](../blessures).
+Le drain se calcule au moment du lancement, à partir du **rang effectif** (rang de lancement, Surcharge et mots-clés compris). Pour chaque rang jusqu'au Rang Céleste du lanceur, lancez **un dé de drain** : chaque 6 inflige **une blessure non létale** (fatigue magique). Pour chaque rang effectif au-delà du Rang Céleste, le lanceur subit **une blessure non létale automatique**, sans jet de dé. Ces blessures sont subies directement, sans réduction par l'armure ou la [Résilience](../blessures). Elles guérissent à raison d'**une blessure toutes les cinq minutes, uniquement au repos**. Les anges et les démons ne font pas de jet de Vigueur pour éviter l'inconscience lorsque la jauge est entièrement remplie de blessures non létales ; les autres conséquences de la saturation restent applicables, notamment la conversion des nouvelles blessures non létales en blessures létales.
 
 Il est tout à fait possible de combiner Surcharge et mots-clés sur un même lancement, mais le rang effectif ne peut jamais dépasser 6. Un pouvoir lancé au rang 6 n'a donc droit à aucun mot-clé. Mais ces pouvoirs divins sont largement assez puissants pour ne pas en avoir besoin.
 
@@ -34,8 +34,8 @@ Il est tout à fait possible de combiner Surcharge et mots-clés sur un même la
 
 - Drain : 3 dés (dans les limites du Rang Céleste) + 1 drain automatique (1 rang au-delà)
 - Résultat supposé : un 6 sur les dés → 1 blessure non-létale
-- Le drain automatique inflige quant à lui 1 blessure aggravée directe, sauf conversion par [Conduit Divin](#conduit-divin)
-- Bilan : 1 blessure non-létale + 1 blessure aggravée, pour un pouvoir lancé bien au-delà de ce que ce Rang 3 devrait tenir
+- Le drain automatique inflige quant à lui 1 blessure non létale directe.
+- Bilan : 2 blessures non létales (une aléatoire et une automatique), pour un pouvoir lancé au-delà du Rang Céleste du personnage.
 </div>
 
 ***
@@ -60,10 +60,9 @@ Toute âme incarnée peut, en une action gratuite déclarée avant le jet, soit 
 <div class="admonition danger">
 <p class="admonition-title">La Consommation</p>
 
-Un drain automatique n'est jamais une question de chance : c'est la puissance de l'âme, quelle que soit sa nature, qui déborde et brûle littéralement l'enveloppe charnelle de l'intérieur. Rien ne l'arrête : ni l'armure, ni la Résilience, ni la bonne volonté.
+Un drain automatique n'est jamais une question de chance : c'est la puissance de l'âme, quelle que soit sa nature, qui déborde et épuise son hôte. Il inflige directement une blessure non létale, sans réduction par l'armure ou la Résilience. Lorsque la jauge est pleine, tout nouveau drain est converti en blessure létale, conformément aux [règles de blessures](../blessures).
 </div>
 
-Un ange de Rang 1 qui surcharge un pouvoir au rang 6 lance 1 dé de drain et encaisse 5 drains automatiques d'un coup — cinq blessures aggravées avant même de savoir si le pouvoir a fait effet. Ce n'est plus de l'imprudence, c'est un plan de carrière de martyr. Un Archange de Rang 5, à l'inverse, peut surcharger largement avant de sentir quoi que ce soit mordre pour de vrai.
-Mais ça ressemble à quoi une blessure aggravée due au drain? ça dépend, la plupart subissent un vieillissement accéléré (en moyenne 1 blessure = + 10 ans) mais certains ont plutôt développé à la place des stigmates qui ne cicatrisent jamais, d'autres encore ont sombré dans la folie avec des conséquences désastreuses (cauchemars, privation de sommeil, scarification, automutilations…)
+Un ange de Rang 1 qui surcharge un pouvoir au rang 6 lance 1 dé de drain et subit 5 blessures non létales automatiques. Un Archange de Rang 5, à l'inverse, lance 5 dés de drain et ne subit qu'une blessure non létale automatique. Dans les deux cas, si la jauge est pleine, les nouveaux drains deviennent des blessures létales : la puissance reste accessible, mais l'hôte finit par en payer le prix.
 
-Si la Consommation tue l'hôte, l'ange se [réincarne](../../personnage/reincarnation) normalement. Les anges qui abusent de cette mécanique finissent par consumer leurs hôtes en série, ce qui finit par attirer l'attention — des démons, des inquisiteurs, ou pire, de la hiérarchie. Et puis une jeune maman de 70 ans qui "accouche" d'un "bébé" de 50 ans, ça fait littéralement tâche...
+Si le drain finit par tuer l'hôte, l'ange se [réincarne](../../personnage/reincarnation) normalement. Les abus répétés peuvent néanmoins attirer l'attention de la hiérarchie : les hôtes ne sont pas officiellement du matériel consommable.
