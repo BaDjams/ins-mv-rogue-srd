@@ -1189,15 +1189,15 @@ les pièces justificatives.</p> </section><section class="export-section astro-t
 <p><code dir="auto">PUI + R + max(Marge, Dé rouge)</code></p>
 </blockquote>
 <p>Un pouvoir peut par ailleurs être modulé au lancement par des <strong>mots-clés</strong> — <a href="../mots-cles-pouvoirs">Multicible, Portée, Durée</a> et quelques autres. Chaque mot-clé a un coût, qui s’ajoute au rang de lancement pour donner le <strong>rang effectif</strong> du pouvoir, plafonné à 6. Le rang effectif ne sert qu’à une seule chose : déterminer le drain, selon la même règle que la Surcharge — des dés jusqu’au Rang Céleste, des drains automatiques au-delà. Les dégâts et la pénétration, eux, restent calculés sur le rang de lancement : multiplier les cibles n’a jamais rendu une boule de feu plus chaude.</p>
-<p>Le drain se calcule au moment du lancement, rang par rang. Tant que le rang de lancement reste dans les limites du Rang Céleste, chaque rang génère un <strong>dé de drain</strong> : un 6 inflige une <strong>blessure non-létale</strong> — de la fatigue magique, qui se soigne aussi vite qu’un coup de mou (1 case par minute). Chaque rang de lancement au-delà du Rang Céleste génère à la place un <strong>drain automatique</strong> : pas de dé, pas de chance, une <strong>blessure aggravée</strong> directe, non réduite par l’armure ni par la <a href="../blessures">Résilience</a>.</p>
+<p>Le drain se calcule au moment du lancement, à partir du <strong>rang effectif</strong> (rang de lancement, Surcharge et mots-clés compris). Pour chaque rang jusqu’au Rang Céleste du lanceur, lancez <strong>un dé de drain</strong> : chaque 6 inflige <strong>une blessure non létale</strong> (fatigue magique). Pour chaque rang effectif au-delà du Rang Céleste, le lanceur subit <strong>une blessure non létale automatique</strong>, sans jet de dé. Ces blessures sont subies directement, sans réduction par l’armure ou la <a href="../blessures">Résilience</a>. Elles guérissent à raison d’<strong>une blessure toutes les cinq minutes, uniquement au repos</strong>. Les anges et les démons ne font pas de jet de Vigueur pour éviter l’inconscience lorsque la jauge est entièrement remplie de blessures non létales ; les autres conséquences de la saturation restent applicables, notamment la conversion des nouvelles blessures non létales en blessures létales.</p>
 <p>Il est tout à fait possible de combiner Surcharge et mots-clés sur un même lancement, mais le rang effectif ne peut jamais dépasser 6. Un pouvoir lancé au rang 6 n’a donc droit à aucun mot-clé. Mais ces pouvoirs divins sont largement assez puissants pour ne pas en avoir besoin.</p>
 <div class="admonition example">
 <p class="admonition-title">Exemple : Ange Rang 3, pouvoir Rang 2 surchargé à 4</p>
 <ul>
 <li>Drain : 3 dés (dans les limites du Rang Céleste) + 1 drain automatique (1 rang au-delà)</li>
 <li>Résultat supposé : un 6 sur les dés → 1 blessure non-létale</li>
-<li>Le drain automatique inflige quant à lui 1 blessure aggravée directe, sauf conversion par <a href="#conduit-divin">Conduit Divin</a></li>
-<li>Bilan : 1 blessure non-létale + 1 blessure aggravée, pour un pouvoir lancé bien au-delà de ce que ce Rang 3 devrait tenir</li>
+<li>Le drain automatique inflige quant à lui 1 blessure non létale directe.</li>
+<li>Bilan : 2 blessures non létales (une aléatoire et une automatique), pour un pouvoir lancé au-delà du Rang Céleste du personnage.</li>
 </ul>
 </div>
 <hr>
@@ -1234,28 +1234,27 @@ les pièces justificatives.</p> </section><section class="export-section astro-t
 <h2 id="la-consommation">La Consommation</h2>
 <div class="admonition danger">
 <p class="admonition-title">La Consommation</p>
-<p>Un drain automatique n’est jamais une question de chance : c’est la puissance de l’âme, quelle que soit sa nature, qui déborde et brûle littéralement l’enveloppe charnelle de l’intérieur. Rien ne l’arrête : ni l’armure, ni la Résilience, ni la bonne volonté.</p>
+<p>Un drain automatique n’est jamais une question de chance : c’est la puissance de l’âme, quelle que soit sa nature, qui déborde et épuise son hôte. Il inflige directement une blessure non létale, sans réduction par l’armure ou la Résilience. Lorsque la jauge est pleine, tout nouveau drain est converti en blessure létale, conformément aux <a href="../blessures">règles de blessures</a>.</p>
 </div>
-<p>Un ange de Rang 1 qui surcharge un pouvoir au rang 6 lance 1 dé de drain et encaisse 5 drains automatiques d’un coup — cinq blessures aggravées avant même de savoir si le pouvoir a fait effet. Ce n’est plus de l’imprudence, c’est un plan de carrière de martyr. Un Archange de Rang 5, à l’inverse, peut surcharger largement avant de sentir quoi que ce soit mordre pour de vrai.
-Mais ça ressemble à quoi une blessure aggravée due au drain? ça dépend, la plupart subissent un vieillissement accéléré (en moyenne 1 blessure = + 10 ans) mais certains ont plutôt développé à la place des stigmates qui ne cicatrisent jamais, d’autres encore ont sombré dans la folie avec des conséquences désastreuses (cauchemars, privation de sommeil, scarification, automutilations…)</p>
-<p>Si la Consommation tue l’hôte, l’ange se <a href="../../personnage/reincarnation">réincarne</a> normalement. Les anges qui abusent de cette mécanique finissent par consumer leurs hôtes en série, ce qui finit par attirer l’attention — des démons, des inquisiteurs, ou pire, de la hiérarchie. Et puis une jeune maman de 70 ans qui “accouche” d’un “bébé” de 50 ans, ça fait littéralement tâche…</p> </section><section class="export-section astro-tc7gsgdq"> <h2 id="principe-général">Principe Général</h2>
+<p>Un ange de Rang 1 qui surcharge un pouvoir au rang 6 lance 1 dé de drain et subit 5 blessures non létales automatiques. Un Archange de Rang 5, à l’inverse, lance 5 dés de drain et ne subit qu’une blessure non létale automatique. Dans les deux cas, si la jauge est pleine, les nouveaux drains deviennent des blessures létales : la puissance reste accessible, mais l’hôte finit par en payer le prix.</p>
+<p>Si le drain finit par tuer l’hôte, l’ange se <a href="../../personnage/reincarnation">réincarne</a> normalement. Les abus répétés peuvent néanmoins attirer l’attention de la hiérarchie : les hôtes ne sont pas officiellement du matériel consommable.</p> </section><section class="export-section astro-tc7gsgdq"> <h2 id="principe-général">Principe Général</h2>
 <p>Le <a href="../../personnage/rang">rang céleste</a> d’une créature détermine sa capacité à maîtriser des pouvoirs surnaturels. Plus une créature a un rang élevé, plus elle peut accéder à des pouvoirs puissants et les développer à un niveau avancé.</p>
 <h2 id="rang-des-pouvoirs-et-drain">Rang des pouvoirs et Drain</h2>
 <p>Chaque pouvoir possède un rang (1 à 6). Le rang détermine à la fois l’accès et le coût en <a href="../energie#rang-des-pouvoirs-et-drain">drain</a>.</p>
 <ul>
 <li><strong>Accès</strong> : rang de base ≤ Rang Céleste pour les pouvoirs actifs ; les pouvoirs passifs sont calés sur le Rang Céleste. Pas de downgrade possible.</li>
 <li><strong>Surcharge</strong> : lancer un pouvoir actif à un rang supérieur à son rang de base, jusqu’à 6 — y compris au-delà du Rang Céleste. Chaque surcharge ajoute un ou plusieur rang au pouvoir. La somme du rang de base du pouvoir et des rangs de surcharge, appelée rang effectif, ne peut pas excéder 6.</li>
-<li>le rang effectif de lancement détermine le drain : 1 dé de drain par rang jusqu’au Rang Céleste (un 6 inflige 1 blessure non-létale), 1 drain automatique par rang au-delà (1 blessure aggravée directe, sauf conversion par <a href="../energie#conduit-divin">Conduit Divin</a>).</li>
+<li>le rang effectif de lancement détermine le drain : 1 dé de drain par rang jusqu’au Rang Céleste (un 6 inflige 1 blessure non-létale), 1 drain automatique par rang au-delà (1 blessure non létale directe).</li>
 </ul>
 <div class="admonition example">
 <p class="admonition-title">Exemple : un Ange (donc RC 3) lance un pouvoir de Rang 2, surchargé à 4</p>
 <ul>
 <li>Drain : 3 dés (jusqu’au Rang Céleste) + 1 drain automatique (1 rang au-delà du Rang 3)</li>
 <li>On lance les dés de drain, chaque 6 declenche fait subir une blessure non letale au lanceur de sort.</li>
-<li>Le drain automatique inflige en plus 1 blessure aggravée directe.</li>
+<li>Le drain automatique inflige en plus 1 blessure non létale directe.</li>
 </ul>
 </div>
-<p>Pour le détail complet du mécanisme (Consommation, Conduit Divin, Présence Surnaturelle), voir le chapitre Énergie.</p>
+<p>Pour le détail complet du mécanisme (Consommation, Présence Surnaturelle, récupération et saturation de la jauge), voir le chapitre Énergie.</p>
 <hr>
 <h2 id="règles-dacquisition-des-pouvoirs">Règles d’Acquisition des Pouvoirs</h2>
 <p><strong>Limitation par Rang Prérequis</strong></p>
@@ -1368,12 +1367,13 @@ et 12 PV.</p>
 <h2 id="types-de-blessures"><strong>Types de Blessures</strong></h2>
 <p><strong>Blessures Non Létales (/)</strong></p>
 <p><strong>Marquage :</strong> Simple trait diagonal
-<strong>Causes :</strong> Fatigue extrême, coups assommants, douleur intense, drain magique dans les limites du <a href="../../personnage/rang">Rang Céleste</a> (un 6 sur un dé de <a href="../energie#rang-des-pouvoirs-et-drain">drain</a>)
+<strong>Causes :</strong> Fatigue extrême, coups assommants, douleur intense, <a href="../energie#rang-des-pouvoirs-et-drain">drain magique</a> (un 6 sur chaque dé de drain jusqu’au Rang Céleste, puis une blessure non létale automatique par rang effectif supplémentaire)
 <strong>Restriction :</strong> Ne peut être cochée que dans une case vide
-<strong>Guérison :</strong> 1 / 5min de repos.</p>
+<strong>Guérison :</strong> 1 blessure non létale toutes les 5 minutes, uniquement au repos.</p>
 <div class="admonition note">
 <p class="admonition-title">Immunités à la fatigue</p>
-<p>Certaines âmes sont immunisées aux blessures non-létales d’origine physique ordinaire (fatigue, essoufflement, coups assommants) — l’immunité, si elle existe, dépend du type d’âme incarnée et est précisée dans sa description. Le drain magique, lui, reste toujours efficace : ce n’est pas de la fatigue du corps, mais l’usure du canal entre l’âme et son hôte.</p>
+<p>Certaines âmes sont immunisées aux blessures non létales d’origine physique ordinaire (fatigue, essoufflement, coups assommants) — l’immunité, si elle existe, dépend du type d’âme incarnée et est précisée dans sa description. Le drain magique, lui, reste toujours efficace : ce n’est pas de la fatigue du corps, mais l’usure du canal entre l’âme et son hôte.</p>
+<p><strong>Anges et démons :</strong> leur immunité à la fatigue dispense uniquement du jet de Vigueur destiné à éviter l’inconscience lorsque la jauge est entièrement remplie de blessures non létales. Ils continuent à subir le drain magique et, si la jauge est pleine, les nouvelles blessures non létales deviennent létales. Cette immunité ne les protège pas de l’état critique causé par les blessures létales.</p>
 </div>
 <p><strong>Blessures Létales (X)</strong></p>
 <p><strong>Marquage :</strong> Croix complète
@@ -1381,7 +1381,7 @@ et 12 PV.</p>
 <strong>Guérison :</strong> 1 semaine par coche (récupération naturelle selon le rang céleste)</p>
 <p><strong>Blessures Aggravées (⭙)</strong></p>
 <p><strong>Marquage :</strong> Croix entourée
-<strong>Causes :</strong> Blessures très graves laissant des séquelles permanentes (amputations…), drain automatique généré par un rang de lancement de sort au-delà du <a href="../../personnage/rang">Rang Céleste</a> (voir <a href="../energie">Énergie</a>), certaines sources de dégâts surnaturels décrites comme infligeant ce type de dégats
+<strong>Causes :</strong> Blessures très graves laissant des séquelles permanentes (amputations…), certaines sources de dégâts surnaturels décrites comme infligeant ce type de dégâts. Le drain magique n’inflige pas de blessures aggravées.
 Guérison : Ces blessures ne guérissent jamais naturellement. Au mieux une cicatrisation.</p>
 <h2 id="règles-de-progression-des-blessures"><strong>Règles de Progression des Blessures</strong></h2>
 <p>Les blessures s’<strong>aggravent</strong> toujours vers le type le plus grave :</p>
@@ -1394,8 +1394,7 @@ Guérison : Ces blessures ne guérissent jamais naturellement. Au mieux une cica
 <p><strong>Important :</strong> Seules les blessures non létales nécessitent une case vide. Les blessures plus graves peuvent toujours aggraver une blessure existante.</p>
 <h2 id="seuils-critiques"><strong>Seuils Critiques</strong></h2>
 <p>A chaque fois que le personnage subit une blessure, on vérifie d’abord si l’un des cas suivant s’applique :</p>
-<p><strong>Jauge Pleine - Dernière Case (/) :</strong>  Le personnage doit réussir un jet de VIG ou sombrer dans l’inconscience.
-les prochaines blessures non létales subies seront obligatoirement de type létal (X).</p>
+<p><strong>Jauge Pleine - Dernière Case (/) :</strong> Le personnage doit réussir un jet de VIG ou sombrer dans l’inconscience, <strong>sauf s’il est un ange ou un démon</strong>, auquel cas il reste conscient sans jet. Dans tous les cas, les prochaines blessures non létales subies deviennent obligatoirement des blessures létales (X).</p>
 <p><strong>Jauge Pleine - Dernière Case (X) :</strong>   Le personnage doit réussir un jet de VIG ou sombrer en état critique. Il est alors inconscient et doit recevoir des soins rapidement : tant qu’il n’est pas stabilisé, il subit 1 blessure non létale à chaque tour. Les prochaines blessures létales ou non létales subies seront obligatoirement de type  aggravée (⭙).</p>
 <p><strong>Jauge Pleine - Dernière Case (⭙) :</strong>  <strong>MORT</strong> (pas de jet de sauvegarde contre la mort dans ce jeu)<strong>.</strong></p>
 <h2 id="guérison-accélérée"><strong>Guérison Accélérée</strong></h2>
@@ -1426,9 +1425,9 @@ Toutes les blessures de même type guérissent simultanément au rythme de la ca
 <ol>
 <li>Une attaque inflige 9 dégâts non létaux → après Résilience (9/3=3), Mirael <strong>subit</strong> 3 blessures non létales → coche (/) (/) (/)</li>
 <li>Une attaque inflige 6 dégâts létaux → après Résilience (6/3=2), Mirael <strong>subit</strong> 2 blessures létales → les cases 1-2 s’upgradent en (X) (X), la case 3 reste (/) et Mirael décale ses cases (/) (/) vers la droite pour bien avoir (X) (X) (/) (/) (/)</li>
-<li>Mirael surcharge un pouvoir au rang 4, donc au-delà de son Rang Céleste → drain automatique → <strong>subit</strong> directement 1 blessure aggravée (sans réduction), De plus, 1 dé de drain génère un 6, il subit une blessure non létale en plus  → (⭙) (X) (X) (/) (/) (/) (/) + 3 cases vides.</li>
-<li>Une balle inflige 9 dégâts létaux → après Résilience (9/3=3), Mirael <strong>subit</strong> 3 blessures létales →  (⭙) (X) (X) (X) (X) (X) (X) (/) (/) (/). Comme sa dernière case est cochée en non létal, il doit réussir un jet de VIG ou sombrer dans l’inconscience. Il à 3 en VIG et fait 221. C’est réussi (l’intensité de ce jet importe peu), il peut continuer le combat.</li>
-<li>Mirael se prend une attaque massive d’un démon armé de sa lame maudite. Malgré la résilience, Mirael subit 4 blessures aggravées. Sa barre de vie devient : (⭙)(⭙)(⭙)(⭙)(⭙) (X) (X) (X) (X) (X). Sa dernière case est cochée en létal, il doit réussir un jet de VIG ou sombrer en état critique. C’est raté cette fois-ci et Mirael sombre dans l’inconscience, son hôte de son sang. si personne ne vient le sauver, l’hote mourra et Mirael pourra se réincarener.</li>
+<li>Mirael surcharge un pouvoir au rang 4, donc au-delà de son Rang Céleste → drain automatique → <strong>subit</strong> directement 1 blessure non létale (sans réduction). De plus, 1 dé de drain génère un 6 : il subit une deuxième blessure non létale → (X) (X) (/) (/) (/) (/) (/) + 3 cases vides.</li>
+<li>Une balle inflige 9 dégâts létaux → après Résilience (9/3=3), Mirael <strong>subit</strong> 3 blessures létales → (X) (X) (X) (X) (X) (/) (/) (/) (/) (/) : sa jauge est pleine de blessures, mais la dernière case reste non létale. Comme il est ange, il ne fait aucun jet de VIG pour éviter l’inconscience liée à la fatigue.</li>
+<li>Mirael se prend une attaque massive d’un démon armé de sa lame maudite. Malgré la Résilience, il subit 4 blessures aggravées → (⭙) (⭙) (⭙) (⭙) (X) (X) (X) (X) (X) (/). La dernière case reste non létale : il demeure conscient grâce à son immunité à la fatigue. Une blessure létale supplémentaire ferait passer cette dernière case à (X) et déclencherait alors le jet de VIG pour éviter l’état critique.</li>
 </ol>
 <h2 id="calcul-des-points-de-vie-par-type-de-créatures">Calcul des points de vie par type de créatures :</h2>
 
