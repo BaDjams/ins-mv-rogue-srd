@@ -15,17 +15,17 @@ Chaque pouvoir possède un rang (1 à 6). Le rang détermine à la fois l'accès
 
 - **Accès** : rang de base ≤ Rang Céleste pour les pouvoirs actifs ; les pouvoirs passifs sont calés sur le Rang Céleste. Pas de downgrade possible.
 - **Surcharge** : lancer un pouvoir actif à un rang supérieur à son rang de base, jusqu'à 6 — y compris au-delà du Rang Céleste. Chaque surcharge ajoute un ou plusieur rang au pouvoir. La somme du rang de base du pouvoir et des rangs de surcharge, appelée rang effectif, ne peut pas excéder 6.
-- le rang effectif de lancement détermine le drain : 1 dé de drain par rang jusqu'au Rang Céleste (un 6 inflige 1 blessure non-létale), 1 drain automatique par rang au-delà (1 blessure aggravée directe, sauf conversion par [Conduit Divin](../energie#conduit-divin)).
+- le rang effectif de lancement détermine le drain : 1 dé de drain par rang jusqu'au Rang Céleste (un 6 inflige 1 blessure non-létale), 1 drain automatique par rang au-delà (1 blessure non létale directe).
 
 <div class="admonition example">
 <p class="admonition-title">Exemple : un Ange (donc RC 3) lance un pouvoir de Rang 2, surchargé à 4</p>
 
 - Drain : 3 dés (jusqu'au Rang Céleste) + 1 drain automatique (1 rang au-delà du Rang 3)
 - On lance les dés de drain, chaque 6 declenche fait subir une blessure non letale au lanceur de sort.
-- Le drain automatique inflige en plus 1 blessure aggravée directe.
+- Le drain automatique inflige en plus 1 blessure non létale directe.
 </div>
 
-Pour le détail complet du mécanisme (Consommation, Conduit Divin, Présence Surnaturelle), voir le chapitre Énergie.
+Pour le détail complet du mécanisme (Consommation, Présence Surnaturelle, récupération et saturation de la jauge), voir le chapitre Énergie.
 
 ***
 

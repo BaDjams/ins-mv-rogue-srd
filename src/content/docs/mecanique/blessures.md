@@ -68,14 +68,16 @@ Plutôt que de soustraire des points de vie, le système utilise une **jauge de 
 **Blessures Non Létales (/)**
 
 **Marquage :** Simple trait diagonal
-**Causes :** Fatigue extrême, coups assommants, douleur intense, drain magique dans les limites du [Rang Céleste](../../personnage/rang) (un 6 sur un dé de [drain](../energie#rang-des-pouvoirs-et-drain))
+**Causes :** Fatigue extrême, coups assommants, douleur intense, [drain magique](../energie#rang-des-pouvoirs-et-drain) (un 6 sur chaque dé de drain jusqu'au Rang Céleste, puis une blessure non létale automatique par rang effectif supplémentaire)
 **Restriction :** Ne peut être cochée que dans une case vide
-**Guérison :** 1 / 5min de repos.
+**Guérison :** 1 blessure non létale toutes les 5 minutes, uniquement au repos.
 
 <div class="admonition note">
 <p class="admonition-title">Immunités à la fatigue</p>
 
-Certaines âmes sont immunisées aux blessures non-létales d'origine physique ordinaire (fatigue, essoufflement, coups assommants) — l'immunité, si elle existe, dépend du type d'âme incarnée et est précisée dans sa description. Le drain magique, lui, reste toujours efficace : ce n'est pas de la fatigue du corps, mais l'usure du canal entre l'âme et son hôte.
+Certaines âmes sont immunisées aux blessures non létales d'origine physique ordinaire (fatigue, essoufflement, coups assommants) — l'immunité, si elle existe, dépend du type d'âme incarnée et est précisée dans sa description. Le drain magique, lui, reste toujours efficace : ce n'est pas de la fatigue du corps, mais l'usure du canal entre l'âme et son hôte.
+
+**Anges et démons :** leur immunité à la fatigue dispense uniquement du jet de Vigueur destiné à éviter l'inconscience lorsque la jauge est entièrement remplie de blessures non létales. Ils continuent à subir le drain magique et, si la jauge est pleine, les nouvelles blessures non létales deviennent létales. Cette immunité ne les protège pas de l'état critique causé par les blessures létales.
 </div>
 
 **Blessures Létales (X)**
@@ -87,7 +89,7 @@ Certaines âmes sont immunisées aux blessures non-létales d'origine physique o
 **Blessures Aggravées (⭙)**
 
 **Marquage :** Croix entourée 
-**Causes :** Blessures très graves laissant des séquelles permanentes (amputations...), drain automatique généré par un rang de lancement de sort au-delà du [Rang Céleste](../../personnage/rang) (voir [Énergie](../energie)), certaines sources de dégâts surnaturels décrites comme infligeant ce type de dégats
+**Causes :** Blessures très graves laissant des séquelles permanentes (amputations...), certaines sources de dégâts surnaturels décrites comme infligeant ce type de dégâts. Le drain magique n'inflige pas de blessures aggravées.
 Guérison : Ces blessures ne guérissent jamais naturellement. Au mieux une cicatrisation. 
 
 ## **Règles de Progression des Blessures**
@@ -105,8 +107,7 @@ Les blessures s'**aggravent** toujours vers le type le plus grave :
 
 A chaque fois que le personnage subit une blessure, on vérifie d'abord si l'un des cas suivant s'applique : 
 
-**Jauge Pleine - Dernière Case (/) :**  Le personnage doit réussir un jet de VIG ou sombrer dans l'inconscience.
-les prochaines blessures non létales subies seront obligatoirement de type létal (X).
+**Jauge Pleine - Dernière Case (/) :** Le personnage doit réussir un jet de VIG ou sombrer dans l'inconscience, **sauf s'il est un ange ou un démon**, auquel cas il reste conscient sans jet. Dans tous les cas, les prochaines blessures non létales subies deviennent obligatoirement des blessures létales (X).
 
 **Jauge Pleine - Dernière Case (X) :**   Le personnage doit réussir un jet de VIG ou sombrer en état critique. Il est alors inconscient et doit recevoir des soins rapidement : tant qu'il n'est pas stabilisé, il subit 1 blessure non létale à chaque tour. Les prochaines blessures létales ou non létales subies seront obligatoirement de type  aggravée (⭙).
 
@@ -152,9 +153,9 @@ Certains artefacts légendaires comme **le Saint Graal** peuvent guérir directe
 
 1.  Une attaque inflige 9 dégâts non létaux → après Résilience (9/3=3), Mirael **subit** 3 blessures non létales → coche (/) (/) (/) 
 2.  Une attaque inflige 6 dégâts létaux → après Résilience (6/3=2), Mirael **subit** 2 blessures létales → les cases 1-2 s'upgradent en (X) (X), la case 3 reste (/) et Mirael décale ses cases (/) (/) vers la droite pour bien avoir (X) (X) (/) (/) (/)
-3.  Mirael surcharge un pouvoir au rang 4, donc au-delà de son Rang Céleste → drain automatique → **subit** directement 1 blessure aggravée (sans réduction), De plus, 1 dé de drain génère un 6, il subit une blessure non létale en plus  → (⭙) (X) (X) (/) (/) (/) (/) + 3 cases vides.
-4.  Une balle inflige 9 dégâts létaux → après Résilience (9/3=3), Mirael **subit** 3 blessures létales →  (⭙) (X) (X) (X) (X) (X) (X) (/) (/) (/). Comme sa dernière case est cochée en non létal, il doit réussir un jet de VIG ou sombrer dans l'inconscience. Il à 3 en VIG et fait 221. C'est réussi (l'intensité de ce jet importe peu), il peut continuer le combat.
-5.  Mirael se prend une attaque massive d'un démon armé de sa lame maudite. Malgré la résilience, Mirael subit 4 blessures aggravées. Sa barre de vie devient : (⭙)(⭙)(⭙)(⭙)(⭙) (X) (X) (X) (X) (X). Sa dernière case est cochée en létal, il doit réussir un jet de VIG ou sombrer en état critique. C'est raté cette fois-ci et Mirael sombre dans l'inconscience, son hôte de son sang. si personne ne vient le sauver, l'hote mourra et Mirael pourra se réincarener.
+3.  Mirael surcharge un pouvoir au rang 4, donc au-delà de son Rang Céleste → drain automatique → **subit** directement 1 blessure non létale (sans réduction). De plus, 1 dé de drain génère un 6 : il subit une deuxième blessure non létale → (X) (X) (/) (/) (/) (/) (/) + 3 cases vides.
+4.  Une balle inflige 9 dégâts létaux → après Résilience (9/3=3), Mirael **subit** 3 blessures létales → (X) (X) (X) (X) (X) (/) (/) (/) (/) (/) : sa jauge est pleine de blessures, mais la dernière case reste non létale. Comme il est ange, il ne fait aucun jet de VIG pour éviter l'inconscience liée à la fatigue.
+5.  Mirael se prend une attaque massive d'un démon armé de sa lame maudite. Malgré la Résilience, il subit 4 blessures aggravées → (⭙) (⭙) (⭙) (⭙) (X) (X) (X) (X) (X) (/). La dernière case reste non létale : il demeure conscient grâce à son immunité à la fatigue. Une blessure létale supplémentaire ferait passer cette dernière case à (X) et déclencherait alors le jet de VIG pour éviter l'état critique.
 
 ## Calcul des points de vie par type de créatures :
 

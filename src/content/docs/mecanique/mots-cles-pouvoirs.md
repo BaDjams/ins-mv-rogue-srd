@@ -11,7 +11,7 @@ Chaque mot-clé a un coût. La somme des coûts s'ajoute au rang de lancement du
 
 > `Rang effectif = Rang de lancement + Σ(coûts des mots-clés)`
 
-Le rang effectif ne sert qu'à une seule chose : déterminer le [drain](../energie#rang-des-pouvoirs-et-drain) — des dés de drain (blessures non-létales sur un 6) jusqu'au Rang Céleste, des drains automatiques (blessures aggravées directes) au-delà. Les dégâts et la pénétration restent calculés sur le rang de lancement. Moduler un pouvoir le rend plus coûteux, pas plus destructeur : pour frapper plus fort, il y a la [Surcharge](../energie#rang-des-pouvoirs-et-drain).
+Le rang effectif ne sert qu'à une seule chose : déterminer le [drain](../energie#rang-des-pouvoirs-et-drain) — des dés de drain (blessures non-létales sur un 6) jusqu'au Rang Céleste, des drains automatiques (blessures non létales directes) au-delà. Les dégâts et la pénétration restent calculés sur le rang de lancement. Moduler un pouvoir le rend plus coûteux, pas plus destructeur : pour frapper plus fort, il y a la [Surcharge](../energie#rang-des-pouvoirs-et-drain).
 
 ***
 
