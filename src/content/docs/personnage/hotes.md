@@ -12,6 +12,30 @@ Le **deck officiel d'hôtes** constitue la méthode de référence. Sa compositi
 
 **En l'absence du deck officiel**, un **jeu standard de 54 cartes (52 cartes et 2 jokers)** sert de **méthode de remplacement** pour déterminer la qualité d'un hôte ordinaire. Les fréquences de ce jeu de remplacement **ne présument pas des fréquences du deck officiel**. Dans le générateur, chaque hôte spécial actif du deck officiel peut disposer d'un **taux de tirage individuel** et de dates de disponibilité ; les probabilités restantes sont réparties entre les hôtes ordinaires suivant les poids propres au deck officiel. La somme des probabilités spéciales actives ne peut dépasser 100 %. Les informations complémentaires (identité, origine, occupation, etc.) peuvent être tirées sur des tables D66, lorsqu'elles sont disponibles, ou déterminées par le MJ. Les tables D66 définitives restent à publier : aucune liste improvisée n'est normative.
 
+## Première incarnation : deux viviers distincts
+
+La **première incarnation** n'utilise pas automatiquement le vivier commun des Citoyens.
+
+### Anges : les Soldats de Dieu
+
+Au début du scénario, l'ange **tire trois cartes du deck « Soldats de Dieu »**, puis choisit librement son hôte parmi elles. Les Soldats de Dieu sont **préparés à servir leur faction**. Leur formation peut être civile, intellectuelle, professionnelle ou militaire : on ne leur demande pas d'être tous des combattants.
+
+Le vivier ordinaire exclut les qualités **Gris** et **Vert**. Chaque Soldat de Dieu possède au minimum **une compétence professionnelle (+2)**, correspondant à son métier ou domaine d'expertise. Les cartes spéciales de ce vivier doivent également satisfaire cette exigence. Les probabilités relatives de Bleu, Violet et Or sont **paramétrables**, sans les assimiler à celles du jeu de 54 cartes.
+
+### Démons : les réseaux infernaux
+
+Les démons ne disposent pas d'un appareil de préparation aussi systématique. Leur premier hôte vient d'un **réseau de sympathisants** ou d'un **milieu sectaire**. Certains peuvent aussi s'incarner dans un **corps humain récemment décédé**, à condition qu'une opération de magie noire permette explicitement cette exception.
+
+Le MJ définit le nombre de candidats accessibles au début du scénario ; le générateur propose un **vivier « Réseaux infernaux »** indépendant, avec des pondérations modifiables et une option explicite pour les corps décédés. Aucun niveau minimum de compétence ou de qualité n'est imposé à ces hôtes.
+
+### Boosters de scénario et de période
+
+L'interface peut proposer des **boosters nommés par le créateur** selon le cadre de l'aventure, la période de l'année et la première incarnation ou la réincarnation. Chaque booster référence un vivier existant ou une distribution autonome, détermine le **nombre de cartes proposées** et peut contenir des **hôtes spéciaux aux caractéristiques fixes et taux de tirage individuels**.
+
+L'ouverture est une **présentation ludique du tirage**, pas une nouvelle règle de réussite : elle révèle les cartes, souligne **la meilleure qualité** et laisse **le choix définitif au joueur**. Une carte présentée comme « meilleure » n'est donc pas imposée au personnage ; ses attributs et compétences restent ceux de sa fiche.
+
+La composition des decks et boosters peut évoluer. Les **exemples thématiques imaginés pendant la conception ne constituent pas des règles ou des boosters officiels** tant qu'ils ne sont pas publiés par l'administrateur.
+
 ## Qualité d'un hôte : jeu de 54 cartes (méthode de remplacement)
 
 | Qualité | Cartes | Nombre | Probabilité |
