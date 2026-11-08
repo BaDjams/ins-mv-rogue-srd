@@ -1141,3 +1141,136 @@ nav a[aria-current="page"]:hover {
   .rb-card,.rb-sealed-open {animation:none!important;opacity:1!important;}
   .rb-card-inner,.rb-card{transition:none!important;}
 }
+
+/* ─── Correctifs boosters : grille stable, tiers lisibles, révélation théâtrale ── */
+/* Starlight impose un margin-top aux éléments consécutifs du Markdown : cela
+   décalait les cartes après la première sur mobile. On neutralise cet héritage
+   uniquement dans l'interface des boosters. */
+.rogue-booster .rb-widget * { margin-top:0!important; }
+.rogue-booster .rb-card-rack {
+  grid-auto-rows: 425px;
+  align-items:stretch;
+  row-gap:17px;
+  padding-block:12px;
+}
+.rogue-booster .rb-card-rack > .rb-card {
+  margin:0!important;
+  height:100%;
+  min-height:0;
+  align-self:stretch;
+  box-sizing:border-box;
+  isolation:isolate;
+}
+.rogue-booster .rb-card-front {
+  background:linear-gradient(160deg,
+    color-mix(in srgb, var(--rb-tier) 16%, #242335) 0%,
+    #181825 42%,#12141f 100%);
+  border:3px solid var(--rb-tier);
+  box-shadow:0 0 0 1px color-mix(in srgb,var(--rb-tier) 65%,transparent),
+    inset 0 0 0 4px #0d0f17,0 5px 16px #0009;
+  padding:11px;
+  gap:6px;
+}
+.rb-card-rarity {
+  background:linear-gradient(95deg,
+    color-mix(in srgb,var(--rb-tier) 80%,#101019),
+    color-mix(in srgb,var(--rb-tier) 95%,white),
+    color-mix(in srgb,var(--rb-tier) 80%,#101019));
+  border:1px solid color-mix(in srgb,var(--rb-tier) 85%,white);
+  letter-spacing:.025em;font-size:10px;line-height:1.1;
+  white-space:normal;
+}
+.rb-portrait {
+  flex:none;
+  border:1px solid color-mix(in srgb,var(--rb-tier) 60%,#252334);
+  background:radial-gradient(circle at 50% 45%,
+    color-mix(in srgb,var(--rb-tier) 26%,#28243c),#171727 72%);
+}
+.rb-stats {flex:none;}
+.rb-stats strong {font-weight:800;}
+.rb-card-name {flex:none;}
+.rb-card-job,.rb-card-source {flex:none;}
+.rb-skills {font-size:10.5px;line-height:1.35;max-height:58px;min-height:0;
+  overflow:hidden;display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:3;}
+.rb-profile-details {
+  display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;
+  overflow:hidden;line-height:1.3;font-size:10.5px;color:#cec3d3;
+  max-height:30px;min-height:0;
+}
+.rb-profile-details b {color:var(--rb-tier);margin-right:2px;}
+.rb-card-choose {color:var(--rb-tier);text-shadow:0 0 9px #000;}
+.rb-choice .rb-host-info {
+  display:flex;flex-direction:column;gap:4px;
+  flex-basis:100%;line-height:1.45;overflow-wrap:anywhere;
+}
+.rb-choice .rb-host-info strong {color:#b5f3d9;}
+/* La teinte du booster, choisie par le créateur, anime la carte la plus rare.
+   La teinte du tier reste l'identité visuelle de chacune des cinq qualités. */
+.rb-sealed {outline:1px solid var(--rb-booster-color,#d7b879);
+  box-shadow:0 9px 34px #0009,0 0 25px var(--rb-booster-color,#d7b879);}
+.rb-seal-symbol {animation:rb-seal-breath 1.6s ease-in-out infinite;}
+.rb-card-best .rb-card-front {
+  border-color:var(--rb-tier);
+  box-shadow:0 0 0 2px var(--rb-booster-color,#d7b879),
+    0 0 24px color-mix(in srgb,var(--rb-booster-color,#d7b879) 70%,transparent),
+    inset 0 0 20px color-mix(in srgb,var(--rb-booster-color,#d7b879) 15%,transparent);
+}
+.rb-reveal-finale .rb-card-best::after {
+  content:"";position:absolute;inset:-5px;z-index:2;pointer-events:none;
+  border:2px solid var(--rb-booster-color,#d7b879);border-radius:16px;
+  box-shadow:0 0 11px var(--rb-booster-color,#d7b879),
+    0 0 35px color-mix(in srgb,var(--rb-booster-color,#d7b879) 70%,transparent);
+  animation:rb-halo 3.5s ease-in-out infinite;
+}
+.rb-reveal-finale .rb-card-best .rb-card-front::after {
+  content:"";position:absolute;inset:0;z-index:3;pointer-events:none;
+  background:linear-gradient(108deg,
+    transparent 12%,
+    color-mix(in srgb,var(--rb-booster-color,#d7b879) 40%,transparent) 45%,
+    rgba(255,255,255,.94) 53%,
+    color-mix(in srgb,var(--rb-booster-color,#d7b879) 35%,transparent) 61%,
+    transparent 85%);
+  transform:translateX(-130%);
+  animation:rb-flash 1.25s ease-out 1;
+}
+.rb-best-label {
+  z-index:5;top:-12px;
+  background:color-mix(in srgb,var(--rb-booster-color,#d7b879) 58%,white);
+  color:#1a1420;border:1px solid #ffffff8a;
+  box-shadow:0 0 13px color-mix(in srgb,var(--rb-booster-color,#d7b879) 65%,transparent);
+}
+@keyframes rb-seal-breath {
+  0%,100% {text-shadow:0 0 10px var(--rb-booster-color,#d7b879);transform:scale(1);}
+  50% {text-shadow:0 0 35px var(--rb-booster-color,#d7b879),0 0 50px #fff8;transform:scale(1.1);}
+}
+@keyframes rb-flash {
+  0%{transform:translateX(-130%);opacity:0;}
+  13%{opacity:.7;}
+  42%{opacity:1;}
+  100%{transform:translateX(130%);opacity:0;}
+}
+@keyframes rb-halo {
+  0%,100%{opacity:.55;filter:brightness(.95);transform:scale(.985);}
+  50%{opacity:1;filter:brightness(1.35);transform:scale(1.025);}
+}
+@media(max-width:590px) {
+  .rogue-booster .rb-card-rack {grid-auto-rows:405px;gap:11px;}
+  .rogue-booster .rb-card-front {padding:7px;gap:5px;}
+  .rb-portrait{height:76px;}
+  .rb-card-rarity {font-size:8.4px;line-height:1.15;padding:5px 3px;}
+  .rb-skills{font-size:10px;max-height:54px;}
+  .rb-profile-details {font-size:9.6px;max-height:27px;}
+  .rb-card-name{font-size:15px;}
+  .rb-stats{font-size:9.5px;}
+}
+@media(max-width:360px){
+  .rogue-booster .rb-card-rack {grid-auto-rows:420px;}
+  .rb-portrait{height:92px;}
+}
+@media(prefers-reduced-motion:reduce) {
+  .rb-seal-symbol,
+  .rb-reveal-finale .rb-card-best::after,
+  .rb-reveal-finale .rb-card-best .rb-card-front::after {animation:none!important;}
+  .rb-reveal-finale .rb-card-best .rb-card-front::after {display:none;}
+  .rb-reveal-finale .rb-card-best::after {opacity:1;transform:none;}
+}
