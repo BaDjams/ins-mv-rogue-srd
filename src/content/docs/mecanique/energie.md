@@ -19,7 +19,7 @@ Les pouvoirs sont répartis en 2 grandes classes : les pouvoirs actifs et les po
 
 La **Surcharge** permet de lancer un pouvoir actif à un rang supérieur au Rang Céleste du lanceur, jusqu'au plafond universel de 6. Le rang de lancement ne peut être inférieur au prérequis du pouvoir. Si le pouvoir génère des dégâts, ils sont calculés sur le rang de lancement, surcharge comprise. 
 
-Les dégâts d'un pouvoir offensif lancé au rang R effectif (donc en prenant en compte les rangs de surcharge) sont :
+Les dégâts d'un pouvoir offensif lancé au **rang R de lancement** (surcharge de puissance comprise, mais **hors coût supplémentaire des mots-clés**) sont :
 
 > `PUI + R + Dé rouge`
 
