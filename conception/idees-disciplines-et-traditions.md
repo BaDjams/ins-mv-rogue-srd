@@ -1,0 +1,73 @@
+# Carnet de conception — Traits, postures, disciplines et traditions magiques
+
+> **STATUT : PISTES DE CONCEPTION — NON NORMATIF.**
+> Ce document conserve les idées discutées le 8 novembre 2026. Il ne remplace pas le SRD et n'applique aucune modification aux règles du jeu. Ne pas importer automatiquement ces propositions dans les catalogues officiels sans arbitrage du créateur.
+
+## Principes généraux proposés
+
+- Simplicité, uniformité, élégance. Employer le moteur D666, avantages/désavantages, intensité, actions complexes/simples/réactions et états existants plutôt que créer des sous-systèmes.
+- Les règles situationnelles doivent définir **ce que tout personnage peut tenter**. Les traits et manœuvres deviennent des **exceptions intéressantes** à ces règles.
+- Deux types d'avantages de traits, sans double limitation automatique :
+  - **Situationnel** : avantage sans quota tant que la condition étroite et précise est remplie (ex. tennisman pour jouer au tennis).
+  - **Ponctuel** : avantage d'application plus large, une fois par session (ex. condition physique pour un jet de sport quelconque).
+- Des traits peuvent aussi débloquer des attaques supplémentaires, réactions, manœuvres, styles de combat, ressources narratives ou exceptions aux règles de base (inspiration Savage Worlds).
+- Distinguer **traits d'hôte** (liés au corps et au vécu du réceptacle), **traits d'âme** (conservés à travers les incarnations), caractéristiques intrinsèques de nature et pouvoirs. Les âmes humaines doivent aussi avoir leur catalogue, y compris pour les PJ de campagnes low magic.
+
+## Architecture des postures et manœuvres envisagée
+
+- Accéder à une posture demande l'acquisition d'un trait de posture (ex. **Défenseur**, **Assaillant**, **Concentré**).
+- **La posture ne confère pas en elle-même un bonus.** Son acquisition débloque sa famille de manœuvres et octroie immédiatement **une manœuvre au choix gratuitement**.
+- Chaque manœuvre supplémentaire demande une progression. Certaines ont un prérequis de manœuvre.
+- Distinguer les manœuvres **actives** (nécessitent une posture choisie, une action ou une réaction) et **passives** (peuvent modifier une règle même hors posture si formulées ainsi). Détail à arbitrer dans le catalogue.
+- Posture neutre accessible à tous ; le SRD actuel décrit encore des postures intrinsèquement avantageuses et un choix automatique, **à migrer seulement après validation**.
+- Pistes de manœuvres : **Charge**, **Attaque double**, **Frappe puissante**, **Riposte**, **Protection**, **Parade totale** ; à harmoniser avec les règles situationnelles de base.
+
+### Maintien de pouvoirs — décisions de conception à transcrire ultérieurement
+
+- **Maintenir un pouvoir, quelle que soit la posture**, impose un désavantage aux actions complexes.
+- **Maintenir un pouvoir, quelle que soit la posture**, donne un avantage aux adversaires qui attaquent le mainteneur.
+- Le nombre ordinaire de pouvoirs maintenus simultanément est **un**.
+- La **posture de Concentration n'annule intrinsèquement aucune de ces contraintes** ; le trait d'accès débloque la famille et sa première manœuvre gratuite.
+- **Mage de combat** : annule l'avantage reçu par les attaquants *du seul fait du maintien*.
+- **Esprit agile** : annule le désavantage aux actions complexes *du seul fait du maintien*.
+- **Concentration profonde** : permet de maintenir 2 pouvoirs.
+- **Concentration ultime** : permet de maintenir 3 pouvoirs ; prérequis Concentration profonde.
+- Les autres avantages et désavantages contextuels continuent de s'appliquer normalement. La fragilité en cas de blessure et les modalités de maintien restent à clarifier au moment d'intégrer ces règles.
+
+## Disciplines martiales envisagées
+
+Une discipline est une famille de techniques pouvant suivre la même économie : acquisition + une manœuvre gratuite, puis manœuvres supplémentaires par progression. Elle ne crée pas une posture obligatoire à moins qu'une manœuvre le précise.
+
+- **Gun-Fu** : dégainé fulgurant, tir au contact, déplacement et tir, double détente, tir de suppression, tirs sous pression.
+- **Arts martiaux traditionnels** : Cogneur/Bagarreur (dégâts des armes naturelles, inspiration des Atouts Savage Worlds), projection, clé articulaire, enchaînement, contre-attaque, désarmement.
+- Autres disciplines possibles : escrime, bouclier, tir de précision, commandement, lutte et protection rapprochée.
+- L'économie des attaques supplémentaires et le cumul avec les rafales, explosions d'intensité et avantages exigent des simulations avant validation.
+
+## Disciplines et traditions surnaturelles envisagées
+
+Distinguer la **nature** (ange, démon, humain, vampire, loup-garou, momie…), la **discipline** (famille de techniques/manœuvres) et la **tradition magique** (comment canaliser et payer le pouvoir).
+
+| Tradition | Identité | Coût ou contrainte à étudier |
+| --- | --- | --- |
+| Divine/infernale | Anges/démons canalisent directement l'énergie omniprésente | Drain du SRD actuel |
+| Arcanique humaine | Focalisateur, incantation, gestes, symboles | Contraintes de préparation/matériel + coût à déterminer |
+| Chaos | Énergie chaotique | Ressource, sacrifice ou contrecoup ; éviter la double comptabilité |
+| Sang | Vampires : magie alimentée par le sang | Dépense de sang ; sang des anciens plus puissant |
+| Antique | Momies, rites, noms véritables, symboles de l'âge des manifestations primitives | Préparation, ingrédients, durée et persistance |
+| Primale | Loups-garous, esprits naturels, lune, meute | Lien lunaire et coût corporel/spirituel |
+
+- Une tradition peut être **innée** à la nature (ne pas imposer un achat de trait pour pratiquer sa magie native) ou **acquise** par une discipline.
+- Préserver autant que possible **un même catalogue d'effets de pouvoirs et un seul moteur D666**, en variant canalisation, contrepartie et manœuvres ; ne pas réintroduire l'achat de niveaux de pouvoir.
+- **Protéisme** (vampires de type Gangrel) : yeux nocturnes, griffes, fusion avec la terre, forme animale, forme de brume. Discipline de capacités, pas nécessairement une posture de combat.
+- Ancienneté vampirique et puissance du sang ne doivent pas être confondues automatiquement avec Rang Céleste ; sujet à arbitrer.
+
+## Équilibrage et questions à instruire
+
+1. Le trait d'accès à une posture appartient-il à l'âme, à l'hôte ou existe-t-il dans les deux catalogues selon la technique ?
+2. Une manœuvre passive de Concentration fonctionne-t-elle dans n'importe quelle posture ? Hypothèse de travail : oui si sa description l'indique.
+3. Quels prérequis autorisent plusieurs attaques dans un round ? Combien de réactions supplémentaires sont acceptables ?
+4. Comment les traditions définissent-elles des coûts distincts sans multiplier les réserves et états ?
+5. Les vampires et lycanthropes sont-ils des natures d'âme distinctes ou des âmes humaines modifiées ? À décider avant de figer la bibliothèque.
+6. Les **règles situationnelles courantes** sont la priorité avant toute codification de catalogues et de disciplines.
+
+Voir le document compagnon : [Règles situationnelles — propositions à arbitrer](./regles-situationnelles-propositions.md).
