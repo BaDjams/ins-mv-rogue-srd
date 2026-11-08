@@ -1496,3 +1496,15 @@ nav a[aria-current="page"]:hover {
   .rb-reveal-overlay .rb-gallery .rb-card {animation:none!important;transition:none!important;}
   .rb-fullscreen *,.rb-reveal-overlay * {scroll-behavior:auto!important;}
 }
+
+/* Brave / Android : :hover peut rester actif après un tap.
+   Seul le trait réellement ouvert (aria-expanded=true) conserve son surlignage.
+   Ne pas neutraliser :focus-visible, nécessaire au parcours clavier. */
+@media (hover: none), (pointer: coarse) {
+  .rb-trait-chip:hover:not([aria-expanded="true"]):not(:focus-visible) {
+    background:#35303d;
+    color:#f7edf3;
+    border-color:#80758d;
+    outline:none;
+  }
+}
