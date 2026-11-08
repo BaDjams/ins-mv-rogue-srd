@@ -1,7 +1,7 @@
 /* Fiche A4 dédiée à l'impression et à « Enregistrer en PDF » du navigateur.
  * Même rendu sur papier et dans le dialogue d'impression Android / desktop.
  */
-import {experience,HOST_ATTRIBUTES,SOUL_ATTRIBUTES,validateCharacter} from './rogue-character-model.mjs';
+import {advancements,HOST_ATTRIBUTES,SOUL_ATTRIBUTES,validateCharacter} from './rogue-character-model.mjs';
 const A_LABEL={PUI:'Puissance',INF:'Influence',RES:'Résolution',CLA:'Clairvoyance'};
 const H_LABEL={FOR:'Force',AGI:'Agilité',VIG:'Vigueur',PER:'Perception'};
 const QUALITY={mundane:'Commun',better:'Expérimenté',superior:'Professionnel',
@@ -35,9 +35,9 @@ function powerRows(soul){
 }
 function progressRows(items){
   if(!items.length)return '<p class="rc-print-muted">Aucune progression enregistrée</p>';
-  return '<table class="rc-print-powers"><thead><tr><th>Date</th><th>Évolution</th><th>XP</th></tr></thead><tbody>'+
+  return '<table class="rc-print-powers"><thead><tr><th>Date</th><th>Évolution</th><th>Nature</th></tr></thead><tbody>'+
     items.map(p=>'<tr><td>'+esc((p.date||'').slice(0,10))+'</td><td>'+
-      esc(p.detail||p.type)+'</td><td>'+esc((p.type==='gain'?'+':'−')+p.xp)+'</td></tr>').join('')+
+      esc(p.detail||p.type)+'</td><td>'+esc(p.type==='grant'?'Accordée':p.type==='unlockResidual'?'Exception':'Utilisée')+'</td></tr>').join('')+
       '</tbody></table>';
 }
 function hostSection(host){
@@ -60,7 +60,7 @@ function hostSection(host){
   );
 }
 export function characterPrintHTML(character){
-  const c=validateCharacter(character),s=c.soul,xp=experience(c);
+  const c=validateCharacter(character),s=c.soul,progress=advancements(c);
   const nature=s.nature==='angel'?'ANGE':'DÉMON';
   return '<article class="rc-print-document">'+
     '<header class="rc-print-header"><div class="rc-print-brand">INS/MV · ROGUE</div>'+
@@ -81,14 +81,18 @@ export function characterPrintHTML(character){
       '</div>'+
       section('Pouvoirs surnaturels',powerRows(s))+
       section('Traits d’âme',list(s.traits,'Traits d’âme non renseignés'))+
+      section('Compétences résiduelles',list(
+        Object.entries(s.residualSkills||{}).map(([name,n])=>name+' +'+n),
+        'Aucune compétence résiduelle'
+      ))+
       '<div class="rc-print-two-col"><div>'+section('Objectifs et motivations',
         '<dl class="rc-print-definitions"><dt>Objectif</dt><dd>'+empty(s.objective)+
         '</dd><dt>Motivation</dt><dd>'+empty(s.motivation)+'</dd>'+
         '<dt>Liens</dt><dd>'+empty(s.links)+'</dd></dl>')+'</div>'+
-      '<div>'+section('Expérience',
-        '<div class="rc-print-xp"><div><span>Gagnée</span><strong>'+xp.earned+
-        '</strong></div><div><span>Dépensée</span><strong>'+xp.spent+
-        '</strong></div><div><span>Disponible</span><strong>'+xp.available+
+      '<div>'+section('Progressions du MJ',
+        '<div class="rc-print-xp"><div><span>Accordées</span><strong>'+progress.granted+
+        '</strong></div><div><span>Utilisées</span><strong>'+progress.used+
+        '</strong></div><div><span>Disponibles</span><strong>'+progress.available+
         '</strong></div></div>')+'</div></div>'+
       hostSection(c.host)+
       section('Historique des progrès',progressRows(c.progression))+
