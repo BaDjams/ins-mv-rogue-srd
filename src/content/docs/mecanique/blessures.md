@@ -71,7 +71,15 @@ Les marques s'inscrivent dans la jauge de **PV = 2 × VIG + Taille**. Une nouvel
 
 Le lien entre l'âme humaine et son corps est très fort. Lorsque **toutes les cases sont létales**, le corps est en état critique, mais l'âme reste attachée à lui. **Sans stabilisation par premiers secours ou médicalisation, une case létale devient aggravée chaque minute.** Toute blessure supplémentaire transforme immédiatement autant de cases létales en aggravées. Lorsque **toutes les cases sont aggravées**, l'âme quitte le corps : c'est la mort de l'hôte.
 
-La stabilisation interrompt la conversion automatique ; elle n'efface pas les blessures déjà inscrites. Les soins et la guérison restent nécessaires pour récupérer.
+### Stabilisation par premiers secours
+
+Pour stabiliser un **hôte humain ordinaire** dont la jauge est entièrement létale, un soignant consacre une **action complexe** à un jet de **PER + Premiers soins**. Il applique les règles habituelles du seuil (plafond 5, avantages et désavantages), notamment le désavantage si le matériel approprié manque.
+
+- **Réussite** : le blessé est stabilisé. La conversion automatique d'une marque létale en marque aggravée **chaque minute s'arrête**, mais les cases déjà aggravées ne sont pas effacées.
+- **Échec** : le blessé n'est pas stabilisé et la dégradation continue ; une nouvelle tentative reste possible si l'intervenant peut agir.
+- **Nouvelle blessure avant guérison** : si toutes les cases restent occupées par des blessures létales ou aggravées, elle convertit immédiatement autant de marques létales en aggravées ; les soins ne protègent pas d'une nouvelle agression.
+
+Les premiers secours permettent de **gagner du temps**, pas de restaurer des PV. Une médicalisation et des soins ultérieurs sont nécessaires pour guérir. Ce procédé ne retient pas artificiellement une **âme surnaturelle**, qui a déjà quitté son hôte à saturation létale ; il ne met pas non plus fin à la **stase d'une âme damnée**, qui relève des règles particulières de la créature.
 
 ### Âme surnaturelle (ange, démon et autres âmes non damnées)
 
@@ -91,7 +99,7 @@ Lorsque toutes les cases sont non létales, un humain ordinaire doit réussir un
 
 ## **Guérison Accélérée**
 
-**Certains pouvoir ou capacité, comme la guérison rapide ou la régénération permettent de guérir les blessures plus rapidement.**
+**Certains pouvoirs ou capacités, comme la guérison rapide ou la régénération, accélèrent la guérison des blessures.**
 
 **Guérison rapide** est un pouvoir passif (prérequis Rang Céleste 2) dont l'efficacité dépend directement du **Rang Céleste**, sans achat de niveaux supplémentaires :
 
