@@ -83,7 +83,9 @@ function validateCharacterCore(item,{allowDraft=true}={}){
   return item;
 }
 export function validateCharacter(item,options={}){return validateCharacterCore(item,options);}
-export function createCharacter({name,nature='angel',superior='',role='',hierarchyStatus='',concept=''}={}){
+export function createCharacter({name,nature='angel',superior='',role='',hierarchyStatus='',concept='',startingAdvancements=0}={}){
+  if(!Number.isInteger(startingAdvancements)||startingAdvancements<0||startingAdvancements>50)
+    throw Error('Progressions de départ : entier entre 0 et 50, selon le MJ.');
   if(!SOUL_NATURES.includes(nature))throw Error('Nature d’âme non reconnue.');
   const now=new Date().toISOString();
   return {
@@ -98,7 +100,9 @@ export function createCharacter({name,nature='angel',superior='',role='',hierarc
       initialTraits:[],traits:[],residualSkills:{},
       objective:'',motivation:'',links:'',notes:''
     },
-    progression:[],host:null,hostHistory:[],incarnationsUsed:0
+    progression:Array.from({length:startingAdvancements},(_,i)=>({
+      type:'grant',detail:'Dotation initiale du MJ',date:now,serial:uuid()
+    })),host:null,hostHistory:[],incarnationsUsed:0
   };
 }
 function validateHost(host){
