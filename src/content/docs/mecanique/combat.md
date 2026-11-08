@@ -81,7 +81,7 @@ La **Concentration Absolue** est une manœuvre passive qui permet de maintenir d
 
 En général, le MJ décide de faire jouer les joueurs dans l'ordre de leurs préférence, puis les adversaires (c'est plus simple à gérer !) lorsqu'un ordre d'initiative est important, le MJ applique la règle suivante :
 
-Chaque joueur lance le D666 et ajoute le résultat du dé blanc à celui du dé d'intensité pour déterminer leur score d'initiative. Il n'y a aucun calcul de marge. Les règles relatives aux autres jets s'appliquent (avantages, désavantages, etc.)
+Chaque joueur lance le D666 et additionne **dé blanc + intensité**. Les avantages, désavantages et sources d'explosion applicables au jet comptent également. Aucune marge n'est ajoutée.
 
 Les personnages agissent ensuite dans l'ordre, du score d'initiative le plus élevé au plus bas. En cas d'égalité, c'est la plus haute AGI puis la plus haute PER, puis les joueurs avant les PNJ. Si l'égalité persiste, il est temps pour le MJ de s'impliquer...
 
@@ -125,7 +125,7 @@ Une fois l'ordre d'initiative établi, à leur tour, les joueurs choisissent les
 
     **Will (Tyrael)** : lance le D666 → "J'ai 5 sur le bleu, 1 sur le blanc, et 3 sur le rouge. Comme j'ai 2 en Agilité et +2 en Armes de Mêlée (Expert), mon seuil avec l'épée est 4. Mon dé blanc fait 1, donc ça passe largement !"
 
-    **François (MJ)** : "Bien joué, Tyrael. Ta Charge réussit avec une réussite, et le bonus de la Charge ajoute +2 dégâts. Donc dé d'intensité (3) + dégâts d'épée (Code 3) + marge (3) + Charge (+2) = 11. Sauf que la marge et le dé d'intensité ne s'additionnent pas, on retient max(3, 3) = 3. Total : 3 + 3 + 2 = 8 dégâts. Le démon est blessé !"
+    **François (MJ)** : "Bien joué, Tyrael. Ta Charge réussit et ajoute +2 dégâts. Intensité 3 + Code de l'épée 3 + Charge 2 = **8 dégâts**. Le démon est blessé !"
 
     ---
 
@@ -137,7 +137,7 @@ Une fois l'ordre d'initiative établi, à leur tour, les joueurs choisissent les
 
     **Fred (Myrael)** : lance le D666 → "J'ai 3 sur le bleu, 2 sur le blanc, et 4 sur le rouge."
 
-    **François (MJ)** : "Parfait, avec le résultat du dé bleu, ça passe tout juste, tu as 3 en ALTERATION, ton bouclier est activé. Sa protection est égale au dé d'intensité rouge + la [marge de réussite](../resolution#3-marge-de-réussite) — donc 4 + 0 = 4 points absorbés avant d'être détruit."
+    **François (MJ)** : "Parfait, avec le résultat du dé bleu, ça passe tout juste, tu as 3 dans l'attribut approprié, ton bouclier est activé. Sa protection est égale au dé d'intensité rouge : **4 points absorbés** avant d'être détruit."
 
     ---
 
@@ -155,7 +155,7 @@ Une fois l'ordre d'initiative établi, à leur tour, les joueurs choisissent les
 
     **Fred (Myrael)** : "Oh non ! En plus, mon esquive ne sert à rien : ses deux dés d'action sont identiques."
 
-    **François (MJ)** : "Exact, et le coup critique rend le dé d'intensité explosif. Lançons l'explosion : le 5 initial + un dé d'explosion qui fait 4. Total intensité : 9. Les griffes acérées du démon infligent +2, marge de 2 (seuil 3, dé blanc 1). On retient max(marge, intensité) = max(2, 9) = 9. Donc 9 + 2 = 11 dégâts."
+    **François (MJ)** : "Exact, et le coup critique rend le dé d'intensité explosif. Lançons l'explosion : le 5 initial + un dé d'explosion qui fait 4. Total intensité : 9. Les griffes acérées du démon infligent Code +2. Donc **9 + 2 = 11 dégâts**, sans ajout de marge."
 
     **Fred (Myrael)** : "Aïe ! Mon Bouclier de la Foi absorbe 4 points de dégâts, je prends 7 points restants."
 
