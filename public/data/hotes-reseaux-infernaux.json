@@ -1,0 +1,17 @@
+{
+  "poolType": "infernal",
+  "enabled": true,
+  "ordinaryWeights": {
+    "mundane": 4,
+    "better": 3,
+    "superior": 2,
+    "elite": 1,
+    "legendary": 0
+  },
+  "originWeights": {
+    "sympathizer": 1,
+    "cultist": 1,
+    "recentDead": 0
+  },
+  "specialHosts": []
+}

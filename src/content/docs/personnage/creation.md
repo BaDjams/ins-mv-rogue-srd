@@ -9,8 +9,9 @@ sidebar:
 
 Les joueurs créent uniquement leur âme surnaturelle (ange ou démon). L'hôte humain est déterminé séparément par tirage de cartes, selon les règles des [qualités d'hôtes](../hotes). Les caractéristiques et compétences humaines proviennent de la carte d'hôte et ne sont pas réparties par le joueur :
 
-- **Mission initiale** : Choix parmi 3 cartes "Soldats de Dieu"
-- **Réincarnations** : Tirage aléatoire dans le deck "Citoyens"
+- **Première incarnation des anges** : ouverture de **trois cartes « Soldats de Dieu »**, puis choix libre d'un hôte formé dans son domaine.
+- **Première incarnation des démons** : hôte issu de **réseaux de sympathisants ou de sectes**, voire d'un corps récemment décédé lorsque les conditions de magie noire sont réunies. Le MJ détermine combien de cartes sont proposées par le scénario.
+- **Réincarnations ultérieures** : tirage dans le vivier **« Citoyens »** selon la population, ou dans un vivier thématique approprié au scénario. Les exceptions des serviteurs de faction restent applicables.
 
 ---
 
@@ -160,7 +161,7 @@ Choisissez **2 traits sur la liste des Traits d'Âme**. Ces traits restent const
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 
-L'hôte sera déterminé séparément par tirage de cartes au début de chaque mission ou [réincarnation](../reincarnation). À défaut de deck officiel, utilisez le [tirage alternatif à 54 cartes](../hotes).
+L'hôte est déterminé séparément au début du scénario ou lors d'une [réincarnation](../reincarnation). Le type de booster dépend du **camp, du scénario, de la période et du type d'incarnation**. Consultez les [viviers d'hôtes et la méthode à 54 cartes](../hotes) et le [générateur de boosters](../../generateur).
 </div>
 
 ---

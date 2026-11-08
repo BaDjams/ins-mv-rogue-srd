@@ -23,6 +23,8 @@ jobs:
         run: |
           node --check public/scripts/rogue-srd.js
           node --check public/scripts/host-deck-engine.mjs
+          node --check public/scripts/host-booster-engine.mjs
+          node --check public/scripts/host-booster-ui.mjs
       - name: Tests du deck officiel et des probabilités
         run: node --test tests/*.test.mjs
       - uses: actions/setup-python@v5
@@ -31,7 +33,7 @@ jobs:
       - name: Valider le CMS et les exports DOCX
         run: |
           pip install python-docx pyyaml --quiet
-          python -c "import yaml; c=yaml.safe_load(open('public/admin/config.yml', encoding='utf-8')); assert any(x.get('name') == 'deck_hotes' for x in c['collections'])"
+          python -c "import yaml; c=yaml.safe_load(open('public/admin/config.yml', encoding='utf-8')); assert any(x.get('name') == 'deck_hotes' for x in c['collections']); assert any(x.get('name') == 'booster_catalog' for x in c['collections'])"
           python tools/export_docx.py
       - name: Compiler le site Astro
         run: npm run build

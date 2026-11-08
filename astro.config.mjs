@@ -72,6 +72,10 @@ export default defineConfig({
           attrs: { src: '/ins-mv-rogue-srd/scripts/rogue-srd.js', defer: true },
         },
         {
+          tag: 'script',
+          attrs: { src: '/ins-mv-rogue-srd/scripts/host-booster-ui.mjs', type: 'module' },
+        },
+        {
           tag: 'link',
           attrs: { rel: 'manifest', href: base + '/manifest.webmanifest' },
         },

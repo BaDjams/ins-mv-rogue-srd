@@ -52,15 +52,14 @@ Au départ de l'hôte initial (volontaire ou forcé par la mort), l'âme dispose
 -   L'âme explore les environs immédiats pendant ce bref délai.
 -   Elle perçoit les hôtes potentiels dans cette zone
 
-**Sélection de l'hôte** En fonction de la densité de population de la
-zone, le MJ fait piocher au joueur entre 1 et 3 cartes Citoyen :
+**Sélection de l'hôte** En fonction de la densité de population de la zone, le MJ fait piocher au joueur entre 1 et 3 cartes du vivier **Citoyens**, ou d'un **booster thématique approprié** au lieu et à la période. L'ouverture du booster ne change pas le nombre de candidats disponibles :
 
 -   Zone urbaine dense : 3 cartes
 -   Zone urbaine normale : 2 cartes
 -   Zone rurale/isolée : 1 carte
 -   Zone désertique : 0 carte (voir cas particuliers)
 
-Le joueur choisit l'un des hôtes proposés.
+Le joueur choisit librement l'un des hôtes proposés, sans obligation de retenir la carte de qualité la plus élevée.
 
 **Durée de l'incarnation** Une fois l'hôte choisi, le processus
 d'incarnation prend **1d6 minutes**, laissant le temps aux ennemis de
