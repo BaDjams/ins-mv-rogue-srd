@@ -44,8 +44,7 @@ Règle d'arrondi
 
 L'arrondi est toujours favorable au personnage actif. Ainsi les dégâts infligés par un personnage sont arrondis au supérieur (favorable à l'attaquant) alors que lors de la division des dégâts par la Résilience, l'arrondi se fait toujours à l'inférieur (favorable au défenseur).
 
-Exemple : Azrael active son aura de sainteté qui **inflige** ([rang ](../../personnage/rang)de pouvoir + Intensité finale) /2 dégâts aggravés à toutes les cibles démoniaques au contact. 3+6/2 = 4,5, donc arrondi à 5 dégâts (l'arrondi profite au personnage actif, en l'état on calcul les dégâts d'Azrael, l'arrondi profite donc à Azrael).
-Belphess la démone aux belles dagues qui n'a pour armure qu'un t-shirt mouillé est très très au contact et **subit** donc 5/3=1 blessure aggravée (on arrondit à l'inférieur lors de la division par la résilience car dans ce calcul, l'arrondi profite à Belphess, le personnage actif du calcul). Belphess pousse un gémissement équivoque.
+Exemple : une attaque inflige 5 dégâts après arrondi, puis la Résilience 3 les réduit à **1 blessure** (arrondi inférieur).
 
 Pour les effets bénéfiques (soins, récupération), l'arrondi se fait à l'[avantage](../resolution#avantage) du lanceur.
 
@@ -107,13 +106,7 @@ Toutes les blessures de même type guérissent simultanément au rythme de la ca
 
 ## **Exemple Pratique**
 
-**Mirael** (Ange, 10 PV, Résilience 3) reçoit plusieurs attaques au cours d'un combat :
-
-1.  Une attaque inflige 9 dégâts non létaux → après Résilience (9/3=3), Mirael **subit** 3 blessures non létales → coche (/) (/) (/) 
-2.  Une attaque inflige 6 dégâts létaux → après Résilience (6/3=2), Mirael **subit** 2 blessures létales → les cases 1-2 s'upgradent en (X) (X), la case 3 reste (/) et Mirael décale ses cases (/) (/) vers la droite pour bien avoir (X) (X) (/) (/) (/)
-3.  Mirael surcharge un pouvoir au rang 4, donc au-delà de son Rang Céleste → drain automatique → **subit** directement 1 blessure non létale (sans réduction). De plus, 1 dé de drain génère un 6 : il subit une deuxième blessure non létale → (X) (X) (/) (/) (/) (/) (/) + 3 cases vides.
-4.  Une balle inflige 9 dégâts létaux → après Résilience (9/3=3), Mirael **subit** 3 blessures létales → (X) (X) (X) (X) (X) (/) (/) (/) (/) (/) : sa jauge est pleine de blessures, mais la dernière case reste non létale. Comme il est ange, il ne fait aucun jet de VIG pour éviter l'inconscience liée à la fatigue.
-5.  Mirael se prend une attaque massive d'un démon armé de sa lame maudite. Malgré la Résilience, il subit 4 blessures aggravées → (⭙) (⭙) (⭙) (⭙) (X) (X) (X) (X) (X) (/). La dernière case reste non létale : il demeure conscient grâce à son immunité à la fatigue. Une blessure létale supplémentaire ferait passer cette dernière case à (X) et déclencherait alors le jet de VIG pour éviter l'état critique.
+**Exemple :** Mirael, ange incarné, remplit progressivement sa jauge de blessures létales. Dès que toutes les cases sont létales, l'hôte meurt et Mirael se désincarne ; il n'attend pas une conversion en marques aggravées, réservée à l'agonie des humains ordinaires.
 
 ## Calcul des points de vie par type de créatures :
 
