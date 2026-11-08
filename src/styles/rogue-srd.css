@@ -1274,3 +1274,225 @@ nav a[aria-current="page"]:hover {
   .rb-reveal-finale .rb-card-best .rb-card-front::after {display:none;}
   .rb-reveal-finale .rb-card-best::after {opacity:1;transform:none;}
 }
+
+/* ── Booster en surimpression + galerie tactile ───────────────────────────── */
+.rb-reveal-overlay,.rb-fullscreen {box-sizing:border-box;position:fixed;inset:0;z-index:99990;}
+.rb-reveal-overlay[hidden],.rb-fullscreen[hidden],.rb-floating-tooltip[hidden]{display:none!important;}
+.rb-reveal-overlay *,.rb-fullscreen * {box-sizing:border-box;margin-top:0!important;}
+.rb-overlay-backdrop,.rb-fullscreen-backdrop {
+  position:absolute;inset:0;background:rgba(7,7,17,.92);
+  backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);
+}
+.rb-reveal-overlay {display:flex;justify-content:center;align-items:center;padding:12px;color:#f6ecdc;}
+.rb-overlay-panel {
+  position:relative;z-index:1;display:flex;flex-direction:column;
+  height:min(92dvh,920px);width:min(1100px,100%);min-height:0;
+  background:linear-gradient(160deg,#201a30,#10131f 68%);
+  border:1px solid var(--rb-booster-color,#b7a6e3);
+  border-radius:17px;box-shadow:0 0 85px #000a,0 0 32px color-mix(in srgb,var(--rb-booster-color,#b7a6e3) 22%,transparent);
+  overflow:hidden;
+}
+.rb-overlay-header {
+  display:flex;justify-content:space-between;align-items:center;gap:14px;
+  padding:15px 20px;border-bottom:1px solid #514a64;flex:none;
+}
+.rb-overlay-heading {display:flex;flex-direction:column;gap:4px;min-width:0;}
+.rb-overlay-heading strong {
+  font:700 clamp(17px,2.7vw,24px)/1.2 Georgia,serif;
+  color:#fff1dd;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
+}
+.rb-overlay-close {
+  flex:0 0 42px;width:42px;height:42px;display:grid;place-items:center;
+  border:1px solid #777087;border-radius:50%;
+  background:#262235;color:white;font:normal 31px/1 sans-serif;cursor:pointer;
+}
+.rb-overlay-content {
+  flex:1;min-height:0;overflow-y:auto;overflow-x:hidden;
+  overscroll-behavior:contain;padding:12px clamp(10px,2vw,24px);
+}
+.rb-overlay-stage {width:100%;max-width:100%;min-height:200px;}
+.rb-overlay-stage .rb-sealed {margin:45px auto 25px!important;}
+.rb-overlay-footer {
+  display:flex;align-items:center;justify-content:space-between;
+  gap:14px;padding:12px 20px;border-top:1px solid #514a64;
+  background:#181725;flex:none;
+}
+.rb-overlay-footer p {flex:1;min-width:0;font:500 12px/1.5 system-ui,sans-serif;color:#cec3d8;margin:0!important;}
+.rb-overlay-return {
+  flex:none;padding:10px 13px;min-height:40px;background:#343044;color:#f0e8f3;
+  border:1px solid #6c627b;border-radius:9px;cursor:pointer;
+  font:600 12px system-ui,sans-serif;
+}
+.rb-reopen-booster {
+  display:block;margin:12px auto!important;padding:12px 17px;
+  background:#3e304c;color:#fff4d8;border:1px solid #b397d4;border-radius:9px;
+  cursor:pointer;font:700 13px system-ui,sans-serif;
+}
+/* En galerie les cartes se déplacent horizontalement ; chacune occupe la même
+   hauteur et peut être agrandie sans déclencher le choix de l'incarnation. */
+.rb-reveal-overlay .rb-card-rack.rb-gallery {
+  display:flex!important;flex-flow:row nowrap;align-items:stretch;
+  overflow-x:auto;overflow-y:hidden;overscroll-behavior-x:contain;
+  scroll-snap-type:x mandatory;scrollbar-width:thin;scrollbar-color:#777085 transparent;
+  width:100%;max-width:100%;height:555px;min-height:0;
+  padding:24px 9px 12px!important;gap:17px;margin:0 auto!important;
+  justify-content:safe center;
+}
+.rb-gallery > .rb-card {
+  flex:0 0 clamp(235px,35vw,305px);width:auto;max-width:none;
+  height:510px!important;min-height:0!important;max-height:510px!important;
+  margin:0!important;scroll-snap-align:center;overflow:visible;
+}
+.rb-gallery .rb-card-front {overflow:hidden;padding-bottom:47px;}
+.rb-gallery .rb-card-inner {height:100%;}
+.rb-gallery .rb-card-hint {display:none;}
+.rb-card-open {
+  position:absolute;z-index:6;bottom:10px;left:50%;
+  transform:translateX(-50%);white-space:nowrap;
+  padding:8px 16px;border:1px solid var(--rb-tier,#ab96dc);
+  background:#1a192b;color:#f8f1e0;border-radius:8px;
+  cursor:pointer;font:700 12px system-ui,sans-serif;
+}
+.rb-gallery-controls {
+  display:flex;justify-content:center;align-items:center;
+  gap:16px;max-width:360px;margin:8px auto 20px!important;
+  color:#f0e2f6;font:700 14px system-ui,sans-serif;
+}
+.rb-gallery-controls button,
+.rb-fullscreen-footer button:not(.rb-fullscreen-choose) {
+  border:1px solid #73677e;background:#373044;color:#f4e7fb;border-radius:9px;
+  width:50px;min-height:42px;cursor:pointer;font:600 27px/1 sans-serif;
+}
+.rb-gallery-controls button:disabled,
+.rb-fullscreen-footer button:disabled {opacity:.35;cursor:default;}
+/* Fiche : inspiration des cartes d'hôtes historiques, mais vocabulaire et stats
+   corrects (FOR, AGI, VIG, PER). Les tableaux montrent les données sans omission. */
+.rb-card-topline {display:flex;justify-content:space-between;align-items:center;gap:10px;flex:none;}
+.rb-card-topline .rb-card-rarity {flex:1;max-width:none;}
+.rb-card-age {font:600 11px system-ui,sans-serif;color:#e7d7eb;white-space:nowrap;}
+.rb-card-identity {text-align:center;flex:none;}
+.rb-card-identity .rb-card-name {display:block;font:700 19px Georgia,serif;color:#f9edd9;margin:2px 0!important;}
+.rb-card-identity .rb-card-job {display:block;font:italic 13px system-ui,sans-serif;color:#dfd0e4;margin:3px 0!important;}
+.rb-card-identity .rb-card-source {font:500 11px system-ui,sans-serif;color:#d6b8d0;margin:3px 0!important;}
+.rb-card-section {display:block;flex:none;min-height:0;margin:2px 0!important;}
+.rb-card-section h3 {
+  font:800 11px/1.4 system-ui,sans-serif;letter-spacing:.025em;
+  color:#f0e7dc;margin:0 0 5px!important;padding:0 0 4px;
+  border-bottom:1px solid color-mix(in srgb,var(--rb-tier) 57%,#383342);
+}
+.rb-info-table {
+  width:100%;table-layout:fixed;border-collapse:collapse;margin:0!important;
+  font:500 11px/1.4 system-ui,sans-serif;color:#ebdfeb;
+}
+.rb-info-table tr {border-bottom:1px solid #3d3a50;}
+.rb-info-table tr:last-child {border-bottom:0;}
+.rb-info-table th,.rb-info-table td {
+  padding:4px 5px!important;border:0!important;background:transparent!important;
+  text-align:left;vertical-align:top;overflow-wrap:anywhere;
+}
+.rb-info-table th {color:#e1d4e4;font-weight:500;width:34%;}
+.rb-info-table td {font-weight:750;color:#fff1d9;width:16%;}
+.rb-equipment-table td {width:50%;font-weight:500;color:#e8dbed;}
+.rb-empty-cell {padding:0!important;}
+.rb-trait-list {display:flex;flex-wrap:wrap;gap:6px;}
+.rb-trait-chip {
+  border:1px solid #80758d;background:#35303d;color:#f7edf3;
+  border-radius:13px;padding:5px 9px;cursor:help;
+  font:600 11px/1.2 system-ui,sans-serif;
+}
+.rb-trait-chip:hover,.rb-trait-chip:focus-visible,.rb-trait-chip[aria-expanded="true"] {
+  background:var(--rb-tier,#a58bd1);color:#141522;outline:2px solid #f3e7be;
+  outline-offset:2px;
+}
+.rb-floating-tooltip {
+  position:fixed;z-index:100070;pointer-events:none;
+  padding:10px 12px;background:#14121f;color:#fff2db;
+  border:1px solid #e0c692;box-shadow:0 7px 26px #000a;
+  border-radius:9px;white-space:normal;overflow-wrap:anywhere;
+  font:500 12px/1.45 system-ui,sans-serif;
+}
+.rb-empty {color:#a89dac;font:italic 11px system-ui,sans-serif;margin:3px 0!important;}
+.rb-card-hint {
+  display:block;text-align:center;padding:7px;color:var(--rb-tier);
+  font:700 10px system-ui,sans-serif;margin-top:auto!important;
+}
+/* Deuxième niveau de plein écran, pour consulter une carte intégralement. */
+.rb-fullscreen {z-index:100000;display:flex;align-items:center;justify-content:center;padding:9px;}
+.rb-fullscreen-panel {
+  display:flex;flex-direction:column;position:relative;z-index:1;
+  width:min(640px,100%);height:min(96dvh,1100px);min-height:0;
+  background:#171625;border:1px solid var(--rb-booster-color,#bd9da1);
+  border-radius:14px;box-shadow:0 18px 90px #000c;overflow:hidden;color:#f2e8f0;
+}
+.rb-fullscreen-header,.rb-fullscreen-footer {
+  display:flex;align-items:center;gap:10px;justify-content:space-between;
+  flex:none;padding:12px 15px;background:#1e1b2b;
+  border-bottom:1px solid #5e566a;
+  font:700 13px system-ui,sans-serif;
+}
+.rb-fullscreen-header strong {min-width:0;flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+.rb-fullscreen-header button {
+  border-radius:50%;border:1px solid #766d82;background:#373044;color:white;
+  width:42px;height:42px;cursor:pointer;font:normal 28px sans-serif;
+}
+.rb-fullscreen-scroll {flex:1;min-height:0;overflow-y:auto;overscroll-behavior:contain;padding:14px;}
+.rb-fullscreen .rb-full-card {
+  display:block;position:relative;opacity:1!important;animation:none!important;
+  width:min(100%,560px);height:auto!important;max-height:none!important;
+  min-height:0!important;margin:0 auto!important;perspective:none;transform:none!important;
+}
+.rb-full-card .rb-card-inner {
+  position:relative;inset:auto;transform:none!important;height:auto!important;
+  backface-visibility:visible;transition:none;
+}
+.rb-full-card .rb-card-back {display:none;}
+.rb-full-card .rb-card-front {
+  display:flex;position:relative;inset:auto;overflow:visible;
+  backface-visibility:visible;height:auto;min-height:0;
+  padding:19px;gap:11px;
+  box-shadow:0 0 24px color-mix(in srgb,var(--rb-tier) 30%,transparent);
+}
+.rb-full-card .rb-portrait {height:180px;}
+.rb-full-card .rb-card-identity .rb-card-name {font-size:23px;}
+.rb-full-card .rb-card-section h3 {font-size:13px;}
+.rb-full-card .rb-info-table {font-size:13px;}
+.rb-full-card .rb-info-table th,.rb-full-card .rb-info-table td {padding:7px 6px!important;}
+.rb-full-card .rb-trait-chip {font-size:12px;}
+.rb-full-card .rb-card-hint {display:none;}
+.rb-fullscreen-footer {border-top:1px solid #5e566a;border-bottom:0;}
+.rb-fullscreen-choose {
+  flex:1;min-height:46px;padding:10px 12px;border:1px solid #e1bf83;border-radius:9px;
+  background:linear-gradient(100deg,#bd9459,#edd3a0);color:#241e17;
+  font:800 12px system-ui,sans-serif;cursor:pointer;
+}
+@media(max-width:660px){
+  .rb-reveal-overlay {padding:0;}
+  .rb-overlay-panel {height:100dvh;width:100%;max-height:none;border:0;border-radius:0;}
+  .rb-overlay-header {padding:max(10px,env(safe-area-inset-top)) 13px 9px;}
+  .rb-overlay-content {padding:12px 0 2px;}
+  .rb-overlay-stage .rb-sealed {margin-top:30px!important;}
+  .rb-reveal-overlay .rb-card-rack.rb-gallery {
+    padding:18px max(8px,calc((100% - min(78vw,340px))/2)) 8px!important;
+    height:535px;gap:14px;
+    justify-content:flex-start;
+  }
+  .rb-gallery > .rb-card {
+    flex:0 0 min(78vw,340px);height:505px!important;max-height:505px!important;
+  }
+  .rb-overlay-footer {padding:10px 13px max(12px,env(safe-area-inset-bottom));}
+  .rb-overlay-return {font-size:11px;padding:8px;}
+  .rb-fullscreen {padding:0;}
+  .rb-fullscreen-panel {height:100dvh;width:100%;max-height:none;border-radius:0;border:0;}
+  .rb-fullscreen-header {padding:max(10px,env(safe-area-inset-top)) 14px 10px;}
+  .rb-fullscreen-footer {padding:8px 13px max(12px,env(safe-area-inset-bottom));}
+  .rb-fullscreen-scroll {padding:9px;}
+  .rb-full-card .rb-card-front {padding:12px;gap:9px;}
+  .rb-full-card .rb-portrait {height:170px;}
+  .rb-full-card .rb-info-table {font-size:11.5px;}
+  .rb-full-card .rb-card-identity .rb-card-name {font-size:21px;}
+  .rb-fullscreen-footer button:not(.rb-fullscreen-choose){width:44px;}
+}
+@media(prefers-reduced-motion:reduce){
+  .rb-reveal-overlay .rb-gallery .rb-card {animation:none!important;transition:none!important;}
+  .rb-fullscreen *,.rb-reveal-overlay * {scroll-behavior:auto!important;}
+}

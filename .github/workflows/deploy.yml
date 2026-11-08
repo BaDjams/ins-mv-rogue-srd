@@ -27,6 +27,9 @@ jobs:
           node --check public/scripts/host-deck-engine.mjs
           node --check public/scripts/host-booster-engine.mjs
           node --check public/scripts/host-booster-ui.mjs
+          node --check public/scripts/host-card-render.mjs
+          node --check public/scripts/host-gallery-controller.mjs
+          node --check public/scripts/host-booster-overlay.mjs
           node --test tests/*.test.mjs
 
       - name: Generate DOCX export

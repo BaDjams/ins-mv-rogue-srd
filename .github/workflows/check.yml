@@ -25,6 +25,9 @@ jobs:
           node --check public/scripts/host-deck-engine.mjs
           node --check public/scripts/host-booster-engine.mjs
           node --check public/scripts/host-booster-ui.mjs
+          node --check public/scripts/host-card-render.mjs
+          node --check public/scripts/host-gallery-controller.mjs
+          node --check public/scripts/host-booster-overlay.mjs
       - name: Tests du deck officiel et des probabilités
         run: node --test tests/*.test.mjs
       - uses: actions/setup-python@v5
