@@ -242,7 +242,7 @@ test('la surimpression et le deuxième niveau plein écran sont présents et acc
   assert.doesNotMatch(gallery,/aria-modal="true"/); // Plus de seconde modale.
   assert.match(ui,/activeOverlay\.show\(\)/);
   assert.match(ui,/Revoir les/);
-  assert.match(gallery,/touchstart/);
+  assert.match(gallery,/scrollToCard/); // Swipe natif via CSS Scroll Snap.
   assert.match(gallery,/rb-card-select/);
   assert.doesNotMatch(gallery,/rb-card-open|openModal|closeModal/);
 });
