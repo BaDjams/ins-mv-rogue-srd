@@ -44,7 +44,7 @@ plus._
 
 Au-delà du prérequis d'accès, tout dépend de la nature du pouvoir.
 
-Un **pouvoir actif** se lance : jet, [drain](../energie#rang-des-pouvoirs-et-drain), éventuelle [Surcharge](../energie#rang-des-pouvoirs-et-drain). Son rang de base, choisi à l'acquisition et améliorable par la [progression](../../personnage/progression), ne peut jamais dépasser le Rang Céleste de son propriétaire. En revanche, rien n'interdit de le lancer plus fort qu'il n'a été appris : la Surcharge permet de monter jusqu'au rang 6, le drain se chargeant de rappeler à chacun où se situent ses limites réelles.
+Un **pouvoir actif** se lance : jet, [drain](../energie#rang-des-pouvoirs-et-drain), éventuelle [Surcharge](../energie#rang-des-pouvoirs-et-drain). Son rang de lancement détermine sa puissance, sans achat de niveaux par expérience. La Surcharge permet de le lancer jusqu'au rang 6, au prix du drain correspondant.
 
 Un **pouvoir passif** ne se lance pas : il est toujours actif, ne génère aucun drain, et son rang est calé sur le Rang Céleste de son propriétaire — ni plus, ni moins. Il évolue automatiquement avec lui. Un ange de Rang 3 a _Résilience 3_ ; s'il devient Archange, sa Résilience passe à 4 sans rien dépenser. C'est un des rares avantages de la promotion interne.
 
@@ -68,15 +68,14 @@ _Exemples :_
 
 **Mécaniques**
 
--   **Intensité :** Résultat du [dé rouge](../resolution) + [marge de réussite](../resolution#3-marge-de-réussite)
--   **Dé explosif :** Le [dé d'intensité](../resolution) explose sur un 6 (relance et
-    additionne)
+-   **Intensité :** Résultat du [dé rouge](../resolution), sans ajout de marge
+-   **Dé explosif :** Le [dé d'intensité](../resolution) ajoute systématiquement un dé supplémentaire par source ; chaque 6 sur un dé d'explosion est relancé et additionné
 -   **Non-réductible :** Ne peut être réduit par l'armure ou la
     résistance physique
 -   **Concentration :** Coût initial + coût par tour. Maintenir un pouvoir au-delà du tour de lancement requiert d'adopter la [posture de Concentration](../combat#postures-tactiques), avec les contreparties qu'elle implique.
 -   **Durée fixe :** Exactement 3 tours puis dissipation automatique.
     Prolongation = nouveau jet + nouveau coût
--   **Couper un pouvoir :** [Action gratuite](../combat#déclaration-des-actions), peut être fait à tout
+-   **Couper un pouvoir :** [Geste accessoire](../combat#déclaration-des-actions), peut être fait à tout
     moment
 -   **Contrôle mental/Possession :** Le contrôleur ne dispose toujours que d'une [Action Complexe](../combat#déclaration-des-actions) et d'une [Action Simple](../combat#déclaration-des-actions) par tour, à répartir entre son hôte et ses cibles contrôlées.
 -   Certains pouvoir précisent que le lanceur subit une ou plusieurs
@@ -96,7 +95,7 @@ _Exemples :_
     condition spéciale,
 -   **Prolonger un pouvoir :** Nouveau jet de pouvoir + nouveau drain
     complet au rang de lancement initial, au tour 4, 7, 10, etc.
--   **Arrêter un pouvoir de concentration :** Action gratuite, effet immédiat.
+-   **Arrêter un pouvoir de concentration :** Geste accessoire, effet immédiat.
 
 ## Note sur les armes
 
