@@ -21,6 +21,8 @@ Pas d'effet mécanique direct sur les pouvoirs, le [drain](../../mecanique/energ
 
 ## Progression des personnages
 
+Le MJ peut aussi commencer directement une campagne à un niveau de puissance choisi. Par exemple, **« créez trois personnages ayant chacun cinq progressions »** signifie que chaque personnage est créé avec cinq améliorations accordées à répartir librement entre les options ci-dessous. La [bibliothèque locale](../bibliotheque/) dispose pour cela d'un champ **« Progressions accordées au départ par le MJ »**.
+
 La progression d'une âme surnaturelle est **décidée par le maître de jeu**. Il n'existe plus de comptabilité de points d'expérience : le MJ annonce quand chaque personnage reçoit **une progression**, généralement au terme d'une étape importante du scénario ou de la campagne.
 
 Chaque progression accordée donne droit à **une seule** amélioration, au choix du joueur :
