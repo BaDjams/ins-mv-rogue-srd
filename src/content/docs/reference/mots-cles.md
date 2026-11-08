@@ -26,7 +26,6 @@ La plupart des mots-clés donnent des avantages/désavantages selon le contexte.
 - **Résiliente** : Premier échec critique par session devient un échec normal
 - **Focalisée** : Peut relancer 1 [dé d'intensité](../../mecanique/resolution) par session, le dé relancé est explosif
 - **Fanatique** : +1 intensité finale (après tous calculs) pour toute action en rapport avec le mot-clé choisi (validé par le MJ)
-- **Conduit Divin X** (X = 1, 2 ou 3) : Affinité développée avec le flux de la puissance divine. Une fois par combat et par niveau, transforme un drain automatique en simple dé de drain. Définition complète : voir [Énergie](../../mecanique/energie#conduit-divin).
 
 **Exemples d'avantages/désavantages contextuels**
 
