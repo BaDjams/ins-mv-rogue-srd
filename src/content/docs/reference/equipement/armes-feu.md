@@ -37,8 +37,8 @@ Les armes à feu utilisent la [compétence](../../../mecanique/competences) **Ar
         <th style="padding:8px 10px;border-bottom:1px solid var(--color-border-tertiary);">Calibre</th>
         <th style="padding:8px 10px;border-bottom:1px solid var(--color-border-tertiary);" title="SA=semi-auto · DA/SA=double-simple action · FA=full-auto · Répétition manuelle=1 coup/action">Mode</th>
         <th style="padding:8px 10px;border-bottom:1px solid var(--color-border-tertiary);cursor:pointer;" title="Capacité du chargeur (nombre de munitions)" onclick="sortTable('tbl-feu',4)">Cap. ⇅</th>
-        <th style="padding:8px 10px;border-bottom:1px solid var(--color-border-tertiary);cursor:pointer;" title="Code de dégâts de base (à combiner avec marge/intensité)" onclick="sortTable('tbl-feu',5)">Dégâts ⇅</th>
-        <th style="padding:8px 10px;border-bottom:1px solid var(--color-border-tertiary);cursor:pointer;" title="Pénétration : réduit la Résilience de la cible pour cette attaque" onclick="sortTable('tbl-feu',6)">Pén. ⇅</th>
+        <th style="padding:8px 10px;border-bottom:1px solid var(--color-border-tertiary);cursor:pointer;" title="Code de dégâts de base (à additionner à l'intensité)" onclick="sortTable('tbl-feu',5)">Dégâts ⇅</th>
+        <th style="padding:8px 10px;border-bottom:1px solid var(--color-border-tertiary);cursor:pointer;" title="Pénétration : ignore des points d'armure (PA), jamais la Résilience" onclick="sortTable('tbl-feu',6)">Pén. ⇅</th>
       </tr>
     </thead>
     <tbody id="tbody-feu"></tbody>

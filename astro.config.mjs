@@ -35,7 +35,7 @@ export default defineConfig({
         // Toujours vérifier une version plus récente en priorité ; ne retombe sur le
         // cache que si le réseau est indisponible, pour garder le contenu à jour hors-ligne.
         navigateFallback: base + '/',
-        globPatterns: ['**/*.{css,js,html,svg,png,ico,woff2}'],
+        globPatterns: ['**/*.{css,js,mjs,json,html,svg,png,ico,woff2}'],
         runtimeCaching: [
           {
             urlPattern: ({ request }) => request.mode === 'navigate',
@@ -122,6 +122,7 @@ export default defineConfig({
           items: [
             { label: 'Caractéristiques & Attributs', slug: 'personnage/caracteristiques' },
             { label: "Création d'âme", slug: 'personnage/creation' },
+            { label: 'Hôtes et qualités', slug: 'personnage/hotes' },
             { label: 'Rang céleste', slug: 'personnage/rang' },
             { label: 'Position hiérarchique', slug: 'personnage/progression' },
             { label: 'Réincarnation', slug: 'personnage/reincarnation' },

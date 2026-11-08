@@ -65,7 +65,7 @@ Le Créateur, l'Alpha et l'Oméga, Celui qui divise par zéro et trouve ça drô
 
 # Incarnations et Rang Céleste
 
-Le nombre d'incarnations disponibles pour une âme est égale à son Rang Céleste. Une fois ce quota épuisé, l'âme rejoint définitivement son plan d'origine (Paradis, Enfer, ou Limbes).
+Le nombre d'incarnations disponibles pour une âme est égal à son Rang Céleste. Une fois ce quota épuisé, l'âme rejoint définitivement son plan d'origine (Paradis, Enfer, ou Limbes).
 
 **Rang Céleste 1 (Humains, animaux, plantes)** : 1 incarnation
 

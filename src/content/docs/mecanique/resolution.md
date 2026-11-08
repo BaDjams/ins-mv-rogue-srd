@@ -19,7 +19,7 @@ Avant de lancer les dés, il est essentiel de déterminer la nature de l'action 
 
 **Pouvoir surnaturel ou attribut angélique** : Dans ce cas, le dé bleu sera utilisé pour déterminer le succès de l'action. Le seuil de réussite est égal à l'attribut angélique (valeur de 1 à 5) associé au pouvoir.
 
-[**Compétence**](../competences) **ou caractéristique humaine** : Si l'action repose sur une compétence ou une caractéristique humaine de l'hôte, c'est le dé blanc qui sera utilisé. Le seuil de réussite est égal à la somme de la caractéristique humaine pertinente (de 1 à 3) et du bonus de compétence : Débutant **+0**, Confirmé **+1**, Professionnel **+2**, Expert **+3**. Un personnage Incompétent n'ajoute rien et subit en plus un désavantage sur le jet.
+[**Compétence**](../competences) **ou caractéristique humaine** : Si l'action repose sur une compétence ou une caractéristique humaine de l'hôte, c'est le dé blanc qui sera utilisé. Le seuil de réussite théorique est égal à la somme de la caractéristique humaine pertinente (de 1 à 3) et du bonus de compétence : Débutant **+0**, Confirmé **+1**, Professionnel **+2**, Expert **+3**. Un personnage Incompétent n'ajoute rien et subit en plus un désavantage sur le jet.
 
 <div class="admonition note">
 <p class="admonition-title">Important</p>
@@ -29,7 +29,7 @@ Les [compétences](../competences) appartiennent au cerveau de l'hôte, pas à l
 
 À partir de cette étape, le dé utilisé pour déterminer le succès de l'action (bleu ou blanc, selon la nature de l'action) sera appelé **"Dé d'action"**.
 
-Il n'y a aucun bonus ou malus qui s'applique au seuil de réussite. Les bonus ou malus circonstanciels sont gérés grâce à la mécanique d'avantages / désavantages (voir ci-dessous).
+Le seuil de réussite effectif est plafonné à **5**. Si le seuil théorique atteint **6 ou plus**, il est ramené à **5** et permet d'**ignorer une source de désavantage** sur le jet. Ce bénéfice ne confère aucun avantage, même si aucun désavantage n'est présent. Les circonstances favorables ou défavorables sont traitées par avantages et désavantages.
 
 ***
 
@@ -41,7 +41,7 @@ Pour réussir l'action, le résultat du Dé d'action doit être **inférieur ou 
 
 **Règles à garder en tête** :
 
-1. Un **6** sur le Dé d'action est toujours un échec, même si le seuil est de 6 ou plus.
+1. Un **6** sur le Dé d'action est toujours un échec : le seuil effectif ne dépasse jamais 5.
 2. Un **1** sur le Dé d'action est toujours une réussite.
 3. Bien que chaque dé soit calculé indépendamment, on les lance simultanément pour gagner du temps. Par exemple, un résultat de "352" sur le D666 signifie que le dé bleu a donné 3, le dé blanc 5, et le dé rouge 2.
 
@@ -49,19 +49,9 @@ Pour réussir l'action, le résultat du Dé d'action doit être **inférieur ou 
 
 ## 3. Marge de réussite
 
-Il s'agit de la différence entre le seuil de réussite et le résultat du Dé d'action. Pour le calcul des dégâts, la marge et le dé rouge ne s'additionnent pas : on retient le meilleur des deux — **max(Marge, Dé rouge)**. Une grande marge garantit un résultat minimum solide ; le dé rouge peut rattraper une faible marge, mais ne s'empile pas avec une bonne.
+La **marge** est la différence entre le seuil de réussite **effectif** (plafonné à 5) et le résultat du dé d'action, uniquement en cas de réussite. Elle sert notamment à déterminer le nombre de balles qui touchent en rafale : **1 + marge**, dans la limite de la valeur de rafale de l'arme et des munitions disponibles.
 
-<div class="admonition note">
-<p class="admonition-title">Note sur les seuils élevés</p>
-
-Si le seuil est de 6 ou plus (par exemple, un ange avec PUI 5 qui substitue PUI à FOR par sa [Présence Surnaturelle](../energie#présence-surnaturelle-pouvoir-intrinsèque) et possède +2 en Corps à Corps, donnant un seuil de 7), le 6 reste toujours un échec. L'intérêt d'avoir un seuil supérieur ou égal à 6 réside alors dans le fait qu'un résultat de 5 ou moins réussit et génère une marge importante.
-</div>
-
-    **Exemple** : Seuil 7, dé d'action = 1 → Réussite avec marge de 6 !
-
-    Cela récompense les combinaisons optimisées d'[attributs célestes](../../personnage/caracteristiques) et de compétences élevées en générant des marges spectaculaires.
-
-Si une règle précise que la marge n'est pas prise en compte, considérer la marge comme égale à 0.
+**La marge n'entre jamais dans les dégâts, l'intensité ni le départage des oppositions.** Le dé d'intensité reste indépendant. Un seuil théorique de 6 ou plus est ramené à 5 et permet d'ignorer **une source de désavantage**, sans produire de marge supérieure à 4. Il ne confère aucun avantage supplémentaire.
 
 ***
 
@@ -123,6 +113,12 @@ En cas de désavantage, le système fonctionne de manière inverse : le joueur d
 
 **Exemple** : Si un joueur obtient 3 sur le dé bleu et 5 sur le dé blanc, il doit prendre le 5, car c'est le plus haut. Cela diminue ses chances de réussite de manière significative.
 
+### Maîtrise exceptionnelle (seuil théorique 6 ou plus)
+
+Lorsqu'un personnage atteint un seuil théorique de réussite de **6 ou plus**, son seuil effectif reste plafonné à **5**, mais il **ignore une source de désavantage** sur son jet. Cette capacité ne confère **jamais d'avantage supplémentaire**. Les autres sources d'avantage et de désavantage sont ensuite résolues normalement. Une seule source est neutralisée, quel que soit le dépassement du seuil.
+
+**Exemples :** au seuil théorique 6, sans désavantage, le jet reste normal au seuil 5 ; avec un désavantage, le jet est normal ; avec un désavantage et une spécialisation accordant un avantage, le jet bénéficie de cet avantage ; avec deux désavantages, un seul est ignoré et l'autre s'applique.
+
 ### Avantage + Désavantage
 
 Si, pour un même jet, on cumule à la fois un avantage et un désavantage, alors ils s'annulent et on fait le jet sans avantage ni désavantage.
@@ -131,7 +127,7 @@ Si, pour un même jet, on cumule à la fois un avantage et un désavantage, alor
 
 Si pour un même jet, on cumule deux avantages ou plus, alors le dé d'intensité (rouge) devient **explosif**. Le personnage choisit le plus bas entre le dé bleu et le dé blanc (premier avantage), puis bénéficie d'un dé explosif (second avantage).
 
-**Exemple** : Sur un jet avec double avantage, le résultat indique 254, le joueur choisit 2 grâce à son premier avantage. Son dé d'intensité devient explosif (second avantage) : dé initial **4** → ajoute 1 dé d'explosion → **6** → enchaîne → **3**, pour un résultat d'intensité de 13 (4 + 6 + 3), auquel on ajoute la marge de réussite.
+**Exemple** : Sur un jet avec double avantage, le résultat indique 254, le joueur choisit 2 grâce à son premier avantage. Son dé d'intensité devient explosif (second avantage) : dé initial **4** → ajoute 1 dé d'explosion → **6** → enchaîne → **3**, pour un résultat d'intensité de **13** (4 + 6 + 3). Aucune marge ne s'ajoute à cette intensité.
 
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -155,9 +151,9 @@ Si par malheur, un personnage vient à cumuler 2 désavantages, alors, en plus d
 
 ### Réussite critique
 
-Une réussite critique se produit lorsque les deux dés d'action (bleu ET blanc) indiquent exactement le seuil de réussite (ou 5 si le seuil est supérieur ou égal à 6), et que ce résultat constitue une réussite.
+Une réussite critique se produit lorsque **les dés bleu et blanc affichent le même résultat** et que le dé d'action réussit son test (résultat inférieur ou égal au seuil effectif).
 
-Le dé d'intensité devient explosif (compte comme 1 source d'explosion). Cela compense l'absence ou la faible marge générée par un résultat au seuil exact.
+Le dé d'intensité devient explosif (compte comme 1 source d'explosion). 
 
 ### Échec critique
 
@@ -181,14 +177,14 @@ Lorsque le D666 indique **111**, il s'agit d'une **intervention divine**. Lorsqu
 
 **Intervention démoniaque (666)** : L'action de l'ange échoue de façon particulièrement humiliante
 
-- L'ange subit immédiatement un nombre de blessures aggravées égal à la moitié de son [Rang Céleste](../../personnage/rang) (arrondi supérieur).
+- L'ange subit immédiatement un nombre de blessures létales directes égal à la moitié de son [Rang Céleste](../../personnage/rang) (arrondi supérieur).
 - Double désavantage pour l'ange et tous ses alliés jusqu'à la fin de son prochain tour
 
 #### Pour les Démons
 
 **Intervention divine (111)** : L'action échoue de façon particulièrement humiliante
 
-- Le démon subit immédiatement un nombre de blessures aggravées égal à la moitié de son [Rang Céleste](../../personnage/rang) (arrondi supérieur).
+- Le démon subit immédiatement un nombre de blessures létales directes égal à la moitié de son [Rang Céleste](../../personnage/rang) (arrondi supérieur).
 - Double désavantage pour le démon et tous ses alliés jusqu'à la fin de son prochain tour
 
 **Intervention démoniaque (666)** : L'action réussit de manière particulièrement spectaculaire
@@ -236,10 +232,7 @@ Dans le cas des jets fermés, le roleplay est particulièrement encouragé puisq
 
 ## 8. Jets en opposition
 
-Lorsqu'on effectue un jet en opposition, chacun des 2 (ou plus) protagonistes fait un jet de la caractéristique/compétence appropriée. On ajoute alors la marge de réussite au résultat du dé d'intensité. Le plus haut résultat l'emporte et c'est la marge d'intensité (la différence entre les 2 intensités finales) qui représente l'intensité de la réussite de l'action. En cas d'égalité, le MJ décidera entre :
-
-- Les 2 actions échouent (on ignore les résultats et on passe au tour/joueur suivant)
-- Les 2 actions réussissent (les 2 actions sont résolues en même temps. Oui, un double KO est possible)
+Lors d'une opposition, chaque protagoniste effectue son jet. **Une réussite l'emporte sur un échec.** Si plusieurs protagonistes réussissent, **le plus petit dé d'action réussi l'emporte**. En cas d'égalité entre dés d'action réussis, **les deux actions réussissent simultanément**, y compris si cela entraîne un double KO. Si tous échouent, aucune action opposée ne réussit. L'intensité de chaque réussite est déterminée par son propre dé rouge, sans ajout de marge.
 
 <div class="admonition note">
 <p class="admonition-title">Note</p>

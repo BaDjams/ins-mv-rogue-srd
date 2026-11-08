@@ -1,0 +1,37 @@
+name: Vérification SRD (PR)
+
+on:
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  verification:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: npm
+      - name: Installer les dépendances
+        run: npm ci
+      - name: Syntaxe JavaScript
+        run: |
+          node --check public/scripts/rogue-srd.js
+          node --check public/scripts/host-deck-engine.mjs
+      - name: Tests du deck officiel et des probabilités
+        run: node --test tests/*.test.mjs
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Valider le CMS et les exports DOCX
+        run: |
+          pip install python-docx pyyaml --quiet
+          python -c "import yaml; c=yaml.safe_load(open('public/admin/config.yml', encoding='utf-8')); assert any(x.get('name') == 'deck_hotes' for x in c['collections'])"
+          python tools/export_docx.py
+      - name: Compiler le site Astro
+        run: npm run build

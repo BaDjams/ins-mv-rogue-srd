@@ -26,7 +26,7 @@ Lorsqu'une attaque inflige des dégâts :
 3. Réduction : on divise le résultat précédent par la Résilience s'il y a lieu (arrondi à l'inférieur)
 4. Blessures finales : Le résultat indique le nombre de blessures subies par le défenseur.
 
-Certains effets utilisent directement le verbe "subir" sans mentionner de dégâts (par exemple "sur une réussite, la cible subit une blessure létale"), cela implique donc qu'il n'y a aucune réduction (ni PA, ni Résilience) te que cette blessure est indiquée immédiatement sur la fiche.
+Certains effets utilisent directement le verbe "subir" sans mentionner de dégâts (par exemple "sur une réussite, la cible subit une blessure létale"), cela implique donc qu'il n'y a aucune réduction (ni PA, ni Résilience) et que cette blessure est indiquée immédiatement sur la fiche.
 
 Natures de dégâts et blessures
 
@@ -34,20 +34,17 @@ Dégâts non-létaux (fatigue, contusions légères...) conduisent à des Blessu
 
 - Guérissent rapidement (1 par 5min de repos). 
 
-Dégâts létaux (blessures graves : blessures ouvertes, impacts de bales, coupures, fractures, commotions...) conduisent à des Blessures létales (X)
+Dégâts létaux (blessures graves : blessures ouvertes, impacts de balles, coupures, fractures, commotions...) conduisent à des Blessures létales (X)
 
 - Guérissent naturellement (1 par semaine)
 
-Dégâts aggravés (amputations, dégâts magiques particuliers...) conduisent à des Blessures aggravées (⭙)
-
-- Ne guérissent jamais naturellement.
+Les marques **aggravées (⭙)** servent à représenter la destruction progressive d'un corps en état terminal, selon la nature de l'âme. Elles ne constituent plus une catégorie ordinaire de dégâts d'attaque.
 
 Règle d'arrondi
 
 L'arrondi est toujours favorable au personnage actif. Ainsi les dégâts infligés par un personnage sont arrondis au supérieur (favorable à l'attaquant) alors que lors de la division des dégâts par la Résilience, l'arrondi se fait toujours à l'inférieur (favorable au défenseur).
 
-Exemple : Azrael active son aura de sainteté qui **inflige** ([rang ](../../personnage/rang)de pouvoir + Intensité finale) /2 dégâts aggravés à toutes les cibles démoniaques au contact. 3+6/2 = 4,5, donc arrondi à 5 dégâts (l'arrondi profite au personnage actif, en l'état on calcul les dégâts d'Azrael, l'arrondi profite donc à Azrael).
-Belphess la démone aux belles dagues qui n'a pour armure qu'un t-shirt mouillé est très très au contact et **subit** donc 5/3=1 blessure aggravée (on arrondit à l'inférieur lors de la division par la résilience car dans ce calcul, l'arrondi profite à Belphess, le personnage actif du calcul). Belphess pousse un gémissement équivoque.
+Exemple : une attaque inflige 5 dégâts après arrondi, puis la Résilience 3 les réduit à **1 blessure** (arrondi inférieur).
 
 Pour les effets bénéfiques (soins, récupération), l'arrondi se fait à l'[avantage](../resolution#avantage) du lanceur.
 
@@ -58,104 +55,67 @@ Pour les effets bénéfiques (soins, récupération), l'arrondi se fait à l'[av
 ## **Principe Général**
 
 Les points de vie (PV) sont déterminés par la caractéristique Vigueur
-selon la formule **VIG x 2 + Taille**. Un humain dispose donc d'entre 8
-et 12 PV.
+selon la formule **VIG x 2 + Taille**. La Vigueur d'un hôte humain varie de 1 à 3 ; son total de PV peut donc être inférieur à 8.
 
-Plutôt que de soustraire des points de vie, le système utilise une **jauge de blessures** composée d'un nombre de cases égal aux PV maximum du personnage. Les blessures sont cochées de gauche à droite, et leur gravité détermine le type de marque utilisée. Les nouvelles blessures d'un même type "poussent" les anciennes vers la droite.
+Plutôt que de soustraire des points de vie, le système utilise une **jauge de blessures** composée d'un nombre de cases égal aux PV maximum du personnage. Les blessures sont cochées de gauche à droite, et leur gravité détermine le type de marque utilisée. Les nouvelles blessures d'un même type « poussent » les anciennes vers la droite. Les blessures létales remplacent prioritairement les non létales lorsque la jauge est saturée. Les marques aggravées ne sont utilisées que pour l'agonie des âmes humaines ordinaires.
 
-## **Types de Blessures**
+## Types de blessures et saturation
 
-**Blessures Non Létales (/)**
+- **Non létales (/)** : fatigue, contusions, drain. Elles guérissent à raison d'une marque toutes les 5 minutes de repos. Une blessure non létale supplémentaire sur une jauge saturée devient létale.
+- **Létales (X)** : traumatismes graves, tirs, coupures, brûlures. Elles guérissent naturellement à raison d'une marque par semaine, sauf règle de guérison particulière.
+- **Aggravées (⭙)** : marques terminales qui remplacent les marques létales lorsque le corps d'un humain agonise. Ce n'est **pas un type ordinaire de dégâts** utilisable par une arme ou un pouvoir.
 
-**Marquage :** Simple trait diagonal
-**Causes :** Fatigue extrême, coups assommants, douleur intense, [drain magique](../energie#rang-des-pouvoirs-et-drain) (un 6 sur chaque dé de drain jusqu'au Rang Céleste, puis une blessure non létale automatique par rang effectif supplémentaire)
-**Restriction :** Ne peut être cochée que dans une case vide
-**Guérison :** 1 blessure non létale toutes les 5 minutes, uniquement au repos.
+Les marques s'inscrivent dans la jauge de **PV = 2 × VIG + Taille**. Une nouvelle blessure létale remplace prioritairement une marque non létale si la jauge est saturée. Lorsque toutes les cases sont létales, le devenir de l'hôte dépend **de la nature de l'âme** :
 
-<div class="admonition note">
-<p class="admonition-title">Immunités à la fatigue</p>
+### Âme humaine ordinaire
 
-Certaines âmes sont immunisées aux blessures non létales d'origine physique ordinaire (fatigue, essoufflement, coups assommants) — l'immunité, si elle existe, dépend du type d'âme incarnée et est précisée dans sa description. Le drain magique, lui, reste toujours efficace : ce n'est pas de la fatigue du corps, mais l'usure du canal entre l'âme et son hôte.
+Le lien entre l'âme humaine et son corps est très fort. Lorsque **toutes les cases sont létales**, le corps est en état critique, mais l'âme reste attachée à lui. **Sans stabilisation par premiers secours ou médicalisation, une case létale devient aggravée chaque minute.** Toute blessure supplémentaire transforme immédiatement autant de cases létales en aggravées. Lorsque **toutes les cases sont aggravées**, l'âme quitte le corps : c'est la mort de l'hôte.
 
-**Anges et démons :** leur immunité à la fatigue dispense uniquement du jet de Vigueur destiné à éviter l'inconscience lorsque la jauge est entièrement remplie de blessures non létales. Ils continuent à subir le drain magique et, si la jauge est pleine, les nouvelles blessures non létales deviennent létales. Cette immunité ne les protège pas de l'état critique causé par les blessures létales.
-</div>
+### Stabilisation par premiers secours
 
-**Blessures Létales (X)**
+Pour stabiliser un **hôte humain ordinaire** dont la jauge est entièrement létale, un soignant consacre une **action complexe** à un jet de **PER + Premiers soins**. Il applique les règles habituelles du seuil (plafond 5, avantages et désavantages), notamment le désavantage si le matériel approprié manque.
 
-**Marquage :** Croix complète
-**Causes :** Armes tranchantes, balles, feu, acide, la plupart des dégâts de combat
-**Guérison :** 1 semaine par coche (récupération naturelle selon le rang céleste)
+- **Réussite** : le blessé est stabilisé. La conversion automatique d'une marque létale en marque aggravée **chaque minute s'arrête**, mais les cases déjà aggravées ne sont pas effacées.
+- **Échec** : le blessé n'est pas stabilisé et la dégradation continue ; une nouvelle tentative reste possible si l'intervenant peut agir.
+- **Nouvelle blessure avant guérison** : si toutes les cases restent occupées par des blessures létales ou aggravées, elle convertit immédiatement autant de marques létales en aggravées ; les soins ne protègent pas d'une nouvelle agression.
 
-**Blessures Aggravées (⭙)**
+Les premiers secours permettent de **gagner du temps**, pas de restaurer des PV. Une médicalisation et des soins ultérieurs sont nécessaires pour guérir. Ce procédé ne retient pas artificiellement une **âme surnaturelle**, qui a déjà quitté son hôte à saturation létale ; il ne met pas non plus fin à la **stase d'une âme damnée**, qui relève des règles particulières de la créature.
 
-**Marquage :** Croix entourée 
-**Causes :** Blessures très graves laissant des séquelles permanentes (amputations...), certaines sources de dégâts surnaturels décrites comme infligeant ce type de dégâts. Le drain magique n'inflige pas de blessures aggravées.
-Guérison : Ces blessures ne guérissent jamais naturellement. Au mieux une cicatrisation. 
+### Âme surnaturelle (ange, démon et autres âmes non damnées)
 
-## **Règles de Progression des Blessures**
+Le lien au corps est plus ténu. Lorsque **toutes les cases sont létales**, l'hôte meurt et l'âme le quitte immédiatement. Elle suit alors les règles de [réincarnation](../../personnage/reincarnation) ou de retour à son plan d'origine. **La mort de l'hôte ne détruit pas l'âme.**
 
-Les blessures s'**aggravent** toujours vers le type le plus grave :
+### Âme damnée (vampire et autres créatures maudites concernées)
 
--   Une case vide peut recevoir n'importe quel type de blessure
--   Une case (/) peut devenir (X) ou (⭙)
--   Une case (X) peut devenir (⭙)
--   Une case (⭙) reste (⭙)
+L'âme maudite reste liée au corps. Lorsque **toutes les cases sont létales**, le corps entre en **stase** : il cesse de fonctionner normalement, mais l'âme ne le quitte pas. Les conditions permettant de mettre fin à la stase ou de détruire définitivement une telle créature relèvent de ses règles spécifiques.
 
-**Important :** Seules les blessures non létales nécessitent une case vide. Les blessures plus graves peuvent toujours aggraver une blessure existante.
+### Mort de l'hôte, retour et destruction de l'âme
 
-## **Seuils Critiques**
+Ces trois événements sont distincts : **mort de l'hôte** = départ de l'âme du corps ; **retour de l'âme à son plan d'origine** = conséquence possible de l'échec ou de l'épuisement des incarnations ; **destruction de l'âme** = événement exceptionnel, réputé extrêmement rare, voire impossible. Une blessure ordinaire ne détruit jamais l'âme.
 
-A chaque fois que le personnage subit une blessure, on vérifie d'abord si l'un des cas suivant s'applique : 
+### Jauge saturée de blessures non létales
 
-**Jauge Pleine - Dernière Case (/) :** Le personnage doit réussir un jet de VIG ou sombrer dans l'inconscience, **sauf s'il est un ange ou un démon**, auquel cas il reste conscient sans jet. Dans tous les cas, les prochaines blessures non létales subies deviennent obligatoirement des blessures létales (X).
-
-**Jauge Pleine - Dernière Case (X) :**   Le personnage doit réussir un jet de VIG ou sombrer en état critique. Il est alors inconscient et doit recevoir des soins rapidement : tant qu'il n'est pas stabilisé, il subit 1 blessure non létale à chaque tour. Les prochaines blessures létales ou non létales subies seront obligatoirement de type  aggravée (⭙).
-
-**Jauge Pleine - Dernière Case (⭙) :**  **MORT** (pas de jet de sauvegarde contre la mort dans ce jeu)**.**
+Lorsque toutes les cases sont non létales, un humain ordinaire doit réussir un jet de VIG pour éviter l'inconscience. Les anges et démons ne font pas ce jet pour les seules blessures non létales ; ils restent cependant exposés à leur conversion en blessures létales, notamment par le drain surnaturel.
 
 ## **Guérison Accélérée**
 
-**Certains pouvoir ou capacité, comme laguérison rapide ou la régénération permettent de guérir les blessures plus rapidement.**
+**Certains pouvoirs ou capacités, comme la guérison rapide ou la régénération, accélèrent la guérison des blessures.**
 
-**Guérison Rapide 1** (Rang céleste requis 2, Passif permanent) : Les blessures létales guérissent au rythme accéléré de 1 jour par coche
+**Guérison rapide** est un pouvoir passif (prérequis Rang Céleste 2) dont l'efficacité dépend directement du **Rang Céleste**, sans achat de niveaux supplémentaires :
 
-**Guérison Rapide 2** (Rang céleste requis 3)  Les blessures létales guérissent au rythme impressionnant de 1 heure par coche
-
-**Guérison Rapide 3** (Rang céleste requis 4): Les blessures létales guérissent au rythme effréné de 1 minute par coche
-
-**Guérison Rapide 4** (Rang céleste requis 5) : Les blessures létales guérissent au rythme inquiétant de 1 tour par coche
+| Rang Céleste | Récupération des blessures létales |
+|---|---|
+| **2** | Une marque par jour |
+| **3** | Une marque par heure |
+| **4** | Une marque par minute |
+| **5 ou plus** | Une marque par tour |
 
 **Régénération (Rang céleste 2, Concentration, pas de surcharge)**
 Toutes les blessures de même type guérissent simultanément au rythme de la capacité de guérison du personnage, plutôt qu'une après l'autre.
 
-## **Blessures Aggravées - Règles Spéciales**
-
-**Limitation des Pouvoirs**
-
--   **Aucun pouvoir de guérison** ne peut directement soigner les blessures aggravées
--   La "Guérison Rapide" n'affecte que les blessures (/) et (X)
-
-**Conversion Nécessaire**
-
-Pour guérir d'une blessure aggravée (⭙), il faut d'abord la **convertir** en blessure létale (X) via :
-
--   Pouvoirs de conversion spécifiques
--   Rituels de purification spirituelle
--   Intervention divine
-
-**Objets Exceptionnels**
-
-Certains artefacts légendaires comme **le Saint Graal** peuvent guérir directement toutes les blessures, y compris aggravées, sans conversion préalable.
-
 ## **Exemple Pratique**
 
-**Mirael** (Ange, 10 PV, Résilience 3) reçoit plusieurs attaques au cours d'un combat :
-
-1.  Une attaque inflige 9 dégâts non létaux → après Résilience (9/3=3), Mirael **subit** 3 blessures non létales → coche (/) (/) (/) 
-2.  Une attaque inflige 6 dégâts létaux → après Résilience (6/3=2), Mirael **subit** 2 blessures létales → les cases 1-2 s'upgradent en (X) (X), la case 3 reste (/) et Mirael décale ses cases (/) (/) vers la droite pour bien avoir (X) (X) (/) (/) (/)
-3.  Mirael surcharge un pouvoir au rang 4, donc au-delà de son Rang Céleste → drain automatique → **subit** directement 1 blessure non létale (sans réduction). De plus, 1 dé de drain génère un 6 : il subit une deuxième blessure non létale → (X) (X) (/) (/) (/) (/) (/) + 3 cases vides.
-4.  Une balle inflige 9 dégâts létaux → après Résilience (9/3=3), Mirael **subit** 3 blessures létales → (X) (X) (X) (X) (X) (/) (/) (/) (/) (/) : sa jauge est pleine de blessures, mais la dernière case reste non létale. Comme il est ange, il ne fait aucun jet de VIG pour éviter l'inconscience liée à la fatigue.
-5.  Mirael se prend une attaque massive d'un démon armé de sa lame maudite. Malgré la Résilience, il subit 4 blessures aggravées → (⭙) (⭙) (⭙) (⭙) (X) (X) (X) (X) (X) (/). La dernière case reste non létale : il demeure conscient grâce à son immunité à la fatigue. Une blessure létale supplémentaire ferait passer cette dernière case à (X) et déclencherait alors le jet de VIG pour éviter l'état critique.
+**Exemple :** Mirael, ange incarné, remplit progressivement sa jauge de blessures létales. Dès que toutes les cases sont létales, l'hôte meurt et Mirael se désincarne ; il n'attend pas une conversion en marques aggravées, réservée à l'agonie des humains ordinaires.
 
 ## Calcul des points de vie par type de créatures :
 
@@ -191,6 +151,6 @@ Enfin, certaines créatures peuvent être tout bonnement insensibles à certaine
 <div class="admonition note">
 <p class="admonition-title">Rôle des armes spéciales</p>
 
-Les armes spéciales (argent, armes célestes, armes maudites) ne font pas plus de dégâts bruts — elles réduisent ou annulent la Résilience de l'adversaire. C'est le seul levier qui permet à un humain bien préparé (inquisiteur, chasseur) de menacer réellement un être surnaturel de haut rang. </div>
+La **pénétration** des armes ignore des points d'armure, **jamais la Résilience**. Les éventuels effets surnaturels propres à une arme sacrée ou maudite sont décrits séparément et ne sont pas assimilés à de la pénétration. </div>
 
 Note : Certaines créatures maudites comme les vampires ne restaurent pas leur points de vie automatiquement, ils sont obligés de les prendre à leur victime (et disposent d'une capacité spéciale pour cela). Ces créatures, incapables de guérir naturellement, disposent du trait "Maudit".

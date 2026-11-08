@@ -52,15 +52,9 @@ links:
     target: "mecanique/competences"
 
   # ── Énergie ──────────────────────────────────────────────────────────────────
-  - terms: ["points d'énergie", "points d'Énergie"]
-    target: "mecanique/energie"
-
   - terms: ["drain"]
     target: "mecanique/energie"
     anchor: "rang-des-pouvoirs-et-drain"
-
-  - terms: ["restauration de l'énergie"]
-    target: "mecanique/energie"
 
   # ── Combat ───────────────────────────────────────────────────────────────────
   - terms: ["posture offensive", "posture défensive", "posture de concentration"]
@@ -71,7 +65,7 @@ links:
     target: "mecanique/combat"
     anchor: "initiative"
 
-  - terms: ["action complexe", "action simple", "action gratuite"]
+  - terms: ["action complexe", "action simple", "geste accessoire", "gestes accessoires"]
     target: "mecanique/combat"
     anchor: "déclaration-des-actions"
 

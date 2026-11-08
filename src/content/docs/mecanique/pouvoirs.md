@@ -13,15 +13,15 @@ Le [rang céleste](../../personnage/rang) d'une créature détermine sa capacit�
 
 Chaque pouvoir possède un rang (1 à 6). Le rang détermine à la fois l'accès et le coût en [drain](../energie#rang-des-pouvoirs-et-drain).
 
-- **Accès** : rang de base ≤ Rang Céleste pour les pouvoirs actifs ; les pouvoirs passifs sont calés sur le Rang Céleste. Pas de downgrade possible.
-- **Surcharge** : lancer un pouvoir actif à un rang supérieur à son rang de base, jusqu'à 6 — y compris au-delà du Rang Céleste. Chaque surcharge ajoute un ou plusieur rang au pouvoir. La somme du rang de base du pouvoir et des rangs de surcharge, appelée rang effectif, ne peut pas excéder 6.
+- **Accès** : le Rang Céleste doit atteindre le prérequis du pouvoir ; les pouvoirs passifs suivent automatiquement le Rang Céleste.
+- **Surcharge** : choisir au lancement un rang de puissance supérieur au Rang Céleste, jusqu'à 6. Les mots-clés augmentent le rang effectif pour le drain, sans augmenter les dégâts. Aucun niveau de pouvoir n'est acheté avec l'expérience.
 - le rang effectif de lancement détermine le drain : 1 dé de drain par rang jusqu'au Rang Céleste (un 6 inflige 1 blessure non-létale), 1 drain automatique par rang au-delà (1 blessure non létale directe).
 
 <div class="admonition example">
 <p class="admonition-title">Exemple : un Ange (donc RC 3) lance un pouvoir de Rang 2, surchargé à 4</p>
 
 - Drain : 3 dés (jusqu'au Rang Céleste) + 1 drain automatique (1 rang au-delà du Rang 3)
-- On lance les dés de drain, chaque 6 declenche fait subir une blessure non letale au lanceur de sort.
+- On lance les dés de drain, chaque 6 inflige une blessure non létale au lanceur de sort.
 - Le drain automatique inflige en plus 1 blessure non létale directe.
 </div>
 
@@ -44,14 +44,14 @@ plus._
 
 Au-delà du prérequis d'accès, tout dépend de la nature du pouvoir.
 
-Un **pouvoir actif** se lance : jet, [drain](../energie#rang-des-pouvoirs-et-drain), éventuelle [Surcharge](../energie#rang-des-pouvoirs-et-drain). Son rang de base, choisi à l'acquisition et améliorable par la [progression](../../personnage/progression), ne peut jamais dépasser le Rang Céleste de son propriétaire. En revanche, rien n'interdit de le lancer plus fort qu'il n'a été appris : la Surcharge permet de monter jusqu'au rang 6, le drain se chargeant de rappeler à chacun où se situent ses limites réelles.
+Un **pouvoir actif** se lance : jet, [drain](../energie#rang-des-pouvoirs-et-drain), éventuelle [Surcharge](../energie#rang-des-pouvoirs-et-drain). Son rang de lancement détermine sa puissance, sans achat de niveaux par expérience. La Surcharge permet de le lancer jusqu'au rang 6, au prix du drain correspondant.
 
 Un **pouvoir passif** ne se lance pas : il est toujours actif, ne génère aucun drain, et son rang est calé sur le Rang Céleste de son propriétaire — ni plus, ni moins. Il évolue automatiquement avec lui. Un ange de Rang 3 a _Résilience 3_ ; s'il devient Archange, sa Résilience passe à 4 sans rien dépenser. C'est un des rares avantages de la promotion interne.
 
 _Exemples :_
 
 - _Résilience_ (passif, prérequis Rang 1) : calée sur le Rang Céleste. Ange Rang 3 → Résilience 3 ; Archange Rang 4 → Résilience 4 ; humain Rang 1 → Résilience 1, sans effet pratique.
-- _Feu Ardent_ (actif, prérequis Rang 2) : un ange de Rang 3 peut l'acquérir au rang de base 2 ou 3, et le surcharger jusqu'au rang 6 au lancement.
+- _Feu Ardent_ (actif, prérequis Rang 2) : un ange de Rang 3 peut l'acquérir, le lancer au rang 2 ou 3 et le surcharger jusqu'au rang 6 au lancement.
 - _Rapidité Céleste_ (passif, prérequis Rang 3) : inaccessible en dessous du Rang 3 ; calée sur le Rang Céleste au-delà.
 
 ## **Règles spécifiques aux Pouvoirs**
@@ -68,23 +68,17 @@ _Exemples :_
 
 **Mécaniques**
 
--   **Intensité :** Résultat du [dé rouge](../resolution) + [marge de réussite](../resolution#3-marge-de-réussite)
--   **Dé explosif :** Le [dé d'intensité](../resolution) explose sur un 6 (relance et
-    additionne)
+-   **Intensité :** Résultat du [dé rouge](../resolution), sans ajout de marge
+-   **Dé explosif :** Le [dé d'intensité](../resolution) ajoute systématiquement un dé supplémentaire par source ; chaque 6 sur un dé d'explosion est relancé et additionné
 -   **Non-réductible :** Ne peut être réduit par l'armure ou la
     résistance physique
 -   **Concentration :** Coût initial + coût par tour. Maintenir un pouvoir au-delà du tour de lancement requiert d'adopter la [posture de Concentration](../combat#postures-tactiques), avec les contreparties qu'elle implique.
 -   **Durée fixe :** Exactement 3 tours puis dissipation automatique.
     Prolongation = nouveau jet + nouveau coût
--   **Couper un pouvoir :** [Action gratuite](../combat#déclaration-des-actions), peut être fait à tout
+-   **Couper un pouvoir :** [Geste accessoire](../combat#déclaration-des-actions), peut être fait à tout
     moment
 -   **Contrôle mental/Possession :** Le contrôleur ne dispose toujours que d'une [Action Complexe](../combat#déclaration-des-actions) et d'une [Action Simple](../combat#déclaration-des-actions) par tour, à répartir entre son hôte et ses cibles contrôlées.
--   Certains pouvoir précisent que le lanceur subit une ou plusieurs
-    blessures aggravées. Ces blessures aggravées sont infligées
-    directement (le personnage les subit), elles ne passent pas par
-    les réductions de PA ou Résilience. C'est le prix à payer pour
-    utiliser une puissance qui dépasse les limites naturelles du
-    corps.
+- Les pouvoirs qui infligent directement des blessures les appliquent sans réduction lorsque leur description le précise. Une source maudite peut interdire la guérison naturelle des blessures létales qu'elle inflige, si son effet le précise.
 
 **Interactions entre Pouvoirs**
 
@@ -96,7 +90,7 @@ _Exemples :_
     condition spéciale,
 -   **Prolonger un pouvoir :** Nouveau jet de pouvoir + nouveau drain
     complet au rang de lancement initial, au tour 4, 7, 10, etc.
--   **Arrêter un pouvoir de concentration :** Action gratuite, effet immédiat.
+-   **Arrêter un pouvoir de concentration :** Geste accessoire, effet immédiat.
 
 ## Note sur les armes
 

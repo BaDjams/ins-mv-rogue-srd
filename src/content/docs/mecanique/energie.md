@@ -15,13 +15,13 @@ Chaque âme surnaturelle peut canaliser la puissance divine librement, pour ses 
 
 ## Rang des pouvoirs et Drain
 
-Les pouvoirs sont répartis en 2 grandes classes : les pouvoirs actifs et les pouvoirs passifs. Chaque pouvoir possède un rang, de 1 à 6. Un pouvoir actif ne peut être acquis qu'à un rang de base inférieur ou égal au Rang Céleste de son propriétaire. Les pouvoirs passifs, eux, sont calés sur le Rang Céleste et évoluent avec lui — voir [Pouvoirs](../pouvoirs#pouvoirs-actifs-et-pouvoirs-passifs).
+Les pouvoirs sont répartis en 2 grandes classes : les pouvoirs actifs et les pouvoirs passifs. Chaque pouvoir possède un rang, de 1 à 6. Un pouvoir actif peut être acquis dès que le Rang Céleste atteint son prérequis ; aucun niveau de pouvoir supplémentaire ne s'achète avec l'expérience. Les pouvoirs passifs, eux, sont calés sur le Rang Céleste et évoluent avec lui — voir [Pouvoirs](../pouvoirs#pouvoirs-actifs-et-pouvoirs-passifs).
 
-La **Surcharge** permet de lancer un pouvoir actif à un rang supérieur à son rang de base, jusqu'au plafond universel de 6 — y compris au-delà de son propre Rang Céleste, pour les âmes qui considèrent la prudence comme une vertu strictement humaine. On ne peut pas faire l'inverse — un pouvoir de rang de base 3 se lance au rang 3 minimum. Si le pouvoir génère des dégâts, ils sont calculés sur le rang de lancement, surcharge comprise. 
+La **Surcharge** permet de lancer un pouvoir actif à un rang supérieur au Rang Céleste du lanceur, jusqu'au plafond universel de 6. Le rang de lancement ne peut être inférieur au prérequis du pouvoir. Si le pouvoir génère des dégâts, ils sont calculés sur le rang de lancement, surcharge comprise. 
 
-Les dégâts d'un pouvoir offensif lancé au rang R effectif (donc en prenant en compte les rangs de surcharge) sont :
+Les dégâts d'un pouvoir offensif lancé au **rang R de lancement** (surcharge de puissance comprise, mais **hors coût supplémentaire des mots-clés**) sont :
 
-> `PUI + R + max(Marge, Dé rouge)`
+> `PUI + R + Dé rouge`
 
 Un pouvoir peut par ailleurs être modulé au lancement par des **mots-clés** — [Multicible, Portée, Durée](../mots-cles-pouvoirs) et quelques autres. Chaque mot-clé a un coût, qui s'ajoute au rang de lancement pour donner le **rang effectif** du pouvoir, plafonné à 6. Le rang effectif ne sert qu'à une seule chose : déterminer le drain, selon la même règle que la Surcharge — des dés jusqu'au Rang Céleste, des drains automatiques au-delà. Les dégâts et la pénétration, eux, restent calculés sur le rang de lancement : multiplier les cibles n'a jamais rendu une boule de feu plus chaude.
 
@@ -42,9 +42,9 @@ Il est tout à fait possible de combiner Surcharge et mots-clés sur un même la
 
 ## Présence Surnaturelle _(pouvoir intrinsèque)_
 
-_Rang 1 — Actif —_ [_action gratuite_](../combat#déclaration-des-actions)
+_Rang 1 — Actif —_ [_activation accessoire_](../combat#déclaration-des-actions)
 
-Toute âme incarnée peut, en une action gratuite déclarée avant le jet, soit prendre l'[avantage](../resolution#avantage) sur ce jet, soit substituer un attribut d'âme à une caractéristique physique. Ces deux options représentent le même phénomène : laisser transparaître, l'espace d'un instant, la véritable nature de l'être qui habite ce corps. Cela génère 1 dé de drain — un seul 6 suffit à infliger une blessure non-létale. Surcharge impossible.
+Toute âme incarnée peut, par une activation accessoire déclarée avant le jet, soit prendre l'[avantage](../resolution#avantage) sur ce jet, soit substituer un attribut d'âme à une caractéristique physique. Ces deux options représentent le même phénomène : laisser transparaître, l'espace d'un instant, la véritable nature de l'être qui habite ce corps. Cela génère 1 dé de drain — un seul 6 suffit à infliger une blessure non-létale. Surcharge impossible.
 
 | Caractéristique physique | Attribut d'âme substituable |
 | --- | --- |

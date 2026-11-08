@@ -1007,3 +1007,18 @@ nav a[aria-current="page"]:hover {
    margin-top volontaires de ces composants sont marqués !important pour continuer à
    s'appliquer malgré ce reset. */
 .rogue-gen *, .rogue-sim *, .rogue-roller * { margin-top: 0 !important; }
+
+/* Cinquième qualité d'hôte : Or (deux jokers sur 54 cartes). */
+.gen-prob-label--legendary { color: oklch(83% 0.16 85); }
+.gen-card--legendary { border-color: oklch(80% 0.17 85 / 0.7); box-shadow: 0 0 16px oklch(80% 0.17 85 / 0.24); }
+.gen-badge--legendary { background: oklch(80% 0.17 85); color: oklch(20% 0.02 85); }
+.gen-card__placeholder { height: 100%; min-height: 170px; display: flex; align-items: center; justify-content: center; text-align: center; font-size: 0.8em; color: var(--rogue-text-faint); background: var(--rogue-bg-3); }
+
+/* Choix du deck officiel / paquet de remplacement. */
+.gen-deck-selector { display:flex; flex-wrap:wrap; align-items:center; gap:10px; margin:0 0 16px; }
+.gen-deck-selector select { background:var(--rogue-bg-3); border:1px solid var(--rogue-border); color:var(--rogue-text); padding:9px 12px; border-radius:6px; max-width:100%; font-family:var(--rogue-font-body); }
+.gen-deck-selector [data-el="deck-status"] { flex-basis:100%; line-height:1.5; }
+.gen-card__img { position:relative; }
+.gen-special-ribbon { position:absolute; left:10px; bottom:10px; z-index:2; display:inline-block; border:1px solid oklch(82% 0.14 82); border-radius:4px; background:oklch(27% 0.06 82 / 0.95); color:oklch(92% 0.12 82); padding:3px 8px; font-size:0.69rem; font-weight:700; letter-spacing:0.07em; text-transform:uppercase; }
+.gen-card--special { outline:1px solid oklch(75% 0.12 83 / 0.6); }
+.gen-card__description { margin:0.35em 0 0.75em; color:var(--rogue-text-dim); font-size:0.85em; line-height:1.45; white-space:pre-wrap; }

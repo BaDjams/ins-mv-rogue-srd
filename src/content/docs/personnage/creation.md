@@ -7,7 +7,7 @@ sidebar:
 
 ## Vue d'ensemble
 
-Les joueurs créent uniquement leur âme surnaturelle (ange ou démon). L'hôte humain est déterminé séparément par tirage de cartes, selon les règles des [qualités d'hôtes](./hotes). Les caractéristiques et compétences humaines proviennent de la carte d'hôte et ne sont pas réparties par le joueur :
+Les joueurs créent uniquement leur âme surnaturelle (ange ou démon). L'hôte humain est déterminé séparément par tirage de cartes, selon les règles des [qualités d'hôtes](../hotes). Les caractéristiques et compétences humaines proviennent de la carte d'hôte et ne sont pas réparties par le joueur :
 
 - **Mission initiale** : Choix parmi 3 cartes "Soldats de Dieu"
 - **Réincarnations** : Tirage aléatoire dans le deck "Citoyens"
@@ -133,7 +133,6 @@ Pouvoirs basiques utiles mais pas forcément en rapport avec votre concept initi
 
 Choisissez **2 traits sur la liste des Traits d'Âme**. Ces traits restent constants à travers toutes les incarnations.
 
-**Conduit Divin X** (X = 1, 2 ou 3) — exemple notable. Une fois par combat et par niveau, transforme un drain automatique en simple dé de drain. Définition complète dans le chapitre Énergie.
 
 ---
 
@@ -161,7 +160,7 @@ Choisissez **2 traits sur la liste des Traits d'Âme**. Ces traits restent const
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 
-L'hôte sera déterminé séparément par tirage de cartes au début de chaque mission ou [réincarnation](./reincarnation). À défaut de deck officiel, utilisez le [tirage alternatif à 54 cartes](./hotes).
+L'hôte sera déterminé séparément par tirage de cartes au début de chaque mission ou [réincarnation](../reincarnation). À défaut de deck officiel, utilisez le [tirage alternatif à 54 cartes](../hotes).
 </div>
 
 ---

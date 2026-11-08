@@ -26,7 +26,7 @@ En cas d'échec, le personnage perd 1 point de SM, et le MJ peut lui attribuer u
 <div class="admonition note">
 <p class="admonition-title">Soldats de Dieu</p>
 
-Les Soldats de Dieu bénéficient d'un avantage aux jets de Santé Mentale : ils lancent deux dés et conservent le meilleur. La foi est un excellent isolant — savoir que l'horreur a un camp adverse, et que ce camp peut perdre, change tout.
+Les Soldats de Dieu bénéficient d'un avantage aux jets de Santé Mentale : ils lancent deux dés et conservent le plus petit résultat. La foi est un excellent isolant — savoir que l'horreur a un camp adverse, et que ce camp peut perdre, change tout.
 </div>
 
 ## Récupération

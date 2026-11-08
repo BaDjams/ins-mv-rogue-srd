@@ -48,7 +48,7 @@ Ce SRD est en cours de rédaction. Certaines sections peuvent être incomplètes
 - Refonte complète du système de canalisation de la puissance : les Points d'Énergie laissent place à un système de dés de drain (fatigue magique) et de drain automatique (blessures directes au-delà du Rang Céleste).
 - Nouveau chapitre **[Mots-clés de Pouvoirs](mecanique/mots-cles-pouvoirs)** : Multicible, Portée, Durée, et des options propres à chaque attribut d'âme.
 - Nouveau chapitre **[Santé Mentale](mecanique/sante-mentale)** pour les hôtes humains confrontés à l'horreur surnaturelle.
-- Le trait Conduit Divin convertit désormais un drain automatique en simple dé de drain, une fois par combat et par niveau.
+- Note historique : le trait Conduit Divin mentionné dans les anciennes versions a été supprimé des règles actuelles.
 - Mise en forme entièrement revue de la page [Setting](contexte/ins-mv-rogue), désormais lisible.
 - Le SRD s'installe comme une application sur mobile et reste consultable hors-ligne, avec mise à jour automatique dès qu'une nouvelle version est publiée.
 - Export DOCX entièrement revu (tableaux d'équipement, mise en forme) et téléchargement corrigé.

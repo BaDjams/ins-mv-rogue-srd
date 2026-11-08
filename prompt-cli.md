@@ -1,133 +1,35 @@
-# Contexte projet — INS-MV ROGUE SRD
+# INS/MV : Rogue — consignes techniques actuelles
 
-## Ce qu'on est en train de faire
+## Source de vérité
 
-On construit un site web SRD (System Reference Document) pour un jeu de rôle maison appelé **INS-MV ROGUE**. Le stack choisi est **GitHub + MkDocs Material**.
+Le **SRD courant** est la seule source de règles normative : https://badjams.github.io/ins-mv-rogue-srd/ ; dans le dépôt, voir `src/content/docs/`.
+Toute ancienne documentation ou conversation, y compris les règles contenues précédemment dans ce fichier, est obsolète si elle contredit ce SRD.
 
-Le site est déjà en ligne : https://badjams.github.io/ins-mv-rogue-srd/
+## Architecture
 
-Le repo GitHub : https://github.com/BaDjams/ins-mv-rogue-srd
+- Application documentaire : Astro 5 + Starlight, `astro.config.mjs`.
+- Moteur et interface du simulateur/générateur : `public/scripts/rogue-srd.js`.
+- Tirage du deck officiel : `public/scripts/host-deck-engine.mjs` et `public/data/hotes-officiels.json`, administrables via `public/admin/config.yml`.
+- Export DOCX : `tools/export_docx.py`. Export imprimable : `src/components/ExportContent.astro`.
+- Vérifications PR : `.github/workflows/check.yml`.
 
-## Structure du repo
+## Synthèse mécanique à respecter
 
-```
-ins-mv-rogue-srd/
-├── docs/                   ← fichiers .md du SRD (un par section)
-│   ├── index.md
-│   ├── contexte.md
-│   ├── caracteristiques.md
-│   ├── creation.md
-│   ├── rang.md
-│   ├── progression.md
-│   ├── reincarnation.md
-│   ├── resolution.md       ← section LE D666 (système de résolution)
-│   ├── combat.md
-│   ├── pouvoirs.md
-│   ├── competences.md
-│   ├── energie.md
-│   ├── blessures.md
-│   ├── mots-cles.md
-│   ├── etats.md
-│   └── equipement.md
-├── mkdocs.yml              ← config MkDocs Material (thème sombre, orange)
-└── .github/workflows/
-    └── deploy.yml          ← GitHub Actions, publie sur branche gh-pages
-```
+1. D666 : dé bleu pour l'âme, blanc pour l'hôte, rouge pour l'intensité. Le dé d'action réussit s'il est inférieur ou égal au seuil **effectif**, plafonné à 5 ; un 6 échoue.
+2. Un seuil **théorique de 6 ou plus neutralise une source de désavantage**. Il ne donne jamais automatiquement un avantage.
+3. Avantage : conserver le plus petit dé bleu/blanc ; désavantage : le plus grand. Plusieurs sources d'explosion s'additionnent : un dé bonus par source, immédiatement, puis relances des seuls dés d'explosion obtenant 6.
+4. Réussite critique si les deux dés d'action sont identiques et que l'action réussit ; double 6 = échec critique. 111 et 666 : interventions surnaturelles.
+5. La **marge** (seuil effectif moins dé réussi) existe encore pour les rafales : **1 + marge** projectiles touchent, plafonnés par l'arme et les munitions. Aucune marge dans les dégâts ni dans l'arbitrage des oppositions.
+6. Dégâts des attaques simples : **Code + intensité**, puis PA de l'armure et Résilience ; la pénétration ignore les PA, jamais la Résilience. En opposition, le plus petit dé d'action réussi gagne, les égalités entre réussites produisent deux actions simultanées.
+7. Combat : action complexe, action simple, réaction ; les gestes accessoires ne sont pas une quatrième catégorie. Viser accorde un avantage au tir suivant.
+8. Âme humaine : à saturation létale, conversion d'une case en marque aggravée chaque minute sans stabilisation, puis mort de l'hôte lorsque toutes sont aggravées. Âme surnaturelle : hôte mort dès saturation létale. Âme damnée : stase. La destruction d'une âme n'est pas la mort de son hôte.
+9. Les pouvoirs actifs se lancent au rang choisi et génèrent du drain. Pas d'achat de niveaux de pouvoirs ; les pouvoirs passifs suivent le Rang Céleste.
+10. Le **deck officiel** d'hôtes et le jeu ordinaire de **54 cartes de remplacement** sont distincts. Le deck officiel peut contenir des cartes événementielles à taux de tirage individuels, indépendants des poids du paquet ordinaire.
 
-Chaque `git push` sur `main` reconstruit et publie le site automatiquement.
+## Vérifier les modifications
 
-## Le jeu — INS-MV ROGUE
+Après une modification de règles, synchroniser les renvois, exemples, scripts de simulation, générateur, cartes, export DOCX et export imprimable.
 
-Jeu de rôle de guerre secrète entre anges et démons dans le monde contemporain. Les joueurs incarnent des anges (ou démons) qui s'incarnent dans des corps humains (hôtes). Dimension roguelike : si l'hôte meurt, l'ange se réincarne aléatoirement dans un nouvel humain proche.
+Sur un environnement de développement : `npm ci`, `node --check public/scripts/rogue-srd.js`, `node --test tests/*.test.mjs`, `python tools/export_docx.py`, puis `npm run build`.
 
-**Système de résolution : le D666**
-3 dés D6 de couleurs différentes lancés simultanément :
-- Dé bleu (centaines) : partie angélique — utilisé pour les actions surnaturelles
-- Dé blanc (dizaines) : partie humaine — utilisé pour les actions de compétence
-- Dé rouge (unités) : intensité de la réussite
-
-Le dé d'action (bleu ou blanc selon la nature de l'action) doit être ≤ au seuil de réussite.
-Intensité finale = dé rouge + marge de réussite (seuil - résultat du dé d'action).
-Avantage = prendre le plus favorable entre bleu et blanc. Désavantage = le moins favorable.
-Critique : dés bleu et blanc identiques. Intervention divine : 111. Intervention démoniaque : 666.
-
-**Caractéristiques de l'hôte (physiques) :** FOR, AGI, VIG, PER
-**Attributs de l'âme (surnaturels) :** PUI, INF, RES, CLA
-
-## Décisions de game design actées
-
-### Formule de dégâts des armes (Option A)
-Dégâts = Code + max(Marge, Dé rouge)
-La chance rattrape une mauvaise réussite mais n'amplifie plus une bonne.
-
-### Postures de combat
-- Annoncées librement au début de chaque tour, sans coût en action
-- Défensive par défaut (personnage surpris, indécis ou sans déclaration)
-- Offensive : avantage à l'attaque, avantage pour les attaquants ennemis
-- Défensive : désavantage à l'attaque pour les ennemis, pas de malus à l'attaque du défenseur
-- Concentration : maintien de pouvoir possible, avantage pour les attaquants ennemis, fragilité (toute blessure = retour en défensive + arrêt des pouvoirs maintenus)
-- Riposte : réaction sur attaque ratée, pas de chaîne de ripostes
-- Protection : réaction pour absorber une attaque destinée à un allié, sans pénalité offensive
-- Parade Totale : sacrifie l'action complexe pour 2 réactions (Protection + Riposte possible)
-- Attaque Double : la posture la plus défavorable des deux cibles prime pour l'avantage/désavantage
-
-### Système Énergie / Drain / Consommation
-- PE = Rang céleste (recharge journalière)
-- Trait Conduit Divin X (1-3) : +X PE permanents
-- Rang du pouvoir = nombre de dés de drain lancés (chaque 6 = 1 affaiblissement d'âme)
-- Rang 0 : gratuit, accessible aux humains initiés, 0 dé de drain
-- Accès : rang personnage ≥ rang pouvoir. Pas de downgrade possible.
-- Surcharge : lancer un pouvoir au-delà de son rang naturel, jusqu'à 6
-- Dégâts offensifs : (Code + max(Marge, Dé rouge)) × rang effectif de lancement
-- Multiciblage (option certains pouvoirs, concentration uniquement) : +1 rang effectif par cible supplémentaire
-- Présence Surnaturelle : pouvoir intrinsèque Rang 1, action gratuite, avantage OU substitution d'attribut, surcharge impossible
-- Seuil gratuit = PE du jour, au-delà = blessure aggravée directe (Consommation)
-- Réincarnation remet le compteur d'affaiblissements à zéro
-
-### Rôle des armes spéciales
-Les armes spéciales (argent, armes célestes) ne font pas plus de dégâts bruts.
-Elles réduisent ou annulent la Résilience de l'adversaire.
-C'est le levier des humains préparés (inquisiteurs, chasseurs) contre les êtres surnaturels.
-
-### Rangs hiérarchiques supprimés
-Les rangs hiérarchiques (Messager/Gardien/Chevalier etc.) sont supprimés.
-Remplacés par deux traits sociaux purement narratifs : Cadre et Cadre Supérieur.
-Aucun effet mécanique — position dans la chaîne de commandement uniquement.
-Le Rang Céleste reste le seul levier mécanique de puissance.
-
----
-
-## État actuel du SRD
-
-Le contenu vient d'un fichier source `.md` (export Google Docs). Le découpage en fichiers par section a été fait et le contenu est à jour avec la dernière version des règles (avril 2026).
-
-### Dernières modifications (avril 2026)
-
-- `energie.md` : refonte complète — PE = Rang céleste, système de drain/Consommation, Conduit Divin X, suppression de l'ancienne règle "blessure aggravée pour PE > 1"
-- `pouvoirs.md` : ajout section "Pouvoirs boostés et Drain" avec formule dégâts × Boost, mécanique des dés de drain et exemple chiffré
-- `mots-cles.md` : ajout trait Conduit Divin X dans les mots-clés d'âme
-- `etats.md` : "Incarnation ratée" — "Consommation de 1 PE par tour" remplacé par "1 affaiblissement d'âme par tour"
-- `creation.md` : récapitulatif corrigé (PE = Rang céleste, mention Conduit Divin)
-- `caracteristiques.md`, `competences.md`, `mots-cles.md`, `etats.md` : réécriture complète (artefacts Pandoc `    >` supprimés, admonitions ajoutées, états promus en `###` headers, compétences secondaires nettoyées + ~400 lignes de règles D666 dupliquées supprimées de competences.md)
-
-## Ce qu'il reste à faire
-
-- Créer la liste des pouvoirs disponibles par rôle/archange (section Pouvoirs incomplète — les exemples Résilience/Feu Ardent/Rapidité Céleste sont là mais pas la liste exhaustive)
-- Créer les fiches Archanges et Princes-Démons (référencées dans la création de personnage mais absentes du SRD)
-- Compléter `equipement.md` avec les tableaux d'armes, armures et équipement standard
-- Créer les tables de génération d'hôtes (cartes Soldats de Dieu / Citoyens) référencées dans la réincarnation
-- Enrichir certaines pages avec des admonitions MkDocs Material (`!!! note`, `!!! warning`, etc.) là où c'est utile
-- Créer une page dédiée aux Traits d'Âme (référencés à l'étape 5 de la création mais non détaillés)
-
-## Conventions MkDocs Material utilisées
-
-```yaml
-theme:
-  name: material
-  palette:
-    scheme: slate
-    primary: deep orange
-```
-
-Admonitions disponibles : `note`, `warning`, `tip`, `example`, `danger`
-Syntaxe : `!!! note "Titre"` suivi du contenu indenté de 4 espaces.
+La validation GitHub Actions de la PR doit réussir avant fusion. Ce document ne remplace jamais les chapitres du SRD.

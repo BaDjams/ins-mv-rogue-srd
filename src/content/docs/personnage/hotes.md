@@ -6,11 +6,13 @@ sidebar:
 
 ## Principe
 
-Le joueur crée **son âme surnaturelle** et répartit ses attributs surnaturels selon les règles de [création d'âme](./creation). Les **caractéristiques et compétences humaines** proviennent de l'hôte, déterminé séparément par tirage d'une carte. Le joueur ne répartit donc pas librement les points de caractéristiques de son hôte.
+Le joueur crée **son âme surnaturelle** et répartit ses attributs surnaturels selon les règles de [création d'âme](../creation). Les **caractéristiques et compétences humaines** proviennent de l'hôte, déterminé séparément par tirage d'une carte. Le joueur ne répartit donc pas librement les points de caractéristiques de son hôte.
 
-Le deck officiel d'hôtes est la méthode de référence. En son absence, un **jeu standard de 54 cartes (52 cartes et 2 jokers)** permet de déterminer la qualité de l'hôte. Les informations complémentaires (identité, origine, occupation, etc.) peuvent être tirées sur des tables D66, lorsqu'elles sont disponibles, ou déterminées par le MJ. Les tables D66 définitives restent à publier : aucune liste improvisée n'est normative.
+Le **deck officiel d'hôtes** constitue la méthode de référence. Sa composition et ses probabilités sont **indépendantes** de celles d'un jeu de cartes ordinaire : le deck peut évoluer et accueillir des **hôtes spéciaux** liés à des événements saisonniers ou ponctuels, ajoutés de façon permanente ou temporaire. Les caractéristiques, compétences et éventuelles règles particulières d'une carte officielle sont celles qu'elle indique.
 
-## Qualité d'un hôte : jeu de 54 cartes
+**En l'absence du deck officiel**, un **jeu standard de 54 cartes (52 cartes et 2 jokers)** sert de **méthode de remplacement** pour déterminer la qualité d'un hôte ordinaire. Les fréquences de ce jeu de remplacement **ne présument pas des fréquences du deck officiel**. Dans le générateur, chaque hôte spécial actif du deck officiel peut disposer d'un **taux de tirage individuel** et de dates de disponibilité ; les probabilités restantes sont réparties entre les hôtes ordinaires suivant les poids propres au deck officiel. La somme des probabilités spéciales actives ne peut dépasser 100 %. Les informations complémentaires (identité, origine, occupation, etc.) peuvent être tirées sur des tables D66, lorsqu'elles sont disponibles, ou déterminées par le MJ. Les tables D66 définitives restent à publier : aucune liste improvisée n'est normative.
+
+## Qualité d'un hôte : jeu de 54 cartes (méthode de remplacement)
 
 | Qualité | Cartes | Nombre | Probabilité |
 |---|---|---:|---:|
@@ -35,7 +37,7 @@ Les quatre caractéristiques de l'hôte sont **Force (FOR)**, **Agilité (AGI)**
 | Violet | **8** | 3 / 2 / 2 / 1 |
 | Or | **10** | 3 / 3 / 2 / 2 |
 
-Les exemples illustrent des répartitions valides et n'imposent pas un profil fixe. Dans le deck officiel, les caractéristiques sont celles imprimées sur la carte.
+Les exemples illustrent des répartitions valides pour les **hôtes ordinaires obtenus par la méthode de remplacement** et n'imposent pas un profil fixe. Dans le deck officiel, les caractéristiques et éventuelles exceptions des hôtes spéciaux sont celles imprimées sur la carte ; le présent barème ne permet pas d'en déduire leurs probabilités.
 
 ## Compétences humaines
 
@@ -58,6 +60,6 @@ Chaque point permet **soit d'acquérir une nouvelle compétence à +0, soit d'am
 | Violet | Base grise | 4 | +3 |
 | Or | Base grise | 6 | +3 |
 
-**Exemple :** un hôte gris possède Conduite +0, Discrétion +0 et Observation +1. En qualité verte, son point supplémentaire peut faire passer Conduite à +1 **ou** lui donner une quatrième compétence à +0. En qualité bleue, il dispose d'un point supplémentaire et peut atteindre +2 dans une compétence.
+**Exemple :** un hôte gris possède Conduite +0, Discrétion +0 et Survie +1. En qualité verte, son point supplémentaire peut faire passer Conduite à +1 **ou** lui donner une quatrième compétence à +0. En qualité bleue, il dispose d'un point supplémentaire et peut atteindre +2 dans une compétence.
 
 La qualité représente les capacités **de l'hôte humain**, pas le rang ni les attributs surnaturels de l'âme qui l'occupe.

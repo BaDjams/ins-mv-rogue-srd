@@ -21,6 +21,12 @@ jobs:
 
       - run: npm ci
 
+      - name: Vérification du générateur avant publication
+        run: |
+          node --check public/scripts/rogue-srd.js
+          node --check public/scripts/host-deck-engine.mjs
+          node --test tests/*.test.mjs
+
       - name: Generate DOCX export
         run: |
           pip install python-docx --quiet
