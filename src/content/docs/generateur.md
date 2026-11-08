@@ -25,6 +25,12 @@ La composition officielle se modifie dans le [CMS du SRD](/ins-mv-rogue-srd/admi
 
 Choisissez le camp, le moment de l'incarnation et le **booster proposé pour votre scénario**. Le paquet est ouvert avec une animation ; les cartes sont ensuite révélées, avec une mise en valeur de la **qualité la plus élevée**. Cette mise en valeur n'impose aucun choix : le joueur désigne librement son hôte parmi les cartes obtenues et peut exporter sa fiche.
 
+L'animation laisse le temps de découvrir chaque carte puis déclenche un **flash lumineux et un halo** sur celle(s) ayant la qualité la plus élevée. L'administrateur peut définir la **couleur d'ambiance du booster** (`themeColor`, format `#RRGGBB`) ; cette couleur anime le flash et le halo, tandis que les cadres conservent la couleur propre à chaque qualité. Le rythme des effets est adapté à la préférence « réduire les animations » du système.
+
+Sur les cartes, les qualités sont présentées sous les intitulés **Personnage commun, Expérimenté, Professionnel, Vétéran et Élite** ; ce changement est **purement visuel** et ne modifie ni les cinq qualités officielles ni leurs probabilités.
+
+Pour les **hôtes ordinaires**, le booster réutilise les tables du générateur de PNJ : profession, traits et loisirs déterminent des objets associés, auxquels s'ajoutent deux objets usuels. La carte présente un résumé de ces informations, et la **fiche détaillée après sélection** ainsi que l'export JSON les conservent intégralement. Les hôtes spéciaux conservent, sans altération, les traits et équipements fixés dans le CMS.
+
 Chaque booster appartient à un vivier, possède son **nom, ses pondérations, ses cartes spéciales éventuelles et son nombre de cartes**, ainsi que des conditions d'activation liées au camp, à la première incarnation ou à la réincarnation et à la période de l'année. Le CMS permet d'en ajouter sans créer de nouvelles règles ou modifier le code de l'application. Les taux de tirage des cartes spéciales restent ceux de leur vivier, sauf configuration explicite d'un booster particulier.
 
 Lors d'une réincarnation, la densité de population limite le nombre de cartes proposées à **trois, deux, une ou zéro** selon le contexte. En l'absence d'hôte humain, les règles particulières du SRD s'appliquent.
