@@ -1,6 +1,9 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
+import {renderHostCard,traitDescription,escapeCardHtml} from '../public/scripts/host-card-render.mjs';
+import {createHostGallery} from '../public/scripts/host-gallery-controller.mjs';
+import {createBoosterOverlay} from '../public/scripts/host-booster-overlay.mjs';
 import {createOrdinaryHostProfile,renderHostFace} from '../public/scripts/host-booster-ui.mjs';
 import {OCCUPATIONS,TRAITS,EQUIPMENT,occupationSkill,compatibleTraits,equipmentForProfile}
   from '../public/scripts/host-profile-tables.mjs';
@@ -184,4 +187,61 @@ test('le CSS du booster neutralise les marges Starlight et réserve une hauteur 
   assert.match(css,/\.rogue-booster \.rb-card-rack > \.rb-card \{/);
   assert.match(css,/rb-flash/);
   assert.match(css,/rb-halo/);
+});
+
+test('la fiche du booster présente tous les attributs, compétences et objets dans des tableaux',()=>{
+  const host={
+    name:'Hôte de test',quality:'superior',age:32,occupation:'Enseignant',
+    attributes:{FOR:2,AGI:1,VIG:3,PER:2},
+    skills:{Enseignement:2,'Premiers soins':0,'Armes à distance':-1},
+    traits:['Bricoleur','Autre trait à décrire'],
+    equipment:['Livre','Boîte à outils','Téléphone','Badge'],
+    picture:''
+  };
+  const html=renderHostCard(host);
+  assert.match(html,/Personnage professionnel|Professionnel/);
+  assert.match(html,/rb-attributes-table/);
+  assert.match(html,/rb-skills-table/);
+  assert.match(html,/rb-equipment-table/);
+  for(const value of ['Force','Agilité','Vigueur','Perception','Enseignement',
+    'Incompétent','Livre','Boîte à outils','Téléphone','Badge'])
+    assert.ok(html.includes(value),value+' absent de la carte');
+  assert.match(html,/data-trait-help/);
+  assert.match(html,/Résumé du trait à compléter/);
+});
+test('les informations des cartes sont échappées pour empêcher toute injection',()=>{
+  const host={
+    name:'<script>alert(1)</script>',occupation:'<b>Artisan</b>',quality:'mundane',
+    attributes:{FOR:1},skills:{'<img src=x onerror=alert(1)>':2},
+    equipment:['<iframe>'],traits:['<svg onload=alert(1)>']
+  };
+  const html=renderHostCard(host);
+  assert.doesNotMatch(html,/<script|<iframe|<svg|<img src=x/);
+  assert.match(html,/&lt;script&gt;/);
+  assert.match(html,/&lt;iframe&gt;/);
+  assert.equal(escapeCardHtml('<b>A</b>'),'&lt;b&gt;A&lt;/b&gt;');
+});
+test('une infobulle de trait inconnu affiche un placeholder explicite',()=>{
+  const description=traitDescription('Trait inexistant de test');
+  assert.match(description,/Résumé du trait à compléter/);
+  assert.equal(typeof description,'string');
+});
+test('les commandes de galerie et surimpression s’importent sans dépendance au DOM',()=>{
+  assert.equal(typeof createHostGallery,'function');
+  assert.equal(typeof createBoosterOverlay,'function');
+});
+test('la surimpression et le deuxième niveau plein écran sont présents et accessibles',()=>{
+  const css=fs.readFileSync(new URL('../src/styles/rogue-srd.css',import.meta.url),'utf8');
+  const ui=fs.readFileSync(new URL('../public/scripts/host-booster-ui.mjs',import.meta.url),'utf8');
+  const overlay=fs.readFileSync(new URL('../public/scripts/host-booster-overlay.mjs',import.meta.url),'utf8');
+  const gallery=fs.readFileSync(new URL('../public/scripts/host-gallery-controller.mjs',import.meta.url),'utf8');
+  for(const className of ['rb-reveal-overlay','rb-overlay-backdrop','rb-gallery',
+    'rb-fullscreen','rb-full-card','rb-floating-tooltip'])
+    assert.ok(css.includes(className),'Style absent : '+className);
+  assert.match(overlay,/aria-modal="true"/);
+  assert.match(gallery,/aria-modal="true"/);
+  assert.match(ui,/activeOverlay\.show\(\)/);
+  assert.match(ui,/Revoir les/);
+  assert.match(gallery,/touchstart/);
+  assert.match(gallery,/rb-card-open/);
 });
