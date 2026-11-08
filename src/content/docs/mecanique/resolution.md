@@ -47,7 +47,7 @@ Pour réussir l'action, le résultat du Dé d'action doit être **inférieur ou 
 
 ***
 
-## 3. Marge de réussite (usage spécifique : rafales)
+## 3. Marge de réussite
 
 La **marge** est la différence entre le seuil de réussite **effectif** (plafonné à 5) et le résultat du dé d'action, uniquement en cas de réussite. Elle sert notamment à déterminer le nombre de balles qui touchent en rafale : **1 + marge**, dans la limite de la valeur de rafale de l'arme et des munitions disponibles.
 
