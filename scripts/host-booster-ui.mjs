@@ -252,12 +252,14 @@ function setup(container){
       sealed.remove();
       activeOverlay.setStatus('Découverte des hôtes…');
       activeGallery=createHostGallery({
-        hosts,best,renderCard:face,accent,
-        onChoose:(index,cards)=>selectHost(index,hosts,cards)
+        hosts,best,renderCard:face,
+        onChoose:(index,cards)=>selectHost(index,hosts,cards),
+        onPositionChange:(index,total)=>activeOverlay?.setPosition(index,total)
       });
       const buttons=activeGallery.cards;
       revealStage.appendChild(activeGallery.row);
       revealStage.appendChild(activeGallery.controls);
+      activeGallery.refresh();
       // Révélation progressive : la mise en valeur attend que toutes les cartes
       // soient retournées, pour laisser au joueur le plaisir de la découverte.
       if(!reduced())await pause(450);
@@ -277,14 +279,15 @@ function setup(container){
         }
       });
       revealStage.classList.add('rb-reveal-finale');
-      activeOverlay.setStatus(hosts.length+' carte(s) révélée(s). Faites défiler la galerie, ouvrez une fiche et choisissez votre incarnation.');
+      activeGallery.refresh();
+      activeOverlay.setStatus(hosts.length+' carte(s) révélée(s). Faites glisser pour changer de carte et choisissez directement votre hôte.');
       const revisit=document.createElement('button');
       revisit.type='button';
       revisit.className='rb-reopen-booster';
       revisit.textContent='Revoir les '+hosts.length+' cartes du booster';
       revisit.addEventListener('click',()=>activeOverlay?.show());
       rack.appendChild(revisit);
-      status.textContent=hosts.length+' carte(s) révélée(s). Vous pouvez revoir le tirage en plein écran ou choisir votre hôte.';
+      status.textContent=hosts.length+' carte(s) révélée(s). Vous pouvez consulter à nouveau la galerie pour choisir votre hôte.';
     }catch(error){
       console.error('Ouverture impossible',error);
       status.textContent='Ouverture impossible : '+error.message;

@@ -106,7 +106,7 @@ export function renderHostCard(host){
         (source?'<p class="rb-card-source">'+escapeCardHtml(source)+'</p>':'')+
       '</div>'+
       traitSection+gearSection+attributeSection+skillSection+
-      '<span class="rb-card-hint">Voir la carte en plein écran</span>'+
+
     '</div>'+
   '</div>';
 }
