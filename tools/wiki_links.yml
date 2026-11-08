@@ -18,7 +18,7 @@ links:
 
   - terms: ["marge de réussite"]
     target: "mecanique/resolution"
-    anchor: "3-marge-de-réussite-usage-spécifique-rafales"
+    anchor: "3-marge-de-réussite"
 
   - terms: ["dé d'intensité", "dé rouge"]
     target: "mecanique/resolution"
