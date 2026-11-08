@@ -71,8 +71,10 @@ export function validateOfficialDeck(config, now = new Date(), options = {}) {
     if (!isFiniteRate(host.dropRate)) throw new Error('Taux de tirage invalide pour : ' + host.id);
     if (poolType === 'soldiers' && (
       ['mundane', 'better'].includes(host.quality) ||
-      !Array.isArray(host.skills) || !host.skills.some(skill => skill && skill.bonus >= 2)
-    )) throw new Error('Un Soldat de Dieu doit être Bleu au minimum et posséder une compétence Professionnel (+2) ou Expert (+3) : ' + host.id);
+      !Array.isArray(host.skills) || typeof host.professionalSkill !== 'string' ||
+      !host.professionalSkill.trim() || !host.skills.some(skill =>
+        skill && skill.name === host.professionalSkill && skill.bonus >= 2)
+    )) throw new Error('Un Soldat de Dieu doit être Bleu au minimum et être Professionnel (+2) ou Expert (+3) dans sa compétence métier indiquée : ' + host.id);
     if (poolType === 'infernal' && host.originType != null &&
         !INFERNAL_ORIGINS.includes(host.originType))
       throw new Error('Origine infernale spéciale inconnue : ' + host.id);
