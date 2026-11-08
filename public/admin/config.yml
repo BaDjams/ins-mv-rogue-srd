@@ -237,7 +237,7 @@ collections:
                 name: quality
                 widget: select
                 options:
-                          - { label: Bleu, value: superior }
+                  - { label: Bleu, value: superior }
                   - { label: Violet, value: elite }
                   - { label: Or, value: legendary }
               - { label: Taux de tirage (en pourcentage), name: dropRate, widget: number, value_type: float, min: 0, max: 100, hint: "Exemple purement numérique : 5 = 5 % des tirages pendant la période active." }
