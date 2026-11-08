@@ -5,6 +5,8 @@ sidebar:
   label: "Création d'âme"
 ---
 
+Pour créer votre âme, gérer ses progressions et conserver ses incarnations, ouvrez la [bibliothèque locale de personnages](../bibliotheque/). Les fiches restent sur votre appareil et peuvent être exportées en JSON ou imprimées en PDF.
+
 ## Vue d'ensemble
 
 Les joueurs créent uniquement leur âme surnaturelle (ange ou démon). L'hôte humain est déterminé séparément par tirage de cartes, selon les règles des [qualités d'hôtes](../hotes). Les caractéristiques et compétences humaines proviennent de la carte d'hôte et ne sont pas réparties par le joueur :

@@ -19,23 +19,33 @@ Deux descripteurs narratifs reflètent cette réalité organisationnelle, dont l
 
 Pas d'effet mécanique direct sur les pouvoirs, le [drain](../../mecanique/energie#rang-des-pouvoirs-et-drain) ou le Rang Céleste : ces descripteurs définissent uniquement les ressources et relations sociales accessibles. Un Archange est un Rang Céleste 4 — sa position au conseil céleste est une autre affaire entièrement. Le tableau ci-dessus n'est qu'un exemple pour la guerre céleste ; d'autres factions ou campagnes définiront leurs propres échelons.
 
-# PROGRESSION DE PERSONNAGES
+## Progression des personnages
 
-A la fin dans scénario, un personnage va gagner entre 3 et 5 points
-d'expérience, en fonction du niveau de réussite de l'équipe. Cette
-expérience pourrait être dépensée afin de :
+Le MJ peut aussi commencer directement une campagne à un niveau de puissance choisi. Par exemple, **« créez trois personnages ayant chacun cinq progressions »** signifie que chaque personnage est créé avec cinq améliorations accordées à répartir librement entre les options ci-dessous. La [bibliothèque locale](../bibliotheque/) dispose pour cela d'un champ **« Progressions accordées au départ par le MJ »**.
 
-- Acquérir un nouveau pouvoir (5 points)
-- Augmenter les [attributs](../caracteristiques) de l'âme (nouveau niveau x2)
+La progression d'une âme surnaturelle est **décidée par le maître de jeu**. Il n'existe plus de comptabilité de points d'expérience : le MJ annonce quand chaque personnage reçoit **une progression**, généralement au terme d'une étape importante du scénario ou de la campagne.
 
-Si un ange réussit à terminer un scénario sans [se réincarner](../reincarnation), il aura la
-possibilité d'acquérir le pouvoir "[compétence](../../mecanique/competences) résiduelle" qui
-correspond à la compétence la plus haute de l'hôte humain. Ce pouvoir
-spécial garantira au moins 1 rang dans la compétence résiduelle acquise
-lors des prochaines incarnations.
+Chaque progression accordée donne droit à **une seule** amélioration, au choix du joueur :
 
-Les pouvoirs disponibles pour les anges incluront des pouvoirs passifs
-augmentant leur capacité dans certaines conditions, des pouvoirs
-offensifs déclenchant des attaques, des pouvoirs défensifs, déclenchant
-des protections et des pouvoirs de soutien déclenchant des altérations
-d'état ou des soins.
+| Amélioration | Effet |
+|---|---|
+| **Attribut de l'âme** | Augmenter de **1** la valeur de PUI, INF, RES ou CLA, sans dépasser **5**. |
+| **Nouveau pouvoir** | Acquérir **un pouvoir supplémentaire** accessible à l'âme et autorisé par le MJ. Un pouvoir ne s'achète jamais par niveaux : ses effets dépendent des règles de rang. |
+| **Compétence résiduelle** | Augmenter de **1 niveau** une compétence résiduelle déjà acquise par l'âme, au maximum jusqu'au niveau **Expert (+3)**. Voir la règle particulière ci-dessous. |
+| **Trait d'âme** | Acquérir **un nouveau trait d'âme**. Il s'ajoute aux deux traits initiaux et demeure attaché à l'âme lors des incarnations suivantes. |
+
+Une progression peut être **conservée pour plus tard**. Une fois une amélioration choisie, elle est dépensée ; le même choix ne peut pas être affecté à deux améliorations. Les progressions ne modifient pas automatiquement le Rang Céleste ou la position hiérarchique.
+
+### Compétence résiduelle : règle particulière
+
+Les compétences humaines appartiennent normalement **à l'hôte** et sont perdues au changement de corps. Une âme angélique qui **termine un scénario sans s'être réincarnée** peut, selon la règle spéciale existante, acquérir la compétence résiduelle correspondant à **la compétence la plus élevée de son hôte** : ce pouvoir particulier garantit **au moins le niveau Confirmé (+1)** pour cette compétence dans ses incarnations ultérieures.
+
+Cette acquisition initiale est une **récompense conditionnelle de scénario**, distincte des progressions ordinaires. Les progressions accordées par le MJ peuvent ensuite augmenter de **un niveau** une compétence résiduelle déjà possédée. Elles ne permettent pas d'acheter librement n'importe quelle compétence humaine comme si l'âme possédait un cerveau de rechange.
+
+Lorsqu'une compétence résiduelle et celle de l'hôte portent sur le même domaine, on retient **le niveau le plus élevé**, sans additionner les bonus. Une compétence résiduelle ne peut dépasser **Expert (+3)**. Les autres conditions d'acquisition du pouvoir spécial restent soumises au MJ.
+
+### Suivi
+
+La fiche de personnage enregistre le nombre de **progressions accordées, dépensées et disponibles**, ainsi que chaque amélioration retenue. Il n'y a donc ni gains d'XP par séance ni calcul de coût variable en fonction du nouvel attribut.
+
+Les pouvoirs peuvent être passifs, offensifs, défensifs ou de soutien. Leur choix reste soumis aux prérequis et limitations décrits dans les [règles des pouvoirs](../../mecanique/pouvoirs).

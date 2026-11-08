@@ -7,6 +7,8 @@ tableOfContents: false
 
 Choisissez un booster, découvrez les cartes tirées et sélectionnez votre incarnation.
 
+**Personnage actif :** l’hôte choisi sera automatiquement associé à l’âme sélectionnée dans votre [bibliothèque de personnages](../personnage/bibliotheque/). Sans personnage actif, l’export JSON de l’hôte reste disponible.
+
 <div class="rogue-booster"></div>
 
 ## Générateur de PNJ
