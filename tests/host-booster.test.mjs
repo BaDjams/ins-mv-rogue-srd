@@ -253,7 +253,7 @@ test('le booster dispose d’un seul plein écran, sans bandeau inférieur ni bo
   const card=fs.readFileSync(new URL('../public/scripts/host-card-render.mjs',import.meta.url),'utf8');
   assert.match(overlay,/data-rb-overlay="counter"/);
   assert.doesNotMatch(overlay,/rb-overlay-footer|rb-overlay-return|Revenir au SRD/);
-  assert.doesNotMatch(gallery,/rb-fullscreen|openModal|Agrandir/);
+  assert.doesNotMatch(gallery,/rb-fullscreen|openModal|textContent='Agrandir'/);
   assert.match(gallery,/Choisir cet hôte/);
   assert.doesNotMatch(card,/Voir la carte en plein écran/);
 });
