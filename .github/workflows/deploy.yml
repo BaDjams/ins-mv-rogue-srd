@@ -25,6 +25,8 @@ jobs:
         run: |
           node --check public/scripts/rogue-srd.js
           node --check public/scripts/host-deck-engine.mjs
+          node --check public/scripts/host-booster-engine.mjs
+          node --check public/scripts/host-booster-ui.mjs
           node --test tests/*.test.mjs
 
       - name: Generate DOCX export
