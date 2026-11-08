@@ -954,8 +954,8 @@
         "Gants","Masque","Désinfectant","Boussole","Carte routière",
         "Jumelles","Couteau de survie","Sifflet","Allumettes","Briquet"
       ],
-      attributes: ["Force","Agilité","Intelligence","Charisme"],
-      abilities:  ["Artisanat","Survie","Persuasion"],
+      attributes: ["FOR","AGI","VIG","PER"],
+      abilities: ["Armes à distance","Lancer","Armes de mêlée","Conduite","Corps à corps","Intrusion","Discrétion","Informatique","Influence","Larcins","Pilotage","Premiers soins","Sport","Survie"],
       traitGroups: {
         age:     ["Adolescent","Âgé"],
         military:["Ex-militaire"],
@@ -979,11 +979,11 @@
     };
 
     // ── Config génération ────────────────────────────────
+    // Règles du SRD (hotes.md) : cinq qualités, caractéristiques 1..3 et compétences à +0..+3.
     var cfg = {
-      traits:     { mundane:{min:1,max:2}, better:{min:1,max:2}, superior:{min:2,max:3}, elite:{min:2,max:4} },
-      equipment:  { mundane:{min:0,max:1}, better:{min:0,max:2}, superior:{min:1,max:3}, elite:{min:2,max:4} },
-      attributes: { mundane:{base:1,max:1}, better:{base:1,max:2}, superior:{base:1,max:2}, elite:{base:2,max:3} },
-      abilities:  { mundane:{points:0,max:0}, better:{points:1,max:1}, superior:{points:3,max:2}, elite:{points:5,max:3} }
+      traits: { mundane:{min:1,max:2}, better:{min:1,max:2}, superior:{min:2,max:3}, elite:{min:2,max:4}, legendary:{min:2,max:4} },
+      attributes: { mundane:{total:5}, better:{total:6}, superior:{total:7}, elite:{total:8}, legendary:{total:10} },
+      abilities: { mundane:{extra:0,cap:1}, better:{extra:1,cap:1}, superior:{extra:2,cap:2}, elite:{extra:4,cap:3}, legendary:{extra:6,cap:3} }
     };
 
     // Mapping ethnie → codes nat randomuser.me (alphabet latin uniquement)
@@ -1016,7 +1016,7 @@
 
     // ── État ─────────────────────────────────────────────
     var count = 6;
-    var probs = { mundane:40, better:30, superior:20, elite:10 };
+    var probs = { mundane:24, better:12, superior:12, elite:4, legendary:2 }; // 54 cartes
     var filtersGender = { male:true, female:true };
     var filtersEth    = { french:true, northAfrican:true, westAfrican:true, hispanic:true, slavic:true, eastAsian:true, american:true, indian:true };
     var lastBatch = []; // dernier lot de PNJ généré ou importé, pour l'export JSON
@@ -1042,13 +1042,14 @@
         '</div>' +
         '<div class="gen-advanced" data-el="advanced" style="display:none">' +
           '<div class="gen-adv-section">' +
-            '<h4>Probabilités de rang</h4>' +
+            '<h4>Pondération des qualités (jeu de 54 cartes)</h4>' +
             '<div class="gen-prob-grid">' +
-              '<div class="gen-prob-row"><span class="gen-prob-label gen-prob-label--mundane">Ordinaire</span><input type="range" min="0" max="100" step="5" value="40" data-prob="mundane" class="gen-slider"><span class="gen-prob-val" data-prob-val="mundane">40%</span></div>' +
-              '<div class="gen-prob-row"><span class="gen-prob-label gen-prob-label--better">Meilleur</span><input type="range" min="0" max="100" step="5" value="30" data-prob="better" class="gen-slider"><span class="gen-prob-val" data-prob-val="better">30%</span></div>' +
-              '<div class="gen-prob-row"><span class="gen-prob-label gen-prob-label--superior">Supérieur</span><input type="range" min="0" max="100" step="5" value="20" data-prob="superior" class="gen-slider"><span class="gen-prob-val" data-prob-val="superior">20%</span></div>' +
-              '<div class="gen-prob-row"><span class="gen-prob-label gen-prob-label--elite">Élite</span><input type="range" min="0" max="100" step="5" value="10" data-prob="elite" class="gen-slider"><span class="gen-prob-val" data-prob-val="elite">10%</span></div>' +
-              '<div class="gen-prob-total" data-el="prob-total">Total : 100%</div>' +
+              '<div class="gen-prob-row"><span class="gen-prob-label gen-prob-label--mundane">Gris</span><input type="range" min="0" max="54" step="1" value="24" data-prob="mundane" class="gen-slider"><span class="gen-prob-val" data-prob-val="mundane">24</span></div>' +
+              '<div class="gen-prob-row"><span class="gen-prob-label gen-prob-label--better">Vert</span><input type="range" min="0" max="54" step="1" value="12" data-prob="better" class="gen-slider"><span class="gen-prob-val" data-prob-val="better">12</span></div>' +
+              '<div class="gen-prob-row"><span class="gen-prob-label gen-prob-label--superior">Bleu</span><input type="range" min="0" max="54" step="1" value="12" data-prob="superior" class="gen-slider"><span class="gen-prob-val" data-prob-val="superior">12</span></div>' +
+              '<div class="gen-prob-row"><span class="gen-prob-label gen-prob-label--elite">Violet</span><input type="range" min="0" max="54" step="1" value="4" data-prob="elite" class="gen-slider"><span class="gen-prob-val" data-prob-val="elite">4</span></div>' +
+              '<div class="gen-prob-row"><span class="gen-prob-label gen-prob-label--legendary">Or</span><input type="range" min="0" max="54" step="1" value="2" data-prob="legendary" class="gen-slider"><span class="gen-prob-val" data-prob-val="legendary">2</span></div>' +
+              '<div class="gen-prob-total" data-el="prob-total">54 cartes (pondération ajustable)</div>' +
             '</div>' +
           '</div>' +
           '<div class="gen-adv-section">' +
@@ -1107,11 +1108,11 @@
       slider.addEventListener('input', function () {
         var key = this.dataset.prob;
         probs[key] = parseInt(this.value);
-        container.querySelector('[data-prob-val="' + key + '"]').textContent = probs[key] + '%';
-        var total = probs.mundane + probs.better + probs.superior + probs.elite;
+        container.querySelector('[data-prob-val="' + key + '"]').textContent = String(probs[key]);
+        var total = probs.mundane + probs.better + probs.superior + probs.elite + probs.legendary;
         var totalEl = container.querySelector('[data-el="prob-total"]');
-        totalEl.textContent = 'Total : ' + total + '%';
-        totalEl.style.color = total === 100 ? '' : 'var(--rogue-intensity-light)';
+        totalEl.textContent = 'Total : ' + total + ' parts (54 = jeu standard)';
+        totalEl.style.color = total === 54 ? '' : 'var(--rogue-intensity-light)';
       });
     });
 
@@ -1221,13 +1222,14 @@
 
     // ── Génération ───────────────────────────────────────
     function getRarity() {
-      var total = probs.mundane + probs.better + probs.superior + probs.elite;
-      if (total === 0) return 'mundane';
+      var total = Object.keys(probs).reduce(function(n, k) { return n + probs[k]; }, 0);
+      if (total <= 0) return 'mundane';
       var r = Math.floor(Math.random() * total);
-      if (r < probs.mundane) return 'mundane';
-      if (r < probs.mundane + probs.better) return 'better';
-      if (r < probs.mundane + probs.better + probs.superior) return 'superior';
-      return 'elite';
+      for (var k of ['mundane','better','superior','elite','legendary']) {
+        r -= probs[k];
+        if (r < 0) return k;
+      }
+      return 'mundane';
     }
 
     function pickGender() {
@@ -1254,7 +1256,7 @@
       var url  = 'https://randomuser.me/api/?gender=' + gender +
                  '&nat=' + nat + '&results=1&inc=name,dob,picture';
       return fetch(url)
-        .then(function(r) { return r.json(); })
+        .then(function(r) { if (!r.ok) throw new Error('API indisponible'); return r.json(); })
         .then(function(data) {
           var p = data.results[0];
           return {
@@ -1264,11 +1266,18 @@
             age:       p.dob.age,
             picture:   p.picture.large
           };
+        }).catch(function() {
+          // Fonctionnement dégradé hors ligne : listes de noms locales, aucun portrait externe.
+          var names = DB.firstNames[ethnicity] || DB.firstNames.french;
+          var surnames = DB.lastNames[ethnicity] || DB.lastNames.french;
+          var age = randInt(18, 80);
+          var dob = new Date(new Date().getFullYear() - age, randInt(0,11), randInt(1,28)).toISOString();
+          return { firstName: randItem(names[gender]), lastName: randItem(surnames), age: age, dob: dob, picture: '' };
         });
     }
 
     function getOccupation(rarity) {
-      var max = { mundane:1, better:2, superior:3, elite:4 }[rarity];
+      var max = { mundane:1, better:2, superior:3, elite:4, legendary:4 }[rarity];
       var eli = DB.occupations.filter(function (o) { return o.difficulty <= max; });
       return randItem(eli);
     }
@@ -1326,29 +1335,34 @@
     }
 
     function genAttributes(rarity) {
-      var s = cfg.attributes[rarity];
-      var a = {};
-      DB.attributes.forEach(function (k) { a[k] = s.base; });
-      var pts = { mundane:0, better:2, superior:4, elite:5 }[rarity];
-      var tries = 0;
-      while (pts > 0 && tries++ < 100) {
-        var k = randItem(DB.attributes);
-        if (a[k] < s.max) { a[k]++; pts--; }
+      var attrs = {};
+      DB.attributes.forEach(function(k) { attrs[k] = 1; });
+      var remaining = cfg.attributes[rarity].total - DB.attributes.length;
+      while (remaining > 0) {
+        var available = DB.attributes.filter(function(k) { return attrs[k] < 3; });
+        if (!available.length) break;
+        attrs[randItem(available)]++;
+        remaining--;
       }
-      return a;
+      return attrs;
     }
 
     function genAbilities(rarity) {
-      var s = cfg.abilities[rarity];
-      var a = {};
-      DB.abilities.forEach(function (k) { a[k] = 0; });
-      var pts = s.points;
-      var tries = 0;
-      while (pts > 0 && tries++ < 100) {
-        var k = randItem(DB.abilities);
-        if (a[k] < s.max) { a[k]++; pts--; }
+      var conf = cfg.abilities[rarity];
+      var skills = {};
+      var first = shuffle(DB.abilities).slice(0, 3);
+      first.forEach(function(k) { skills[k] = 0; });
+      skills[first[0]] = 1; // Hôte gris : deux +0, un +1.
+      for (var i = 0; i < conf.extra; i++) {
+        var options = DB.abilities.filter(function(k) {
+          return !Object.prototype.hasOwnProperty.call(skills, k) || skills[k] < conf.cap;
+        });
+        if (!options.length) break;
+        var k = randItem(options);
+        if (!Object.prototype.hasOwnProperty.call(skills, k)) skills[k] = 0;
+        else skills[k]++;
       }
-      return a;
+      return skills; // Compétences absentes : Incompétent (désavantage).
     }
 
     function createNPC(id) {
@@ -1377,7 +1391,7 @@
 
     // ── Rendu carte ──────────────────────────────────────
     function buildCard(npc) {
-      var labels = { mundane:'Ordinaire', better:'Meilleur', superior:'Supérieur', elite:'Élite' };
+      var labels = { mundane:'Gris', better:'Vert', superior:'Bleu', elite:'Violet', legendary:'Or' };
       var card = document.createElement('div');
       card.className = 'gen-card gen-card--' + npc.rarity;
 
@@ -1406,7 +1420,7 @@
 
       card.innerHTML =
         '<div class="gen-card__img">' +
-          '<img src="' + npc.picture + '" alt="" loading="lazy">' +
+          (npc.picture ? '<img src="' + npc.picture + '" alt="" loading="lazy">' : '<div class="gen-card__placeholder">Portrait indisponible</div>') +
           '<span class="gen-badge gen-badge--' + npc.rarity + '">' + labels[npc.rarity] + '</span>' +
           '<span class="gen-eth-badge">' + ethLabel + '</span>' +
         '</div>' +
