@@ -152,7 +152,11 @@ export function createHostGallery({
       const diff=(rect.left+rect.width/2-center)/Math.max(cardWidth,1);
       const depth=Math.min(1,Math.abs(diff));
       card.style.setProperty('--rb-depth',depth.toFixed(3));
-      card.style.setProperty('--rb-side',Math.sign(diff).toString());
+      // Perspective et profondeur évoluent en continu pendant le glissement,
+      // plutôt qu'une coupure entre deux fiches statiques.
+      card.style.setProperty('--rb-angle',(-Math.sign(diff)*depth*8).toFixed(2)+'deg');
+      card.style.setProperty('--rb-scale',(1-depth*.06).toFixed(3));
+      card.style.setProperty('--rb-opacity',(1-depth*.33).toFixed(3));
       if(Math.abs(diff)<distance){distance=Math.abs(diff);nearest=i;}
     });
     if(active!==nearest){active=nearest;position();}
@@ -165,9 +169,10 @@ export function createHostGallery({
     active=Math.max(0,Math.min(hosts.length-1,index));
     closeHostTraitTooltip();position();
     const target=cards[active];
-    const x=target.offsetLeft-cards[0].offsetLeft-
-      (row.clientWidth-target.clientWidth)/2;
-    row.scrollTo({left:Math.max(0,x),behavior:prefersReduced()?'instant':'smooth'});
+    // La galerie possède déjà un padding latéral égal à la demi-marge :
+    // le centre de chaque carte correspond à son décalage depuis la première.
+    const x=target.offsetLeft-cards[0].offsetLeft;
+    row.scrollTo({left:Math.max(0,x),behavior:prefersReduced()?'auto':'smooth'});
     scheduleVisual();
   }
   ga('prev').addEventListener('click',()=>scrollToCard(active-1));
