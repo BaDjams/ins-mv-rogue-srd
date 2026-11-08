@@ -64,7 +64,7 @@ export default defineConfig({
       social: {
         github: 'https://github.com/BaDjams/ins-mv-rogue-srd',
       },
-      customCss: ['./src/styles/rogue-srd.css'],
+      customCss: ['./src/styles/rogue-srd.css', './src/styles/rogue-characters.css'],
       favicon: '/favicon-32.png',
       head: [
         {
@@ -74,6 +74,10 @@ export default defineConfig({
         {
           tag: 'script',
           attrs: { src: '/ins-mv-rogue-srd/scripts/host-booster-ui.mjs', type: 'module' },
+        },
+        {
+          tag: 'script',
+          attrs: { src: '/ins-mv-rogue-srd/scripts/rogue-character-ui.mjs', type: 'module' },
         },
         {
           tag: 'link',
@@ -130,6 +134,7 @@ export default defineConfig({
             { label: 'Rang céleste', slug: 'personnage/rang' },
             { label: 'Position hiérarchique', slug: 'personnage/progression' },
             { label: 'Réincarnation', slug: 'personnage/reincarnation' },
+            { label: 'Ma bibliothèque de personnages', slug: 'personnage/bibliotheque' },
           ],
         },
         {
