@@ -1,6 +1,7 @@
 import { availableBoosters, validateBooster, drawBooster, topQualityIndices } from './host-booster-engine.mjs';
 import { OCCUPATIONS, TRAITS, TRAIT_GROUPS, compatibleTraits, occupationSkill, equipmentForProfile } from './host-profile-tables.mjs';
 import { renderHostCard } from './host-card-render.mjs';
+import { createHostGallery } from './host-gallery-controller.mjs';
 
 const BASE='/ins-mv-rogue-srd';
 // Intitulés éditoriaux affichés ; les qualités et leurs couleurs restent inchangées dans les règles.
@@ -141,6 +142,7 @@ function setup(container){
     select=$('pack'),openBtn=$('open'),description=$('description');
   const reduced=()=>window.matchMedia?.('(prefers-reduced-motion: reduce)').matches===true;
   const pause=milliseconds=>new Promise(resolve=>setTimeout(resolve,milliseconds));
+  let activeGallery=null;
   function updateTheme(){
     const color=validGlow(state.pack?.themeColor)
       ? state.pack.themeColor : DEFAULT_GLOW[state.pack?.source]||'#b7a6e3';
@@ -187,9 +189,10 @@ function setup(container){
   function selectHost(i,hosts,buttons){
     if(state.busy)return;
     const host=hosts[i];state.host=host;
-    buttons.forEach((button,j)=>{
-      button.classList.toggle('rb-card-selected',i===j);
-      button.setAttribute('aria-pressed',String(i===j));
+    buttons.forEach((card,j)=>{
+      card.classList.toggle('rb-card-selected',i===j);
+      if(i===j)card.setAttribute('aria-current','true');
+      else card.removeAttribute('aria-current');
     });
     choice.hidden=false;
     choice.innerHTML='<strong>Incarnation choisie : '+escape(host.name)+'</strong>'+
@@ -210,6 +213,7 @@ function setup(container){
       return;
     }
     state.busy=true;openBtn.disabled=true;state.host=null;choice.hidden=true;
+    if(activeGallery){activeGallery.destroy();activeGallery=null;}
     rack.classList.remove('rb-reveal-finale');
     rack.innerHTML='';
     try{
@@ -229,19 +233,15 @@ function setup(container){
       sealed.classList.add('rb-sealed-open');
       if(!reduced())await pause(650);
       sealed.remove();
-      const row=document.createElement('div');row.className='rb-card-rack';
-      const buttons=hosts.map((host,i)=>{
-        const button=document.createElement('button');
-        button.type='button';
-        button.className='rb-card rb-quality-'+host.quality;
-        button.setAttribute('aria-pressed','false');
-        button.setAttribute('aria-label','Choisir '+host.name+', qualité '+LABELS[host.quality]);
-        button.style.setProperty('--rb-index',String(i));
-        button.innerHTML=face(host);
-        button.addEventListener('click',()=>selectHost(i,hosts,buttons));
-        row.appendChild(button);return button;
+      const accent=validGlow(pack.themeColor)
+        ?pack.themeColor:DEFAULT_GLOW[pack.source]||'#b7a6e3';
+      activeGallery=createHostGallery({
+        hosts,best,renderCard:face,accent,
+        onChoose:(index,cards)=>selectHost(index,hosts,cards)
       });
-      rack.appendChild(row);
+      const buttons=activeGallery.cards;
+      rack.appendChild(activeGallery.row);
+      rack.appendChild(activeGallery.controls);
       // Révélation progressive : la mise en valeur attend que toutes les cartes
       // soient retournées, pour laisser au joueur le plaisir de la découverte.
       if(!reduced())await pause(450);
@@ -260,7 +260,7 @@ function setup(container){
         }
       });
       rack.classList.add('rb-reveal-finale');
-      status.textContent=hosts.length+' carte(s) révélée(s). La meilleure qualité est mise en lumière ; vous choisissez librement votre hôte.';
+      status.textContent=hosts.length+' carte(s) révélée(s). Parcourez la galerie, agrandissez une carte puis choisissez librement votre hôte.';
     }catch(error){
       console.error('Ouverture impossible',error);
       status.textContent='Ouverture impossible : '+error.message;
