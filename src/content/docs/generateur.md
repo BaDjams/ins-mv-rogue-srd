@@ -17,7 +17,7 @@ Le **deck officiel**, lorsqu'il est activé, combine une répartition configurab
 
 ### Administration
 
-La composition officielle se modifie dans le [CMS du SRD](../admin/) (rubrique **Deck officiel des hôtes**) ; les données sont versionnées dans `public/data/hotes-officiels.json`. L'administrateur peut activer ou désactiver le deck, renseigner ses poids ordinaires, créer des fiches spéciales et préciser pour chacune le taux de tirage et les dates de disponibilité (journées UTC incluses). Les caractéristiques exceptionnelles d'un hôte spécial sont celles explicitement définies sur sa fiche.
+La composition officielle se modifie dans le [CMS du SRD](/ins-mv-rogue-srd/admin/) (rubrique **Deck officiel des hôtes**) ; les données sont versionnées dans `public/data/hotes-officiels.json`. L'administrateur peut activer ou désactiver le deck, renseigner ses poids ordinaires, créer des fiches spéciales et préciser pour chacune le taux de tirage et les dates de disponibilité (journées UTC incluses). Les caractéristiques exceptionnelles d'un hôte spécial sont celles explicitement définies sur sa fiche.
 
 **Le deck officiel est initialement désactivé**, dans l'attente des premières données officielles. Le générateur utilise alors le jeu de remplacement.
 
