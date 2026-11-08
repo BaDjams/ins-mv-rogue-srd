@@ -1,5 +1,8 @@
 import { availableBoosters, validateBooster, drawBooster, topQualityIndices } from './host-booster-engine.mjs';
 import { OCCUPATIONS, TRAITS, TRAIT_GROUPS, compatibleTraits, occupationSkill, equipmentForProfile } from './host-profile-tables.mjs';
+import { renderHostCard } from './host-card-render.mjs';
+import { createHostGallery } from './host-gallery-controller.mjs';
+import { createBoosterOverlay } from './host-booster-overlay.mjs';
 
 const BASE='/ins-mv-rogue-srd';
 // Intitulés éditoriaux affichés ; les qualités et leurs couleurs restent inchangées dans les règles.
@@ -94,35 +97,7 @@ function profile(draw,index){
     description:h.description??'',isSpecial:true,
     trained:draw.trained===true,originType:draw.originType??null};
 }
-function face(host){
-  const stats=Object.entries(host.attributes).map(([k,v])=>
-    '<span><strong>'+escape(k)+'</strong> '+escape(v)+'</span>').join('');
-  const skills=Object.entries(host.skills).sort((a,b)=>b[1]-a[1]).slice(0,4)
-    .map(([name,v])=>escape(name)+' '+(v===-1?'Incompétent':'+'+v)).join(' · ');
-  const source=host.trained?'Soldat de Dieu':({
-    sympathizer:'Réseau de sympathisants',cultist:'Milieu sectaire',
-    recentDead:'Corps récemment décédé'}[host.originType]||'');
-  const portrait=host.picture?'<img alt="" loading="lazy" src="'+escape(host.picture)+'">':
-    '<span class="rb-avatar" aria-hidden="true">'+escape(host.name.charAt(0).toUpperCase())+'</span>';
-  const traits=Array.isArray(host.traits)?host.traits:[];
-  const gear=Array.isArray(host.equipment)?host.equipment:[];
-  const visibleItems=items=>items.slice(0,2).map(escape).join(' · ')+
-    (items.length>2?' · +'+(items.length-2):'');
-  return '<span class="rb-card-inner">'+
-    '<span class="rb-card-back" aria-hidden="true"><span class="rb-back-symbol">✦</span><span>INS·MV ROGUE</span></span>'+
-    '<span class="rb-card-front">'+
-      '<span class="rb-card-rarity">'+escape(LABELS[host.quality])+'</span>'+
-      '<span class="rb-portrait">'+portrait+'</span>'+
-      '<span class="rb-card-name">'+escape(host.name)+'</span>'+
-      '<span class="rb-card-job">'+escape(host.occupation)+'</span>'+
-      (source?'<span class="rb-card-source">'+escape(source)+'</span>':'')+
-      '<span class="rb-stats">'+stats+'</span>'+
-      '<span class="rb-skills">'+skills+'</span>'+
-      (traits.length?'<span class="rb-profile-details" title="'+escape(traits.join(' · '))+'"><b>Traits</b> '+visibleItems(traits)+'</span>':'')+
-      (gear.length?'<span class="rb-profile-details rb-gear" title="'+escape(gear.join(' · '))+'"><b>Objets</b> '+visibleItems(gear)+'</span>':'')+
-      '<span class="rb-card-choose">Choisir cet hôte</span>'+
-    '</span></span>';
-}
+function face(host){return renderHostCard(host);}
 function exportHost(host){
   const blob=new Blob([JSON.stringify(host,null,2)],{type:'application/json'});
   const url=URL.createObjectURL(blob);
@@ -168,6 +143,14 @@ function setup(container){
     select=$('pack'),openBtn=$('open'),description=$('description');
   const reduced=()=>window.matchMedia?.('(prefers-reduced-motion: reduce)').matches===true;
   const pause=milliseconds=>new Promise(resolve=>setTimeout(resolve,milliseconds));
+  let activeGallery=null;
+  let activeOverlay=null;
+  // Astro peut remplacer la page sans recharger le navigateur : libérer les
+  // deux couches dans l'ordre, pour restaurer correctement le défilement.
+  document.addEventListener('astro:before-swap',()=>{
+    if(activeGallery){activeGallery.destroy();activeGallery=null;}
+    if(activeOverlay){activeOverlay.destroy();activeOverlay=null;}
+  },{once:true});
   function updateTheme(){
     const color=validGlow(state.pack?.themeColor)
       ? state.pack.themeColor : DEFAULT_GLOW[state.pack?.source]||'#b7a6e3';
@@ -214,9 +197,10 @@ function setup(container){
   function selectHost(i,hosts,buttons){
     if(state.busy)return;
     const host=hosts[i];state.host=host;
-    buttons.forEach((button,j)=>{
-      button.classList.toggle('rb-card-selected',i===j);
-      button.setAttribute('aria-pressed',String(i===j));
+    buttons.forEach((card,j)=>{
+      card.classList.toggle('rb-card-selected',i===j);
+      if(i===j)card.setAttribute('aria-current','true');
+      else card.removeAttribute('aria-current');
     });
     choice.hidden=false;
     choice.innerHTML='<strong>Incarnation choisie : '+escape(host.name)+'</strong>'+
@@ -228,6 +212,8 @@ function setup(container){
       '<button type="button" class="rb-export-host">Exporter cette fiche (JSON)</button>';
     choice.querySelector('button').addEventListener('click',()=>exportHost(host));
     status.textContent='Hôte choisi. Vous pouvez consulter son équipement et exporter sa fiche.';
+    if(activeOverlay)activeOverlay.close();
+    choice.scrollIntoView?.({behavior:reduced()?'auto':'smooth',block:'nearest'});
   }
   async function open(){
     if(state.busy||!state.pack)return;
@@ -237,6 +223,8 @@ function setup(container){
       return;
     }
     state.busy=true;openBtn.disabled=true;state.host=null;choice.hidden=true;
+    if(activeGallery){activeGallery.destroy();activeGallery=null;}
+    if(activeOverlay){activeOverlay.destroy();activeOverlay=null;}
     rack.classList.remove('rb-reveal-finale');
     rack.innerHTML='';
     try{
@@ -246,34 +234,36 @@ function setup(container){
       });
       const hosts=draws.map((draw,i)=>profile({ ...draw, trained:draw.trained===true || pack.source==='soldiers' },i));
       const best=topQualityIndices(hosts);
+      const accent=validGlow(pack.themeColor)
+        ?pack.themeColor:DEFAULT_GLOW[pack.source]||'#b7a6e3';
+      activeOverlay=createBoosterOverlay({title:pack.name,accent});
+      const revealStage=activeOverlay.stage;
+      activeOverlay.show();
+      activeOverlay.setStatus('Ouverture du booster en cours…');
       const sealed=document.createElement('div');
       sealed.className='rb-sealed rb-theme-'+(state.faction==='angel'?'angel':'demon');
       sealed.innerHTML='<span class="rb-seal-symbol">✧</span><strong>'+escape(pack.name)+'</strong>'+
         '<small>INS · MV ROGUE</small>';
-      rack.appendChild(sealed);
+      revealStage.appendChild(sealed);
       status.textContent='Ouverture du booster…';
       if(!reduced())await pause(1350);
       sealed.classList.add('rb-sealed-open');
       if(!reduced())await pause(650);
       sealed.remove();
-      const row=document.createElement('div');row.className='rb-card-rack';
-      const buttons=hosts.map((host,i)=>{
-        const button=document.createElement('button');
-        button.type='button';
-        button.className='rb-card rb-quality-'+host.quality;
-        button.setAttribute('aria-pressed','false');
-        button.setAttribute('aria-label','Choisir '+host.name+', qualité '+LABELS[host.quality]);
-        button.style.setProperty('--rb-index',String(i));
-        button.innerHTML=face(host);
-        button.addEventListener('click',()=>selectHost(i,hosts,buttons));
-        row.appendChild(button);return button;
+      activeOverlay.setStatus('Découverte des hôtes…');
+      activeGallery=createHostGallery({
+        hosts,best,renderCard:face,accent,
+        onChoose:(index,cards)=>selectHost(index,hosts,cards)
       });
-      rack.appendChild(row);
+      const buttons=activeGallery.cards;
+      revealStage.appendChild(activeGallery.row);
+      revealStage.appendChild(activeGallery.controls);
       // Révélation progressive : la mise en valeur attend que toutes les cartes
       // soient retournées, pour laisser au joueur le plaisir de la découverte.
       if(!reduced())await pause(450);
       const interval=Math.max(160,Math.min(520,Math.round(1600/buttons.length)));
       for(const button of buttons){
+        button.inert=false;
         button.classList.add('rb-revealed');
         if(!reduced())await pause(interval);
       }
@@ -286,11 +276,20 @@ function setup(container){
           button.appendChild(label);
         }
       });
-      rack.classList.add('rb-reveal-finale');
-      status.textContent=hosts.length+' carte(s) révélée(s). La meilleure qualité est mise en lumière ; vous choisissez librement votre hôte.';
+      revealStage.classList.add('rb-reveal-finale');
+      activeOverlay.setStatus(hosts.length+' carte(s) révélée(s). Faites défiler la galerie, ouvrez une fiche et choisissez votre incarnation.');
+      const revisit=document.createElement('button');
+      revisit.type='button';
+      revisit.className='rb-reopen-booster';
+      revisit.textContent='Revoir les '+hosts.length+' cartes du booster';
+      revisit.addEventListener('click',()=>activeOverlay?.show());
+      rack.appendChild(revisit);
+      status.textContent=hosts.length+' carte(s) révélée(s). Vous pouvez revoir le tirage en plein écran ou choisir votre hôte.';
     }catch(error){
       console.error('Ouverture impossible',error);
       status.textContent='Ouverture impossible : '+error.message;
+      if(activeGallery){activeGallery.destroy();activeGallery=null;}
+      if(activeOverlay){activeOverlay.destroy();activeOverlay=null;}
       rack.innerHTML='';
     }finally{state.busy=false;openBtn.disabled=!state.pack;}
   }
