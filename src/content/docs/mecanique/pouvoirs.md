@@ -13,8 +13,8 @@ Le [rang céleste](../../personnage/rang) d'une créature détermine sa capacit�
 
 Chaque pouvoir possède un rang (1 à 6). Le rang détermine à la fois l'accès et le coût en [drain](../energie#rang-des-pouvoirs-et-drain).
 
-- **Accès** : rang de base ≤ Rang Céleste pour les pouvoirs actifs ; les pouvoirs passifs sont calés sur le Rang Céleste. Pas de downgrade possible.
-- **Surcharge** : lancer un pouvoir actif à un rang supérieur à son rang de base, jusqu'à 6 — y compris au-delà du Rang Céleste. Chaque surcharge ajoute un ou plusieur rang au pouvoir. La somme du rang de base du pouvoir et des rangs de surcharge, appelée rang effectif, ne peut pas excéder 6.
+- **Accès** : le Rang Céleste doit atteindre le prérequis du pouvoir ; les pouvoirs passifs suivent automatiquement le Rang Céleste.
+- **Surcharge** : choisir au lancement un rang de puissance supérieur au Rang Céleste, jusqu'à 6. Les mots-clés augmentent le rang effectif pour le drain, sans augmenter les dégâts. Aucun niveau de pouvoir n'est acheté avec l'expérience.
 - le rang effectif de lancement détermine le drain : 1 dé de drain par rang jusqu'au Rang Céleste (un 6 inflige 1 blessure non-létale), 1 drain automatique par rang au-delà (1 blessure non létale directe).
 
 <div class="admonition example">
@@ -51,7 +51,7 @@ Un **pouvoir passif** ne se lance pas : il est toujours actif, ne génère aucun
 _Exemples :_
 
 - _Résilience_ (passif, prérequis Rang 1) : calée sur le Rang Céleste. Ange Rang 3 → Résilience 3 ; Archange Rang 4 → Résilience 4 ; humain Rang 1 → Résilience 1, sans effet pratique.
-- _Feu Ardent_ (actif, prérequis Rang 2) : un ange de Rang 3 peut l'acquérir au rang de base 2 ou 3, et le surcharger jusqu'au rang 6 au lancement.
+- _Feu Ardent_ (actif, prérequis Rang 2) : un ange de Rang 3 peut l'acquérir, le lancer au rang 2 ou 3 et le surcharger jusqu'au rang 6 au lancement.
 - _Rapidité Céleste_ (passif, prérequis Rang 3) : inaccessible en dessous du Rang 3 ; calée sur le Rang Céleste au-delà.
 
 ## **Règles spécifiques aux Pouvoirs**
@@ -78,7 +78,7 @@ _Exemples :_
 -   **Couper un pouvoir :** [Geste accessoire](../combat#déclaration-des-actions), peut être fait à tout
     moment
 -   **Contrôle mental/Possession :** Le contrôleur ne dispose toujours que d'une [Action Complexe](../combat#déclaration-des-actions) et d'une [Action Simple](../combat#déclaration-des-actions) par tour, à répartir entre son hôte et ses cibles contrôlées.
-- Les pouvoirs qui infligent directement des blessures les appliquent sans réduction lorsque leur description le précise. Les anciennes mentions de dégâts aggravés doivent être interprétées comme des blessures létales directes, sauf règle spéciale explicitement validée.
+- Les pouvoirs qui infligent directement des blessures les appliquent sans réduction lorsque leur description le précise. Une source maudite peut interdire la guérison naturelle des blessures létales qu'elle inflige, si son effet le précise.
 
 **Interactions entre Pouvoirs**
 
