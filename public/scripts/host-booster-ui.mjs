@@ -145,6 +145,12 @@ function setup(container){
   const pause=milliseconds=>new Promise(resolve=>setTimeout(resolve,milliseconds));
   let activeGallery=null;
   let activeOverlay=null;
+  // Astro peut remplacer la page sans recharger le navigateur : libérer les
+  // deux couches dans l'ordre, pour restaurer correctement le défilement.
+  document.addEventListener('astro:before-swap',()=>{
+    if(activeGallery){activeGallery.destroy();activeGallery=null;}
+    if(activeOverlay){activeOverlay.destroy();activeOverlay=null;}
+  },{once:true});
   function updateTheme(){
     const color=validGlow(state.pack?.themeColor)
       ? state.pack.themeColor : DEFAULT_GLOW[state.pack?.source]||'#b7a6e3';
