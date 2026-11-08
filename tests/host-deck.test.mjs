@@ -1,5 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
+import fs from 'node:fs';
 import { drawOfficialHost, validateOfficialDeck } from '../public/scripts/host-deck-engine.mjs';
 
 function configuration(patches = {}) {
@@ -91,4 +92,12 @@ test('les poids ordinaires ne changent pas le taux des cartes spéciales', () =>
   const rolls = [0.9, 0.5];
   const ordinary = drawOfficialHost(cfg, () => rolls.shift(), during);
   assert.deepEqual(ordinary, { type: 'ordinary', quality: 'legendary' });
+});
+
+test('la configuration officielle publiée est un JSON conforme', () => {
+  const raw = fs.readFileSync(new URL('../public/data/hotes-officiels.json', import.meta.url), 'utf8');
+  const config = JSON.parse(raw);
+  const result = validateOfficialDeck(config, new Date('2026-11-08T12:00:00Z'));
+  assert.equal(typeof result.enabled, 'boolean');
+  assert.ok(Array.isArray(config.specialHosts));
 });
