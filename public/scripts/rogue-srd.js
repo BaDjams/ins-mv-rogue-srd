@@ -1016,7 +1016,7 @@
 
     // ── État ─────────────────────────────────────────────
     var count = 6;
-    var probs = { mundane:24, better:12, superior:12, elite:4, legendary:2 }; // 54 cartes
+    var probs = { mundane:24, better:12, superior:12, elite:4, legendary:2 }; // Paquet de remplacement, PAS deck officiel
     var filtersGender = { male:true, female:true };
     var filtersEth    = { french:true, northAfrican:true, westAfrican:true, hispanic:true, slavic:true, eastAsian:true, american:true, indian:true };
     var lastBatch = []; // dernier lot de PNJ généré ou importé, pour l'export JSON
@@ -1042,14 +1042,14 @@
         '</div>' +
         '<div class="gen-advanced" data-el="advanced" style="display:none">' +
           '<div class="gen-adv-section">' +
-            '<h4>Pondération des qualités (jeu de 54 cartes)</h4>' +
+            '<h4>Jeu de 54 cartes — méthode de remplacement</h4><p class="gen-hint">Ces probabilités ne décrivent pas le deck officiel, dont la composition peut varier avec les cartes spéciales et les événements.</p>' +
             '<div class="gen-prob-grid">' +
               '<div class="gen-prob-row"><span class="gen-prob-label gen-prob-label--mundane">Gris</span><input type="range" min="0" max="54" step="1" value="24" data-prob="mundane" class="gen-slider"><span class="gen-prob-val" data-prob-val="mundane">24</span></div>' +
               '<div class="gen-prob-row"><span class="gen-prob-label gen-prob-label--better">Vert</span><input type="range" min="0" max="54" step="1" value="12" data-prob="better" class="gen-slider"><span class="gen-prob-val" data-prob-val="better">12</span></div>' +
               '<div class="gen-prob-row"><span class="gen-prob-label gen-prob-label--superior">Bleu</span><input type="range" min="0" max="54" step="1" value="12" data-prob="superior" class="gen-slider"><span class="gen-prob-val" data-prob-val="superior">12</span></div>' +
               '<div class="gen-prob-row"><span class="gen-prob-label gen-prob-label--elite">Violet</span><input type="range" min="0" max="54" step="1" value="4" data-prob="elite" class="gen-slider"><span class="gen-prob-val" data-prob-val="elite">4</span></div>' +
               '<div class="gen-prob-row"><span class="gen-prob-label gen-prob-label--legendary">Or</span><input type="range" min="0" max="54" step="1" value="2" data-prob="legendary" class="gen-slider"><span class="gen-prob-val" data-prob-val="legendary">2</span></div>' +
-              '<div class="gen-prob-total" data-el="prob-total">54 cartes (pondération ajustable)</div>' +
+              '<div class="gen-prob-total" data-el="prob-total">54 cartes (pondérations de simulation ajustables)</div>' +
             '</div>' +
           '</div>' +
           '<div class="gen-adv-section">' +
