@@ -21,7 +21,7 @@ Chaque pouvoir possède un rang (1 à 6). Le rang détermine à la fois l'accès
 <p class="admonition-title">Exemple : un Ange (donc RC 3) lance un pouvoir de Rang 2, surchargé à 4</p>
 
 - Drain : 3 dés (jusqu'au Rang Céleste) + 1 drain automatique (1 rang au-delà du Rang 3)
-- On lance les dés de drain, chaque 6 declenche fait subir une blessure non letale au lanceur de sort.
+- On lance les dés de drain, chaque 6 inflige une blessure non létale au lanceur de sort.
 - Le drain automatique inflige en plus 1 blessure non létale directe.
 </div>
 
