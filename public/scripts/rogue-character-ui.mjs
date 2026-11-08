@@ -171,7 +171,7 @@ function hostPanel(character){
       host.equipment.map(item=>'<li>'+esc(item)+'</li>').join('')+
       '</ul><h4>Traits</h4><ul>'+host.traits.map(item=>'<li>'+esc(item)+'</li>').join('')+
       '</ul></div></div></details>'+
-    '<p class="rc-hint">Changer d’hôte dans le générateur conserve les caractéristiques de l’âme et ajoute l’ancien hôte à son historique.</p>'+
+    '<p class="rc-hint">Changer d’hôte dans le <a href="'+BASE+'/generateur/">générateur de boosters</a> conserve les caractéristiques de l’âme et ajoute l’ancien hôte à son historique.</p>'+
     '</section>';
 }
 function libraryList(rows,activeId,selectedId,showArchived){
@@ -193,12 +193,18 @@ function libraryList(rows,activeId,selectedId,showArchived){
 function detail(character,activeId){
   if(!character)return '<div class="rc-placeholder">Sélectionnez un personnage pour consulter sa fiche.</div>';
   const active=character.id===activeId;
+  let complete=true;
+  try{validateCharacter(character,{allowDraft:false});}
+  catch{complete=false;}
   const progress=advancements(character);
   return '<div class="rc-detail"><div class="rc-detail-head"><div><span class="rc-kicker">'+
     (character.archived?'ARCHIVES':'BIBLIOTHÈQUE')+'</span><h2>'+esc(character.soul.name)+'</h2>'+
     '<p>'+natureLabel(character.soul.nature)+' · Rang céleste '+character.soul.rank+
       (character.host?' · Hôte : '+esc(character.host.name):' · Sans hôte')+'</p>'+
-    '</div><span class="rc-state">'+(character.archived?'Archivé':active?'Actif':'Disponible')+'</span></div>'+
+    '</div><div class="rc-detail-states"><span class="rc-state">'+
+      (character.archived?'Archivé':active?'Actif':'Disponible')+'</span>'+
+      (!complete?'<span class="rc-state rc-incomplete">Création à compléter</span>':'')+
+    '</div></div>'+
     '<div class="rc-actions">'+
       (!character.archived&&!active?button('Activer ce personnage','activate',character.id,'rc-primary'):'')+
       button('Exporter JSON','export-json',character.id)+
