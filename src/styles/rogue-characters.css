@@ -157,6 +157,9 @@
   .rc-print-powers th{font-weight:500;color:#51445d;width:32%;}
   .rc-print-value{font-weight:800;}
   .rc-print-subtitle{font:italic 9.5pt Georgia,serif;color:#65566b;margin-bottom:3mm;}
+  .rc-print-host-portrait{display:block;float:right;max-width:27mm;max-height:35mm;
+    object-fit:cover;border:1px solid #b8a8ae;border-radius:3mm;margin:0 0 3mm 5mm;}
+  .rc-print-host-portrait+ .rc-print-subtitle{min-height:10mm;}
   .rc-print-list{padding-left:5mm;margin:0;columns:2;column-gap:6mm;}
   .rc-print-list li{break-inside:avoid;font-size:8.5pt;margin:0 0 1mm;}
   .rc-print-muted{color:#968a95;font-style:italic;}
