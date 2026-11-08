@@ -1155,12 +1155,25 @@
       import('/ins-mv-rogue-srd/scripts/host-deck-engine.mjs'),
       getDeckConfig('hotes-officiels.json'),
       getDeckConfig('hotes-soldats-dieu.json'),
-      getDeckConfig('hotes-reseaux-infernaux.json')
+      getDeckConfig('hotes-reseaux-infernaux.json'),
+      import('/ins-mv-rogue-srd/scripts/host-profile-tables.mjs').catch(function(error) {
+        console.warn('Tables de profils partagées indisponibles : utilisation des données locales.', error);
+        return null;
+      })
     ]).then(function(values) {
       deckEngine = values[0];
       officialDeck = values[1];
       soldiersDeck = values[2];
       infernalDeck = values[3];
+      // Une seule base de métiers, traits et équipements pour les deux générateurs.
+      // Les tables intégrées ci-dessus servent de secours si l'import échoue.
+      if (values[4]) {
+        DB.occupations = values[4].OCCUPATIONS;
+        DB.traits = values[4].TRAITS;
+        DB.equipment = values[4].EQUIPMENT;
+        DB.traitGroups = values[4].TRAIT_GROUPS;
+        DB.incompatibleTraits = values[4].INCOMPATIBLE_TRAITS;
+      }
       var available = [
         { value: 'official', config: officialDeck, name: 'Citoyens — réincarnation / PNJ' },
         { value: 'soldiers', config: soldiersDeck, name: 'Soldats de Dieu — 1re incarnation angélique' },
