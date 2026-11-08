@@ -3,6 +3,7 @@ import { OCCUPATIONS, TRAITS, TRAIT_GROUPS, compatibleTraits, occupationSkill, e
 import { renderHostCard } from './host-card-render.mjs';
 import { createHostGallery } from './host-gallery-controller.mjs';
 import { createBoosterOverlay } from './host-booster-overlay.mjs';
+import { attachHostToActive } from './rogue-character-store.mjs';
 
 const BASE='/ins-mv-rogue-srd';
 // Intitulés éditoriaux affichés ; les qualités et leurs couleurs restent inchangées dans les règles.
@@ -194,7 +195,7 @@ function setup(container){
     updateTheme();
     $('dead-label').hidden=state.faction!=='demon';
   });
-  function selectHost(i,hosts,buttons){
+  async function selectHost(i,hosts,buttons){
     if(state.busy)return;
     const host=hosts[i];state.host=host;
     buttons.forEach((card,j)=>{
@@ -209,11 +210,29 @@ function setup(container){
       (host.traits?.length?'<span><strong>Traits :</strong> '+host.traits.map(escape).join(', ')+'</span>':'')+
       (host.equipment?.length?'<span><strong>Équipement :</strong> '+host.equipment.map(escape).join(', ')+'</span>':'')+
       '</div>'+
-      '<button type="button" class="rb-export-host">Exporter cette fiche (JSON)</button>';
+      '<button type="button" class="rb-export-host">Exporter cet hôte (JSON)</button>'+
+      '<div class="rb-character-link" data-rb-character-link role="status">Enregistrement dans la fiche active…</div>';
     choice.querySelector('button').addEventListener('click',()=>exportHost(host));
     status.textContent='Hôte choisi. Vous pouvez consulter son équipement et exporter sa fiche.';
     if(activeOverlay)activeOverlay.close();
     choice.scrollIntoView?.({behavior:reduced()?'auto':'smooth',block:'nearest'});
+    const output=choice.querySelector('[data-rb-character-link]');
+    try{
+      const character=await attachHostToActive(host);
+      if(character){
+        output.innerHTML='Hôte associé automatiquement à <strong>'+escape(character.soul.name)+
+          '</strong>. <a href="/ins-mv-rogue-srd/personnage/bibliotheque/">Voir la fiche complète</a>.';
+        status.textContent='Hôte '+host.name+' associé au personnage actif '+character.soul.name+'.';
+      }else{
+        output.innerHTML='Aucune âme active dans votre navigateur : '+
+          '<a href="/ins-mv-rogue-srd/personnage/bibliotheque/">créer ou activer une fiche</a> '+
+          'pour y enregistrer automatiquement les prochains hôtes.';
+      }
+    }catch(error){
+      console.error('Association âme–hôte impossible',error);
+      output.textContent='Hôte sélectionné, mais enregistrement local impossible : '+error.message+
+        '. Exportez la carte JSON pour la conserver.';
+    }
   }
   async function open(){
     if(state.busy||!state.pack)return;
