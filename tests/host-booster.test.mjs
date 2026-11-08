@@ -1,6 +1,9 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
+import {createOrdinaryHostProfile,renderHostFace} from '../public/scripts/host-booster-ui.mjs';
+import {OCCUPATIONS,TRAITS,EQUIPMENT,occupationSkill,compatibleTraits,equipmentForProfile}
+  from '../public/scripts/host-profile-tables.mjs';
 import {
   availableBoosters,validateBoosterCatalog,validateBooster,
   resolveBoosterDeck,drawBooster,topQualityIndices
@@ -102,4 +105,83 @@ test('les ex aequo de meilleure qualité sont tous signalés',()=>{
   assert.deepEqual(topQualityIndices([{quality:'superior'},{quality:'legendary'},{quality:'elite'},
     {quality:'legendary'}]),[1,3]);
   assert.deepEqual(topQualityIndices([]),[]);
+});
+
+test('les tables de métier, loisirs et équipement du générateur original sont disponibles', () => {
+  assert.ok(OCCUPATIONS.length >= 20);
+  assert.ok(TRAITS.length >= 20);
+  assert.ok(EQUIPMENT.length >= 20);
+  assert.equal(occupationSkill('Médecin'), 'Médecine');
+  assert.equal(compatibleTraits(['Pauvre'], 'Fortuné'), false);
+});
+
+test('chaque hôte ordinaire possède les objets associés à son métier et à ses traits', () => {
+  for (const quality of ['mundane','better','superior','elite','legendary']) {
+    for(let i=0;i<40;i++){
+      const host=createOrdinaryHostProfile({type:'ordinary',quality},i);
+      const occupation=OCCUPATIONS.find(o=>o.name===host.occupation);
+      assert.ok(occupation, 'Profession reconnue : '+host.occupation);
+      for(const item of occupation.equipment)
+        assert.ok(host.equipment.includes(item), host.occupation+' sans '+item);
+      for(const traitName of host.traits){
+        const trait=TRAITS.find(t=>t.name===traitName);
+        assert.ok(trait,'Trait reconnu : '+traitName);
+        for(const item of trait.equipment||[])
+          assert.ok(host.equipment.includes(item),traitName+' sans '+item);
+      }
+      assert.equal(new Set(host.equipment).size,host.equipment.length);
+      assert.ok(host.equipment.length>=occupation.equipment.length+2);
+      assert.equal(Object.values(host.attributes).reduce((a,b)=>a+b),{
+        mundane:5,better:6,superior:7,elite:8,legendary:10
+      }[quality]);
+      assert.match(renderHostFace(host),/Objets/);
+      assert.match(renderHostFace(host),/Traits/);
+    }
+  }
+});
+
+test('les Soldats de Dieu générés conservent une compétence métier à +2', () => {
+  for (const quality of ['superior','elite','legendary']) {
+    for(let i=0;i<30;i++){
+      const host=createOrdinaryHostProfile({type:'ordinary',quality,trained:true},i);
+      assert.ok(host.skills[occupationSkill(host.occupation)]>=2);
+      assert.equal(host.trained,true);
+      assert.ok(host.equipment.length>=4);
+    }
+  }
+  assert.throws(()=>createOrdinaryHostProfile({
+    type:'ordinary',quality:'mundane',trained:true
+  },0),/Soldat de Dieu/);
+});
+
+test('les noms des cinq niveaux servent à l’affichage, sans modifier leur codage', () => {
+  const names={
+    mundane:'Personnage commun',better:'Expérimenté',superior:'Professionnel',
+    elite:'Vétéran',legendary:'Élite'
+  };
+  for(const [quality,label] of Object.entries(names)){
+    const p=createOrdinaryHostProfile({type:'ordinary',quality},1);
+    assert.ok(renderHostFace(p).includes(label));
+    assert.equal(p.quality,quality);
+  }
+});
+
+test('les teintes de booster sont configurables, strictement validées et sans effet sur les tirages',()=>{
+  const valid=pack({themeColor:'#b873e2'});
+  assert.equal(validateBoosterCatalog({boosters:[valid]}).length,1);
+  assert.equal(drawBooster(valid,sources,{date,random:()=>0.5}).length,3);
+  for(const themeColor of ['red','bad()', '#fff','#zz0000']){
+    assert.throws(()=>validateBoosterCatalog({
+      boosters:[pack({themeColor})]
+    }),/Couleur de booster invalide/);
+  }
+});
+
+test('le CSS du booster neutralise les marges Starlight et réserve une hauteur uniforme',()=>{
+  const css=fs.readFileSync(new URL('../src/styles/rogue-srd.css',import.meta.url),'utf8');
+  assert.match(css,/\.rogue-booster \.rb-widget \* \{ margin-top:0!important; \}/);
+  assert.match(css,/\.rogue-booster \.rb-card-rack \{\s*grid-auto-rows: 425px/);
+  assert.match(css,/\.rogue-booster \.rb-card-rack > \.rb-card \{/);
+  assert.match(css,/rb-flash/);
+  assert.match(css,/rb-halo/);
 });
