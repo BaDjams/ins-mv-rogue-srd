@@ -2,7 +2,7 @@
  * Les champs âme et hôte ne fusionnent jamais : ils restent indépendants.
  * Règles : /personnage/creation, /personnage/progression, /personnage/rang.
  */
-export const CHARACTER_VERSION=1;
+export const CHARACTER_VERSION=2;
 export const CHARACTER_KIND='insmv-rogue-character';
 export const SOUL_ATTRIBUTES=Object.freeze(['PUI','INF','RES','CLA']);
 export const HOST_ATTRIBUTES=Object.freeze(['FOR','AGI','VIG','PER']);
@@ -55,8 +55,15 @@ function validateCharacterCore(item,{allowDraft=true}={}){
   if(!plain(item.soul.powers))throw Error('Pouvoirs de l’âme absents.');
   if(!Array.isArray(item.soul.powers.additional)||item.soul.powers.additional.length>100)
     throw Error('Liste des pouvoirs additionnels incorrecte.');
-  if(!Array.isArray(item.soul.traits)||item.soul.traits.length>2)
-    throw Error('Deux traits d’âme au maximum à la création.');
+  if(!Array.isArray(item.soul.initialTraits)||item.soul.initialTraits.length>2 ||
+    !Array.isArray(item.soul.traits)||item.soul.traits.length>100)
+    throw Error('Traits d’âme invalides.');
+  if(!plain(item.soul.residualSkills) || Object.keys(item.soul.residualSkills).length>60)
+    throw Error('Compétences résiduelles invalides.');
+  for(const [skill,level] of Object.entries(item.soul.residualSkills)){
+    if(!skill.trim() || skill.length>120 || !Number.isInteger(level)||level<1||level>3)
+      throw Error('Niveau de compétence résiduelle invalide.');
+  }
   if(!Array.isArray(item.progression)||item.progression.length>2000)
     throw Error('Historique de progression invalide.');
   if(!Array.isArray(item.hostHistory)||item.hostHistory.length>100)
@@ -67,11 +74,12 @@ function validateCharacterCore(item,{allowDraft=true}={}){
     validateCreationAttributes(item.soul.initialAttributes);
     for(const key of ['hierarchy','role','assigned'])
       if(!text(item.soul.powers[key],120))throw Error('Pouvoir de départ manquant : '+key);
-    if(item.soul.traits.filter(Boolean).length!==2)
+    if(item.soul.initialTraits.filter(Boolean).length!==2)
       throw Error('La création exige deux traits d’âme.');
   }
-  const xp=experience(item);
-  if(xp.available<0)throw Error('Dépenses d’XP supérieures aux gains.');
+  const balance=advancements(item);
+  if(balance.available<0)
+    throw Error('Plus d’améliorations dépensées que de progressions accordées.');
   return item;
 }
 export function validateCharacter(item,options={}){return validateCharacterCore(item,options);}
@@ -87,7 +95,8 @@ export function createCharacter({name,nature='angel',superior='',role='',hierarc
       concept:text(concept,1200),rank:3,
       attributes:initialSoulAttributes(),initialAttributes:initialSoulAttributes(),
       powers:{intrinsic:'Présence Surnaturelle',hierarchy:'',role:'',assigned:'',additional:[]},
-      traits:[],objective:'',motivation:'',links:'',notes:''
+      initialTraits:[],traits:[],residualSkills:{},
+      objective:'',motivation:'',links:'',notes:''
     },
     progression:[],host:null,hostHistory:[],incarnationsUsed:0
   };
@@ -151,46 +160,73 @@ export function attachHost(character,rawHost){
   // une incarnation. Celle-ci est comptée au moment décidé par le MJ.
   return validateCharacterCore(next);
 }
-export function experience(character){
-  let earned=0,spent=0;
-  for(const entry of character.progression||[]){
-    if(!plain(entry)||typeof entry.type!=='string')throw Error('Événement XP invalide.');
-    const v=entry.xp;
-    if(!Number.isInteger(v)||v<0||v>10000)throw Error('Montant XP invalide.');
-    if(entry.type==='gain')earned+=v;
-    else if(entry.type==='power'||entry.type==='attribute')spent+=v;
-    else throw Error('Type de progression inconnu.');
+export function advancements(character){
+  let granted=0,used=0;
+  for(const event of character.progression||[]){
+    if(!plain(event)||typeof event.type!=='string')
+      throw Error('Événement de progression invalide.');
+    if(event.type==='grant')granted++;
+    else if(['power','attribute','residual','trait'].includes(event.type))used++;
+    else if(event.type!=='unlockResidual')
+      throw Error('Événement de progression inconnu : '+event.type);
   }
-  return {earned,spent,available:earned-spent};
+  return {granted,used,available:granted-used};
 }
 export function progressSoul(character,action){
   validateCharacterCore(character);
   if(character.archived)throw Error('Désarchivez cette âme avant de la faire progresser.');
+  if(!plain(action))throw Error('Choix de progression invalide.');
   const next=structuredClone(character),now=new Date().toISOString();
   let event;
-  if(action.type==='gain'){
-    if(!Number.isInteger(action.amount)||action.amount<1||action.amount>100)
-      throw Error('Le gain d’XP doit être un entier positif.');
-    event={type:'gain',xp:action.amount,detail:text(action.detail||'Scénario',150)};
-  }else if(action.type==='power'){
-    const name=cleanName(action.name,'Le nouveau pouvoir');
-    if(experience(next).available<5)throw Error('Il faut 5 XP pour acheter un pouvoir.');
-    const existing=[next.soul.powers.intrinsic,next.soul.powers.hierarchy,
-      next.soul.powers.role,next.soul.powers.assigned,...next.soul.powers.additional];
-    if(existing.some(p=>p.toLocaleLowerCase('fr')===name.toLocaleLowerCase('fr')))
-      throw Error('Ce pouvoir est déjà possédé.');
-    next.soul.powers.additional.push(name);
-    event={type:'power',xp:5,detail:name};
-  }else if(action.type==='attribute'){
-    const key=action.attribute;
-    if(!SOUL_ATTRIBUTES.includes(key))throw Error('Attribut inconnu.');
-    const value=next.soul.attributes[key];
-    if(value>=5)throw Error('Plafond d’attribut atteint (5).');
-    const cost=2*(value+1);
-    if(experience(next).available<cost)throw Error('Il faut '+cost+' XP pour ce niveau.');
-    next.soul.attributes[key]=value+1;
-    event={type:'attribute',xp:cost,attribute:key,detail:key+' '+value+' → '+(value+1)};
-  }else throw Error('Action de progression inconnue.');
+  if(action.type==='grant'){
+    event={type:'grant',detail:text(action.detail||'Progression accordée par le MJ',150)};
+  } else if(action.type==='unlockResidual'){
+    // Règle spéciale : terme de scénario sans réincarnation (anges).
+    if(next.soul.nature!=='angel' || action.completedScenarioWithoutReincarnation!==true)
+      throw Error('Compétence résiduelle : récompense conditionnelle réservée aux anges.');
+    const host=next.host;
+    if(!host)throw Error('Un hôte actuel est requis pour acquérir sa compétence résiduelle.');
+    const best=Math.max(...Object.values(host.skills||{}).filter(Number.isInteger),-1);
+    const name=cleanName(action.name,'La compétence résiduelle');
+    if(best<0 || host.skills[name]!==best)
+      throw Error('Seule une compétence de plus haut niveau de l’hôte peut être mémorisée.');
+    if(next.soul.residualSkills[name])
+      throw Error('Cette compétence résiduelle a déjà été acquise.');
+    next.soul.residualSkills[name]=1;
+    event={type:'unlockResidual',detail:name};
+  } else {
+    if(advancements(next).available<1)
+      throw Error('Aucune progression disponible : le MJ doit d’abord en accorder une.');
+    if(action.type==='power'){
+      const name=cleanName(action.name,'Le nouveau pouvoir');
+      const existing=[next.soul.powers.intrinsic,next.soul.powers.hierarchy,
+        next.soul.powers.role,next.soul.powers.assigned,...next.soul.powers.additional];
+      if(existing.some(p=>String(p).toLocaleLowerCase('fr')===name.toLocaleLowerCase('fr')))
+        throw Error('Ce pouvoir est déjà possédé.');
+      next.soul.powers.additional.push(name);
+      event={type:'power',detail:name};
+    }else if(action.type==='attribute'){
+      const key=action.attribute;
+      if(!SOUL_ATTRIBUTES.includes(key))throw Error('Attribut de l’âme inconnu.');
+      const value=next.soul.attributes[key];
+      if(value>=5)throw Error('Plafond d’attribut de l’âme atteint (5).');
+      next.soul.attributes[key]=value+1;
+      event={type:'attribute',attribute:key,detail:key+' '+value+' → '+(value+1)};
+    }else if(action.type==='residual'){
+      const name=cleanName(action.name,'La compétence résiduelle');
+      const level=next.soul.residualSkills[name];
+      if(!level)throw Error('Compétence résiduelle non acquise : '+name);
+      if(level>=3)throw Error('Compétence résiduelle déjà Expert (+3).');
+      next.soul.residualSkills[name]=level+1;
+      event={type:'residual',detail:name+' +'+level+' → +'+(level+1),skill:name};
+    }else if(action.type==='trait'){
+      const name=cleanName(action.name,'Le nouveau trait d’âme');
+      if(next.soul.traits.some(t=>t.toLocaleLowerCase('fr')===name.toLocaleLowerCase('fr')))
+        throw Error('Ce trait d’âme est déjà possédé.');
+      next.soul.traits.push(name);
+      event={type:'trait',detail:name};
+    }else throw Error('Type de progression inconnu.');
+  }
   next.progression.push({...event,date:now,serial:uuid()});
   next.updatedAt=now;
   return validateCharacterCore(next);
@@ -213,8 +249,8 @@ export function updateSoul(character,patch){
     soul.nature=patch.nature;
   }
   if(Object.hasOwn(patch,'attributes')){
-    // Après création, les augmentations doivent suivre le journal d’XP.
-    // On autorise uniquement la première répartition, sans dépenses encore.
+    // Une amélioration déjà acquise ne doit pas être effacée
+    // par une nouvelle répartition initiale.
     if(next.progression.some(e=>e.type==='attribute'))
       throw Error('Répartition initiale bloquée après une progression d’attribut.');
     const attrs=validateCreationAttributes(patch.attributes);
@@ -227,7 +263,13 @@ export function updateSoul(character,patch){
   if(Object.hasOwn(patch,'traits')){
     if(!Array.isArray(patch.traits)||patch.traits.length>2)
       throw Error('La création autorise deux traits d’âme.');
-    soul.traits=patch.traits.map(t=>text(t,120)).filter(Boolean);
+    const initial=patch.traits.map(t=>text(t,120)).filter(Boolean);
+    const advanced=next.progression.filter(e=>e.type==='trait').map(e=>e.detail);
+    const all=[...initial,...advanced];
+    if(new Set(all.map(t=>t.toLocaleLowerCase('fr'))).size!==all.length)
+      throw Error('Un trait d’âme ne peut pas être acquis deux fois.');
+    soul.initialTraits=initial;
+    soul.traits=all;
   }
   if(Object.hasOwn(patch,'incarnationsUsed')){
     if(!Number.isInteger(patch.incarnationsUsed)||patch.incarnationsUsed<0||
