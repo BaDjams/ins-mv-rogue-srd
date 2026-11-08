@@ -1,5 +1,6 @@
 import { availableBoosters, validateBooster, drawBooster, topQualityIndices } from './host-booster-engine.mjs';
 import { OCCUPATIONS, TRAITS, TRAIT_GROUPS, compatibleTraits, occupationSkill, equipmentForProfile } from './host-profile-tables.mjs';
+import { renderHostCard } from './host-card-render.mjs';
 
 const BASE='/ins-mv-rogue-srd';
 // Intitulés éditoriaux affichés ; les qualités et leurs couleurs restent inchangées dans les règles.
@@ -94,35 +95,7 @@ function profile(draw,index){
     description:h.description??'',isSpecial:true,
     trained:draw.trained===true,originType:draw.originType??null};
 }
-function face(host){
-  const stats=Object.entries(host.attributes).map(([k,v])=>
-    '<span><strong>'+escape(k)+'</strong> '+escape(v)+'</span>').join('');
-  const skills=Object.entries(host.skills).sort((a,b)=>b[1]-a[1]).slice(0,4)
-    .map(([name,v])=>escape(name)+' '+(v===-1?'Incompétent':'+'+v)).join(' · ');
-  const source=host.trained?'Soldat de Dieu':({
-    sympathizer:'Réseau de sympathisants',cultist:'Milieu sectaire',
-    recentDead:'Corps récemment décédé'}[host.originType]||'');
-  const portrait=host.picture?'<img alt="" loading="lazy" src="'+escape(host.picture)+'">':
-    '<span class="rb-avatar" aria-hidden="true">'+escape(host.name.charAt(0).toUpperCase())+'</span>';
-  const traits=Array.isArray(host.traits)?host.traits:[];
-  const gear=Array.isArray(host.equipment)?host.equipment:[];
-  const visibleItems=items=>items.slice(0,2).map(escape).join(' · ')+
-    (items.length>2?' · +'+(items.length-2):'');
-  return '<span class="rb-card-inner">'+
-    '<span class="rb-card-back" aria-hidden="true"><span class="rb-back-symbol">✦</span><span>INS·MV ROGUE</span></span>'+
-    '<span class="rb-card-front">'+
-      '<span class="rb-card-rarity">'+escape(LABELS[host.quality])+'</span>'+
-      '<span class="rb-portrait">'+portrait+'</span>'+
-      '<span class="rb-card-name">'+escape(host.name)+'</span>'+
-      '<span class="rb-card-job">'+escape(host.occupation)+'</span>'+
-      (source?'<span class="rb-card-source">'+escape(source)+'</span>':'')+
-      '<span class="rb-stats">'+stats+'</span>'+
-      '<span class="rb-skills">'+skills+'</span>'+
-      (traits.length?'<span class="rb-profile-details" title="'+escape(traits.join(' · '))+'"><b>Traits</b> '+visibleItems(traits)+'</span>':'')+
-      (gear.length?'<span class="rb-profile-details rb-gear" title="'+escape(gear.join(' · '))+'"><b>Objets</b> '+visibleItems(gear)+'</span>':'')+
-      '<span class="rb-card-choose">Choisir cet hôte</span>'+
-    '</span></span>';
-}
+function face(host){return renderHostCard(host);}
 function exportHost(host){
   const blob=new Blob([JSON.stringify(host,null,2)],{type:'application/json'});
   const url=URL.createObjectURL(blob);
