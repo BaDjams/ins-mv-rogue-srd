@@ -26,7 +26,7 @@ Lorsqu'une attaque inflige des dégâts :
 3. Réduction : on divise le résultat précédent par la Résilience s'il y a lieu (arrondi à l'inférieur)
 4. Blessures finales : Le résultat indique le nombre de blessures subies par le défenseur.
 
-Certains effets utilisent directement le verbe "subir" sans mentionner de dégâts (par exemple "sur une réussite, la cible subit une blessure létale"), cela implique donc qu'il n'y a aucune réduction (ni PA, ni Résilience) te que cette blessure est indiquée immédiatement sur la fiche.
+Certains effets utilisent directement le verbe "subir" sans mentionner de dégâts (par exemple "sur une réussite, la cible subit une blessure létale"), cela implique donc qu'il n'y a aucune réduction (ni PA, ni Résilience) et que cette blessure est indiquée immédiatement sur la fiche.
 
 Natures de dégâts et blessures
 
@@ -34,7 +34,7 @@ Dégâts non-létaux (fatigue, contusions légères...) conduisent à des Blessu
 
 - Guérissent rapidement (1 par 5min de repos). 
 
-Dégâts létaux (blessures graves : blessures ouvertes, impacts de bales, coupures, fractures, commotions...) conduisent à des Blessures létales (X)
+Dégâts létaux (blessures graves : blessures ouvertes, impacts de balles, coupures, fractures, commotions...) conduisent à des Blessures létales (X)
 
 - Guérissent naturellement (1 par semaine)
 
@@ -91,15 +91,16 @@ Lorsque toutes les cases sont non létales, un humain ordinaire doit réussir un
 
 ## **Guérison Accélérée**
 
-**Certains pouvoir ou capacité, comme laguérison rapide ou la régénération permettent de guérir les blessures plus rapidement.**
+**Certains pouvoir ou capacité, comme la guérison rapide ou la régénération permettent de guérir les blessures plus rapidement.**
 
-**Guérison Rapide 1** (Rang céleste requis 2, Passif permanent) : Les blessures létales guérissent au rythme accéléré de 1 jour par coche
+**Guérison rapide** est un pouvoir passif (prérequis Rang Céleste 2) dont l'efficacité dépend directement du **Rang Céleste**, sans achat de niveaux supplémentaires :
 
-**Guérison Rapide 2** (Rang céleste requis 3)  Les blessures létales guérissent au rythme impressionnant de 1 heure par coche
-
-**Guérison Rapide 3** (Rang céleste requis 4): Les blessures létales guérissent au rythme effréné de 1 minute par coche
-
-**Guérison Rapide 4** (Rang céleste requis 5) : Les blessures létales guérissent au rythme inquiétant de 1 tour par coche
+| Rang Céleste | Récupération des blessures létales |
+|---|---|
+| **2** | Une marque par jour |
+| **3** | Une marque par heure |
+| **4** | Une marque par minute |
+| **5 ou plus** | Une marque par tour |
 
 **Régénération (Rang céleste 2, Concentration, pas de surcharge)**
 Toutes les blessures de même type guérissent simultanément au rythme de la capacité de guérison du personnage, plutôt qu'une après l'autre.
