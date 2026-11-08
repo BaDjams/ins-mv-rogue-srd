@@ -133,7 +133,6 @@ Pouvoirs basiques utiles mais pas forcément en rapport avec votre concept initi
 
 Choisissez **2 traits sur la liste des Traits d'Âme**. Ces traits restent constants à travers toutes les incarnations.
 
-**Conduit Divin X** (X = 1, 2 ou 3) — exemple notable. Une fois par combat et par niveau, transforme un drain automatique en simple dé de drain. Définition complète dans le chapitre Énergie.
 
 ---
 
