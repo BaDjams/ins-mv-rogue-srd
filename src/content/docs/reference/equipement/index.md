@@ -14,13 +14,12 @@ Applique ensuite les effets spéciaux (critique, sacré, etc.).
 - **Code** : valeur fixe de l'arme/effet.
 - **Marge** : réservée au nombre de touches en rafale ; jamais ajoutée aux dégâts.
 - **Dé rouge** : [dé d'intensité](../../mecanique/resolution) — explosif si indiqué.
-- **Dé rouge** : intensité indépendante de la marge.
 - **PA** : Points d'Armure de la **zone touchée**. Sans visée : utilise la **PA du torse**. Les boucliers portés **ajoutent** leur PA au torse.
 
 <div class="admonition note">
-<p class="admonition-title">Pourquoi max() et non addition ?</p>
+<p class="admonition-title">Dégâts et marge</p>
 
-À bas niveau de [compétence](../../mecanique/competences), le dé rouge peut compenser une faible marge. À haut niveau, la compétence domine naturellement. Le dé rouge explosif (déclenché par l'[avantage](../../mecanique/resolution#avantage) ou un critique) reste le levier des personnages puissants — il peut toujours surprendre, mais ne s'empile plus avec une déjà grande marge.
+La marge ne sert qu'à déterminer le nombre de balles touchant lors d'une rafale. Pour un tir simple, les dégâts bruts sont **Code + intensité** ; une explosion augmente l'intensité, pas la marge.
 </div>
 
 1. Code de dégâts :
