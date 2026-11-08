@@ -1412,7 +1412,7 @@
     }
 
     function createNPC(id) {
-      var rarity = getRarity();
+      var rarity = deckMode === 'official' ? null : getRarity();
       if (deckMode === 'official') {
         var drawn = deckEngine.drawOfficialHost(officialDeck);
         if (drawn.type === 'special') {
@@ -1452,53 +1452,72 @@
       });
     }
 
-    // ── Rendu carte ──────────────────────────────────────
+    // ── Rendu des cartes (valeurs CMS / import JSON échappées) ──
+    function escapeHtml(value) {
+      return String(value == null ? '' : value).replace(/[&<>"']/g, function(c) {
+        return { '&':'&amp;', '<':'&lt;', '>':'&gt;', '"':'&quot;', "'":'&#39;' }[c];
+      });
+    }
+    function safePicture(url) {
+      if (typeof url !== 'string') return '';
+      if (/^https:\/\//i.test(url) || url.startsWith('/ins-mv-rogue-srd/images/')) return escapeHtml(url);
+      return '';
+    }
     function buildCard(npc) {
       var labels = { mundane:'Gris', better:'Vert', superior:'Bleu', elite:'Violet', legendary:'Or' };
       var card = document.createElement('div');
-      card.className = 'gen-card gen-card--' + npc.rarity;
-
-      var tagsHtml = npc.traits.map(function (t) {
-        return '<span class="gen-tag">' + t + '</span>';
+      card.className = 'gen-card gen-card--' + (labels[npc.rarity] ? npc.rarity : 'mundane') + (npc.isSpecial ? ' gen-card--special' : '');
+      var traits = Array.isArray(npc.traits) ? npc.traits : [];
+      var equipment = Array.isArray(npc.equipment) ? npc.equipment : [];
+      var attributes = npc.attributes || {};
+      var abilities = npc.abilities || {};
+      var tagsHtml = traits.map(function(t) {
+        return '<span class="gen-tag">' + escapeHtml(t) + '</span>';
       }).join('');
-
-      var eqVisible = npc.equipment.slice(0, 6);
-      var eqHidden  = npc.equipment.length - 6;
-      var eqHtml = eqVisible.map(function (e) {
-        return '<span class="gen-tag gen-tag--eq">' + e + '</span>';
+      var eqVisible = equipment.slice(0, 6);
+      var eqHidden = equipment.length - 6;
+      var eqHtml = eqVisible.map(function(e) {
+        return '<span class="gen-tag gen-tag--eq">' + escapeHtml(e) + '</span>';
       }).join('');
       if (eqHidden > 0) eqHtml += '<span class="gen-tag gen-tag--more">+' + eqHidden + '</span>';
 
-      var attHtml = Object.keys(npc.attributes).map(function (k) {
-        return '<div class="gen-stat"><span class="gen-stat__key">' + k + '</span><span class="gen-stat__val">' + npc.attributes[k] + '</span></div>';
+      var attHtml = Object.keys(attributes).map(function(k) {
+        return '<div class="gen-stat"><span class="gen-stat__key">' + escapeHtml(k) + '</span><span class="gen-stat__val">' + escapeHtml(attributes[k]) + '</span></div>';
       }).join('');
-
-      var ablHtml = Object.keys(npc.abilities).map(function (k) {
-        var v = npc.abilities[k];
-        return '<div class="gen-stat"><span class="gen-stat__key">' + k + '</span><span class="gen-stat__val">' + (v >= 0 ? '+' : '') + v + '</span></div>';
+      var ablHtml = Object.keys(abilities).map(function(k) {
+        var v = abilities[k];
+        var level = v === -1 ? 'Incompétent' : ((v >= 0 ? '+' : '') + String(v));
+        return '<div class="gen-stat"><span class="gen-stat__key">' + escapeHtml(k) + '</span><span class="gen-stat__val">' + escapeHtml(level) + '</span></div>';
       }).join('');
-
-      var ethLabel     = DB.ethnicityLabels[npc.ethnicity] || npc.ethnicity;
-      var dobFormatted = new Date(npc.dob).toLocaleDateString('fr-FR', { day: '2-digit', month: '2-digit', year: 'numeric' });
-
+      var ethLabel = DB.ethnicityLabels[npc.ethnicity] || npc.ethnicity || 'Spécial';
+      var ageInfo = [];
+      if (npc.gender === 'male') ageInfo.push('♂');
+      else if (npc.gender === 'female') ageInfo.push('♀');
+      if (Number.isInteger(npc.age) && npc.age >= 0) ageInfo.push(npc.age + ' ans');
+      if (npc.dob) {
+        var born = new Date(npc.dob);
+        if (!Number.isNaN(born.getTime())) ageInfo.push(born.toLocaleDateString('fr-FR', { day:'2-digit', month:'2-digit', year:'numeric' }));
+      }
+      var picture = safePicture(npc.picture);
       card.innerHTML =
         '<div class="gen-card__img">' +
-          (npc.picture ? '<img src="' + npc.picture + '" alt="" loading="lazy">' : '<div class="gen-card__placeholder">Portrait indisponible</div>') +
-          '<span class="gen-badge gen-badge--' + npc.rarity + '">' + labels[npc.rarity] + '</span>' +
-          '<span class="gen-eth-badge">' + ethLabel + '</span>' +
+          (picture ? '<img src="' + picture + '" alt="" loading="lazy">' : '<div class="gen-card__placeholder">Portrait indisponible</div>') +
+          '<span class="gen-badge gen-badge--' + escapeHtml(npc.rarity) + '">' + escapeHtml(labels[npc.rarity] || 'Spécial') + '</span>' +
+          (npc.isSpecial ? '<span class="gen-special-ribbon">Hôte spécial</span>' : '') +
+          '<span class="gen-eth-badge">' + escapeHtml(ethLabel) + '</span>' +
         '</div>' +
         '<div class="gen-card__body">' +
           '<div class="gen-card__head">' +
-            '<strong class="gen-card__name">' + npc.name + '</strong>' +
-            '<span class="gen-card__meta">' + (npc.gender === 'male' ? '♂' : '♀') + ' · ' + npc.age + ' ans · ' + dobFormatted + '</span>' +
+            '<strong class="gen-card__name">' + escapeHtml(npc.name) + '</strong>' +
+            '<span class="gen-card__meta">' + escapeHtml(ageInfo.join(' · ')) + '</span>' +
           '</div>' +
-          '<div class="gen-card__occ">' + npc.occupation + '</div>' +
+          '<div class="gen-card__occ">' + escapeHtml(npc.occupation) + '</div>' +
+          (npc.description ? '<p class="gen-card__description">' + escapeHtml(npc.description) + '</p>' : '') +
           '<div class="gen-card__section"><span class="gen-card__section-title">Traits</span><div class="gen-tags">' + tagsHtml + '</div></div>' +
           '<div class="gen-card__section"><span class="gen-card__section-title">Équipement</span><div class="gen-tags">' + eqHtml + '</div></div>' +
           '<div class="gen-card__section"><span class="gen-card__section-title">Caractéristiques</span><div class="gen-stats">' + attHtml + '</div></div>' +
           '<div class="gen-card__section"><span class="gen-card__section-title">Compétences</span><div class="gen-stats">' + ablHtml + '</div></div>' +
         '</div>';
-
       return card;
     }
   }
