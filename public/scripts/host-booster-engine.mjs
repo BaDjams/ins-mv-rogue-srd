@@ -37,6 +37,9 @@ export function validateBoosterCatalog(catalog) {
     if (!validDay(pack.startDate) || !validDay(pack.endDate) ||
        (pack.startDate && pack.endDate && pack.startDate > pack.endDate))
       throw new Error('Période de booster invalide : ' + pack.id);
+    if (pack.themeColor != null && (typeof pack.themeColor !== 'string' ||
+      !/^#[0-9a-f]{6}$/i.test(pack.themeColor)))
+      throw new Error('Couleur de booster invalide (format #RRGGBB) : ' + pack.id);
     if (pack.tags != null && (!Array.isArray(pack.tags) ||
        pack.tags.some(tag => typeof tag !== 'string')))
       throw new Error('Étiquettes de scénario incorrectes : ' + pack.id);
