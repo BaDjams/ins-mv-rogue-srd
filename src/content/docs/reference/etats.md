@@ -451,7 +451,7 @@ sidebar:
 - Ne peut interagir physiquement avec le monde
 - Invisible et intangible pour les humains normaux
 - Peut être vu par les autres créatures surnaturelles
-- Doit [se réincarner](../../personnage/reincarnation) dans les 10 tours ou retourner dans son plan d'origine
+- Doit [se réincarner](../../personnage/reincarnation) en quelques minutes, sans décompte de tours, ou retourner dans son plan d'origine
 
 **Fin :** [Réincarnation](../../personnage/reincarnation) dans un nouvel hôte.
 
