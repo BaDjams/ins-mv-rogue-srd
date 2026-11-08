@@ -305,6 +305,10 @@ function setup(container){
   }).catch(error=>{status.textContent='Catalogue indisponible : '+error.message;});
 }
 function init(){document.querySelectorAll('.rogue-booster').forEach(setup);}
-if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init);
-else init();
-document.addEventListener('astro:page-load',init);
+if(typeof document!=='undefined'){
+  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init);
+  else init();
+  document.addEventListener('astro:page-load',init);
+}
+// Export pur pour tester la fabrication de profils sans navigateur ni réseau.
+export {ordinary as createOrdinaryHostProfile,face as renderHostFace,chooseTraits};
