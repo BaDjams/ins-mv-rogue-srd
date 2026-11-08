@@ -1,0 +1,11 @@
+{
+  "enabled": false,
+  "ordinaryWeights": {
+    "mundane": 0,
+    "better": 0,
+    "superior": 0,
+    "elite": 0,
+    "legendary": 0
+  },
+  "specialHosts": []
+}
