@@ -41,7 +41,7 @@ Pour réussir l'action, le résultat du Dé d'action doit être **inférieur ou 
 
 **Règles à garder en tête** :
 
-1. Un **6** sur le Dé d'action est toujours un échec, même si le seuil est de 6 ou plus.
+1. Un **6** sur le Dé d'action est toujours un échec : le seuil effectif ne dépasse jamais 5.
 2. Un **1** sur le Dé d'action est toujours une réussite.
 3. Bien que chaque dé soit calculé indépendamment, on les lance simultanément pour gagner du temps. Par exemple, un résultat de "352" sur le D666 signifie que le dé bleu a donné 3, le dé blanc 5, et le dé rouge 2.
 
