@@ -372,7 +372,7 @@
         <label style="font-family:var(--rogue-font-label);font-size:0.72em;letter-spacing:0.1em;text-transform:uppercase;color:var(--rogue-text-faint)">
           Seuil de réussite :
         </label>
-        <input type="range" min="1" max="6" value="3" step="1" data-el="seuil-range"
+        <input type="range" min="1" max="5" value="3" step="1" data-el="seuil-range"
           style="accent-color:var(--rogue-angel);width:140px">
         <span data-el="seuil-val"
           style="font-family:var(--rogue-font-label);font-size:1.4em;font-weight:700;color:var(--rogue-angel-light);min-width:1.5em">3</span>
@@ -386,7 +386,7 @@
           <tr style="background:var(--rogue-bg-4);font-family:var(--rogue-font-label);font-size:0.68em;letter-spacing:0.1em;text-transform:uppercase;color:var(--rogue-text-faint)">
             <th style="padding:10px 16px;text-align:left;border-bottom:1px solid var(--rogue-border)">Dé d'action</th>
             <th style="padding:10px 16px;text-align:left;border-bottom:1px solid var(--rogue-border)">Résultat</th>
-            <th style="padding:10px 16px;text-align:left;border-bottom:1px solid var(--rogue-border)">Marge</th>
+            <th style="padding:10px 16px;text-align:left;border-bottom:1px solid var(--rogue-border)">Marge (rafale)</th>
             <th style="padding:10px 16px;text-align:left;border-bottom:1px solid var(--rogue-border)">Note</th>
           </tr>
         </thead>
@@ -471,13 +471,13 @@
       <div class="sim-params">
 
         <div class="sim-row">
-          <span class="sim-lbl">Seuil de réussite</span>
+          <span class="sim-lbl">Seuil théorique</span>
           <div class="sim-seuil">
             <button class="sim-seuil-btn" data-el="dec">−</button>
             <span class="sim-seuil-val" data-el="seuil">3</span>
             <button class="sim-seuil-btn" data-el="inc">+</button>
           </div>
-          <span class="sim-hint">(1–9, défaut 3)</span>
+          <span class="sim-hint">(1–9 ; plafonné à 5, seuil 6+ neutralise un désavantage)</span>
         </div>
 
         <div class="sim-row" data-el="type-row">
@@ -574,9 +574,13 @@
     // ── Lancer ──────────────────────────────────────────
     container.querySelector('[data-el="roll"]').addEventListener('click', function () {
 
+      // Seuil effectif limité à 5 ; la maîtrise exceptionnelle absorbe un désavantage.
+      var seuilEffectif = Math.min(5, seuil);
+      var modEffectif = seuil >= 6 && modifier === 'd' ? 'none' : (seuil >= 6 && modifier === 'dd' ? 'd' : modifier);
+
       // 1. Dés bruts
       var blue = d6(), white = d6(), red1 = d6();
-      var red2 = modifier === 'dd' ? d6() : null;
+      var red2 = modEffectif === 'dd' ? d6() : null;
 
       // 2. Résultats spéciaux (toujours sur les dés bruts)
       var is111 = blue === 1 && white === 1 && red1 === 1;
@@ -585,14 +589,14 @@
 
       // 3. Dé d'action selon modificateur
       var actionDie, actionExplain;
-      if (modifier === 'da' || modifier === 'a') {
+      if (modEffectif === 'da' || modEffectif === 'a') {
         actionDie = Math.min(blue, white);
-        actionExplain = modifier === 'da'
+        actionExplain = modEffectif === 'da'
           ? 'min(' + blue + ', ' + white + ') = <strong>' + actionDie + '</strong> (double avantage)'
           : 'min(' + blue + ', ' + white + ') = <strong>' + actionDie + '</strong> (avantage)';
-      } else if (modifier === 'dd' || modifier === 'd') {
+      } else if (modEffectif === 'dd' || modEffectif === 'd') {
         actionDie = Math.max(blue, white);
-        actionExplain = modifier === 'dd'
+        actionExplain = modEffectif === 'dd'
           ? 'max(' + blue + ', ' + white + ') = <strong>' + actionDie + '</strong> (double désavantage)'
           : 'max(' + blue + ', ' + white + ') = <strong>' + actionDie + '</strong> (désavantage)';
       } else {
@@ -603,21 +607,21 @@
       }
 
       // 4. Réussite
-      var isSuccess = !is666 && actionDie <= seuil && actionDie !== 6;
-      var marge = isSuccess ? seuil - actionDie : 0;
+      var isSuccess = !is666 && actionDie <= seuilEffectif && actionDie !== 6;
+      var marge = isSuccess ? seuilEffectif - actionDie : 0;
 
       // 5. Critique
-      var critThr = seuil >= 6 ? 5 : seuil;
-      var isCritSuccess = isSuccess && blue === critThr && white === critThr;
+      var critThr = seuilEffectif;
+      var isCritSuccess = isSuccess && blue === white;
 
       // 6. Sources explosives
       var expSources = 0;
-      if (modifier === 'da') expSources++;
+      if (modEffectif === 'da') expSources++;
       if (isCritSuccess)     expSources++;
 
       // 7. Intensité
       var intensitySteps = [], intensityBase, expDice = null;
-      if (modifier === 'dd' && red2 !== null) {
+      if (modEffectif === 'dd' && red2 !== null) {
         intensityBase = Math.min(red1, red2);
         intensitySteps.push('Dé 1 : ' + red1 + '   Dé 2 : ' + red2);
         intensitySteps.push('On garde le moins bon : min(' + red1 + ', ' + red2 + ') = <strong>' + intensityBase + '</strong>');
@@ -634,8 +638,8 @@
       // 8. Intensité finale
       var intensityFinal, intensityFinalLine;
       if (isSuccess) {
-        intensityFinal = Math.max(marge, intensityBase);
-        intensityFinalLine = 'max(marge <strong>' + marge + '</strong>, intensité <strong>' + intensityBase + '</strong>) = <strong>' + intensityFinal + '</strong>';
+        intensityFinal = intensityBase;
+        intensityFinalLine = 'Intensité = <strong>' + intensityBase + '</strong> (la marge est réservée aux rafales)';
       } else {
         intensityFinal = intensityBase;
         intensityFinalLine = 'Intensité brute = <strong>' + intensityBase + '</strong> (marge non calculée sur un échec)';
@@ -647,11 +651,11 @@
         actionDie: actionDie, actionExplain: actionExplain,
         isSuccess: isSuccess, isCritSuccess: isCritSuccess,
         isCritFail: isCritFail, is111: is111, is666: is666,
-        marge: marge, seuil: seuil, critThr: critThr,
+        marge: marge, seuil: seuilEffectif, seuilTheorique: seuil, critThr: critThr, neutralise: seuil>=6 && (modifier === 'd' || modifier === 'dd'),
         intensitySteps: intensitySteps,
         intensityBase: intensityBase, expDice: expDice,
         intensityFinal: intensityFinal, intensityFinalLine: intensityFinalLine,
-        expSources: expSources, modifier: modifier, actionType: actionType
+        expSources: expSources, modifier: modEffectif, actionType: actionType
       });
     });
 
@@ -680,6 +684,8 @@
       // Étapes de calcul
       var steps = [];
       steps.push('<strong>Dé d\'action :</strong> ' + r.actionExplain);
+      if (r.seuilTheorique >= 6) steps.push('Seuil théorique ' + r.seuilTheorique + ' → seuil effectif 5. ' + (r.neutralise ? 'Une source de désavantage neutralisée.' : 'Aucune source de désavantage à neutraliser.'));
+
 
       if (r.is111 || r.is666) {
         steps.push('Résultat spécial — voir le chapitre Résolution pour les effets.');
@@ -689,9 +695,9 @@
         if (r.isSuccess) {
           steps.push(r.actionDie + ' ≤ seuil ' + r.seuil + ' → Réussite');
           if (r.isCritSuccess) {
-            steps.push('Dé bleu (' + r.blue + ') = dé blanc (' + r.white + ') = ' + r.critThr + ' = seuil → <strong>Réussite Critique !</strong> — intensité explosive.');
+            steps.push('Dé bleu (' + r.blue + ') = dé blanc (' + r.white + ') : double identique et réussi → <strong>Réussite Critique !</strong> — intensité explosive.');
           }
-          steps.push('<strong>Marge :</strong> seuil ' + r.seuil + ' − résultat ' + r.actionDie + ' = <strong>' + r.marge + '</strong>');
+          steps.push('<strong>Marge (rafales uniquement) :</strong> seuil ' + r.seuil + ' − résultat ' + r.actionDie + ' = <strong>' + r.marge + '</strong>');
         } else {
           steps.push(r.actionDie + (r.actionDie === 6 ? ' = 6 (toujours un échec)' : ' > seuil ' + r.seuil) + ' → Échec');
         }
@@ -948,8 +954,8 @@
         "Gants","Masque","Désinfectant","Boussole","Carte routière",
         "Jumelles","Couteau de survie","Sifflet","Allumettes","Briquet"
       ],
-      attributes: ["Force","Agilité","Intelligence","Charisme"],
-      abilities:  ["Artisanat","Survie","Persuasion"],
+      attributes: ["FOR","AGI","VIG","PER"],
+      abilities: ["Armes à distance","Lancer","Armes de mêlée","Conduite","Corps à corps","Intrusion","Discrétion","Informatique","Influence","Larcins","Pilotage","Premiers soins","Sport","Survie"],
       traitGroups: {
         age:     ["Adolescent","Âgé"],
         military:["Ex-militaire"],
@@ -973,11 +979,11 @@
     };
 
     // ── Config génération ────────────────────────────────
+    // Règles du SRD (hotes.md) : cinq qualités, caractéristiques 1..3 et compétences à +0..+3.
     var cfg = {
-      traits:     { mundane:{min:1,max:2}, better:{min:1,max:2}, superior:{min:2,max:3}, elite:{min:2,max:4} },
-      equipment:  { mundane:{min:0,max:1}, better:{min:0,max:2}, superior:{min:1,max:3}, elite:{min:2,max:4} },
-      attributes: { mundane:{base:1,max:1}, better:{base:1,max:2}, superior:{base:1,max:2}, elite:{base:2,max:3} },
-      abilities:  { mundane:{points:0,max:0}, better:{points:1,max:1}, superior:{points:3,max:2}, elite:{points:5,max:3} }
+      traits: { mundane:{min:1,max:2}, better:{min:1,max:2}, superior:{min:2,max:3}, elite:{min:2,max:4}, legendary:{min:2,max:4} },
+      attributes: { mundane:{total:5}, better:{total:6}, superior:{total:7}, elite:{total:8}, legendary:{total:10} },
+      abilities: { mundane:{extra:0,cap:1}, better:{extra:1,cap:1}, superior:{extra:2,cap:2}, elite:{extra:4,cap:3}, legendary:{extra:6,cap:3} }
     };
 
     // Mapping ethnie → codes nat randomuser.me (alphabet latin uniquement)
@@ -1010,14 +1016,25 @@
 
     // ── État ─────────────────────────────────────────────
     var count = 6;
-    var probs = { mundane:40, better:30, superior:20, elite:10 };
+    var probs = { mundane:24, better:12, superior:12, elite:4, legendary:2 }; // Paquet de remplacement, PAS deck officiel
     var filtersGender = { male:true, female:true };
     var filtersEth    = { french:true, northAfrican:true, westAfrican:true, hispanic:true, slavic:true, eastAsian:true, american:true, indian:true };
     var lastBatch = []; // dernier lot de PNJ généré ou importé, pour l'export JSON
+    var deckMode = 'fallback';
+    var officialDeck = null;
+    var deckEngine = null;
 
     // ── UI ───────────────────────────────────────────────
     container.innerHTML =
       '<div class="gen-panel">' +
+        '<div class="gen-deck-selector">' +
+          '<label class="gen-lbl" for="rogue-deck-choice">Mode de tirage</label>' +
+          '<select id="rogue-deck-choice" data-el="deck-mode">' +
+            '<option value="fallback">54 cartes — remplacement</option>' +
+            '<option value="official" disabled>Deck officiel — non configuré</option>' +
+          '</select>' +
+          '<div class="gen-hint" data-el="deck-status" role="status">Chargement de la configuration des hôtes…</div>' +
+        '</div>' +
         '<div class="gen-controls">' +
           '<div class="gen-count-wrap">' +
             '<span class="gen-lbl">Nombre de PNJ</span>' +
@@ -1028,7 +1045,7 @@
             '</div>' +
             '<span class="gen-hint">(1–12)</span>' +
           '</div>' +
-          '<button class="gen-roll-btn" data-el="generate">⚡ Générer</button>' +
+          '<button class="gen-roll-btn" data-el="generate" disabled>⚡ Générer</button>' +
           '<button class="gen-adv-toggle" data-el="adv-toggle">Options ▾</button>' +
           '<button class="gen-io-btn" data-el="export" disabled>💾 Exporter JSON</button>' +
           '<button class="gen-io-btn" data-el="import">📂 Importer JSON</button>' +
@@ -1036,13 +1053,14 @@
         '</div>' +
         '<div class="gen-advanced" data-el="advanced" style="display:none">' +
           '<div class="gen-adv-section">' +
-            '<h4>Probabilités de rang</h4>' +
+            '<h4>Jeu de 54 cartes — méthode de remplacement</h4><p class="gen-hint">Ces probabilités ne décrivent pas le deck officiel, dont la composition peut varier avec les cartes spéciales et les événements.</p>' +
             '<div class="gen-prob-grid">' +
-              '<div class="gen-prob-row"><span class="gen-prob-label gen-prob-label--mundane">Ordinaire</span><input type="range" min="0" max="100" step="5" value="40" data-prob="mundane" class="gen-slider"><span class="gen-prob-val" data-prob-val="mundane">40%</span></div>' +
-              '<div class="gen-prob-row"><span class="gen-prob-label gen-prob-label--better">Meilleur</span><input type="range" min="0" max="100" step="5" value="30" data-prob="better" class="gen-slider"><span class="gen-prob-val" data-prob-val="better">30%</span></div>' +
-              '<div class="gen-prob-row"><span class="gen-prob-label gen-prob-label--superior">Supérieur</span><input type="range" min="0" max="100" step="5" value="20" data-prob="superior" class="gen-slider"><span class="gen-prob-val" data-prob-val="superior">20%</span></div>' +
-              '<div class="gen-prob-row"><span class="gen-prob-label gen-prob-label--elite">Élite</span><input type="range" min="0" max="100" step="5" value="10" data-prob="elite" class="gen-slider"><span class="gen-prob-val" data-prob-val="elite">10%</span></div>' +
-              '<div class="gen-prob-total" data-el="prob-total">Total : 100%</div>' +
+              '<div class="gen-prob-row"><span class="gen-prob-label gen-prob-label--mundane">Gris</span><input type="range" min="0" max="54" step="1" value="24" data-prob="mundane" class="gen-slider"><span class="gen-prob-val" data-prob-val="mundane">24</span></div>' +
+              '<div class="gen-prob-row"><span class="gen-prob-label gen-prob-label--better">Vert</span><input type="range" min="0" max="54" step="1" value="12" data-prob="better" class="gen-slider"><span class="gen-prob-val" data-prob-val="better">12</span></div>' +
+              '<div class="gen-prob-row"><span class="gen-prob-label gen-prob-label--superior">Bleu</span><input type="range" min="0" max="54" step="1" value="12" data-prob="superior" class="gen-slider"><span class="gen-prob-val" data-prob-val="superior">12</span></div>' +
+              '<div class="gen-prob-row"><span class="gen-prob-label gen-prob-label--elite">Violet</span><input type="range" min="0" max="54" step="1" value="4" data-prob="elite" class="gen-slider"><span class="gen-prob-val" data-prob-val="elite">4</span></div>' +
+              '<div class="gen-prob-row"><span class="gen-prob-label gen-prob-label--legendary">Or</span><input type="range" min="0" max="54" step="1" value="2" data-prob="legendary" class="gen-slider"><span class="gen-prob-val" data-prob-val="legendary">2</span></div>' +
+              '<div class="gen-prob-total" data-el="prob-total">54 cartes (pondérations de simulation ajustables)</div>' +
             '</div>' +
           '</div>' +
           '<div class="gen-adv-section">' +
@@ -1080,6 +1098,41 @@
     var exportBtn  = container.querySelector('[data-el="export"]');
     var importBtn  = container.querySelector('[data-el="import"]');
     var importFile = container.querySelector('[data-el="import-file"]');
+    var modeInput = container.querySelector('[data-el="deck-mode"]');
+    var modeStatus = container.querySelector('[data-el="deck-status"]');
+    var generateBtn = container.querySelector('[data-el="generate"]');
+    modeInput.addEventListener('change', function () {
+      deckMode = this.value;
+      if (deckMode === 'official' && officialDeck && deckEngine) {
+        var details = deckEngine.validateOfficialDeck(officialDeck);
+        modeStatus.textContent = 'Deck officiel : ' + details.activeSpecials.length + ' hôte(s) spécial(aux) actif(s), ' +
+          details.specialRate.toLocaleString('fr-FR') + ' % réservés ; ' +
+          details.ordinaryRate.toLocaleString('fr-FR') + ' % pour les hôtes ordinaires. Les filtres démographiques ne modifient pas ces probabilités.';
+      } else {
+        modeStatus.textContent = 'Jeu de remplacement de 54 cartes. Les pondérations configurables ci-dessous ne définissent pas celles du deck officiel.';
+      }
+    });
+    Promise.all([
+      import('/ins-mv-rogue-srd/scripts/host-deck-engine.mjs'),
+      fetch('/ins-mv-rogue-srd/data/hotes-officiels.json').then(function(response) {
+        if (!response.ok) throw new Error('Configuration du deck officiel indisponible.');
+        return response.json();
+      })
+    ]).then(function(values) {
+      deckEngine = values[0];
+      officialDeck = values[1];
+      var details = deckEngine.validateOfficialDeck(officialDeck);
+      if (details.enabled) {
+        modeInput.querySelector('[value="official"]').disabled = false;
+        modeInput.querySelector('[value="official"]').textContent = 'Deck officiel — hôtes spéciaux et ordinaires';
+        modeInput.value = 'official';
+      }
+      modeInput.dispatchEvent(new Event('change'));
+    }).catch(function(error) {
+      modeStatus.textContent = 'Deck officiel indisponible : ' + error.message + ' Utilisation du paquet de remplacement.';
+    }).finally(function() {
+      generateBtn.disabled = false;
+    });
 
     // Compteur
     container.querySelector('[data-el="dec"]').addEventListener('click', function () {
@@ -1101,11 +1154,11 @@
       slider.addEventListener('input', function () {
         var key = this.dataset.prob;
         probs[key] = parseInt(this.value);
-        container.querySelector('[data-prob-val="' + key + '"]').textContent = probs[key] + '%';
-        var total = probs.mundane + probs.better + probs.superior + probs.elite;
+        container.querySelector('[data-prob-val="' + key + '"]').textContent = String(probs[key]);
+        var total = probs.mundane + probs.better + probs.superior + probs.elite + probs.legendary;
         var totalEl = container.querySelector('[data-el="prob-total"]');
-        totalEl.textContent = 'Total : ' + total + '%';
-        totalEl.style.color = total === 100 ? '' : 'var(--rogue-intensity-light)';
+        totalEl.textContent = 'Total : ' + total + ' parts (54 = jeu standard)';
+        totalEl.style.color = total === 54 ? '' : 'var(--rogue-intensity-light)';
       });
     });
 
@@ -1215,13 +1268,14 @@
 
     // ── Génération ───────────────────────────────────────
     function getRarity() {
-      var total = probs.mundane + probs.better + probs.superior + probs.elite;
-      if (total === 0) return 'mundane';
+      var total = Object.keys(probs).reduce(function(n, k) { return n + probs[k]; }, 0);
+      if (total <= 0) return 'mundane';
       var r = Math.floor(Math.random() * total);
-      if (r < probs.mundane) return 'mundane';
-      if (r < probs.mundane + probs.better) return 'better';
-      if (r < probs.mundane + probs.better + probs.superior) return 'superior';
-      return 'elite';
+      for (var k of ['mundane','better','superior','elite','legendary']) {
+        r -= probs[k];
+        if (r < 0) return k;
+      }
+      return 'mundane';
     }
 
     function pickGender() {
@@ -1248,7 +1302,7 @@
       var url  = 'https://randomuser.me/api/?gender=' + gender +
                  '&nat=' + nat + '&results=1&inc=name,dob,picture';
       return fetch(url)
-        .then(function(r) { return r.json(); })
+        .then(function(r) { if (!r.ok) throw new Error('API indisponible'); return r.json(); })
         .then(function(data) {
           var p = data.results[0];
           return {
@@ -1258,11 +1312,18 @@
             age:       p.dob.age,
             picture:   p.picture.large
           };
+        }).catch(function() {
+          // Fonctionnement dégradé hors ligne : listes de noms locales, aucun portrait externe.
+          var names = DB.firstNames[ethnicity] || DB.firstNames.french;
+          var surnames = DB.lastNames[ethnicity] || DB.lastNames.french;
+          var age = randInt(18, 80);
+          var dob = new Date(new Date().getFullYear() - age, randInt(0,11), randInt(1,28)).toISOString();
+          return { firstName: randItem(names[gender]), lastName: randItem(surnames), age: age, dob: dob, picture: '' };
         });
     }
 
     function getOccupation(rarity) {
-      var max = { mundane:1, better:2, superior:3, elite:4 }[rarity];
+      var max = { mundane:1, better:2, superior:3, elite:4, legendary:4 }[rarity];
       var eli = DB.occupations.filter(function (o) { return o.difficulty <= max; });
       return randItem(eli);
     }
@@ -1320,33 +1381,55 @@
     }
 
     function genAttributes(rarity) {
-      var s = cfg.attributes[rarity];
-      var a = {};
-      DB.attributes.forEach(function (k) { a[k] = s.base; });
-      var pts = { mundane:0, better:2, superior:4, elite:5 }[rarity];
-      var tries = 0;
-      while (pts > 0 && tries++ < 100) {
-        var k = randItem(DB.attributes);
-        if (a[k] < s.max) { a[k]++; pts--; }
+      var attrs = {};
+      DB.attributes.forEach(function(k) { attrs[k] = 1; });
+      var remaining = cfg.attributes[rarity].total - DB.attributes.length;
+      while (remaining > 0) {
+        var available = DB.attributes.filter(function(k) { return attrs[k] < 3; });
+        if (!available.length) break;
+        attrs[randItem(available)]++;
+        remaining--;
       }
-      return a;
+      return attrs;
     }
 
     function genAbilities(rarity) {
-      var s = cfg.abilities[rarity];
-      var a = {};
-      DB.abilities.forEach(function (k) { a[k] = 0; });
-      var pts = s.points;
-      var tries = 0;
-      while (pts > 0 && tries++ < 100) {
-        var k = randItem(DB.abilities);
-        if (a[k] < s.max) { a[k]++; pts--; }
+      var conf = cfg.abilities[rarity];
+      var skills = {};
+      var first = shuffle(DB.abilities).slice(0, 3);
+      first.forEach(function(k) { skills[k] = 0; });
+      skills[first[0]] = 1; // Hôte gris : deux +0, un +1.
+      for (var i = 0; i < conf.extra; i++) {
+        var options = DB.abilities.filter(function(k) {
+          return !Object.prototype.hasOwnProperty.call(skills, k) || skills[k] < conf.cap;
+        });
+        if (!options.length) break;
+        var k = randItem(options);
+        if (!Object.prototype.hasOwnProperty.call(skills, k)) skills[k] = 0;
+        else skills[k]++;
       }
-      return a;
+      return skills; // Compétences absentes : Incompétent (désavantage).
     }
 
     function createNPC(id) {
-      var rarity    = getRarity();
+      var rarity = deckMode === 'official' ? null : getRarity();
+      if (deckMode === 'official') {
+        var drawn = deckEngine.drawOfficialHost(officialDeck);
+        if (drawn.type === 'special') {
+          var h = drawn.host;
+          var skills = {};
+          (h.skills || []).forEach(function(k) { skills[k.name] = k.bonus; });
+          return Promise.resolve({
+            id: id, rarity: h.quality, isSpecial: true, specialId: h.id, dropRate: h.dropRate,
+            name: h.name, gender: h.gender || 'other', ethnicity: h.origin || 'special',
+            age: h.age == null ? null : h.age, dob: '', picture: h.image || '',
+            occupation: h.occupation || 'Hôte spécial', description: h.description || '',
+            traits: (h.traits || []).slice(), equipment: (h.equipment || []).slice(),
+            attributes: Object.assign({}, h.attributes), abilities: skills
+          });
+        }
+        rarity = drawn.quality;
+      }
       var gender    = pickGender();
       var ethnicity = pickEthnicity();
       var occ       = getOccupation(rarity);
@@ -1369,53 +1452,72 @@
       });
     }
 
-    // ── Rendu carte ──────────────────────────────────────
+    // ── Rendu des cartes (valeurs CMS / import JSON échappées) ──
+    function escapeHtml(value) {
+      return String(value == null ? '' : value).replace(/[&<>"']/g, function(c) {
+        return { '&':'&amp;', '<':'&lt;', '>':'&gt;', '"':'&quot;', "'":'&#39;' }[c];
+      });
+    }
+    function safePicture(url) {
+      if (typeof url !== 'string') return '';
+      if (/^https:\/\//i.test(url) || url.startsWith('/ins-mv-rogue-srd/images/')) return escapeHtml(url);
+      return '';
+    }
     function buildCard(npc) {
-      var labels = { mundane:'Ordinaire', better:'Meilleur', superior:'Supérieur', elite:'Élite' };
+      var labels = { mundane:'Gris', better:'Vert', superior:'Bleu', elite:'Violet', legendary:'Or' };
       var card = document.createElement('div');
-      card.className = 'gen-card gen-card--' + npc.rarity;
-
-      var tagsHtml = npc.traits.map(function (t) {
-        return '<span class="gen-tag">' + t + '</span>';
+      card.className = 'gen-card gen-card--' + (labels[npc.rarity] ? npc.rarity : 'mundane') + (npc.isSpecial ? ' gen-card--special' : '');
+      var traits = Array.isArray(npc.traits) ? npc.traits : [];
+      var equipment = Array.isArray(npc.equipment) ? npc.equipment : [];
+      var attributes = npc.attributes || {};
+      var abilities = npc.abilities || {};
+      var tagsHtml = traits.map(function(t) {
+        return '<span class="gen-tag">' + escapeHtml(t) + '</span>';
       }).join('');
-
-      var eqVisible = npc.equipment.slice(0, 6);
-      var eqHidden  = npc.equipment.length - 6;
-      var eqHtml = eqVisible.map(function (e) {
-        return '<span class="gen-tag gen-tag--eq">' + e + '</span>';
+      var eqVisible = equipment.slice(0, 6);
+      var eqHidden = equipment.length - 6;
+      var eqHtml = eqVisible.map(function(e) {
+        return '<span class="gen-tag gen-tag--eq">' + escapeHtml(e) + '</span>';
       }).join('');
       if (eqHidden > 0) eqHtml += '<span class="gen-tag gen-tag--more">+' + eqHidden + '</span>';
 
-      var attHtml = Object.keys(npc.attributes).map(function (k) {
-        return '<div class="gen-stat"><span class="gen-stat__key">' + k + '</span><span class="gen-stat__val">' + npc.attributes[k] + '</span></div>';
+      var attHtml = Object.keys(attributes).map(function(k) {
+        return '<div class="gen-stat"><span class="gen-stat__key">' + escapeHtml(k) + '</span><span class="gen-stat__val">' + escapeHtml(attributes[k]) + '</span></div>';
       }).join('');
-
-      var ablHtml = Object.keys(npc.abilities).map(function (k) {
-        var v = npc.abilities[k];
-        return '<div class="gen-stat"><span class="gen-stat__key">' + k + '</span><span class="gen-stat__val">' + (v >= 0 ? '+' : '') + v + '</span></div>';
+      var ablHtml = Object.keys(abilities).map(function(k) {
+        var v = abilities[k];
+        var level = v === -1 ? 'Incompétent' : ((v >= 0 ? '+' : '') + String(v));
+        return '<div class="gen-stat"><span class="gen-stat__key">' + escapeHtml(k) + '</span><span class="gen-stat__val">' + escapeHtml(level) + '</span></div>';
       }).join('');
-
-      var ethLabel     = DB.ethnicityLabels[npc.ethnicity] || npc.ethnicity;
-      var dobFormatted = new Date(npc.dob).toLocaleDateString('fr-FR', { day: '2-digit', month: '2-digit', year: 'numeric' });
-
+      var ethLabel = DB.ethnicityLabels[npc.ethnicity] || npc.ethnicity || 'Spécial';
+      var ageInfo = [];
+      if (npc.gender === 'male') ageInfo.push('♂');
+      else if (npc.gender === 'female') ageInfo.push('♀');
+      if (Number.isInteger(npc.age) && npc.age >= 0) ageInfo.push(npc.age + ' ans');
+      if (npc.dob) {
+        var born = new Date(npc.dob);
+        if (!Number.isNaN(born.getTime())) ageInfo.push(born.toLocaleDateString('fr-FR', { day:'2-digit', month:'2-digit', year:'numeric' }));
+      }
+      var picture = safePicture(npc.picture);
       card.innerHTML =
         '<div class="gen-card__img">' +
-          '<img src="' + npc.picture + '" alt="" loading="lazy">' +
-          '<span class="gen-badge gen-badge--' + npc.rarity + '">' + labels[npc.rarity] + '</span>' +
-          '<span class="gen-eth-badge">' + ethLabel + '</span>' +
+          (picture ? '<img src="' + picture + '" alt="" loading="lazy">' : '<div class="gen-card__placeholder">Portrait indisponible</div>') +
+          '<span class="gen-badge gen-badge--' + escapeHtml(npc.rarity) + '">' + escapeHtml(labels[npc.rarity] || 'Spécial') + '</span>' +
+          (npc.isSpecial ? '<span class="gen-special-ribbon">Hôte spécial</span>' : '') +
+          '<span class="gen-eth-badge">' + escapeHtml(ethLabel) + '</span>' +
         '</div>' +
         '<div class="gen-card__body">' +
           '<div class="gen-card__head">' +
-            '<strong class="gen-card__name">' + npc.name + '</strong>' +
-            '<span class="gen-card__meta">' + (npc.gender === 'male' ? '♂' : '♀') + ' · ' + npc.age + ' ans · ' + dobFormatted + '</span>' +
+            '<strong class="gen-card__name">' + escapeHtml(npc.name) + '</strong>' +
+            '<span class="gen-card__meta">' + escapeHtml(ageInfo.join(' · ')) + '</span>' +
           '</div>' +
-          '<div class="gen-card__occ">' + npc.occupation + '</div>' +
+          '<div class="gen-card__occ">' + escapeHtml(npc.occupation) + '</div>' +
+          (npc.description ? '<p class="gen-card__description">' + escapeHtml(npc.description) + '</p>' : '') +
           '<div class="gen-card__section"><span class="gen-card__section-title">Traits</span><div class="gen-tags">' + tagsHtml + '</div></div>' +
           '<div class="gen-card__section"><span class="gen-card__section-title">Équipement</span><div class="gen-tags">' + eqHtml + '</div></div>' +
           '<div class="gen-card__section"><span class="gen-card__section-title">Caractéristiques</span><div class="gen-stats">' + attHtml + '</div></div>' +
           '<div class="gen-card__section"><span class="gen-card__section-title">Compétences</span><div class="gen-stats">' + ablHtml + '</div></div>' +
         '</div>';
-
       return card;
     }
   }
