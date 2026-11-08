@@ -9,7 +9,10 @@ const CHARACTERS='characters',META='meta',ACTIVE_KEY='activeId';
 let opening=null;
 function request(req){
   return new Promise((resolve,reject)=>{
-    req.onsuccess=()=>resolve(req.result);
+    req.onsuccess=()=>{
+      req.result.onversionchange=()=>{req.result.close();opening=null;};
+      resolve(req.result);
+    };
     req.onerror=()=>reject(req.error||Error('IndexedDB : requête impossible.'));
   });
 }
@@ -41,7 +44,10 @@ export function openCharacterDB(){
       opening=null;
       reject(req.error||Error('Impossible d’ouvrir la bibliothèque IndexedDB.'));
     };
-    req.onblocked=()=>reject(Error('Fermez les autres onglets du SRD pour mettre à jour la bibliothèque.'));
+    req.onblocked=()=>{
+      opening=null;
+      reject(Error('Fermez les autres onglets du SRD pour mettre à jour la bibliothèque.'));
+    };
   });
   return opening;
 }
