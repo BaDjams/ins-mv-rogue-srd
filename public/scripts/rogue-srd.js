@@ -576,7 +576,7 @@
 
       // Seuil effectif limité à 5 ; la maîtrise exceptionnelle absorbe un désavantage.
       var seuilEffectif = Math.min(5, seuil);
-      var modEffectif = seuil >= 6 && modEffectif === 'd' ? 'none' : (seuil >= 6 && modEffectif === 'dd' ? 'd' : modifier);
+      var modEffectif = seuil >= 6 && modifier === 'd' ? 'none' : (seuil >= 6 && modifier === 'dd' ? 'd' : modifier);
 
       // 1. Dés bruts
       var blue = d6(), white = d6(), red1 = d6();
