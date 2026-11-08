@@ -1,0 +1,12 @@
+{
+  "poolType": "soldiers",
+  "enabled": true,
+  "ordinaryWeights": {
+    "mundane": 0,
+    "better": 0,
+    "superior": 8,
+    "elite": 2,
+    "legendary": 0
+  },
+  "specialHosts": []
+}

@@ -203,3 +203,306 @@ collections:
                       - { label: "Expert (+3)", value: 3 }
               - { label: Traits fixes, name: traits, widget: list, field: { label: Trait, name: value, widget: string }, required: false }
               - { label: Équipement fixe, name: equipment, widget: list, field: { label: Objet, name: value, widget: string }, required: false }
+
+      - label: Première incarnation — Soldats de Dieu
+        name: hotes_soldats_dieu
+        file: public/data/hotes-soldats-dieu.json
+        format: json
+        fields:
+          - { label: Type de vivier, name: poolType, widget: hidden, default: soldiers }
+          - label: Activer ce vivier dans le générateur
+            name: enabled
+            widget: boolean
+            default: false
+          - label: Poids relatifs du deck Soldats de Dieu (uniquement Bleu, Violet, Or)
+            name: ordinaryWeights
+            widget: object
+            hint: "Valeurs de départ provisoires, ajustables. Gris et Vert doivent rester à zéro pour les Soldats de Dieu."
+            fields:
+              - { label: Gris (toujours 0), name: mundane, widget: hidden, default: 0 }
+              - { label: Vert (toujours 0), name: better, widget: hidden, default: 0 }
+              - { label: Bleu, name: superior, widget: number, value_type: int, min: 0 }
+              - { label: Violet, name: elite, widget: number, value_type: int, min: 0 }
+              - { label: Or, name: legendary, widget: number, value_type: int, min: 0 }
+          - label: Hôtes Soldats de Dieu spéciaux (compétence +2 minimum)
+            name: specialHosts
+            widget: list
+            required: false
+            summary: "{{fields.name}} — {{fields.dropRate}} %"
+            hint: "Chaque taux est une probabilité par tirage indépendant. La somme des taux actifs doit être au maximum 100 %. L'ordre n'affecte pas les taux."
+            fields:
+              - { label: Identifiant unique, name: id, widget: string, hint: "Identifiant technique stable, par exemple nom-unique." }
+              - { label: Nom sur la carte, name: name, widget: string }
+              - label: Qualité de la carte
+                name: quality
+                widget: select
+                options:
+                  - { label: Bleu, value: superior }
+                  - { label: Violet, value: elite }
+                  - { label: Or, value: legendary }
+              - { label: Taux de tirage (en pourcentage), name: dropRate, widget: number, value_type: float, min: 0, max: 100, hint: "Exemple purement numérique : 5 = 5 % des tirages pendant la période active." }
+              - { label: Actif, name: active, widget: boolean, default: true }
+              - { label: Début (UTC, inclus), name: startDate, widget: datetime, format: "YYYY-MM-DD", date_format: "YYYY-MM-DD", time_format: false, required: false }
+              - { label: Fin (UTC, inclus), name: endDate, widget: datetime, format: "YYYY-MM-DD", date_format: "YYYY-MM-DD", time_format: false, required: false }
+              - { label: Profession / rôle, name: occupation, widget: string, required: false }
+              - { label: Description particulière, name: description, widget: text, required: false }
+              - { label: Origine ou étiquette, name: origin, widget: string, required: false }
+              - { label: Âge, name: age, widget: number, value_type: int, min: 0, required: false }
+              - label: Genre
+                name: gender
+                widget: select
+                required: false
+                options:
+                  - { label: Homme, value: male }
+                  - { label: Femme, value: female }
+                  - { label: Autre / sans objet, value: other }
+              - { label: Portrait, name: image, widget: image, required: false }
+              - label: Caractéristiques fixes
+                name: attributes
+                widget: object
+                hint: "Caractéristiques fixes de l'hôte. La fiche d'un Soldat de Dieu doit avoir au moins une compétence Professionnel (+2) ou Expert (+3)."
+                fields:
+                  - { label: Force (FOR), name: FOR, widget: number, value_type: int, min: 1, max: 5 }
+                  - { label: Agilité (AGI), name: AGI, widget: number, value_type: int, min: 1, max: 5 }
+                  - { label: Vigueur (VIG), name: VIG, widget: number, value_type: int, min: 1, max: 5 }
+                  - { label: Perception (PER), name: PER, widget: number, value_type: int, min: 1, max: 5 }
+              - { label: Compétence principale du métier, name: professionalSkill, widget: string, hint: "Doit figurer dans les compétences fixes à +2 minimum (Enseignement, Médecine, etc.)." }
+              - label: Compétences fixes
+                name: skills
+                widget: list
+                required: false
+                summary: "{{fields.name}} ({{fields.bonus}})"
+                fields:
+                  - { label: Compétence, name: name, widget: string }
+                  - label: Niveau
+                    name: bonus
+                    widget: select
+                    options:
+                      - { label: "Incompétent (-1)", value: -1 }
+                      - { label: "Débutant (+0)", value: 0 }
+                      - { label: "Confirmé (+1)", value: 1 }
+                      - { label: "Professionnel (+2)", value: 2 }
+                      - { label: "Expert (+3)", value: 3 }
+              - { label: Traits fixes, name: traits, widget: list, field: { label: Trait, name: value, widget: string }, required: false }
+              - { label: Équipement fixe, name: equipment, widget: list, field: { label: Objet, name: value, widget: string }, required: false }
+
+      - label: Première incarnation — Réseaux infernaux
+        name: hotes_reseaux_infernaux
+        file: public/data/hotes-reseaux-infernaux.json
+        format: json
+        fields:
+          - { label: Type de vivier, name: poolType, widget: hidden, default: infernal }
+          - label: Activer ce vivier dans le générateur
+            name: enabled
+            widget: boolean
+            default: false
+          - label: Poids relatifs des hôtes des réseaux infernaux
+            name: ordinaryWeights
+            widget: object
+            hint: "Valeurs de départ provisoires, libres et indépendantes de celles des autres decks."
+            fields:
+              - { label: Gris, name: mundane, widget: number, value_type: int, min: 0 }
+              - { label: Vert, name: better, widget: number, value_type: int, min: 0 }
+              - { label: Bleu, name: superior, widget: number, value_type: int, min: 0 }
+              - { label: Violet, name: elite, widget: number, value_type: int, min: 0 }
+              - { label: Or, name: legendary, widget: number, value_type: int, min: 0 }
+          - label: Origines des hôtes ordinaires
+            name: originWeights
+            widget: object
+            hint: "Pondérations indépendantes des qualités. Les corps récemment décédés ne sont jamais proposés sans autorisation explicite de magie noire."
+            fields:
+              - { label: Sympathisants, name: sympathizer, widget: number, value_type: int, min: 0 }
+              - { label: Membres de sectes, name: cultist, widget: number, value_type: int, min: 0 }
+              - { label: Corps récemment décédés, name: recentDead, widget: number, value_type: int, min: 0 }
+          - label: Hôtes spéciaux injectés dans les réseaux infernaux
+            name: specialHosts
+            widget: list
+            required: false
+            summary: "{{fields.name}} — {{fields.dropRate}} %"
+            hint: "Chaque taux est une probabilité par tirage indépendant. La somme des taux actifs doit être au maximum 100 %. L'ordre n'affecte pas les taux."
+            fields:
+              - { label: Identifiant unique, name: id, widget: string, hint: "Identifiant technique stable, par exemple nom-unique." }
+              - { label: Nom sur la carte, name: name, widget: string }
+              - label: Qualité de la carte
+                name: quality
+                widget: select
+                options:
+                  - { label: Gris, value: mundane }
+                  - { label: Vert, value: better }
+                  - { label: Bleu, value: superior }
+                  - { label: Violet, value: elite }
+                  - { label: Or, value: legendary }
+              - { label: Taux de tirage (en pourcentage), name: dropRate, widget: number, value_type: float, min: 0, max: 100, hint: "Exemple purement numérique : 5 = 5 % des tirages pendant la période active." }
+              - { label: Actif, name: active, widget: boolean, default: true }
+              - { label: Début (UTC, inclus), name: startDate, widget: datetime, format: "YYYY-MM-DD", date_format: "YYYY-MM-DD", time_format: false, required: false }
+              - { label: Fin (UTC, inclus), name: endDate, widget: datetime, format: "YYYY-MM-DD", date_format: "YYYY-MM-DD", time_format: false, required: false }
+              - label: Provenance spécifique de l'hôte
+                name: originType
+                widget: select
+                required: false
+                hint: "Si corps récemment décédé, il ne peut être tiré que lorsque l'option de magie noire est activée dans le générateur."
+                options:
+                  - { label: Sympathisant, value: sympathizer }
+                  - { label: Membre d'une secte, value: cultist }
+                  - { label: Corps récemment décédé, value: recentDead }
+              - { label: Profession / rôle, name: occupation, widget: string, required: false }
+              - { label: Description particulière, name: description, widget: text, required: false }
+              - { label: Origine ou étiquette, name: origin, widget: string, required: false }
+              - { label: Âge, name: age, widget: number, value_type: int, min: 0, required: false }
+              - label: Genre
+                name: gender
+                widget: select
+                required: false
+                options:
+                  - { label: Homme, value: male }
+                  - { label: Femme, value: female }
+                  - { label: Autre / sans objet, value: other }
+              - { label: Portrait, name: image, widget: image, required: false }
+              - label: Caractéristiques fixes
+                name: attributes
+                widget: object
+                hint: "De 1 à 3 pour les hôtes ordinaires. Jusqu'à 5 uniquement pour les exceptions spéciales voulues par le créateur."
+                fields:
+                  - { label: Force (FOR), name: FOR, widget: number, value_type: int, min: 1, max: 5 }
+                  - { label: Agilité (AGI), name: AGI, widget: number, value_type: int, min: 1, max: 5 }
+                  - { label: Vigueur (VIG), name: VIG, widget: number, value_type: int, min: 1, max: 5 }
+                  - { label: Perception (PER), name: PER, widget: number, value_type: int, min: 1, max: 5 }
+              - label: Compétences fixes
+                name: skills
+                widget: list
+                required: false
+                summary: "{{fields.name}} ({{fields.bonus}})"
+                fields:
+                  - { label: Compétence, name: name, widget: string }
+                  - label: Niveau
+                    name: bonus
+                    widget: select
+                    options:
+                      - { label: "Incompétent (-1)", value: -1 }
+                      - { label: "Débutant (+0)", value: 0 }
+                      - { label: "Confirmé (+1)", value: 1 }
+                      - { label: "Professionnel (+2)", value: 2 }
+                      - { label: "Expert (+3)", value: 3 }
+              - { label: Traits fixes, name: traits, widget: list, field: { label: Trait, name: value, widget: string }, required: false }
+              - { label: Équipement fixe, name: equipment, widget: list, field: { label: Objet, name: value, widget: string }, required: false }
+
+  # ─── Catalogue des boosters : scénarios, saisons, contenus spéciaux ──────────
+  - name: booster_catalog
+    label: Boosters d'incarnation
+    description: Créer de nouveaux boosters sans modifier les règles ni le code.
+    files:
+      - label: Catalogue des boosters
+        name: boosters
+        file: public/data/boosters.json
+        format: json
+        fields:
+          - label: Boosters disponibles
+            name: boosters
+            widget: list
+            summary: "{{fields.name}} — {{fields.cardCount}} carte(s)"
+            fields:
+              - { label: Identifiant stable, name: id, widget: string, hint: "Minuscules, chiffres et tirets uniquement ; unique pour chaque booster." }
+              - { label: Nom public du booster, name: name, widget: string }
+              - { label: Description de l'ambiance, name: description, widget: text, required: false }
+              - label: Vivier de base
+                name: source
+                widget: select
+                options:
+                  - { label: Citoyens, value: citizens }
+                  - { label: Soldats de Dieu, value: soldiers }
+                  - { label: Réseaux infernaux, value: infernal }
+                  - { label: "Jeu de 54 cartes (remplacement)", value: fallback }
+                  - { label: "Booster autonome (distribution personnalisée)", value: custom }
+              - { label: Nombre de cartes dans le booster, name: cardCount, widget: number, value_type: int, min: 1, max: 12, default: 3 }
+              - label: Camp concerné
+                name: faction
+                widget: select
+                options:
+                  - { label: Tous les camps, value: any }
+                  - { label: Anges, value: angel }
+                  - { label: Démons, value: demon }
+              - label: Moment d'utilisation
+                name: stage
+                widget: select
+                options:
+                  - { label: Première incarnation et réincarnation, value: any }
+                  - { label: Première incarnation, value: initial }
+                  - { label: Réincarnation, value: reincarnation }
+              - { label: Booster actif, name: active, widget: boolean, default: true }
+              - { label: Date de début, name: startDate, widget: datetime, format: "YYYY-MM-DD", date_format: "YYYY-MM-DD", time_format: false, required: false }
+              - { label: Date de fin, name: endDate, widget: datetime, format: "YYYY-MM-DD", date_format: "YYYY-MM-DD", time_format: false, required: false }
+              - { label: Tags de scénario / ambiance, name: tags, widget: list, field: { label: Tag, name: value, widget: string }, required: false }
+              - { label: Hériter aussi des cartes spéciales du vivier de base, name: includeSourceSpecials, widget: boolean, default: true }
+              - label: Pondérations spécifiques du booster
+                name: ordinaryWeights
+                widget: object
+                required: false
+                hint: "Facultatif si un vivier de base est choisi. Obligatoire pour un booster autonome. Valeurs relatives ; elles ne doivent pas forcément totaliser 100."
+                fields:
+                  - { label: Gris, name: mundane, widget: number, value_type: int, min: 0 }
+                  - { label: Vert, name: better, widget: number, value_type: int, min: 0 }
+                  - { label: Bleu, name: superior, widget: number, value_type: int, min: 0 }
+                  - { label: Violet, name: elite, widget: number, value_type: int, min: 0 }
+                  - { label: Or, name: legendary, widget: number, value_type: int, min: 0 }
+              - label: Cartes spéciales propres au booster
+                name: extraSpecialHosts
+                widget: list
+                required: false
+                summary: "{{fields.name}} — {{fields.dropRate}} %"
+                hint: "Chaque taux est une probabilité par tirage indépendant. La somme des taux actifs doit être au maximum 100 %. L'ordre n'affecte pas les taux."
+                fields:
+                  - { label: Identifiant unique, name: id, widget: string, hint: "Identifiant technique stable, par exemple nom-unique." }
+                  - { label: Nom sur la carte, name: name, widget: string }
+                  - label: Qualité de la carte
+                    name: quality
+                    widget: select
+                    options:
+                      - { label: Gris, value: mundane }
+                      - { label: Vert, value: better }
+                      - { label: Bleu, value: superior }
+                      - { label: Violet, value: elite }
+                      - { label: Or, value: legendary }
+                  - { label: Taux de tirage (en pourcentage), name: dropRate, widget: number, value_type: float, min: 0, max: 100, hint: "Exemple purement numérique : 5 = 5 % des tirages pendant la période active." }
+                  - { label: Actif, name: active, widget: boolean, default: true }
+                  - { label: Début (UTC, inclus), name: startDate, widget: datetime, format: "YYYY-MM-DD", date_format: "YYYY-MM-DD", time_format: false, required: false }
+                  - { label: Fin (UTC, inclus), name: endDate, widget: datetime, format: "YYYY-MM-DD", date_format: "YYYY-MM-DD", time_format: false, required: false }
+                  - { label: Profession / rôle, name: occupation, widget: string, required: false }
+                  - { label: Description particulière, name: description, widget: text, required: false }
+                  - { label: Origine ou étiquette, name: origin, widget: string, required: false }
+                  - { label: Âge, name: age, widget: number, value_type: int, min: 0, required: false }
+                  - label: Genre
+                    name: gender
+                    widget: select
+                    required: false
+                    options:
+                      - { label: Homme, value: male }
+                      - { label: Femme, value: female }
+                      - { label: Autre / sans objet, value: other }
+                  - { label: Portrait, name: image, widget: image, required: false }
+                  - label: Caractéristiques fixes
+                    name: attributes
+                    widget: object
+                    hint: "De 1 à 3 pour les hôtes ordinaires. Jusqu'à 5 uniquement pour les exceptions spéciales voulues par le créateur."
+                    fields:
+                      - { label: Force (FOR), name: FOR, widget: number, value_type: int, min: 1, max: 5 }
+                      - { label: Agilité (AGI), name: AGI, widget: number, value_type: int, min: 1, max: 5 }
+                      - { label: Vigueur (VIG), name: VIG, widget: number, value_type: int, min: 1, max: 5 }
+                      - { label: Perception (PER), name: PER, widget: number, value_type: int, min: 1, max: 5 }
+                  - label: Compétences fixes
+                    name: skills
+                    widget: list
+                    required: false
+                    summary: "{{fields.name}} ({{fields.bonus}})"
+                    fields:
+                      - { label: Compétence, name: name, widget: string }
+                      - label: Niveau
+                        name: bonus
+                        widget: select
+                        options:
+                          - { label: "Incompétent (-1)", value: -1 }
+                          - { label: "Débutant (+0)", value: 0 }
+                          - { label: "Confirmé (+1)", value: 1 }
+                          - { label: "Professionnel (+2)", value: 2 }
+                          - { label: "Expert (+3)", value: 3 }
+                  - { label: Traits fixes, name: traits, widget: list, field: { label: Trait, name: value, widget: string }, required: false }
+                  - { label: Équipement fixe, name: equipment, widget: list, field: { label: Objet, name: value, widget: string }, required: false }

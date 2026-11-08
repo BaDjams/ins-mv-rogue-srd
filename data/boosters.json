@@ -1,0 +1,52 @@
+{
+  "boosters": [
+    {
+      "id": "soldats-de-dieu",
+      "name": "Soldats de Dieu",
+      "description": "Première incarnation angélique : trois hôtes préparés, un seul choisi.",
+      "source": "soldiers",
+      "cardCount": 3,
+      "stage": "initial",
+      "faction": "angel",
+      "active": true,
+      "tags": [],
+      "extraSpecialHosts": []
+    },
+    {
+      "id": "reseaux-infernaux",
+      "name": "Réseaux infernaux",
+      "description": "Première incarnation démoniaque : sympathisants et milieux sectaires ; corps décédés sous conditions.",
+      "source": "infernal",
+      "cardCount": 1,
+      "stage": "initial",
+      "faction": "demon",
+      "active": true,
+      "tags": [],
+      "extraSpecialHosts": []
+    },
+    {
+      "id": "citoyens",
+      "name": "Citoyens",
+      "description": "Réincarnation : choix parmi les hôtes disponibles dans la zone.",
+      "source": "citizens",
+      "cardCount": 3,
+      "stage": "reincarnation",
+      "faction": "any",
+      "active": true,
+      "tags": [],
+      "extraSpecialHosts": []
+    },
+    {
+      "id": "remplacement-54",
+      "name": "Jeu de 54 cartes (remplacement)",
+      "description": "Méthode de remplacement en l'absence d'un deck officiel.",
+      "source": "fallback",
+      "cardCount": 3,
+      "stage": "any",
+      "faction": "any",
+      "active": true,
+      "tags": [],
+      "extraSpecialHosts": []
+    }
+  ]
+}

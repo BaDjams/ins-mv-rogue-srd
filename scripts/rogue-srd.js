@@ -955,7 +955,7 @@
         "Jumelles","Couteau de survie","Sifflet","Allumettes","Briquet"
       ],
       attributes: ["FOR","AGI","VIG","PER"],
-      abilities: ["Armes à distance","Lancer","Armes de mêlée","Conduite","Corps à corps","Intrusion","Discrétion","Informatique","Influence","Larcins","Pilotage","Premiers soins","Sport","Survie"],
+      abilities: ["Armes à distance","Lancer","Armes de mêlée","Conduite","Corps à corps","Intrusion","Discrétion","Informatique","Influence","Larcins","Pilotage","Premiers soins","Sport","Survie","Électronique","Explosifs","Investigation","Vigilance","Occultisme","Empathie","Étiquette","Histoire","Médecine","Psychologie","Artisanat","Mécanique","Commandement","Performance artistique","Tactique","Renseignements","Recherche","Langues étrangères","Sciences","Enseignement"],
       traitGroups: {
         age:     ["Adolescent","Âgé"],
         military:["Ex-militaire"],
@@ -1022,7 +1022,10 @@
     var lastBatch = []; // dernier lot de PNJ généré ou importé, pour l'export JSON
     var deckMode = 'fallback';
     var officialDeck = null;
+    var soldiersDeck = null;
+    var infernalDeck = null;
     var deckEngine = null;
+    var allowRecentlyDead = false;
 
     // ── UI ───────────────────────────────────────────────
     container.innerHTML =
@@ -1031,9 +1034,15 @@
           '<label class="gen-lbl" for="rogue-deck-choice">Mode de tirage</label>' +
           '<select id="rogue-deck-choice" data-el="deck-mode">' +
             '<option value="fallback">54 cartes — remplacement</option>' +
-            '<option value="official" disabled>Deck officiel — non configuré</option>' +
+            '<option value="official" disabled>Citoyens — non configuré</option>' +
+            '<option value="soldiers" disabled>Soldats de Dieu — non configuré</option>' +
+            '<option value="infernal" disabled>Réseaux infernaux — non configuré</option>' +
           '</select>' +
-          '<div class="gen-hint" data-el="deck-status" role="status">Chargement de la configuration des hôtes…</div>' +
+          '<div class="gen-hint" data-el="deck-status" role="status">Chargement des decks d’hôtes…</div>' +
+          '<label class="gen-infernal-opt" data-el="infernal-options" style="display:none">' +
+            '<input type="checkbox" data-el="allow-dead"> ' +
+            'Autoriser les corps récemment décédés (conditions de magie noire remplies)' +
+          '</label>' +
         '</div>' +
         '<div class="gen-controls">' +
           '<div class="gen-count-wrap">' +
@@ -1101,35 +1110,79 @@
     var modeInput = container.querySelector('[data-el="deck-mode"]');
     var modeStatus = container.querySelector('[data-el="deck-status"]');
     var generateBtn = container.querySelector('[data-el="generate"]');
+    var allowDeadInput = container.querySelector('[data-el="allow-dead"]');
+    var infernalOptions = container.querySelector('[data-el="infernal-options"]');
+    allowDeadInput.addEventListener('change', function() {
+      allowRecentlyDead = this.checked;
+      modeInput.dispatchEvent(new Event('change'));
+    });
+    var lastDeckMode = 'fallback';
     modeInput.addEventListener('change', function () {
       deckMode = this.value;
-      if (deckMode === 'official' && officialDeck && deckEngine) {
-        var details = deckEngine.validateOfficialDeck(officialDeck);
-        modeStatus.textContent = 'Deck officiel : ' + details.activeSpecials.length + ' hôte(s) spécial(aux) actif(s), ' +
-          details.specialRate.toLocaleString('fr-FR') + ' % réservés ; ' +
-          details.ordinaryRate.toLocaleString('fr-FR') + ' % pour les hôtes ordinaires. Les filtres démographiques ne modifient pas ces probabilités.';
+      infernalOptions.style.display = deckMode === 'infernal' ? '' : 'none';
+      var chosen = deckMode === 'official' ? officialDeck :
+        deckMode === 'soldiers' ? soldiersDeck :
+        deckMode === 'infernal' ? infernalDeck : null;
+      if (chosen && deckEngine) {
+        var details = deckEngine.validateOfficialDeck(chosen, new Date(), { allowRecentlyDead: allowRecentlyDead });
+        var label = deckMode === 'soldiers' ? 'Soldats de Dieu (première incarnation angélique)' :
+          deckMode === 'infernal' ? 'Réseaux infernaux (première incarnation démoniaque)' :
+          'Citoyens (réincarnations)';
+        modeStatus.textContent = label + ' : ' + details.activeSpecials.length +
+          ' fiche(s) spéciale(s) active(s), ' + details.specialRate.toLocaleString('fr-FR') +
+          ' % réservés ; ' + details.ordinaryRate.toLocaleString('fr-FR') +
+          ' % pour le vivier ordinaire. Les probabilités sont propres à ce deck.';
       } else {
-        modeStatus.textContent = 'Jeu de remplacement de 54 cartes. Les pondérations configurables ci-dessous ne définissent pas celles du deck officiel.';
+        modeStatus.textContent = 'Jeu de 54 cartes de remplacement : ses probabilités sont indépendantes de celles des decks officiels.';
+      }
+      if (lastDeckMode !== deckMode) {
+        if (deckMode === 'soldiers') count = 3; // Trois cartes initiales, une choisie par l'ange.
+        else if (deckMode === 'infernal') count = 1; // Nombre ajustable par le MJ.
+        countEl.textContent = count;
+        lastDeckMode = deckMode;
       }
     });
+    function getDeckConfig(file) {
+      return fetch('/ins-mv-rogue-srd/data/' + file).then(function(response) {
+        if (!response.ok) throw new Error('Deck indisponible : ' + file);
+        return response.json();
+      }).catch(function(error) {
+        console.warn(error.message);
+        return null;
+      });
+    }
     Promise.all([
       import('/ins-mv-rogue-srd/scripts/host-deck-engine.mjs'),
-      fetch('/ins-mv-rogue-srd/data/hotes-officiels.json').then(function(response) {
-        if (!response.ok) throw new Error('Configuration du deck officiel indisponible.');
-        return response.json();
-      })
+      getDeckConfig('hotes-officiels.json'),
+      getDeckConfig('hotes-soldats-dieu.json'),
+      getDeckConfig('hotes-reseaux-infernaux.json')
     ]).then(function(values) {
       deckEngine = values[0];
       officialDeck = values[1];
-      var details = deckEngine.validateOfficialDeck(officialDeck);
-      if (details.enabled) {
-        modeInput.querySelector('[value="official"]').disabled = false;
-        modeInput.querySelector('[value="official"]').textContent = 'Deck officiel — hôtes spéciaux et ordinaires';
-        modeInput.value = 'official';
-      }
+      soldiersDeck = values[2];
+      infernalDeck = values[3];
+      var available = [
+        { value: 'official', config: officialDeck, name: 'Citoyens — réincarnation / PNJ' },
+        { value: 'soldiers', config: soldiersDeck, name: 'Soldats de Dieu — 1re incarnation angélique' },
+        { value: 'infernal', config: infernalDeck, name: 'Réseaux infernaux — 1re incarnation démoniaque' }
+      ];
+      available.forEach(function(item) {
+        var option = modeInput.querySelector('[value="' + item.value + '"]');
+        if (!item.config) return;
+        try {
+          var details = deckEngine.validateOfficialDeck(item.config, new Date(), { allowRecentlyDead: false });
+          if (details.enabled) {
+            option.disabled = false;
+            option.textContent = item.name;
+          }
+        } catch (error) {
+          console.warn('Deck non activé : ' + item.value + ' — ' + error.message);
+        }
+      });
       modeInput.dispatchEvent(new Event('change'));
     }).catch(function(error) {
-      modeStatus.textContent = 'Deck officiel indisponible : ' + error.message + ' Utilisation du paquet de remplacement.';
+      modeStatus.textContent = 'Impossible de charger les decks : ' + error.message +
+        '. Le jeu de 54 cartes reste utilisable.';
     }).finally(function() {
       generateBtn.disabled = false;
     });
@@ -1393,13 +1446,43 @@
       return attrs;
     }
 
-    function genAbilities(rarity) {
+    // Un Soldat de Dieu est préparé pour SON métier : savoir enseigner compte autant
+    // que savoir tirer. Il reçoit au minimum +2 dans sa compétence professionnelle.
+    function occupationSkill(occupation) {
+      var map = {
+        'Policier':'Investigation', 'Médecin':'Médecine',
+        'Enseignant':'Enseignement', 'Mécanicien':'Mécanique',
+        'Chauffeur de taxi':'Conduite', 'Pompier':'Premiers soins',
+        'Chef cuisinier':'Artisanat', 'Spécialiste informatique':'Informatique',
+        'Avocat':'Influence', 'Journaliste':'Investigation',
+        'Barman':'Influence', 'Banquier':'Sciences',
+        'Musicien':'Performance artistique', 'Boucher':'Artisanat',
+        'Boulanger':'Artisanat', 'Électricien':'Électronique',
+        'Plombier':'Mécanique', 'Agent immobilier':'Influence',
+        'Vétérinaire':'Médecine', 'Photographe':'Performance artistique',
+        'Peintre':'Performance artistique', 'Chirurgien':'Médecine',
+        'Pilote':'Pilotage', 'Infirmier':'Premiers soins',
+        'Agent de sécurité':'Vigilance'
+      };
+      return map[occupation] || 'Survie';
+    }
+
+    function genAbilities(rarity, occupation, trainedSoldier) {
       var conf = cfg.abilities[rarity];
       var skills = {};
-      var first = shuffle(DB.abilities).slice(0, 3);
+      var skillsPool = shuffle(DB.abilities);
+      var primary = trainedSoldier ? occupationSkill(occupation) : skillsPool[0];
+      var first = [primary].concat(skillsPool.filter(function(k) { return k !== primary; }).slice(0, 2));
       first.forEach(function(k) { skills[k] = 0; });
-      skills[first[0]] = 1; // Hôte gris : deux +0, un +1.
-      for (var i = 0; i < conf.extra; i++) {
+      skills[first[0]] = 1;
+      var extra = conf.extra;
+      if (trainedSoldier) {
+        if (conf.cap < 2 || extra < 1)
+          throw new Error('Un Soldat de Dieu nécessite au minimum la qualité Bleue.');
+        skills[primary] = 2;
+        extra--;
+      }
+      for (var i = 0; i < extra; i++) {
         var options = DB.abilities.filter(function(k) {
           return !Object.prototype.hasOwnProperty.call(skills, k) || skills[k] < conf.cap;
         });
@@ -1408,13 +1491,19 @@
         if (!Object.prototype.hasOwnProperty.call(skills, k)) skills[k] = 0;
         else skills[k]++;
       }
-      return skills; // Compétences absentes : Incompétent (désavantage).
+      return skills;
     }
 
     function createNPC(id) {
-      var rarity = deckMode === 'official' ? null : getRarity();
-      if (deckMode === 'official') {
-        var drawn = deckEngine.drawOfficialHost(officialDeck);
+      var configured = deckMode === 'official' ? officialDeck :
+        deckMode === 'soldiers' ? soldiersDeck :
+        deckMode === 'infernal' ? infernalDeck : null;
+      var rarity = configured ? null : getRarity();
+      var originType = null;
+      if (configured) {
+        var drawn = deckEngine.drawOfficialHost(configured, Math.random, new Date(),
+          { allowRecentlyDead: allowRecentlyDead });
+        originType = drawn.originType || null;
         if (drawn.type === 'special') {
           var h = drawn.host;
           var skills = {};
@@ -1425,29 +1514,30 @@
             age: h.age == null ? null : h.age, dob: '', picture: h.image || '',
             occupation: h.occupation || 'Hôte spécial', description: h.description || '',
             traits: (h.traits || []).slice(), equipment: (h.equipment || []).slice(),
-            attributes: Object.assign({}, h.attributes), abilities: skills
+            attributes: Object.assign({}, h.attributes), abilities: skills,
+            originType: originType, isSoldier: deckMode === 'soldiers'
           });
         }
         rarity = drawn.quality;
       }
-      var gender    = pickGender();
+      var gender = pickGender();
       var ethnicity = pickEthnicity();
-      var occ       = getOccupation(rarity);
-
-      return fetchRandomUser(gender, ethnicity).then(function(u) {
-        var ageCategory = u.age < 20 ? 'teenager' : u.age >= 65 ? 'elderly' : 'adult';
-        var traits      = getTraits(rarity, ageCategory);
+      var occupation = getOccupation(rarity);
+      return fetchRandomUser(gender, ethnicity).then(function(person) {
+        var ageCategory = person.age < 20 ? 'teenager' : person.age >= 65 ? 'elderly' : 'adult';
+        var traits = getTraits(rarity, ageCategory);
+        var soldier = deckMode === 'soldiers';
         return {
-          id: id, rarity: rarity,
-          name:      u.firstName + ' ' + u.lastName,
-          firstName: u.firstName, lastName: u.lastName,
-          gender: gender, ethnicity: ethnicity,
-          age: u.age, dob: u.dob, picture: u.picture,
-          occupation: occ.name,
-          traits:     traits.map(function(t) { return t.name; }),
-          equipment:  getEquipment(occ, traits),
+          id: id, rarity: rarity, name: person.firstName + ' ' + person.lastName,
+          firstName: person.firstName, lastName: person.lastName,
+          gender: gender, ethnicity: ethnicity, age: person.age,
+          dob: person.dob, picture: person.picture,
+          occupation: occupation.name,
+          traits: traits.map(function(t) { return t.name; }),
+          equipment: getEquipment(occupation, traits),
           attributes: genAttributes(rarity),
-          abilities:  genAbilities(rarity)
+          abilities: genAbilities(rarity, occupation.name, soldier),
+          originType: originType, isSoldier: soldier
         };
       });
     }
@@ -1490,6 +1580,13 @@
         return '<div class="gen-stat"><span class="gen-stat__key">' + escapeHtml(k) + '</span><span class="gen-stat__val">' + escapeHtml(level) + '</span></div>';
       }).join('');
       var ethLabel = DB.ethnicityLabels[npc.ethnicity] || npc.ethnicity || 'Spécial';
+      var sourceLabels = {
+        sympathizer: 'Réseau de sympathisants',
+        cultist: 'Milieu sectaire',
+        recentDead: 'Corps récemment décédé — magie noire'
+      };
+      var sourceLabel = npc.isSoldier ? 'Soldat de Dieu — personnel préparé' :
+        (sourceLabels[npc.originType] || '');
       var ageInfo = [];
       if (npc.gender === 'male') ageInfo.push('♂');
       else if (npc.gender === 'female') ageInfo.push('♀');
@@ -1512,6 +1609,7 @@
             '<span class="gen-card__meta">' + escapeHtml(ageInfo.join(' · ')) + '</span>' +
           '</div>' +
           '<div class="gen-card__occ">' + escapeHtml(npc.occupation) + '</div>' +
+          (sourceLabel ? '<div class="gen-card__origin">' + escapeHtml(sourceLabel) + '</div>' : '') +
           (npc.description ? '<p class="gen-card__description">' + escapeHtml(npc.description) + '</p>' : '') +
           '<div class="gen-card__section"><span class="gen-card__section-title">Traits</span><div class="gen-tags">' + tagsHtml + '</div></div>' +
           '<div class="gen-card__section"><span class="gen-card__section-title">Équipement</span><div class="gen-tags">' + eqHtml + '</div></div>' +
