@@ -90,7 +90,7 @@ Les hôtes animaux perdent **1 PV toutes les (Taille × 10) minutes** à cause d
 - **Béni** : +2 dégâts contre les créatures du Mal
 - **Profane** : +2 dégâts contre les créatures du Bien
 - **Silencieux** : Ne produit aucun bruit, parfait pour l'infiltration
-- **Non-létal** : Inflige des dégâts temporaires (récupérés après 1h de repos)
+- **Non-létal** : Inflige des dégâts temporaires (récupérés selon les blessures non létales : une marque toutes les 5 minutes de repos)
 - **Artisanal/Vieillissant/Ancien/Abîmé** : Si le dé d'intensité indique 1, l'arme se bloque ou explose
 - **Automatique** : Peut tirer en rafale (voir règles de combat)
 - **Gatling** : Peut tirer en rafale avec jusqu'à 5 balles (au lieu de 3)
@@ -104,7 +104,7 @@ Les hôtes animaux perdent **1 PV toutes les (Taille × 10) minutes** à cause d
 - **Air** : Repousse la cible (test de Force ou être projeté, peut causer chute/collision)
 - **Pierre/Terre** : Assomme et peut entraver (désavantage aux actions de mouvement, test pour se libérer)
 - **Eau** : Trempe et désactive l'électronique, peut noyer si maintenu
-- **Poison X** : Test de Vigueur ou empoisonnement (X dégâts/tour, durée = marge d'échec, X indique la puissance)
+- **Poison X** : Test de Vigueur ou empoisonnement (X dégâts/tour, durée selon la source du poison ; X indique la puissance)
 - **Ombre** : Aveugle temporairement, désavantage aux jets de perception, ignore l'armure si la cible n'est pas totalement illuminée
 - **Lumière** : Aveugle les créatures des ténèbres, révèle illusions et invisibilité, +2 dégâts aux morts-vivants
 - **Acide X** : Corrode l'armure (-X PA permanent par tour) et dégâts aux objets, X indique la puissance de corrosion
