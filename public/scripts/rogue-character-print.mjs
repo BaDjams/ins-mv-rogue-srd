@@ -118,8 +118,15 @@ export function printCharacter(character){
   root.className='rc-print-root';
   root.innerHTML=characterPrintHTML(character);
   document.body.appendChild(root);
+  document.body.classList.add('rc-printing');
+  const cleanup=()=>{
+    document.body.classList.remove('rc-printing');
+    root.remove();
+  };
+  window.addEventListener('afterprint',cleanup,{once:true});
   // Android : le dialogue d'impression propose « Enregistrer au format PDF ».
   // Aucun envoi externe. Prévisualisation via l'API native du navigateur.
-  window.print();
+  try{window.print();}
+  catch(error){cleanup();throw error;}
   return root;
 }
