@@ -45,13 +45,11 @@ Un hôte valide doit remplir plusieurs critères :
 
 ## **Processus de réincarnation**
 
-Au départ de l'hôte initial (volontaire ou forcé par la mort), l'âme
-dispose d'un nombre de tours égal à son [**Rang Céleste**](../rang) pour
-trouver un nouvel hôte.
+Au départ de l'hôte initial (volontaire ou forcé par la mort), l'âme dispose de **quelques minutes**, sans décompte précis de tours, pour trouver un nouvel hôte.
 
 **Déplacement**
 
--   Chaque tour, l'âme peut parcourir environ 100 mètres
+-   L'âme explore les environs immédiats pendant ce bref délai.
 -   Elle perçoit les hôtes potentiels dans cette zone
 
 **Sélection de l'hôte** En fonction de la densité de population de la
@@ -92,7 +90,7 @@ serviteur de la faction appropriée est présent dans la zone :
 ## **Échec de réincarnation**
 
 Si l'âme n'a pas trouvé d'hôte valide avant l'expiration de son
-temps (Rang Céleste en tours), elle consomme une incarnation
+délai de quelques minutes, elle consomme une incarnation
 supplémentaire et retourne temporairement à son plan d'origine. Elle ne
 pourra revenir en mission qu'après un temps de récupération déterminé
 par le MJ.
