@@ -36,7 +36,7 @@ Acuité des sens physiques : voir, entendre, sentir, vigilance, intuition physiq
 
 ## Attributs de l'âme surnaturelle
 
-Ces attributs reflètent les qualités intrinsèques et surnaturelles de l'âme angélique ou démoniaque. Ils remplacent les caractéristiques humaines correspondantes lorsque l'âme laisse transparaître sa véritable nature grâce à son pouvoir intrinsèque de [Présence Surnaturelle](../../mecanique/energie#présence-surnaturelle-pouvoir-intrinsèque) — une action gratuite qui génère 1 dé de drain.
+Ces attributs reflètent les qualités intrinsèques et surnaturelles de l'âme angélique ou démoniaque. Ils remplacent les caractéristiques humaines correspondantes lorsque l'âme laisse transparaître sa véritable nature grâce à son pouvoir intrinsèque de [Présence Surnaturelle](../../mecanique/energie#présence-surnaturelle-pouvoir-intrinsèque) — une activation accessoire déclarée avant le jet, qui génère 1 dé de drain.
 
 | Attribut | Remplace | Usages principaux |
 |---|---|---|
