@@ -57,7 +57,7 @@ Pour les effets bénéfiques (soins, récupération), l'arrondi se fait à l'[av
 Les points de vie (PV) sont déterminés par la caractéristique Vigueur
 selon la formule **VIG x 2 + Taille**. La Vigueur d'un hôte humain varie de 1 à 3 ; son total de PV peut donc être inférieur à 8.
 
-Plutôt que de soustraire des points de vie, le système utilise une **jauge de blessures** composée d'un nombre de cases égal aux PV maximum du personnage. Les blessures sont cochées de gauche à droite, et leur gravité détermine le type de marque utilisée. Les nouvelles blessures d'un même type "poussent" les anciennes vers la droite.
+Plutôt que de soustraire des points de vie, le système utilise une **jauge de blessures** composée d'un nombre de cases égal aux PV maximum du personnage. Les blessures sont cochées de gauche à droite, et leur gravité détermine le type de marque utilisée. Les nouvelles blessures d'un même type « poussent » les anciennes vers la droite. Les blessures létales remplacent prioritairement les non létales lorsque la jauge est saturée. Les marques aggravées ne sont utilisées que pour l'agonie des âmes humaines ordinaires.
 
 ## Types de blessures et saturation
 
