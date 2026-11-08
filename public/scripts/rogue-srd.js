@@ -955,7 +955,7 @@
         "Jumelles","Couteau de survie","Sifflet","Allumettes","Briquet"
       ],
       attributes: ["FOR","AGI","VIG","PER"],
-      abilities: ["Armes à distance","Lancer","Armes de mêlée","Conduite","Corps à corps","Intrusion","Discrétion","Informatique","Influence","Larcins","Pilotage","Premiers soins","Sport","Survie"],
+      abilities: ["Armes à distance","Lancer","Armes de mêlée","Conduite","Corps à corps","Intrusion","Discrétion","Informatique","Influence","Larcins","Pilotage","Premiers soins","Sport","Survie","Électronique","Explosifs","Investigation","Vigilance","Occultisme","Empathie","Étiquette","Histoire","Médecine","Psychologie","Artisanat","Mécanique","Commandement","Performance artistique","Tactique","Renseignements","Recherche","Langues étrangères","Sciences","Enseignement"],
       traitGroups: {
         age:     ["Adolescent","Âgé"],
         military:["Ex-militaire"],
@@ -1446,13 +1446,43 @@
       return attrs;
     }
 
-    function genAbilities(rarity) {
+    // Un Soldat de Dieu est préparé pour SON métier : savoir enseigner compte autant
+    // que savoir tirer. Il reçoit au minimum +2 dans sa compétence professionnelle.
+    function occupationSkill(occupation) {
+      var map = {
+        'Policier':'Investigation', 'Médecin':'Médecine',
+        'Enseignant':'Enseignement', 'Mécanicien':'Mécanique',
+        'Chauffeur de taxi':'Conduite', 'Pompier':'Premiers soins',
+        'Chef cuisinier':'Artisanat', 'Spécialiste informatique':'Informatique',
+        'Avocat':'Influence', 'Journaliste':'Investigation',
+        'Barman':'Influence', 'Banquier':'Sciences',
+        'Musicien':'Performance artistique', 'Boucher':'Artisanat',
+        'Boulanger':'Artisanat', 'Électricien':'Électronique',
+        'Plombier':'Mécanique', 'Agent immobilier':'Influence',
+        'Vétérinaire':'Médecine', 'Photographe':'Performance artistique',
+        'Peintre':'Performance artistique', 'Chirurgien':'Médecine',
+        'Pilote':'Pilotage', 'Infirmier':'Premiers soins',
+        'Agent de sécurité':'Vigilance'
+      };
+      return map[occupation] || 'Survie';
+    }
+
+    function genAbilities(rarity, occupation, trainedSoldier) {
       var conf = cfg.abilities[rarity];
       var skills = {};
-      var first = shuffle(DB.abilities).slice(0, 3);
+      var skillsPool = shuffle(DB.abilities);
+      var primary = trainedSoldier ? occupationSkill(occupation) : skillsPool[0];
+      var first = [primary].concat(skillsPool.filter(function(k) { return k !== primary; }).slice(0, 2));
       first.forEach(function(k) { skills[k] = 0; });
-      skills[first[0]] = 1; // Hôte gris : deux +0, un +1.
-      for (var i = 0; i < conf.extra; i++) {
+      skills[first[0]] = 1;
+      var extra = conf.extra;
+      if (trainedSoldier) {
+        if (conf.cap < 2 || extra < 1)
+          throw new Error('Un Soldat de Dieu nécessite au minimum la qualité Bleue.');
+        skills[primary] = 2;
+        extra--;
+      }
+      for (var i = 0; i < extra; i++) {
         var options = DB.abilities.filter(function(k) {
           return !Object.prototype.hasOwnProperty.call(skills, k) || skills[k] < conf.cap;
         });
@@ -1461,13 +1491,19 @@
         if (!Object.prototype.hasOwnProperty.call(skills, k)) skills[k] = 0;
         else skills[k]++;
       }
-      return skills; // Compétences absentes : Incompétent (désavantage).
+      return skills;
     }
 
     function createNPC(id) {
-      var rarity = deckMode === 'official' ? null : getRarity();
-      if (deckMode === 'official') {
-        var drawn = deckEngine.drawOfficialHost(officialDeck);
+      var configured = deckMode === 'official' ? officialDeck :
+        deckMode === 'soldiers' ? soldiersDeck :
+        deckMode === 'infernal' ? infernalDeck : null;
+      var rarity = configured ? null : getRarity();
+      var originType = null;
+      if (configured) {
+        var drawn = deckEngine.drawOfficialHost(configured, Math.random, new Date(),
+          { allowRecentlyDead: allowRecentlyDead });
+        originType = drawn.originType || null;
         if (drawn.type === 'special') {
           var h = drawn.host;
           var skills = {};
@@ -1478,29 +1514,30 @@
             age: h.age == null ? null : h.age, dob: '', picture: h.image || '',
             occupation: h.occupation || 'Hôte spécial', description: h.description || '',
             traits: (h.traits || []).slice(), equipment: (h.equipment || []).slice(),
-            attributes: Object.assign({}, h.attributes), abilities: skills
+            attributes: Object.assign({}, h.attributes), abilities: skills,
+            originType: originType, isSoldier: deckMode === 'soldiers'
           });
         }
         rarity = drawn.quality;
       }
-      var gender    = pickGender();
+      var gender = pickGender();
       var ethnicity = pickEthnicity();
-      var occ       = getOccupation(rarity);
-
-      return fetchRandomUser(gender, ethnicity).then(function(u) {
-        var ageCategory = u.age < 20 ? 'teenager' : u.age >= 65 ? 'elderly' : 'adult';
-        var traits      = getTraits(rarity, ageCategory);
+      var occupation = getOccupation(rarity);
+      return fetchRandomUser(gender, ethnicity).then(function(person) {
+        var ageCategory = person.age < 20 ? 'teenager' : person.age >= 65 ? 'elderly' : 'adult';
+        var traits = getTraits(rarity, ageCategory);
+        var soldier = deckMode === 'soldiers';
         return {
-          id: id, rarity: rarity,
-          name:      u.firstName + ' ' + u.lastName,
-          firstName: u.firstName, lastName: u.lastName,
-          gender: gender, ethnicity: ethnicity,
-          age: u.age, dob: u.dob, picture: u.picture,
-          occupation: occ.name,
-          traits:     traits.map(function(t) { return t.name; }),
-          equipment:  getEquipment(occ, traits),
+          id: id, rarity: rarity, name: person.firstName + ' ' + person.lastName,
+          firstName: person.firstName, lastName: person.lastName,
+          gender: gender, ethnicity: ethnicity, age: person.age,
+          dob: person.dob, picture: person.picture,
+          occupation: occupation.name,
+          traits: traits.map(function(t) { return t.name; }),
+          equipment: getEquipment(occupation, traits),
           attributes: genAttributes(rarity),
-          abilities:  genAbilities(rarity)
+          abilities: genAbilities(rarity, occupation.name, soldier),
+          originType: originType, isSoldier: soldier
         };
       });
     }
