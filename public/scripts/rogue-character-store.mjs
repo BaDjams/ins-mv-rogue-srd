@@ -9,10 +9,7 @@ const CHARACTERS='characters',META='meta',ACTIVE_KEY='activeId';
 let opening=null;
 function request(req){
   return new Promise((resolve,reject)=>{
-    req.onsuccess=()=>{
-      req.result.onversionchange=()=>{req.result.close();opening=null;};
-      resolve(req.result);
-    };
+    req.onsuccess=()=>resolve(req.result);
     req.onerror=()=>reject(req.error||Error('IndexedDB : requête impossible.'));
   });
 }
@@ -39,7 +36,11 @@ export function openCharacterDB(){
       if(!db.objectStoreNames.contains(META))
         db.createObjectStore(META,{keyPath:'key'});
     };
-    req.onsuccess=()=>resolve(req.result);
+    req.onsuccess=()=>{
+      const db=req.result;
+      db.onversionchange=()=>{db.close();opening=null;};
+      resolve(db);
+    };
     req.onerror=()=>{
       opening=null;
       reject(req.error||Error('Impossible d’ouvrir la bibliothèque IndexedDB.'));
