@@ -28,9 +28,10 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
-      - name: Vérifier les exports DOCX
+      - name: Valider le CMS et les exports DOCX
         run: |
-          pip install python-docx --quiet
+          pip install python-docx pyyaml --quiet
+          python -c "import yaml; c=yaml.safe_load(open('public/admin/config.yml', encoding='utf-8')); assert any(x.get('name') == 'deck_hotes' for x in c['collections'])"
           python tools/export_docx.py
       - name: Compiler le site Astro
         run: npm run build
