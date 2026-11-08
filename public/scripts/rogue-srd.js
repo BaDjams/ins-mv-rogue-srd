@@ -372,7 +372,7 @@
         <label style="font-family:var(--rogue-font-label);font-size:0.72em;letter-spacing:0.1em;text-transform:uppercase;color:var(--rogue-text-faint)">
           Seuil de réussite :
         </label>
-        <input type="range" min="1" max="6" value="3" step="1" data-el="seuil-range"
+        <input type="range" min="1" max="5" value="3" step="1" data-el="seuil-range"
           style="accent-color:var(--rogue-angel);width:140px">
         <span data-el="seuil-val"
           style="font-family:var(--rogue-font-label);font-size:1.4em;font-weight:700;color:var(--rogue-angel-light);min-width:1.5em">3</span>
@@ -386,7 +386,7 @@
           <tr style="background:var(--rogue-bg-4);font-family:var(--rogue-font-label);font-size:0.68em;letter-spacing:0.1em;text-transform:uppercase;color:var(--rogue-text-faint)">
             <th style="padding:10px 16px;text-align:left;border-bottom:1px solid var(--rogue-border)">Dé d'action</th>
             <th style="padding:10px 16px;text-align:left;border-bottom:1px solid var(--rogue-border)">Résultat</th>
-            <th style="padding:10px 16px;text-align:left;border-bottom:1px solid var(--rogue-border)">Marge</th>
+            <th style="padding:10px 16px;text-align:left;border-bottom:1px solid var(--rogue-border)">Marge (rafale)</th>
             <th style="padding:10px 16px;text-align:left;border-bottom:1px solid var(--rogue-border)">Note</th>
           </tr>
         </thead>
@@ -471,13 +471,13 @@
       <div class="sim-params">
 
         <div class="sim-row">
-          <span class="sim-lbl">Seuil de réussite</span>
+          <span class="sim-lbl">Seuil théorique</span>
           <div class="sim-seuil">
             <button class="sim-seuil-btn" data-el="dec">−</button>
             <span class="sim-seuil-val" data-el="seuil">3</span>
             <button class="sim-seuil-btn" data-el="inc">+</button>
           </div>
-          <span class="sim-hint">(1–9, défaut 3)</span>
+          <span class="sim-hint">(1–9 ; plafonné à 5, seuil 6+ neutralise un désavantage)</span>
         </div>
 
         <div class="sim-row" data-el="type-row">
@@ -574,9 +574,13 @@
     // ── Lancer ──────────────────────────────────────────
     container.querySelector('[data-el="roll"]').addEventListener('click', function () {
 
+      // Seuil effectif limité à 5 ; la maîtrise exceptionnelle absorbe un désavantage.
+      var seuilEffectif = Math.min(5, seuil);
+      var modEffectif = seuil >= 6 && modEffectif === 'd' ? 'none' : (seuil >= 6 && modEffectif === 'dd' ? 'd' : modifier);
+
       // 1. Dés bruts
       var blue = d6(), white = d6(), red1 = d6();
-      var red2 = modifier === 'dd' ? d6() : null;
+      var red2 = modEffectif === 'dd' ? d6() : null;
 
       // 2. Résultats spéciaux (toujours sur les dés bruts)
       var is111 = blue === 1 && white === 1 && red1 === 1;
@@ -585,14 +589,14 @@
 
       // 3. Dé d'action selon modificateur
       var actionDie, actionExplain;
-      if (modifier === 'da' || modifier === 'a') {
+      if (modEffectif === 'da' || modEffectif === 'a') {
         actionDie = Math.min(blue, white);
-        actionExplain = modifier === 'da'
+        actionExplain = modEffectif === 'da'
           ? 'min(' + blue + ', ' + white + ') = <strong>' + actionDie + '</strong> (double avantage)'
           : 'min(' + blue + ', ' + white + ') = <strong>' + actionDie + '</strong> (avantage)';
-      } else if (modifier === 'dd' || modifier === 'd') {
+      } else if (modEffectif === 'dd' || modEffectif === 'd') {
         actionDie = Math.max(blue, white);
-        actionExplain = modifier === 'dd'
+        actionExplain = modEffectif === 'dd'
           ? 'max(' + blue + ', ' + white + ') = <strong>' + actionDie + '</strong> (double désavantage)'
           : 'max(' + blue + ', ' + white + ') = <strong>' + actionDie + '</strong> (désavantage)';
       } else {
@@ -603,21 +607,21 @@
       }
 
       // 4. Réussite
-      var isSuccess = !is666 && actionDie <= seuil && actionDie !== 6;
-      var marge = isSuccess ? seuil - actionDie : 0;
+      var isSuccess = !is666 && actionDie <= seuilEffectif && actionDie !== 6;
+      var marge = isSuccess ? seuilEffectif - actionDie : 0;
 
       // 5. Critique
-      var critThr = seuil >= 6 ? 5 : seuil;
-      var isCritSuccess = isSuccess && blue === critThr && white === critThr;
+      var critThr = seuilEffectif;
+      var isCritSuccess = isSuccess && blue === white;
 
       // 6. Sources explosives
       var expSources = 0;
-      if (modifier === 'da') expSources++;
+      if (modEffectif === 'da') expSources++;
       if (isCritSuccess)     expSources++;
 
       // 7. Intensité
       var intensitySteps = [], intensityBase, expDice = null;
-      if (modifier === 'dd' && red2 !== null) {
+      if (modEffectif === 'dd' && red2 !== null) {
         intensityBase = Math.min(red1, red2);
         intensitySteps.push('Dé 1 : ' + red1 + '   Dé 2 : ' + red2);
         intensitySteps.push('On garde le moins bon : min(' + red1 + ', ' + red2 + ') = <strong>' + intensityBase + '</strong>');
@@ -634,8 +638,8 @@
       // 8. Intensité finale
       var intensityFinal, intensityFinalLine;
       if (isSuccess) {
-        intensityFinal = Math.max(marge, intensityBase);
-        intensityFinalLine = 'max(marge <strong>' + marge + '</strong>, intensité <strong>' + intensityBase + '</strong>) = <strong>' + intensityFinal + '</strong>';
+        intensityFinal = intensityBase;
+        intensityFinalLine = 'Intensité = <strong>' + intensityBase + '</strong> (la marge est réservée aux rafales)';
       } else {
         intensityFinal = intensityBase;
         intensityFinalLine = 'Intensité brute = <strong>' + intensityBase + '</strong> (marge non calculée sur un échec)';
@@ -647,11 +651,11 @@
         actionDie: actionDie, actionExplain: actionExplain,
         isSuccess: isSuccess, isCritSuccess: isCritSuccess,
         isCritFail: isCritFail, is111: is111, is666: is666,
-        marge: marge, seuil: seuil, critThr: critThr,
+        marge: marge, seuil: seuilEffectif, seuilTheorique: seuil, critThr: critThr, neutralise: seuil>=6 && (modifier === 'd' || modifier === 'dd'),
         intensitySteps: intensitySteps,
         intensityBase: intensityBase, expDice: expDice,
         intensityFinal: intensityFinal, intensityFinalLine: intensityFinalLine,
-        expSources: expSources, modifier: modifier, actionType: actionType
+        expSources: expSources, modifier: modEffectif, actionType: actionType
       });
     });
 
@@ -680,6 +684,8 @@
       // Étapes de calcul
       var steps = [];
       steps.push('<strong>Dé d\'action :</strong> ' + r.actionExplain);
+      if (r.seuilTheorique >= 6) steps.push('Seuil théorique ' + r.seuilTheorique + ' → seuil effectif 5. ' + (r.neutralise ? 'Une source de désavantage neutralisée.' : 'Aucune source de désavantage à neutraliser.'));
+
 
       if (r.is111 || r.is666) {
         steps.push('Résultat spécial — voir le chapitre Résolution pour les effets.');
@@ -689,9 +695,9 @@
         if (r.isSuccess) {
           steps.push(r.actionDie + ' ≤ seuil ' + r.seuil + ' → Réussite');
           if (r.isCritSuccess) {
-            steps.push('Dé bleu (' + r.blue + ') = dé blanc (' + r.white + ') = ' + r.critThr + ' = seuil → <strong>Réussite Critique !</strong> — intensité explosive.');
+            steps.push('Dé bleu (' + r.blue + ') = dé blanc (' + r.white + ') : double identique et réussi → <strong>Réussite Critique !</strong> — intensité explosive.');
           }
-          steps.push('<strong>Marge :</strong> seuil ' + r.seuil + ' − résultat ' + r.actionDie + ' = <strong>' + r.marge + '</strong>');
+          steps.push('<strong>Marge (rafales uniquement) :</strong> seuil ' + r.seuil + ' − résultat ' + r.actionDie + ' = <strong>' + r.marge + '</strong>');
         } else {
           steps.push(r.actionDie + (r.actionDie === 6 ? ' = 6 (toujours un échec)' : ' > seuil ' + r.seuil) + ' → Échec');
         }
