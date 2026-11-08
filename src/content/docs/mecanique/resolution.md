@@ -29,7 +29,7 @@ Les [compétences](../competences) appartiennent au cerveau de l'hôte, pas à l
 
 À partir de cette étape, le dé utilisé pour déterminer le succès de l'action (bleu ou blanc, selon la nature de l'action) sera appelé **"Dé d'action"**.
 
-Le seuil de réussite effectif est plafonné à **5**. Si le seuil théorique atteint **6 ou plus**, il est ramené à **5** et confère **un avantage**. Les circonstances favorables ou défavorables sont traitées par avantages et désavantages.
+Le seuil de réussite effectif est plafonné à **5**. Si le seuil théorique atteint **6 ou plus**, il est ramené à **5** et permet d'**ignorer une source de désavantage** sur le jet. Ce bénéfice ne confère aucun avantage, même si aucun désavantage n'est présent. Les circonstances favorables ou défavorables sont traitées par avantages et désavantages.
 
 ***
 
@@ -51,7 +51,7 @@ Pour réussir l'action, le résultat du Dé d'action doit être **inférieur ou 
 
 La **marge** est la différence entre le seuil de réussite **effectif** (plafonné à 5) et le résultat du dé d'action, uniquement en cas de réussite. Elle sert notamment à déterminer le nombre de balles qui touchent en rafale : **1 + marge**, dans la limite de la valeur de rafale de l'arme et des munitions disponibles.
 
-**La marge n'entre jamais dans les dégâts, l'intensité ni le départage des oppositions.** Le dé d'intensité reste indépendant. Un seuil théorique de 6 ou plus est ramené à 5 et accorde un avantage, sans produire de marge supérieure à 4.
+**La marge n'entre jamais dans les dégâts, l'intensité ni le départage des oppositions.** Le dé d'intensité reste indépendant. Un seuil théorique de 6 ou plus est ramené à 5 et permet d'ignorer **une source de désavantage**, sans produire de marge supérieure à 4. Il ne confère aucun avantage supplémentaire.
 
 ***
 
@@ -112,6 +112,12 @@ Lorsqu'un personnage bénéficie d'un avantage (par exemple, grâce à un contex
 En cas de désavantage, le système fonctionne de manière inverse : le joueur doit prendre le résultat **le plus haut** entre le dé bleu et le dé blanc.
 
 **Exemple** : Si un joueur obtient 3 sur le dé bleu et 5 sur le dé blanc, il doit prendre le 5, car c'est le plus haut. Cela diminue ses chances de réussite de manière significative.
+
+### Maîtrise exceptionnelle (seuil théorique 6 ou plus)
+
+Lorsqu'un personnage atteint un seuil théorique de réussite de **6 ou plus**, son seuil effectif reste plafonné à **5**, mais il **ignore une source de désavantage** sur son jet. Cette capacité ne confère **jamais d'avantage supplémentaire**. Les autres sources d'avantage et de désavantage sont ensuite résolues normalement. Une seule source est neutralisée, quel que soit le dépassement du seuil.
+
+**Exemples :** au seuil théorique 6, sans désavantage, le jet reste normal au seuil 5 ; avec un désavantage, le jet est normal ; avec un désavantage et une spécialisation accordant un avantage, le jet bénéficie de cet avantage ; avec deux désavantages, un seul est ignoré et l'autre s'applique.
 
 ### Avantage + Désavantage
 
