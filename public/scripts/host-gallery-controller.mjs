@@ -101,6 +101,7 @@ export function createHostGallery({
   const cards=hosts.map((host,i)=>{
     const card=document.createElement('article');
     card.className='rb-card rb-quality-'+host.quality;
+    card.inert=true; // Pas de focus sur les cartes encore cachées.
     card.style.setProperty('--rb-index',String(i));
     card.setAttribute('aria-label','Hôte '+(i+1)+' : '+host.name);
     card.innerHTML=renderCard(host);
@@ -186,8 +187,8 @@ export function createHostGallery({
   $('prev').addEventListener('click',()=>setModalCard(modalIndex-1));
   $('next').addEventListener('click',()=>setModalCard(modalIndex+1));
   $('choose').addEventListener('click',()=>{
+    closeModal(); // Restaurer le verrouillage de la superposition AVANT de la fermer.
     onChoose(modalIndex,cards);
-    closeModal();
   });
   modal.addEventListener('keydown',e=>{
     if(e.key==='Escape'){e.preventDefault();e.stopPropagation();closeModal();}
