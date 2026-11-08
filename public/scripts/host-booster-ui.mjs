@@ -167,6 +167,12 @@ function setup(container){
   const rack=$('stage-area'),choice=$('choice'),status=$('status'),
     select=$('pack'),openBtn=$('open'),description=$('description');
   const reduced=()=>window.matchMedia?.('(prefers-reduced-motion: reduce)').matches===true;
+  const pause=milliseconds=>new Promise(resolve=>setTimeout(resolve,milliseconds));
+  function updateTheme(){
+    const color=validGlow(state.pack?.themeColor)
+      ? state.pack.themeColor : DEFAULT_GLOW[state.pack?.source]||'#b7a6e3';
+    container.querySelector('.rb-widget').style.setProperty('--rb-booster-color',color);
+  }
   function updatePacks(){
     select.innerHTML='';
     const candidates=availableBoosters(state.catalog,{stage:state.stage,faction:state.faction});
@@ -187,6 +193,7 @@ function setup(container){
     openBtn.disabled=state.busy||!state.pack;
     description.textContent=state.pack ? [state.pack.description||'',...(state.pack.tags||[])].filter(Boolean).join(' · ') : 'Aucun booster disponible dans ce contexte.';
     status.textContent=state.pack?'Choisissez un paquet puis ouvrez-le.':'Aucun booster actif pour cette situation.';
+    updateTheme();
     $('density-label').hidden=state.stage!=='reincarnation';
     $('dead-label').hidden=state.faction!=='demon';
   }
@@ -201,6 +208,7 @@ function setup(container){
   select.addEventListener('change',()=>{
     state.pack=state.catalog.boosters.find(p=>p.id===select.value)??null;
     description.textContent=state.pack ? [state.pack.description||'',...(state.pack.tags||[])].filter(Boolean).join(' · ') : '';
+    updateTheme();
     $('dead-label').hidden=state.faction!=='demon';
   });
   function selectHost(i,hosts,buttons){
@@ -228,7 +236,9 @@ function setup(container){
       status.textContent='Aucun hôte humain : appliquez les règles d’incarnation animale ou les exceptions du MJ.';
       return;
     }
-    state.busy=true;openBtn.disabled=true;state.host=null;choice.hidden=true;rack.innerHTML='';
+    state.busy=true;openBtn.disabled=true;state.host=null;choice.hidden=true;
+    rack.classList.remove('rb-reveal-finale');
+    rack.innerHTML='';
     try{
       const n=state.stage==='reincarnation'?Math.min(pack.cardCount,state.density):pack.cardCount;
       const draws=drawBooster(pack,state.sources,{
@@ -242,9 +252,9 @@ function setup(container){
         '<small>INS · MV ROGUE</small>';
       rack.appendChild(sealed);
       status.textContent='Ouverture du booster…';
-      if(!reduced())await new Promise(resolve=>setTimeout(resolve,650));
+      if(!reduced())await pause(1350);
       sealed.classList.add('rb-sealed-open');
-      if(!reduced())await new Promise(resolve=>setTimeout(resolve,300));
+      if(!reduced())await pause(650);
       sealed.remove();
       const row=document.createElement('div');row.className='rb-card-rack';
       const buttons=hosts.map((host,i)=>{
@@ -259,9 +269,16 @@ function setup(container){
         row.appendChild(button);return button;
       });
       rack.appendChild(row);
-      if(!reduced())await new Promise(resolve=>setTimeout(resolve,560+Math.min(12,hosts.length)*100));
-      buttons.forEach((button,i)=>{
+      // Révélation progressive : la mise en valeur attend que toutes les cartes
+      // soient retournées, pour laisser au joueur le plaisir de la découverte.
+      if(!reduced())await pause(450);
+      const interval=Math.max(160,Math.min(520,Math.round(1600/buttons.length)));
+      for(const button of buttons){
         button.classList.add('rb-revealed');
+        if(!reduced())await pause(interval);
+      }
+      if(!reduced())await pause(750);
+      buttons.forEach((button,i)=>{
         if(best.includes(i)){
           button.classList.add('rb-card-best');
           const label=document.createElement('span');
@@ -269,6 +286,7 @@ function setup(container){
           button.appendChild(label);
         }
       });
+      rack.classList.add('rb-reveal-finale');
       status.textContent=hosts.length+' carte(s) révélée(s). La meilleure qualité est mise en lumière ; vous choisissez librement votre hôte.';
     }catch(error){
       console.error('Ouverture impossible',error);
