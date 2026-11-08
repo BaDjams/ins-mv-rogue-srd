@@ -1022,7 +1022,10 @@
     var lastBatch = []; // dernier lot de PNJ généré ou importé, pour l'export JSON
     var deckMode = 'fallback';
     var officialDeck = null;
+    var soldiersDeck = null;
+    var infernalDeck = null;
     var deckEngine = null;
+    var allowRecentlyDead = false;
 
     // ── UI ───────────────────────────────────────────────
     container.innerHTML =
@@ -1031,9 +1034,15 @@
           '<label class="gen-lbl" for="rogue-deck-choice">Mode de tirage</label>' +
           '<select id="rogue-deck-choice" data-el="deck-mode">' +
             '<option value="fallback">54 cartes — remplacement</option>' +
-            '<option value="official" disabled>Deck officiel — non configuré</option>' +
+            '<option value="official" disabled>Citoyens — non configuré</option>' +
+            '<option value="soldiers" disabled>Soldats de Dieu — non configuré</option>' +
+            '<option value="infernal" disabled>Réseaux infernaux — non configuré</option>' +
           '</select>' +
-          '<div class="gen-hint" data-el="deck-status" role="status">Chargement de la configuration des hôtes…</div>' +
+          '<div class="gen-hint" data-el="deck-status" role="status">Chargement des decks d’hôtes…</div>' +
+          '<label class="gen-infernal-opt" data-el="infernal-options" style="display:none">' +
+            '<input type="checkbox" data-el="allow-dead"> ' +
+            'Autoriser les corps récemment décédés (conditions de magie noire remplies)' +
+          '</label>' +
         '</div>' +
         '<div class="gen-controls">' +
           '<div class="gen-count-wrap">' +
@@ -1101,35 +1110,79 @@
     var modeInput = container.querySelector('[data-el="deck-mode"]');
     var modeStatus = container.querySelector('[data-el="deck-status"]');
     var generateBtn = container.querySelector('[data-el="generate"]');
+    var allowDeadInput = container.querySelector('[data-el="allow-dead"]');
+    var infernalOptions = container.querySelector('[data-el="infernal-options"]');
+    allowDeadInput.addEventListener('change', function() {
+      allowRecentlyDead = this.checked;
+      modeInput.dispatchEvent(new Event('change'));
+    });
+    var lastDeckMode = 'fallback';
     modeInput.addEventListener('change', function () {
       deckMode = this.value;
-      if (deckMode === 'official' && officialDeck && deckEngine) {
-        var details = deckEngine.validateOfficialDeck(officialDeck);
-        modeStatus.textContent = 'Deck officiel : ' + details.activeSpecials.length + ' hôte(s) spécial(aux) actif(s), ' +
-          details.specialRate.toLocaleString('fr-FR') + ' % réservés ; ' +
-          details.ordinaryRate.toLocaleString('fr-FR') + ' % pour les hôtes ordinaires. Les filtres démographiques ne modifient pas ces probabilités.';
+      infernalOptions.style.display = deckMode === 'infernal' ? '' : 'none';
+      var chosen = deckMode === 'official' ? officialDeck :
+        deckMode === 'soldiers' ? soldiersDeck :
+        deckMode === 'infernal' ? infernalDeck : null;
+      if (chosen && deckEngine) {
+        var details = deckEngine.validateOfficialDeck(chosen, new Date(), { allowRecentlyDead: allowRecentlyDead });
+        var label = deckMode === 'soldiers' ? 'Soldats de Dieu (première incarnation angélique)' :
+          deckMode === 'infernal' ? 'Réseaux infernaux (première incarnation démoniaque)' :
+          'Citoyens (réincarnations)';
+        modeStatus.textContent = label + ' : ' + details.activeSpecials.length +
+          ' fiche(s) spéciale(s) active(s), ' + details.specialRate.toLocaleString('fr-FR') +
+          ' % réservés ; ' + details.ordinaryRate.toLocaleString('fr-FR') +
+          ' % pour le vivier ordinaire. Les probabilités sont propres à ce deck.';
       } else {
-        modeStatus.textContent = 'Jeu de remplacement de 54 cartes. Les pondérations configurables ci-dessous ne définissent pas celles du deck officiel.';
+        modeStatus.textContent = 'Jeu de 54 cartes de remplacement : ses probabilités sont indépendantes de celles des decks officiels.';
+      }
+      if (lastDeckMode !== deckMode) {
+        if (deckMode === 'soldiers') count = 3; // Trois cartes initiales, une choisie par l'ange.
+        else if (deckMode === 'infernal') count = 1; // Nombre ajustable par le MJ.
+        countEl.textContent = count;
+        lastDeckMode = deckMode;
       }
     });
+    function getDeckConfig(file) {
+      return fetch('/ins-mv-rogue-srd/data/' + file).then(function(response) {
+        if (!response.ok) throw new Error('Deck indisponible : ' + file);
+        return response.json();
+      }).catch(function(error) {
+        console.warn(error.message);
+        return null;
+      });
+    }
     Promise.all([
       import('/ins-mv-rogue-srd/scripts/host-deck-engine.mjs'),
-      fetch('/ins-mv-rogue-srd/data/hotes-officiels.json').then(function(response) {
-        if (!response.ok) throw new Error('Configuration du deck officiel indisponible.');
-        return response.json();
-      })
+      getDeckConfig('hotes-officiels.json'),
+      getDeckConfig('hotes-soldats-dieu.json'),
+      getDeckConfig('hotes-reseaux-infernaux.json')
     ]).then(function(values) {
       deckEngine = values[0];
       officialDeck = values[1];
-      var details = deckEngine.validateOfficialDeck(officialDeck);
-      if (details.enabled) {
-        modeInput.querySelector('[value="official"]').disabled = false;
-        modeInput.querySelector('[value="official"]').textContent = 'Deck officiel — hôtes spéciaux et ordinaires';
-        modeInput.value = 'official';
-      }
+      soldiersDeck = values[2];
+      infernalDeck = values[3];
+      var available = [
+        { value: 'official', config: officialDeck, name: 'Citoyens — réincarnation / PNJ' },
+        { value: 'soldiers', config: soldiersDeck, name: 'Soldats de Dieu — 1re incarnation angélique' },
+        { value: 'infernal', config: infernalDeck, name: 'Réseaux infernaux — 1re incarnation démoniaque' }
+      ];
+      available.forEach(function(item) {
+        var option = modeInput.querySelector('[value="' + item.value + '"]');
+        if (!item.config) return;
+        try {
+          var details = deckEngine.validateOfficialDeck(item.config, new Date(), { allowRecentlyDead: false });
+          if (details.enabled) {
+            option.disabled = false;
+            option.textContent = item.name;
+          }
+        } catch (error) {
+          console.warn('Deck non activé : ' + item.value + ' — ' + error.message);
+        }
+      });
       modeInput.dispatchEvent(new Event('change'));
     }).catch(function(error) {
-      modeStatus.textContent = 'Deck officiel indisponible : ' + error.message + ' Utilisation du paquet de remplacement.';
+      modeStatus.textContent = 'Impossible de charger les decks : ' + error.message +
+        '. Le jeu de 54 cartes reste utilisable.';
     }).finally(function() {
       generateBtn.disabled = false;
     });
