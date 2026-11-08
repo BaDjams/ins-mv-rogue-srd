@@ -53,6 +53,8 @@
 .rc-kicker{font:750 10px system-ui,sans-serif;color:#cbb5eb;letter-spacing:.1em;}
 .rc-detail-head h2{font-size:26px;}
 .rc-detail-head p{font-size:12px;color:#c5b9cb;margin:5px 0!important;}
+.rc-detail-states{display:flex;gap:6px;align-items:center;flex-wrap:wrap;justify-content:flex-end;}
+.rc-state.rc-incomplete{border-color:#a58552;background:#493824;color:#f2d9ac;}
 .rc-state{padding:5px 10px;white-space:nowrap;font:800 10px system-ui,sans-serif;
   border-radius:8px;border:1px solid #a38a6f;color:#e4c99d;background:#46362c;}
 .rc-actions{display:flex;flex-wrap:wrap;gap:7px;margin:10px 0 15px!important;}
