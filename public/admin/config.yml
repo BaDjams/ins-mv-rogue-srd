@@ -404,6 +404,7 @@ collections:
               - { label: Identifiant stable, name: id, widget: string, hint: "Minuscules, chiffres et tirets uniquement ; unique pour chaque booster." }
               - { label: Nom public du booster, name: name, widget: string }
               - { label: Description de l'ambiance, name: description, widget: text, required: false }
+              - { label: Couleur de l'aura et du flash (hexadécimal), name: themeColor, widget: string, required: false, hint: "Exemple : #E3C17B. La couleur des tiers reste indépendante." }
               - label: Vivier de base
                 name: source
                 widget: select
