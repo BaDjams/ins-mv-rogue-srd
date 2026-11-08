@@ -47,6 +47,9 @@ export function validateBoosterCatalog(catalog) {
       throw new Error('Hôtes événementiels invalides : ' + pack.id);
     if (pack.source === 'custom' && !pack.ordinaryWeights)
       throw new Error('Un booster autonome exige ses propres poids de qualités : ' + pack.id);
+    if (pack.source === 'fallback' &&
+      (pack.ordinaryWeights != null || (pack.extraSpecialHosts ?? []).length > 0))
+      throw new Error('Le paquet de 54 cartes de remplacement ne peut recevoir de pondérations ni de cartes spéciales : ' + pack.id);
     if (pack.includeSourceSpecials != null && typeof pack.includeSourceSpecials !== 'boolean')
       throw new Error('Option de cartes spéciales héritées incorrecte : ' + pack.id);
   }
@@ -65,7 +68,7 @@ export function resolveBoosterDeck(pack, sources) {
     return {
       enabled:true, poolType:'citizens',
       ordinaryWeights:{...FALLBACK_WEIGHTS},
-      specialHosts:[...(pack.extraSpecialHosts ?? [])]
+      specialHosts:[]
     };
   }
   if (pack.source === 'custom') {
@@ -107,6 +110,18 @@ export function drawBooster(pack, sources, {
   if (!active(pack,date)) throw new Error('Ce booster est hors de sa période de disponibilité.');
   const n = cardCount == null ? pack.cardCount : cardCount;
   if (!Number.isInteger(n) || n < 1 || n > 12) throw new Error('Nombre de cartes invalide.');
+  if(pack.source==='fallback') {
+    // Tirage physique de cartes sans remise dans le paquet de remplacement.
+    const deck=QUALITIES.flatMap(q=>Array.from({length:FALLBACK_WEIGHTS[q]},()=>q));
+    for(let i=deck.length-1;i>0;i--){
+      const value=random();
+      if(!Number.isFinite(value) || value<0 || value>=1)
+        throw new Error('Source aléatoire invalide.');
+      const j=Math.floor(value*(i+1));
+      [deck[i],deck[j]]=[deck[j],deck[i]];
+    }
+    return deck.slice(0,n).map(quality=>({type:'ordinary',quality}));
+  }
   return Array.from({length:n}, () =>
     drawOfficialHost(config, random, date, {allowRecentlyDead})
   );
