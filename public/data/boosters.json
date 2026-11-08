@@ -10,7 +10,8 @@
       "faction": "angel",
       "active": true,
       "tags": [],
-      "extraSpecialHosts": []
+      "extraSpecialHosts": [],
+      "themeColor": "#E3C17B"
     },
     {
       "id": "reseaux-infernaux",
@@ -22,7 +23,8 @@
       "faction": "demon",
       "active": true,
       "tags": [],
-      "extraSpecialHosts": []
+      "extraSpecialHosts": [],
+      "themeColor": "#D36A80"
     },
     {
       "id": "citoyens",
@@ -34,7 +36,8 @@
       "faction": "any",
       "active": true,
       "tags": [],
-      "extraSpecialHosts": []
+      "extraSpecialHosts": [],
+      "themeColor": "#77A6D5"
     },
     {
       "id": "remplacement-54",
@@ -46,7 +49,8 @@
       "faction": "any",
       "active": true,
       "tags": [],
-      "extraSpecialHosts": []
+      "extraSpecialHosts": [],
+      "themeColor": "#AB96DC"
     }
   ]
 }
