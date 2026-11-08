@@ -28,6 +28,10 @@ jobs:
           node --check public/scripts/host-card-render.mjs
           node --check public/scripts/host-gallery-controller.mjs
           node --check public/scripts/host-booster-overlay.mjs
+          node --check public/scripts/rogue-character-model.mjs
+          node --check public/scripts/rogue-character-store.mjs
+          node --check public/scripts/rogue-character-print.mjs
+          node --check public/scripts/rogue-character-ui.mjs
       - name: Tests du deck officiel et des probabilités
         run: node --test tests/*.test.mjs
       - uses: actions/setup-python@v5
