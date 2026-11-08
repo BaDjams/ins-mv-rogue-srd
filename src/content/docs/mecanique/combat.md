@@ -19,11 +19,9 @@ sidebar:
 
 **1 Action Simple** (pas de jet)
 
-- Se déplacer (TAILLE mètres), recharger (sauf arme "Lente"), dégainer/ranger une arme, viser (+1 au prochain jet), changer de posture, se relever
+- Se déplacer (TAILLE mètres), recharger une arme standard (sauf arme « Lente »), dégainer/ranger une arme, viser (**avantage au prochain tir**), changer de posture en cours de tour, se relever
 
-**Actions Gratuites** (à discrétion du MJ)
-
-- Parler brièvement, lâcher un objet, actionner un mécanisme simple, recharger une arme standard
+**Gestes accessoires** : parler brièvement, lâcher un objet ou effectuer un geste mineur peut accompagner une action sans en consommer une. Ce n'est pas une quatrième catégorie d'action et cela ne permet jamais de recharger une arme.
 
 **Règle d'échange :** Vous pouvez transformer votre Action Complexe en Action Simple supplémentaire, mais pas l'inverse.
 
@@ -31,7 +29,7 @@ sidebar:
 
 Certaines capacités permettent d'agir hors de votre tour. Vous pouvez effectuer **1 réaction par round** (Esquive, Parade, Contre-attaque, Attaque d'Opportunité).
 
-Une réaction de défense réussie ajoute votre **Intensité aux PA** (Points d'Armure) pour ce coup uniquement — la parade ou l'esquive renforce momentanément la protection effective.
+Une **esquive ou parade active** consomme une réaction et déclenche un **jet en opposition** contre l'attaque. Si le défenseur l'emporte, l'attaque est évitée ; en cas d'égalité entre deux réussites, les deux actions réussissent selon les règles d'opposition. Une réaction ne modifie pas les PA.
 
 ### Initiative
 
@@ -127,7 +125,7 @@ Une fois l'ordre d'initiative établi, à leur tour, les joueurs choisissent les
 
     **Will (Tyrael)** : lance le D666 → "J'ai 5 sur le bleu, 1 sur le blanc, et 3 sur le rouge. Comme j'ai 2 en Agilité et +2 en Armes de Mêlée (Expert), mon seuil avec l'épée est 4. Mon dé blanc fait 1, donc ça passe largement !"
 
-    **François (MJ)** : "Bien joué, Tyrael. Ta Charge réussit avec une marge de 3, et le bonus de la Charge ajoute +2 dégâts. Donc dé d'intensité (3) + dégâts d'épée (Code 3) + marge (3) + Charge (+2) = 11. Sauf que la marge et le dé d'intensité ne s'additionnent pas, on retient max(3, 3) = 3. Total : 3 + 3 + 2 = 8 dégâts. Le démon est blessé !"
+    **François (MJ)** : "Bien joué, Tyrael. Ta Charge réussit avec une réussite, et le bonus de la Charge ajoute +2 dégâts. Donc dé d'intensité (3) + dégâts d'épée (Code 3) + marge (3) + Charge (+2) = 11. Sauf que la marge et le dé d'intensité ne s'additionnent pas, on retient max(3, 3) = 3. Total : 3 + 3 + 2 = 8 dégâts. Le démon est blessé !"
 
     ---
 
@@ -173,7 +171,7 @@ Une fois l'ordre d'initiative établi, à leur tour, les joueurs choisissent les
 
     **Romain (Azrael)** : lance le D666 → "J'ai 2 sur le bleu, 4 sur le blanc et 5 sur le rouge. Mon seuil pour ce pouvoir est 3, donc c'est une réussite puisque mon dé bleu est en dessous."
 
-    **François (MJ)** : "Bien joué, Azrael ! Tu as réussi avec une marge de 1. Le dé rouge montre une intensité de 5 — on retient max(1, 5) = 5. Les démons subissent 5 + 2 (Feu Purificateur) = 7 dégâts chacun. Cependant, comme vous, ils divisent les dégâts par 3, ils ne subissent donc que 2. Comme tout le monde a joué, passons au tour suivant !"
+    **François (MJ)** : "Bien joué, Azrael ! Tu as réussi. Le dé rouge montre une intensité de 5. Les démons subissent 5 + 2 (Feu Purificateur) = 7 dégâts chacun. Cependant, comme vous, ils divisent les dégâts par 3, ils ne subissent donc que 2. Comme tout le monde a joué, passons au tour suivant !"
 
 ---
 
