@@ -122,6 +122,7 @@ export default defineConfig({
           items: [
             { label: 'Caractéristiques & Attributs', slug: 'personnage/caracteristiques' },
             { label: "Création d'âme", slug: 'personnage/creation' },
+            { label: 'Hôtes et qualités', slug: 'personnage/hotes' },
             { label: 'Rang céleste', slug: 'personnage/rang' },
             { label: 'Position hiérarchique', slug: 'personnage/progression' },
             { label: 'Réincarnation', slug: 'personnage/reincarnation' },
