@@ -1020,10 +1020,21 @@
     var filtersGender = { male:true, female:true };
     var filtersEth    = { french:true, northAfrican:true, westAfrican:true, hispanic:true, slavic:true, eastAsian:true, american:true, indian:true };
     var lastBatch = []; // dernier lot de PNJ généré ou importé, pour l'export JSON
+    var deckMode = 'fallback';
+    var officialDeck = null;
+    var deckEngine = null;
 
     // ── UI ───────────────────────────────────────────────
     container.innerHTML =
       '<div class="gen-panel">' +
+        '<div class="gen-deck-selector">' +
+          '<label class="gen-lbl" for="rogue-deck-choice">Mode de tirage</label>' +
+          '<select id="rogue-deck-choice" data-el="deck-mode">' +
+            '<option value="fallback">54 cartes — remplacement</option>' +
+            '<option value="official" disabled>Deck officiel — non configuré</option>' +
+          '</select>' +
+          '<div class="gen-hint" data-el="deck-status" role="status">Chargement de la configuration des hôtes…</div>' +
+        '</div>' +
         '<div class="gen-controls">' +
           '<div class="gen-count-wrap">' +
             '<span class="gen-lbl">Nombre de PNJ</span>' +
@@ -1034,7 +1045,7 @@
             '</div>' +
             '<span class="gen-hint">(1–12)</span>' +
           '</div>' +
-          '<button class="gen-roll-btn" data-el="generate">⚡ Générer</button>' +
+          '<button class="gen-roll-btn" data-el="generate" disabled>⚡ Générer</button>' +
           '<button class="gen-adv-toggle" data-el="adv-toggle">Options ▾</button>' +
           '<button class="gen-io-btn" data-el="export" disabled>💾 Exporter JSON</button>' +
           '<button class="gen-io-btn" data-el="import">📂 Importer JSON</button>' +
@@ -1087,6 +1098,41 @@
     var exportBtn  = container.querySelector('[data-el="export"]');
     var importBtn  = container.querySelector('[data-el="import"]');
     var importFile = container.querySelector('[data-el="import-file"]');
+    var modeInput = container.querySelector('[data-el="deck-mode"]');
+    var modeStatus = container.querySelector('[data-el="deck-status"]');
+    var generateBtn = container.querySelector('[data-el="generate"]');
+    modeInput.addEventListener('change', function () {
+      deckMode = this.value;
+      if (deckMode === 'official' && officialDeck && deckEngine) {
+        var details = deckEngine.validateOfficialDeck(officialDeck);
+        modeStatus.textContent = 'Deck officiel : ' + details.activeSpecials.length + ' hôte(s) spécial(aux) actif(s), ' +
+          details.specialRate.toLocaleString('fr-FR') + ' % réservés ; ' +
+          details.ordinaryRate.toLocaleString('fr-FR') + ' % pour les hôtes ordinaires. Les filtres démographiques ne modifient pas ces probabilités.';
+      } else {
+        modeStatus.textContent = 'Jeu de remplacement de 54 cartes. Les pondérations configurables ci-dessous ne définissent pas celles du deck officiel.';
+      }
+    });
+    Promise.all([
+      import('/ins-mv-rogue-srd/scripts/host-deck-engine.mjs'),
+      fetch('/ins-mv-rogue-srd/data/hotes-officiels.json').then(function(response) {
+        if (!response.ok) throw new Error('Configuration du deck officiel indisponible.');
+        return response.json();
+      })
+    ]).then(function(values) {
+      deckEngine = values[0];
+      officialDeck = values[1];
+      var details = deckEngine.validateOfficialDeck(officialDeck);
+      if (details.enabled) {
+        modeInput.querySelector('[value="official"]').disabled = false;
+        modeInput.querySelector('[value="official"]').textContent = 'Deck officiel — hôtes spéciaux et ordinaires';
+        modeInput.value = 'official';
+      }
+      modeInput.dispatchEvent(new Event('change'));
+    }).catch(function(error) {
+      modeStatus.textContent = 'Deck officiel indisponible : ' + error.message + ' Utilisation du paquet de remplacement.';
+    }).finally(function() {
+      generateBtn.disabled = false;
+    });
 
     // Compteur
     container.querySelector('[data-el="dec"]').addEventListener('click', function () {
@@ -1366,7 +1412,24 @@
     }
 
     function createNPC(id) {
-      var rarity    = getRarity();
+      var rarity = getRarity();
+      if (deckMode === 'official') {
+        var drawn = deckEngine.drawOfficialHost(officialDeck);
+        if (drawn.type === 'special') {
+          var h = drawn.host;
+          var skills = {};
+          (h.skills || []).forEach(function(k) { skills[k.name] = k.bonus; });
+          return Promise.resolve({
+            id: id, rarity: h.quality, isSpecial: true, specialId: h.id, dropRate: h.dropRate,
+            name: h.name, gender: h.gender || 'other', ethnicity: h.origin || 'special',
+            age: h.age == null ? null : h.age, dob: '', picture: h.image || '',
+            occupation: h.occupation || 'Hôte spécial', description: h.description || '',
+            traits: (h.traits || []).slice(), equipment: (h.equipment || []).slice(),
+            attributes: Object.assign({}, h.attributes), abilities: skills
+          });
+        }
+        rarity = drawn.quality;
+      }
       var gender    = pickGender();
       var ethnicity = pickEthnicity();
       var occ       = getOccupation(rarity);
