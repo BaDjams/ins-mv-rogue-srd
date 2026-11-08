@@ -119,7 +119,7 @@
 @page{size:A4 portrait;margin:12mm;}
 @media print{
   html,body{background:white!important;color:#25222a!important;}
-  body > *:not(.rc-print-root){display:none!important;}
+  body.rc-printing > *:not(.rc-print-root){display:none!important;}
   body > .rc-print-root{display:block!important;position:static!important;
     margin:0!important;padding:0!important;background:white!important;}
   .rc-print-root,.rc-print-root *{
