@@ -6,7 +6,7 @@ sidebar:
 
 ## Principe
 
-Le joueur crée **son âme surnaturelle** et répartit ses attributs surnaturels selon les règles de [création d'âme](./creation). Les **caractéristiques et compétences humaines** proviennent de l'hôte, déterminé séparément par tirage d'une carte. Le joueur ne répartit donc pas librement les points de caractéristiques de son hôte.
+Le joueur crée **son âme surnaturelle** et répartit ses attributs surnaturels selon les règles de [création d'âme](../creation). Les **caractéristiques et compétences humaines** proviennent de l'hôte, déterminé séparément par tirage d'une carte. Le joueur ne répartit donc pas librement les points de caractéristiques de son hôte.
 
 Le **deck officiel d'hôtes** constitue la méthode de référence. Sa composition et ses probabilités sont **indépendantes** de celles d'un jeu de cartes ordinaire : le deck peut évoluer et accueillir des **hôtes spéciaux** liés à des événements saisonniers ou ponctuels, ajoutés de façon permanente ou temporaire. Les caractéristiques, compétences et éventuelles règles particulières d'une carte officielle sont celles qu'elle indique.
 
