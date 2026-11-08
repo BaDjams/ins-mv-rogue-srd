@@ -31,10 +31,10 @@ sidebar:
 
 **Effets :**
 
-- Seule action de déplacement possible : ramper (coût normal de 2 PA)
+- Seul déplacement possible : ramper, au prix d'une **action simple**
 - Les attaques au corps à corps contre la créature ont un [avantage](../../mecanique/resolution#avantage)
 - Les attaques à distance contre la créature ont un [désavantage](../../mecanique/resolution#désavantage) si l'attaquant est à plus de 6m
-- Se relever coûte 1 PA supplémentaire
+- Se relever consomme une **action simple**
 
 **Fin :** Jusqu'à ce que la créature se relève ou soit relevée par un allié.
 
@@ -50,7 +50,7 @@ sidebar:
 - Ne peut bénéficier d'aucun bonus de vitesse
 - L'état se termine si l'agrippeur devient Incapable d'agir
 
-**Fin :** Jet de Force ou Agilité opposé contre l'agrippeur (2 PA), ou si l'agrippeur lâche prise.
+**Fin :** Jet opposé de Force ou d'Agilité contre l'agrippeur, en **action complexe**, ou si l'agrippeur lâche prise.
 
 ---
 
@@ -183,7 +183,7 @@ sidebar:
 
 - Le dominateur contrôle complètement les actions de la créature
 - La créature utilise ses propres statistiques mais obéit aux ordres
-- Le dominateur peut utiliser les PA de la créature à sa place
+- Le dominateur décide de l'emploi des actions (complexe, simple et réaction) encore disponibles à la créature
 - La créature garde ses souvenirs mais ne peut résister
 
 **Fin :** Variable selon la source, très difficile à dissiper.
@@ -198,9 +198,9 @@ sidebar:
 
 **Effets :**
 
-- Ne peut effectuer aucune action (ni 1 PA, ni 2 PA)
+- Ne peut effectuer **aucune action complexe ni simple**
 - Ne peut effectuer aucune réaction
-- Peut encore parler et effectuer des actions gratuites très simples
+- Peut éventuellement parler brièvement si la cause de l'incapacité le permet ; aucun geste accessoire ne contourne l'incapacité d'agir
 
 **Fin :** Variable selon la cause.
 
@@ -275,20 +275,13 @@ sidebar:
 
 ## États spéciaux
 
-### Épuisé (niveaux 1–6)
+### Épuisé (état descriptif)
 
-**Description :** Fatigue extrême affectant toutes les capacités.
+**Description :** La fatigue physique ou magique est suivie par les **blessures non létales (/)** de la [jauge de blessures](../../mecanique/blessures#types-de-blessures-et-saturation), pas par six niveaux supplémentaires d'épuisement.
 
-| Niveau | Effet |
-|---|---|
-| **1** | Désavantage sur tous les jets de caractéristiques |
-| **2** | Vitesse de déplacement réduite de moitié |
-| **3** | Désavantage sur tous les jets d'attaque et de sauvegarde |
-| **4** | Points d'Action maximum réduits de moitié |
-| **5** | Vitesse de déplacement réduite à 0 |
-| **6** | Mort |
+**Effets :** Appliquer les conséquences de la saturation des blessures non létales. Les anges et les démons restent immunisés à l'inconscience causée par cette seule fatigue physique, mais subissent le drain et la conversion des blessures non létales supplémentaires en létales.
 
-**Fin :** Un repos prolongé (8h) réduit l'épuisement de 1 niveau.
+**Fin :** Récupération des blessures non létales selon les règles de repos ou de soins. Cet état n'entraîne jamais une mort automatique distincte de la jauge.
 
 ---
 
@@ -314,12 +307,12 @@ sidebar:
 
 **Effets :**
 
-- État automatique quand une créature passe sous 50% de ses PV max
+- État descriptif lorsqu'au moins la moitié des cases de la jauge sont marquées en blessures létales ; ne retire pas de PV une seconde fois
 - Peut déclencher des capacités spéciales (rage, pouvoirs de survie, etc.)
 - Visible par tous (blessures, sang, faiblesse)
 - Certaines créatures deviennent plus dangereuses quand Sanguines
 
-**Fin :** Quand la créature remonte au-dessus de 50% de ses PV max.
+**Fin :** Lorsque moins de la moitié des cases sont marquées en blessures létales.
 
 ---
 
@@ -335,7 +328,7 @@ sidebar:
 - Le feu peut se propager aux objets inflammables à proximité
 - Illumine la zone dans un rayon de 2m
 
-**Fin :** Action de 1 PA pour s'éteindre (se rouler au sol, etc.) ou être éteint par un allié.
+**Fin :** Une **action simple** pour s'éteindre (se rouler au sol, etc.), ou intervention d'un allié.
 
 ---
 
@@ -347,7 +340,7 @@ sidebar:
 
 - Vitesse de déplacement réduite de moitié
 - Désavantage sur tous les jets d'Agilité
-- Actions de déplacement coûtent 1 PA supplémentaire
+- Se déplacer demande une **action complexe** au lieu de l'action simple habituelle
 
 **Fin :** Réchauffement (chaleur, feu, sorts) ou après 10 tours à température normale.
 
@@ -463,7 +456,7 @@ sidebar:
 
 **Effets :**
 
-- +1 à tous les attributs surnaturels
+- +1 à tous les attributs surnaturels, sans dépasser le plafond de 5
 - Le drain de tous les pouvoirs lancés est doublé (dés et drains automatiques comptés deux fois)
 - Subit 1 dégât par tour (non réductible par le rang céleste)
 - Le corps de l'hôte montre des signes de stress (veines qui brillent, yeux lumineux)
@@ -500,7 +493,7 @@ sidebar:
 - 1 drain automatique par tour dû au stress spirituel, indépendamment de tout pouvoir lancé
 - L'âme humaine conserve ses souvenirs et sa personnalité
 
-**Fin :** L'ange/démon doit forcer le départ de l'âme humaine (jet de PUI vs VOL humaine) ou abandonner cet hôte.
+**Fin :** L'ange ou le démon doit résoudre le conflit de cohabitation avec l'âme humaine ou abandonner cet hôte ; l'ancienne opposition « PUI contre VOL humaine » ne s'applique pas, car VOL n'est pas une caractéristique humaine du système actuel.
 
 ---
 
@@ -511,14 +504,14 @@ sidebar:
 **Effets :**
 
 - Utilise exclusivement les attributs surnaturels à leur plein potentiel
-- +2 à tous les attributs surnaturels (PUI, INF, RES, CLA)
+- +2 aux attributs surnaturels (PUI, INF, RES, CLA), sans dépasser le plafond de 5
 - Tous les pouvoirs ont un dé d'intensité explosif
 - **Volant** : Ailes d'ange/démon visibles et fonctionnelles, capacité de vol
 - L'hôte humain subit 2 dégâts par tour (non réductibles par rang céleste)
 - Aura surnaturelle visible : impossible de se faire passer pour humain
 - Coût d'activation : drain équivalent à un lancement de rang 5, puis drain de rang 2 par tour pour maintenir
 
-**Fin :** Quand l'ange/démon cesse de maintenir l'état ou quand l'hôte tombe à 0 PV.
+**Fin :** Quand l'ange ou le démon cesse de maintenir l'état, ou quand la jauge de l'hôte atteint la saturation létale.
 
 ---
 
