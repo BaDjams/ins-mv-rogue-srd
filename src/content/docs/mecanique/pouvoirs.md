@@ -78,12 +78,7 @@ _Exemples :_
 -   **Couper un pouvoir :** [Geste accessoire](../combat#déclaration-des-actions), peut être fait à tout
     moment
 -   **Contrôle mental/Possession :** Le contrôleur ne dispose toujours que d'une [Action Complexe](../combat#déclaration-des-actions) et d'une [Action Simple](../combat#déclaration-des-actions) par tour, à répartir entre son hôte et ses cibles contrôlées.
--   Certains pouvoir précisent que le lanceur subit une ou plusieurs
-    blessures aggravées. Ces blessures aggravées sont infligées
-    directement (le personnage les subit), elles ne passent pas par
-    les réductions de PA ou Résilience. C'est le prix à payer pour
-    utiliser une puissance qui dépasse les limites naturelles du
-    corps.
+- Les pouvoirs qui infligent directement des blessures les appliquent sans réduction lorsque leur description le précise. Les anciennes mentions de dégâts aggravés doivent être interprétées comme des blessures létales directes, sauf règle spéciale explicitement validée.
 
 **Interactions entre Pouvoirs**
 
