@@ -83,168 +83,117 @@ export function installHostTraitTooltips(){
   window.addEventListener('resize',move);
   document.addEventListener('scroll',move,true);
 }
+/* Les cartes sont directement complètes dans la galerie immersive :
+   pas de deuxième dialogue ni de bouton « Agrandir ». */
 export function createHostGallery({
-  hosts,best=[],renderCard,onChoose,accent='#d0b17c'
+  hosts,best=[],renderCard,onChoose,onPositionChange=()=>{}
 }){
   installHostTraitTooltips();
   const row=document.createElement('div');
-  row.className='rb-card-rack rb-gallery';row.setAttribute('role','region');
-  row.setAttribute('aria-label','Galerie des hôtes obtenus');
+  row.className='rb-card-rack rb-gallery rb-gallery-full';
+  row.setAttribute('role','region');
+  row.setAttribute('aria-label','Galerie des hôtes obtenus : glisser horizontalement pour changer de carte');
   row.tabIndex=0;
-  const modal=document.createElement('div');
-  modal.className='rb-fullscreen';modal.hidden=true;
-  modal.style.setProperty('--rb-booster-color',accent);
-  modal.innerHTML=[
-    '<div class="rb-fullscreen-backdrop" data-rb-modal="backdrop"></div>',
-    '<section class="rb-fullscreen-panel" role="dialog" aria-modal="true"',
-    ' aria-label="Fiche de personnage en plein écran" tabindex="-1">',
-      '<header class="rb-fullscreen-header">',
-        '<button type="button" class="rb-fullscreen-close" data-rb-modal="close" aria-label="Fermer la fiche">×</button>',
-        '<strong data-rb-modal="name"></strong>',
-        '<span data-rb-modal="position" aria-live="polite"></span>',
-      '</header>',
-      '<div class="rb-fullscreen-scroll" data-rb-modal="scroll">',
-        '<article class="rb-card rb-full-card rb-revealed" data-rb-modal="card"></article>',
-      '</div>',
-      '<footer class="rb-fullscreen-footer">',
-        '<button type="button" data-rb-modal="prev" aria-label="Carte précédente">‹</button>',
-        '<button type="button" data-rb-modal="choose" class="rb-fullscreen-choose">Choisir cet hôte</button>',
-        '<button type="button" data-rb-modal="next" aria-label="Carte suivante">›</button>',
-      '</footer>',
-    '</section>'
-  ].join('');
-  const $=name=>modal.querySelector('[data-rb-modal="'+name+'"]');
-  let modalIndex=0,active=0,restoreFocus=null,previousBodyOverflow='';
+  let active=0,frame=0;
+  const prefersReduced=()=>window.matchMedia?.('(prefers-reduced-motion: reduce)').matches===true;
+
   const cards=hosts.map((host,i)=>{
     const card=document.createElement('article');
     card.className='rb-card rb-quality-'+host.quality;
-    card.inert=true; // Pas de focus sur les cartes encore cachées.
+    card.inert=true; // Pas d'interaction avant le retournement.
     card.style.setProperty('--rb-index',String(i));
-    card.setAttribute('aria-label','Hôte '+(i+1)+' : '+host.name);
+    card.setAttribute('aria-label','Carte '+(i+1)+' sur '+hosts.length+' : '+host.name);
     card.innerHTML=renderCard(host);
-    const open=document.createElement('button');
-    open.type='button';open.className='rb-card-open';
-    open.textContent='Agrandir';open.setAttribute('aria-label',
-      'Voir la fiche de '+host.name+' en plein écran');
-    open.addEventListener('click',()=>openModal(i));
-    card.appendChild(open);
-    card.addEventListener('click',e=>{
-      if(e.target.closest('.rb-trait-chip, .rb-card-open'))return;
-      openModal(i);
+    const front=card.querySelector('.rb-card-front');
+    if(!front)throw new Error('Fiche de personnage invalide.');
+    const select=document.createElement('button');
+    select.type='button';
+    select.className='rb-card-select';
+    select.textContent='Choisir cet hôte';
+    select.setAttribute('aria-label','Choisir '+host.name+' comme incarnation');
+    select.addEventListener('click',()=>{
+      closeHostTraitTooltip();
+      onChoose(i,cards);
     });
+    front.appendChild(select);
     row.appendChild(card);
     return card;
   });
+
   const controls=document.createElement('nav');
-  controls.className='rb-gallery-controls';
-  controls.setAttribute('aria-label','Navigation dans la galerie');
+  controls.className='rb-gallery-controls rb-gallery-floating';
+  controls.setAttribute('aria-label','Passer à une autre carte');
   controls.innerHTML=[
     '<button type="button" data-rb-gallery="prev" aria-label="Carte précédente">‹</button>',
-    '<span class="rb-gallery-position" data-rb-gallery="position" aria-live="polite"></span>',
     '<button type="button" data-rb-gallery="next" aria-label="Carte suivante">›</button>'
   ].join('');
   const ga=name=>controls.querySelector('[data-rb-gallery="'+name+'"]');
+
   function position(){
-    ga('position').textContent=(active+1)+' / '+hosts.length;
+    cards.forEach((card,i)=>{
+      card.classList.toggle('rb-card-active',i===active);
+      if(i===active)card.setAttribute('aria-current','true');
+      else card.removeAttribute('aria-current');
+    });
     ga('prev').disabled=active===0;
     ga('next').disabled=active===hosts.length-1;
+    onPositionChange(active,hosts.length);
   }
-  function scrollToCard(i){
-    active=Math.min(hosts.length-1,Math.max(0,i));position();
-    const card=cards[active];
-    const x=card.offsetLeft-cards[0].offsetLeft-
-      (row.clientWidth-card.clientWidth)/2;
-    if(typeof row.scrollTo==='function')
-      row.scrollTo({left:Math.max(0,x),behavior:'smooth'});
+
+  function updateVisual(){
+    frame=0;
+    if(!row.isConnected)return;
+    const viewport=row.getBoundingClientRect();
+    const center=viewport.left+viewport.width/2;
+    const cardWidth=cards[0]?.getBoundingClientRect().width||1;
+    let nearest=0,distance=Infinity;
+    cards.forEach((card,i)=>{
+      const rect=card.getBoundingClientRect();
+      const diff=(rect.left+rect.width/2-center)/Math.max(cardWidth,1);
+      const depth=Math.min(1,Math.abs(diff));
+      card.style.setProperty('--rb-depth',depth.toFixed(3));
+      card.style.setProperty('--rb-side',Math.sign(diff).toString());
+      if(Math.abs(diff)<distance){distance=Math.abs(diff);nearest=i;}
+    });
+    if(active!==nearest){active=nearest;position();}
+  }
+
+  function scheduleVisual(){
+    if(!frame)frame=requestAnimationFrame(updateVisual);
+  }
+  function scrollToCard(index){
+    active=Math.max(0,Math.min(hosts.length-1,index));
+    closeHostTraitTooltip();position();
+    const target=cards[active];
+    const x=target.offsetLeft-cards[0].offsetLeft-
+      (row.clientWidth-target.clientWidth)/2;
+    row.scrollTo({left:Math.max(0,x),behavior:prefersReduced()?'instant':'smooth'});
+    scheduleVisual();
   }
   ga('prev').addEventListener('click',()=>scrollToCard(active-1));
   ga('next').addEventListener('click',()=>scrollToCard(active+1));
+
   row.addEventListener('scroll',()=>{
-    const frame=row.getBoundingClientRect();
-    const center=frame.left+frame.width/2;
-    let nearest=0,distance=Infinity;
-    cards.forEach((card,i)=>{
-      const box=card.getBoundingClientRect();
-      const delta=Math.abs(box.left+box.width/2-center);
-      if(delta<distance){nearest=i;distance=delta;}
-    });
-    if(active!==nearest){active=nearest;position();}
+    closeHostTraitTooltip();
+    scheduleVisual();
   },{passive:true});
+  row.addEventListener('keydown',e=>{
+    if(e.target.closest('.rb-trait-chip, .rb-card-select'))return;
+    if(e.key==='ArrowLeft'){e.preventDefault();scrollToCard(active-1);}
+    if(e.key==='ArrowRight'){e.preventDefault();scrollToCard(active+1);}
+  });
+  const resize=()=>scheduleVisual();
+  window.addEventListener('resize',resize,{passive:true});
   position();
-  function setModalCard(i){
-    closeHostTraitTooltip();
-    modalIndex=Math.min(hosts.length-1,Math.max(0,i));
-    const host=hosts[modalIndex],card=$('card');
-    card.className='rb-card rb-full-card rb-revealed rb-quality-'+host.quality+
-      (best.includes(modalIndex)?' rb-card-best':'');
-    card.innerHTML=renderCard(host);
-    $('name').textContent=host.name;
-    $('position').textContent=(modalIndex+1)+' / '+hosts.length;
-    $('prev').disabled=modalIndex===0;
-    $('next').disabled=modalIndex===hosts.length-1;
-    $('scroll').scrollTop=0;
-  }
-  function openModal(i){
-    if(!cards[i].classList.contains('rb-revealed'))return;
-    restoreFocus=document.activeElement;
-    previousBodyOverflow=document.body.style.overflow;
-    setModalCard(i);
-    modal.hidden=false;
-    document.body.style.overflow='hidden';
-    $('close').focus();
-  }
-  function closeModal(){
-    closeHostTraitTooltip();
-    if(modal.hidden)return;
-    modal.hidden=true;
-    document.body.style.overflow=previousBodyOverflow;
-    if(restoreFocus?.isConnected)restoreFocus.focus();
-    scrollToCard(modalIndex);
-  }
-  $('close').addEventListener('click',closeModal);
-  $('backdrop').addEventListener('click',closeModal);
-  $('prev').addEventListener('click',()=>setModalCard(modalIndex-1));
-  $('next').addEventListener('click',()=>setModalCard(modalIndex+1));
-  $('choose').addEventListener('click',()=>{
-    closeModal(); // Restaurer le verrouillage de la superposition AVANT de la fermer.
-    onChoose(modalIndex,cards);
-  });
-  modal.addEventListener('keydown',e=>{
-    if(e.key==='Escape'){e.preventDefault();e.stopPropagation();closeModal();}
-    if(e.key==='ArrowLeft'){e.preventDefault();setModalCard(modalIndex-1);}
-    if(e.key==='ArrowRight'){e.preventDefault();setModalCard(modalIndex+1);}
-    if(e.key==='Tab'){
-      const focusables=Array.from(modal.querySelectorAll('button:not(:disabled), .rb-trait-chip'))
-        .filter(el=>el.getClientRects().length);
-      const first=focusables[0],last=focusables.at(-1);
-      if(e.shiftKey&&document.activeElement===first){
-        e.preventDefault();last?.focus();
-      }else if(!e.shiftKey&&document.activeElement===last){
-        e.preventDefault();first?.focus();
-      }
-    }
-  });
-  let startX=null,startY=null;
-  $('scroll').addEventListener('touchstart',e=>{
-    if(e.touches.length!==1)return;
-    startX=e.touches[0].clientX;startY=e.touches[0].clientY;
-  },{passive:true});
-  $('scroll').addEventListener('touchend',e=>{
-    if(startX===null||!e.changedTouches.length)return;
-    const dx=e.changedTouches[0].clientX-startX;
-    const dy=e.changedTouches[0].clientY-startY;
-    startX=null;startY=null;
-    if(Math.abs(dx)>60&&Math.abs(dx)>Math.abs(dy)*1.35)
-      setModalCard(modalIndex+(dx<0?1:-1));
-  },{passive:true});
-  const onPageSwap=()=>{closeModal();modal.remove();};
-  document.addEventListener('astro:before-swap',onPageSwap,{once:true});
-  document.body.appendChild(modal);
+
   function destroy(){
     closeHostTraitTooltip();
-    closeModal();
-    modal.remove();
-    document.removeEventListener('astro:before-swap',onPageSwap);
+    if(frame)cancelAnimationFrame(frame);
+    window.removeEventListener('resize',resize);
   }
-  return {cards,row,controls,openModal,closeModal,destroy};
+  return {
+    cards,row,controls,destroy,
+    refresh:scheduleVisual,
+    scrollToCard
+  };
 }
