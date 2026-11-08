@@ -450,9 +450,9 @@ sidebar:
 
 ---
 
-### Surchargé spirituellement
+### Surchargé spirituellement (état exceptionnel)
 
-**Description :** Trop d'énergie surnaturelle, corps humain en surcharge.
+**Description :** Altération surnaturelle exceptionnelle du corps, appliquée **uniquement lorsqu'un effet l'indique explicitement**. Le lancement d'un pouvoir en Surcharge, ou l'usage de Présence Surnaturelle, **ne déclenche pas automatiquement cet état**.
 
 **Effets :**
 
