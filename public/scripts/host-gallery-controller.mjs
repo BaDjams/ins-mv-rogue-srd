@@ -220,5 +220,10 @@ export function createHostGallery({
   const onPageSwap=()=>{closeModal();modal.remove();};
   document.addEventListener('astro:before-swap',onPageSwap,{once:true});
   document.body.appendChild(modal);
-  return {cards,row,controls,openModal,closeModal};
+  function destroy(){
+    closeModal();
+    modal.remove();
+    document.removeEventListener('astro:before-swap',onPageSwap);
+  }
+  return {cards,row,controls,openModal,closeModal,destroy};
 }
