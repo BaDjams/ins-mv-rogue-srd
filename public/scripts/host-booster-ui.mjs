@@ -1,16 +1,13 @@
 import { availableBoosters, validateBooster, drawBooster, topQualityIndices } from './host-booster-engine.mjs';
+import { OCCUPATIONS, TRAITS, TRAIT_GROUPS, compatibleTraits, occupationSkill, equipmentForProfile } from './host-profile-tables.mjs';
 
 const BASE='/ins-mv-rogue-srd';
-const LABELS={mundane:'Gris',better:'Vert',superior:'Bleu',elite:'Violet',legendary:'Or'};
-const OCCUPATIONS=[
-  ['Enseignant','Enseignement'],['Médecin','Médecine'],['Chercheur','Sciences'],
-  ['Mécanicien','Mécanique'],['Agent de sécurité','Vigilance'],['Policier','Investigation'],
-  ['Chauffeur','Conduite'],['Artisan','Artisanat'],['Infirmier','Premiers soins'],
-  ['Journaliste','Investigation'],['Musicien','Performance artistique'],
-  ['Informaticien','Informatique'],['Avocat','Influence'],['Pompier','Premiers soins'],
-  ['Électricien','Électronique'],['Pilote','Pilotage'],['Technicien','Mécanique'],
-  ['Commerçant','Influence'],['Guide','Survie'],['Linguiste','Langues étrangères']
-];
+// Intitulés éditoriaux affichés ; les qualités et leurs couleurs restent inchangées dans les règles.
+const LABELS={mundane:'Personnage commun',better:'Expérimenté',superior:'Professionnel',elite:'Vétéran',legendary:'Élite'};
+const MAX_DIFFICULTY={mundane:1,better:2,superior:3,elite:4,legendary:4};
+const TRAIT_COUNTS={mundane:[1,2],better:[1,2],superior:[2,3],elite:[2,4],legendary:[2,4]};
+const DEFAULT_GLOW={soldiers:'#e3c17b',infernal:'#d36a80',citizens:'#77a6d5',fallback:'#ab96dc',custom:'#b7a6e3'};
+const validGlow=value=>typeof value==='string'&&/^#[0-9a-f]{6}$/i.test(value);
 const SKILLS=['Armes à distance','Lancer','Armes de mêlée','Conduite','Corps à corps',
   'Intrusion','Discrétion','Informatique','Influence','Larcins','Pilotage',
   'Premiers soins','Sport','Survie','Électronique','Explosifs','Investigation',
@@ -37,14 +34,38 @@ function escape(value){
 function safePicture(value){
   return typeof value==='string'&&(/^https:\/\//i.test(value)||value.startsWith(BASE+'/images/'))?value:'';
 }
+function chooseTraits(quality,age){
+  const [min,max]=TRAIT_COUNTS[quality];
+  const expected=min+rnd(max-min+1);
+  const ageGroup=age<20?'Adolescent':age>=65?'Âgé':null;
+  const selected=[];
+  if(ageGroup){
+    const ageTrait=TRAITS.find(t=>t.name===ageGroup);
+    if(ageTrait)selected.push(ageTrait);
+  }
+  const available=shuffle(TRAITS.filter(t=>
+    !TRAIT_GROUPS.age.includes(t.name) && t.name!==ageGroup
+  ));
+  for(const trait of available){
+    if(selected.length>=expected)break;
+    if(compatibleTraits(selected.map(t=>t.name),trait.name))selected.push(trait);
+  }
+  return selected;
+}
 function ordinary(draw,index){
-  const quality=draw.quality,occupation=choose(OCCUPATIONS);
+  const quality=draw.quality;
+  const choices=OCCUPATIONS.filter(o=>o.difficulty<=MAX_DIFFICULTY[quality]);
+  const occupation=choose(choices.length?choices:OCCUPATIONS);
+  const age=18+rnd(63);
+  const traits=chooseTraits(quality,age);
+  const equipment=equipmentForProfile(occupation,traits);
   const attrs={FOR:1,AGI:1,VIG:1,PER:1};
   for(let left=SUM[quality]-4;left>0;left--){
     const possible=Object.keys(attrs).filter(k=>attrs[k]<3);
     if(possible.length)attrs[choose(possible)]++;
   }
-  const skillNames=[occupation[1],...shuffle(SKILLS.filter(k=>k!==occupation[1])).slice(0,2)];
+  const mainSkill=occupationSkill(occupation.name);
+  const skillNames=[mainSkill,...shuffle(SKILLS.filter(k=>k!==mainSkill)).slice(0,2)];
   const skills={};skillNames.forEach(k=>skills[k]=0);skills[skillNames[0]]=1;
   let extra=EXTRA[quality];
   if(draw.trained){
@@ -58,8 +79,8 @@ function ordinary(draw,index){
     skills[k]=skills[k]===undefined?0:skills[k]+1;
   }
   return {id:'tirage-'+index,name:choose(FIRST)+' '+choose(LAST),quality,
-    occupation:occupation[0],attributes:attrs,skills,age:18+rnd(63),
-    traits:[],equipment:[],picture:'',isSpecial:false,
+    occupation:occupation.name,attributes:attrs,skills,age,
+    traits:traits.map(t=>t.name),equipment,picture:'',isSpecial:false,
     trained:draw.trained===true,originType:draw.originType??null};
 }
 function profile(draw,index){
@@ -83,7 +104,10 @@ function face(host){
     recentDead:'Corps récemment décédé'}[host.originType]||'');
   const portrait=host.picture?'<img alt="" loading="lazy" src="'+escape(host.picture)+'">':
     '<span class="rb-avatar" aria-hidden="true">'+escape(host.name.charAt(0).toUpperCase())+'</span>';
-  const details=[...host.traits,...host.equipment].slice(0,4).map(escape).join(' · ');
+  const traits=Array.isArray(host.traits)?host.traits:[];
+  const gear=Array.isArray(host.equipment)?host.equipment:[];
+  const visibleItems=items=>items.slice(0,2).map(escape).join(' · ')+
+    (items.length>2?' · +'+(items.length-2):'');
   return '<span class="rb-card-inner">'+
     '<span class="rb-card-back" aria-hidden="true"><span class="rb-back-symbol">✦</span><span>INS·MV ROGUE</span></span>'+
     '<span class="rb-card-front">'+
@@ -94,7 +118,8 @@ function face(host){
       (source?'<span class="rb-card-source">'+escape(source)+'</span>':'')+
       '<span class="rb-stats">'+stats+'</span>'+
       '<span class="rb-skills">'+skills+'</span>'+
-      (details?'<span class="rb-details">'+details+'</span>':'')+
+      (traits.length?'<span class="rb-profile-details" title="'+escape(traits.join(' · '))+'"><b>Traits</b> '+visibleItems(traits)+'</span>':'')+
+      (gear.length?'<span class="rb-profile-details rb-gear" title="'+escape(gear.join(' · '))+'"><b>Objets</b> '+visibleItems(gear)+'</span>':'')+
       '<span class="rb-card-choose">Choisir cet hôte</span>'+
     '</span></span>';
 }
@@ -188,9 +213,13 @@ function setup(container){
     choice.hidden=false;
     choice.innerHTML='<strong>Incarnation choisie : '+escape(host.name)+'</strong>'+
       '<span> · '+escape(LABELS[host.quality])+'</span>'+
+      '<div class="rb-host-info"><strong>Profession :</strong> '+escape(host.occupation)+
+      (host.traits?.length?'<span><strong>Traits :</strong> '+host.traits.map(escape).join(', ')+'</span>':'')+
+      (host.equipment?.length?'<span><strong>Équipement :</strong> '+host.equipment.map(escape).join(', ')+'</span>':'')+
+      '</div>'+
       '<button type="button" class="rb-export-host">Exporter cette fiche (JSON)</button>';
     choice.querySelector('button').addEventListener('click',()=>exportHost(host));
-    status.textContent='Hôte choisi. Vous pouvez exporter sa fiche ou ouvrir un autre booster.';
+    status.textContent='Hôte choisi. Vous pouvez consulter son équipement et exporter sa fiche.';
   }
   async function open(){
     if(state.busy||!state.pack)return;
