@@ -1007,3 +1007,9 @@ nav a[aria-current="page"]:hover {
    margin-top volontaires de ces composants sont marqués !important pour continuer à
    s'appliquer malgré ce reset. */
 .rogue-gen *, .rogue-sim *, .rogue-roller * { margin-top: 0 !important; }
+
+/* Cinquième qualité d'hôte : Or (deux jokers sur 54 cartes). */
+.gen-prob-label--legendary { color: oklch(83% 0.16 85); }
+.gen-card--legendary { border-color: oklch(80% 0.17 85 / 0.7); box-shadow: 0 0 16px oklch(80% 0.17 85 / 0.24); }
+.gen-badge--legendary { background: oklch(80% 0.17 85); color: oklch(20% 0.02 85); }
+.gen-card__placeholder { height: 100%; min-height: 170px; display: flex; align-items: center; justify-content: center; text-align: center; font-size: 0.8em; color: var(--rogue-text-faint); background: var(--rogue-bg-3); }
