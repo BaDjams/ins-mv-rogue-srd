@@ -15,16 +15,14 @@ export function createBoosterOverlay({title,accent='#c4a572',onClose=()=>{}}){
           '<span class="rb-eyebrow">INS/MV ROGUE · TIRAGE D’INCARNATION</span>',
           '<strong data-rb-overlay="title"></strong>',
         '</div>',
+        '<span class="rb-overlay-counter" data-rb-overlay="counter" aria-live="off"></span>',
         '<button type="button" class="rb-overlay-close" data-rb-overlay="close"',
-          ' aria-label="Fermer l’ouverture du booster">×</button>',
+          ' aria-label="Fermer le booster et revenir au SRD">×</button>',
       '</header>',
       '<div class="rb-overlay-content" data-rb-overlay="content">',
         '<div class="rb-stage rb-overlay-stage" data-rb-overlay="stage" aria-label="Cartes tirées"></div>',
       '</div>',
-      '<footer class="rb-overlay-footer">',
-        '<p data-rb-overlay="status" role="status" aria-live="polite"></p>',
-        '<button type="button" class="rb-overlay-return" data-rb-overlay="return">Revenir au SRD</button>',
-      '</footer>',
+      '<p class="rb-overlay-sr-status" data-rb-overlay="status" role="status" aria-live="polite"></p>',
     '</section>'
   ].join('');
   const $=name=>root.querySelector('[data-rb-overlay="'+name+'"]');
@@ -52,7 +50,6 @@ export function createBoosterOverlay({title,accent='#c4a572',onClose=()=>{}}){
     root.remove();
   }
   $('close').addEventListener('click',close);
-  $('return').addEventListener('click',close);
   $('backdrop').addEventListener('click',close);
   root.addEventListener('keydown',event=>{
     if(event.key==='Escape'){
@@ -73,7 +70,8 @@ export function createBoosterOverlay({title,accent='#c4a572',onClose=()=>{}}){
   document.addEventListener('astro:before-swap',destroy,{once:true});
   document.body.appendChild(root);
   return {root,stage,status,show,close,destroy,
-    setStatus(message){status.textContent=message;}};
+    setStatus(message){status.textContent=message;},
+    setPosition(index,total){$('counter').textContent=total>1?(index+1)+' / '+total:'';}};
 }
 function escapeAttribute(value){
   return String(value??'').replace(/[&<>"']/g,c=>({

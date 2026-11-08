@@ -1508,3 +1508,232 @@ nav a[aria-current="page"]:hover {
     outline:none;
   }
 }
+
+/* ── Galerie immersive : une seule fiche complète, sans bandeau inférieur ──── */
+/* Les anciennes fiches hautes de 505 px tronquaient les compétences.
+   Les cartes occupent maintenant la hauteur réellement disponible. */
+.rb-reveal-overlay .rb-overlay-panel {
+  display:flex;
+  flex-direction:column;
+  height:100dvh;
+  max-height:none;
+}
+.rb-reveal-overlay .rb-overlay-header {
+  min-height:64px;
+  padding:8px 14px;
+}
+.rb-overlay-counter {
+  flex:none;
+  margin-left:auto;
+  color:#e7d6ed;
+  font:700 13px/1 system-ui,sans-serif;
+  white-space:nowrap;
+}
+.rb-overlay-sr-status {
+  position:absolute!important;
+  width:1px!important;
+  height:1px!important;
+  padding:0!important;
+  margin:-1px!important;
+  overflow:hidden!important;
+  clip:rect(0,0,0,0)!important;
+  white-space:nowrap!important;
+  border:0!important;
+}
+.rb-reveal-overlay .rb-overlay-content {
+  display:flex;
+  flex-direction:column;
+  flex:1;
+  min-height:0;
+  overflow:hidden;
+  padding:0!important;
+}
+.rb-reveal-overlay .rb-overlay-stage {
+  position:relative;
+  flex:1;
+  display:flex;
+  flex-direction:column;
+  min-height:0;
+  width:100%;
+  max-width:100%;
+}
+.rb-reveal-overlay .rb-card-rack.rb-gallery.rb-gallery-full {
+  display:flex!important;
+  flex-direction:row;
+  flex-wrap:nowrap;
+  align-items:stretch;
+  flex:1;
+  min-height:0;
+  height:100%!important;
+  max-height:100%!important;
+  overflow-x:auto!important;
+  overflow-y:hidden!important;
+  overscroll-behavior-x:contain;
+  scroll-behavior:smooth;
+  scroll-snap-type:x mandatory;
+  scrollbar-width:none;
+  width:100%;
+  max-width:none;
+  padding:16px max(12px,calc((100% - min(93vw,420px))/2)) 12px!important;
+  gap:16px;
+  margin:0!important;
+  justify-content:flex-start!important;
+  -webkit-overflow-scrolling:touch;
+}
+.rb-reveal-overlay .rb-card-rack.rb-gallery::-webkit-scrollbar {display:none;}
+.rb-reveal-overlay .rb-gallery.rb-gallery-full > .rb-card {
+  flex:0 0 min(93vw,420px);
+  width:min(93vw,420px);
+  height:100%!important;
+  min-height:0!important;
+  max-height:none!important;
+  scroll-snap-align:center;
+  scroll-snap-stop:always;
+  margin:0!important;
+  transform:perspective(900px) rotateY(var(--rb-angle,0deg)) scale(var(--rb-scale,1));
+  opacity:var(--rb-opacity,1);
+  transition:transform .18s ease-out,opacity .18s ease-out;
+  will-change:transform;
+}
+.rb-reveal-overlay .rb-gallery.rb-gallery-full > .rb-card:hover {
+  transform:perspective(900px) rotateY(var(--rb-angle,0deg)) scale(var(--rb-scale,1));
+}
+.rb-reveal-overlay .rb-gallery .rb-card-inner {height:100%!important;}
+.rb-reveal-overlay .rb-gallery .rb-card-front {
+  height:100%!important;
+  overflow-x:hidden!important;
+  overflow-y:auto!important;
+  overscroll-behavior-y:contain;
+  padding:9px 12px 12px!important;
+  gap:5px;
+  -webkit-overflow-scrolling:touch;
+  scrollbar-width:thin;
+}
+.rb-reveal-overlay .rb-gallery .rb-portrait {
+  flex:0 0 auto;
+  height:clamp(65px,12dvh,112px);
+}
+.rb-reveal-overlay .rb-gallery .rb-card-identity .rb-card-name {
+  font-size:clamp(16px,2.2vw,20px);
+}
+.rb-reveal-overlay .rb-gallery .rb-card-section h3 {
+  margin:0 0 3px!important;
+  padding-bottom:3px;
+}
+.rb-reveal-overlay .rb-gallery .rb-card-section {
+  margin:1px 0!important;
+}
+.rb-reveal-overlay .rb-gallery .rb-info-table th,
+.rb-reveal-overlay .rb-gallery .rb-info-table td {
+  padding:3px 5px!important;
+}
+.rb-reveal-overlay .rb-gallery .rb-card-hint {display:none!important;}
+.rb-card-select {
+  flex:none;
+  position:sticky;
+  bottom:0;
+  display:block;
+  width:100%;
+  margin-top:auto!important;
+  padding:10px 12px;
+  border:1px solid #e1bf83;
+  border-radius:8px;
+  background:linear-gradient(100deg,#bc9359,#f0d6a4);
+  color:#231a12;
+  font:800 12px/1.25 system-ui,sans-serif;
+  cursor:pointer;
+  z-index:3;
+  box-shadow:0 -3px 12px #111522ab;
+}
+.rb-card-select:focus-visible {
+  outline:3px solid #f8e9bb;
+  outline-offset:2px;
+}
+.rb-reveal-overlay .rb-gallery-controls.rb-gallery-floating {
+  position:absolute;
+  inset:0;
+  z-index:6;
+  max-width:none;
+  margin:0!important;
+  display:block;
+  pointer-events:none;
+}
+.rb-reveal-overlay .rb-gallery-controls.rb-gallery-floating button {
+  position:absolute;
+  top:50%;
+  transform:translateY(-50%);
+  width:44px;
+  min-height:64px;
+  border-radius:14px;
+  background:#1c192ee0;
+  border:1px solid #ab9aba;
+  box-shadow:0 5px 24px #0009;
+  opacity:0;
+  pointer-events:none;
+  transition:opacity .25s ease,background .25s ease;
+}
+.rb-reveal-overlay .rb-gallery-controls.rb-gallery-floating button[data-rb-gallery="prev"] {left:8px;}
+.rb-reveal-overlay .rb-gallery-controls.rb-gallery-floating button[data-rb-gallery="next"] {right:8px;}
+@media (hover:hover) and (pointer:fine) {
+  .rb-reveal-overlay .rb-overlay-stage:hover .rb-gallery-controls.rb-gallery-floating button:not(:disabled),
+  .rb-reveal-overlay .rb-gallery-controls.rb-gallery-floating:focus-within button:not(:disabled) {
+    opacity:.93;
+    pointer-events:auto;
+  }
+}
+.rb-reveal-overlay .rb-gallery-controls.rb-gallery-floating button:focus-visible {
+  opacity:1;
+  pointer-events:auto;
+  outline:2px solid #f8e4ba;
+}
+.rb-reveal-overlay .rb-gallery-controls.rb-gallery-floating button:disabled {
+  opacity:0!important;
+  pointer-events:none;
+}
+@media(max-width:660px), (hover:none), (pointer:coarse) {
+  .rb-reveal-overlay .rb-gallery-controls.rb-gallery-floating {display:none!important;}
+}
+@media(max-width:660px) {
+  .rb-reveal-overlay .rb-overlay-header {
+    min-height:60px;
+    padding:max(6px,env(safe-area-inset-top)) 12px 6px;
+  }
+  .rb-reveal-overlay .rb-card-rack.rb-gallery.rb-gallery-full {
+    gap:12px;
+    padding:12px max(8px,calc((100% - 93vw)/2)) 10px!important;
+    height:100%!important;
+  }
+  .rb-reveal-overlay .rb-gallery.rb-gallery-full > .rb-card {
+    flex-basis:93vw;
+    width:93vw;
+    height:100%!important;
+  }
+  .rb-reveal-overlay .rb-gallery .rb-card-front {
+    padding:7px 9px 9px!important;
+    gap:4px;
+  }
+  .rb-reveal-overlay .rb-gallery .rb-portrait {
+    height:clamp(62px,11dvh,93px);
+  }
+  .rb-reveal-overlay .rb-gallery .rb-card-topline .rb-card-rarity {font-size:10px;}
+  .rb-reveal-overlay .rb-gallery .rb-card-identity .rb-card-name {font-size:17px;}
+  .rb-reveal-overlay .rb-gallery .rb-trait-chip {
+    padding:4px 8px;
+    font-size:10px;
+  }
+  .rb-reveal-overlay .rb-gallery .rb-info-table {
+    font-size:10.7px;
+    line-height:1.25;
+  }
+  .rb-reveal-overlay .rb-gallery .rb-card-section h3 {font-size:10.5px;}
+  .rb-card-select {padding:9px 10px;font-size:11px;}
+}
+@media(max-height:660px) {
+  .rb-reveal-overlay .rb-overlay-header {min-height:48px;}
+  .rb-reveal-overlay .rb-gallery .rb-portrait {height:55px;}
+  .rb-reveal-overlay .rb-gallery .rb-card-front {gap:3px;}
+}
+@media(prefers-reduced-motion:reduce){
+  .rb-reveal-overlay .rb-gallery.rb-gallery-full > .rb-card {transition:none!important;}
+  .rb-reveal-overlay .rb-card-rack.rb-gallery.rb-gallery-full {scroll-behavior:auto!important;}
+}

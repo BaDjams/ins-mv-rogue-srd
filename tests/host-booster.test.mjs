@@ -236,12 +236,40 @@ test('la surimpression et le deuxième niveau plein écran sont présents et acc
   const overlay=fs.readFileSync(new URL('../public/scripts/host-booster-overlay.mjs',import.meta.url),'utf8');
   const gallery=fs.readFileSync(new URL('../public/scripts/host-gallery-controller.mjs',import.meta.url),'utf8');
   for(const className of ['rb-reveal-overlay','rb-overlay-backdrop','rb-gallery',
-    'rb-fullscreen','rb-full-card','rb-floating-tooltip'])
+    'rb-card-select','rb-overlay-counter','rb-floating-tooltip'])
     assert.ok(css.includes(className),'Style absent : '+className);
   assert.match(overlay,/aria-modal="true"/);
-  assert.match(gallery,/aria-modal="true"/);
+  assert.doesNotMatch(gallery,/aria-modal="true"/); // Plus de seconde modale.
   assert.match(ui,/activeOverlay\.show\(\)/);
   assert.match(ui,/Revoir les/);
-  assert.match(gallery,/touchstart/);
-  assert.match(gallery,/rb-card-open/);
+  assert.match(gallery,/scrollToCard/); // Swipe natif via CSS Scroll Snap.
+  assert.match(gallery,/rb-card-select/);
+  assert.doesNotMatch(gallery,/rb-card-open|openModal|closeModal/);
+});
+
+test('le booster dispose d’un seul plein écran, sans bandeau inférieur ni bouton redondant',()=>{
+  const overlay=fs.readFileSync(new URL('../public/scripts/host-booster-overlay.mjs',import.meta.url),'utf8');
+  const gallery=fs.readFileSync(new URL('../public/scripts/host-gallery-controller.mjs',import.meta.url),'utf8');
+  const card=fs.readFileSync(new URL('../public/scripts/host-card-render.mjs',import.meta.url),'utf8');
+  assert.match(overlay,/data-rb-overlay="counter"/);
+  assert.doesNotMatch(overlay,/rb-overlay-footer|rb-overlay-return|Revenir au SRD/);
+  assert.doesNotMatch(gallery,/rb-fullscreen|openModal|textContent='Agrandir'/);
+  assert.match(gallery,/Choisir cet hôte/);
+  assert.doesNotMatch(card,/Voir la carte en plein écran/);
+});
+
+test('la galerie occupe l’espace libre et la navigation a une transition fluide',()=>{
+  const css=fs.readFileSync(new URL('../src/styles/rogue-srd.css',import.meta.url),'utf8');
+  const gallery=fs.readFileSync(new URL('../public/scripts/host-gallery-controller.mjs',import.meta.url),'utf8');
+  assert.match(css,/Galerie immersive : une seule fiche complète/);
+  assert.match(css,/\.rb-reveal-overlay \.rb-card-rack\.rb-gallery\.rb-gallery-full/);
+  assert.match(css,/height:100%!important/);
+  assert.match(css,/scroll-snap-type:x mandatory/);
+  assert.match(css,/rotateY\(var\(--rb-angle,0deg\)\)/);
+  assert.match(css,/@media \(hover:hover\) and \(pointer:fine\)/);
+  assert.match(css,/\.rb-gallery-controls\.rb-gallery-floating \{display:none!important;\}/);
+  assert.match(gallery,/--rb-angle/);
+  assert.match(gallery,/--rb-scale/);
+  assert.match(gallery,/--rb-opacity/);
+  assert.match(gallery,/behavior:prefersReduced\(\)\?'auto':'smooth'/);
 });
