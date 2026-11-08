@@ -1580,6 +1580,13 @@
         return '<div class="gen-stat"><span class="gen-stat__key">' + escapeHtml(k) + '</span><span class="gen-stat__val">' + escapeHtml(level) + '</span></div>';
       }).join('');
       var ethLabel = DB.ethnicityLabels[npc.ethnicity] || npc.ethnicity || 'Spécial';
+      var sourceLabels = {
+        sympathizer: 'Réseau de sympathisants',
+        cultist: 'Milieu sectaire',
+        recentDead: 'Corps récemment décédé — magie noire'
+      };
+      var sourceLabel = npc.isSoldier ? 'Soldat de Dieu — personnel préparé' :
+        (sourceLabels[npc.originType] || '');
       var ageInfo = [];
       if (npc.gender === 'male') ageInfo.push('♂');
       else if (npc.gender === 'female') ageInfo.push('♀');
@@ -1602,6 +1609,7 @@
             '<span class="gen-card__meta">' + escapeHtml(ageInfo.join(' · ')) + '</span>' +
           '</div>' +
           '<div class="gen-card__occ">' + escapeHtml(npc.occupation) + '</div>' +
+          (sourceLabel ? '<div class="gen-card__origin">' + escapeHtml(sourceLabel) + '</div>' : '') +
           (npc.description ? '<p class="gen-card__description">' + escapeHtml(npc.description) + '</p>' : '') +
           '<div class="gen-card__section"><span class="gen-card__section-title">Traits</span><div class="gen-tags">' + tagsHtml + '</div></div>' +
           '<div class="gen-card__section"><span class="gen-card__section-title">Équipement</span><div class="gen-tags">' + eqHtml + '</div></div>' +
