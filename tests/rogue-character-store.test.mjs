@@ -53,7 +53,7 @@ function fakeIndexedDB(){
           }
           return {
             get:key=>operation(()=>structuredClone(store.items.get(key))),
-            getAll:()=>operation(()=>Array.from(store.items.values()).map(structuredClone)),
+            getAll:()=>operation(()=>Array.from(store.items.values()).map(item=>structuredClone(item))),
             put:record=>operation(()=>{
               store.items.set(record[store.keyPath],structuredClone(record));
               return record[store.keyPath];
