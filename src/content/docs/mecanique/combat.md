@@ -123,7 +123,7 @@ Une fois l'ordre d'initiative établi, à leur tour, les joueurs choisissent les
 
     **François (MJ)** : "Très bien : Action Simple pour dégainer, Action Complexe pour la Charge. Lance le D666 !"
 
-    **Will (Tyrael)** : lance le D666 → "J'ai 5 sur le bleu, 1 sur le blanc, et 3 sur le rouge. Comme j'ai 2 en Agilité et +2 en Armes de Mêlée (Expert), mon seuil avec l'épée est 4. Mon dé blanc fait 1, donc ça passe largement !"
+    **Will (Tyrael)** : lance le D666 → "J'ai 5 sur le bleu, 1 sur le blanc, et 3 sur le rouge. Comme j'ai 2 en Agilité et +2 en Armes de mêlée (Professionnel), mon seuil avec l'épée est 4. Mon dé blanc fait 1, donc ça passe largement !"
 
     **François (MJ)** : "Bien joué, Tyrael. Ta Charge réussit et ajoute +2 dégâts. Intensité 3 + Code de l'épée 3 + Charge 2 = **8 dégâts**. Le démon est blessé !"
 
