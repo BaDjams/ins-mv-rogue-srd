@@ -171,14 +171,14 @@ Lorsque le D666 indique **111**, il s'agit d'une **intervention divine**. Lorsqu
 
 **Intervention démoniaque (666)** : L'action de l'ange échoue de façon particulièrement humiliante
 
-- L'ange subit immédiatement un nombre de blessures aggravées égal à la moitié de son [Rang Céleste](../../personnage/rang) (arrondi supérieur).
+- L'ange subit immédiatement un nombre de blessures létales directes égal à la moitié de son [Rang Céleste](../../personnage/rang) (arrondi supérieur).
 - Double désavantage pour l'ange et tous ses alliés jusqu'à la fin de son prochain tour
 
 #### Pour les Démons
 
 **Intervention divine (111)** : L'action échoue de façon particulièrement humiliante
 
-- Le démon subit immédiatement un nombre de blessures aggravées égal à la moitié de son [Rang Céleste](../../personnage/rang) (arrondi supérieur).
+- Le démon subit immédiatement un nombre de blessures létales directes égal à la moitié de son [Rang Céleste](../../personnage/rang) (arrondi supérieur).
 - Double désavantage pour le démon et tous ses alliés jusqu'à la fin de son prochain tour
 
 **Intervention démoniaque (666)** : L'action réussit de manière particulièrement spectaculaire
