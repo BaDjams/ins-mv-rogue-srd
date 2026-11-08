@@ -266,6 +266,7 @@ collections:
                   - { label: Agilité (AGI), name: AGI, widget: number, value_type: int, min: 1, max: 5 }
                   - { label: Vigueur (VIG), name: VIG, widget: number, value_type: int, min: 1, max: 5 }
                   - { label: Perception (PER), name: PER, widget: number, value_type: int, min: 1, max: 5 }
+              - { label: Compétence principale du métier, name: professionalSkill, widget: string, hint: "Doit figurer dans les compétences fixes à +2 minimum (Enseignement, Médecine, etc.)." }
               - label: Compétences fixes
                 name: skills
                 widget: list
