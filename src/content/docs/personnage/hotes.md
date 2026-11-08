@@ -60,6 +60,6 @@ Chaque point permet **soit d'acquérir une nouvelle compétence à +0, soit d'am
 | Violet | Base grise | 4 | +3 |
 | Or | Base grise | 6 | +3 |
 
-**Exemple :** un hôte gris possède Conduite +0, Discrétion +0 et Observation +1. En qualité verte, son point supplémentaire peut faire passer Conduite à +1 **ou** lui donner une quatrième compétence à +0. En qualité bleue, il dispose d'un point supplémentaire et peut atteindre +2 dans une compétence.
+**Exemple :** un hôte gris possède Conduite +0, Discrétion +0 et Survie +1. En qualité verte, son point supplémentaire peut faire passer Conduite à +1 **ou** lui donner une quatrième compétence à +0. En qualité bleue, il dispose d'un point supplémentaire et peut atteindre +2 dans une compétence.
 
 La qualité représente les capacités **de l'hôte humain**, pas le rang ni les attributs surnaturels de l'âme qui l'occupe.
