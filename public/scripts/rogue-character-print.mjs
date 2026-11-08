@@ -49,7 +49,11 @@ function hostSection(host){
       '<tr><th scope="row">'+esc(name)+'</th><td class="rc-print-value">'+
       esc(bonus===-1?'Incompétent':('+'+bonus))+'</td></tr>').join('')+'</tbody></table>'
     :'<p class="rc-print-muted">Aucune compétence renseignée</p>';
+  const picture=typeof host.picture==='string'&&(
+    /^https:\/\//i.test(host.picture)||host.picture.startsWith('/ins-mv-rogue-srd/images/'))
+    ?'<img class="rc-print-host-portrait" alt="" src="'+esc(host.picture)+'">':'';
   return section('Hôte actuel — '+host.name,
+    picture+
     '<div class="rc-print-subtitle">'+esc(host.occupation||'')+
       (Number.isInteger(host.age)?' · '+esc(host.age)+' ans':'')+
       (host.quality?' · '+esc(QUALITY[host.quality]||host.quality):'')+'</div>'+
@@ -95,6 +99,9 @@ export function characterPrintHTML(character){
         '</strong></div><div><span>Disponibles</span><strong>'+progress.available+
         '</strong></div></div>')+'</div></div>'+
       hostSection(c.host)+
+      (c.hostHistory.length?section('Hôtes précédents',list(
+        c.hostHistory.map(x=>x.host?.name).filter(Boolean)
+      )):'')+
       section('Historique des progrès',progressRows(c.progression))+
       (s.notes?section('Notes', '<p class="rc-print-notes">'+esc(s.notes)+'</p>'):'')+
     '</div>'+
