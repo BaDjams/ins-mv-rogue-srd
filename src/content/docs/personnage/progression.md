@@ -26,8 +26,7 @@ d'expérience, en fonction du niveau de réussite de l'équipe. Cette
 expérience pourrait être dépensée afin de :
 
 - Acquérir un nouveau pouvoir (5 points)
-- Augmenter un niveau supérieur d'un pouvoir existant (5 points)
-- Augmenter les [caractéristiques](../caracteristiques) de l'ange (nouveau niveau x2)
+- Augmenter les [attributs](../caracteristiques) de l'âme (nouveau niveau x2)
 
 Si un ange réussit à terminer un scénario sans [se réincarner](../reincarnation), il aura la
 possibilité d'acquérir le pouvoir "[compétence](../../mecanique/competences) résiduelle" qui
