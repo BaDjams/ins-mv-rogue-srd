@@ -31,7 +31,7 @@ Au-delà du tronc commun, chaque [attribut d'âme](../../personnage/caracteristi
 
 ### Puissance (PUI)
 
-- **Stigmate** _(coût 1)_ : les dégâts du pouvoir deviennent des blessures aggravées. C'est la puissance divine — ou infernale — à l'état brut, et ce genre de marque ne se soigne pas avec des compresses.
+- **Stigmate** _(coût 1)_ : les blessures létales infligées par le pouvoir deviennent **maudites** et ne guérissent pas naturellement. Les soins surnaturels ou les règles spécifiques de levée de la malédiction restent applicables.
 - **Fléau X** _(coût X)_ : contre un type de créature désigné à l'application du mot-clé (démons, morts-vivants, anges…), réduit le facteur de division de la [Résilience](../blessures) de la cible de X, jusqu'à un minimum de 1. Sans effet sur les autres types de créatures.
 
 ### Influence (INF)
