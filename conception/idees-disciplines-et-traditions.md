@@ -36,6 +36,20 @@
 
 ## Disciplines martiales envisagées
 
+### Manœuvres ordinaires et disciplines martiales — principe acté en conception le 8 novembre 2026
+
+La **Feinte**, le **Désarmement**, la **Projection**, l'**Agrippement** et la **Poussée** sont des actions universelles qui produisent d'abord un effet tactique **sans dégâts**. Leur résolution de base est définie dans les arbitrages S08–S12. Une **manœuvre achetée dans une discipline** (par exemple **Escrime** ou **Arts martiaux**) peut permettre de **faire les dégâts habituels de l'arme en plus de l'effet tactique, dans la même action complexe**. Aucun second tour ni seconde attaque gratuite.
+
+Pistes à écrire après adoption définitive des règles situationnelles :
+- **Escrime — Botte feinteuse** : une attaque réussie inflige les dégâts de l'arme et prépare une ouverture.
+- **Escrime — Désarmement offensif** : l'attaque réussie inflige les dégâts habituels et fait tomber l'arme adverse.
+- **Arts martiaux — Projection offensive** : inflige les dégâts de l'arme naturelle et applique `À Terre`.
+- **Arts martiaux — Poussée percutante** : inflige les dégâts de la frappe et repousse la cible.
+
+**Point non tranché :** définir la défense et le jet uniques de chaque variante améliorée sans permettre de substituer une simple opposition de Vigilance à la défense de combat. Conserver un effet clair, une action complexe, une résolution D666.
+
+
+
 Une discipline est une famille de techniques pouvant suivre la même économie : acquisition + une manœuvre gratuite, puis manœuvres supplémentaires par progression. Elle ne crée pas une posture obligatoire à moins qu'une manœuvre le précise.
 
 - **Gun-Fu** : dégainé fulgurant, tir au contact, déplacement et tir, double détente, tir de suppression, tirs sous pression.
