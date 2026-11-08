@@ -160,10 +160,10 @@ function setup(container){
     if(state.pack)select.value=state.pack.id;
     select.disabled=!state.pack;
     openBtn.disabled=state.busy||!state.pack;
-    description.textContent=state.pack?.description??'Aucun booster disponible dans ce contexte.';
+    description.textContent=state.pack ? [state.pack.description||'',...(state.pack.tags||[])].filter(Boolean).join(' · ') : 'Aucun booster disponible dans ce contexte.';
     status.textContent=state.pack?'Choisissez un paquet puis ouvrez-le.':'Aucun booster actif pour cette situation.';
     $('density-label').hidden=state.stage!=='reincarnation';
-    $('dead-label').hidden=state.pack?.source!=='infernal';
+    $('dead-label').hidden=state.faction!=='demon';
   }
   function sync(){
     state.stage=$('stage').value;
@@ -175,8 +175,8 @@ function setup(container){
   for(const field of ['stage','faction','density','dead'])$(field).addEventListener('change',sync);
   select.addEventListener('change',()=>{
     state.pack=state.catalog.boosters.find(p=>p.id===select.value)??null;
-    description.textContent=state.pack?.description??'';
-    $('dead-label').hidden=state.pack?.source!=='infernal';
+    description.textContent=state.pack ? [state.pack.description||'',...(state.pack.tags||[])].filter(Boolean).join(' · ') : '';
+    $('dead-label').hidden=state.faction!=='demon';
   });
   function selectHost(i,hosts,buttons){
     if(state.busy)return;
@@ -205,7 +205,7 @@ function setup(container){
       const draws=drawBooster(pack,state.sources,{
         cardCount:n,allowRecentlyDead:state.allowRecentlyDead
       });
-      const hosts=draws.map(profile);
+      const hosts=draws.map((draw,i)=>profile({ ...draw, trained:draw.trained===true || pack.source==='soldiers' },i));
       const best=topQualityIndices(hosts);
       const sealed=document.createElement('div');
       sealed.className='rb-sealed rb-theme-'+(state.faction==='angel'?'angel':'demon');
