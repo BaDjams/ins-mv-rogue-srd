@@ -1,6 +1,13 @@
 /* Galerie d'incarnation : navigation mobile, fiche plein écran et
    infobulles de traits accessibles au survol, au clavier et au toucher. */
 let tooltipInstalled=false;
+let dismissTraitTooltip=null;
+
+// Utilisé lors du changement de carte, de la fermeture des dialogues
+// et par le clic en dehors d'un trait.
+export function closeHostTraitTooltip(){
+  dismissTraitTooltip?.();
+}
 export function installHostTraitTooltips(){
   if(tooltipInstalled||typeof document==='undefined')return;
   tooltipInstalled=true;
@@ -14,28 +21,36 @@ export function installHostTraitTooltips(){
     const box=anchor.getBoundingClientRect();
     const maxWidth=Math.min(320,window.innerWidth-24);
     tip.style.maxWidth=maxWidth+'px';
-    let left=Math.max(12,Math.min(window.innerWidth-maxWidth-12,box.left));
+    const left=Math.max(12,Math.min(window.innerWidth-maxWidth-12,box.left));
     tip.style.left=left+'px';
     tip.style.top='0px';
     const height=tip.getBoundingClientRect().height;
     const below=box.bottom+10;
-    const top=below+height<window.innerHeight-8
-      ?below:Math.max(8,box.top-height-10);
-    tip.style.top=top+'px';
+    tip.style.top=(below+height<window.innerHeight-8
+      ?below:Math.max(8,box.top-height-10))+'px';
   }
-  function hide(){
-    if(anchor){
-      anchor.removeAttribute('aria-describedby');
-      anchor.setAttribute('aria-expanded','false');
-    }
+  function resetChip(chip){
+    if(!chip)return;
+    chip.removeAttribute('aria-describedby');
+    chip.setAttribute('aria-expanded','false');
+  }
+  function hide(blur=false){
+    const old=anchor;
+    resetChip(old);
     anchor=null;pinned=false;tip.hidden=true;
+    // Sur les écrans tactiles, garder le focus après un tap entretient
+    // parfois l'état visuel : ne pas conserver ce focus pour un chip fermé.
+    if(blur&&old&&document.activeElement===old)old.blur();
   }
+  dismissTraitTooltip=()=>hide(true);
   function show(button,pin=false){
     if(!button||!button.dataset.traitHelp)return;
-    if(anchor&&anchor!==button)anchor.removeAttribute('aria-describedby');
+    if(anchor&&anchor!==button)resetChip(anchor);
     anchor=button;pinned=pin;tip.textContent=button.dataset.traitHelp;
-    tip.hidden=false;button.setAttribute('aria-describedby',tip.id);
-    button.setAttribute('aria-expanded',String(pin));move();
+    tip.hidden=false;
+    button.setAttribute('aria-describedby',tip.id);
+    button.setAttribute('aria-expanded',String(pin));
+    move();
   }
   document.addEventListener('pointerover',e=>{
     const chip=e.target.closest?.('.rb-trait-chip');
@@ -43,26 +58,28 @@ export function installHostTraitTooltips(){
   });
   document.addEventListener('pointerout',e=>{
     const chip=e.target.closest?.('.rb-trait-chip');
-    if(chip===anchor&&!pinned&&e.pointerType!=='touch'&&!chip.contains(e.relatedTarget))
-      hide();
+    if(chip===anchor&&!pinned&&e.pointerType!=='touch'&&
+      !chip.contains(e.relatedTarget)&&document.activeElement!==chip)hide();
   });
   document.addEventListener('focusin',e=>{
     const chip=e.target.closest?.('.rb-trait-chip');
     if(chip&&!pinned)show(chip);
   });
   document.addEventListener('focusout',e=>{
-    if(e.target===anchor&&!pinned)hide();
+    if(e.target===anchor)hide();
   });
   document.addEventListener('click',e=>{
     const chip=e.target.closest?.('.rb-trait-chip');
     if(chip){
-      if(anchor===chip&&pinned)hide();
+      if(anchor===chip&&pinned)hide(true);
       else show(chip,true);
     }else if(anchor){
-      hide();
+      hide(true);
     }
   });
-  document.addEventListener('keydown',e=>{if(e.key==='Escape')hide();});
+  document.addEventListener('keydown',e=>{
+    if(e.key==='Escape')hide(true);
+  });
   window.addEventListener('resize',move);
   document.addEventListener('scroll',move,true);
 }
@@ -155,6 +172,7 @@ export function createHostGallery({
   },{passive:true});
   position();
   function setModalCard(i){
+    closeHostTraitTooltip();
     modalIndex=Math.min(hosts.length-1,Math.max(0,i));
     const host=hosts[modalIndex],card=$('card');
     card.className='rb-card rb-full-card rb-revealed rb-quality-'+host.quality+
@@ -176,6 +194,7 @@ export function createHostGallery({
     $('close').focus();
   }
   function closeModal(){
+    closeHostTraitTooltip();
     if(modal.hidden)return;
     modal.hidden=true;
     document.body.style.overflow=previousBodyOverflow;
@@ -222,6 +241,7 @@ export function createHostGallery({
   document.addEventListener('astro:before-swap',onPageSwap,{once:true});
   document.body.appendChild(modal);
   function destroy(){
+    closeHostTraitTooltip();
     closeModal();
     modal.remove();
     document.removeEventListener('astro:before-swap',onPageSwap);
