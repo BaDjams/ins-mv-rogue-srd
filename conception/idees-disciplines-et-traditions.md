@@ -89,6 +89,20 @@ Une discipline est une famille de techniques pouvant suivre la même économie :
 - Autres disciplines possibles : escrime, bouclier, tir de précision, commandement, lutte et protection rapprochée.
 - L'économie des attaques supplémentaires et le cumul avec les rafales, explosions d'intensité et avantages exigent des simulations avant validation.
 
+### Esquive active — manœuvre apprise, non réaction (9 novembre 2026)
+
+**Principe donné par l'auteur :** certains combattants savent **attendre une attaque dangereuse, l'éviter et frapper dans l'ouverture**, dans un seul mouvement. C'est le cas d'un héros comme Link face au coup imparable d'un boss. Un combattant ordinaire peut essayer d'esquiver, mais il ne transforme pas automatiquement cette défense en attaque.
+
+**L'esquive active est une manœuvre offensive qui s'apprend.** Elle utilise **une action complexe**, **pas une réaction** ; elle n'exige aucun jet d'esquive supplémentaire. Elle se distingue ainsi de l'**esquive réflexe**, qui impose un désavantage à l'attaquant mais fait perdre l'action complexe encore disponible. La manœuvre ne repose ni sur la surprise ni sur un cadeau d'initiative.
+
+**Résolution naturelle proposée, à confirmer :** lorsque l'adversaire lance son attaque, le personnage qui a gardé son action complexe et connaît la manœuvre la dépense à cet instant, même si ce n'est pas son rang d'initiative. Il **oppose son D666** à celui de l'attaquant, comme dans le duel ordinaire. Une victoire signifie qu'il évite le coup et touche dans la foulée ; une défaite signifie que le coup adverse passe ; deux échecs ne donnent aucune touche. **L'égalité entre deux dés d'action réussis conserve la touche mutuelle**, conformément à la règle générale : la manœuvre n'accorde pas d'immunité automatique. Cette solution n'ajoute **ni bonus de dés ni troisième jet**.
+
+**Ce que l'apprentissage change réellement :** sans cette manœuvre, une attaque **impossible à parer avec l'arme ou le corps dont on dispose** (poing de mécha contre fleuret, grand coup de boss) ne permet pas de répondre par une offensive au simple motif qu'on « entre dans le duel ». Il faut utiliser l'esquive en réaction, sans riposte et avec perte de l'action complexe encore disponible. **Avec la manœuvre**, le personnage sait répondre au mouvement disproportionné par une esquive suivie d'une attaque, en ne dépensant que son action complexe. Il obtient un **droit tactique**, pas un avantage chiffré universel.
+
+**Moment du déclenchement :** si le personnage joue avant le boss, il peut conserver son action complexe dans l'attente du coup. L'apprentissage autorise expressément cette dépense **au moment de l'attaque**, sans la transformer en **action préparée** qui demanderait une réaction. Si l'attaque attendue n'arrive pas avant la fin du round, l'action non dépensée est perdue ; s'il a déjà dépensé son action complexe ou l'a perdue à cause d'une réaction, il ne peut pas utiliser cette manœuvre. Cette exception de calendrier est une **piste à valider** : elle évite de recréer les attitudes et les initiatives choisies de *COPS*.
+
+**À trancher :** comment qualifier l'attaque « imparable » mais esquivable (propriété narrative ou mot-clé), et si l'apprentissage autorise la réponse offensive à toutes ces attaques ou seulement à certaines. Tant que ce point n'est pas réglé, **ne pas insérer de description définitive de la manœuvre au SRD**.
+
 ## Disciplines et traditions surnaturelles envisagées
 
 Distinguer la **nature** (ange, démon, humain, vampire, loup-garou, momie…), la **discipline** (famille de techniques/manœuvres) et la **tradition magique** (comment canaliser et payer le pouvoir).
