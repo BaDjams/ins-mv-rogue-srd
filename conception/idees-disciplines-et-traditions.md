@@ -34,6 +34,17 @@
 - **Point encore à arbitrer** : le statut « toujours en combat » du Spider Sense **supprime-t-il l'avantage de surprise de l'attaquant** ou permet-il seulement une défense pleine et entière ? Il ne faut pas décider ce point implicitement à partir des règles de *Sixième sens*. Conserver la question ouverte.
 - **Point d'implémentation** : si une attaque peut aussi déclencher une riposte, distinguer la réaction d'esquive gratuite (sans riposte gratuite implicite) d'une réaction défensive ordinaire pour éviter la multiplication d'attaques hors tour.
 
+## Inspiration complémentaire : Marvel Multiverse Role-Playing Game (9 novembre 2026)
+
+Le créateur apprécie particulièrement les **arbres de pouvoirs par héros** de *Marvel Multiverse*. Y retenir des **familles thématiques de capacités** (*power sets*), des **prérequis entre capacités**, et une **construction émergente de l'identité du personnage** par combinaison de traits distincts, plutôt que d'inventer un pouvoir monolithique « être Spider-Man ».
+
+- Exemple en conception : **Spider Sense** (toujours considéré en combat) + **Agilité surhumaine** (avantage aux esquives) + **Réaction rapide** (esquives gratuites après épuisement de la réaction normale). Les effets sont distincts, leur synergie est volontaire.
+- Distinguer **arbre de discipline commun** (Escrime, Gun-Fu, Protéisme, Concentration) et **construction de héros** issue de plusieurs branches. Aucun arbre réservé à un seul personnage n'est nécessaire.
+- Garder le **coût par progression, les prérequis et la première manœuvre gratuite** lors de l'acquisition d'une discipline ou posture, tels qu'envisagés pour Rogue ; ne pas transposer le nombre de pouvoirs par rang ni les bonus de spécialisation des power sets de Marvel sans décision de conception.
+- **Priorité de travail inchangée : terminer et clarifier les règles situationnelles, puis bâtir les arbres de manœuvres.**
+
+Référence de conception : *Marvel Multiverse Role-Playing Game*, Free Basic Rules, « Picking Powers » et « Powers » (recueils *power sets*, prérequis et actions).
+
 ## Architecture des postures et manœuvres envisagée
 
 - Accéder à une posture demande l'acquisition d'un trait de posture (ex. **Défenseur**, **Assaillant**, **Concentré**).
