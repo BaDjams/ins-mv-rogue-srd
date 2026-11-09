@@ -31,7 +31,7 @@ Se replier, désarmer, frapper un adversaire à terre ou se cacher au mauvais mo
 
 Certaines capacités permettent d'agir hors de votre tour. Vous pouvez effectuer **1 réaction par round** (Esquive, Parade, Contre-attaque, Attaque d'Opportunité).
 
-Une **esquive ou parade active** consomme une réaction et déclenche un **jet en opposition** contre l'attaque. Si le défenseur l'emporte, l'attaque est évitée ; en cas d'égalité entre deux réussites, les deux actions réussissent selon les règles d'opposition. Une réaction ne modifie pas les PA.
+**Esquiver ou parer** coûte une réaction et impose un **désavantage au jet de l'attaquant**. Le défenseur ne lance pas les dés : c'est l'attaque qui devient plus difficile. Une réaction ne donne pas un second jet pour une action déjà entreprise. Si un autre effet pénalise aussi l'attaque, les règles habituelles de cumul des désavantages s'appliquent. Une réaction ne modifie pas les PA.
 
 ### Initiative
 
@@ -143,23 +143,23 @@ Une fois l'ordre d'initiative établi, à leur tour, les joueurs choisissent les
 
     ---
 
-    **François (MJ)** : "C'est au tour des démons. Le premier se jette sur Tyrael, le second s'en prend à Myrael. Tyrael, tu esquives ?"
+    **François (MJ)** : "C'est au tour des démons. Le premier s'en prend à Tyrael. Tu esquives ?"
 
     **Will (Tyrael)** : "Non, je garde ma réaction."
 
-    **François (MJ)** : lance le D666 → "J'obtiens 4 sur le bleu, 5 sur le blanc et 2 sur le rouge. Avec son seuil de 3 au corps à corps, il rate Tyrael."
+    **François (MJ)** : lance le D666 → "4 sur le bleu, 5 sur le blanc et 2 sur le rouge. Avec son seuil de 3, le démon échoue. Tyrael, il te manque."
 
-    **Will (Tyrael)** : "Pour une fois qu'il y en a un qui manque sa cible."
+    **Will (Tyrael)** : "Pour une fois que je ne suis pas un aimant à baffes."
 
-    **François (MJ)** : "Le deuxième fonce sur Myrael. Tu peux encore réagir."
+    **François (MJ)** : "Le second démon fonce sur Myrael. Tu esquives ?"
 
-    **Fred (Myrael)** : "J'esquive !"
+    **Fred (Myrael)** : "Oui !"
 
-    **François (MJ)** : lance le D666 du démon → "1 sur le bleu, 1 sur le blanc et 5 sur le rouge : **coup critique**. Lance ton esquive, nous comparerons les deux résultats."
+    **François (MJ)** : "Tu dépenses ta réaction. Ton esquive lui impose un désavantage pour te toucher. **Pas besoin de lancer les dés : c'est son attaque qui compte.**"
 
-    **Fred (Myrael)** : lance le D666 → "2 sur le bleu, 3 sur le blanc et 5 sur le rouge. Mon dé d'action est le 3, et mon seuil suffit."
+    **François (MJ)** : lance le D666 du démon → "1 sur le bleu, 1 sur le blanc et 5 sur le rouge. Le désavantage ne change rien : ses deux dés d'action montrent 1. C'est un [coup critique](../resolution#réussite-critique) !"
 
-    **François (MJ)** : "Ton esquive réussit, mais le démon a obtenu **1**. Dans cette opposition, c'est le plus petit dé d'action réussi qui l'emporte. Il te touche. Tu as dépensé ta réaction, et tu n'as pas réussi à l'éviter."
+    **Fred (Myrael)** : "Mon esquive n'a pas suffi. Évidemment."
 
     **François (MJ)** : "Le coup critique rend le dé d'intensité explosif. Lançons l'explosion : le 5 initial + un dé d'explosion qui fait 4. Total intensité : 9. Les griffes acérées du démon infligent Code +2. Donc **9 + 2 = 11 dégâts**, sans ajout de marge."
 
