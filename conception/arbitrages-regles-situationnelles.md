@@ -1,6 +1,6 @@
 # Arbitrages — règles situationnelles (28 choix)
 
-> **STATUT : CHOIX DE CONCEPTION DE L'AUTEUR, NON TRANSCRITS AU SRD.** Les 28 choix de conception sont consignés (S06, S22, S02/S28 et S19 précisés le 9 novembre 2026), et peuvent encore être affinés. **Ne pas intégrer au SRD sans validation expresse.**
+> **STATUT : CHOIX DE CONCEPTION DE L'AUTEUR, NON TRANSCRITS AU SRD.** Les 28 choix de conception sont consignés (S06, S22, S02/S28, S19 et S24 précisés le 9 novembre 2026), et peuvent encore être affinés. **Ne pas intégrer au SRD sans validation expresse.**
 >
 > Pour chaque situation : **A**, **B**, recommandation et raison, puis **choix réel de l'auteur**. Le moteur du SRD actuel (1 action complexe + 1 simple + 1 réaction, opposition D666, états) reste la base. Les règles de posture en cours de discussion ne sont **pas** encore intégrées au SRD.
 
@@ -51,7 +51,7 @@ L'ensemble ne donne aucune attaque hors tour supplémentaire. **Arbitrage tranch
 4. **S03 B + S04 A — déclenchement unique :** entrer et circuler dans l'allonge ne provoque rien ; **sortir** de l'allonge provoque au plus une attaque d'opportunité par adversaire ayant encore sa réaction, sauf repli prudent. Les ennemis ne reçoivent pas de réaction supplémentaire. Une attaque d'opportunité ratée n'empêche pas la sortie sauf autre capacité.
 5. **S08–S12 — coût des oppositions défensives :** une résistance à une manœuvre (retenir son arme, ne pas tomber, ne pas être agrippé) n'exige pas automatiquement une réaction, contrairement à une esquive/parade active. À expliciter, sinon chaque feinte consommerait de facto la réaction du défenseur, contrairement à l'intention.
 6. **S13 B — flanc sans orientation sur grille :** définir une prise de flanc crédible en théâtre de l'esprit, sans introduire une règle permanente d'orientation. Ne pas additionner les mêmes circonstances comme « surnombre » et « flanc » pour provoquer mécaniquement un double avantage.
-7. **S24 A — suppression sans effet sur déplacement simple :** le désavantage n'a aucun effet si l'adversaire traverse simplement la zone sans jet. Déterminer une conséquence concrète de l'exposition (menace de tir, coût d'action ou opposition) qui reste dans le cadre A sans créer l'état `Cloué` rejeté.
+7. **S24 — ARBITRAGE COMPLÉMENTAIRE LE 9 NOVEMBRE 2026 :** le tir de suppression réussi **incite les PNJ humains à rester à couvert**. Un PNJ humain exposé qui veut malgré tout se relever, se découvrir, traverser la zone battue ou attaquer en s'exposant **doit échouer à un jet d'INT** : s'il **réussit**, il mesure le danger et **renonce à s'exposer** ; s'il **échoue**, il agit malgré le risque. Ce n'est **pas un jet de courage ou de Volonté**, et l'échec d'INT ne représente pas une prouesse. **Pas de test d'INT pour les PJ dont l'intelligence est incarnée par celle du joueur, ni pour les âmes surnaturelles sans INT** ; elles choisissent leurs actes. Pas de nouveau statut `Cloué` ni de désavantage automatique sur le tir ou le déplacement. **Restent à préciser :** risques physiques des balles pour un personnage qui s'expose (même surnaturel), munitions dépensées et zone/durée exactes de suppression.
 8. **S25 A — timing de l'action préparée :** déterminer à quel moment le déclencheur interrompt les autres actions et comment il interagit avec une réaction déjà consommée.
 9. **S26 A — aide et double avantage :** plusieurs assistants ne doivent pas produire automatiquement plusieurs avantages lorsque tous offrent la même aide ; définir brièvement quand deux contributions sont indépendantes.
 10. **S07 A / S20 A — états existants :** conserver les effets normatifs `À Terre`, `Inconscient`, `Paralysé`, et la capacité à réagir si l'état le permet.
@@ -241,10 +241,16 @@ L'ensemble ne donne aucune attaque hors tour supplémentaire. **Arbitrage tranch
 
 ### S24 — Tir de suppression
 
-- **Option A :** action complexe + munitions ; réussite : zone exposée sous pression jusqu'au prochain tour, traversée / action exposée avec désavantage.
-- **Option B :** imposer à toutes les cibles un nouvel état Cloué, avec règles propres.
-- **Ma préférence : A.** Éviter de créer un état et une réserve de suppression de plus.
-- **Arbitrage de l'auteur : A RETENU** (8 novembre 2026 ; décision de conception, non intégrée au SRD).
+- **Option A initiale :** action complexe + munitions ; réussite : zone exposée sous pression jusqu'au prochain tour, traversée / action exposée avec désavantage.
+- **Option B écartée :** imposer à toutes les cibles un nouvel état Cloué, avec règles propres.
+- **Arbitrage de l'auteur : A RETENU, REMPLACÉ DANS SES EFFETS LE 9 NOVEMBRE 2026.** L'intention est de **faire baisser les têtes**, non d'imposer mécaniquement un désavantage à tous les adversaires.
+- **Effet psychologique sur les PNJ humains :** lorsqu'un tir de suppression efficace couvre leur position et qu'un PNJ humain souhaite **se relever, quitter son couvert, traverser la zone de feu ou attaquer en s'exposant**, il doit **échouer à un jet d'Intelligence (INT)** pour agir de manière aussi imprudente :
+  - **Réussite d'INT :** il comprend le danger et n'entreprend pas cette action exposée ; il peut rester à couvert ou choisir une autre action compatible avec son abri.
+  - **Échec d'INT :** il peut entreprendre l'action exposée, avec les risques physiques associés. L'échec est **une décision imprudente**, pas une réussite tactique.
+  - **Aucun jet** si l'action projetée ne l'expose pas au tir : rester couvert, communiquer à l'abri, etc.
+- **Portée :** ce test ne concerne que les **PNJ humains disposant d'INT**. Les **PJ dont l'intelligence dépend du joueur** décident eux-mêmes de s'exposer ou non ; les âmes surnaturelles sans attribut INT ne font pas ce jet et leurs choix sont joués normalement. **L'absence de test ne protège en aucun cas contre les tirs.**
+- **Technique conservée d'A :** le tireur consacre son **action complexe** et les **munitions nécessaires** à un tir de suppression ; son **succès** crée temporairement une zone sous le feu. La **durée précise, la consommation en munitions et le risque réel de toucher une cible exposée restent à définir**.
+- **Aucun nouvel état `Cloué` ni désavantage universel** : l'effet recherché est un frein comportemental propre aux humains. **Ne pas intégrer au SRD sans validation du texte complet.**
 
 ### S25 — Action préparée / embuscade
 
