@@ -99,15 +99,18 @@ Le créateur précise la règle sous la forme suivante, en référence aux comba
 
 L'intérêt du talent est précisément de créer une **exception achetée** à la règle générale qui sanctionne une réaction avant son tour. Un combattant ordinaire doit choisir entre répondre à un duel par son action complexe et esquiver au prix de cette action. Un combattant entraîné peut, **une seule fois par rencontre**, sauver sa peau et conserver sa liberté d'agir. Il n'y a ni surprise, ni attaque gratuite, ni phase de choix ajoutée à l'initiative. Le texte normatif de la PR #22 reprend cette règle comme technique apprise, sans modifier les postures.
 
-### Riposte — préciser la manœuvre existante, sans doublon (9 novembre 2026)
+### Riposte — manœuvre acquise de la posture défensive (9 novembre 2026)
 
-Le SRD comportait déjà une **Riposte** dans la posture défensive : une attaque ratée autorisait une contre-attaque, sans préciser clairement son coût. La proposition ultérieure « Esquive-riposte » de l'auteur **désigne cette même technique** et ne doit **pas** devenir un second talent.
+La posture défensive **doit elle-même être apprise**. Son acquisition ouvre les manœuvres de cette famille et donne **une première manœuvre au choix**. La Riposte n'est donc pas acquise automatiquement : le personnage doit la choisir à ce moment-là ou l'apprendre plus tard.
 
-La Riposte rectifiée exige d'avoir **réellement utilisé sa réaction pour esquiver** ; si l'assaillant manque son attaque, le défenseur peut **frapper immédiatement** avec un jet d'attaque ordinaire. **S'il n'avait pas encore utilisé son action complexe, la riposte la consomme** ; s'il l'avait déjà utilisée, il bénéficie de **cette attaque supplémentaire**. Pas de jet d'esquive, pas de riposte en cascade.
+La **Riposte originale du SRD** permet de contre-attaquer immédiatement lorsqu'un adversaire manque son attaque, sans imposer explicitement une réaction d'esquive ni une dépense d'action complexe. La rédaction intermédiaire de la PR #22 la réservait aux esquives déclarées et lui faisait consommer l'action complexe encore disponible. **C'était une diminution de puissance, pas une simple correction de forme.** Après examen, cette réécriture restrictive est **retirée** en attendant de juger la Riposte dans la refonte complète des postures et de leur progression.
 
-L'**Esquive offensive** est différente : **une fois par rencontre**, elle laisse conserver une action complexe après la réaction d'esquive, mais ne permet pas à elle seule de frapper immédiatement. La Riposte, elle, exploite le coup raté de l'adversaire. Ces deux possibilités ne doivent jamais être fusionnées sous un nom nouveau.
+**Décision de conception :** conserver la Riposte comme une **manœuvre distincte, apprise**, de la posture défensive. Ne pas créer un deuxième talent nommé « Esquive-riposte ». Ne pas la rendre automatiquement universelle, mais ne pas l'affaiblir avant d'avoir pris en compte le prix d'acquisition de la posture et de la manœuvre. Son déclenchement et ses éventuels coûts restent à finaliser avec les autres manœuvres défensives.
 
-**Arbitrage rappelé par l'auteur le 9 novembre :** la posture défensive **s'apprend** ; la Riposte est **une manœuvre à acquérir dans cette famille**, et non un effet automatique de la posture. L'acquisition de la posture accorde **une première manœuvre au choix** : si le personnage choisit Riposte, il la connaît immédiatement ; sinon, il devra l'apprendre plus tard. La posture neutre reste accessible à tous. Il reste à arrêter les conditions de posture active, ainsi que l'effet des réactions supplémentaires sur les contre-attaques. La PR #22 précise la Riposte existante mais **ne doit pas être fusionnée avec les anciennes postures présentées comme gratuites et intrinsèquement avantageuses** : leur refonte est une dépendance réelle.
+**Esquive offensive** demeure une autre technique : une fois par rencontre, elle permet de dépenser sa réaction pour esquiver sans perdre son action complexe suivante. Cette capacité ne donne pas en elle-même de contre-attaque.
+
+**Incohérence normative encore présente :** le SRD hérité donne gratuitement une posture défensive par défaut, avec un désavantage infligé aux attaquants. La future architecture prévoit au contraire une **posture neutre par défaut**, des **postures apprises sans bonus intrinsèque**, et des **manœuvres apprises** dont l'une est offerte au choix lors de l'acquisition de chaque posture. Le combat et ses exemples devront être harmonisés avant fusion de la PR #22.
+
 
 ## Disciplines et traditions surnaturelles envisagées
 
