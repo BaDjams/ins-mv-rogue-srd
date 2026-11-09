@@ -25,6 +25,8 @@ sidebar:
 
 **Règle d'échange :** Vous pouvez transformer votre Action Complexe en Action Simple supplémentaire, mais pas l'inverse.
 
+Se replier, désarmer, frapper un adversaire à terre ou se cacher au mauvais moment obéit aux [règles de situation et de manœuvres](../situations-et-manoeuvres). Il vaut mieux les connaître avant de tenter l'expérience.
+
 ### Réactions
 
 Certaines capacités permettent d'agir hors de votre tour. Vous pouvez effectuer **1 réaction par round** (Esquive, Parade, Contre-attaque, Attaque d'Opportunité).
@@ -141,21 +143,25 @@ Une fois l'ordre d'initiative établi, à leur tour, les joueurs choisissent les
 
     ---
 
-    **François (MJ)** : "C'est au tour des démons qui vous attaquent ! Le premier se dirige vers Tyrael pour un coup de griffe, et le second cible Myrael. Je vais lancer le D666 pour chacun. Qui utilise sa réaction pour esquiver ?"
+    **François (MJ)** : "C'est au tour des démons. Le premier se jette sur Tyrael, le second s'en prend à Myrael. Tyrael, tu esquives ?"
 
-    **Fred (Myrael)** : "Moi !"
+    **Will (Tyrael)** : "Non, je garde ma réaction."
 
-    **François (MJ)** : "Très bien : il aura un désavantage pour te toucher. Note que tu consommes ta réaction du round."
+    **François (MJ)** : lance le D666 → "J'obtiens 4 sur le bleu, 5 sur le blanc et 2 sur le rouge. Avec son seuil de 3 au corps à corps, il rate Tyrael."
 
-    **François (MJ)** : lance le D666 → "J'ai 4 sur le bleu, 5 sur le blanc, et 2 sur le rouge. Son seuil de réussite est 3 pour l'attaque au corps à corps, donc il échoue. Tyrael, il te rate !"
+    **Will (Tyrael)** : "Pour une fois qu'il y en a un qui manque sa cible."
 
-    **Will (Tyrael)** : "Ouf, ça m'arrange !"
+    **François (MJ)** : "Le deuxième fonce sur Myrael. Tu peux encore réagir."
 
-    **François (MJ)** : lance le D666 → "Pour le deuxième démon, j'obtiens un 1 sur le bleu, 1 sur le blanc et 5 sur le rouge. C'est un [coup critique](../resolution#réussite-critique) !"
+    **Fred (Myrael)** : "J'esquive !"
 
-    **Fred (Myrael)** : "Oh non ! En plus, mon esquive ne sert à rien : ses deux dés d'action sont identiques."
+    **François (MJ)** : lance le D666 du démon → "1 sur le bleu, 1 sur le blanc et 5 sur le rouge : **coup critique**. Lance ton esquive, nous comparerons les deux résultats."
 
-    **François (MJ)** : "Exact, et le coup critique rend le dé d'intensité explosif. Lançons l'explosion : le 5 initial + un dé d'explosion qui fait 4. Total intensité : 9. Les griffes acérées du démon infligent Code +2. Donc **9 + 2 = 11 dégâts**, sans ajout de marge."
+    **Fred (Myrael)** : lance le D666 → "2 sur le bleu, 3 sur le blanc et 5 sur le rouge. Mon dé d'action est le 3, et mon seuil suffit."
+
+    **François (MJ)** : "Ton esquive réussit, mais le démon a obtenu **1**. Dans cette opposition, c'est le plus petit dé d'action réussi qui l'emporte. Il te touche. Tu as dépensé ta réaction, et tu n'as pas réussi à l'éviter."
+
+    **François (MJ)** : "Le coup critique rend le dé d'intensité explosif. Lançons l'explosion : le 5 initial + un dé d'explosion qui fait 4. Total intensité : 9. Les griffes acérées du démon infligent Code +2. Donc **9 + 2 = 11 dégâts**, sans ajout de marge."
 
     **Fred (Myrael)** : "Aïe ! Mon Bouclier de la Foi absorbe 4 points de dégâts, je prends 7 points restants."
 
