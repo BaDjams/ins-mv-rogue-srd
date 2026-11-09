@@ -83,7 +83,7 @@ Les tirs de zone, les feux de suppression et les tirs répétés destinés à d�
 
 ### Préparer une action
 
-Un personnage peut **sacrifier son action complexe** pour attendre un événement précis : le garde passe la porte, la créature sort de son trou, le chef démoniaque termine enfin son discours. Si l'événement survient **avant son prochain tour**, il peut exécuter l'action préparée en dépensant **sa réaction**. S'il a déjà utilisé cette réaction, l'action préparée ne peut plus être déclenchée. Attendre n'accorde donc pas une deuxième action complexe déguisée.
+Un personnage peut **sacrifier son action complexe** pour attendre un événement précis : le garde passe la porte, la créature sort de son trou, le chef démoniaque termine enfin son discours. Si l'événement survient **avant son prochain tour**, il peut exécuter l'action préparée en dépensant **sa réaction**. S'il a déjà utilisé cette réaction, l'action préparée ne peut plus être déclenchée. **Toute réaction utilisée avant l'action complexe du round fait perdre cette dernière**, même lorsque la réaction déclenche une action préparée au tour précédent. Attendre n'accorde donc pas une deuxième action complexe déguisée.
 
 ### Prêter main-forte
 
