@@ -39,7 +39,9 @@ Si plusieurs circonstances modifient l'attaque, on applique les règles habituel
 
 Quand deux adversaires s'affrontent à l'épée, à mains nues ou avec d'autres armes de mêlée, chacun cherche à frapper tout en évitant les coups de l'autre. **Chacun consacre son action complexe à l'échange et effectue son propre jet.** Il y a bien deux jets, mais aussi **deux actions** : ce n'est pas une esquive qui exige un dé supplémentaire.
 
-Si **un seul combattant réussit**, il touche son adversaire. Si **les deux échouent**, personne ne touche. Si **les deux réussissent**, ils se touchent **mutuellement**, même lorsque leurs dés d'action sont différents. Chaque touche utilise l'intensité de son propre jet. On ne compare donc pas les deux dés d'action pour éliminer l'une des réussites : c'est la règle particulière du duel, distincte des autres [oppositions](../resolution#8-jets-en-opposition).
+On résout le duel comme toute [opposition](../resolution#8-jets-en-opposition). Si **un seul combattant réussit**, il touche son adversaire. Si **les deux échouent**, ils échangent coups et parades sans parvenir à se blesser. Si **les deux réussissent**, celui qui a obtenu **le plus petit dé d'action** touche seul. Ce n'est **qu'en cas d'égalité entre deux dés d'action réussis** que les deux adversaires se touchent mutuellement. Chacun inflige alors les dégâts correspondant à sa propre intensité.
+
+**Exemple :** Ben (seuil 3) et Magus (seuil 4) échangent des coups. Ben obtient `324` et Magus `213` : les deux réussissent, mais le dé d'action **2** de Magus l'emporte sur le **3** de Ben. Magus touche seul. Au tour suivant, Ben obtient `213` et Magus `234` : leurs dés d'action valent tous deux **2**. Ils se touchent, mais l'intensité **4** de Magus est supérieure à celle de Ben (**3**).
 
 Un combattant occupé à accomplir une autre action ne participe pas à cet échange et ne bénéficie pas d'une attaque gratuite. Il peut néanmoins **esquiver en dépensant sa réaction**, si la situation le permet. De même, lorsqu'un coup ne peut raisonnablement pas être paré avec les moyens disponibles, il faut chercher à l'éviter plutôt que prétendre le dévier.
 
