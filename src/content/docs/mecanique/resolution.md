@@ -101,6 +101,10 @@ Lorsque plusieurs effets rendent le dé d'intensité explosif (Critique, Double 
 
 ## 5. Avantages et désavantages
 
+Lorsqu'une circonstance aide ou gêne une action, **l'avantage ou le désavantage s'applique au jet de celui qui entreprend cette action**, sauf si une règle prévoit expressément autre chose. Une ouverture favorable à l'attaquant ne donne pas, en plus, un désavantage au défenseur pour la même raison. Ce dernier effectue son éventuel jet de réaction normalement, à moins qu'un état, un trait ou une autre règle ne modifie précisément sa défense.
+
+Cette règle évite de compter deux fois une même difficulté. Il y a suffisamment de façons de mourir dans Rogue sans ajouter les mêmes pénalités par les deux bouts.
+
 ### Avantage
 
 Lorsqu'un personnage bénéficie d'un avantage (par exemple, grâce à un contexte favorable ou un pouvoir spécifique), il prend le résultat **le plus bas** entre le dé bleu et le dé blanc pour déterminer le succès de son action.
@@ -235,9 +239,9 @@ Dans le cas des jets fermés, le roleplay est particulièrement encouragé puisq
 Lors d'une opposition, chaque protagoniste effectue son jet. **Une réussite l'emporte sur un échec.** Si plusieurs protagonistes réussissent, **le plus petit dé d'action réussi l'emporte**. En cas d'égalité entre dés d'action réussis, **les deux actions réussissent simultanément**, y compris si cela entraîne un double KO. Si tous échouent, aucune action opposée ne réussit. L'intensité de chaque réussite est déterminée par son propre dé rouge, sans ajout de marge.
 
 <div class="admonition note">
-<p class="admonition-title">Note</p>
+<p class="admonition-title">Attaques surprises</p>
 
-Lors d'un jet en opposition, si l'un des protagonistes n'est pas au courant de ce qu'il se passe, il est alors "pris au dépourvu" et subira un désavantage sur son jet.
+Une cible qui ignore réellement une attaque ne peut pas l'esquiver ni la parer : aucun jet de défense n'a lieu. L'attaquant bénéficie d'un avantage, sans infliger en plus un désavantage à une réaction inexistante. Certains traits permettent néanmoins de réagir au dernier moment ; ils sont décrits dans les [règles de surprise](../situations-et-manoeuvres#attaquer-par-surprise).
 </div>
 
 ***
