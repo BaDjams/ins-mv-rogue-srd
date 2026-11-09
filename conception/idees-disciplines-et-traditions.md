@@ -13,6 +13,27 @@
 - Des traits peuvent aussi débloquer des attaques supplémentaires, réactions, manœuvres, styles de combat, ressources narratives ou exceptions aux règles de base (inspiration Savage Worlds).
 - Distinguer **traits d'hôte** (liés au corps et au vécu du réceptacle), **traits d'âme** (conservés à travers les incarnations), caractéristiques intrinsèques de nature et pouvoirs. Les âmes humaines doivent aussi avoir leur catalogue, y compris pour les PJ de campagnes low magic.
 
+## Exemple de construction par traits complémentaires — Sixième sens et Spider Sense
+
+> **Précision de conception de l'auteur — 9 novembre 2026 ; non normative.**
+> Trois traits défensifs distincts peuvent se combiner pour reproduire une faculté héroïque de type Spider-Man. Un « sixième sens » ordinaire ne suffit **pas** à produire ces trois effets.
+
+| Trait | Capacité distincte |
+| --- | --- |
+| **Sixième sens** | Autorise à **dépenser sa réaction habituelle pour esquiver une attaque surprise** dont la cible ne pouvait normalement avoir conscience. Cette exception ne donne **aucun avantage au jet d'esquive** et ne fournit **aucune réaction supplémentaire**. L'attaquant conserve l'avantage de surprise selon S19. |
+| **Spider Sense** (sens d'araignée) | Considère le personnage **comme toujours en combat / en état d'alerte tactique**, y compris face à une menace qui tenterait de le surprendre. Cette capacité **permet d'employer normalement ses autres traits défensifs** face aux attaques imprévues. **Ce trait n'accorde pas en lui-même un avantage à l'esquive ni des réactions supplémentaires.** |
+| **Agilité surhumaine** | Donne **un avantage à tous les jets d'esquive**, qu'ils utilisent une réaction normale ou supplémentaire, y compris contre une attaque surprise à laquelle une autre capacité autorise à réagir. |
+| **Réaction rapide** | Si la réaction ordinaire du round a **déjà été utilisée**, autorise **une réaction d'esquive gratuite pour chacune des attaques entrantes suivantes**. Aucun quota d'une seule esquive supplémentaire par round. Cette permission est spécifique à l'**esquive** ; elle ne donne ni parade, ni riposte, ni attaque d'opportunité gratuite. |
+
+**Cas concret — trois traits héroïques :** un assaillant attaque Spider-Man par surprise. Le Spider Sense le considère déjà en combat et lui permet de réagir ; *Agilité surhumaine* donne l'avantage à son esquive. S'il a déjà utilisé sa réaction, *Réaction rapide* lui accorde une esquive gratuite contre cette attaque ; cela se répète pour les attaques entrantes suivantes, chacune donnant lieu à sa propre esquive. Le héros ne gagne pas pour autant d'attaque supplémentaire ni d'action complexe gratuite.
+
+**Distinctions importantes :**
+- **Sixième sens seul** : une défense exceptionnelle **possible**, mais au jet **normal**, consommant la réaction normale ; l'attaquant garde l'avantage lié à la surprise.
+- **Spider Sense** : toujours prêt à se défendre, et peut donc exploiter **toutes** les aptitudes défensives acquises séparément. Les réactions gratuites viennent **exclusivement** de *Réaction rapide*, pas de *Spider Sense*.
+- **Agilité surhumaine** demeure une source explicite d'avantage sur **le jet du défenseur**. C'est une **exception autorisée** à la règle d'or des circonstances appliquées au jet de l'initiateur : elle concerne la compétence surnaturelle de l'esquive, pas un désavantage imposé en miroir à cause de la surprise.
+- **Point encore à arbitrer** : le statut « toujours en combat » du Spider Sense **supprime-t-il l'avantage de surprise de l'attaquant** ou permet-il seulement une défense pleine et entière ? Il ne faut pas décider ce point implicitement à partir des règles de *Sixième sens*. Conserver la question ouverte.
+- **Point d'implémentation** : si une attaque peut aussi déclencher une riposte, distinguer la réaction d'esquive gratuite (sans riposte gratuite implicite) d'une réaction défensive ordinaire pour éviter la multiplication d'attaques hors tour.
+
 ## Architecture des postures et manœuvres envisagée
 
 - Accéder à une posture demande l'acquisition d'un trait de posture (ex. **Défenseur**, **Assaillant**, **Concentré**).
