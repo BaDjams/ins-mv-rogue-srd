@@ -240,7 +240,7 @@ Dans le cas des jets fermés, le roleplay est particulièrement encouragé puisq
 
 En revanche, lorsque deux personnages entreprennent **chacun une action**, chacun fait son propre jet. Dans une opposition ordinaire, une réussite l'emporte sur un échec ; si les deux réussissent, le plus petit dé d'action réussi l'emporte. Une égalité entre deux réussites permet aux deux actions d'aboutir simultanément. Si les deux échouent, aucune n'aboutit. Chaque réussite garde l'intensité de son dé rouge.
 
-**Le [duel de mêlée](../combat#duels) est un cas particulier.** Les deux combattants consacrent chacun leur action à l'échange : si l'un réussit, il touche ; si les deux réussissent, **ils se touchent tous les deux**, même avec des résultats de dés différents. Si les deux échouent, aucun ne touche.
+Un [duel de mêlée](../combat#duels) suit **exactement ces règles d'opposition** : chacun lance son D666 pour sa propre action. Si les deux réussissent, le **plus petit dé d'action** touche seul. Ils ne se touchent mutuellement que lorsque **leurs dés d'action réussis sont égaux**. Un duel ne justifie ni règle spéciale de départage ni jet d'esquive supplémentaire.
 
 <div class="admonition note">
 <p class="admonition-title">Attaques surprises</p>
