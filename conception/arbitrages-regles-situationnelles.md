@@ -1,6 +1,6 @@
 # Arbitrages — règles situationnelles (28 choix)
 
-> **STATUT : CHOIX DE CONCEPTION DE L'AUTEUR, NON TRANSCRITS AU SRD.** Les 28 choix de conception sont consignés (S06, S22, S02/S28, S19 et S24 précisés le 9 novembre 2026), et peuvent encore être affinés. **Ne pas intégrer au SRD sans validation expresse.**
+> **STATUT : CHOIX DE CONCEPTION DE L'AUTEUR, NON TRANSCRITS AU SRD.** Les 28 choix de conception sont consignés (S06, S22, S02/S28 et S19 précisés ; S24 révisé le 9 novembre 2026), et peuvent encore être affinés. **Ne pas intégrer au SRD sans validation expresse.**
 >
 > Pour chaque situation : **A**, **B**, recommandation et raison, puis **choix réel de l'auteur**. Le moteur du SRD actuel (1 action complexe + 1 simple + 1 réaction, opposition D666, états) reste la base. Les règles de posture en cours de discussion ne sont **pas** encore intégrées au SRD.
 
@@ -51,7 +51,7 @@ L'ensemble ne donne aucune attaque hors tour supplémentaire. **Arbitrage tranch
 4. **S03 B + S04 A — déclenchement unique :** entrer et circuler dans l'allonge ne provoque rien ; **sortir** de l'allonge provoque au plus une attaque d'opportunité par adversaire ayant encore sa réaction, sauf repli prudent. Les ennemis ne reçoivent pas de réaction supplémentaire. Une attaque d'opportunité ratée n'empêche pas la sortie sauf autre capacité.
 5. **S08–S12 — coût des oppositions défensives :** une résistance à une manœuvre (retenir son arme, ne pas tomber, ne pas être agrippé) n'exige pas automatiquement une réaction, contrairement à une esquive/parade active. À expliciter, sinon chaque feinte consommerait de facto la réaction du défenseur, contrairement à l'intention.
 6. **S13 B — flanc sans orientation sur grille :** définir une prise de flanc crédible en théâtre de l'esprit, sans introduire une règle permanente d'orientation. Ne pas additionner les mêmes circonstances comme « surnombre » et « flanc » pour provoquer mécaniquement un double avantage.
-7. **S24 — ARBITRAGE COMPLÉMENTAIRE LE 9 NOVEMBRE 2026 :** le tir de suppression réussi **incite les PNJ humains à rester à couvert**. Un PNJ humain exposé qui veut malgré tout se relever, se découvrir, traverser la zone battue ou attaquer en s'exposant **doit échouer à un jet d'INT** : s'il **réussit**, il mesure le danger et **renonce à s'exposer** ; s'il **échoue**, il agit malgré le risque. Ce n'est **pas un jet de courage ou de Volonté**, et l'échec d'INT ne représente pas une prouesse. **Pas de test d'INT pour les PJ dont l'intelligence est incarnée par celle du joueur, ni pour les âmes surnaturelles sans INT** ; elles choisissent leurs actes. Pas de nouveau statut `Cloué` ni de désavantage automatique sur le tir ou le déplacement. **Restent à préciser :** risques physiques des balles pour un personnage qui s'expose (même surnaturel), munitions dépensées et zone/durée exactes de suppression.
+7. **S24 — RÉVISÉ PAR L'AUTEUR LE 9 NOVEMBRE 2026 :** **supprimer le test d'INT** (PJ et PNJ choisissent de s'exposer ; le MJ peut arbitrer normalement pour ses troupes). Un personnage qui **s'expose volontairement dans la zone battue** entreprend son action **avec désavantage** ; **réussite : aucune touche**, **échec : une balle reçue**, **échec critique : la rafale entière, dans la limite des balles tirées**. Le jet initial de suppression du tireur ne représente **ni une touche ni un raté** : il sert d'étalon, dont l'usage exact reste à formaliser. **Points à régler :** mouvement/se relever = action simple normalement sans jet ; quel test d'exposition faire si aucune action complexe n'est lancée ? Que signifie précisément le D666 initial (ex. 345), notamment son dé rouge pour les dégâts ? Comment borner les touches par les munitions réellement tirées si plusieurs cibles s'exposent durant une même suppression ?
 8. **S25 A — timing de l'action préparée :** déterminer à quel moment le déclencheur interrompt les autres actions et comment il interagit avec une réaction déjà consommée.
 9. **S26 A — aide et double avantage :** plusieurs assistants ne doivent pas produire automatiquement plusieurs avantages lorsque tous offrent la même aide ; définir brièvement quand deux contributions sont indépendantes.
 10. **S07 A / S20 A — états existants :** conserver les effets normatifs `À Terre`, `Inconscient`, `Paralysé`, et la capacité à réagir si l'état le permet.
@@ -241,16 +241,26 @@ L'ensemble ne donne aucune attaque hors tour supplémentaire. **Arbitrage tranch
 
 ### S24 — Tir de suppression
 
-- **Option A initiale :** action complexe + munitions ; réussite : zone exposée sous pression jusqu'au prochain tour, traversée / action exposée avec désavantage.
-- **Option B écartée :** imposer à toutes les cibles un nouvel état Cloué, avec règles propres.
-- **Arbitrage de l'auteur : A RETENU, REMPLACÉ DANS SES EFFETS LE 9 NOVEMBRE 2026.** L'intention est de **faire baisser les têtes**, non d'imposer mécaniquement un désavantage à tous les adversaires.
-- **Effet psychologique sur les PNJ humains :** lorsqu'un tir de suppression efficace couvre leur position et qu'un PNJ humain souhaite **se relever, quitter son couvert, traverser la zone de feu ou attaquer en s'exposant**, il doit **échouer à un jet d'Intelligence (INT)** pour agir de manière aussi imprudente :
-  - **Réussite d'INT :** il comprend le danger et n'entreprend pas cette action exposée ; il peut rester à couvert ou choisir une autre action compatible avec son abri.
-  - **Échec d'INT :** il peut entreprendre l'action exposée, avec les risques physiques associés. L'échec est **une décision imprudente**, pas une réussite tactique.
-  - **Aucun jet** si l'action projetée ne l'expose pas au tir : rester couvert, communiquer à l'abri, etc.
-- **Portée :** ce test ne concerne que les **PNJ humains disposant d'INT**. Les **PJ dont l'intelligence dépend du joueur** décident eux-mêmes de s'exposer ou non ; les âmes surnaturelles sans attribut INT ne font pas ce jet et leurs choix sont joués normalement. **L'absence de test ne protège en aucun cas contre les tirs.**
-- **Technique conservée d'A :** le tireur consacre son **action complexe** et les **munitions nécessaires** à un tir de suppression ; son **succès** crée temporairement une zone sous le feu. La **durée précise, la consommation en munitions et le risque réel de toucher une cible exposée restent à définir**.
-- **Aucun nouvel état `Cloué` ni désavantage universel** : l'effet recherché est un frein comportemental propre aux humains. **Ne pas intégrer au SRD sans validation du texte complet.**
+- **Option A initiale :** action complexe et munitions pour maintenir une zone sous le feu ; les actions exposées subissent un désavantage.
+- **Option B écartée :** créer un état `Cloué` avec règles propres.
+- **Arbitrage de l'auteur : A RETENU, NOUVEAU MÉCANISME D'EXPOSITION PRÉCISÉ LE 9 NOVEMBRE 2026.** La proposition intermédiaire « un PNJ humain doit échouer à un test d'INT pour oser s'exposer » est **explicitement abandonnée** : MJ et joueurs décident normalement ce que font leurs personnages, sans test de comportement.
+- **Tir de suppression :** l'attaquant consacre une action complexe à battre une zone avec son arme. Il lance un **D666 initial** (ex. `345`) qui sert d'**étalon de suppression**, mais ne représente **ni une attaque qui touche ni une attaque qui rate** à cet instant : le tireur arrose la zone sans cible ponctuelle.
+- **Personnage qui s'expose :** s'il entreprend une action tout en s'exposant à ce tir, il réalise **son action avec désavantage** (il est difficile de viser ou d'agir efficacement sous les balles).
+  - **Action réussie :** il réalise son action **sans recevoir de balle** au titre de cette exposition.
+  - **Action échouée (hors échec critique) :** son action échoue **et il reçoit une balle** de l'arme qui assure la suppression.
+  - **Échec critique :** l'action échoue **et il reçoit la rafale entière**, soit toutes les balles tirées (dans la limite des munitions effectivement disponibles et de la valeur de rafale de l'arme). Le SRD définit l'échec critique ordinaire par **double 6 sur les deux dés d'action**.
+- **Tous les personnages sont concernés** : aucun jet d'Intelligence, aucun privilège pour les PJ ou les âmes surnaturelles. La résistance, l'armure et la Résilience fonctionnent normalement sur les blessures infligées, selon leur domaine.
+- **Pas de nouvel état `Cloué`** : le choix de rester derrière son abri est un résultat tactique de la menace, pas un état supplémentaire.
+
+**Questions techniques à résoudre, sans préjuger d'un nouvel arbitrage :**
+
+1. **Actions simples sans jet :** se relever, se déplacer ou traverser la zone sont normalement des actions simples **sans jet**. Sans règle supplémentaire, ces personnages ne peuvent ni échouer ni subir de rafale critique et traverseraient gratuitement. **Piste à arbitrer :** un jet d'exposition au D666 avec désavantage uniquement quand l'action exposée n'exige aucun jet ; préciser son seuil ou sa base.
+2. **D666 initial / étalon `345` :** préciser quel usage est fait du jet initial du tireur. **Hypothèse à arbitrer :** réserver le dé rouge (5 dans l'exemple) à l'intensité servant ensuite au calcul des dégâts des balles qui toucheront les personnages exposés ; les deux dés d'action du tireur n'établiraient pas directement « touche / rate ». Si aucun de ces dés n'a un usage, simplifier l'étalon plutôt que conserver un jet inutile.
+3. **Consommation réelle des munitions :** la rafale est plafonnée par la valeur **Rafale** et les balles tirées. Si plusieurs personnages s'exposent dans la même zone battue, la somme des balles censées les toucher ne doit pas dépasser les projectiles disponibles, sauf si la suppression est explicitement alimentée par plusieurs rafales.
+4. **Temps et étendue :** définir la zone battue, sa durée, et le moment auquel elle cesse de menacer si le tireur ne peut plus tirer (chargeur vide, canon obstrué, interruption).
+
+**Équilibrage à vérifier :** avec un désavantage, un personnage de seuil 3 échoue 75 % du temps et celui de seuil 5 échoue environ 30,6 % du temps (si aucune neutralisation de désavantage), donc chaque exposition peut devenir très létale. **Double 6** se produit 1 fois sur 36 pour une paire de dés équitables, quel que soit le seuil. Ces valeurs ne sont pas des choix de règles supplémentaires.
+
 
 ### S25 — Action préparée / embuscade
 
