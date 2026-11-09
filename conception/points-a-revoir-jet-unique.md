@@ -1,0 +1,83 @@
+# Cohérence du D666 — un jet par action
+
+> Carnet de conception, 9 novembre 2026. Ce texte ne fait pas partie des règles du jeu. Les arbitrages de la PR #21 restent dans `arbitrages-regles-situationnelles.md`.
+
+## Le point de départ
+
+Rogue doit conserver un principe simple : **une action donne lieu, au plus, à un jet**. Une esquive n'est pas une nouvelle action ; c'est une **réaction** qui rend l'attaque plus difficile. Elle ne déclenche donc aucun D666 chez le défenseur. Le même raisonnement s'applique à la parade ordinaire.
+
+Cette précision explique une contradiction du SRD actuel. Le chapitre Combat parlait d'un « jet en opposition » pour l'esquive, mais son exemple faisait seulement subir un désavantage à l'attaquant. Ce dernier fonctionnement correspond à l'intention de l'auteur ; il est retenu dans la branche d'intégration. La confusion était présente dans le texte : inutile de proposer à nouveau ce que l'exemple avait déjà trouvé.
+
+Les oppositions entre **deux actions effectivement entreprises** respectent ce principe : chaque protagoniste a sa propre action et son propre jet. En revanche, **résister à une attaque par une simple réaction** ne justifie pas de jeter les dés une seconde fois.
+
+## Le duel de mêlée — nouvel arbitrage du 9 novembre
+
+Pour l'auteur, un **duel à l'épée ou à mains nues** est un véritable échange de coups : les deux protagonistes consacrent leur action au combat. **Chacun fait donc un D666 pour son action complexe.** Si l'un réussit et l'autre échoue, seul le premier touche. Si les deux échouent, rien ne se passe. Si **les deux réussissent**, le **plus petit dé d'action** l'emporte et touche seul. Si les deux dés d'action **réussis sont égaux**, **les deux touches s'appliquent**. Le duel suit donc **sans exception les oppositions ordinaires du D666** ; l'ancienne interprétation « deux réussites suffisent pour une touche mutuelle, même si les chiffres diffèrent » était une erreur de l'assistant et doit être tenue pour abandonnée.
+
+**Exemple donné par l'auteur :** Ben (seuil 3) contre Magus (seuil 4). Tour 1 : Ben `345` réussit, Magus `522` échoue ; Ben touche. Tour 2 : Ben `513` et Magus `634` échouent ; aucun ne touche. Tour 3 : Magus `213` et Ben `324` réussissent, mais Magus **2** bat Ben **3** et touche seul. Tour 4 : Ben `213` et Magus `234` réussissent avec le **même dé d'action 2** : ils se touchent mutuellement, Magus infligeant davantage grâce à l'intensité **4**, contre **3** pour Ben.
+
+L'**esquive en réaction** est destinée aux personnages occupés à autre chose qu'à échanger les coups ou à ceux qui reçoivent une attaque impossible à parer avec leurs moyens : par exemple un coup de poing de mécha contre un fleuret. Elle dépense une réaction, **ne déclenche aucun jet**, et impose normalement un désavantage à l'attaque. Une parade hors duel n'est envisageable que si le coup peut réellement être dévié.
+
+**Fréquence des touches mutuelles (corrigée) :** en l'absence de modificateurs et avec des dés d'action indépendants, une égalité **réussie** survient `min(seuil A, seuil B) / 36`. Pour deux combattants de seuil 3, c'est **3/36 = 8,3 %** ; pour deux combattants de seuil 5, **5/36 = 13,9 %** ; pour Ben contre Magus (seuils 3 et 4), **3/36 = 8,3 %**. Les précédents chiffres **25 % et 69,4 %** comptaient à tort toutes les doubles réussites comme des touches mutuelles.
+
+**Arbitrage du 9 novembre — initiative du duel et prix de la réaction :** l'échange se résout **à l'initiative du premier combattant qui engage son action complexe**. L'adversaire peut **jouer son action complexe immédiatement** et combattre en opposition, ou **dépenser sa réaction pour esquiver**, sans jet supplémentaire. **Dans les deux cas, s'il n'a pas encore joué son action complexe du round, elle est consommée ou perdue.** Il ne pourra pas attaquer à nouveau plus tard dans ce round. Celui qui a déjà employé son action complexe ne peut plus répondre par une action offensive, mais peut encore réagir si sa réaction est disponible. La décision est prise avant les dés. Cette règle s'étend **à toutes les réactions**, pas seulement aux esquives : on ne gagne pas le droit de garder une action complexe à venir en se défendant.
+
+**Restent à préciser :** l'articulation des techniques de feinte, désarmement et projection avec le duel et surtout la **Riposte** de la posture défensive actuellement présente au SRD, qui pourrait autrement ajouter une contre-attaque à un échange où chacun a déjà attaqué. Il faut éviter de créer une attaque supplémentaire involontaire lorsqu'un combattant a déjà joué son action complexe.
+
+## Réagir avant son tour — arbitrage du 9 novembre
+
+**L'auteur tranche la question du ralentissement.** Une réaction sert à faire face à un imprévu. **Si le personnage n'a pas encore utilisé son action complexe dans le round, la réaction la lui fait perdre.** Son action simple lui reste acquise. S'il a déjà utilisé son action complexe, la réaction ne lui coûte rien de plus. Les personnages dont l'initiative est basse ou qui hésitent à engager le duel ne peuvent donc pas esquiver, puis conserver tranquillement une attaque pour plus tard.
+
+**Exemple :** Ben joue avant Magus et l'engage au corps à corps. Magus répond tout de suite avec son action complexe : les deux effectuent leur D666 en opposition et Magus ne pourra plus attaquer à son tour. S'il choisit de dépenser sa réaction pour esquiver, Ben attaque seul avec désavantage, **mais Magus perd tout de même son action complexe du round**. Il pourra encore accomplir son action simple à son initiative. Dans les deux cas, l'échange ne se dédouble pas.
+
+Le même prix vaut pour une parade, une riposte ou une attaque d'opportunité effectuée avant d'avoir joué son action complexe. Ce prix est unique : si l'action complexe a déjà été consommée, on ne perd rien de plus en réagissant, sous réserve de disposer d'une réaction.
+
+**Les calculs comparant un duel immédiat à « esquiver puis attaquer » ne décrivent plus une tactique autorisée.** Ils étaient utiles pour montrer le problème, mais **ne doivent plus guider l'équilibrage**. Ce changement favorise les initiatives élevées, ce que l'auteur recherche, sans ajouter d'attitudes déclarées ni de phases de choix comme dans *COPS*.
+
+**Interaction à surveiller avec S25 :** une action préparée dépense déjà l'action complexe lors de sa préparation et se déclenche plus tard par une réaction. Si elle est déclenchée **au début du round suivant, avant le propre tour du personnage**, la règle générale fait aussi perdre l'action complexe qui n'a pas encore été jouée **dans ce nouveau round**. Cette conséquence découle strictement de l'arbitrage global. Elle doit être vérifiée en partie, sans inventer une exception silencieuse. Une action préparée déclenchée dans le même round, après la dépense de l'action complexe, ne crée pas ce problème.
+
+## Esquive offensive — exception apprise à la dépense de réaction
+
+**Arbitrage explicite du créateur, 9 novembre 2026 :**
+
+> **Esquive offensive.** Vos nombreux combats contre Ganondorf vous ont appris à utiliser votre réaction pour esquiver une attaque sans perdre votre action complexe suivante. Ne peut se réaliser qu'une seule fois par rencontre.
+
+La règle est plus simple que notre proposition intermédiaire. Le personnage **utilise bien une réaction**, comme n'importe quelle esquive, qui impose un désavantage à l'attaquant **sans second D666**. Mais la technique lui permet, **une seule fois par rencontre**, de **conserver l'action complexe encore disponible** qu'il aurait normalement perdue en réagissant avant d'avoir agi. L'esquive n'est pas une attaque et ne donne aucune frappe gratuite. Plus tard, à son initiative, le personnage peut utiliser normalement son action complexe.
+
+**Proposition abandonnée :** une « esquive active » qui serait une action complexe déclenchée au moment de l'attaque du boss, sans réaction, pour lancer une riposte immédiate. Elle ajoutait inutilement une exception au calendrier, alors que l'auteur voulait une exception **au prix de la réaction**. Ne plus appliquer cette piste.
+
+## Riposte — règle existante, pas de nouveau trait
+
+**Précision de l'auteur, 9 novembre 2026 :** la proposition « Esquive-riposte » désigne simplement la **Riposte** déjà inscrite dans la posture défensive du SRD. **Ne pas créer une deuxième manœuvre.** Dans sa rédaction précédente, la Riposte se déclenchait sur tout échec d'attaque dirigée contre le défenseur, sans imposer clairement l'utilisation préalable de sa réaction. Cette imprécision lui offrait une contre-attaque presque gratuite.
+
+**Décision de l'auteur : préserver la Riposte comme manœuvre apprise, sans l'affaiblir avant la refonte.** Le SRD initial permettait une contre-attaque immédiate après une attaque manquée, sans réclamer explicitement une réaction d'esquive ni une action complexe. La formulation proposée entre-temps imposait les deux et constituait donc **un affaiblissement réel**, et non une simple clarification. Cette réduction de puissance est **retirée de la rédaction de combat de la PR #22**. L'effet original est conservé provisoirement ; son déclenchement et son coût définitifs seront étudiés avec le système complet de postures et d'apprentissage. Une Riposte ne déclenche jamais une autre Riposte.
+
+**Différence avec Esquive offensive :** la première permet de **conserver son action complexe** après une esquive, **une fois par rencontre** ; la seconde permet de **contre-attaquer immédiatement** après une esquive réussie. Ce sont deux manœuvres distinctes, mais la seconde porte **déjà le nom Riposte**. L'Esquive offensive ne crée pas en elle-même de riposte.
+
+**Arbitrage confirmé par l'auteur :** **la posture défensive s'apprend** et la **Riposte s'apprend séparément** comme manœuvre appartenant à cette posture. L'apprentissage initial de la posture accorde **une manœuvre au choix**, qui peut être Riposte, mais ne l'impose pas. Le personnage qui connaît simplement la posture ne peut pas riposter s'il n'a pas choisi ou acheté cette manœuvre. **Ne pas confondre le texte hérité du SRD** (posture défensive par défaut, bonus automatique, Riposte implicitement offerte) avec ce projet de refonte. L'actuelle PR #22 reste en brouillon ; intégrer la posture comme compétence acquise, et la posture neutre par défaut, avant sa fusion. **Ne pas réduire le déclenchement ni ajouter un coût à la Riposte du seul fait que son effet semble généreux : il s'agit d'une manœuvre acquise et cette puissance doit s'évaluer avec son prix d'apprentissage.** Restent à clarifier l'obligation d'être effectivement dans la posture pour utiliser sa Riposte, les conditions de riposte si l'attaque initiale manque sans réaction, et les interactions avec les réactions supplémentaires (dont Réaction rapide).
+
+## Les manœuvres à harmoniser
+
+Les arbitrages S05 et S08 à S12 décrivent encore certaines tentatives — forcer un passage, feinter, désarmer, renverser, agripper ou repousser — comme des « oppositions » entre l'initiateur et quelqu'un qui ne dépense pas d'action. Il manque donc une façon de tenir compte de la résistance de la cible **sans demander un second jet**. C'est à résoudre avant leur passage dans le SRD. Il serait prématuré de leur inventer un seuil, une défense fixe ou une réaction gratuite.
+
+De même, S15 et S17 décrivent la Discrétion face à la Vigilance. Quand un garde recherche activement quelqu'un, sa recherche est bien une action ; quand il ne fait que surveiller ou qu'un intrus se cache, il ne faut pas systématiquement lancer deux D666 au nom de l'opposition. La frontière entre vigilance passive et recherche active devra être écrite.
+
+Le tir de barrage/couverture de S24 peut déjà utiliser deux D666 **à des moments différents** : celui du tireur pour établir son feu, puis celui de chaque personnage qui **entreprend ensuite sa propre action** en s'exposant. Ce n'est donc pas une esquive qui lance gratuitement un second dé. Il reste néanmoins à décider comment reconnaître une victoire lors d'une action simple dépourvue de seuil, et comment comparer une action complexe à la valeur du barrage.
+
+## Les avantages défensifs
+
+La règle d'or attribue les avantages ou désavantages circonstanciels au jet de celui qui entreprend l'action. Une esquive ordinaire impose précisément **un désavantage à l'attaque** : elle est déjà compatible avec ce principe.
+
+Deux précisions deviennent toutefois nécessaires. D'abord, **Sixième sens** permet à un personnage surpris de dépenser sa réaction pour esquiver : l'attaquant garde la **cause** de son avantage de surprise, mais l'esquive lui impose normalement un désavantage, de sorte que les deux s'annulent. Cette conséquence découle du choix « aucun jet d'esquive » et mérite une validation distincte si l'auteur souhaite que l'avantage de surprise demeure effectif malgré la réaction.
+
+Ensuite, **Agilité surhumaine** ne peut plus accorder « un avantage à tous les jets d'esquive », puisque ces jets n'existent plus. Il faut réécrire cet effet **sur le jet unique de l'attaquant**, sans décider arbitrairement s'il ajoute un désavantage, produit un double désavantage ou offre une autre protection. **Spider Sense** demeure distinct : l'assaillant n'obtient aucun avantage de surprise contre un personnage prévenu en amont. **Réaction rapide** autorise encore des réactions d'esquive supplémentaires, sans ajouter de jets.
+
+Le terrain difficile doit également être revu : il gêne le combat, mais une esquive sans jet ne peut pas subir personnellement le « désavantage au jet d'esquive » prévu lors des premiers arbitrages. L'effet sur une attaque entreprise en terrain difficile est déjà clair ; l'effet sur une esquive défensive reste à exprimer sans nouveau jet.
+
+## Une réserve sur les postures
+
+Le SRD actuel attribue déjà un désavantage aux attaques visant un personnage en posture défensive. Si celui-ci esquive en plus, il inflige une **deuxième source de désavantage**. Ce cumul est possible dans le D666, mais la refonte des postures envisagée par l'auteur doit précisément en modifier le fonctionnement. Ne pas changer les postures par inadvertance dans une PR dédiée aux règles situationnelles.
+
+## Portée de la nouvelle PR
+
+La branche d'intégration ne transpose dans le SRD que les situations suffisamment définies, **dont le duel de mêlée en échange simultané**. Elle n'inscrit pas encore les manœuvres résistées, la furtivité opposée à la vigilance, les trois manœuvres de feu automatique ni les effets chiffrés des nouveaux traits héroïques. Elle retire le jet d'esquive parasite, distingue la **réaction défensive sans jet** du **duel à deux actions** et conserve le principe de la touche mutuelle sur deux réussites.

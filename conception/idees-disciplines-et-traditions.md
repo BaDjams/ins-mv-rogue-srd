@@ -89,6 +89,29 @@ Une discipline est une famille de techniques pouvant suivre la même économie :
 - Autres disciplines possibles : escrime, bouclier, tir de précision, commandement, lutte et protection rapprochée.
 - L'économie des attaques supplémentaires et le cumul avec les rafales, explosions d'intensité et avantages exigent des simulations avant validation.
 
+### Esquive offensive — technique apprise (arbitrage de l'auteur, 9 novembre 2026)
+
+Le créateur précise la règle sous la forme suivante, en référence aux combats de Link contre Ganondorf :
+
+> **Esquive offensive.** Vos nombreux combats contre Ganondorf vous ont appris à utiliser votre réaction pour esquiver une attaque sans perdre votre action complexe suivante. Ne peut se réaliser qu'une seule fois par rencontre.
+
+**Ce n'est donc pas une action complexe anticipée ni une manœuvre de contre-attaque immédiate.** L'idée précédemment proposée — attendre l'attaque pour dépenser une action complexe hors tour sans réaction — est **abandonnée**. La technique modifie seulement le **coût** de l'esquive ordinaire. Le combattant dépense **sa réaction**, impose le désavantage habituel au jet unique de l'attaquant et, **une fois par rencontre**, évite de perdre son action complexe encore disponible dans le round. Il pourra la jouer ensuite à son initiative ; il ne gagne pas d'action supplémentaire ni de jet d'esquive.
+
+L'intérêt du talent est précisément de créer une **exception achetée** à la règle générale qui sanctionne une réaction avant son tour. Un combattant ordinaire doit choisir entre répondre à un duel par son action complexe et esquiver au prix de cette action. Un combattant entraîné peut, **une seule fois par rencontre**, sauver sa peau et conserver sa liberté d'agir. Il n'y a ni surprise, ni attaque gratuite, ni phase de choix ajoutée à l'initiative. Le texte normatif de la PR #22 reprend cette règle comme technique apprise, sans modifier les postures.
+
+### Riposte — manœuvre acquise de la posture défensive (9 novembre 2026)
+
+La posture défensive **doit elle-même être apprise**. Son acquisition ouvre les manœuvres de cette famille et donne **une première manœuvre au choix**. La Riposte n'est donc pas acquise automatiquement : le personnage doit la choisir à ce moment-là ou l'apprendre plus tard.
+
+La **Riposte originale du SRD** permet de contre-attaquer immédiatement lorsqu'un adversaire manque son attaque, sans imposer explicitement une réaction d'esquive ni une dépense d'action complexe. La rédaction intermédiaire de la PR #22 la réservait aux esquives déclarées et lui faisait consommer l'action complexe encore disponible. **C'était une diminution de puissance, pas une simple correction de forme.** Après examen, cette réécriture restrictive est **retirée** en attendant de juger la Riposte dans la refonte complète des postures et de leur progression.
+
+**Décision de conception :** conserver la Riposte comme une **manœuvre distincte, apprise**, de la posture défensive. Ne pas créer un deuxième talent nommé « Esquive-riposte ». Ne pas la rendre automatiquement universelle, mais ne pas l'affaiblir avant d'avoir pris en compte le prix d'acquisition de la posture et de la manœuvre. Son déclenchement et ses éventuels coûts restent à finaliser avec les autres manœuvres défensives.
+
+**Esquive offensive** demeure une autre technique : une fois par rencontre, elle permet de dépenser sa réaction pour esquiver sans perdre son action complexe suivante. Cette capacité ne donne pas en elle-même de contre-attaque.
+
+**Incohérence normative encore présente :** le SRD hérité donne gratuitement une posture défensive par défaut, avec un désavantage infligé aux attaquants. La future architecture prévoit au contraire une **posture neutre par défaut**, des **postures apprises sans bonus intrinsèque**, et des **manœuvres apprises** dont l'une est offerte au choix lors de l'acquisition de chaque posture. Le combat et ses exemples devront être harmonisés avant fusion de la PR #22.
+
+
 ## Disciplines et traditions surnaturelles envisagées
 
 Distinguer la **nature** (ange, démon, humain, vampire, loup-garou, momie…), la **discipline** (famille de techniques/manœuvres) et la **tradition magique** (comment canaliser et payer le pouvoir).
