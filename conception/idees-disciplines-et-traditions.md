@@ -107,7 +107,7 @@ La Riposte rectifiée exige d'avoir **réellement utilisé sa réaction pour esq
 
 L'**Esquive offensive** est différente : **une fois par rencontre**, elle laisse conserver une action complexe après la réaction d'esquive, mais ne permet pas à elle seule de frapper immédiatement. La Riposte, elle, exploite le coup raté de l'adversaire. Ces deux possibilités ne doivent jamais être fusionnées sous un nom nouveau.
 
-À étudier avec les postures à acquérir : conserver la Riposte dans la famille défensive, et décider si les réactions supplémentaires permettent de multiplier ses contre-attaques. La PR #22 modifie le texte de la Riposte déjà présente dans le SRD, sans la dupliquer ailleurs.
+**Arbitrage rappelé par l'auteur le 9 novembre :** la posture défensive **s'apprend** ; la Riposte est **une manœuvre à acquérir dans cette famille**, et non un effet automatique de la posture. L'acquisition de la posture accorde **une première manœuvre au choix** : si le personnage choisit Riposte, il la connaît immédiatement ; sinon, il devra l'apprendre plus tard. La posture neutre reste accessible à tous. Il reste à arrêter les conditions de posture active, ainsi que l'effet des réactions supplémentaires sur les contre-attaques. La PR #22 précise la Riposte existante mais **ne doit pas être fusionnée avec les anciennes postures présentées comme gratuites et intrinsèquement avantageuses** : leur refonte est une dépendance réelle.
 
 ## Disciplines et traditions surnaturelles envisagées
 
