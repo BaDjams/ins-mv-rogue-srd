@@ -46,6 +46,16 @@ La règle est plus simple que notre proposition intermédiaire. Le personnage **
 
 **Proposition abandonnée :** une « esquive active » qui serait une action complexe déclenchée au moment de l'attaque du boss, sans réaction, pour lancer une riposte immédiate. Elle ajoutait inutilement une exception au calendrier, alors que l'auteur voulait une exception **au prix de la réaction**. Ne plus appliquer cette piste.
 
+## Riposte — règle existante, pas de nouveau trait
+
+**Précision de l'auteur, 9 novembre 2026 :** la proposition « Esquive-riposte » désigne simplement la **Riposte** déjà inscrite dans la posture défensive du SRD. **Ne pas créer une deuxième manœuvre.** Dans sa rédaction précédente, la Riposte se déclenchait sur tout échec d'attaque dirigée contre le défenseur, sans imposer clairement l'utilisation préalable de sa réaction. Cette imprécision lui offrait une contre-attaque presque gratuite.
+
+**Formulation harmonisée dans la PR #22 :** lorsque le personnage **dépense sa réaction pour esquiver** et que l'attaque le manque, il peut **immédiatement attaquer son assaillant**. Si son action complexe du round **n'a pas encore été utilisée**, cette riposte la consomme (elle aurait de toute façon été perdue en réagissant). Si l'action complexe **avait déjà été utilisée**, la riposte constitue **une attaque supplémentaire**, accordée par la manœuvre. L'esquive n'exige aucun jet ; la riposte exige le jet normal d'attaque, sans désavantage automatique du seul fait de répondre hors de son tour. Il faut pouvoir effectivement atteindre l'assaillant. Une riposte n'en déclenche jamais une autre.
+
+**Différence avec Esquive offensive :** la première permet de **conserver son action complexe** après une esquive, **une fois par rencontre** ; la seconde permet de **contre-attaquer immédiatement** après une esquive réussie. Ce sont deux manœuvres distinctes, mais la seconde porte **déjà le nom Riposte**. L'Esquive offensive ne crée pas en elle-même de riposte.
+
+**Vigilance de conception :** la Riposte appartient encore, dans le SRD actuel, à la posture défensive et peut accorder une attaque supplémentaire **après** avoir joué son action complexe. Cette puissance est intentionnelle dans la proposition de l'auteur, mais il faudra décider lors de la future refonte des postures si elle demeure liée à la posture ou devient une manœuvre apprise. Vérifier également les éventuels effets de réactions supplémentaires (dont Réaction rapide) pour ne pas produire de nombreuses attaques gratuites involontaires.
+
 ## Les manœuvres à harmoniser
 
 Les arbitrages S05 et S08 à S12 décrivent encore certaines tentatives — forcer un passage, feinter, désarmer, renverser, agripper ou repousser — comme des « oppositions » entre l'initiateur et quelqu'un qui ne dépense pas d'action. Il manque donc une façon de tenir compte de la résistance de la cible **sans demander un second jet**. C'est à résoudre avant leur passage dans le SRD. Il serait prématuré de leur inventer un seuil, une défense fixe ou une réaction gratuite.
