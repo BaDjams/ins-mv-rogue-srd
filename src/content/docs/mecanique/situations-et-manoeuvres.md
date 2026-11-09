@@ -7,7 +7,7 @@ sidebar:
 
 On ne se bat pas toujours debout, en terrain dégagé, face à un adversaire assez aimable pour attendre son tour. Ces règles couvrent les situations les plus courantes sans inventer un nouveau jeu chaque fois que quelqu'un renverse une table.
 
-Elles utilisent le [D666](../resolution), les [actions et réactions](../combat) habituelles et les [états](../../reference/etats) déjà prévus. Sauf indication contraire, une manœuvre coûte **une action complexe**. Lorsqu'elle s'oppose à la résistance d'un adversaire, chacun fait son jet et les résultats sont départagés selon les règles d'[opposition](../resolution#8-jets-en-opposition). **Une manœuvre de contrôle ordinaire n'inflige pas de dégâts**, même si elle peut se terminer assez mal pour la cible. Des traits ou des techniques particulières pourront permettre de combiner la manœuvre et une attaque, mais ce n'est pas une faveur accordée à tout le monde.
+Elles utilisent le [D666](../resolution), les [actions et réactions](../combat) habituelles et les [états](../../reference/etats) déjà prévus. **Une action, un jet :** une esquive ou une parade modifie l'attaque, sans demander au défenseur de relancer les dés. Les prises, les feintes et les autres manœuvres qui exigent une résistance particulière feront l'objet d'une règle distincte, une fois leur résolution sans jet de défense supplémentaire arrêtée.
 
 ## Déplacements et allonge
 
@@ -23,41 +23,17 @@ C'est en **sortant de l'allonge d'un adversaire** qu'on risque une attaque d'opp
 
 On peut aussi se retirer prudemment. Il suffit de **renoncer à son action complexe** et d'employer son action simple pour reculer : ce déplacement ne provoque aucune attaque d'opportunité des adversaires dont on s'éloigne. C'est moins glorieux qu'une charge, mais nettement meilleur pour la longévité.
 
-### Forcer un passage
-
-Quand un personnage bloque réellement un couloir, une porte ou un escalier, l'autre ne peut pas simplement passer à travers lui. **Forcer le passage demande une action complexe et une opposition physique**, avec la Force, l'Agilité ou une compétence adaptée à la façon de s'y prendre. Une victoire permet de passer ; un échec laisse le passage bloqué. Le vainqueur n'inflige aucun dégât du seul fait de cette manœuvre.
-
 ### Terrain difficile
 
-Dans les gravats, la boue profonde ou sur un sol qui se dérobe, **la distance parcourue est divisée par deux**. Les **jets de combat effectués sur ce terrain subissent aussi un désavantage**, qu'il s'agisse d'attaquer, d'esquiver ou de parer. Un obstacle véritablement dangereux peut demander son propre jet ; le simple fait de traverser un terrain difficile n'en exige pas.
+Dans les gravats, la boue profonde ou sur un sol qui se dérobe, **la distance parcourue est divisée par deux**. Les **attaques et autres actions de combat qui exigent un jet** et sont effectuées sur ce terrain subissent aussi un **désavantage**. Un obstacle véritablement dangereux peut demander son propre jet ; le simple fait de traverser un terrain difficile n'en exige pas. Une esquive ne demandant pas de jet, elle n'ajoute pas de dé à lancer.
 
 Si un [état](../../reference/etats), comme **Gelé**, traduit déjà la même gêne, on ne l'applique pas une deuxième fois sous un autre nom. En revanche, ralentir le mouvement et gêner le combat sont deux conséquences distinctes du terrain difficile : elles s'appliquent ensemble.
 
-## Manœuvres au corps à corps
+## Avantages en mêlée
 
 ### Frapper une cible à terre
 
-Une cible [À Terre](../../reference/etats#à-terre) offre un **avantage aux attaques de mêlée** dirigées contre elle. Elle peut toutefois encore esquiver ou parer si rien ne l'en empêche. La position est mauvaise, pas nécessairement désespérée.
-
-### Feinter
-
-Une feinte cherche à faire réagir l'adversaire au mauvais moment. Le personnage consacre une **action complexe** à une opposition appropriée, généralement de **Corps à corps contre Vigilance**. S'il l'emporte, il gagne **un avantage à sa prochaine attaque** contre cet adversaire, à condition de profiter réellement de l'ouverture créée.
-
-Une feinte ordinaire **n'inflige aucun dégât**. Les bottes qui permettent de feinter et de frapper dans le même mouvement relèvent de techniques à acquérir.
-
-### Désarmer
-
-Pour faire lâcher son arme à un adversaire, il faut consacrer une **action complexe** à une opposition de corps à corps. La Force ou l'Agilité entre en jeu selon qu'on arrache l'arme ou qu'on la détourne. **Une victoire fait lâcher l'objet**, sans infliger de dégâts. Envoyer le pistolet sous une armoire est une autre affaire : cela dépend de la scène, pas d'un bonus gratuit à la manœuvre.
-
-### Renverser, agripper et repousser
-
-**Renverser** un adversaire demande une opposition physique et une action complexe. En cas de victoire, la cible reçoit l'état [À Terre](../../reference/etats#à-terre), sans subir de dégâts.
-
-**Agripper** demande de même une action complexe opposée, généralement en Corps à corps ou en Force. Une victoire inflige l'état [Agrippé](../../reference/etats#agrippé). La cible s'en libère selon les règles de cet état ; inutile d'inventer un second système de lutte.
-
-**Repousser** est une opposition physique, toujours sans dégâts directs. Une victoire fait reculer la cible d'environ **deux mètres**, dans la mesure où l'espace le permet. Si deux mètres suffisent à l'envoyer par-dessus une rambarde, c'est la chute qui sera dangereuse, pas le simple fait de la pousser.
-
-Résister à une saisie, à une projection ou à un désarmement **ne consomme pas automatiquement une réaction**. Ce n'est pas une esquive ou une parade active : l'opposition fait partie de la résolution de la manœuvre.
+Une cible [À Terre](../../reference/etats#à-terre) offre un **avantage aux attaques de mêlée** dirigées contre elle. Elle peut toutefois encore dépenser une réaction pour esquiver ou parer, si rien ne l'en empêche. Cela impose un désavantage à l'attaque : on annule alors normalement l'avantage dû à sa position. La position est mauvaise, pas nécessairement désespérée.
 
 ### Prendre un adversaire de flanc
 
@@ -69,21 +45,11 @@ Le surnombre et la prise de flanc ne donnent pas deux avantages pour la même di
 
 Une bouteille, un pied de chaise ou une pelle peuvent servir d'armes. Le MJ leur attribue des **dégâts par analogie** avec une arme ordinaire. Un **désavantage** n'est justifié que si l'objet est réellement malcommode ou si le personnage ne maîtrise pas la compétence nécessaire. On ne pénalise pas deux fois un personnage pour la même incompétence ; il a déjà assez de problèmes.
 
-## Discrétion, recherche et surprise
-
-### Se cacher
-
-Se cacher exige une cachette crédible. On ne disparaît pas au milieu d'un couloir éclairé en réussissant simplement un jet de dés. Quand le résultat est incertain, le personnage tente une **action complexe de Discrétion**, opposée à la **Vigilance** de ceux qui peuvent le remarquer.
-
-La dissimulation s'apprécie **pour chaque observateur**. Un garde peut avoir vu le personnage tandis que son collègue continue de contempler consciencieusement le mauvais mur.
+## Discrétion et surprise
 
 ### Avancer sans se faire voir
 
 Un personnage qui progresse furtivement se déplace **à la moitié de sa vitesse habituelle**. Il n'est pas nécessaire de relancer les dés à chaque pas : le résultat de Discrétion reste valable tant que son exposition ne change pas sensiblement. Passer d'une pièce sombre à un couloir éclairé, traverser une zone surveillée ou commettre un bruit notable peut justifier un nouveau jet.
-
-### Chercher quelqu'un
-
-Chercher activement un intrus demande une **action complexe de Vigilance**, opposée à la Discrétion du personnage dissimulé. L'évidence n'exige aucun jet : un adversaire qui traverse la pièce en hurlant n'a pas besoin d'être découvert. À l'inverse, les gardes ne reçoivent pas gratuitement une nouvelle tentative de détection à chaque tour parce que le MJ espère enfin faire un bon résultat.
 
 ### Faire diversion
 
@@ -93,9 +59,9 @@ Une diversion crédible peut détourner l'attention d'un observateur. Si son suc
 
 Quand une cible **ignore réellement qu'une attaque arrive**, l'attaquant bénéficie d'un **avantage** à son jet. La victime **ne peut pas utiliser de réaction pour esquiver ou parer** : elle ne sait pas qu'il y a quelque chose à éviter.
 
-Un trait tel que **Sixième sens** peut autoriser une esquive au dernier moment. Le défenseur utilise alors sa réaction et effectue **son jet normalement**, mais **l'attaquant conserve l'avantage** procuré par la surprise. Ce trait permet de réagir ; il ne donne pas l'heure du rendez-vous avec la balle.
+Un trait tel que **Sixième sens** peut autoriser une esquive au dernier moment, même contre une attaque surprise. L'attaquant conserve **la source de son avantage de surprise**, mais la réaction défensive peut, selon la règle de l'esquive, lui imposer un désavantage. Les deux effets se compensent alors normalement. Le trait permet de réagir ; il ne donne pas l'heure du rendez-vous avec la balle.
 
-Il existe des capacités plus puissantes qui **préviennent réellement** le personnage avant que le danger ne survienne. Dans ce cas, il **n'est pas surpris** et l'attaquant ne reçoit **aucun avantage dû à la surprise**. Les autres avantages éventuels restent applicables. De même, si une capacité accorde expressément un avantage aux esquives, le défenseur en bénéficie sur son propre jet : ce n'est pas une pénalité infligée en miroir à l'attaquant.
+Il existe des capacités plus puissantes qui **préviennent réellement** le personnage avant que le danger ne survienne. Dans ce cas, il **n'est pas surpris** et l'attaquant ne reçoit **aucun avantage dû à la surprise**. Les autres avantages éventuels restent applicables. Les traits qui promettent un « avantage au jet d'esquive » devront être adaptés à cette règle sans jet défensif : on ne crée pas un second lancer pour leur faire plaisir.
 
 ### Achever une cible sans défense
 
