@@ -36,17 +36,15 @@ Le même prix vaut pour une parade, une riposte ou une attaque d'opportunité ef
 
 **Interaction à surveiller avec S25 :** une action préparée dépense déjà l'action complexe lors de sa préparation et se déclenche plus tard par une réaction. Si elle est déclenchée **au début du round suivant, avant le propre tour du personnage**, la règle générale fait aussi perdre l'action complexe qui n'a pas encore été jouée **dans ce nouveau round**. Cette conséquence découle strictement de l'arbitrage global. Elle doit être vérifiée en partie, sans inventer une exception silencieuse. Une action préparée déclenchée dans le même round, après la dépense de l'action complexe, ne crée pas ce problème.
 
-## Esquive active — transformer la défense en attaque grâce à une technique apprise
+## Esquive offensive — exception apprise à la dépense de réaction
 
-**Précision de l'auteur du 9 novembre :** l'esquive en réaction n'est pas la seule façon d'éviter un coup. Un combattant entraîné peut avoir appris à **attendre l'attaque d'un adversaire, se dérober et frapper juste après**, à la manière de Link face à un boss. Cette **esquive active** n'est **ni une surprise ni une réaction**, mais une **manœuvre utilisant l'action complexe**. Elle est inaccessible à un personnage qui n'a pas appris la technique.
+**Arbitrage explicite du créateur, 9 novembre 2026 :**
 
-Sa valeur ne réside pas nécessairement dans un bonus aux dés, mais dans la **possibilité de répondre offensivement à un coup qu'on ne peut pas parer**. Un combattant ordinaire est réduit à l'esquive en réaction ; s'il n'a pas encore joué son action complexe, il la perd. Le personnage formé dépense son action complexe pour **esquiver et contre-attaquer dans le même mouvement**. Une seule action de sa part, donc un seul D666, et aucune réaction consommée.
+> **Esquive offensive.** Vos nombreux combats contre Ganondorf vous ont appris à utiliser votre réaction pour esquiver une attaque sans perdre votre action complexe suivante. Ne peut se réaliser qu'une seule fois par rencontre.
 
-**Proposition d'intégration sans sous-système :** résoudre la manœuvre par **l'opposition ordinaire du duel**, lorsque le boss engage son action : victoire du personnage = coup évité et attaque qui touche ; victoire du boss = coup reçu ; deux échecs = rien ; égalité de deux réussites = touche mutuelle. Ce point de résolution reste **une proposition**, non un arbitrage supplémentaire de l'auteur. La manœuvre ne justifie pas un avantage systématique, une attaque gratuite ou une nouvelle catégorie de jet.
+La règle est plus simple que notre proposition intermédiaire. Le personnage **utilise bien une réaction**, comme n'importe quelle esquive, qui impose un désavantage à l'attaquant **sans second D666**. Mais la technique lui permet, **une seule fois par rencontre**, de **conserver l'action complexe encore disponible** qu'il aurait normalement perdue en réagissant avant d'avoir agi. L'esquive n'est pas une attaque et ne donne aucune frappe gratuite. Plus tard, à son initiative, le personnage peut utiliser normalement son action complexe.
 
-**Choix de calendrier encore à valider :** le personnage ayant l'initiative avant le boss peut **garder son action complexe disponible** pour l'utiliser lors de l'attaque redoutée. Cette dépense n'est pas une **action préparée déclenchée par réaction** ; elle constitue l'exception accordée par la technique. Si le boss n'attaque pas au cours du round ou si l'action complexe a déjà été dépensée, la manœuvre ne peut pas être employée. Aucune seconde action n'est créée.
-
-C'est le véritable intérêt des disciplines martiales de Rogue : **une technique apprise autorise un geste que les autres ne savent pas accomplir**. La décision « j'esquive ou je duelle ? » ne devrait plus produire de tactique systématiquement avantageuse ; la compétence doit mériter l'exception.
+**Proposition abandonnée :** une « esquive active » qui serait une action complexe déclenchée au moment de l'attaque du boss, sans réaction, pour lancer une riposte immédiate. Elle ajoutait inutilement une exception au calendrier, alors que l'auteur voulait une exception **au prix de la réaction**. Ne plus appliquer cette piste.
 
 ## Les manœuvres à harmoniser
 
