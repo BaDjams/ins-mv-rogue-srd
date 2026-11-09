@@ -236,9 +236,11 @@ Dans le cas des jets fermés, le roleplay est particulièrement encouragé puisq
 
 ## 8. Jets en opposition
 
-**Une esquive ou une parade n'est pas une seconde action.** Le défenseur dépense sa réaction et impose un désavantage à l'attaquant : on résout l'attaque avec **un seul jet**, sans lancer de D666 pour la défense. Les oppositions décrites ci-dessous concernent les situations dans lesquelles les personnages entreprennent chacun une action véritablement opposée à celle de l'autre.
+**Une esquive ou une parade en réaction ne demande pas de jet.** Le défenseur dépense sa réaction et impose un désavantage à l'attaque, si sa défense est possible. L'attaquant lance seul le D666.
 
-Lors d'une opposition, chaque protagoniste effectue son jet. **Une réussite l'emporte sur un échec.** Si plusieurs protagonistes réussissent, **le plus petit dé d'action réussi l'emporte**. En cas d'égalité entre dés d'action réussis, **les deux actions réussissent simultanément**, y compris si cela entraîne un double KO. Si tous échouent, aucune action opposée ne réussit. L'intensité de chaque réussite est déterminée par son propre dé rouge, sans ajout de marge.
+En revanche, lorsque deux personnages entreprennent **chacun une action**, chacun fait son propre jet. Dans une opposition ordinaire, une réussite l'emporte sur un échec ; si les deux réussissent, le plus petit dé d'action réussi l'emporte. Une égalité entre deux réussites permet aux deux actions d'aboutir simultanément. Si les deux échouent, aucune n'aboutit. Chaque réussite garde l'intensité de son dé rouge.
+
+**Le [duel de mêlée](../combat#duels) est un cas particulier.** Les deux combattants consacrent chacun leur action à l'échange : si l'un réussit, il touche ; si les deux réussissent, **ils se touchent tous les deux**, même avec des résultats de dés différents. Si les deux échouent, aucun ne touche.
 
 <div class="admonition note">
 <p class="admonition-title">Attaques surprises</p>
