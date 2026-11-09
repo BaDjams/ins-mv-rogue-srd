@@ -1,6 +1,6 @@
 # Arbitrages — règles situationnelles (28 choix)
 
-> **STATUT : CHOIX DE CONCEPTION DE L'AUTEUR, NON TRANSCRITS AU SRD.** Les 28 choix de conception sont consignés (S06 clarifié le 9 novembre 2026), et peuvent encore être précisés. **Ne pas intégrer au SRD sans validation expresse.**
+> **STATUT : CHOIX DE CONCEPTION DE L'AUTEUR, NON TRANSCRITS AU SRD.** Les 28 choix de conception sont consignés (S06 et S22 précisés le 9 novembre 2026), et peuvent encore être affinés. **Ne pas intégrer au SRD sans validation expresse.**
 >
 > Pour chaque situation : **A**, **B**, recommandation et raison, puis **choix réel de l'auteur**. Le moteur du SRD actuel (1 action complexe + 1 simple + 1 réaction, opposition D666, états) reste la base. Les règles de posture en cours de discussion ne sont **pas** encore intégrées au SRD.
 
@@ -22,7 +22,7 @@
 ### Cohérence et précisions nécessaires avant rédaction normative
 
 1. **S02 A + S28 B — TAILLE et allonge : articulation à clarifier.** S02 définit la zone d'après l'allonge physique ; S28 B exige qu'une TAILLE supérieure influe directement sur la zone de menace **et/ou** sur l'avantage tactique. Il faut définir une relation simple entre TAILLE et allonge (ou des catégories de gabarit) et circonscrire les avantages : par exemple, aux saisies/poussées, pas à toutes les attaques. Sans précision, une TAILLE élevée pourrait accorder deux bonus pour la même cause.
-2. **S22 B — tir dans une mêlée : risque sur tout échec, pas touche automatique.** Définir une règle objective (un seuil sur le dé d'intensité lors de l'échec, par exemple), préciser l'allié effectivement exposé dans l'axe, et appliquer la réduction de dégâts habituelle. L'option B supprime le désavantage automatique proposé par A. Ne jamais assimiler « risque sur un échec » à « tous les échecs touchent un allié ».
+2. **S22 B précisé le 9 novembre 2026 — risque de tir ami sur un 6 au dé d'action.** Le tir dans une mêlée s'effectue sans désavantage automatique. **Si le dé d'action effectivement retenu indique 6, le tir échoue et peut provoquer une complication, notamment atteindre un allié exposé dans l'axe de tir.** Un échec sur 4 ou 5 (lorsque le seuil est inférieur) ne déclenche pas ce risque spécifique. Le 6 n'est pas forcément un échec critique : le SRD réserve celui-ci au double 6 sur les deux dés d'action. Les avantages/désavantages sont appliqués avant de déterminer le dé d'action retenu. **À préciser avant rédaction normative :** l'allié touchable doit être vraisemblablement exposé, et la procédure exacte de choix de la cible collatérale / dégâts éventuels reste à définir. Ne pas faire d'un 6 un impact automatique sur un allié absent de la ligne de tir.
 3. **S19 A — surprise : éviter le double comptage.** Le SRD donne déjà un désavantage à celui qui ignore une opposition. Si l'adversaire ne peut effectuer aucune réaction contre l'attaque initiale, ne pas additionner mécaniquement un désavantage de réaction qui n'a pas lieu et l'avantage de l'embuscade pour la même circonstance. Clarifier le cas d'une défense passive et celui des protections surnaturelles.
 4. **S03 B + S04 A — déclenchement unique :** entrer et circuler dans l'allonge ne provoque rien ; **sortir** de l'allonge provoque au plus une attaque d'opportunité par adversaire ayant encore sa réaction, sauf repli prudent. Les ennemis ne reçoivent pas de réaction supplémentaire. Une attaque d'opportunité ratée n'empêche pas la sortie sauf autre capacité.
 5. **S08–S12 — coût des oppositions défensives :** une résistance à une manœuvre (retenir son arme, ne pas tomber, ne pas être agrippé) n'exige pas automatiquement une réaction, contrairement à une esquive/parade active. À expliciter, sinon chaque feinte consommerait de facto la réaction du défenseur, contrairement à l'intention.
@@ -200,10 +200,9 @@
 
 ### S22 — Tirer dans une mêlée
 
-- **Option A :** désavantage pour viser une cible au contact d'un allié ; échec critique = risque de tir ami.
-- **Option B :** jet ordinaire, mais risque de toucher un allié sur n'importe quel échec.
-- **Ma préférence : A.** L'incertitude concerne surtout le tir, pas une cascade de dommages collatéraux.
-- **Arbitrage de l'auteur : B RETENU** (8 novembre 2026 ; décision de conception, non intégrée au SRD).
+- **Option A initiale :** désavantage pour viser une cible au contact d'un allié ; échec critique = risque de tir ami.
+- **Option B initiale :** jet ordinaire, mais risque de toucher un allié sur n'importe quel échec.
+- **Arbitrage de l'auteur : B RETENU, PRÉCISÉ LE 9 NOVEMBRE 2026.** Pas de désavantage automatique ; **le risque de tir ami se déclenche lorsque le dé d'action retenu affiche 6** (échec automatique). Les autres échecs ne provoquent pas cette complication spécifique. Un 6 simple suffit : le double 6 constitue toujours l'échec critique déjà prévu par le SRD. Le tir ne peut blesser un allié que si la géométrie de la scène le permet ; la résolution exacte de cette complication reste à préciser. **Ne pas modifier le SRD à ce stade.**
 
 ### S23 — Couvert
 
