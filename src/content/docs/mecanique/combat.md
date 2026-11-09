@@ -82,11 +82,11 @@ Concernant l'Attaque Double, la posture des cibles compte : si au moins une cibl
 
 La posture par défaut, celle des sages, des gardiens et de ceux qui ont déjà perdu un hôte de trop. En posture défensive, le personnage impose un désavantage à tous ses attaquants. Ses propres attaques ne sont pas affectées — tenir la ligne n'empêche pas de frapper juste.
 
-La **Riposte** se déclenche lorsqu'une attaque contre le personnage échoue : l'échec de l'attaquant est, narrativement, une parade ou une esquive réussie, et le défenseur peut immédiatement contre-attaquer sans désavantage. Une riposte ne peut pas déclencher une autre riposte — il faut bien que la chaîne s'arrête quelque part. Si l'attaquant initial est lui-même en posture défensive, sa riposte subit quand même son propre désavantage.
+La **Riposte** permet de rendre immédiatement un coup à celui qu'on vient d'éviter. Quand vous **dépensez votre réaction pour esquiver** une attaque et que celle-ci **vous manque**, vous pouvez aussitôt attaquer votre assaillant. **Si votre action complexe n'a pas encore été utilisée, la riposte la consomme** ; vous ne pourrez pas la rejouer à votre tour. **Si elle a déjà été jouée, la riposte reste possible** : c'est une attaque supplémentaire. Il n'y a toujours **aucun jet pour l'esquive** ; seul le coup de retour exige un D666. La riposte ne subit pas de désavantage du seul fait qu'elle se produit hors de votre tour, mais les autres circonstances continuent de s'appliquer. Une riposte ne peut pas en déclencher une autre : même dans Rogue, les duels ne durent pas toute la nuit.
 
 La **Protection** permet, lorsqu'un allié adjacent est ciblé par une attaque, de se substituer à lui comme cible. L'attaquant subit le désavantage de la posture défensive du protecteur normalement. Cette manœuvre ne pénalise pas les propres attaques du protecteur — se sacrifier pour autrui mérite au moins ça — mais elle consomme la réaction du tour.
 
-La **Parade Totale** remplace l'action complexe du tour : le personnage renonce à agir offensivement pour gagner deux réactions au lieu d'une. Ce qui signifie qu'un gardien en Parade Totale peut, dans le même round, interposer son bouclier devant un allié et riposter si l'attaque rate. Les démons qui ont essayé d'en abuser s'en souviennent.
+La **Parade Totale** remplace l'action complexe du tour : le personnage renonce à agir offensivement pour gagner deux réactions au lieu d'une. Un gardien en Parade Totale peut ainsi interposer son bouclier devant un allié, puis esquiver une autre attaque et, s'il connaît la Riposte et n'est pas touché, contre-attaquer. Les démons qui ont essayé d'en abuser s'en souviennent.
 
 ---
 
