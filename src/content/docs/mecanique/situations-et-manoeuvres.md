@@ -55,9 +55,7 @@ Une diversion crédible peut détourner l'attention d'un observateur. Si son suc
 
 Quand une cible **ignore réellement qu'une attaque arrive**, l'attaquant bénéficie d'un **avantage** à son jet. La victime **ne peut pas utiliser de réaction pour esquiver ou parer** : elle ne sait pas qu'il y a quelque chose à éviter.
 
-Un **Sixième sens** peut permettre d'esquiver au dernier moment malgré la surprise. Une telle réaction ne donne aucun jet de défense : elle agit sur le **jet de l'attaquant**, comme une esquive ordinaire. L'avantage dû à la surprise reste une circonstance favorable à l'assaillant ; s'il subit aussi un désavantage à cause de l'esquive, les deux se compensent.
-
-Certaines capacités avertissent le personnage **avant que le danger ne survienne**. Il n'est alors pas surpris, même s'il fait semblant de ne rien remarquer, et l'assaillant ne reçoit aucun avantage de surprise.
+Un trait particulier peut permettre de **réagir malgré la surprise**, sans créer de second jet de défense. D'autres capacités préviennent le personnage **avant que le danger ne survienne**. Il n'est alors pas surpris, même s'il fait semblant de ne rien remarquer, et l'assaillant ne reçoit aucun avantage de surprise.
 
 ### Achever une cible sans défense
 
