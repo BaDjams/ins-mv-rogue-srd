@@ -31,7 +31,17 @@ Se replier, désarmer, frapper un adversaire à terre ou se cacher au mauvais mo
 
 Certaines capacités permettent d'agir hors de votre tour. Vous pouvez effectuer **1 réaction par round** (Esquive, Parade, Contre-attaque, Attaque d'Opportunité).
 
-**Esquiver ou parer** coûte une réaction et impose un **désavantage au jet de l'attaquant**. Le défenseur ne lance pas les dés : c'est l'attaque qui devient plus difficile. Une réaction ne donne pas un second jet pour une action déjà entreprise. Si un autre effet pénalise aussi l'attaque, les règles habituelles de cumul des désavantages s'appliquent. Une réaction ne modifie pas les PA.
+L'**esquive** sert lorsqu'on subit une attaque sans être engagé dans un échange de coups : on était occupé à autre chose, ou l'attaque est trop puissante pour être parée. Le personnage dépense sa **réaction** et impose un **désavantage au jet de l'attaquant**. Il ne lance pas les dés lui-même. Une parade peut jouer le même rôle, à condition que le coup puisse réellement être détourné avec l'arme ou l'objet utilisé. On n'arrête pas le poing d'un mécha avec un fleuret, même très joliment tenu.
+
+Si plusieurs circonstances modifient l'attaque, on applique les règles habituelles de cumul des avantages et désavantages. Une réaction ne modifie pas les PA.
+
+### Duels
+
+Quand deux adversaires s'affrontent à l'épée, à mains nues ou avec d'autres armes de mêlée, chacun cherche à frapper tout en évitant les coups de l'autre. **Chacun consacre son action complexe à l'échange et effectue son propre jet.** Il y a bien deux jets, mais aussi **deux actions** : ce n'est pas une esquive qui exige un dé supplémentaire.
+
+Si **un seul combattant réussit**, il touche son adversaire. Si **les deux échouent**, personne ne touche. Si **les deux réussissent**, ils se touchent **mutuellement**, même lorsque leurs dés d'action sont différents. Chaque touche utilise l'intensité de son propre jet. On ne compare donc pas les deux dés d'action pour éliminer l'une des réussites : c'est la règle particulière du duel, distincte des autres [oppositions](../resolution#8-jets-en-opposition).
+
+Un combattant occupé à accomplir une autre action ne participe pas à cet échange et ne bénéficie pas d'une attaque gratuite. Il peut néanmoins **esquiver en dépensant sa réaction**, si la situation le permet. De même, lorsqu'un coup ne peut raisonnablement pas être paré avec les moyens disponibles, il faut chercher à l'éviter plutôt que prétendre le dévier.
 
 ### Initiative
 
