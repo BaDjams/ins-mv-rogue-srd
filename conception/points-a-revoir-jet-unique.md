@@ -36,6 +36,18 @@ Le même prix vaut pour une parade, une riposte ou une attaque d'opportunité ef
 
 **Interaction à surveiller avec S25 :** une action préparée dépense déjà l'action complexe lors de sa préparation et se déclenche plus tard par une réaction. Si elle est déclenchée **au début du round suivant, avant le propre tour du personnage**, la règle générale fait aussi perdre l'action complexe qui n'a pas encore été jouée **dans ce nouveau round**. Cette conséquence découle strictement de l'arbitrage global. Elle doit être vérifiée en partie, sans inventer une exception silencieuse. Une action préparée déclenchée dans le même round, après la dépense de l'action complexe, ne crée pas ce problème.
 
+## Esquive active — transformer la défense en attaque grâce à une technique apprise
+
+**Précision de l'auteur du 9 novembre :** l'esquive en réaction n'est pas la seule façon d'éviter un coup. Un combattant entraîné peut avoir appris à **attendre l'attaque d'un adversaire, se dérober et frapper juste après**, à la manière de Link face à un boss. Cette **esquive active** n'est **ni une surprise ni une réaction**, mais une **manœuvre utilisant l'action complexe**. Elle est inaccessible à un personnage qui n'a pas appris la technique.
+
+Sa valeur ne réside pas nécessairement dans un bonus aux dés, mais dans la **possibilité de répondre offensivement à un coup qu'on ne peut pas parer**. Un combattant ordinaire est réduit à l'esquive en réaction ; s'il n'a pas encore joué son action complexe, il la perd. Le personnage formé dépense son action complexe pour **esquiver et contre-attaquer dans le même mouvement**. Une seule action de sa part, donc un seul D666, et aucune réaction consommée.
+
+**Proposition d'intégration sans sous-système :** résoudre la manœuvre par **l'opposition ordinaire du duel**, lorsque le boss engage son action : victoire du personnage = coup évité et attaque qui touche ; victoire du boss = coup reçu ; deux échecs = rien ; égalité de deux réussites = touche mutuelle. Ce point de résolution reste **une proposition**, non un arbitrage supplémentaire de l'auteur. La manœuvre ne justifie pas un avantage systématique, une attaque gratuite ou une nouvelle catégorie de jet.
+
+**Choix de calendrier encore à valider :** le personnage ayant l'initiative avant le boss peut **garder son action complexe disponible** pour l'utiliser lors de l'attaque redoutée. Cette dépense n'est pas une **action préparée déclenchée par réaction** ; elle constitue l'exception accordée par la technique. Si le boss n'attaque pas au cours du round ou si l'action complexe a déjà été dépensée, la manœuvre ne peut pas être employée. Aucune seconde action n'est créée.
+
+C'est le véritable intérêt des disciplines martiales de Rogue : **une technique apprise autorise un geste que les autres ne savent pas accomplir**. La décision « j'esquive ou je duelle ? » ne devrait plus produire de tactique systématiquement avantageuse ; la compétence doit mériter l'exception.
+
 ## Les manœuvres à harmoniser
 
 Les arbitrages S05 et S08 à S12 décrivent encore certaines tentatives — forcer un passage, feinter, désarmer, renverser, agripper ou repousser — comme des « oppositions » entre l'initiateur et quelqu'un qui ne dépense pas d'action. Il manque donc une façon de tenir compte de la résistance de la cible **sans demander un second jet**. C'est à résoudre avant leur passage dans le SRD. Il serait prématuré de leur inventer un seuil, une défense fixe ou une réaction gratuite.
