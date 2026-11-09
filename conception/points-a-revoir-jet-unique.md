@@ -8,7 +8,17 @@ Rogue doit conserver un principe simple : **une action donne lieu, au plus, à u
 
 Cette précision explique une contradiction du SRD actuel. Le chapitre Combat parlait d'un « jet en opposition » pour l'esquive, mais son exemple faisait seulement subir un désavantage à l'attaquant. Ce dernier fonctionnement correspond à l'intention de l'auteur ; il est retenu dans la branche d'intégration. La confusion était présente dans le texte : inutile de proposer à nouveau ce que l'exemple avait déjà trouvé.
 
-Les oppositions entre **deux actions effectivement entreprises** ne sont pas nécessairement contraires au principe : chaque protagoniste a alors sa propre action et son propre jet. En revanche, **résister à une attaque par une simple réaction** ne justifie pas de jeter les dés une seconde fois.
+Les oppositions entre **deux actions effectivement entreprises** respectent ce principe : chaque protagoniste a sa propre action et son propre jet. En revanche, **résister à une attaque par une simple réaction** ne justifie pas de jeter les dés une seconde fois.
+
+## Le duel de mêlée — nouvel arbitrage du 9 novembre
+
+Pour l'auteur, un **duel à l'épée ou à mains nues** est un véritable échange de coups : les deux protagonistes consacrent leur action au combat. **Chacun fait donc un D666 pour son action complexe.** Si l'un réussit et l'autre échoue, seul le premier touche. Si les deux échouent, rien ne se passe. Si **les deux réussissent, les deux touchent**, même quand leurs dés d'action ne sont pas identiques.
+
+Cette dernière précision distingue le duel de l'**opposition ordinaire** où, face à deux réussites, le plus petit dé d'action départage les protagonistes. Ne surtout pas ramener la touche mutuelle à la seule égalité des chiffres : ce serait changer la règle voulue.
+
+L'**esquive en réaction** est destinée aux personnages occupés à autre chose qu'à échanger les coups ou à ceux qui reçoivent une attaque impossible à parer avec leurs moyens : par exemple un coup de poing de mécha contre un fleuret. Elle dépense une réaction, **ne déclenche aucun jet**, et impose normalement un désavantage à l'attaque. Une parade hors duel n'est envisageable que si le coup peut réellement être dévié.
+
+**À préciser sans freiner la rédaction du principe :** quand et comment les deux actions complexes sont engagées dans l'ordre d'initiative ; comment un personnage ayant déjà dépensé son action participe ou non à un duel ; et l'articulation des techniques de feinte, désarmement et projection avec cet échange de coups. Ce sont des questions de calendrier et de manœuvres, pas une raison de réintroduire des jets d'esquive.
 
 ## Les manœuvres à harmoniser
 
@@ -34,4 +44,4 @@ Le SRD actuel attribue déjà un désavantage aux attaques visant un personnage 
 
 ## Portée de la nouvelle PR
 
-La branche d'intégration ne transpose dans le SRD que les situations suffisamment définies. Elle n'inscrit pas encore les manœuvres résistées, la furtivité opposée à la vigilance, les trois manœuvres de feu automatique ni les effets chiffrés des nouveaux traits héroïques. Elle remplace le jet d'esquive parasite par **un désavantage sur le jet d'attaque** et corrige l'exemple de combat correspondant.
+La branche d'intégration ne transpose dans le SRD que les situations suffisamment définies, **dont le duel de mêlée en échange simultané**. Elle n'inscrit pas encore les manœuvres résistées, la furtivité opposée à la vigilance, les trois manœuvres de feu automatique ni les effets chiffrés des nouveaux traits héroïques. Elle retire le jet d'esquive parasite, distingue la **réaction défensive sans jet** du **duel à deux actions** et conserve le principe de la touche mutuelle sur deux réussites.
