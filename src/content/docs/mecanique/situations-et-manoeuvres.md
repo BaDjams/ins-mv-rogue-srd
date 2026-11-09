@@ -7,7 +7,7 @@ sidebar:
 
 On ne se bat pas toujours debout, en terrain dégagé, face à un adversaire assez aimable pour attendre son tour. Ces règles couvrent les situations les plus courantes sans inventer un nouveau jeu chaque fois que quelqu'un renverse une table.
 
-Elles utilisent le [D666](../resolution), les [actions et réactions](../combat) habituelles et les [états](../../reference/etats) déjà prévus. **Une action, un jet :** une esquive ou une parade modifie l'attaque, sans demander au défenseur de relancer les dés. Les prises, les feintes et les autres manœuvres qui exigent une résistance particulière feront l'objet d'une règle distincte, une fois leur résolution sans jet de défense supplémentaire arrêtée.
+Elles utilisent le [D666](../resolution), les [actions et réactions](../combat) habituelles et les [états](../../reference/etats) déjà prévus. **Une action, un jet :** une esquive ou une parade modifie l'attaque, sans demander au défenseur de relancer les dés. Les manœuvres plus délicates, comme les prises et les désarmements, seront détaillées après harmonisation avec ce principe.
 
 ## Déplacements et allonge
 
@@ -30,10 +30,6 @@ Dans les gravats, la boue profonde ou sur un sol qui se dérobe, **la distance p
 Si un [état](../../reference/etats), comme **Gelé**, traduit déjà la même gêne, on ne l'applique pas une deuxième fois sous un autre nom. En revanche, ralentir le mouvement et gêner le combat sont deux conséquences distinctes du terrain difficile : elles s'appliquent ensemble.
 
 ## Avantages en mêlée
-
-### Frapper une cible à terre
-
-Une cible [À Terre](../../reference/etats#à-terre) offre un **avantage aux attaques de mêlée** dirigées contre elle. Elle peut toutefois encore dépenser une réaction pour esquiver ou parer, si rien ne l'en empêche. Cela impose un désavantage à l'attaque : on annule alors normalement l'avantage dû à sa position. La position est mauvaise, pas nécessairement désespérée.
 
 ### Prendre un adversaire de flanc
 
@@ -59,9 +55,9 @@ Une diversion crédible peut détourner l'attention d'un observateur. Si son suc
 
 Quand une cible **ignore réellement qu'une attaque arrive**, l'attaquant bénéficie d'un **avantage** à son jet. La victime **ne peut pas utiliser de réaction pour esquiver ou parer** : elle ne sait pas qu'il y a quelque chose à éviter.
 
-Un trait tel que **Sixième sens** peut autoriser une esquive au dernier moment, même contre une attaque surprise. L'attaquant conserve **la source de son avantage de surprise**, mais la réaction défensive peut, selon la règle de l'esquive, lui imposer un désavantage. Les deux effets se compensent alors normalement. Le trait permet de réagir ; il ne donne pas l'heure du rendez-vous avec la balle.
+Un **Sixième sens** peut permettre d'esquiver au dernier moment malgré la surprise. Une telle réaction ne donne aucun jet de défense : elle agit sur le **jet de l'attaquant**, comme une esquive ordinaire. L'avantage dû à la surprise reste une circonstance favorable à l'assaillant ; s'il subit aussi un désavantage à cause de l'esquive, les deux se compensent.
 
-Il existe des capacités plus puissantes qui **préviennent réellement** le personnage avant que le danger ne survienne. Dans ce cas, il **n'est pas surpris** et l'attaquant ne reçoit **aucun avantage dû à la surprise**. Les autres avantages éventuels restent applicables. Les traits qui promettent un « avantage au jet d'esquive » devront être adaptés à cette règle sans jet défensif : on ne crée pas un second lancer pour leur faire plaisir.
+Certaines capacités avertissent le personnage **avant que le danger ne survienne**. Il n'est alors pas surpris, même s'il fait semblant de ne rien remarquer, et l'assaillant ne reçoit aucun avantage de surprise.
 
 ### Achever une cible sans défense
 
@@ -97,6 +93,3 @@ Aider un allié demande une **action complexe** et une contribution réellement 
 
 Trois personnes qui tiennent la même porte ne créent pas automatiquement trois avantages : le MJ distingue une aide supplémentaire d'une répétition de la même contribution.
 
-### Renoncer à attaquer
-
-Un personnage peut convertir son **action complexe en action simple** pour se déplacer, rejoindre un abri ou accomplir une autre tâche rapide. Il n'obtient **aucun bonus défensif automatique** pour avoir renoncé à son attaque. Les manœuvres spéciales de défense relèvent de leurs propres règles.
