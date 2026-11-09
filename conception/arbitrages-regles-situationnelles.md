@@ -1,13 +1,13 @@
 # Arbitrages — règles situationnelles (28 choix)
 
-> **STATUT : CHOIX DE CONCEPTION DE L'AUTEUR, NON TRANSCRITS AU SRD.** Les 28 choix de conception sont consignés (S06 et S22 précisés le 9 novembre 2026), et peuvent encore être affinés. **Ne pas intégrer au SRD sans validation expresse.**
+> **STATUT : CHOIX DE CONCEPTION DE L'AUTEUR, NON TRANSCRITS AU SRD.** Les 28 choix de conception sont consignés (S06, S22 et S02/S28 précisés le 9 novembre 2026), et peuvent encore être affinés. **Ne pas intégrer au SRD sans validation expresse.**
 >
 > Pour chaque situation : **A**, **B**, recommandation et raison, puis **choix réel de l'auteur**. Le moteur du SRD actuel (1 action complexe + 1 simple + 1 réaction, opposition D666, états) reste la base. Les règles de posture en cours de discussion ne sont **pas** encore intégrées au SRD.
 
 ## Synthèse des décisions de l'auteur — 8 novembre 2026
 
 - **28 situations arbitrées** : 23 options A, 4 options B, et **S06 combinant A et B** (terrain difficile : ralentissement + désavantage en combat).
-- **Options B retenues : S03, S13, S22, S28**.
+- **Options B retenues : S03, S13, S22, S28** (S28 précisé : TAILLE + bonus d'allonge de l'arme).
 - **Options A retenues : S01, S02, S04, S05, S07–S12, S14–S21, S23–S27**.
 - Les choix expriment l'intention du créateur. **Ils ne constituent pas encore un texte normatif** ; les cas limites ci-dessous restent à résoudre avant l'intégration au SRD.
 
@@ -21,7 +21,7 @@
 
 ### Cohérence et précisions nécessaires avant rédaction normative
 
-1. **S02 A + S28 B — TAILLE et allonge : articulation à clarifier.** S02 définit la zone d'après l'allonge physique ; S28 B exige qu'une TAILLE supérieure influe directement sur la zone de menace **et/ou** sur l'avantage tactique. Il faut définir une relation simple entre TAILLE et allonge (ou des catégories de gabarit) et circonscrire les avantages : par exemple, aux saisies/poussées, pas à toutes les attaques. Sans précision, une TAILLE élevée pourrait accorder deux bonus pour la même cause.
+1. **S02 + S28 — ARBITRAGE CLARIFIÉ le 9 novembre 2026 :** aucune contradiction. **Allonge / zone de contrôle = TAILLE du combattant + bonus d'allonge de l'arme employée.** La TAILLE représente l'allonge corporelle (notamment la longueur des bras) ; une arme peut l'étendre. S02 retient le principe de portée réelle, S28 donne son calcul. **Pas d'avantage d'attaque automatique au seul motif d'une TAILLE supérieure.** Les valeurs des bonus d'allonge par arme restent à définir dans l'équipement, sans modifier la formule.
 2. **S22 B précisé le 9 novembre 2026 — risque de tir ami sur un 6 au dé d'action.** Le tir dans une mêlée s'effectue sans désavantage automatique. **Si le dé d'action effectivement retenu indique 6, le tir échoue et peut provoquer une complication, notamment atteindre un allié exposé dans l'axe de tir.** Un échec sur 4 ou 5 (lorsque le seuil est inférieur) ne déclenche pas ce risque spécifique. Le 6 n'est pas forcément un échec critique : le SRD réserve celui-ci au double 6 sur les deux dés d'action. Les avantages/désavantages sont appliqués avant de déterminer le dé d'action retenu. **À préciser avant rédaction normative :** l'allié touchable doit être vraisemblablement exposé, et la procédure exacte de choix de la cible collatérale / dégâts éventuels reste à définir. Ne pas faire d'un 6 un impact automatique sur un allié absent de la ligne de tir.
 3. **S19 A — surprise : éviter le double comptage.** Le SRD donne déjà un désavantage à celui qui ignore une opposition. Si l'adversaire ne peut effectuer aucune réaction contre l'attaque initiale, ne pas additionner mécaniquement un désavantage de réaction qui n'a pas lieu et l'avantage de l'embuscade pour la même circonstance. Clarifier le cas d'une défense passive et celui des protections surnaturelles.
 4. **S03 B + S04 A — déclenchement unique :** entrer et circuler dans l'allonge ne provoque rien ; **sortir** de l'allonge provoque au plus une attaque d'opportunité par adversaire ayant encore sa réaction, sauf repli prudent. Les ennemis ne reçoivent pas de réaction supplémentaire. Une attaque d'opportunité ratée n'empêche pas la sortie sauf autre capacité.
@@ -55,10 +55,9 @@
 
 ### S02 — Zone de menace
 
-- **Option A :** zone définie par l'allonge effective de l'arme ; réaction possible quand une règle la déclenche.
-- **Option B :** zone standard centrée sur chaque adversaire, quelle que soit l'arme.
-- **Ma préférence : A.** Rester descriptif en théâtre de l'esprit ; les armes longues doivent compter.
-- **Arbitrage de l'auteur : A RETENU** (8 novembre 2026 ; décision de conception, non intégrée au SRD).
+- **Option A initiale :** zone définie par l'allonge réelle du combattant équipé de son arme ; réaction possible quand une règle la déclenche.
+- **Option B initiale :** zone standard centrée sur chaque adversaire, quelle que soit l'arme.
+- **Arbitrage de l'auteur : A RETENU, PRÉCISÉ LE 9 NOVEMBRE 2026.** La zone de contrôle est basée sur **TAILLE + bonus d'allonge de l'arme** ; voir S28. Il n'existe pas de zone de contact identique pour tous. Ce calcul décrit la portée réelle, sans bonus d'attaque automatique.
 
 ### S03 — Traverser la zone ennemie
 
@@ -243,10 +242,9 @@
 
 ### S28 — Taille et allonge
 
-- **Option A :** zone menacée dépend de l'allonge effective, pas de la TAILLE seule.
-- **Option B :** TAILLE augmente directement la zone de menace et/ou les avantages tactiques.
-- **Ma préférence : A.** Une créature géante a une vraie allonge seulement si son anatomie le permet.
-- **Arbitrage de l'auteur : B RETENU** (8 novembre 2026 ; décision de conception, non intégrée au SRD).
+- **Option A initiale :** zone menacée dépend de l'allonge effective, sans expliciter la part de TAILLE.
+- **Option B initiale :** TAILLE influe sur la zone menacée et/ou l'avantage tactique.
+- **Arbitrage de l'auteur : B RETENU, PRÉCISÉ LE 9 NOVEMBRE 2026.** **Allonge / zone de contrôle = TAILLE + bonus d'allonge de l'arme.** La TAILLE reflète l'allonge naturelle (bras/membres), l'arme apporte son éventuelle extension. **La TAILLE ne crée pas, à elle seule, d'avantage au jet d'attaque.** Les bonus d'allonge des armes restent à calibrer.
 
 ## Remarques pour l'intégration ultérieure
 
