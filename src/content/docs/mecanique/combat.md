@@ -37,7 +37,11 @@ Si plusieurs circonstances modifient l'attaque, on applique les règles habituel
 
 ### Duels
 
-Quand deux adversaires s'affrontent à l'épée, à mains nues ou avec d'autres armes de mêlée, chacun cherche à frapper tout en évitant les coups de l'autre. **Chacun consacre son action complexe à l'échange et effectue son propre jet.** Il y a bien deux jets, mais aussi **deux actions** : ce n'est pas une esquive qui exige un dé supplémentaire.
+Quand deux adversaires s'affrontent à l'épée, à mains nues ou avec d'autres armes de mêlée, chacun cherche à frapper tout en évitant les coups de l'autre. **Le duel se résout dès que le premier combattant engage son action complexe, à son rang d'initiative.** Son adversaire doit alors choisir, **avant les jets**, entre répondre immédiatement en consacrant lui aussi son **action complexe** à l'échange, ou conserver cette action pour son propre tour et **esquiver avec sa réaction**. Il n'a pas le loisir d'attendre que les coups tombent pour se décider.
+
+S'il répond par une action complexe, **les deux combattants lancent leur D666 au même moment** et règlent le duel par opposition. L'adversaire qui a agi avant son tour **a déjà dépensé son action complexe** : il ne pourra pas en entreprendre une deuxième lorsque son initiative arrivera. Son action simple reste disponible, si elle n'a pas encore été employée.
+
+S'il choisit plutôt d'esquiver, **il ne porte aucune attaque dans cet échange**. Sa réaction impose un désavantage au jet de l'assaillant, sans jet d'esquive, et il pourra utiliser son action complexe plus tard, lorsque viendra son tour. Si son action complexe a déjà été dépensée, il ne peut plus répondre par un échange de coups ; il lui reste la réaction, si elle est disponible. Une défense impossible — par exemple tenter de parer un poing de mécha avec un fleuret — ne devient pas possible par la seule déclaration d'un duel.
 
 On résout le duel comme toute [opposition](../resolution#8-jets-en-opposition). Si **un seul combattant réussit**, il touche son adversaire. Si **les deux échouent**, ils échangent coups et parades sans parvenir à se blesser. Si **les deux réussissent**, celui qui a obtenu **le plus petit dé d'action** touche seul. Ce n'est **qu'en cas d'égalité entre deux dés d'action réussis** que les deux adversaires se touchent mutuellement. Chacun inflige alors les dégâts correspondant à sa propre intensité.
 
