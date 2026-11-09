@@ -18,6 +18,8 @@ Cette dernière précision distingue le duel de l'**opposition ordinaire** où, 
 
 L'**esquive en réaction** est destinée aux personnages occupés à autre chose qu'à échanger les coups ou à ceux qui reçoivent une attaque impossible à parer avec leurs moyens : par exemple un coup de poing de mécha contre un fleuret. Elle dépense une réaction, **ne déclenche aucun jet**, et impose normalement un désavantage à l'attaque. Une parade hors duel n'est envisageable que si le coup peut réellement être dévié.
 
+**Conséquence d'équilibrage à surveiller :** à seuil 3 contre seuil 3, deux attaques indépendantes réussissent toutes deux dans **25 %** des échanges. À seuil 5 contre seuil 5, c'est **25/36 ≈ 69,4 %** des échanges (hors modificateurs). En l'état, deux experts se touchent donc mutuellement **plus souvent** que deux débutants. Cela peut servir la létalité recherchée, mais mérite un essai de combat avant validation finale ; ne pas modifier l'arbitrage sans l'accord de l'auteur.
+
 **À préciser sans freiner la rédaction du principe :** quand et comment les deux actions complexes sont engagées dans l'ordre d'initiative ; comment un personnage ayant déjà dépensé son action participe ou non à un duel ; l'articulation des techniques de feinte, désarmement et projection avec cet échange de coups ; et surtout la **Riposte** de la posture défensive actuellement présente au SRD, qui pourrait autrement ajouter une contre-attaque à un échange où chacun a déjà attaqué. Ne pas créer une deuxième attaque involontaire en traitant une simple attaque manquée comme une ouverture à riposte au cours du duel. Ce sont des questions de calendrier et de manœuvres, pas une raison de réintroduire des jets d'esquive.
 
 ## Les manœuvres à harmoniser
