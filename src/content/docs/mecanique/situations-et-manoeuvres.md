@@ -7,7 +7,7 @@ sidebar:
 
 On ne se bat pas toujours debout, en terrain dégagé, face à un adversaire assez aimable pour attendre son tour. Ces règles couvrent les situations les plus courantes sans inventer un nouveau jeu chaque fois que quelqu'un renverse une table.
 
-Elles utilisent le [D666](../resolution), les [actions et réactions](../combat) habituelles et les [états](../../reference/etats) déjà prévus. **Une action, un jet.** Dans un [duel](../combat#duels), les deux combattants agissent et font chacun leur jet : deux réussites peuvent donc donner deux touches. Lorsqu'un personnage se contente d'esquiver une attaque, sa réaction ne demande aucun jet supplémentaire. Les prises et les désarmements seront détaillés après harmonisation avec ce principe.
+Elles utilisent le [D666](../resolution), les [actions et réactions](../combat) habituelles et les [états](../../reference/etats) déjà prévus. **Une action, un jet.** Dans un [duel](../combat#duels), les deux combattants agissent et font chacun leur jet : deux réussites ne donnent deux touches **qu'en cas d'égalité des dés d'action**. Sinon, le plus petit dé d'action réussi remporte l'opposition. Lorsqu'un personnage se contente d'esquiver une attaque, sa réaction ne demande aucun jet supplémentaire. Les prises et les désarmements seront détaillés après harmonisation avec ce principe.
 
 ## Déplacements et allonge
 
