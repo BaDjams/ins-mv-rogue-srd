@@ -236,6 +236,8 @@ Dans le cas des jets fermés, le roleplay est particulièrement encouragé puisq
 
 ## 8. Jets en opposition
 
+**Une esquive ou une parade n'est pas une seconde action.** Le défenseur dépense sa réaction et impose un désavantage à l'attaquant : on résout l'attaque avec **un seul jet**, sans lancer de D666 pour la défense. Les oppositions décrites ci-dessous concernent les situations dans lesquelles les personnages entreprennent chacun une action véritablement opposée à celle de l'autre.
+
 Lors d'une opposition, chaque protagoniste effectue son jet. **Une réussite l'emporte sur un échec.** Si plusieurs protagonistes réussissent, **le plus petit dé d'action réussi l'emporte**. En cas d'égalité entre dés d'action réussis, **les deux actions réussissent simultanément**, y compris si cela entraîne un double KO. Si tous échouent, aucune action opposée ne réussit. L'intensité de chaque réussite est déterminée par son propre dé rouge, sans ajout de marge.
 
 <div class="admonition note">
