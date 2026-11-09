@@ -1,6 +1,6 @@
 # Arbitrages — règles situationnelles (28 choix)
 
-> **STATUT : CHOIX DE CONCEPTION DE L'AUTEUR, NON TRANSCRITS AU SRD.** Les 28 choix de conception sont consignés (S06, S22 et S02/S28 précisés le 9 novembre 2026), et peuvent encore être affinés. **Ne pas intégrer au SRD sans validation expresse.**
+> **STATUT : CHOIX DE CONCEPTION DE L'AUTEUR, NON TRANSCRITS AU SRD.** Les 28 choix de conception sont consignés (S06, S22, S02/S28 et S19 précisés le 9 novembre 2026), et peuvent encore être affinés. **Ne pas intégrer au SRD sans validation expresse.**
 >
 > Pour chaque situation : **A**, **B**, recommandation et raison, puis **choix réel de l'auteur**. Le moteur du SRD actuel (1 action complexe + 1 simple + 1 réaction, opposition D666, états) reste la base. Les règles de posture en cours de discussion ne sont **pas** encore intégrées au SRD.
 
@@ -10,6 +10,20 @@
 - **Options B retenues : S03, S13, S22, S28** (S28 précisé : TAILLE + bonus d'allonge de l'arme).
 - **Options A retenues : S01, S02, S04, S05, S07–S12, S14–S21, S23–S27**.
 - Les choix expriment l'intention du créateur. **Ils ne constituent pas encore un texte normatif** ; les cas limites ci-dessous restent à résoudre avant l'intégration au SRD.
+
+### Règle d'or — Qui reçoit l'avantage ou le désavantage ? (arbitrage du 9 novembre 2026)
+
+> **Par défaut, les avantages et désavantages circonstanciels s'appliquent au jet de celui qui initie l'action**, et non au jet de l'adversaire qui y réagit. **Une règle explicite peut prévoir une exception.**
+
+- Une circonstance qui facilite l'attaque donne **un avantage à l'attaquant** : on n'impose pas en miroir un désavantage au défenseur pour cette même circonstance.
+- Une circonstance qui gêne l'action entreprise donne **un désavantage à celui qui entreprend cette action** : on ne donne pas automatiquement un avantage à l'opposant pour la même gêne.
+- **Si une réaction est possible**, le défenseur effectue son jet selon ses règles habituelles ; il n'est pas pénalisé **du seul fait qu'il réagit plutôt qu'il n'initie**. Ses propres contraintes explicites (état, terrain difficile si la règle le prévoit, pouvoirs, etc.) peuvent néanmoins modifier son jet.
+- Les règles qui désignent explicitement **le jet du défenseur** ou **le jet de l'attaquant** conservent leur priorité (ex. posture, état ou manœuvre dont l'effet est spécifié).
+- Cette règle vise notamment à éviter de transformer **un seul facteur circonstanciel** en un avantage de l'initiateur **et** un désavantage du réacteur.
+
+**Exemple normatif envisagé pour S19 :** l'attaquant caché initie une attaque surprise et reçoit **un avantage**. La victime qui ignore l'attaque **n'effectue aucun jet de défense et ne peut utiliser de réaction** contre elle. Si elle possède un **trait la rendant impossible à surprendre**, elle peut dépenser normalement sa réaction pour une esquive/parade appropriée : **l'attaquant conserve son avantage**, et **le défenseur effectue normalement son jet** (ni désavantage de surprise ni compensation automatique). Jusqu'à l'instant de l'attaque, le défenseur n'était pas conscient de la menace ; le trait lui permet de réagir au dernier moment, pas de supprimer l'ouverture dont bénéficie l'attaquant.
+
+**À harmoniser lors de la future révision du SRD :** `mecanique/resolution.md`, section « Jets en opposition », indique actuellement qu'un protagoniste pris au dépourvu subit un désavantage à son jet d'opposition. Pour l'attaque surprise S19, cette formulation entre en conflit avec le nouvel arbitrage et avec l'absence de jet de défense de la cible réellement inconsciente du danger. Supprimer ou reformuler ce cas, **sans modifier le SRD normatif dans cette PR**. Réexaminer également les exemples d'esquive de `mecanique/combat.md` afin d'appliquer les modificateurs au bon jet.
 
 ### Principe complémentaire — manœuvres martiales
 
@@ -23,7 +37,7 @@
 
 1. **S02 + S28 — ARBITRAGE CLARIFIÉ le 9 novembre 2026 :** aucune contradiction. **Allonge / zone de contrôle = TAILLE du combattant + bonus d'allonge de l'arme employée.** La TAILLE représente l'allonge corporelle (notamment la longueur des bras) ; une arme peut l'étendre. S02 retient le principe de portée réelle, S28 donne son calcul. **Pas d'avantage d'attaque automatique au seul motif d'une TAILLE supérieure.** Les valeurs des bonus d'allonge par arme restent à définir dans l'équipement, sans modifier la formule.
 2. **S22 B précisé le 9 novembre 2026 — risque de tir ami sur un 6 au dé d'action.** Le tir dans une mêlée s'effectue sans désavantage automatique. **Si le dé d'action effectivement retenu indique 6, le tir échoue et peut provoquer une complication, notamment atteindre un allié exposé dans l'axe de tir.** Un échec sur 4 ou 5 (lorsque le seuil est inférieur) ne déclenche pas ce risque spécifique. Le 6 n'est pas forcément un échec critique : le SRD réserve celui-ci au double 6 sur les deux dés d'action. Les avantages/désavantages sont appliqués avant de déterminer le dé d'action retenu. **À préciser avant rédaction normative :** l'allié touchable doit être vraisemblablement exposé, et la procédure exacte de choix de la cible collatérale / dégâts éventuels reste à définir. Ne pas faire d'un 6 un impact automatique sur un allié absent de la ligne de tir.
-3. **S19 A — surprise : éviter le double comptage.** Le SRD donne déjà un désavantage à celui qui ignore une opposition. Si l'adversaire ne peut effectuer aucune réaction contre l'attaque initiale, ne pas additionner mécaniquement un désavantage de réaction qui n'a pas lieu et l'avantage de l'embuscade pour la même circonstance. Clarifier le cas d'une défense passive et celui des protections surnaturelles.
+3. **S19 A — CLARIFIÉ LE 9 NOVEMBRE 2026 :** surprise = avantage sur le jet d'attaque de l'initiateur ; **aucune défense ni réaction** pour la victime ignorant réellement l'attaque. Si un trait interdit d'être surpris, la victime peut dépenser sa réaction pour une esquive/parade **sans désavantage de surprise** ; l'attaquant **conserve son avantage**. Ne pas doubler l'avantage de l'attaquant par un désavantage de réaction pour la même cause. Le SRD actuel doit être harmonisé ultérieurement (voir règle d'or ci-dessus).
 4. **S03 B + S04 A — déclenchement unique :** entrer et circuler dans l'allonge ne provoque rien ; **sortir** de l'allonge provoque au plus une attaque d'opportunité par adversaire ayant encore sa réaction, sauf repli prudent. Les ennemis ne reçoivent pas de réaction supplémentaire. Une attaque d'opportunité ratée n'empêche pas la sortie sauf autre capacité.
 5. **S08–S12 — coût des oppositions défensives :** une résistance à une manœuvre (retenir son arme, ne pas tomber, ne pas être agrippé) n'exige pas automatiquement une réaction, contrairement à une esquive/parade active. À expliciter, sinon chaque feinte consommerait de facto la réaction du défenseur, contrairement à l'intention.
 6. **S13 B — flanc sans orientation sur grille :** définir une prise de flanc crédible en théâtre de l'esprit, sans introduire une règle permanente d'orientation. Ne pas additionner les mêmes circonstances comme « surnombre » et « flanc » pour provoquer mécaniquement un double avantage.
@@ -176,10 +190,14 @@
 
 ### S19 — Attaque surprise / embuscade
 
-- **Option A :** une cible ignorant totalement l'attaquant ne peut réagir à sa première attaque ; celle-ci a un avantage.
-- **Option B :** la cible ne peut réagir, mais pas d'avantage d'attaque automatique.
-- **Ma préférence : A.** Une véritable embuscade doit être décisive, sans atteindre les dégâts automatiques.
-- **Arbitrage de l'auteur : A RETENU** (8 novembre 2026 ; décision de conception, non intégrée au SRD).
+- **Option A initiale :** une cible ignorant totalement l'attaquant ne peut réagir à sa première attaque ; celle-ci a un avantage.
+- **Option B initiale :** la cible ne peut réagir, mais pas d'avantage d'attaque automatique.
+- **Arbitrage de l'auteur : A RETENU, PRÉCISÉ LE 9 NOVEMBRE 2026.**
+  1. **Initiateur (attaquant) :** avantage à son attaque surprise.
+  2. **Victime réellement inconsciente de l'attaque :** **aucune défense** (pas de jet d'esquive/parade, aucune réaction contre cette attaque).
+  3. **Victime avec un trait empêchant d'être surprise :** peut utiliser sa **réaction** pour esquiver ou parer ; **son jet est normal**, sauf contrainte explicite indépendante de la surprise. L'attaquant **conserve l'avantage** : la victime n'a pris conscience du danger qu'au moment de l'attaque.
+  4. **Aucun désavantage de surprise** n'est appliqué en plus au défenseur, même si son trait lui permet exceptionnellement de réagir.
+- **Principe applicable :** règle d'or de l'initiateur ci-dessus. **Protection surnaturelle passive et états normatifs** restent applicables selon leurs textes. Aucun changement du SRD normatif pour le moment.
 
 ### S20 — Cible sans défense / coup de grâce
 
@@ -250,7 +268,7 @@
 
 - **S07** : état À Terre déjà défini dans `reference/etats.md` ; ne pas dupliquer la mécanique existante.
 - **S11** : libération d'Agrippé déjà détaillée dans `reference/etats.md`.
-- **S19** : `resolution.md` mentionne déjà le désavantage d'un protagoniste pris au dépourvu en opposition ; ne pas doubler une même cause à la fois comme avantage et désavantage sans décision explicite.
+- **S19 / règle d'or** : `resolution.md` décrit actuellement un désavantage du protagoniste pris au dépourvu. **Ce passage doit être harmonisé plus tard** avec l'arbitrage du 9 novembre : avantage sur le jet de l'initiateur, aucune défense pour une victime ignorant l'attaque, esquive normale si un trait permet exceptionnellement de réagir. Ne pas appliquer les deux pénalités pour la même surprise.
 - **S20** : `Inconscient` et `Paralysé` permettent déjà un critique sur touche en mêlée. L'option A ajoute le seul cas de mise à mort certaine hors pression ; ce n'est pas une règle d'assassinat instantané sur cible vigilante.
 - **S21** : une saisie/agrippement peut rendre l'arme impossible à diriger ; traiter la cohérence fictionnelle avant les jets.
 - **S24** : définir exactement les munitions consommées par le tir de suppression au moment de l'arbitrage final.
