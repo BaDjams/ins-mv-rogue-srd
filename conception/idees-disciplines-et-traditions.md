@@ -99,6 +99,16 @@ Le créateur précise la règle sous la forme suivante, en référence aux comba
 
 L'intérêt du talent est précisément de créer une **exception achetée** à la règle générale qui sanctionne une réaction avant son tour. Un combattant ordinaire doit choisir entre répondre à un duel par son action complexe et esquiver au prix de cette action. Un combattant entraîné peut, **une seule fois par rencontre**, sauver sa peau et conserver sa liberté d'agir. Il n'y a ni surprise, ni attaque gratuite, ni phase de choix ajoutée à l'initiative. Le texte normatif de la PR #22 reprend cette règle comme technique apprise, sans modifier les postures.
 
+### Riposte — préciser la manœuvre existante, sans doublon (9 novembre 2026)
+
+Le SRD comportait déjà une **Riposte** dans la posture défensive : une attaque ratée autorisait une contre-attaque, sans préciser clairement son coût. La proposition ultérieure « Esquive-riposte » de l'auteur **désigne cette même technique** et ne doit **pas** devenir un second talent.
+
+La Riposte rectifiée exige d'avoir **réellement utilisé sa réaction pour esquiver** ; si l'assaillant manque son attaque, le défenseur peut **frapper immédiatement** avec un jet d'attaque ordinaire. **S'il n'avait pas encore utilisé son action complexe, la riposte la consomme** ; s'il l'avait déjà utilisée, il bénéficie de **cette attaque supplémentaire**. Pas de jet d'esquive, pas de riposte en cascade.
+
+L'**Esquive offensive** est différente : **une fois par rencontre**, elle laisse conserver une action complexe après la réaction d'esquive, mais ne permet pas à elle seule de frapper immédiatement. La Riposte, elle, exploite le coup raté de l'adversaire. Ces deux possibilités ne doivent jamais être fusionnées sous un nom nouveau.
+
+À étudier avec les postures à acquérir : conserver la Riposte dans la famille défensive, et décider si les réactions supplémentaires permettent de multiplier ses contre-attaques. La PR #22 modifie le texte de la Riposte déjà présente dans le SRD, sans la dupliquer ailleurs.
+
 ## Disciplines et traditions surnaturelles envisagées
 
 Distinguer la **nature** (ange, démon, humain, vampire, loup-garou, momie…), la **discipline** (famille de techniques/manœuvres) et la **tradition magique** (comment canaliser et payer le pouvoir).
