@@ -236,11 +236,11 @@ Dans le cas des jets fermés, le roleplay est particulièrement encouragé puisq
 
 ## 8. Jets en opposition
 
-**Une esquive ou une parade en réaction ne demande pas de jet.** Le défenseur dépense sa réaction et impose un désavantage à l'attaque, si sa défense est possible. L'attaquant lance seul le D666.
+**Une esquive ou une parade en réaction ne demande pas de jet.** Le défenseur dépense sa réaction et impose un désavantage à l'attaque, si sa défense est possible. L'attaquant lance seul le D666. **Si le défenseur n'avait pas encore joué son action complexe du round, il la perd en réagissant.**
 
 En revanche, lorsque deux personnages entreprennent **chacun une action**, chacun fait son propre jet. Dans une opposition ordinaire, une réussite l'emporte sur un échec ; si les deux réussissent, le plus petit dé d'action réussi l'emporte. Une égalité entre deux réussites permet aux deux actions d'aboutir simultanément. Si les deux échouent, aucune n'aboutit. Chaque réussite garde l'intensité de son dé rouge.
 
-Un [duel de mêlée](../combat#duels) suit **exactement ces règles d'opposition**. Il se résout au rang d'initiative de celui qui engage le combat. L'adversaire peut **dépenser immédiatement son action complexe** pour répondre : chacun lance alors son D666 pour sa propre action, même si le tour de l'un n'est pas encore arrivé. Il ne rejouera pas cette action à son initiative. Il peut aussi **conserver son action complexe** et dépenser sa réaction pour esquiver, ce qui ne demande aucun jet de sa part. Lorsque les deux combattants échangent les coups, le **plus petit dé d'action réussi** touche seul ; une touche mutuelle n'a lieu que si **les deux dés d'action réussis sont égaux**.
+Un [duel de mêlée](../combat#duels) suit **exactement ces règles d'opposition**. Il se résout au rang d'initiative de celui qui engage le combat. L'adversaire peut **dépenser immédiatement son action complexe** pour répondre : chacun lance alors son D666 pour sa propre action, même si le tour de l'un n'est pas encore arrivé. Il ne rejouera pas cette action à son initiative. Il peut aussi **dépenser sa réaction pour esquiver** sans lancer de dé, mais cette réaction **lui fait perdre son action complexe si elle n'a pas encore été jouée**. Lorsque les deux combattants échangent les coups, le **plus petit dé d'action réussi** touche seul ; une touche mutuelle n'a lieu que si **les deux dés d'action réussis sont égaux**.
 
 <div class="admonition note">
 <p class="admonition-title">Attaques surprises</p>
