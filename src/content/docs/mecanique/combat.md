@@ -86,7 +86,7 @@ La **Riposte**, manœuvre à apprendre dans la famille de la posture défensive,
 
 La **Protection** permet, lorsqu'un allié adjacent est ciblé par une attaque, de se substituer à lui comme cible. L'attaquant subit le désavantage de la posture défensive du protecteur normalement. Cette manœuvre ne pénalise pas les propres attaques du protecteur — se sacrifier pour autrui mérite au moins ça — mais elle consomme la réaction du tour.
 
-La **Parade Totale** remplace l'action complexe du tour : le personnage renonce à agir offensivement pour gagner deux réactions au lieu d'une. Un gardien en Parade Totale peut ainsi interposer son bouclier devant un allié, puis esquiver une autre attaque et, s'il connaît la Riposte et n'est pas touché, contre-attaquer. Les démons qui ont essayé d'en abuser s'en souviennent.
+La **Parade Totale** remplace l'action complexe du tour : le personnage renonce à agir offensivement pour gagner deux réactions au lieu d'une. Un gardien peut ainsi protéger un allié, puis esquiver un autre coup. S'il a appris la Riposte, il peut également contre-attaquer lorsque son adversaire manque son attaque, selon les règles de cette manœuvre. Les démons qui ont essayé d'en abuser s'en souviennent.
 
 ---
 
