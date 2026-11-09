@@ -25,6 +25,16 @@
 
 **À harmoniser lors de la future révision du SRD :** `mecanique/resolution.md`, section « Jets en opposition », indique actuellement qu'un protagoniste pris au dépourvu subit un désavantage à son jet d'opposition. Pour l'attaque surprise S19, cette formulation entre en conflit avec le nouvel arbitrage et avec l'absence de jet de défense de la cible réellement inconsciente du danger. Supprimer ou reformuler ce cas, **sans modifier le SRD normatif dans cette PR**. Réexaminer également les exemples d'esquive de `mecanique/combat.md` afin d'appliquer les modificateurs au bon jet.
 
+### Traits défensifs face à S19 — clarification du 9 novembre 2026
+
+Le **Sixième sens** autorise seulement l'esquive d'une attaque normalement imprévisible, en dépensant la réaction habituelle, **au jet normal** ; l'attaquant conserve l'avantage lié à la surprise.
+
+Le **Spider Sense** se distingue de cette simple permission : le personnage est **considéré comme toujours en combat**, y compris lors des attaques inattendues. Il peut exploiter ses autres traits défensifs :
+- **Agilité surhumaine** : avantage à **tous ses jets d'esquive** (exception explicite sur le jet du réacteur à la règle d'or) ;
+- **Réaction rapide** : lorsque sa réaction normale est déjà dépensée, **une esquive gratuite contre chaque attaque entrante**, sans offrir une riposte ou une attaque gratuite.
+
+L'ensemble ne donne aucune attaque hors tour supplémentaire. **Question ouverte :** le « toujours en combat » du Spider Sense retire-t-il aussi à l'assaillant **l'avantage de surprise**, ou lui laisse-t-il cet avantage tout en rendant la défense pleinement possible ? Ne pas préjuger de ce point. Référence de conception détaillée : [Traits et Spider Sense](./idees-disciplines-et-traditions.md#exemple-de-construction-par-traits-complémentaires--sixième-sens-et-spider-sense).
+
 ### Principe complémentaire — manœuvres martiales
 
 > **Décision de conception exprimée le 8 novembre 2026 :** les manœuvres spéciales universelles telles que **Feinte**, **Désarmement**, **Projection** et **Poussée** ont, de base, des **effets tactiques sans dégâts** (S08–S12). Des traits de discipline, notamment **Escrime** et **Arts martiaux**, peuvent permettre d'**infliger les dégâts normaux de l'arme en plus de l'effet** avec **une seule action complexe**, sans ajouter un second jet de dégâts ou une seconde attaque.
